@@ -1,0 +1,43 @@
+# Submarine Cable Monitor Configuration
+
+# Request settings
+request:
+  delay_min: 1.0
+  delay_max: 3.0
+  timeout: 30
+  max_retries: 3
+
+# Database settings
+database:
+  path: data/events.db
+  retention_days: 730  # 2 years
+
+# Scraper configurations
+scrapers:
+  telegeography:
+    url: https://www.submarinecablemap.com
+    enabled: true
+    update_interval_hours: 24
+
+  infrapedia:
+    url: https://www.infrapedia.com
+    enabled: true
+    update_interval_hours: 24
+
+  cablefaults:
+    url: https://www.cablefaults.com
+    enabled: true
+    update_interval_hours: 6
+
+  google_news:
+    url: https://news.google.com
+    enabled: true
+    update_interval_hours: 4
+
+  github:
+    url: https://api.github.com
+    enabled: true
+    update_interval_hours: 24
+
+# User agent
+user_agent: "Mozilla/5.0 (compatible; SubmarineCableMonitor/1.0; +https://github.com/your-username/submarine-cable-monitor)"
