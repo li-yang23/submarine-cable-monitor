@@ -10,6 +10,7 @@ class ScraperConfig:
     url: str
     enabled: bool = True
     update_interval_hours: int = 24
+    api_key: str = ""
 
 
 @dataclass
@@ -67,7 +68,8 @@ class Config:
                 config.scrapers[name] = ScraperConfig(
                     url=scraper_data.get("url", ""),
                     enabled=scraper_data.get("enabled", True),
-                    update_interval_hours=scraper_data.get("update_interval_hours", 24)
+                    update_interval_hours=scraper_data.get("update_interval_hours", 24),
+                    api_key=scraper_data.get("api_key", "")
                 )
 
         if "user_agent" in data:
@@ -92,7 +94,8 @@ class Config:
                 name: {
                     "url": sc.url,
                     "enabled": sc.enabled,
-                    "update_interval_hours": sc.update_interval_hours
+                    "update_interval_hours": sc.update_interval_hours,
+                    "api_key": sc.api_key
                 }
                 for name, sc in self.scrapers.items()
             },

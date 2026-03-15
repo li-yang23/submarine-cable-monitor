@@ -15,29 +15,34 @@ database:
 # Scraper configurations
 scrapers:
   telegeography:
-    url: https://www.submarinecablemap.com
+    url: https://api.telegeography.com
     enabled: true
     update_interval_hours: 24
+    api_key: ""  # Get from: https://www.telegeography.com/contact/
 
   infrapedia:
-    url: https://www.infrapedia.com
+    url: https://api.infrapedia.com
     enabled: true
     update_interval_hours: 24
+    api_key: ""  # Get from: https://www.infrapedia.com/api-access
 
   cablefaults:
     url: https://www.cablefaults.com
     enabled: true
     update_interval_hours: 6
+    api_key: ""  # Not needed - web scraping
 
   google_news:
     url: https://news.google.com
     enabled: true
     update_interval_hours: 4
+    api_key: ""  # Not needed - public RSS
 
   github:
     url: https://api.github.com
     enabled: true
     update_interval_hours: 24
+    api_key: ""  # Get from: https://github.com/settings/tokens (repo scope)
 
 # User agent
 user_agent: "Mozilla/5.0 (compatible; SubmarineCableMonitor/1.0; +https://github.com/li-yang23/submarine-cable-monitor)"
