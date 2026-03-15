@@ -35,7 +35,7 @@
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/submarine-cable-monitor.git
+git clone https://github.com/li-yang23/submarine-cable-monitor.git
 cd submarine-cable-monitor
 ```
 
@@ -95,7 +95,7 @@ python -m src.main --scrapers google_news github
    - Deploy updates to GitHub Pages
 
 5. Access the webpage at:
-   `https://your-username.github.io/submarine-cable-monitor/`
+   `https://li-yang23.github.io/submarine-cable-monitor/`
 
 ## Project Structure
 
