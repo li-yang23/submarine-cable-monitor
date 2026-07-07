@@ -78,7 +78,8 @@ class MonitorPipeline:
                         event["verification_status"] = "verified" if self.extractor.available else "rule_verified"
                         if dry_run:
                             continue
-                        inserted, _ = self.store.upsert(event)
+                        duplicate_checker = self.extractor.is_duplicate if self.extractor.available else None
+                        inserted, _ = self.store.upsert(event, duplicate_checker=duplicate_checker)
                         if inserted:
                             summary.inserted += 1
                         else:

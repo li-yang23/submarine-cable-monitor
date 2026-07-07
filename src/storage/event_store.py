@@ -28,6 +28,8 @@ class EventStore:
 
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        for event in self.events:
+            event["evidence_urls"] = clean_url_list(event.get("evidence_urls", []))
         with self.path.open("w", encoding="utf-8") as handle:
             for event in sorted(self.events, key=lambda item: item.get("occurrence_date") or "", reverse=True):
                 handle.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
@@ -43,7 +45,7 @@ class EventStore:
         self.save()
         return imported
 
-    def upsert(self, event: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
+    def upsert(self, event: dict[str, Any], duplicate_checker=None) -> tuple[bool, dict[str, Any]]:
         event = self.normalize_event(event)
         direct = self.find_by_uid(event["event_uid"])
         if direct:
@@ -52,11 +54,28 @@ class EventStore:
 
         duplicate = self.find_duplicate(event)
         if duplicate:
+            if duplicate_checker and not duplicate_checker(event, duplicate):
+                self.events.append(event)
+                return True, event
             self.merge(duplicate, event)
             return False, duplicate
 
         self.events.append(event)
         return True, event
+
+    def purge_source(self, source: str) -> int:
+        source = clean_text(source).lower()
+        before = len(self.events)
+        self.events = [
+            event
+            for event in self.events
+            if clean_text(event.get("source")).lower() != source
+            and source not in {clean_text(item).lower() for item in event.get("sources", [])}
+        ]
+        deleted = before - len(self.events)
+        if deleted:
+            self.save()
+        return deleted
 
     def find_by_uid(self, uid: str) -> dict[str, Any] | None:
         return next((event for event in self.events if event.get("event_uid") == uid), None)
@@ -83,9 +102,13 @@ class EventStore:
                 continue
             if not clean_text(target.get(key)) and clean_text(value):
                 target[key] = value
+            elif key == "original_text" and is_better_text(value, target.get(key)):
+                target[key] = value
+            elif key == "original_text_zh" and is_better_text(value, target.get(key)):
+                target[key] = value
 
         target["sources"] = sorted(set(target.get("sources", [])) | set(incoming.get("sources", [])))
-        target["evidence_urls"] = sorted(set(target.get("evidence_urls", [])) | set(incoming.get("evidence_urls", [])))
+        target["evidence_urls"] = clean_url_list(set(target.get("evidence_urls", [])) | set(incoming.get("evidence_urls", [])))
         target["updated_at"] = utcnow()
         target["duplicate_count"] = int(target.get("duplicate_count", 0)) + 1
 
@@ -94,6 +117,7 @@ class EventStore:
         normalized = {
             "event_uid": clean_text(event.get("event_uid")),
             "cable_name": clean_text(event.get("cable_name") or event.get("submarine_name")),
+            "submarine_name": clean_text(event.get("submarine_name") or event.get("cable_name")),
             "normalized_cable_id": clean_text(event.get("normalized_cable_id") or event.get("id")),
             "accident_location": clean_text(event.get("accident_location") or event.get("location")),
             "reason": clean_text(event.get("reason") or event.get("accident_reason")),
@@ -106,14 +130,18 @@ class EventStore:
             "url": clean_text(event.get("url") or event.get("title")),
             "title": clean_text(event.get("title")),
             "original_text": clean_text(event.get("original_text") or event.get("description")),
+            "original_text_zh": clean_text(event.get("original_text_zh")),
             "verification_status": clean_text(event.get("verification_status")) or "unverified",
+            "TrustWorthy": clean_text(event.get("TrustWorthy") or event.get("verification_status")) or "unverified",
+            "discovered_url": clean_text(event.get("discovered_url")),
             "raw_data": event.get("raw_data", {}),
             "created_at": clean_text(event.get("created_at")) or now,
             "updated_at": now,
         }
+        normalized["submarine_name"] = normalized["submarine_name"] or normalized["cable_name"]
         normalized["event_uid"] = normalized["event_uid"] or event_uid(normalized)
         normalized["sources"] = sorted({normalized["source"]} if normalized["source"] else set())
-        normalized["evidence_urls"] = sorted({normalized["url"]} if normalized["url"] else set())
+        normalized["evidence_urls"] = clean_url_list({normalized["url"]} if normalized["url"] else set())
         return normalized
 
     def export_json(self, path: str) -> None:
@@ -128,6 +156,7 @@ class EventStore:
         output.parent.mkdir(parents=True, exist_ok=True)
         fields = [
             "event_uid",
+            "submarine_name",
             "cable_name",
             "accident_location",
             "reason",
@@ -137,10 +166,13 @@ class EventStore:
             "repair_date",
             "published_date",
             "source",
+            "TrustWorthy",
             "verification_status",
             "url",
+            "discovered_url",
             "title",
             "original_text",
+            "original_text_zh",
         ]
         with output.open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=fields)
@@ -153,6 +185,7 @@ class EventStore:
         row = dict(row)
         row["source"] = source
         row["verification_status"] = clean_text(row.get("TrustWorthy")) or "imported"
+        row["TrustWorthy"] = clean_text(row.get("TrustWorthy")) or "imported"
         if clean_text(row.get("title")).startswith("http") and not clean_text(row.get("url")):
             row["url"] = row["title"]
         return row
@@ -160,3 +193,23 @@ class EventStore:
 
 def utcnow() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def is_better_text(candidate: Any, current: Any) -> bool:
+    candidate_text = clean_text(candidate)
+    current_text = clean_text(current)
+    if not candidate_text:
+        return False
+    current_lower = current_text.lower()
+    noisy = any(marker in current_lower for marker in ("read more", "sign up", "straight to your inbox", "tags:"))
+    return noisy or len(candidate_text) > len(current_text) + 80
+
+
+def clean_url_list(urls: Any) -> list[str]:
+    cleaned = sorted({clean_text(url) for url in urls if clean_text(url).startswith("http")})
+    result: list[str] = []
+    for url in cleaned:
+        if any(other != url and other.startswith(url) for other in cleaned):
+            continue
+        result.append(url)
+    return result

@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Cut",
     "affected_area": "",
@@ -1110,11 +1111,41 @@
         "source": "Google News",
         "title": "Internet may slow down for 80 hours as SMW-5 cable undergoes repairs - daily-sun.com",
         "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBsVjR2WE11NExGQ0JwWjQ1T01rZzZyRWUwTi1nR1FoemF0dTNicFFPbG5vOEFucHQ0aFFUWnRYeGZfdHgzZVU0eg?oc=5"
+=======
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Fluctuate",
+    "affected_area": "",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-07-07T16:11:20+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBYTlRrQlNSc3NyQ2Z6WmxwbGc2YU1FMkc2QU4wWExBLVhNRi1sVF9CaHdjRUtSU1ExaHkwdUVnQzNuQXRWTk9UeA?oc=5",
+    "duplicate_count": 1,
+    "event_uid": "evt_6e0a36be633919e5780f",
+    "evidence_urls": [
+      "https://tribune.com.pk/story/2616275/pta-says-internet-services-return-to-normal-after-smw5-submarine-cable-repaired",
+      "https://www.dawn.com/news/2012653"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-07-03",
+    "original_text": "PTA says submarine cable fault resolved, internet services back to normal - Tech - DAWN.COM.",
+    "original_text_zh": "",
+    "published_date": "2026-07-03",
+    "raw_data": {
+      "article": {
+        "content": "PTA says submarine cable fault resolved, internet services back to normal News Desk Published July 3, 2026 0 A man explores social media on a computer at an internet club in Islamabad on August 11, 2016. — Reuters/File Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Add Dawn as a trusted source The Pakistan Telecommunication Authority (PTA) announced on Friday that internet services in the country were back to normal after issues with the SEA-ME-WE 5 (SMW5) international submarine cable system were resolved. In a statement, the authority said that the fault in the cable system, which had led to widespread connectivity issues in the country on Thursday night, had been resolved, adding that internet traffic had returned to normal. It said Transworld Associates’ (TWA) international transit capacity has been restored. According to its website, TWA is the only private-sector operator with exclusive ownership of submarine fibre-optic cable systems. Subsequently, internet service provider Nayatel said that “international traffic has returned to normal”. “Our teams continue to closely monitor the network to ensure service stability,” it said. On Thursday night, the PTA had said that a technical fault along the SMW5 route was affecting data traffic. It had said that “some internet users may experience intermittent degradation in service quality and connectivity as a result of the fault.” In November, a new submarine internet cable — the South-East Asia–Middle East–Western Europe 6 (SEA-ME-WE 6) — landed in Pakistan. The cable has a total capacity of over 100 terabits per second and it will provide “one of the lowest-latency routes between Southeast Asia, the Middle East, and Western Europe”, the information technology ministry said. It added that Pakistan has been allocated a total of 13.2tbps. The ministry elaborated that SEA-ME-WE 6 featured “more fibre pairs and more than double the capacity” of previous SEA-ME-WE systems, enhancing resilience and diversification across high-traffic Asia-Europe routes through trans-Egypt geo-diversified crossings and landing points.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBYTlRrQlNSc3NyQ2Z6WmxwbGc2YU1FMkc2QU4wWExBLVhNRi1sVF9CaHdjRUtSU1ExaHkwdUVnQzNuQXRWTk9UeA?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-07-03",
+        "source": "Google News",
+        "title": "PTA says submarine cable fault resolved, internet services back to normal - Tech - DAWN.COM",
+        "url": "https://www.dawn.com/news/2012653"
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
       },
       "extracted": {
         "accident_location": "",
         "accident_type": "Fluctuate",
         "affected_area": "",
+<<<<<<< HEAD
         "cable_name": "SMW-5",
         "occurrence_date": "2026-04-09",
         "original_text": "Internet may slow down for 80 hours as SMW-5 cable undergoes repairs - daily-sun.com. <a href=\"https://news.google.com/rss/articles/CBMiSEFVX3lxTFBsVjR2WE11NExGQ0JwWjQ1T01rZzZyRWUwTi1nR1FoemF0dTNicFFPbG5vOEFucHQ0aFFUWnRYeGZfdHgzZVU0eg?oc=5\" target=\"_blank\">Internet may slow down for 80 hours as SMW-5 cable undergoes repairs</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">daily-sun.com</font>",
@@ -1169,11 +1200,76 @@
       }
     },
     "reason": "",
+=======
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": "2026-07-03",
+        "original_text": "PTA says submarine cable fault resolved, internet services back to normal - Tech - DAWN.COM.",
+        "reason": "fault resolved",
+        "repair_date": ""
+      }
+    },
+    "reason": "fault resolved",
     "repair_date": null,
     "source": "Google News",
     "sources": [
       "Google News"
     ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "PTA says submarine cable fault resolved, internet services back to normal - Tech - DAWN.COM",
+    "updated_at": "2026-07-07T16:11:20+00:00",
+    "url": "https://www.dawn.com/news/2012653",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-07-07T16:11:20+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE50b3RFZXN2b3FodGdoN0ZjcmY3TnJuRjczZlZBVk1mZkZZZFd1M25odTllUzVQUTRYbmQyWkIyMk04QXNINktncw?oc=5",
+    "duplicate_count": 4,
+    "event_uid": "evt_8189b6b8a0a38d6d471a",
+    "evidence_urls": [
+      "https://tribune.com.pk/story/2616144/pta-warns-of-intermittent-internet-issues-after-submarine-cable-fault",
+      "https://www.app.com.pk/national/pta-monitors-internet-traffic-disruption-following-smw5-submarine-cable-fault/",
+      "https://www.brecorder.com/news/40428227/pta-says-monitoring-internet-disruption-following-smw5-submarine-cable-fault",
+      "https://www.dawn.com/news/2012491"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-07-02",
+    "original_text": "Submarine cable fault may cause intermittent internet disruption: PTA Kalbe Ali Published July 2, 2026 0 Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Add Dawn as a trusted source ISLAMABAD: The Pakistan Telecommunication Authority (PTA) said on Thursday it was closely monitoring internet traffic disruptions caused by a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, which was likely to cause intermittent degradation in service quality and connectivity.",
+    "original_text_zh": "",
+    "published_date": "2026-07-02",
+    "raw_data": {
+      "article": {
+        "content": "Submarine cable fault may cause intermittent internet disruption: PTA Kalbe Ali Published July 2, 2026 0 Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Add Dawn as a trusted source ISLAMABAD: The Pakistan Telecommunication Authority (PTA) said on Thursday it was closely monitoring internet traffic disruptions caused by a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, which was likely to cause intermittent degradation in service quality and connectivity. The telecom authority added that Transworld Associates (TWA) is coordinating with the SMW5 consortium to “identify the root cause of the fault” and determine the estimated time for restoration. According to its website, TWA is the only private-sector operator with exclusive ownership of submarine fibre-optic cable systems. “In the meantime, internet traffic is being rerouted through alternate international links to minimise the impact and ensure service continuity to the greatest extent possible,” the statement added. Meanwhile, TWA customers received an SMS apologising for the inconvenience and stating that there was a “technical fault” in one of its submarine cables. “Our technical teams are effectively working and we will update you accordingly,” the message read. The PTA said it remains in close coordination with the relevant stakeholders and will continue to monitor the situation. In November, a new submarine internet cable — the South-East Asia–Middle East–Western Europe 6 (SEA-ME-WE 6) — landed in Pakistan. The cable has a total capacity of over 100 terabit per second and it will provide “one of the lowest-latency routes between Southeast Asia, the Middle East, and Western Europe”, said the information technology ministry. It added that Pakistan has been allocated a total of 13.2tbps. The ministry elaborated that SEA-ME-WE 6 features “more fibre pairs and more than double the capacity” of previous SEA-ME-WE systems, enhancing resilience and diversification across high-traffic Asia-Europe routes through trans-Egypt geo-diversified crossings and landing points.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE50b3RFZXN2b3FodGdoN0ZjcmY3TnJuRjczZlZBVk1mZkZZZFd1M25odTllUzVQUTRYbmQyWkIyMk04QXNINktncw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-07-02",
+        "source": "Google News",
+        "title": "Submarine cable fault may cause intermittent internet disruption: PTA - Pakistan - DAWN.COM",
+        "url": "https://www.dawn.com/news/2012491"
+      },
+      "extracted": {
+        "accident_location": "",
+        "accident_type": "Fluctuate",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": "2026-07-02",
+        "original_text": "Submarine cable fault may cause intermittent internet disruption: PTA Kalbe Ali Published July 2, 2026 0 Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Add Dawn as a trusted source ISLAMABAD: The Pakistan Telecommunication Authority (PTA) said on Thursday it was closely monitoring internet traffic disruptions caused by a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, which was likely to cause intermittent degradation in service quality and connectivity.",
+        "reason": "fault may cause intermittent internet disruption: PTA Kalbe Ali Published July 2",
+        "repair_date": ""
+      }
+    },
+    "reason": "fault may cause intermittent internet disruption: PTA Kalbe Ali Published July 2",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+<<<<<<< HEAD
     "title": "Bangladesh SMW-5 Repairs Trigger 80-Hour Disruption - SubTel Forum",
     "updated_at": "2026-07-07T14:59:58+00:00",
     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQc0IzSEsxRUd6RXZhcExFQW5sSlFhSlJ5R3pWU0hkR1NOSjZrVVNlZmM1d0hQYVJ5MVBWakJhd0tvUGdJT2NQVUNLR3F4NTJ3OTY2dEJGVjlpRjYwdHpBWVpYa3Foa0pNOTBWM2Z2ZmlSNXdXcUxKRkRwR0VsNDE3QXZn?oc=5",
@@ -2481,6 +2577,13 @@
     "updated_at": "2026-07-07T15:00:08+00:00",
     "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Pc2NUMVY2WlFUMEI5ejQ0UTBrTWdWMUlSOVBiVHJ2S3FIeUxHdlJYN3hIdlNSNGQ2SElLTEV2cWJaLXhHN3Vvdw?oc=5",
     "verification_status": "verified"
+=======
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Submarine cable fault may cause intermittent internet disruption: PTA - Pakistan - DAWN.COM",
+    "updated_at": "2026-07-07T16:11:20+00:00",
+    "url": "https://www.dawn.com/news/2012491",
+    "verification_status": "rule_verified"
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "Regional submarine cables",
@@ -2488,7 +2591,11 @@
     "affected_area": "Pakistan",
     "cable_name": "IMEWE",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 2,
+=======
+    "duplicate_count": 1,
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_b4e5ba4b5a61a6c8e903",
     "evidence_urls": [
       "https://subtelforum.com/pakistan-internet-fully-restored-nationwide-by-monday/"
@@ -2502,11 +2609,18 @@
     "repair_date": "2025-10-27",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/pakistan-internet-fully-restored-nationwide-by-monday/",
     "updated_at": "2026-07-07T15:01:54+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/pakistan-internet-fully-restored-nationwide-by-monday/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/pakistan-internet-fully-restored-nationwide-by-monday/",
     "verification_status": "imported"
   },
@@ -2516,7 +2630,10 @@
     "affected_area": "Pakistan (especially upper Punjab and federal capital)",
     "cable_name": "PTCL Submarine Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_0519b5aa567450e15e85",
     "evidence_urls": [
       "https://subtelforum.com/internet-services-restored-after-repair-of-submarine-cable-ptcl/"
@@ -2530,6 +2647,7 @@
     "repair_date": "2025-10-14",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
@@ -2807,6 +2925,14 @@
     "updated_at": "2026-07-07T15:00:18+00:00",
     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPYTZNa2F4S0p4Qi1MdDdINHpNc1h4NU1aV0FEOHNVeFcxcnFNTjQ2ajZxMjlaRDlfcExYQmlYT3JaRUF2SXFNOHVxWGxVZWhuTUgxMjFia2tISmxUVlB5UVJMdTN5bHFxaG9zSFlhbkNaOWpseWpBNzdGUWIwMDNEN2t6ZGp3bTB3cUlRcHQzaw?oc=5",
     "verification_status": "verified"
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/internet-services-restored-after-repair-of-submarine-cable-ptcl/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "https://subtelforum.com/internet-services-restored-after-repair-of-submarine-cable-ptcl/",
+    "verification_status": "imported"
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "Between Scarinish on Tiree and Calgary on Mull",
@@ -2814,7 +2940,10 @@
     "affected_area": "Tiree Island",
     "cable_name": "BT Highlands and Islands Submarine Cable System",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_d5253d0e6366e4159e7c",
     "evidence_urls": [
       "https://subtelforum.com/tiree-subsea-cable-repairs-begin-after-storm-damage/"
@@ -2832,11 +2961,16 @@
       "history"
     ],
     "title": "https://subtelforum.com/tiree-subsea-cable-repairs-begin-after-storm-damage/",
+<<<<<<< HEAD
     "updated_at": "2026-07-07T15:01:54+00:00",
+=======
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/tiree-subsea-cable-repairs-begin-after-storm-damage/",
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Cut",
     "affected_area": "",
@@ -2882,12 +3016,18 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Kamchatka Peninsula, Far East Russia",
     "accident_type": "Maintenance",
     "affected_area": "Kamchatka Peninsula",
     "cable_name": "Sakhalin-Kamchatka fiber-optic line",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 2,
+=======
+    "duplicate_count": 1,
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_f52e05a0b63558f4b132",
     "evidence_urls": [
       "https://subtelforum.com/kamchatka-faces-5-day-internet-outage-for-cable-repairs/"
@@ -2901,11 +3041,18 @@
     "repair_date": "2025-09-29",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/kamchatka-faces-5-day-internet-outage-for-cable-repairs/",
     "updated_at": "2026-07-07T15:01:55+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/kamchatka-faces-5-day-internet-outage-for-cable-repairs/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/kamchatka-faces-5-day-internet-outage-for-cable-repairs/",
     "verification_status": "imported"
   },
@@ -2915,7 +3062,10 @@
     "affected_area": "Nancowry and Great Nicobar",
     "cable_name": "Chennai–Andaman and Nicobar Islands (CANI) Submarine Optical Fibre Cable System",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_e96559dced731b32b6d8",
     "evidence_urls": [
       "https://subtelforum.com/asean-restorer-to-repair-cani-cable-near-nicobar/"
@@ -2933,11 +3083,16 @@
       "history"
     ],
     "title": "https://subtelforum.com/asean-restorer-to-repair-cani-cable-near-nicobar/",
+<<<<<<< HEAD
     "updated_at": "2026-07-07T15:01:55+00:00",
+=======
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/asean-restorer-to-repair-cani-cable-near-nicobar/",
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Limit",
     "affected_area": "",
@@ -2983,12 +3138,17 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Near Yemen",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
     "cable_name": "Multiple (4-5 cables unspecified)",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_0c166fe1842c996e6ca7",
     "evidence_urls": [
       "https://subtelforum.com/internet-outage-in-pakistan-to-last-4-5-weeks/"
@@ -3006,7 +3166,11 @@
       "history"
     ],
     "title": "https://subtelforum.com/internet-outage-in-pakistan-to-last-4-5-weeks/",
+<<<<<<< HEAD
     "updated_at": "2026-07-07T15:01:55+00:00",
+=======
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/internet-outage-in-pakistan-to-last-4-5-weeks/",
     "verification_status": "imported"
   },
@@ -3016,7 +3180,10 @@
     "affected_area": "Pakistan",
     "cable_name": "Undersea internet cables near Saudi Arabia",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_f1d8bdfc00d990e4fd17",
     "evidence_urls": [
       "https://subtelforum.com/internet-speed-in-pakistan-remains-slow/"
@@ -3034,11 +3201,16 @@
       "history"
     ],
     "title": "https://subtelforum.com/internet-speed-in-pakistan-remains-slow/",
+<<<<<<< HEAD
     "updated_at": "2026-07-07T15:01:55+00:00",
+=======
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/internet-speed-in-pakistan-remains-slow/",
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Limit",
     "affected_area": "",
@@ -3805,12 +3977,17 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Saudi waters near Jeddah",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
     "cable_name": "SMW4 and IMEWE",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_c6c46e6055e3b589783f",
     "evidence_urls": [
       "https://subtelforum.com/submarine-cable-cuts-disrupt-internet-services-in-pakistan/"
@@ -3824,15 +4001,23 @@
     "repair_date": null,
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/submarine-cable-cuts-disrupt-internet-services-in-pakistan/",
     "updated_at": "2026-07-07T15:01:56+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/submarine-cable-cuts-disrupt-internet-services-in-pakistan/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/submarine-cable-cuts-disrupt-internet-services-in-pakistan/",
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Cut",
     "affected_area": "",
@@ -4061,12 +4246,17 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "South and Central Papua",
     "accident_type": "Limit",
     "affected_area": "South and Central Papua",
     "cable_name": "Papua New Guinea submarine cable",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_1dd89a2034e6de8887c3",
     "evidence_urls": [
       "https://subtelforum.com/telkom-plans-papua-submarine-cable-repair/"
@@ -4080,6 +4270,7 @@
     "repair_date": null,
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
@@ -4132,6 +4323,14 @@
     "updated_at": "2026-07-07T15:00:12+00:00",
     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9DeFFfUlZjTmRqc2hGUlpCQ01ianZRS1dUWmRzYWRUSWpJNDdteXFFaXUxQ2RhQ3JBUGxZeHR2S0Vad1NKc01pb2RQTmtYd19oYjZMTEZkTC10OFE5R3ZhT05Uc2NBRnlWem9Saks5TEtIeWk0eDJteQ?oc=5",
     "verification_status": "verified"
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/telkom-plans-papua-submarine-cable-repair/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "https://subtelforum.com/telkom-plans-papua-submarine-cable-repair/",
+    "verification_status": "imported"
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "Branching Unit in Namibia",
@@ -4139,7 +4338,10 @@
     "affected_area": "South Africa, particularly Cape Town and regions relying on West Coast cables",
     "cable_name": "West Africa Cable System (WACS)",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_0521d309f22ff23ae7d8",
     "evidence_urls": [
       "https://subtelforum.com/wacs-cable-fault-slows-south-africa-internet/"
@@ -4153,11 +4355,18 @@
     "repair_date": "2025-05-16",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/wacs-cable-fault-slows-south-africa-internet/",
     "updated_at": "2026-07-07T15:01:57+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/wacs-cable-fault-slows-south-africa-internet/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/wacs-cable-fault-slows-south-africa-internet/",
     "verification_status": "imported"
   },
@@ -4167,7 +4376,10 @@
     "affected_area": "PEACE Egypt to Singapore segment, East Africa",
     "cable_name": "PEACE",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_f223f85e4f3f3e0001c9",
     "evidence_urls": [
       "https://subtelforum.com/peace-submarine-cable-cut-disrupts-east-africa/"
@@ -4181,15 +4393,23 @@
     "repair_date": "2025-04-30",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/peace-submarine-cable-cut-disrupts-east-africa/",
     "updated_at": "2026-07-07T15:01:58+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/peace-submarine-cable-cut-disrupts-east-africa/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/peace-submarine-cable-cut-disrupts-east-africa/",
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Cut",
     "affected_area": "",
@@ -4636,6 +4856,8 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Approximately 5 nautical miles offshore from Taiwan",
     "accident_type": "Cut",
     "affected_area": "Communications and data between Taiwan and Penghu",
@@ -4660,6 +4882,7 @@
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "https://subtelforum.com/taiwan-charges-chinese-captain-in-undersea-cable-case/",
     "verification_status": "imported"
+<<<<<<< HEAD
   },
   {
     "accident_location": "",
@@ -4705,6 +4928,8 @@
     "updated_at": "2026-07-07T15:00:51+00:00",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONHR0MUk3My1hc2V5TkM1NFZqbnd5R25OZ2s2YjB4YjdWaXpzR3RhXzZ5aU4ta0czWEZHdVdsR1ZXdlVXNUxBY1VuSjFKVFo1dzJ1ZmNFQ3JXaEJCM3dGa1lEeTM5eEtTWVJMTDJIR2FXcUJzSXlFeU9hSmFHbzBYSVYteEVzNmxZeG5IRjNHUm1BZFlJSWktUG1JeVZ1UkdxZ3UySlUwQ1R6MGdCbjZTeDlZaUlMQQ?oc=5",
     "verification_status": "verified"
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "S9 segment to Singapore and S1.9 segment to Malaysia",
@@ -4712,7 +4937,10 @@
     "affected_area": "Vietnam's global internet connectivity",
     "cable_name": "Asia Pacific Gateway (APG)",
     "created_at": "2026-07-07T12:58:06+00:00",
+<<<<<<< HEAD
     "duplicate_count": 1,
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "event_uid": "evt_04839daaadf9fc3084a8",
     "evidence_urls": [
       "https://subtelforum.com/vietnam-internet-restored-after-apg-fix/"
@@ -4726,11 +4954,18 @@
     "repair_date": "2025-05-01",
     "source": "history",
     "sources": [
+<<<<<<< HEAD
       "SubTel Forum",
       "history"
     ],
     "title": "https://subtelforum.com/vietnam-internet-restored-after-apg-fix/",
     "updated_at": "2026-07-07T15:01:57+00:00",
+=======
+      "history"
+    ],
+    "title": "https://subtelforum.com/vietnam-internet-restored-after-apg-fix/",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "url": "https://subtelforum.com/vietnam-internet-restored-after-apg-fix/",
     "verification_status": "imported"
   },
@@ -4787,6 +5022,7 @@
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Limit",
     "affected_area": "",
@@ -4877,6 +5113,8 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "near Qatar",
     "accident_type": "Cut",
     "affected_area": "Pakistan",
@@ -4929,6 +5167,7 @@
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Limit",
     "affected_area": "",
@@ -5019,6 +5258,8 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Near Egypt",
     "accident_type": "Cut",
     "affected_area": "Pakistan",
@@ -5026,9 +5267,13 @@
     "created_at": "2026-07-07T12:58:06+00:00",
     "duplicate_count": 2,
     "event_uid": "evt_00ba0713f443f7b783e8",
+<<<<<<< HEAD
     "evidence_urls": [
       "Real Culprit Behind Pakistan 2024 Internet Disruptions.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-5",
     "occurrence_date": null,
     "original_text": "The documents revealed that two minor and two major faults occurred this year, with the SEAMEWE-5 cable suffering a cut near Egypt in February.",
@@ -5052,9 +5297,13 @@
     "cable_name": "Falcon",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_cc2ee07eecff0c521f38",
+<<<<<<< HEAD
     "evidence_urls": [
       "Kuwait Internet Restored After Submarine Cable Disruption.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "falcon",
     "occurrence_date": null,
     "original_text": "The Communication and Information Technology Regulatory Authority (CITRA) of Kuwait recently reported a significant disruption affecting internet services in the country. The incident arose from a fault in the Falcon international submarine cable operated by Global Cloud Xchange (GCX), specifically impacting the link between Kuwait and Al-Khobar, Saudi Arabia. Notably, the disruption occurred in an area outside of Kuwaiti territorial waters, resulting in a decline in the quality of internet services across the nation.",
@@ -5063,6 +5312,7 @@
     "reason": "Fault in the Falcon international submarine cable",
     "repair_date": "2024-09-29",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5093,6 +5343,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Kuwait Internet Restored After Submarine Cable Disruption.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Kuwait Internet Restored After Submarine Cable Disruption.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Pakistan",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan",
+    "cable_name": "Sea-Me-We4(SMW-4)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_e6e4c9326e6d4928f7cc",
+    "evidence_urls": [],
+    "normalized_cable_id": "seamewe-4",
+    "occurrence_date": null,
+    "original_text": "Pakistan’s telecom authority reiterated on Wednesday that faults in two international undersea Internet cables are to blame for slow Internet across the country, saying that one of them is likely to be repaired by early October. “The ongoing Internet slowdown across the country is mainly due to fault in two (SMW4, AAE-1) of the seven international submarine cables connecting Pakistan internationally,” the Pakistan Telecommunication Authority (PTA) said in a message. “It is updated that fault in SMW-4 submarine cable is likely to be repaired by early October 2024,” the authority added.",
+    "published_date": "2024-08-28",
+    "raw_data": {},
+    "reason": "Undisclosed fault",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Submarine Cable Faults Disrupts Internet in Pakistan.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Submarine Cable Faults Disrupts Internet in Pakistan.txt",
@@ -5105,9 +5385,13 @@
     "cable_name": "Eastern Africa Submarine System (EASSy)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_1d51c36d63738b1d3c44",
+<<<<<<< HEAD
     "evidence_urls": [
       "Another Internet Cable Fault Hits South Africa.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "eastern-africa-submarine-system-eassy",
     "occurrence_date": null,
     "original_text": "Several links on the Eastern Africa Submarine System (EASSy) have been offline since Tuesday due to shunt fault, MyBroadband has learned. An industry source with knowledge of the situation explained that traffic to the Middle East and Central and Eastern Europe was the most affected and seeing increased latency. However, unlike the incidents earlier this year, the fault does not appear to have caused major disruptions to the continent’s Internet.",
@@ -5131,9 +5415,13 @@
     "cable_name": "Sea-Me-We4(SMW-4)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_5190875b4e5d1652e0c9",
+<<<<<<< HEAD
     "evidence_urls": [
       "Pakistan Internet Issues Linked to Faulty Submarine Cable.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-4",
     "occurrence_date": null,
     "original_text": "The PTA now says the nationwide slow internet is due to a “faulty submarine cable”. ...However, a major dip in internet services has allegedly been traced back to a major internet service provider (ISP) making a “severe misconfiguration in their core network”. ...Blame was attributed to various issues, including “cutting of one of the submarine cables (SMW4) for last one month or so”. This has apparently reduced the inland capacity by 1.5 terabits (Tbit) per second.",
@@ -5142,6 +5430,7 @@
     "reason": "Faulty submarine cable, cutting of the cable, severe misconfiguration in the core network of a major internet service provider",
     "repair_date": "2024-08-28",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5168,10 +5457,62 @@
     "raw_data": {},
     "reason": "Suspected dragging ship anchor",
     "repair_date": "2024-06-03",
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Pakistan Internet Issues Linked to Faulty Submarine Cable.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Pakistan Internet Issues Linked to Faulty Submarine Cable.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Off the coast of KwaZulu-Natal, South Africa",
+    "accident_type": "Cut",
+    "affected_area": "Multiple East African countries",
+    "cable_name": "SEACOM/Tata TGN-Eurasia",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_97e0c5667ecec7eeb385",
+    "evidence_urls": [],
+    "normalized_cable_id": "seacomtata-tgn-eurasia",
+    "occurrence_date": null,
+    "original_text": "On 12 May 2024, two fiber optic submarine cables—SEACOM and EASSy—were damaged off the coast of KwaZulu-Natal, South Africa, significantly reducing Internet connectivity in multiple East African countries. The cause of the damage is a suspected dragging ship anchor, a common source of submarine cable cuts. All cables were repaired as of 3 June 2024—approximately three weeks after the initial damage.",
+    "published_date": "2024-07-23",
+    "raw_data": {},
+    "reason": "Suspected dragging ship anchor",
+    "repair_date": "2024-06-03",
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "2024 East Africa Submarine Cable Outage Report.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "2024 East Africa Submarine Cable Outage Report.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Red Sea, Yemen",
+    "accident_type": "Cut",
+    "affected_area": "Connections between Asia and Europe, and Yemen’s waters",
+    "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_47aa6fe7857d3d3cdbb8",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-africa-europe-1-aae-1",
+    "occurrence_date": null,
+    "original_text": "Repairs have finally commenced on three subsea telecommunications cables that were damaged in the Red Sea in February, even as Houthi militants escalate their attacks on ships in the area. The AAE-1 cable, a 25 000km fibre-optic link between Asia and Europe, was repaired by a ship owned by E-Marine, a subsidiary of Abu Dhabi-based Emirates Telecommunications Group. The cable came online this week, a Yemeni government official said. The same ship, Niwa, remains in Yemeni waters to repair the remaining two cables, Seacom and EIG. Repairs to the cables have depended on gaining access to infrastructure in Yemen’s waters, a task complicated by the country’s split government and the fact the Red Sea is a conflict zone.",
+    "published_date": "2024-07-17",
+    "raw_data": {},
+    "reason": "Severed by the anchor of a cargo ship sunk by Houthi militants",
+    "repair_date": "2024-07-17",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "2024 East Africa Submarine Cable Outage Report.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "2024 East Africa Submarine Cable Outage Report.txt",
@@ -5195,10 +5536,34 @@
     "raw_data": {},
     "reason": "Severed by the anchor of a cargo ship sunk by Houthi militants",
     "repair_date": "2024-07-17",
+=======
+    "title": "Finally, Progress With Red Sea Cable Repairs.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Finally, Progress With Red Sea Cable Repairs.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Near Abidjan, Ivory Coast",
+    "accident_type": "Limit",
+    "affected_area": "Africa - severely affected: Ivory Coast, Liberia, Benin, Ghana, Burkina Faso. Medium disruptions: Cameroon, Gabon, Namibia. Low disruptions: South Africa, Lesotho, Nigeria",
+    "cable_name": "West African Cable System (WACS)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_176b3a931b2017a4baf2",
+    "evidence_urls": [],
+    "normalized_cable_id": "west-africa-cable-system-wacs",
+    "occurrence_date": null,
+    "original_text": "“MyBroadband has learned that multiple breaks in submarine cables near Abidjan in Ivory Coast are causing outages. The West African Cable System (WACS), Coastal Africa to Europe (ACE) cables, MainOne and SAT3 cables are affected,” a report said.",
+    "published_date": "2024-07-12",
+    "raw_data": {},
+    "reason": "Multiple breaks in submarine cables",
+    "repair_date": null,
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "source": "history",
     "sources": [
       "history"
     ],
+<<<<<<< HEAD
     "title": "Finally, Progress With Red Sea Cable Repairs.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Finally, Progress With Red Sea Cable Repairs.txt",
@@ -5226,6 +5591,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Massive Internet Outages Have Been Reported Across Africa.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Massive Internet Outages Have Been Reported Across Africa.txt",
@@ -5238,9 +5605,13 @@
     "cable_name": "Tonga Domestic Cable Extension (TDCE)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_6834a53cbba7e9ea2b98",
+<<<<<<< HEAD
     "evidence_urls": [
       "Vava’u and Ha’apai Suffer Third Cable Blackout.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "tonga-domestic-cable-extension-tdce",
     "occurrence_date": null,
     "original_text": "A total communications failure on Tonga's only inter-island domestic submarine cable has continued to severely impact telephone and internet services to the outer islands since 29 June, and it is likely to be several weeks before it is known how long it might take for normal services to be restored. Tonga Cable Acting CEO, Sosafate Kolo said the cause of the disruption to the cable is unknown. Tonga Cable believed that the cable damage was caused by an earthquake that occured early morning on Saturday, 29 June, as the cable failure occured after the earthquake.",
@@ -5264,9 +5635,13 @@
     "cable_name": "Sea-Me-We4(SMW-4)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_b4141542448e52605167",
+<<<<<<< HEAD
     "evidence_urls": [
       "Submarine Cable Fault Disrupts Internet in Pakistan.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-4",
     "occurrence_date": null,
     "original_text": "Due to a fault in the global submarine cable, the internet service was affected in some parts of Pakistan. According to the Pakistan Telecommunication Authority (PTA), a malfunction has occurred in the international submarine cable SMW4, which is one of the seven cables connecting Pakistan to the globe through the internet web. Due to the malfunction, the users may experience slow internet service during peak hours.",
@@ -5275,6 +5650,7 @@
     "reason": "Fault in the global submarine cable",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5300,11 +5676,62 @@
     "published_date": "2024-06-18",
     "raw_data": {},
     "reason": "Not specified, potential simple degradation or ships damaging cables",
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Submarine Cable Fault Disrupts Internet in Pakistan.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Submarine Cable Fault Disrupts Internet in Pakistan.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Connection to Singapore",
+    "accident_type": "Fluctuate",
+    "affected_area": "Vietnam",
+    "cable_name": "tata TGN-Intra Asia(TGN-IA)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_8b59174a7ca039432701",
+    "evidence_urls": [],
+    "normalized_cable_id": "tata-tgn-intra-asia-tgn-ia",
+    "occurrence_date": null,
+    "original_text": "Internet connectivity between Vietnam and the rest of the globe has degraded yet again after three of the five submarine internet cables failed around June 15 and remain down.",
+    "published_date": "2024-06-18",
+    "raw_data": {},
+    "reason": "Not specified, potential simple degradation or ships damaging cables",
     "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "Vietnam Internet Disruptions as Three Submarine Cables Fail.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Vietnam Internet Disruptions as Three Submarine Cables Fail.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Near the crossing with Le Trou Sans Fond Canyon, an underwater canyon off the coast of Abidjan",
+    "accident_type": "Limit",
+    "affected_area": "Ghana",
+    "cable_name": "ACR",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_572f64114441147c5181",
+    "evidence_urls": [],
+    "normalized_cable_id": "NotFound",
+    "occurrence_date": null,
+    "original_text": "On March 14 this year, Ghana's data services were disrupted due to underwater cable damage. All four undersea cable landing service providers in Ghana (ACR, MainOne, SAT-3, and WACS) were disconnected from international data services, resulting in a complete internet shutdown. According to the subsea cable service providers, all four cable faults were discovered near the crossing with Le Trou Sans Fond Canyon, an underwater canyon off the coast of Abidjan. Dr. Anokye stated that the SAT-3 cable was restored on April 6 and the ACE cable on April 17, 2024. “The WACS cable was repaired on April 29, 2024, and the MainOne cable repairs were completed on May 8, 2024,” he added.",
+    "published_date": "2024-05-20",
+    "raw_data": {},
+    "reason": "Underwater cable damage",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "Vietnam Internet Disruptions as Three Submarine Cables Fail.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Vietnam Internet Disruptions as Three Submarine Cables Fail.txt",
@@ -5327,11 +5754,34 @@
     "published_date": "2024-05-20",
     "raw_data": {},
     "reason": "Underwater cable damage",
+=======
+    "title": "Ghana’s Submarine Cables Repaired.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Ghana’s Submarine Cables Repaired.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Red Sea",
+    "accident_type": "Limit",
+    "affected_area": "Middle East, Europe, Africa",
+    "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_29547009cc6de5cf1f9d",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-africa-europe-1-aae-1",
+    "occurrence_date": null,
+    "original_text": "This week, reports suggest that the Yemeni government has contacted members of the AAE-1 (Asia-Africa-Europe 1) submarine cable consortium, informing them that they are being probed with regard to ties to the nation’s Houthi rebels....Crucially, while this investigation is ongoing, the official Yemeni government will not give permission for cable ships to repair AAE-1, which was damaged along with two other cables (EIG and SEACOM/TGN-Eurasia) back in February....One of these attacks caused a vessels anchor to be dragged across the trio of subsea cables, severing them and causing major telecommunications disruption across the Middle East, Europe, and Africa.",
+    "published_date": "2024-05-15",
+    "raw_data": {},
+    "reason": "Attack by Muslim Houthis causing a vessel's anchor to be dragged across the trio of subsea cables",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+<<<<<<< HEAD
     "title": "Ghana’s Submarine Cables Repaired.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Ghana’s Submarine Cables Repaired.txt",
@@ -5359,6 +5809,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Yemen Government Probes Delay AAE-1 Cable Repairs.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Yemen Government Probes Delay AAE-1 Cable Repairs.txt",
@@ -5371,9 +5823,13 @@
     "cable_name": "MainOne",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_deb7e8804963b4172a2e",
+<<<<<<< HEAD
     "evidence_urls": [
       "MainOne Completes Repairs to Restore Internet.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "mainone",
     "occurrence_date": null,
     "original_text": "MainOne, a provider of undersea fiber optic internet connectivity in West Africa, has announced the successful repair of its submarine cable system. The issue with the cable which occurred on March 14, 2024, disrupted internet services across the region.",
@@ -5389,6 +5845,7 @@
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "MainOne Completes Repairs to Restore Internet.txt",
     "verification_status": "False"
+<<<<<<< HEAD
   },
   {
     "accident_location": "",
@@ -5479,6 +5936,8 @@
     "updated_at": "2026-07-07T15:00:15+00:00",
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9OQURxcWdFWEhOUS1vZ0dHdDJpanQ4Nmg3YjBVazBSVWc3Ynp1VEZBNEx0WTFyRkc1SWxFOXRyN2o5T2VyeVZBZko2YkFoSlM0VWM0TFhIbEtDWUhOdkw1NHUyYnlLYlZrRXVER2lPZ1VkN3drN0QwdGhrbw?oc=5",
     "verification_status": "verified"
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "Spot between Singapore and Malaysia",
@@ -5487,9 +5946,13 @@
     "cable_name": "Sea-Me-We5(SMW-5)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_ff53a691957d3dece6d3",
+<<<<<<< HEAD
     "evidence_urls": [
       "Submarine Cable Break Slows Internet in Bangladesh.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-5",
     "occurrence_date": null,
     "original_text": "Bangladeshi internet users are experiencing disruptions after the country's second submarine cable, SEA-ME-WE 5, the largest supplier of international bandwidth to Bangladesh, broke Friday night. The issue was identified at midnight. It will take at least two to three days to resume the connection. The undersea cable of the SEA-ME-WE 5 got broken in a spot between Singapore and Malaysia. So, a ship will be mobilised to repair and restore the service. The total operation will take minimum of two to three days.",
@@ -5498,6 +5961,7 @@
     "reason": "Cable Breakage",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5528,10 +5992,41 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Submarine Cable Break Slows Internet in Bangladesh.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Submarine Cable Break Slows Internet in Bangladesh.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Atlantic Ocean",
+    "accident_type": "Cut",
+    "affected_area": "West African countries, Nigeria inclusive",
+    "cable_name": "MainOne",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_7c35ef7e78fb510324fa",
+    "evidence_urls": [],
+    "normalized_cable_id": "mainone",
+    "occurrence_date": null,
+    "original_text": "The affected cables include: MainOne Cable, West African Cable System (WACS), African Coast to Europe (ACE) submarine cable and SAT3 subsea cable systems.",
+    "published_date": "2024-03-26",
+    "raw_data": {},
+    "reason": "Heavy landslides from the coast of Cote d’Ivoire",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "$8M to Restore Subsea Cable Services.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "$8M to Restore Subsea Cable Services.txt",
     "verification_status": "False"
+<<<<<<< HEAD
   },
   {
     "accident_location": "",
@@ -5577,6 +6072,8 @@
     "updated_at": "2026-07-07T15:00:16+00:00",
     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRmpIUlppX2pPSzhDVlp3WXlMVmF5ZWh2QmN4S3drWW5sNmYtMGpNX2hwMUlOcnZkTWRaTy1fNk1qUUpKRFJxR29SMllfTWh5cnRxTTRmN01VU0UwMHlOczFWQ0tPTHUtc3hzNXhraTFrT2J4TEIwYkJWNV8wYTNyc0xTWlpiWVgxOFluLXNGSGRBZ3EyS0draG9pckpsS0pDVDJaWExMbnhYcUQ4Tkx0b28wOXMyOXNPdkxTYjhjemJGZGpKcmpvQ2ZhaWI?oc=5",
     "verification_status": "verified"
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "West African coast, offshore Cote D'Ivoire, in the Atlantic Ocean",
@@ -5585,9 +6082,13 @@
     "cable_name": "MainOne",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_9ddb5caa407765edc117",
+<<<<<<< HEAD
     "evidence_urls": [
       "Submarine Cable Repairs May Last Five Weeks – MainOne.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "mainone",
     "occurrence_date": null,
     "original_text": "MainOne, a leading provider of submarine cable systems, has revealed that the repair process for its damaged submarine cable may take up to five weeks. The disruption left numerous major Nigerian banks offline, causing inconvenience to customers who were unable to access banking apps or utilise USSD services. Preliminary investigations conducted by the company have attributed the fault to an external incident, resulting in a cut along the West African coast, offshore Cote D'Ivoire, in the Atlantic Ocean.",
@@ -5611,9 +6112,13 @@
     "cable_name": "MainOne",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_5dbe973e2465437c62fe",
+<<<<<<< HEAD
     "evidence_urls": [
       "Seabed Vibrations Likely Behind MainOne Cable Cuts.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "mainone",
     "occurrence_date": null,
     "original_text": "MainOne has disclosed that seismic activity on the seabed may have caused cable breaks impacting Internet access in Nigeria, Ghana, Senegal, Cote d’Ivoire, and other African countries. In a recent update, the digital infrastructure company, which has been one of the most hit, ruled out human activity as the cause of the cable cut, given the depth of the fault.",
@@ -5637,9 +6142,13 @@
     "cable_name": "MainOne",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_917b6240f5faf1a79dbb",
+<<<<<<< HEAD
     "evidence_urls": [
       "MainOne Update on Undersea Cable Restoration.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "mainone",
     "occurrence_date": null,
     "original_text": "Earlier, Thursday, March 14, 2024, we experienced a fault on the MainOne network. Based on preliminary findings the fault resulted from an incident on our submarine cable system, offshore the coast of West Africa, that has also affected other cable systems and disrupting international connectivity and internet services across West Africa.",
@@ -5648,6 +6157,7 @@
     "reason": "Unstated Incident",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5718,11 +6228,62 @@
     "published_date": "2024-03-14",
     "raw_data": {},
     "reason": "Not Disclosed",
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "MainOne Update on Undersea Cable Restoration.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "MainOne Update on Undersea Cable Restoration.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "West Coast of Africa",
+    "accident_type": "Cut",
+    "affected_area": "South Africa North and South Africa West",
+    "cable_name": "West African Cable System (WACS)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_ecb32c666e124432dcb9",
+    "evidence_urls": [],
+    "normalized_cable_id": "west-africa-cable-system-wacs",
+    "occurrence_date": null,
+    "original_text": "We have determined that multiple fibre cables on the West Coast of Africa — WACS, MainOne, SAT3, ACE — have been impacted which reduced total capacity supporting our regions in South Africa.",
+    "published_date": "2024-03-14",
+    "raw_data": {},
+    "reason": "Not Disclosed",
     "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "South Africa Internet Hit by Multiple Subsea Cable Breaks.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "South Africa Internet Hit by Multiple Subsea Cable Breaks.txt",
+    "verification_status": "False"
+  },
+  {
+    "accident_location": "Red Sea between Jeddah in Saudi Arabia and Djibouti in East Africa",
+    "accident_type": "Cut",
+    "affected_area": "Internet communications between Europe and Asia, mainly Gulf countries and India",
+    "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_633e2e9ba57a45d6f072",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-africa-europe-1-aae-1",
+    "occurrence_date": null,
+    "original_text": "Globes” has learned that four submarine communication cables have been damaged in the Red Sea between Jeddah in Saudi Arabia and Djibouti in East Africa...According to the reports, these are cables from the companies AAE-1, Seacom, EIG and TGN.",
+    "published_date": "2024-02-26",
+    "raw_data": {},
+    "reason": "Attacked by Yemenite rebels",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "South Africa Internet Hit by Multiple Subsea Cable Breaks.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "South Africa Internet Hit by Multiple Subsea Cable Breaks.txt",
@@ -5750,6 +6311,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Houthis Hit Underwater Communications Cables.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Houthis Hit Underwater Communications Cables.txt",
@@ -5762,13 +6325,21 @@
     "cable_name": "EE-S1",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_cb4e456bd6f0db861e0e",
+<<<<<<< HEAD
     "evidence_urls": [
       "./wiki/EE-S1.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "sweden-estonia-ee-s-1",
     "occurrence_date": "2023-10-07",
     "original_text": "",
     "published_date": "2023-10-28",
+<<<<<<< HEAD
+    "raw_data": {},
+    "reason": "Cable damage",
+=======
     "raw_data": {},
     "reason": "Cable damage",
     "repair_date": null,
@@ -5776,6 +6347,33 @@
     "sources": [
       "history"
     ],
+    "title": "./wiki/EE-S1.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/EE-S1.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Off the coast of the Congo",
+    "accident_type": "Cut",
+    "affected_area": "South Africa",
+    "cable_name": "West African Cable System (WACS)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_96bab0851389fa3ebd07",
+    "evidence_urls": [],
+    "normalized_cable_id": "west-africa-cable-system-wacs",
+    "occurrence_date": "2023-08-06",
+    "original_text": "",
+    "published_date": "2023-09-11",
+    "raw_data": {},
+    "reason": "Rockfall in the Congo Canyon",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "./wiki/EE-S1.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/EE-S1.txt",
@@ -5803,6 +6401,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Africa Cable Breaks Worse Than Reported.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Africa Cable Breaks Worse Than Reported.txt",
@@ -5815,9 +6415,13 @@
     "cable_name": "South Atlantic 3(SAT-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_6735d091cf26f219de46",
+<<<<<<< HEAD
     "evidence_urls": [
       "South Africa Undersea Cables Break.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "sat-3wasc",
     "occurrence_date": "2023-08-06",
     "original_text": "",
@@ -5826,6 +6430,7 @@
     "reason": "Rock Fall in Congo Canyon",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5856,6 +6461,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "South Africa Undersea Cables Break.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "South Africa Undersea Cables Break.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Solomon Islands",
+    "accident_type": "Cut",
+    "affected_area": "Auki, Noro, Taro",
+    "cable_name": "Coral Sea Cable System",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_de58b58ba06e1a8f044a",
+    "evidence_urls": [],
+    "normalized_cable_id": "coral-sea-cable-system-cs",
+    "occurrence_date": "2023-05-10",
+    "original_text": "",
+    "published_date": "2023-05-12",
+    "raw_data": {},
+    "reason": "Foreign flagged vessel dropped its anchor",
+    "repair_date": "2023-06-16",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Solomons Internet, Mobile Hit by Cable Damage.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Solomons Internet, Mobile Hit by Cable Damage.txt",
@@ -5868,9 +6503,13 @@
     "cable_name": "SHEFA-2",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_269fe2f8de80d3d0afaa",
+<<<<<<< HEAD
     "evidence_urls": [
       "Fishing Vessel Likely Cause of SHEFA-2 Fault.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "shefa-2",
     "occurrence_date": "2022-10-27",
     "original_text": "",
@@ -5894,9 +6533,13 @@
     "cable_name": "SHEFA-2",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_1775580bfcfe5c05e222",
+<<<<<<< HEAD
     "evidence_urls": [
       "./wiki/shefa-2.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "shefa-2",
     "occurrence_date": "2022-10-20",
     "original_text": "",
@@ -5920,9 +6563,13 @@
     "cable_name": "PPC-1 Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_700447526f3d560552ec",
+<<<<<<< HEAD
     "evidence_urls": [
       "SubCom to Repair PCC-1 Earthquake Damage.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "pipe-pacific-cable-1-ppc-1",
     "occurrence_date": null,
     "original_text": "",
@@ -5931,6 +6578,7 @@
     "reason": "Minor Break",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -5961,6 +6609,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "SubCom to Repair PCC-1 Earthquake Damage.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "SubCom to Repair PCC-1 Earthquake Damage.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Outside of Madang",
+    "accident_type": "Cut",
+    "affected_area": "Momase, Highlands and the New Guinea Islands Regions",
+    "cable_name": "Kumul Submarine Cable Network (KSCN)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_3299bcd8caa40ce4827e",
+    "evidence_urls": [],
+    "normalized_cable_id": "Kumul Domestic Submarine Cable System",
+    "occurrence_date": "2022-09-11",
+    "original_text": "",
+    "published_date": "2022-09-12",
+    "raw_data": {},
+    "reason": "7.7 Magnitude Earthquake",
+    "repair_date": "2022-09-12",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "PNG Earthquake Causing Multiple Cable Disruptions.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "PNG Earthquake Causing Multiple Cable Disruptions.txt",
@@ -5973,9 +6651,13 @@
     "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_e87be60e2ad513b7af2d",
+<<<<<<< HEAD
     "evidence_urls": [
       "APG Experiencing Loss of Service From Fault.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-pacific-gateway-apg",
     "occurrence_date": "2022-07-26",
     "original_text": "",
@@ -5984,6 +6666,7 @@
     "reason": "Error",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6014,6 +6697,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "APG Experiencing Loss of Service From Fault.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "APG Experiencing Loss of Service From Fault.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Near Egypt",
+    "accident_type": "Cut",
+    "affected_area": "Somalia, Djibouti, Tanzania, Madagascar and Pakistan",
+    "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_f64358938390a8453415",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-africa-europe-1-aae-1",
+    "occurrence_date": "2022-06-09",
+    "original_text": "",
+    "published_date": "2022-06-09",
+    "raw_data": {},
+    "reason": "Cable Cut",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Internet Disruptions in Africa & Asia from AAE-1 Fault.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Internet Disruptions in Africa & Asia from AAE-1 Fault.txt",
@@ -6026,9 +6739,13 @@
     "cable_name": "Southern Cross Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_b5e9b9e7b92052216b99",
+<<<<<<< HEAD
     "evidence_urls": [
       "Repair of Tonga’s Domestic Cable Could Take a Year.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "southern-cross-cable-network-sccn",
     "occurrence_date": null,
     "original_text": "",
@@ -6052,9 +6769,13 @@
     "cable_name": "FALCON submarine communications cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_6acb501faa25f3216a94",
+<<<<<<< HEAD
     "evidence_urls": [
       "Falcon Cable Fault Believed To Be From Air Strike.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "falcon",
     "occurrence_date": "2022-01-21",
     "original_text": "",
@@ -6070,6 +6791,7 @@
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Falcon Cable Fault Believed To Be From Air Strike.txt",
     "verification_status": "Mentioned"
+<<<<<<< HEAD
   },
   {
     "accident_location": "",
@@ -6160,6 +6882,8 @@
     "updated_at": "2026-07-07T15:00:09+00:00",
     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWVdvVnl3blJXSjl1aWlDRmNLVmppVUJ4TDdOYXlsaWhwY3dZQlN6RTJfRlE4NHVCVHRaMHFEbnRqYXh3eXJZYXFiTmVwWVJhZ1pUdUgtSzJFRktoMU03SEdxNXRTcTR0N2pjSjdfa2lxdWxhR3lseW9GT1c4MjdDbTN5VV9qbDRDM081ZnJDckMySnNYN0NLYnhSamJ2a3dSeUNWY0tTNkFleFQxajNWQ3dSWdIBuAFBVV95cUxOcDJfY1NTUEQ2b1lTRTVHRGpOb09PTU9UZmlYV1c0VUQxc2pJTEd2cUdkZmpzYUlaYUpQdlBLN205R1BhWFJGZ214cHN5T3YtUXJlRzIyWTBQMXVPMF91X0h4Zm00dU1WNGstbFYxRHV0VjZxQ1ZRM0JkXzItdV91ZExIRTl0M3FzRTVQWHJxR1hZRUxSMkFxbEZHUkJ2TjFrRUYycExWdm9iRjhFb0RqNkVMM3U3Uk95?oc=5",
     "verification_status": "verified"
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
   },
   {
     "accident_location": "Clifton beach close to Captain Farhan Ali Shaheed Park",
@@ -6168,9 +6892,13 @@
     "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_b919eacfe3ee22f2b46f",
+<<<<<<< HEAD
     "evidence_urls": [
       "AAE-1 Cut Causes Slow Internet Across Pakistan.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-africa-europe-1-aae-1",
     "occurrence_date": "2021-12-22",
     "original_text": "",
@@ -6194,9 +6922,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_2dadff14c331a88e2c8b",
+<<<<<<< HEAD
     "evidence_urls": [
       "Vietnam Internet Cable Cable Broken Third Time In A Year.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2021-10-29",
     "original_text": "",
@@ -6205,6 +6937,7 @@
     "reason": "Fault detected",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6235,6 +6968,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Vietnam Internet Cable Cable Broken Third Time In A Year.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Vietnam Internet Cable Cable Broken Third Time In A Year.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "S3 segment",
+    "accident_type": "Cut",
+    "affected_area": "Vietnam to Japan and the US",
+    "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_0697a0e0475c6d55e850",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-pacific-gateway-apg",
+    "occurrence_date": "2021-10-29",
+    "original_text": "",
+    "published_date": "2021-12-07",
+    "raw_data": {},
+    "reason": "",
+    "repair_date": "2021-11-29",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Two of Three Damaged Cables In Vietnam Repaired.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Two of Three Damaged Cables In Vietnam Repaired.txt",
@@ -6247,9 +7010,13 @@
     "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_05bb664b596e7335637a",
+<<<<<<< HEAD
     "evidence_urls": [
       "AAE-1 October 11, 2021 Fault Repaired.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-africa-europe-1-aae-1",
     "occurrence_date": "2021-10-11",
     "original_text": "",
@@ -6258,6 +7025,7 @@
     "reason": "Fault in one of the international cables landing in Pakistan",
     "repair_date": "2021-10-13",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6288,6 +7056,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "AAE-1 October 11, 2021 Fault Repaired.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "AAE-1 October 11, 2021 Fault Repaired.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "S1H branch",
+    "accident_type": "Cut",
+    "affected_area": "Vietnam to Singapore and Europe",
+    "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_9d660472a0e5652f0409",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-africa-europe-1-aae-1",
+    "occurrence_date": "2021-09-04",
+    "original_text": "",
+    "published_date": "2021-09-23",
+    "raw_data": {},
+    "reason": "Errors reported",
+    "repair_date": "2021-11-14",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "AAE-1 Fault Repairs Not Anticipated Until November.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "AAE-1 Fault Repairs Not Anticipated Until November.txt",
@@ -6300,9 +7098,13 @@
     "cable_name": "Australia Singapore Cable (ASC)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_43523879cf4c8873f498",
+<<<<<<< HEAD
     "evidence_urls": [
       "./data/articles/asia-australia/asc/australia-arrests-ship-captain-allegedly-damaged-asc-cable.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "australia-singapore-cable-asc",
     "occurrence_date": "2021-08-01",
     "original_text": "",
@@ -6326,9 +7128,13 @@
     "cable_name": "Australia Singapore Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_98485dfa145f346afbbf",
+<<<<<<< HEAD
     "evidence_urls": [
       "Vocus’ Australia Singapore Cable Breaks.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "australia-singapore-cable-asc",
     "occurrence_date": "2021-08-01",
     "original_text": "",
@@ -6337,6 +7143,7 @@
     "reason": "Ship dropping anchor in restricted areas",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6367,6 +7174,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Vocus’ Australia Singapore Cable Breaks.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Vocus’ Australia Singapore Cable Breaks.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "DRC Congo",
+    "accident_type": "Fluctuate",
+    "affected_area": "South Africa to the United Kingdom",
+    "cable_name": "West African Cable System (WACS)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_cc2d05b11e0767d28dcf",
+    "evidence_urls": [],
+    "normalized_cable_id": "west-africa-cable-system-wacs",
+    "occurrence_date": null,
+    "original_text": "",
+    "published_date": "2021-06-02",
+    "raw_data": {},
+    "reason": "Mudslide",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "2020 SAT-3 & WACS Faults Possibly Caused by Massive Mudslide.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "2020 SAT-3 & WACS Faults Possibly Caused by Massive Mudslide.txt",
@@ -6379,9 +7216,13 @@
     "cable_name": "Sea-Me-We5(SMW-5)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_6a3f9e3a05f1d916a241",
+<<<<<<< HEAD
     "evidence_urls": [
       "Pakistan Experiencing Another Cable Fault.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-5",
     "occurrence_date": "2021-02-17",
     "original_text": "",
@@ -6405,9 +7246,13 @@
     "cable_name": "APCN2 Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_5ace4762e1ca43de58af",
+<<<<<<< HEAD
     "evidence_urls": [
       "Svalbard Suffers Power Fault On Subsea Fiber Cable.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "apcn-2",
     "occurrence_date": "2021-01-07",
     "original_text": "",
@@ -6431,9 +7276,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_d0103844774d122d9058",
+<<<<<<< HEAD
     "evidence_urls": [
       "Vietnam Suffers Second Internet Cable Cut In Less Than 4 Months.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2021-01-05",
     "original_text": "",
@@ -6442,6 +7291,7 @@
     "reason": "",
     "repair_date": "2021-01-21",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6472,6 +7322,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Vietnam Suffers Second Internet Cable Cut In Less Than 4 Months.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Vietnam Suffers Second Internet Cable Cut In Less Than 4 Months.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Singapore",
+    "accident_type": "Cut",
+    "affected_area": "Singapore direction",
+    "cable_name": "tata TGN-Intra Asia(TGN-IA)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_fe2ba3ed301cab6897f1",
+    "evidence_urls": [],
+    "normalized_cable_id": "tata-tgn-intra-asia-tgn-ia",
+    "occurrence_date": "2021-01-01",
+    "original_text": "",
+    "published_date": "2021-01-11",
+    "raw_data": {},
+    "reason": "Cable error on segment 1",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Two international undersea optical cables, IA and APG, had problems.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Two international undersea optical cables, IA and APG, had problems.txt",
@@ -6484,9 +7364,13 @@
     "cable_name": "Sea-Me-We5(SMW-5)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_9402e1b84dc6311200ac",
+<<<<<<< HEAD
     "evidence_urls": [
       "Submarine Cable Glitch Slows Internet in Bangladesh.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-5",
     "occurrence_date": "2020-08-09",
     "original_text": "",
@@ -6510,9 +7394,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_74ba0343c9c4b6fef37d",
+<<<<<<< HEAD
     "evidence_urls": [
       "Internet in Vietnam to Resume in at least 10 Days.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2020-08-02",
     "original_text": "",
@@ -6536,9 +7424,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_324ddbf3765bed291943",
+<<<<<<< HEAD
     "evidence_urls": [
       "AAG Submarine Cable Cut Slows Down Internet Connectivity.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2020-07-15",
     "original_text": "",
@@ -6556,6 +7448,7 @@
     "verification_status": "imported"
   },
   {
+<<<<<<< HEAD
     "accident_location": "",
     "accident_type": "Cut",
     "affected_area": "",
@@ -6601,15 +7494,21 @@
     "verification_status": "verified"
   },
   {
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "accident_location": "Vung Tau city and Hong Kong and Singapore",
     "accident_type": "Cut",
     "affected_area": "Viet Nam and other countries",
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_07e1bb31113a9df2d639",
+<<<<<<< HEAD
     "evidence_urls": [
       "Damaged AAG Undersea Cable Repaired.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2020-04-23",
     "original_text": "",
@@ -6618,6 +7517,7 @@
     "reason": "",
     "repair_date": "2020-04-24",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6644,10 +7544,62 @@
     "raw_data": {},
     "reason": "Unknown Fault",
     "repair_date": null,
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Damaged AAG Undersea Cable Repaired.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Damaged AAG Undersea Cable Repaired.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Vietnam",
+    "accident_type": "Cut",
+    "affected_area": "Vietnam, Cambodia, Lao PDR",
+    "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_27f9ed339d4ee7e9fd9b",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-pacific-gateway-apg",
+    "occurrence_date": "2020-04-20",
+    "original_text": "",
+    "published_date": "2020-06-03",
+    "raw_data": {},
+    "reason": "Unknown Fault",
+    "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "Cable Faults Impact Internet in Vietnam, Cambodia & Laos.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Cable Faults Impact Internet in Vietnam, Cambodia & Laos.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Vietnam",
+    "accident_type": "Limit",
+    "affected_area": "Vietnam",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_253cb49588fc05338147",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2020-04-03",
+    "original_text": "",
+    "published_date": "2020-04-04",
+    "raw_data": {},
+    "reason": "Broken cable",
+    "repair_date": "2020-04-21",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "Cable Faults Impact Internet in Vietnam, Cambodia & Laos.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Cable Faults Impact Internet in Vietnam, Cambodia & Laos.txt",
@@ -6719,10 +7671,34 @@
     "raw_data": {},
     "reason": "Broken cable",
     "repair_date": "2020-04-21",
+=======
+    "title": "./data/articles/trans-pacific/aag/aag-cable-down-offshore-vietnam-on-april-3.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./data/articles/trans-pacific/aag/aag-cable-down-offshore-vietnam-on-april-3.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Libreville (Gabon) and Cacuaco (Angola)",
+    "accident_type": "Cut",
+    "affected_area": "Internet and International Voice Services",
+    "cable_name": "South Atlantic 3(SAT-3)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_4fb7817e33f44933ddcd",
+    "evidence_urls": [],
+    "normalized_cable_id": "sat-3wasc",
+    "occurrence_date": "2020-03-09",
+    "original_text": "",
+    "published_date": "2020-03-16",
+    "raw_data": {},
+    "reason": "Anomaly",
+    "repair_date": null,
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "source": "history",
     "sources": [
       "history"
     ],
+<<<<<<< HEAD
     "title": "./data/articles/trans-pacific/aag/aag-cable-down-offshore-vietnam-on-april-3.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./data/articles/trans-pacific/aag/aag-cable-down-offshore-vietnam-on-april-3.txt",
@@ -6750,6 +7726,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "New SAT-3 Cable Fault Affects Angola, Gabon.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "New SAT-3 Cable Fault Affects Angola, Gabon.txt",
@@ -6762,9 +7740,13 @@
     "cable_name": "West African Cable System (WACS)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_1ca8c755dceeff6572f4",
+<<<<<<< HEAD
     "evidence_urls": [
       "WACS Breakage Caused by Dense, Heavy Sediment.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "west-africa-cable-system-wacs",
     "occurrence_date": "2020-02-07",
     "original_text": "",
@@ -6788,9 +7770,13 @@
     "cable_name": "FALCON submarine communications cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_8687c14b566d4e631d7d",
+<<<<<<< HEAD
     "evidence_urls": [
       "African Countries Affected by FALCON Cable Cut.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "falcon",
     "occurrence_date": "2020-01-09",
     "original_text": "",
@@ -6814,9 +7800,13 @@
     "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_463cacd0397948a214f5",
+<<<<<<< HEAD
     "evidence_urls": [
       "AAE-1 Submarine Cable Fault Slows Pakistani Internet.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-africa-europe-1-aae-1",
     "occurrence_date": "2019-12-15",
     "original_text": "",
@@ -6840,9 +7830,13 @@
     "cable_name": "Basslink Subsea Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_532a8b1f48ae19c1d80b",
+<<<<<<< HEAD
     "evidence_urls": [
       "Basslink Still Unsure Where Cable Fault is, Facing ‘Phenomenal’ Repair Costs.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "basslink",
     "occurrence_date": "2019-12-06",
     "original_text": "",
@@ -6851,6 +7845,7 @@
     "reason": "Fault in the cable",
     "repair_date": "2020-05-01",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -6880,6 +7875,35 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Basslink Still Unsure Where Cable Fault is, Facing ‘Phenomenal’ Repair Costs.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Basslink Still Unsure Where Cable Fault is, Facing ‘Phenomenal’ Repair Costs.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Ho Chi Minh City to Hong Kong",
+    "accident_type": "Fluctuate",
+    "affected_area": "Vietnam",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "event_uid": "evt_b35258a7c989c828f019",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2019-08-16",
+    "original_text": "",
+    "published_date": "2019-08-26",
+    "raw_data": {},
+    "reason": "Shunting Fault",
+    "repair_date": "2019-09-03",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "AAG Cable Fault Impacts Vietnam Internet Again.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "AAG Cable Fault Impacts Vietnam Internet Again.txt",
@@ -6892,9 +7916,13 @@
     "cable_name": "Sea-Me-We4(SMW-4)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_57f68d53098cfcb42ca9",
+<<<<<<< HEAD
     "evidence_urls": [
       "Internet Slower in Vietnam, Cable Repairs Delayed.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-4",
     "occurrence_date": "2019-08-16",
     "original_text": "",
@@ -6918,9 +7946,13 @@
     "cable_name": "Kumul Submarine Cable Network (KSCN)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_93f76feb97bff791e30a",
+<<<<<<< HEAD
     "evidence_urls": [
       "PNG DataCo Working on Cable Outage.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "Kumul Domestic Submarine Cable System",
     "occurrence_date": "2019-05-07",
     "original_text": "",
@@ -6944,9 +7976,13 @@
     "cable_name": "Tele Greenland",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_3af4716624e244053de4",
+<<<<<<< HEAD
     "evidence_urls": [
       "Tele Greenland Repairs One Cable Break, Finds Another.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "NotFound",
     "occurrence_date": "2019-03-14",
     "original_text": "",
@@ -6970,9 +8006,13 @@
     "cable_name": "Tele Greenland",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_58e28d11fbd8f3767bb2",
+<<<<<<< HEAD
     "evidence_urls": [
       "Tele Greenland Submarine Cable Fault North of Maniitsoq.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "NotFound",
     "occurrence_date": "2019-01-21",
     "original_text": "",
@@ -6996,9 +8036,13 @@
     "cable_name": "Sea-Me-We3(SMW-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_9b93de90deb6b353b587",
+<<<<<<< HEAD
     "evidence_urls": [
       "SEA-ME-WE 3 Repairs in India Underway.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-3",
     "occurrence_date": "2018-12-10",
     "original_text": "",
@@ -7022,9 +8066,13 @@
     "cable_name": "West African Cable System (WACS)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_b0c74c76798b0a7c8a1d",
+<<<<<<< HEAD
     "evidence_urls": [
       "Angola WACS Submarine Cable Damaged.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "west-africa-cable-system-wacs",
     "occurrence_date": "2018-09-24",
     "original_text": "",
@@ -7048,9 +8096,13 @@
     "cable_name": "Basslink Subsea Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_a32b0e0b0cb5d20f5215",
+<<<<<<< HEAD
     "evidence_urls": [
       "Basslink Subsea Cable Out Until Late May.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "basslink",
     "occurrence_date": "2018-04-10",
     "original_text": "",
@@ -7074,9 +8126,13 @@
     "cable_name": "Africa Coast to Europe(ACE) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_77cb93154ae63d01dbcb",
+<<<<<<< HEAD
     "evidence_urls": [
       "ACE Submarine Cable Cut Impacts Ten Countries.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "africa-coast-to-europe-ace",
     "occurrence_date": "2018-03-30",
     "original_text": "",
@@ -7100,9 +8156,13 @@
     "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_60a1e01612c0bbeacc8e",
+<<<<<<< HEAD
     "evidence_urls": [
       "APG Submarine Cable Compromised.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-pacific-gateway-apg",
     "occurrence_date": "2018-03-01",
     "original_text": "",
@@ -7126,9 +8186,13 @@
     "cable_name": "Tele Greenland",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_f5ea1b82fdf301121f12",
+<<<<<<< HEAD
     "evidence_urls": [
       "Tele Greenland Says Cable to Iceland Breaks.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "NotFound",
     "occurrence_date": "2017-12-28",
     "original_text": "",
@@ -7152,9 +8216,13 @@
     "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_29a6cbef22f8150db8fe",
+<<<<<<< HEAD
     "evidence_urls": [
       "APG Submarine Cable To Be Fixed On January 6-7.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-pacific-gateway-apg",
     "occurrence_date": "2017-12-23",
     "original_text": "",
@@ -7178,9 +8246,13 @@
     "cable_name": "Basslink Subsea Cable",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_e160be57a9201de5c635",
+<<<<<<< HEAD
     "evidence_urls": [
       "Basslink Outage Caused By Exceeding Design Limit.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "basslink",
     "occurrence_date": "2017-12-20",
     "original_text": "",
@@ -7189,6 +8261,7 @@
     "reason": "Exceeding its design limit",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7219,6 +8292,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Basslink Outage Caused By Exceeding Design Limit.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Basslink Outage Caused By Exceeding Design Limit.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Near Chinese Waters",
+    "accident_type": "Limit",
+    "affected_area": "Vietnam",
+    "cable_name": "Sea-Me-We3(SMW-3)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_06d1f0d6e700815c9522",
+    "evidence_urls": [],
+    "normalized_cable_id": "seamewe-3",
+    "occurrence_date": "2017-12-10",
+    "original_text": "",
+    "published_date": "2017-12-12",
+    "raw_data": {},
+    "reason": "Problem in the Cable Section",
+    "repair_date": "2017-12-26",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "SEA-ME-WE 3 To Be Fixed By December 26.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "SEA-ME-WE 3 To Be Fixed By December 26.txt",
@@ -7231,9 +8334,13 @@
     "cable_name": "Sea-Me-We3(SMW-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_962267fdeaf8fb121ba1",
+<<<<<<< HEAD
     "evidence_urls": [
       "SEA-ME-WE 3 Down, Australia-Asia Traffic Slow.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-3",
     "occurrence_date": "2017-12-03",
     "original_text": "",
@@ -7242,6 +8349,7 @@
     "reason": "Storm",
     "repair_date": "2018-01-09",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7269,10 +8377,62 @@
     "raw_data": {},
     "reason": "Technical Trouble",
     "repair_date": "2017-09-26",
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "SEA-ME-WE 3 Down, Australia-Asia Traffic Slow.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "SEA-ME-WE 3 Down, Australia-Asia Traffic Slow.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Hanoi, Vietnam",
+    "accident_type": "Cut",
+    "affected_area": "Vietnam's International Internet Links",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_b9adc418fbb875faca9a",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2017-10-12",
+    "original_text": "",
+    "published_date": "2017-10-12",
+    "raw_data": {},
+    "reason": "Technical Trouble",
+    "repair_date": "2017-09-26",
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "AAG Submarine Cable Encounters Trouble Again.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "AAG Submarine Cable Encounters Trouble Again.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Sea Area Near China",
+    "accident_type": "Fluctuate",
+    "affected_area": "Vietnam",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_87a7ba889ea6c8aa56db",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2017-10-10",
+    "original_text": "",
+    "published_date": "2017-10-20",
+    "raw_data": {},
+    "reason": "",
+    "repair_date": "2017-10-20",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "AAG Submarine Cable Encounters Trouble Again.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "AAG Submarine Cable Encounters Trouble Again.txt",
@@ -7300,6 +8460,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "(Vietnam) International Cable Lines To Be Fixed Next Week.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "(Vietnam) International Cable Lines To Be Fixed Next Week.txt",
@@ -7312,9 +8474,13 @@
     "cable_name": "Sea-Me-We3(SMW-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_c814bfa28a24fb12e04f",
+<<<<<<< HEAD
     "evidence_urls": [
       "SEA-ME-WE 3 Submarine Cable Suffers Break.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-3",
     "occurrence_date": "2017-08-31",
     "original_text": "",
@@ -7323,6 +8489,7 @@
     "reason": "Break in the cable",
     "repair_date": "2017-10-13",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7353,6 +8520,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "SEA-ME-WE 3 Submarine Cable Suffers Break.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "SEA-ME-WE 3 Submarine Cable Suffers Break.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Various Asian landings to California",
+    "accident_type": "Limit",
+    "affected_area": "Autralia",
+    "cable_name": "ASE (Asia Submarine-Cable Express)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_9ec33c3b0d2e8a082595",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-submarine-cable-express-asecahaya-malaysia",
+    "occurrence_date": "2017-08-27",
+    "original_text": "",
+    "published_date": "2017-09-06",
+    "raw_data": {},
+    "reason": "Typhoons",
+    "repair_date": "2017-10-01",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Australia-to-Asia Traffic Slows As Typhoons Cut Submarine Cables.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Australia-to-Asia Traffic Slows As Typhoons Cut Submarine Cables.txt",
@@ -7365,9 +8562,13 @@
     "cable_name": "South Atlantic 3(SAT-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_1bb1c9b172873cc494c3",
+<<<<<<< HEAD
     "evidence_urls": [
       "SAT3 Downtime Had Minimal Impact – Openserve.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "sat-3wasc",
     "occurrence_date": "2017-07-14",
     "original_text": "",
@@ -7376,6 +8577,7 @@
     "reason": "Cause of the break has not been determined",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7405,6 +8607,35 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "SAT3 Downtime Had Minimal Impact – Openserve.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "SAT3 Downtime Had Minimal Impact – Openserve.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Viet Nam-Hong Kong",
+    "accident_type": "Cut",
+    "affected_area": "",
+    "cable_name": "Asia-Pacific-Gateway(APG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "event_uid": "evt_932163eb98178b3e9a86",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-pacific-gateway-apg",
+    "occurrence_date": "2017-06-22",
+    "original_text": "",
+    "published_date": "2017-06-22",
+    "raw_data": {},
+    "reason": "",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "APG Submarine Cable Damaged.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "APG Submarine Cable Damaged.txt",
@@ -7417,9 +8648,13 @@
     "cable_name": "West African Cable System (WACS)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_2c8e4d76dd76d2bbc5eb",
+<<<<<<< HEAD
     "evidence_urls": [
       "Congo-Brazzaville Facing Major Submarine Cable Outage.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "west-africa-cable-system-wacs",
     "occurrence_date": "2017-06-09",
     "original_text": "",
@@ -7443,9 +8678,13 @@
     "cable_name": "Sea-Me-We4(SMW-4)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_f23f8523833e280a2c2e",
+<<<<<<< HEAD
     "evidence_urls": [
       "Algeria Suffers Net Blackout.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-4",
     "occurrence_date": "2016-05-19",
     "original_text": "",
@@ -7469,9 +8708,13 @@
     "cable_name": "Asia-Africa-Europe(AAE-1) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_17e72d455599249ea316",
+<<<<<<< HEAD
     "evidence_urls": [
       "./data/articles/asia-europe-africa/aae-1/aae-1-landed-in-myanmar.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-africa-europe-1-aae-1",
     "occurrence_date": "2016-02-24",
     "original_text": "",
@@ -7480,6 +8723,7 @@
     "reason": "",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7511,6 +8755,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "./data/articles/asia-europe-africa/aae-1/aae-1-landed-in-myanmar.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./data/articles/asia-europe-africa/aae-1/aae-1-landed-in-myanmar.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Perth to Singapore",
+    "accident_type": "Cut",
+    "affected_area": "Telstra Apple Users",
+    "cable_name": "Sea-Me-We3(SMW-3)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_c231b211a3c6f1883c9f",
+    "evidence_urls": [],
+    "normalized_cable_id": "seamewe-3",
+    "occurrence_date": "2015-09-25",
+    "original_text": "",
+    "published_date": "2015-10-02",
+    "raw_data": {},
+    "reason": "Cut Cable",
+    "repair_date": "2015-10-15",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "Cut Submarine Cable Cripples Apple Services for Telstra Customers.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "Cut Submarine Cable Cripples Apple Services for Telstra Customers.txt",
@@ -7523,9 +8797,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_8b85f1c699de4fa3443d",
+<<<<<<< HEAD
     "evidence_urls": [
       "Internet To Resume Normal Speed On May 10.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2015-04-23",
     "original_text": "",
@@ -7549,9 +8827,13 @@
     "cable_name": "Asia-America-Gateway(AAG) Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_0dfce7055dbb2d35d2a9",
+<<<<<<< HEAD
     "evidence_urls": [
       "Repair Of AAG Submarine Cable To Be Completed On January 23.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2015-01-05",
     "original_text": "",
@@ -7560,6 +8842,7 @@
     "reason": "",
     "repair_date": "2015-01-23",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7611,6 +8894,55 @@
     "original_text": "",
     "published_date": "2014-04-15",
     "raw_data": {},
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Repair Of AAG Submarine Cable To Be Completed On January 23.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Repair Of AAG Submarine Cable To Be Completed On January 23.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "68km from Hong Kong’s coast",
+    "accident_type": "Cut",
+    "affected_area": "Vietnamese coastal city of Vung Tau and Hong Kong",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_3757faa68f6e6b0f170e",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2014-09-29",
+    "original_text": "",
+    "published_date": "2014-10-04",
+    "raw_data": {},
+    "reason": "Cable cut",
+    "repair_date": null,
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+    "title": "./data/articles/trans-pacific/aag/aag-cable-cut-again-while-repairing.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./data/articles/trans-pacific/aag/aag-cable-cut-again-while-repairing.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Off the coast of Vung Tau",
+    "accident_type": "Limit",
+    "affected_area": "Internet bandwidth to international destinations",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 11,
+    "event_uid": "evt_db2a639396ebd10c378a",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2014-07-15",
+    "original_text": "",
+    "published_date": "2014-04-15",
+    "raw_data": {},
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "reason": "Cable snapped",
     "repair_date": "2014-07-27",
     "source": "history",
@@ -7630,9 +8962,13 @@
     "created_at": "2026-07-07T12:58:06+00:00",
     "duplicate_count": 3,
     "event_uid": "evt_b0dd4d54a3a37878f3ab",
+<<<<<<< HEAD
     "evidence_urls": [
       "./data/articles/trans-pacific/aag/aag-cable-cut-offshore-vietnam-on-jan-5.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2014-01-05",
     "original_text": "",
@@ -7657,10 +8993,14 @@
     "created_at": "2026-07-07T12:58:06+00:00",
     "duplicate_count": 1,
     "event_uid": "evt_48dddea2862cae38b121",
+<<<<<<< HEAD
     "evidence_urls": [
       "./data/articles/trans-pacific/aag/aag-cable-cut-offshore-vietnam-on-jan-5.txt",
       "./data/articles/trans-pacific/aag/aag-cable-cut-rockets-submarinenetworks-in-vietnam.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "asia-america-gateway-aag-cable-system",
     "occurrence_date": "2013-12-20",
     "original_text": "",
@@ -7684,9 +9024,13 @@
     "cable_name": "Sea-Me-We3(SMW-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_2b2afbe6bb01c3362b63",
+<<<<<<< HEAD
     "evidence_urls": [
       "Broken Underwater Cable Plays Havoc With Myanmar Internet.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-3",
     "occurrence_date": "2013-07-22",
     "original_text": "",
@@ -7695,6 +9039,7 @@
     "reason": "",
     "repair_date": null,
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7721,10 +9066,62 @@
     "raw_data": {},
     "reason": "Cut",
     "repair_date": null,
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "Broken Underwater Cable Plays Havoc With Myanmar Internet.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "Broken Underwater Cable Plays Havoc With Myanmar Internet.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Egypt",
+    "accident_type": "Limit",
+    "affected_area": "",
+    "cable_name": "EIG Cable System",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_f3e5c56a771847655b38",
+    "evidence_urls": [],
+    "normalized_cable_id": "europe-india-gateway-eig",
+    "occurrence_date": "2013-03-27",
+    "original_text": "",
+    "published_date": "2013-03-30",
+    "raw_data": {},
+    "reason": "Cut",
+    "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "./wiki/europe-india-gateway.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/europe-india-gateway.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Offshore Vung Tau cable landing station in Vietnam",
+    "accident_type": "Cut",
+    "affected_area": "Vietnam",
+    "cable_name": "Asia-America-Gateway(AAG) Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 3,
+    "event_uid": "evt_138ba9d5209c5ef7b761",
+    "evidence_urls": [],
+    "normalized_cable_id": "asia-america-gateway-aag-cable-system",
+    "occurrence_date": "2011-03-10",
+    "original_text": "",
+    "published_date": "2011-10-18",
+    "raw_data": {},
+    "reason": "Cable break",
+    "repair_date": "2011-03-24",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "./wiki/europe-india-gateway.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/europe-india-gateway.txt",
@@ -7752,6 +9149,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "./data/articles/trans-pacific/aag/aag-cable-breaks-and-restoration.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./data/articles/trans-pacific/aag/aag-cable-breaks-and-restoration.txt",
@@ -7764,9 +9163,13 @@
     "cable_name": "Sea-Me-We3(SMW-3)",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_227e1a368cdba381cbcf",
+<<<<<<< HEAD
     "evidence_urls": [
       "./data/articles/trans-pacific/aag/aag-cable-repaird.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "seamewe-3",
     "occurrence_date": "2011-03-10",
     "original_text": "",
@@ -7775,6 +9178,7 @@
     "reason": "Cut off",
     "repair_date": "2011-03-28",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7805,6 +9209,36 @@
     "sources": [
       "history"
     ],
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "./data/articles/trans-pacific/aag/aag-cable-repaird.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./data/articles/trans-pacific/aag/aag-cable-repaird.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Hong Kong, China, Taiwan, Philippines, Singapore and Tokyo",
+    "accident_type": "Cut",
+    "affected_area": "Hong Kong, China, Taiwan, Philippines, Singapore and Tokyo",
+    "cable_name": "APCN2 Cable",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 4,
+    "event_uid": "evt_e00c3a16a67094e6d128",
+    "evidence_urls": [],
+    "normalized_cable_id": "apcn-2",
+    "occurrence_date": "2009-08-12",
+    "original_text": "",
+    "published_date": "2009-08-12",
+    "raw_data": {},
+    "reason": "Damage to the APCN2 cable",
+    "repair_date": "2015-01-31",
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "./wiki/APCN-2.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/APCN-2.txt",
@@ -7817,9 +9251,13 @@
     "cable_name": "Southern Cross Cable Network",
     "created_at": "2026-07-07T12:58:06+00:00",
     "event_uid": "evt_86e46b2bcfd4405c4208",
+<<<<<<< HEAD
     "evidence_urls": [
       "./wiki/southern-cross-cable.txt"
     ],
+=======
+    "evidence_urls": [],
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "normalized_cable_id": "southern-cross-cable-network-sccn",
     "occurrence_date": null,
     "original_text": "",
@@ -7828,6 +9266,7 @@
     "reason": "Hurricane strength storms and flooding",
     "repair_date": "2008-02-03",
     "source": "history",
+<<<<<<< HEAD
     "sources": [
       "history"
     ],
@@ -7854,10 +9293,62 @@
     "raw_data": {},
     "reason": "Damage from ship's anchor near Alexandria",
     "repair_date": "2008-12-29",
+=======
+    "sources": [
+      "history"
+    ],
+    "title": "./wiki/southern-cross-cable.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/southern-cross-cable.txt",
+    "verification_status": "Mentioned"
+  },
+  {
+    "accident_location": "Mediterranean Sea",
+    "accident_type": "Fluctuate",
+    "affected_area": "Middle East, Indian subcontinent",
+    "cable_name": "Sea-Me-We4(SMW-4)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 2,
+    "event_uid": "evt_074c76984968ce93e8c6",
+    "evidence_urls": [],
+    "normalized_cable_id": "seamewe-4",
+    "occurrence_date": "2008-01-30",
+    "original_text": "",
+    "published_date": "2008-02-03",
+    "raw_data": {},
+    "reason": "Damage from ship's anchor near Alexandria",
+    "repair_date": "2008-12-29",
     "source": "history",
     "sources": [
       "history"
     ],
+    "title": "./wiki/fibre-optic-link-around-the-globe.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/fibre-optic-link-around-the-globe.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "35 kilometres (22 mi) south of Karachi",
+    "accident_type": "Cut",
+    "affected_area": "Pakistan's major outer communications",
+    "cable_name": "Sea-Me-We3(SMW-3)",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 26,
+    "event_uid": "evt_a8ace64928341429e937",
+    "evidence_urls": [],
+    "normalized_cable_id": "seamewe-3",
+    "occurrence_date": "2005-06-28",
+    "original_text": "",
+    "published_date": "2005-06-28",
+    "raw_data": {},
+    "reason": "Defective cable",
+    "repair_date": "2015-01-01",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
+    "source": "history",
+    "sources": [
+      "history"
+    ],
+<<<<<<< HEAD
     "title": "./wiki/fibre-optic-link-around-the-globe.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/fibre-optic-link-around-the-globe.txt",
@@ -7882,10 +9373,34 @@
     "raw_data": {},
     "reason": "Defective cable",
     "repair_date": "2015-01-01",
+=======
+    "title": "./wiki/sea-me-we-3.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/sea-me-we-3.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Southern link between US and UK",
+    "accident_type": "Limit",
+    "affected_area": "United Kingdom",
+    "cable_name": "TAT-14",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "duplicate_count": 1,
+    "event_uid": "evt_a8e9dde21ec3edfa2172",
+    "evidence_urls": [],
+    "normalized_cable_id": "NotFound",
+    "occurrence_date": "2003-11-25",
+    "original_text": "",
+    "published_date": "2003-11-26",
+    "raw_data": {},
+    "reason": "Two breaks",
+    "repair_date": null,
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "source": "history",
     "sources": [
       "history"
     ],
+<<<<<<< HEAD
     "title": "./wiki/sea-me-we-3.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/sea-me-we-3.txt",
@@ -7908,11 +9423,33 @@
     "published_date": "2003-11-26",
     "raw_data": {},
     "reason": "Two breaks",
+=======
+    "title": "./wiki/tat-14.txt",
+    "updated_at": "2026-07-07T12:58:06+00:00",
+    "url": "./wiki/tat-14.txt",
+    "verification_status": "imported"
+  },
+  {
+    "accident_location": "Coast of China",
+    "accident_type": "Cut",
+    "affected_area": "Internet bandwidth linking the U.S. and China",
+    "cable_name": "China-US Cable Network",
+    "created_at": "2026-07-07T12:58:06+00:00",
+    "event_uid": "evt_bf10c9c8be9eeb4256e6",
+    "evidence_urls": [],
+    "normalized_cable_id": "NotFound",
+    "occurrence_date": "2001-03-09",
+    "original_text": "",
+    "published_date": "2011-02-04",
+    "raw_data": {},
+    "reason": "Fishing boat dropping anchor",
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "repair_date": null,
     "source": "history",
     "sources": [
       "history"
     ],
+<<<<<<< HEAD
     "title": "./wiki/tat-14.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./wiki/tat-14.txt",
@@ -7939,6 +9476,8 @@
     "sources": [
       "history"
     ],
+=======
+>>>>>>> bf64d05 (feat: improve submarine cable monitor pipeline)
     "title": "./data/articles/trans-pacific/china-us-cn/china-us-cable-break-down-internet.txt",
     "updated_at": "2026-07-07T12:58:06+00:00",
     "url": "./data/articles/trans-pacific/china-us-cn/china-us-cable-break-down-internet.txt",

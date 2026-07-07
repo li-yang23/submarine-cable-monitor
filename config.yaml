@@ -22,6 +22,8 @@ llm:
 # Article-source controls for GitHub Actions runtime.
 article_sources:
   subtelforum_max_pages: 3
+  google_news_max_articles: 12
+  google_news_max_attempts: 30
   submarine_networks_links_path: data/cable-links.json
   submarine_networks_max_cables: 50
   submarine_networks_articles_per_cable: 3

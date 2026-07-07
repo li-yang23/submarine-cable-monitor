@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote, urljoin
+from urllib.parse import parse_qs, quote, unquote, urljoin, urlparse
 from xml.etree import ElementTree
 
 import requests
@@ -38,6 +38,27 @@ class ArticleScraper:
         response.raise_for_status()
         return response
 
+    def extract_page_text(self, url: str) -> dict[str, Any]:
+        response = self.get(url)
+        soup = BeautifulSoup(response.text, "html.parser")
+        for node in soup.select("script, style, nav, footer, header, aside"):
+            node.decompose()
+        title = clean_text((soup.select_one("h1") or soup.select_one("title") or soup).get_text(" "))
+        content_node = (
+            soup.select_one("article")
+            or soup.select_one("main")
+            or soup.select_one(".post-content")
+            or soup.select_one(".article-body")
+            or soup.body
+            or soup
+        )
+        return {
+            "title": title,
+            "content": clean_text(content_node.get_text(" ")),
+            "published_date": extract_date_from_soup(soup),
+            "final_url": response.url,
+        }
+
 
 class GoogleNewsArticleScraper(ArticleScraper):
     source_name = "Google News"
@@ -50,30 +71,165 @@ class GoogleNewsArticleScraper(ArticleScraper):
         "海底电缆故障",
     ]
 
+    def __init__(self, config: Config):
+        super().__init__(config)
+        self.session.headers.update(
+            {
+                "User-Agent": (
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/126.0.0.0 Safari/537.36"
+                )
+            }
+        )
+
+    def get(self, url: str) -> requests.Response:
+        response = self.session.get(url, timeout=(5, 10), allow_redirects=True)
+        response.raise_for_status()
+        return response
+
     def scrape_articles(self, since: str | None = None, dry_run: bool = False) -> list[dict[str, Any]]:
         articles: list[dict[str, Any]] = []
+        max_articles = 3 if dry_run else int(getattr(self.config, "google_news_max_articles", 12))
+        max_attempts = 8 if dry_run else int(getattr(self.config, "google_news_max_attempts", 30))
+        attempts = 0
         for keyword in self.keywords:
             url = f"https://news.google.com/rss/search?q={quote(keyword)}&hl=en-US&gl=US&ceid=US:en"
             self.logger.info("Fetching Google News RSS for %s", keyword)
             response = self.get(url)
             for entry in parse_rss_entries(response.content):
+                attempts += 1
+                if attempts > max_attempts:
+                    return dedupe_articles(articles)
                 published = entry.get("published_date")
                 if since and published and published < since:
                     continue
                 title = clean_text(entry.get("title"))
-                articles.append(
-                    {
-                        "source": self.source_name,
-                        "url": clean_text(entry.get("link")),
-                        "title": title,
-                        "content": clean_text(entry.get("summary")) or title,
-                        "published_date": published,
-                        "keyword": keyword,
-                    }
-                )
-                if dry_run and len(articles) >= 3:
-                    return articles
+                discovered_url = clean_text(entry.get("link"))
+                article = self._fetch_news_article(discovered_url, title, published, keyword)
+                if article:
+                    articles.append(article)
+                if len(articles) >= max_articles:
+                    return dedupe_articles(articles)
         return dedupe_articles(articles)
+
+    def _fetch_news_article(
+        self,
+        discovered_url: str,
+        rss_title: str,
+        published: str | None,
+        keyword: str,
+    ) -> dict[str, Any] | None:
+        real_url = self._resolve_google_news_url(discovered_url)
+        if not real_url:
+            return None
+        if "subtelforum.com" in urlparse(real_url).netloc:
+            return None
+        try:
+            page = self.extract_page_text(real_url)
+        except Exception as exc:
+            self.logger.warning("Skipping Google News article %s: %s", real_url, exc)
+            return None
+        content = clean_text(page.get("content"))
+        if len(content) < 300:
+            self.logger.warning("Skipping Google News article with short content: %s", real_url)
+            return None
+        return {
+            "source": self.source_name,
+            "url": clean_text(page.get("final_url") or real_url),
+            "discovered_url": discovered_url,
+            "title": clean_text(page.get("title")) or rss_title,
+            "content": content,
+            "published_date": page.get("published_date") or published,
+            "keyword": keyword,
+        }
+
+    def _resolve_google_news_url(self, url: str) -> str:
+        parsed = urlparse(clean_text(url))
+        if "news.google." not in parsed.netloc:
+            return url
+
+        query_url = resolve_google_news_url(url)
+        if query_url and query_url != url:
+            return query_url
+
+        try:
+            response = self.session.get(url, timeout=(5, 8), allow_redirects=False)
+            if response.is_redirect and response.headers.get("location"):
+                response = self.session.get(response.headers["location"], timeout=(5, 8), allow_redirects=False)
+            response.raise_for_status()
+            html = response.text
+            article_id_match = re.search(r'data-n-a-id="([^"]+)"', html)
+            timestamp_match = re.search(r'data-n-a-ts="([^"]+)"', html)
+            signature_match = re.search(r'data-n-a-sg="([^"]+)"', html)
+            if not article_id_match or not timestamp_match or not signature_match:
+                return ""
+            article_id = article_id_match.group(1)
+            timestamp = timestamp_match.group(1)
+            signature = signature_match.group(1)
+            request_payload = [
+                "garturlreq",
+                [
+                    [
+                        "en-US",
+                        "US",
+                        ["FINANCE_TOP_INDICES", "WEB_TEST_1_0_0"],
+                        None,
+                        None,
+                        1,
+                        1,
+                        "US:en",
+                        None,
+                        180,
+                        None,
+                        None,
+                        None,
+                        None,
+                        None,
+                        0,
+                        None,
+                        None,
+                        [1608992183, 723341000],
+                    ],
+                    "en-US",
+                    "US",
+                    1,
+                    [2, 3, 4, 8],
+                    1,
+                    0,
+                    "655000234",
+                    0,
+                    0,
+                    None,
+                    0,
+                ],
+                article_id,
+                int(timestamp),
+                signature,
+            ]
+            f_req = json.dumps(
+                [[["Fbv4je", json.dumps(request_payload, separators=(",", ":")), None, "generic"]]],
+                separators=(",", ":"),
+            )
+            decoded = self.session.post(
+                "https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je",
+                data={"f.req": f_req},
+                headers={
+                    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                    "Referer": url,
+                    "User-Agent": self.session.headers.get("User-Agent", ""),
+                },
+                timeout=self.config.request_timeout,
+            )
+            decoded.raise_for_status()
+            urls = re.findall(r'https?://[^\\\"\]]+', decoded.text)
+            for candidate in urls:
+                if "news.google." not in candidate and "google.com" not in candidate:
+                    return candidate.replace("\\u003d", "=").replace("\\u0026", "&")
+            return ""
+        except Exception as exc:
+            self.logger.warning("Unable to decode Google News URL %s: %s", url, exc)
+            return ""
 
 
 class SubTelForumScraper(ArticleScraper):
@@ -252,6 +408,7 @@ def parse_rss_entries(content: bytes) -> list[dict[str, str | None]]:
                     "link": text_of(item, "link"),
                     "summary": text_of(item, "description"),
                     "published_date": published,
+                    "source_url": item.find("source").attrib.get("url", "") if item.find("source") is not None else "",
                 }
             )
         return entries
@@ -260,6 +417,19 @@ def parse_rss_entries(content: bytes) -> list[dict[str, str | None]]:
 def text_of(node: ElementTree.Element, tag: str) -> str:
     child = node.find(tag)
     return child.text if child is not None and child.text else ""
+
+
+def resolve_google_news_url(url: str) -> str:
+    parsed = urlparse(clean_text(url))
+    if not parsed.netloc:
+        return ""
+    if "news.google." not in parsed.netloc:
+        return url
+    query = parse_qs(parsed.query)
+    for key in ("url", "q"):
+        if query.get(key):
+            return unquote(query[key][0])
+    return url
 
 
 def dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:

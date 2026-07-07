@@ -29,6 +29,7 @@ def parse_args() -> argparse.Namespace:
         help="Sources to run: google_news subtelforum submarinenetworks.",
     )
     parser.add_argument("--import-history", metavar="CSV", help="Import historical extractor CSV into the canonical store.")
+    parser.add_argument("--purge-source", metavar="SOURCE", help="Remove events from a source before export or rerun.")
     parser.add_argument("--export-json", metavar="PATH", help="Export canonical events to JSON.")
     parser.add_argument("--export-csv", metavar="PATH", help="Export canonical events to CSV.")
     return parser.parse_args()
@@ -56,7 +57,11 @@ def main() -> int:
         imported = store.import_history_csv(resolve_path(args.import_history))
         logger.info("Imported %s historical events into %s", imported, store.path)
 
-    should_run = args.run or not any([args.import_history, args.export_json, args.export_csv, args.init_db])
+    if args.purge_source:
+        deleted = store.purge_source(args.purge_source)
+        logger.info("Deleted %s events for source %s", deleted, args.purge_source)
+
+    should_run = args.run or not any([args.import_history, args.purge_source, args.export_json, args.export_csv, args.init_db])
     if should_run:
         from src.pipeline import MonitorPipeline
 

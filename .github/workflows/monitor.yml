@@ -97,12 +97,20 @@ jobs:
         with:
           path: "docs/"
 
+  deploy-pages:
+    name: Deploy GitHub Pages
+    needs: monitor
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
   notify-on-failure:
-    needs: monitor
+    needs: [monitor, deploy-pages]
     if: failure()
     runs-on: ubuntu-latest
     steps:
