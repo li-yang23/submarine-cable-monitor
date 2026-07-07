@@ -1,179 +1,92 @@
 #!/usr/bin/env python3
-"""
-Submarine Cable Monitor - Main entry point.
-Scrapes various sources for submarine cable events and stores them in a database.
-"""
+"""Submarine Cable Monitor CLI."""
 
+import argparse
 import os
 import sys
-import argparse
 from pathlib import Path
 
-# Add the project root to Python path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from src.utils import get_logger, Config
-from src.storage import Database
-from src.scrapers import (
-    TeleGeographyScraper,
-    InfrapediaScraper,
-    CableFaultsScraper,
-    GoogleNewsScraper,
-    GitHubScraper
-)
+from src.storage import EventStore
+from src.utils import Config, get_logger
 
 
-def parse_args():
-    """Parse command line arguments."""
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Submarine Cable Monitor - Global submarine cable event monitoring"
+        description="Submarine Cable Monitor - collect, deduplicate, verify, and export cable events."
     )
-
+    parser.add_argument("--config", default="config.yaml", help="Path to configuration file.")
+    parser.add_argument("--init-db", action="store_true", help="Initialize the event store and exit.")
+    parser.add_argument("--run", action="store_true", help="Run the article collection and event extraction pipeline.")
+    parser.add_argument("--dry-run", action="store_true", help="Fetch and process a small sample without writing data.")
+    parser.add_argument("--since", help="Only collect articles/events on or after YYYY-MM-DD when source dates are known.")
     parser.add_argument(
-        "--config",
-        default="config.yaml",
-        help="Path to configuration file (default: config.yaml)"
-    )
-
-    parser.add_argument(
-        "--init-db",
-        action="store_true",
-        help="Initialize the database and exit"
-    )
-
-    parser.add_argument(
-        "--export-json",
-        metavar="PATH",
-        help="Export database to JSON file and exit"
-    )
-
-    parser.add_argument(
-        "--export-csv",
-        metavar="PATH",
-        help="Export database to CSV file and exit"
-    )
-
-    parser.add_argument(
-        "--cleanup",
-        action="store_true",
-        help="Clean up old events beyond retention period"
-    )
-
-    parser.add_argument(
+        "--sources",
         "--scrapers",
         nargs="+",
-        help="Specific scrapers to run (default: all enabled)"
+        help="Sources to run: google_news subtelforum submarinenetworks.",
     )
-
+    parser.add_argument("--import-history", metavar="CSV", help="Import historical extractor CSV into the canonical store.")
+    parser.add_argument("--export-json", metavar="PATH", help="Export canonical events to JSON.")
+    parser.add_argument("--export-csv", metavar="PATH", help="Export canonical events to CSV.")
     return parser.parse_args()
 
 
-def get_scrapers(config: Config):
-    """
-    Get list of scraper instances.
-
-    Args:
-        config: Configuration object
-
-    Returns:
-        List of scraper instances
-    """
-    scrapers = [
-        TeleGeographyScraper(config),
-        InfrapediaScraper(config),
-        CableFaultsScraper(config),
-        GoogleNewsScraper(config),
-        GitHubScraper(config),
-    ]
-
-    # Filter by enabled in config
-    enabled = []
-    for scraper in scrapers:
-        scraper_config = config.scrapers.get(scraper.source_name.lower().replace(" ", "_"))
-        if scraper_config is None or scraper_config.enabled:
-            enabled.append(scraper)
-
-    return enabled
+def resolve_path(path: str) -> str:
+    candidate = Path(path)
+    if candidate.is_absolute():
+        return str(candidate)
+    return str(project_root / candidate)
 
 
-def main():
-    """Main entry point."""
+def main() -> int:
     args = parse_args()
     logger = get_logger("main")
-
-    # Load config
-    config_path = os.path.join(project_root, args.config)
-    config = Config.from_yaml(config_path)
-
-    # Initialize database
-    db_path = os.path.join(project_root, config.database_path)
-    db = Database(db_path)
-    db.initialize()
+    config = Config.from_yaml(resolve_path(args.config))
+    store = EventStore(resolve_path(config.event_store_path))
 
     if args.init_db:
-        logger.info("Database initialized successfully")
+        store.save()
+        logger.info("Event store initialized at %s", store.path)
         return 0
+
+    if args.import_history:
+        imported = store.import_history_csv(resolve_path(args.import_history))
+        logger.info("Imported %s historical events into %s", imported, store.path)
+
+    should_run = args.run or not any([args.import_history, args.export_json, args.export_csv, args.init_db])
+    if should_run:
+        from src.pipeline import MonitorPipeline
+
+        pipeline = MonitorPipeline(config, store=store)
+        summary = pipeline.run(sources=normalize_sources(args.sources), since=args.since, dry_run=args.dry_run)
+        logger.info("Pipeline summary: %s", summary.to_dict())
 
     if args.export_json:
-        export_path = os.path.join(project_root, args.export_json)
-        logger.info(f"Exporting to JSON: {export_path}")
-        db.export_to_json(export_path)
-        return 0
+        store.export_json(resolve_path(args.export_json))
+        logger.info("Exported JSON to %s", args.export_json)
 
     if args.export_csv:
-        export_path = os.path.join(project_root, args.export_csv)
-        logger.info(f"Exporting to CSV: {export_path}")
-        db.export_to_csv(export_path)
-        return 0
-
-    if args.cleanup:
-        logger.info(f"Cleaning up old events (retention: {config.data_retention_days} days)")
-        deleted = db.cleanup_old_events(config.data_retention_days)
-        logger.info(f"Deleted {deleted} old events")
-        return 0
-
-    # Run all scrapers
-    logger.info("=" * 60)
-    logger.info("Submarine Cable Monitor")
-    logger.info("=" * 60)
-
-    all_scrapers = get_scrapers(config)
-
-    # Filter if specific scrapers requested
-    if args.scrapers:
-        requested = [s.lower() for s in args.scrapers]
-        all_scrapers = [
-            s for s in all_scrapers
-            if s.source_name.lower().replace(" ", "_") in requested
-            or s.source_name.lower() in requested
-        ]
-        if not all_scrapers:
-            logger.error(f"No matching scrapers found for: {args.scrapers}")
-            return 1
-
-    total_events = 0
-
-    for scraper in all_scrapers:
-        logger.info(f"Running scraper: {scraper.source_name}")
-        try:
-            with scraper:
-                events = scraper.scrape()
-                if events:
-                    ids = db.insert_events(events)
-                    inserted = len([i for i in ids if i > 0])
-                    logger.info(f"  - Found {len(events)} events, inserted {inserted} new")
-                    total_events += inserted
-                else:
-                    logger.info(f"  - No events found")
-        except Exception as e:
-            logger.error(f"Error running {scraper.source_name}: {e}")
-
-    logger.info("=" * 60)
-    logger.info(f"Run complete. Total new events: {total_events}")
-    logger.info("=" * 60)
+        store.export_csv(resolve_path(args.export_csv))
+        logger.info("Exported CSV to %s", args.export_csv)
 
     return 0
+
+
+def normalize_sources(sources: list[str] | None) -> list[str] | None:
+    if not sources:
+        return None
+    aliases = {
+        "google": "google_news",
+        "google-news": "google_news",
+        "subtel": "subtelforum",
+        "subtel_forum": "subtelforum",
+        "submarine-networks": "submarinenetworks",
+        "submarine_networks": "submarinenetworks",
+    }
+    return [aliases.get(source.lower(), source.lower()) for source in sources]
 
 
 if __name__ == "__main__":

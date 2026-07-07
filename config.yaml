@@ -10,19 +10,33 @@ request:
 # Database settings
 database:
   path: data/events.db
+  event_store_path: data/events.jsonl
   retention_days: 730  # 2 years
+
+# LLM settings. API keys must come from environment variables/GitHub Secrets.
+llm:
+  model: deepseek-ai/DeepSeek-V3
+  base_url: https://api.siliconflow.cn/v1/
+  embedding_model: BAAI/bge-m3
+
+# Article-source controls for GitHub Actions runtime.
+article_sources:
+  subtelforum_max_pages: 3
+  submarine_networks_links_path: data/cable-links.json
+  submarine_networks_max_cables: 50
+  submarine_networks_articles_per_cable: 3
 
 # Scraper configurations
 scrapers:
   telegeography:
     url: https://api.telegeography.com
-    enabled: true
+    enabled: false
     update_interval_hours: 24
     api_key: ""  # Get from: https://www.telegeography.com/contact/
 
   infrapedia:
     url: https://api.infrapedia.com
-    enabled: true
+    enabled: false
     update_interval_hours: 24
     api_key: ""  # Get from: https://www.infrapedia.com/api-access
 
@@ -37,6 +51,18 @@ scrapers:
     enabled: true
     update_interval_hours: 4
     api_key: ""  # Not needed - public RSS
+
+  subtelforum:
+    url: https://subtelforum.com/category/cable-faults-maintenance/
+    enabled: true
+    update_interval_hours: 24
+    api_key: ""
+
+  submarinenetworks:
+    url: https://www.submarinenetworks.com
+    enabled: true
+    update_interval_hours: 24
+    api_key: ""
 
   github:
     url: https://api.github.com

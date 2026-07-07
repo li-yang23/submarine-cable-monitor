@@ -1,6 +1,11 @@
 # Data directories
-data/
 logs/
+data/*
+!data/.gitkeep
+!data/cable-links.json
+!data/events.jsonl
+!data/events.json
+!data/events.csv
 
 # Python
 __pycache__/

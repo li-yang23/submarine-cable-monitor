@@ -215,10 +215,14 @@
         }
 
         .event-type.fault { background: #fed7d7; color: #c53030; }
+        .event-type.cut { background: #fed7d7; color: #c53030; }
         .event-type.outage { background: #feebc8; color: #c05621; }
+        .event-type.limit { background: #feebc8; color: #c05621; }
         .event-type.repair { background: #c6f6d5; color: #276749; }
+        .event-type.fluctuate { background: #bee3f8; color: #2b6cb0; }
         .event-type.news { background: #bee3f8; color: #2b6cb0; }
         .event-type.maintenance { background: #e9d8fd; color: #6b46c1; }
+        .event-type.unknown { background: #e2e8f0; color: #4a5568; }
         .event-type.update { background: #e2e8f0; color: #4a5568; }
 
         .event-status {
@@ -234,6 +238,12 @@
         .event-status.repairing { background: #e9d8fd; color: #6b46c1; }
         .event-status.resolved { background: #c6f6d5; color: #276749; }
         .event-status.unknown { background: #e2e8f0; color: #4a5568; }
+        .event-status.verified { background: #c6f6d5; color: #276749; }
+        .event-status.rule_verified { background: #bee3f8; color: #2b6cb0; }
+        .event-status.mentioned { background: #c6f6d5; color: #276749; }
+        .event-status.notmentioned { background: #feebc8; color: #c05621; }
+        .event-status.imported { background: #e9d8fd; color: #6b46c1; }
+        .event-status.unverified { background: #e2e8f0; color: #4a5568; }
 
         .description {
             max-width: 400px;
@@ -321,7 +331,7 @@
     <div class="container">
         <header>
             <h1>🌊 Submarine Cable Monitor</h1>
-            <p>Global submarine cable event tracking and monitoring</p>
+            <p>Global submarine cable public-opinion event tracking and monitoring</p>
         </header>
 
         <div class="stats" id="stats">
@@ -331,19 +341,19 @@
             </div>
             <div class="stat-card fault">
                 <div class="number" id="fault-count">0</div>
-                <div class="label">Faults</div>
+                <div class="label">Cuts / Faults</div>
             </div>
             <div class="stat-card outage">
                 <div class="number" id="outage-count">0</div>
-                <div class="label">Outages</div>
+                <div class="label">Limits / Outages</div>
             </div>
             <div class="stat-card repair">
                 <div class="number" id="repair-count">0</div>
-                <div class="label">Repairs</div>
+                <div class="label">Maintenance</div>
             </div>
             <div class="stat-card news">
                 <div class="number" id="news-count">0</div>
-                <div class="label">News</div>
+                <div class="label">Verified</div>
             </div>
         </div>
 
@@ -360,23 +370,23 @@
                     <label for="filter-type">Event Type</label>
                     <select id="filter-type">
                         <option value="">All Types</option>
-                        <option value="fault">Fault</option>
-                        <option value="outage">Outage</option>
-                        <option value="repair">Repair</option>
-                        <option value="maintenance">Maintenance</option>
-                        <option value="news">News</option>
-                        <option value="update">Update</option>
+                        <option value="Cut">Cut</option>
+                        <option value="Limit">Limit</option>
+                        <option value="Fluctuate">Fluctuate</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Unknown">Unknown</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="filter-status">Status</label>
+                    <label for="filter-status">Verification</label>
                     <select id="filter-status">
-                        <option value="">All Status</option>
-                        <option value="reported">Reported</option>
-                        <option value="investigating">Investigating</option>
-                        <option value="repairing">Repairing</option>
-                        <option value="resolved">Resolved</option>
-                        <option value="unknown">Unknown</option>
+                        <option value="">All Verification</option>
+                        <option value="verified">Verified</option>
+                        <option value="rule_verified">Rule Verified</option>
+                        <option value="Mentioned">Mentioned</option>
+                        <option value="NotMentioned">NotMentioned</option>
+                        <option value="imported">Imported</option>
+                        <option value="unverified">Unverified</option>
                     </select>
                 </div>
                 <div class="filter-group">
@@ -388,8 +398,8 @@
                     <input type="text" id="filter-location" placeholder="Search location...">
                 </div>
                 <div class="filter-group">
-                    <label for="filter-description">Description</label>
-                    <input type="text" id="filter-description" placeholder="Search description...">
+                    <label for="filter-description">Text / Impact</label>
+                    <input type="text" id="filter-description" placeholder="Search text...">
                 </div>
                 <div class="filter-group">
                     <label for="filter-date-from">From Date</label>
@@ -413,13 +423,13 @@
                 <table id="events-table">
                     <thead>
                         <tr>
-                            <th data-sort="reported_at">Reported At</th>
+                            <th data-sort="occurrence_date">Occurrence</th>
                             <th data-sort="source">Source</th>
-                            <th data-sort="event_type">Type</th>
-                            <th data-sort="status">Status</th>
+                            <th data-sort="accident_type">Type</th>
+                            <th data-sort="verification_status">Verification</th>
                             <th data-sort="cable_name">Cable Name</th>
-                            <th data-sort="location">Location</th>
-                            <th data-sort="description">Description</th>
+                            <th data-sort="accident_location">Location</th>
+                            <th data-sort="original_text">Evidence</th>
                             <th>Link</th>
                         </tr>
                     </thead>
@@ -444,12 +454,12 @@
         let filteredEvents = [];
         let currentPage = 1;
         const perPage = 50;
-        let sortColumn = 'reported_at';
+        let sortColumn = 'occurrence_date';
         let sortDirection = 'desc';
 
         async function loadEvents() {
             try {
-                const response = await fetch('data/export.json');
+                const response = await fetch('data/events.json');
                 if (!response.ok) {
                     throw new Error('Failed to load events');
                 }
@@ -485,10 +495,10 @@
 
         function updateStats() {
             document.getElementById('total-count').textContent = allEvents.length;
-            document.getElementById('fault-count').textContent = allEvents.filter(e => e.event_type === 'fault').length;
-            document.getElementById('outage-count').textContent = allEvents.filter(e => e.event_type === 'outage').length;
-            document.getElementById('repair-count').textContent = allEvents.filter(e => e.event_type === 'repair').length;
-            document.getElementById('news-count').textContent = allEvents.filter(e => e.event_type === 'news').length;
+            document.getElementById('fault-count').textContent = allEvents.filter(e => e.accident_type === 'Cut').length;
+            document.getElementById('outage-count').textContent = allEvents.filter(e => e.accident_type === 'Limit').length;
+            document.getElementById('repair-count').textContent = allEvents.filter(e => e.accident_type === 'Maintenance').length;
+            document.getElementById('news-count').textContent = allEvents.filter(e => ['verified', 'rule_verified', 'Mentioned'].includes(e.verification_status)).length;
         }
 
         function updateLastUpdated() {
@@ -515,13 +525,14 @@
 
             filteredEvents = allEvents.filter(event => {
                 if (source && event.source !== source) return false;
-                if (type && event.event_type !== type) return false;
-                if (status && event.status !== status) return false;
+                if (type && event.accident_type !== type) return false;
+                if (status && event.verification_status !== status) return false;
                 if (cable && (!event.cable_name || !event.cable_name.toLowerCase().includes(cable))) return false;
-                if (location && (!event.location || !event.location.toLowerCase().includes(location))) return false;
-                if (description && (!event.description || !event.description.toLowerCase().includes(description))) return false;
-                if (dateFrom && event.reported_at && new Date(event.reported_at) < new Date(dateFrom)) return false;
-                if (dateTo && event.reported_at && new Date(event.reported_at) > new Date(dateTo + 'T23:59:59')) return false;
+                if (location && (!event.accident_location || !event.accident_location.toLowerCase().includes(location))) return false;
+                const searchableText = [event.original_text, event.reason, event.affected_area, event.title].join(' ').toLowerCase();
+                if (description && !searchableText.includes(description)) return false;
+                if (dateFrom && event.occurrence_date && new Date(event.occurrence_date) < new Date(dateFrom)) return false;
+                if (dateTo && event.occurrence_date && new Date(event.occurrence_date) > new Date(dateTo + 'T23:59:59')) return false;
                 return true;
             });
 
@@ -550,7 +561,7 @@
                 if (aVal === null || aVal === undefined) aVal = '';
                 if (bVal === null || bVal === undefined) bVal = '';
 
-                if (sortColumn === 'reported_at' || sortColumn === 'created_at') {
+                if (sortColumn === 'occurrence_date' || sortColumn === 'published_date' || sortColumn === 'created_at') {
                     aVal = aVal ? new Date(aVal) : new Date(0);
                     bVal = bVal ? new Date(bVal) : new Date(0);
                 }
@@ -574,7 +585,7 @@
             if (filteredEvents.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="8" class="no-results">
+                    <td colspan="8" class="no-results">
                             <h3>No events found</h3>
                             <p>Try adjusting your filters</p>
                         </td>
@@ -590,13 +601,13 @@
 
             tbody.innerHTML = pageEvents.map(event => `
                 <tr>
-                    <td>${formatDate(event.reported_at)}</td>
+                    <td>${formatDate(event.occurrence_date || event.published_date)}</td>
                     <td>${escapeHtml(event.source)}</td>
-                    <td><span class="event-type ${event.event_type}">${event.event_type}</span></td>
-                    <td><span class="event-status ${event.status}">${event.status}</span></td>
+                    <td><span class="event-type ${String(event.accident_type || 'Unknown').toLowerCase()}">${escapeHtml(event.accident_type || 'Unknown')}</span></td>
+                    <td><span class="event-status ${String(event.verification_status || 'unverified').toLowerCase()}">${escapeHtml(event.verification_status || 'unverified')}</span></td>
                     <td>${escapeHtml(event.cable_name || '-')}</td>
-                    <td>${escapeHtml(event.location || '-')}</td>
-                    <td class="description" title="${escapeHtml(event.description || '')}">${escapeHtml(event.description || '-')}</td>
+                    <td>${escapeHtml(event.accident_location || '-')}</td>
+                    <td class="description" title="${escapeHtml(event.original_text || event.reason || '')}">${escapeHtml(event.original_text || event.reason || '-')}</td>
                     <td>${event.url ? `<a href="${escapeHtml(event.url)}" target="_blank" rel="noopener">Link</a>` : '-'}</td>
                 </tr>
             `).join('');

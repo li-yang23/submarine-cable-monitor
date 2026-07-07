@@ -1,163 +1,107 @@
 # Submarine Cable Monitor
 
-全球海缆事件自动监控系统。自动监控多个数据源，收集海底光缆的故障、维护和修复事件。
+海缆舆情数据收集与监控系统。系统从 Google News、SubTel Forum、Submarine Networks 等来源采集海缆相关文章，抽取海缆事故事件，做去重与核验，然后导出静态 JSON/CSV 给 GitHub Pages 展示。
 
 ## Features
 
-- **多源数据采集**:
-  - TeleGeography 海缆地图
-  - Infrapedia 海缆数据库
-  - CableFaults 故障报告
-  - Google News RSS 新闻监控
-  - GitHub 相关技术仓库监控
-
-- **数据存储**:
-  - SQLite 数据库存储
-  - JSON/CSV 导出
-  - 2年数据保留策略
-
-- **Web Frontend (GitHub Pages)**:
-  - Interactive table view with all events
-  - Filter by any column (source, type, status, date range, etc.)
-  - Sortable columns
-  - Pagination for large datasets
-  - Statistics dashboard
-
-- **自动化**:
-  - GitHub Actions 定时运行
-  - 自动部署 GitHub Pages
-  - 失败时自动创建 Issue 通知
-  - 支持手动触发
+- 多源采集：
+  - Google News RSS
+  - SubTel Forum cable faults & maintenance
+  - Submarine Networks cable article pages
+  - TeleGeography / Infrapedia 配置保留，默认关闭，待真实 API 权限确认后启用
+- 事件处理：
+  - OpenAI-compatible LLM 事件抽取
+  - 无 API key 时使用规则抽取，支持 `--dry-run`
+  - 事件字段标准化、日期清洗、文本相似度去重
+  - 重复事件合并 source/evidence URL
+- 部署：
+  - GitHub Actions 每天 UTC 02:00 自动运行
+  - 结果提交到 `data/events.jsonl` 和 `docs/data/`
+  - GitHub Pages 静态前端展示，不暴露任何 API key
 
 ## Quick Start
 
-### Local Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/li-yang23/submarine-cable-monitor.git
-cd submarine-cable-monitor
-```
-
-2. Install dependencies:
 ```bash
 pip install -r requirements.txt
-```
-
-3. Initialize the database:
-```bash
 python -m src.main --init-db
+python -m src.main --run --dry-run
+python -m src.main --export-json docs/data/events.json --export-csv docs/data/events.csv
 ```
 
-4. Run the monitor:
+默认不需要 MongoDB。canonical store 是 `data/events.jsonl`，Pages 读取 `docs/data/events.json`。
+
+## Historical Import
+
+可从 `submarine-event-extractor` 导入历史事件 CSV 作为去重基础：
+
 ```bash
-python -m src.main
+python -m src.main --import-history /Users/liyang/Documents/Projects/submarine-event-extractor/data-217-20260116.csv
+python -m src.main --export-json docs/data/events.json --export-csv docs/data/events.csv
 ```
 
-### Command Line Options
+导入会生成稳定 `event_uid`，并保留历史字段到 `raw_data`。
+
+## Daily Pipeline
 
 ```bash
-# Initialize database
-python -m src.main --init-db
+# Run all enabled sources
+python -m src.main --run
 
-# Export data to JSON
-python -m src.main --export-json data/export.json
+# Run selected sources
+python -m src.main --run --sources google_news subtelforum submarinenetworks
 
-# Export data to CSV
-python -m src.main --export-csv data/export.csv
-
-# Clean up old events
-python -m src.main --cleanup
-
-# Run specific scrapers
-python -m src.main --scrapers google_news github
+# Process a small sample without writing
+python -m src.main --run --dry-run
 ```
 
-## GitHub Actions & Pages Setup
+## API Configuration
 
-1. Fork this repository
+本地开发可以放 `.env` 或 `config.env`，GitHub Actions 使用 Secrets/Variables。
 
-2. Enable GitHub Pages:
-   - Go to Settings → Pages
-   - Under "Build and deployment", select:
-     - Source: Deploy from a branch
-     - Branch: `gh-pages` (will be created automatically) or `main` with folder `/docs`
-   - Alternatively, the workflow uses `actions/deploy-pages` which handles this automatically
+Required/optional environment variables:
 
-3. Enable write permissions for GitHub Actions:
-   - Go to Settings → Actions → General
-   - Under "Workflow permissions", select "Read and write permissions"
-   - Also enable "Allow GitHub Actions to create and approve pull requests"
+- `SILICONFLOW_API_KEY` or `OPENAI_API_KEY`
+- `SILICONFLOW_BASE_URL`, default `https://api.siliconflow.cn/v1/`
+- `LLM_MODEL`, default `deepseek-ai/DeepSeek-V3`
+- `EMBEDDING_MODEL`, default `BAAI/bge-m3`
 
-4. The workflow will automatically:
-   - Run daily at 02:00 UTC
-   - Run on manual trigger (workflow_dispatch)
-   - Deploy updates to GitHub Pages
+API key 不应提交到仓库。Actions workflow 会从 GitHub Secrets 注入。
 
-5. Access the webpage at:
-   `https://li-yang23.github.io/submarine-cable-monitor/`
+## GitHub Pages
+
+Workflow 会执行：
+
+1. 安装依赖；
+2. 初始化 `data/events.jsonl`；
+3. 运行采集和抽取；
+4. 导出 `docs/data/events.json` 与 `docs/data/events.csv`；
+5. 提交数据更新；
+6. 部署 `docs/` 到 GitHub Pages。
+
+前端只读取静态文件，支持按 cable、source、accident type、verification status、日期和文本搜索筛选。
+
+## Tests
+
+```bash
+python -m unittest discover -s tests
+```
 
 ## Project Structure
 
+```text
+src/
+  main.py                    CLI
+  pipeline.py                daily monitor pipeline
+  processing/                extraction, normalization, similarity
+  scrapers/                  Google News, SubTel Forum, Submarine Networks
+  storage/                   JSON event store and legacy SQLite module
+data/
+  cable-links.json           Submarine Networks seed links
+  events.jsonl               canonical event store
+docs/
+  index.html                 GitHub Pages frontend
+  data/events.json           frontend data export
 ```
-submarine-cable-monitor/
-├── src/
-│   ├── scrapers/              # Data collection module
-│   │   ├── base_scraper.py     # Abstract base class
-│   │   ├── telegeography.py    # TeleGeography
-│   │   ├── infrapedia.py       # Infrapedia
-│   │   ├── cablefaults.py      # CableFaults
-│   │   ├── google_news.py      # Google News
-│   │   └── github_scraper.py   # GitHub
-│   ├── storage/
-│   │   ├── database.py         # SQLite database operations
-│   │   └── models.py           # Data models
-│   ├── utils/
-│   │   ├── logger.py           # Logging config
-│   │   └── config.py           # Configuration
-│   └── main.py                 # Main entry point
-├── docs/                       # GitHub Pages frontend
-│   ├── index.html              # Main webpage
-│   └── data/                   # Exported data for frontend
-│       ├── export.json
-│       └── export.csv
-├── .github/workflows/
-│   └── monitor.yml             # GitHub Actions workflow
-├── data/                        # Data directory (gitignored)
-├── logs/                        # Logs directory (gitignored)
-├── requirements.txt
-├── config.yaml
-└── README.md
-```
-
-## Configuration
-
-Edit `config.yaml` to customize:
-
-- Request delays and timeout
-- Database path and retention policy
-- Scraper enable/disable
-- Update intervals
-
-## Data Model
-
-Events table schema:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | INTEGER | Primary key |
-| source | TEXT | Data source name |
-| event_type | TEXT | Event type (fault/outage/repair/etc) |
-| cable_name | TEXT | Cable name |
-| location | TEXT | Location description |
-| status | TEXT | Current status |
-| reported_at | TIMESTAMP | When reported |
-| resolved_at | TIMESTAMP | When resolved |
-| description | TEXT | Event description |
-| url | TEXT | Source URL |
-| raw_data | TEXT | Raw JSON data |
-| created_at | TIMESTAMP | DB creation time |
-| updated_at | TIMESTAMP | DB update time |
 
 ## License
 
