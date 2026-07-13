@@ -1,6 +1,13 @@
 name: Submarine Cable Monitor
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "data/**"
+      - ".github/workflows/monitor.yml"
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
@@ -37,22 +44,26 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python
+        if: ${{ github.event_name != 'push' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
       - name: Install dependencies
+        if: ${{ github.event_name != 'push' }}
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Initialize event store
+        if: ${{ github.event_name != 'push' }}
         run: |
           mkdir -p data docs/data logs
           python -m src.main --init-db
 
       - name: Run monitor
+        if: ${{ github.event_name != 'push' }}
         env:
           SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
           SILICONFLOW_BASE_URL: ${{ secrets.SILICONFLOW_BASE_URL }}
@@ -73,10 +84,12 @@ jobs:
           python -m src.main --run $SOURCE_ARGS $DRY_RUN
 
       - name: Export data for GitHub Pages
+        if: ${{ github.event_name != 'push' }}
         run: |
           python -m src.main --clean-store --translate-missing --export-json docs/data/events.json --export-csv docs/data/events.csv
 
       - name: Upload monitor artifacts
+        if: ${{ github.event_name != 'push' }}
         uses: actions/upload-artifact@v4
         with:
           name: monitor-output
@@ -87,7 +100,7 @@ jobs:
           retention-days: 30
 
       - name: Commit and push data updates
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+        if: ${{ github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
