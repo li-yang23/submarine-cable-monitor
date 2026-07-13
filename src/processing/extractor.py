@@ -75,11 +75,28 @@ class EventExtractor:
                 pass
         return False
 
+    def translate_original_text(self, text: str) -> str:
+        text = clean_text(text)
+        if not text or not self.available:
+            return ""
+        prompt = f"""
+Translate the following submarine cable incident evidence snippet into concise Chinese.
+Keep cable names, organization names, place names, and dates accurate. Output only the Chinese translation.
+
+Text:
+{text[:1800]}
+"""
+        response = self._client_instance().chat.completions.create(
+            model=self.model,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return clean_translation(response.choices[0].message.content)
+
     def _client_instance(self):
         if self._client is None:
             from openai import OpenAI
 
-            kwargs = {"api_key": self.api_key}
+            kwargs = {"api_key": self.api_key, "timeout": 45}
             if self.base_url:
                 kwargs["base_url"] = self.base_url
             self._client = OpenAI(**kwargs)
@@ -248,6 +265,14 @@ def extract_cable_name(text: str) -> str:
                 return f"SEA-ME-WE {number.group(0)}" if number else value
             return value.upper() if value.upper() in {"APG", "AAG", "WACS", "PEACE", "SEACOM", "EASSY", "IMEWE"} else value
     return ""
+
+
+def clean_translation(value: Any) -> str:
+    text = clean_text(value)
+    text = re.sub(r"^[\"'“”]+|[\"'“”]+$", "", text).strip()
+    text = re.sub(r"\s*[（(]注[:：].*$", "", text, flags=re.S).strip()
+    text = re.sub(r"\s*注[:：].*$", "", text, flags=re.S).strip()
+    return clean_text(text)
 
 
 def best_evidence_sentence(text: str) -> str:

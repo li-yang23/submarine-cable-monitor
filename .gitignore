@@ -7,6 +7,10 @@ data/*
 !data/events.json
 !data/events.csv
 
+# Local secrets
+.env
+config.env
+
 # Python
 __pycache__/
 *.py[cod]

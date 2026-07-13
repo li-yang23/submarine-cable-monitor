@@ -4,6 +4,7 @@ from typing import Any
 from src.processing import EventExtractor
 from src.scrapers import GoogleNewsArticleScraper, SubTelForumScraper, SubmarineNetworksScraper
 from src.storage import EventStore
+from src.storage.event_store import should_drop_event
 from src.utils import Config, get_logger
 
 
@@ -76,10 +77,13 @@ class MonitorPipeline:
                             summary.rejected += 1
                             continue
                         event["verification_status"] = "verified" if self.extractor.available else "rule_verified"
+                        event = self.store.normalize_event(event)
+                        if should_drop_event(event):
+                            summary.rejected += 1
+                            continue
                         if dry_run:
                             continue
-                        duplicate_checker = self.extractor.is_duplicate if self.extractor.available else None
-                        inserted, _ = self.store.upsert(event, duplicate_checker=duplicate_checker)
+                        inserted, _ = self.store.upsert(event)
                         if inserted:
                             summary.inserted += 1
                         else:

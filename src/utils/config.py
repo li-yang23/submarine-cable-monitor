@@ -35,6 +35,7 @@ class Config:
     # Scraper configurations
     scrapers: dict[str, ScraperConfig] = field(default_factory=dict)
     subtelforum_max_pages: int = 3
+    subtelforum_max_articles: int = 8
     google_news_max_articles: int = 12
     google_news_max_attempts: int = 30
     submarine_networks_links_path: str = "data/cable-links.json"
@@ -99,6 +100,7 @@ class Config:
 
         article_sources = data.get("article_sources", {})
         config.subtelforum_max_pages = article_sources.get("subtelforum_max_pages", config.subtelforum_max_pages)
+        config.subtelforum_max_articles = article_sources.get("subtelforum_max_articles", config.subtelforum_max_articles)
         config.google_news_max_articles = article_sources.get("google_news_max_articles", config.google_news_max_articles)
         config.google_news_max_attempts = article_sources.get("google_news_max_attempts", config.google_news_max_attempts)
         config.submarine_networks_links_path = article_sources.get(
@@ -146,6 +148,7 @@ class Config:
             },
             "article_sources": {
                 "subtelforum_max_pages": self.subtelforum_max_pages,
+                "subtelforum_max_articles": self.subtelforum_max_articles,
                 "google_news_max_articles": self.google_news_max_articles,
                 "google_news_max_attempts": self.google_news_max_attempts,
                 "submarine_networks_links_path": self.submarine_networks_links_path,

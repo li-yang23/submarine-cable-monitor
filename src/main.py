@@ -30,6 +30,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--import-history", metavar="CSV", help="Import historical extractor CSV into the canonical store.")
     parser.add_argument("--purge-source", metavar="SOURCE", help="Remove events from a source before export or rerun.")
+    parser.add_argument("--clean-store", action="store_true", help="Drop low-value events and merge duplicates in the canonical store.")
+    parser.add_argument("--translate-missing", action="store_true", help="Fill missing Chinese translations for original_text with the configured LLM.")
+    parser.add_argument("--translate-limit", type=int, help="Maximum number of missing translations to fill in one run.")
     parser.add_argument("--export-json", metavar="PATH", help="Export canonical events to JSON.")
     parser.add_argument("--export-csv", metavar="PATH", help="Export canonical events to CSV.")
     return parser.parse_args()
@@ -61,7 +64,28 @@ def main() -> int:
         deleted = store.purge_source(args.purge_source)
         logger.info("Deleted %s events for source %s", deleted, args.purge_source)
 
-    should_run = args.run or not any([args.import_history, args.purge_source, args.export_json, args.export_csv, args.init_db])
+    if args.clean_store:
+        summary = store.clean_events()
+        logger.info("Cleaned event store: %s", summary)
+
+    if args.translate_missing:
+        from src.processing import EventExtractor
+
+        extractor = EventExtractor(config.llm_model)
+        summary = store.translate_missing(extractor.translate_original_text, limit=args.translate_limit)
+        logger.info("Translated missing snippets: %s", summary)
+
+    should_run = args.run or not any(
+        [
+            args.import_history,
+            args.purge_source,
+            args.clean_store,
+            args.translate_missing,
+            args.export_json,
+            args.export_csv,
+            args.init_db,
+        ]
+    )
     if should_run:
         from src.pipeline import MonitorPipeline
 

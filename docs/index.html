@@ -522,8 +522,10 @@
       const cable = String(data.get("submarine_name") || "").trim().toLowerCase();
       const dateField = String(data.get("date_field") || "occurrence_date");
       const year = String(data.get("year") || "").trim();
-      const month = String(data.get("month") || "").trim().padStart(2, "0");
-      const day = String(data.get("day") || "").trim().padStart(2, "0");
+      const rawMonth = String(data.get("month") || "").trim();
+      const rawDay = String(data.get("day") || "").trim();
+      const month = rawMonth ? rawMonth.padStart(2, "0") : "";
+      const day = rawDay ? rawDay.padStart(2, "0") : "";
       const accidentType = String(data.get("accident_type") || "").trim().toLowerCase();
       const trustworthy = String(data.get("trustworthy") || "").trim().toLowerCase();
 
@@ -533,12 +535,12 @@
         if (cable && !String(event.submarine_name || "").toLowerCase().includes(cable)) return false;
         if (accidentType && String(event.accident_type || "").toLowerCase() !== accidentType) return false;
         if (trustworthy && String(event.TrustWorthy || "").toLowerCase() !== trustworthy) return false;
-        if (year || month.trim() || day.trim()) {
+        if (year || month || day) {
           const parts = String(event[dateField] || "").match(/(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
           if (!parts) return false;
           if (year && parts[1] !== year) return false;
-          if (month.trim() && parts[2].padStart(2, "0") !== month) return false;
-          if (day.trim() && parts[3].padStart(2, "0") !== day) return false;
+          if (month && parts[2].padStart(2, "0") !== month) return false;
+          if (day && parts[3].padStart(2, "0") !== day) return false;
         }
         return true;
       }).sort((a, b) => String(b.occurrence_date || b.published_date || "").localeCompare(String(a.occurrence_date || a.published_date || "")));

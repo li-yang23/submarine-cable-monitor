@@ -1,6 +1,7 @@
 import email.utils
 import json
 import re
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -34,9 +35,17 @@ class ArticleScraper:
         raise NotImplementedError
 
     def get(self, url: str) -> requests.Response:
-        response = self.session.get(url, timeout=self.config.request_timeout)
-        response.raise_for_status()
-        return response
+        last_error: Exception | None = None
+        for attempt in range(int(getattr(self.config, "max_retries", 3))):
+            try:
+                response = self.session.get(url, timeout=self.config.request_timeout)
+                response.raise_for_status()
+                return response
+            except Exception as exc:
+                last_error = exc
+                if attempt < int(getattr(self.config, "max_retries", 3)) - 1:
+                    time.sleep(1 + attempt)
+        raise last_error or RuntimeError(f"Failed to fetch {url}")
 
     def extract_page_text(self, url: str) -> dict[str, Any]:
         response = self.get(url)
@@ -235,19 +244,32 @@ class GoogleNewsArticleScraper(ArticleScraper):
 class SubTelForumScraper(ArticleScraper):
     source_name = "SubTel Forum"
     start_url = "https://subtelforum.com/category/cable-faults-maintenance/"
+    feed_url = "https://subtelforum.com/category/cable-faults-maintenance/feed/"
 
     def scrape_articles(self, since: str | None = None, dry_run: bool = False) -> list[dict[str, Any]]:
         urls = self._discover_urls(since=since, dry_run=dry_run)
-        return [self._fetch_article(url) for url in urls]
+        articles: list[dict[str, Any]] = []
+        for url in urls:
+            try:
+                articles.append(self._fetch_article(url))
+                time.sleep(0.5)
+            except Exception as exc:
+                self.logger.warning("Skipping SubTel Forum article %s: %s", url, exc)
+        return articles
 
     def _discover_urls(self, since: str | None, dry_run: bool) -> list[str]:
         urls: list[str] = []
         next_url = self.start_url
         max_pages = 1 if dry_run else int(getattr(self.config, "subtelforum_max_pages", 3))
+        max_articles = 3 if dry_run else int(getattr(self.config, "subtelforum_max_articles", 8))
 
         for _ in range(max_pages):
             self.logger.info("Discovering SubTel Forum articles from %s", next_url)
-            soup = BeautifulSoup(self.get(next_url).text, "html.parser")
+            try:
+                soup = BeautifulSoup(self.get(next_url).text, "html.parser")
+            except Exception as exc:
+                self.logger.warning("SubTel Forum category page failed, falling back to feed: %s", exc)
+                return self._discover_urls_from_feed(max_articles=max_articles)
             for link in soup.select("h2 a, h3 a, h4 a, .fusion-title a"):
                 href = clean_text(link.get("href"))
                 title = clean_text(link.get_text(" "))
@@ -255,13 +277,24 @@ class SubTelForumScraper(ArticleScraper):
                     continue
                 if title and href not in urls:
                     urls.append(href)
-                if dry_run and len(urls) >= 3:
+                if len(urls) >= max_articles:
                     return urls
 
             next_link = soup.select_one("a.pagination-next, .pagination-next a, a[rel='next']")
             if not next_link or not next_link.get("href"):
                 break
             next_url = urljoin(next_url, next_link["href"])
+        return urls
+
+    def _discover_urls_from_feed(self, max_articles: int) -> list[str]:
+        response = self.get(self.feed_url)
+        urls: list[str] = []
+        for entry in parse_rss_entries(response.content):
+            href = clean_text(entry.get("link"))
+            if href and "subtelforum.com" in href and href not in urls:
+                urls.append(href)
+            if len(urls) >= max_articles:
+                break
         return urls
 
     def _fetch_article(self, url: str) -> dict[str, Any]:

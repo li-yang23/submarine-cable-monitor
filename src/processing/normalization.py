@@ -73,10 +73,37 @@ def normalize_key(value: Any) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def normalize_cable_name(value: Any) -> str:
+    text = clean_text(value)
+    if not text:
+        return ""
+    upper = text.upper()
+    abbreviation = re.search(r"\b(AAG|APG|AAE[-\s]?\d+|WACS|SAT[-\s]?\d+|ACE|IMEWE|EIG|SAFE)\b", upper)
+    if abbreviation:
+        value = abbreviation.group(1)
+        if re.fullmatch(r"AAE[-\s]?\d+", value):
+            number = re.search(r"\d+", value)
+            return f"AAE-{number.group(0)}" if number else "AAE"
+        if re.fullmatch(r"SAT[-\s]?\d+", value):
+            number = re.search(r"\d+", value)
+            return f"SAT-{number.group(0)}" if number else "SAT"
+        return value
+    parenthetical = re.search(r"\(([^)]*(?:SMW|SEA[-\s]?ME[-\s]?WE)[^)]*)\)", upper)
+    if parenthetical:
+        upper = parenthetical.group(1)
+    upper = upper.replace("SEA ME WE", "SEA-ME-WE")
+    upper = upper.replace("SEAMEWE", "SEA-ME-WE")
+    upper = re.sub(r"\bSMW\s*-?\s*(\d+)\b", r"SEA-ME-WE \1", upper)
+    upper = re.sub(r"\bSEA[-\s]?ME[-\s]?WE\s*-?\s*(\d+)\b", r"SEA-ME-WE \1", upper)
+    upper = re.sub(r"\bAAE\s*-?\s*(\d+)\b", r"AAE-\1", upper)
+    upper = re.sub(r"\s+", " ", upper).strip()
+    return upper
+
+
 def event_uid(event: dict[str, Any]) -> str:
     parts = [
         normalize_key(event.get("url")),
-        normalize_key(event.get("cable_name") or event.get("submarine_name")),
+        normalize_key(normalize_cable_name(event.get("cable_name") or event.get("submarine_name"))),
         normalize_key(event.get("occurrence_date")),
         normalize_key(event.get("accident_location") or event.get("location")),
     ]

@@ -5,7 +5,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-from src.processing.normalization import clean_text, event_uid, normalize_accident_type, parse_date, text_similarity
+from src.processing.normalization import (
+    clean_text,
+    event_uid,
+    normalize_accident_type,
+    normalize_cable_name,
+    parse_date,
+    text_similarity,
+)
+from src.processing.extractor import clean_translation
 
 
 class EventStore:
@@ -47,6 +55,8 @@ class EventStore:
 
     def upsert(self, event: dict[str, Any], duplicate_checker=None) -> tuple[bool, dict[str, Any]]:
         event = self.normalize_event(event)
+        if should_drop_event(event):
+            return False, event
         direct = self.find_by_uid(event["event_uid"])
         if direct:
             self.merge(direct, event)
@@ -62,6 +72,64 @@ class EventStore:
 
         self.events.append(event)
         return True, event
+
+    def clean_events(self) -> dict[str, int]:
+        before = len(self.events)
+        normalized_events = [self.normalize_event(event) for event in self.events]
+        kept: list[dict[str, Any]] = []
+        dropped = 0
+        merged = 0
+
+        for event in normalized_events:
+            if should_drop_event(event):
+                dropped += 1
+                continue
+            duplicate = self._find_duplicate_in(event, kept)
+            if duplicate:
+                self.merge(duplicate, event)
+                merged += 1
+            else:
+                kept.append(event)
+
+        self.events = kept
+        self.save()
+        return {
+            "before": before,
+            "after": len(self.events),
+            "dropped": dropped,
+            "merged": merged,
+        }
+
+    def translate_missing(self, translator, limit: int | None = None) -> dict[str, int]:
+        translated = 0
+        skipped = 0
+        failed = 0
+
+        for event in self.events:
+            if limit is not None and translated >= limit:
+                break
+            if clean_text(event.get("original_text_zh")):
+                skipped += 1
+                continue
+            original_text = clean_text(event.get("original_text"))
+            if not original_text:
+                skipped += 1
+                continue
+            try:
+                translated_text = clean_text(translator(original_text))
+            except Exception:
+                failed += 1
+                continue
+            if translated_text:
+                event["original_text_zh"] = translated_text
+                event["updated_at"] = utcnow()
+                translated += 1
+            else:
+                skipped += 1
+
+        if translated:
+            self.save()
+        return {"translated": translated, "skipped": skipped, "failed": failed}
 
     def purge_source(self, source: str) -> int:
         source = clean_text(source).lower()
@@ -81,18 +149,40 @@ class EventStore:
         return next((event for event in self.events if event.get("event_uid") == uid), None)
 
     def find_duplicate(self, event: dict[str, Any], threshold: float = 0.72) -> dict[str, Any] | None:
+        return self._find_duplicate_in(event, self.events, threshold=threshold)
+
+    def _find_duplicate_in(
+        self,
+        event: dict[str, Any],
+        candidates: list[dict[str, Any]],
+        threshold: float = 0.72,
+    ) -> dict[str, Any] | None:
         text = event.get("original_text") or event.get("title") or ""
-        for existing in self.events:
+        cable = normalize_cable_name(event.get("cable_name") or event.get("submarine_name"))
+        event_date = event.get("occurrence_date")
+        for existing in candidates:
             same_url = event.get("url") and event.get("url") == existing.get("url")
+            existing_cable = normalize_cable_name(existing.get("cable_name") or existing.get("submarine_name"))
+            same_cable = cable and existing_cable and cable == existing_cable
+            same_date = event_date and event_date == existing.get("occurrence_date")
             same_cable_date = (
-                event.get("cable_name")
-                and existing.get("cable_name")
-                and event.get("cable_name", "").lower() == existing.get("cable_name", "").lower()
-                and event.get("occurrence_date")
-                and event.get("occurrence_date") == existing.get("occurrence_date")
+                same_cable
+                and same_date
             )
-            similar = text_similarity(text, existing.get("original_text") or existing.get("title") or "") >= threshold
-            if same_url or same_cable_date or similar:
+            same_cable_near_date = (
+                same_cable
+                and dates_within_days(event_date, existing.get("occurrence_date"), days=1)
+                and event_text_similarity(event, existing) >= 0.12
+            )
+            dates_conflict = dates_are_distinct(event_date, existing.get("occurrence_date"), days=1)
+            cables_conflict = bool(cable and existing_cable and cable != existing_cable)
+            similar = (
+                text_similarity(text, existing.get("original_text") or existing.get("title") or "") >= threshold
+                and not dates_conflict
+                and not cables_conflict
+            )
+            same_url_same_event = same_url and (same_cable_date or similar)
+            if same_url_same_event or same_cable_date or same_cable_near_date or similar:
                 return existing
         return None
 
@@ -101,6 +191,10 @@ class EventStore:
             if key in {"sources", "evidence_urls", "raw_data"}:
                 continue
             if not clean_text(target.get(key)) and clean_text(value):
+                target[key] = value
+            elif key in {"url", "discovered_url"} and is_better_url(value, target.get(key)):
+                target[key] = value
+            elif key in {"cable_name", "submarine_name"} and is_better_cable_name(value, target.get(key)):
                 target[key] = value
             elif key == "original_text" and is_better_text(value, target.get(key)):
                 target[key] = value
@@ -114,6 +208,13 @@ class EventStore:
 
     def normalize_event(self, event: dict[str, Any]) -> dict[str, Any]:
         now = utcnow()
+        source = clean_text(event.get("source"))
+        url = clean_text(event.get("url") or event.get("title"))
+        evidence_urls = clean_url_list(event.get("evidence_urls", []))
+        if is_google_news_source(source, event.get("sources", [])) and is_google_news_url(url):
+            replacement_url = first_non_google_url(evidence_urls)
+            if replacement_url:
+                url = replacement_url
         normalized = {
             "event_uid": clean_text(event.get("event_uid")),
             "cable_name": clean_text(event.get("cable_name") or event.get("submarine_name")),
@@ -126,11 +227,11 @@ class EventStore:
             "occurrence_date": parse_date(event.get("occurrence_date") or event.get("reported_at")),
             "repair_date": parse_date(event.get("repair_date") or event.get("resolved_at")),
             "published_date": parse_date(event.get("published_date")),
-            "source": clean_text(event.get("source")),
-            "url": clean_text(event.get("url") or event.get("title")),
+            "source": source,
+            "url": url,
             "title": clean_text(event.get("title")),
             "original_text": clean_text(event.get("original_text") or event.get("description")),
-            "original_text_zh": clean_text(event.get("original_text_zh")),
+            "original_text_zh": clean_translation(event.get("original_text_zh")),
             "verification_status": clean_text(event.get("verification_status")) or "unverified",
             "TrustWorthy": clean_text(event.get("TrustWorthy") or event.get("verification_status")) or "unverified",
             "discovered_url": clean_text(event.get("discovered_url")),
@@ -139,9 +240,15 @@ class EventStore:
             "updated_at": now,
         }
         normalized["submarine_name"] = normalized["submarine_name"] or normalized["cable_name"]
+        normalized["normalized_cable_id"] = normalized["normalized_cable_id"] or normalize_cable_name(normalized["cable_name"])
         normalized["event_uid"] = normalized["event_uid"] or event_uid(normalized)
-        normalized["sources"] = sorted({normalized["source"]} if normalized["source"] else set())
-        normalized["evidence_urls"] = clean_url_list({normalized["url"]} if normalized["url"] else set())
+        source_names = set()
+        if normalized["source"]:
+            source_names.add(normalized["source"])
+        if isinstance(event.get("sources"), (list, tuple, set)):
+            source_names |= {clean_text(item) for item in event.get("sources", []) if clean_text(item)}
+        normalized["sources"] = sorted(source_names)
+        normalized["evidence_urls"] = clean_url_list(set(evidence_urls) | ({normalized["url"]} if normalized["url"] else set()))
         return normalized
 
     def export_json(self, path: str) -> None:
@@ -203,6 +310,84 @@ def is_better_text(candidate: Any, current: Any) -> bool:
     current_lower = current_text.lower()
     noisy = any(marker in current_lower for marker in ("read more", "sign up", "straight to your inbox", "tags:"))
     return noisy or len(candidate_text) > len(current_text) + 80
+
+
+def is_better_url(candidate: Any, current: Any) -> bool:
+    candidate_url = clean_text(candidate)
+    current_url = clean_text(current)
+    if not candidate_url.startswith("http"):
+        return False
+    if not current_url:
+        return True
+    return is_google_news_url(current_url) and not is_google_news_url(candidate_url)
+
+
+def is_better_cable_name(candidate: Any, current: Any) -> bool:
+    candidate_text = clean_text(candidate)
+    current_text = clean_text(current)
+    if not candidate_text:
+        return False
+    if not current_text:
+        return True
+    return len(candidate_text) > len(current_text) and normalize_cable_name(candidate_text) == normalize_cable_name(current_text)
+
+
+def should_drop_event(event: dict[str, Any]) -> bool:
+    has_cable = bool(clean_text(event.get("cable_name") or event.get("submarine_name")))
+    has_area = bool(clean_text(event.get("affected_area")))
+    has_reason = bool(clean_text(event.get("reason")))
+    if not has_cable:
+        return True
+    if not has_area and not has_reason:
+        return True
+    if is_google_news_source(event.get("source"), event.get("sources", [])) and is_google_news_url(event.get("url")):
+        return True
+    return False
+
+
+def is_google_news_source(source: Any, sources: Any) -> bool:
+    source_names = {clean_text(source).lower()}
+    if isinstance(sources, (list, tuple, set)):
+        source_names |= {clean_text(item).lower() for item in sources}
+    return "google news" in source_names
+
+
+def is_google_news_url(url: Any) -> bool:
+    text = clean_text(url).lower()
+    return "news.google.com/rss/articles" in text or "news.google.com/articles" in text
+
+
+def first_non_google_url(urls: Any) -> str:
+    for url in clean_url_list(urls):
+        if not is_google_news_url(url):
+            return url
+    return ""
+
+
+def dates_within_days(left: Any, right: Any, days: int) -> bool:
+    left_date = parse_date(left)
+    right_date = parse_date(right)
+    if not left_date or not right_date:
+        return False
+    left_dt = datetime.fromisoformat(left_date)
+    right_dt = datetime.fromisoformat(right_date)
+    return abs((left_dt - right_dt).days) <= days
+
+
+def dates_are_distinct(left: Any, right: Any, days: int) -> bool:
+    left_date = parse_date(left)
+    right_date = parse_date(right)
+    if not left_date or not right_date:
+        return False
+    left_dt = datetime.fromisoformat(left_date)
+    right_dt = datetime.fromisoformat(right_date)
+    return abs((left_dt - right_dt).days) > days
+
+
+def event_text_similarity(left: dict[str, Any], right: dict[str, Any]) -> float:
+    left_text = " ".join(clean_text(left.get(key)) for key in ("title", "original_text", "affected_area", "reason"))
+    right_text = " ".join(clean_text(right.get(key)) for key in ("title", "original_text", "affected_area", "reason"))
+    return text_similarity(left_text, right_text)
 
 
 def clean_url_list(urls: Any) -> list[str]:

@@ -68,7 +68,7 @@ jobs:
 
       - name: Export data for GitHub Pages
         run: |
-          python -m src.main --export-json docs/data/events.json --export-csv docs/data/events.csv
+          python -m src.main --clean-store --translate-missing --export-json docs/data/events.json --export-csv docs/data/events.csv
 
       - name: Upload monitor artifacts
         uses: actions/upload-artifact@v4
