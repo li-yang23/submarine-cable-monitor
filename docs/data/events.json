@@ -40,7 +40,7 @@
       }
     },
     "created_at": "2026-07-23T05:24:28+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -88,7 +88,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:31+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -138,7 +138,7 @@
       }
     },
     "created_at": "2026-07-07T16:11:20+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -148,7 +148,8 @@
       "https://www.app.com.pk/national/pta-monitors-internet-traffic-disruption-following-smw5-submarine-cable-fault/",
       "https://www.brecorder.com/news/40428227/pta-says-monitoring-internet-disruption-following-smw5-submarine-cable-fault",
       "https://www.dawn.com/news/2012491",
-      "https://www.dawn.com/news/2012653"
+      "https://www.dawn.com/news/2012653",
+      "https://www.thenews.pk/print/1423771-pta-says-submarine-cable-fault-disrupts-internet-services"
     ]
   },
   {
@@ -191,7 +192,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:34+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -242,7 +243,7 @@
       }
     },
     "created_at": "2026-07-17T05:11:33+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -291,7 +292,7 @@
       }
     },
     "created_at": "2026-07-15T04:51:48+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -339,7 +340,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:36+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -388,7 +389,7 @@
       }
     },
     "created_at": "2026-07-20T05:40:52+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -437,7 +438,7 @@
       }
     },
     "created_at": "2026-07-21T05:21:11+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -486,7 +487,7 @@
       }
     },
     "created_at": "2026-07-23T05:25:11+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -535,7 +536,7 @@
       }
     },
     "created_at": "2026-07-25T05:16:01+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -584,7 +585,56 @@
       }
     },
     "created_at": "2026-07-25T05:16:01+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
+    "sources": [
+      "SubTel Forum"
+    ],
+    "evidence_urls": [
+      "https://subtelforum.com/finland-charges-sailors-over-baltic-cable-damage/"
+    ]
+  },
+  {
+    "event_uid": "evt_03cf3a25c39a7d67db55",
+    "cable_name": "Unknown (multiple cables)",
+    "submarine_name": "Unknown (multiple cables)",
+    "normalized_cable_id": "UNKNOWN (MULTIPLE CABLES)",
+    "accident_location": "Baltic Sea",
+    "reason": "Ship dragging anchor over seabed",
+    "accident_type": "Cut",
+    "affected_area": "Critical underwater communication infrastructures in the region",
+    "occurrence_date": "2026-06-19",
+    "repair_date": null,
+    "published_date": "2026-06-19",
+    "source": "SubTel Forum",
+    "url": "https://subtelforum.com/finland-charges-sailors-over-baltic-cable-damage/",
+    "title": "Finland to Try Two Sailors Over Baltic Sea Submarine Cable Damage",
+    "original_text": "Finland has filed charges against the captain and the navigation officer of a cargo ship accused of damaging underwater telecommunications cables in the Baltic Sea during last New Year's Eve, according to the country's prosecutor's office. According to the investigation, the ship—named Fitburg—allegedly caused the breakage of several cables after dragging its anchor over a long stretch of the seabed (at least 130 km) . The incident affected critical underwater communication infrastructures in the region.",
+    "original_text_zh": "根据该国检察官办公室的说法，芬兰已对一艘货船的船长和导航员提出指控，他们被指控在去年元旦期间损坏了波罗的海的海底电信电缆。据调查，名为Fitburg的船据称在海底拖锚长距离（至少130公里）后导致多条电缆断裂。该事件影响了该地区关键的水下通信基础设施。",
+    "verification_status": "verified",
+    "TrustWorthy": "verified",
+    "discovered_url": "",
+    "raw_data": {
+      "article": {
+        "content": "1.3 min read Finland to Try Two Sailors Over Baltic Sea Submarine Cable Damage By Alberto Payo, Escudo Digital June 18, 2026 Finland has filed charges against the captain and the navigation officer of a cargo ship accused of damaging underwater telecommunications cables in the Baltic Sea during last New Year's Eve, according to the country's prosecutor's office. According to the investigation, the ship—named Fitburg—allegedly caused the breakage of several cables after dragging its anchor over a long stretch of the seabed (at least 130 km) . The incident affected critical underwater communication infrastructures in the region. Finnish authorities intercepted the vessel after detecting the damages and proceeded to detain two crew members, who now face charges for the incidents. The prosecution claims that the captain and the first mate caused breaks in two underwater telecommunications cables and attempted to damage eight additional underwater connections . The defendants deny committing the offenses and argue that Finland does not have jurisdiction to judge the case , as the incident allegedly occurred outside its territorial waters. The decision on the court's jurisdiction and the trial date will fall to the Helsinki district court. Not the first time The case is part of a series of recent incidents that have affected underwater infrastructures in the Baltic Sea, a context in which the possibility of sabotage was initially considered. The repeated incidents raised suspicions of possible acts linked to Russia . In response, NATO reinforced surveillance of the area with frigates, maritime patrol aircraft, and naval drones. Read more… Published On: June 19, 2026 Tags: Baltic Sea , cable damage , critical infrastructure , Finland , submarine cables , Telecom Cables news via inbox Sign up to get the latest updates straight to your inbox! You have been successfully subscribed. × There was an error trying to subscribe. Please try again later. × subscribe editor's pick Meta Announces Project Waterworth Tags: AI , infrastructure , Internet , Meta , submarine cable , telecoms , Waterworth Published On: February 14, 2025 SubTel Forum Magazine #140 – Global Outlook Tags: artificial intelligence , Magazine , SMART Cables , submarine cable , Submarine Cable Security , SubTel Form , Telecom Trends 2025 Published On: January 19, 2025 Nokia Completes Infinera Acquisition Tags: acquisition , Infinera , Nokia , telecoms Published On: March 3, 2025 Share This Story, Choose Your Platform! you might also like Severed cable blamed for Syrian Internet cut Categories: Cable Faults & Maintenance Syria's internet restored after blackout Categories: Cable Faults & Maintenance New WACS outage details Categories: Cable Faults & Maintenance",
+        "published_date": "2026-06-19",
+        "source": "SubTel Forum",
+        "title": "Finland to Try Two Sailors Over Baltic Sea Submarine Cable Damage",
+        "url": "https://subtelforum.com/finland-charges-sailors-over-baltic-cable-damage/"
+      },
+      "extracted": {
+        "accident_location": "Baltic Sea",
+        "accident_type": "Cut",
+        "affected_area": "Critical underwater communication infrastructures in the region",
+        "cable_name": "Unknown (multiple cables)",
+        "occurrence_date": "New Year's Eve 2025",
+        "original_text": "Finland has filed charges against the captain and the navigation officer of a cargo ship accused of damaging underwater telecommunications cables in the Baltic Sea during last New Year's Eve, according to the country's prosecutor's office. According to the investigation, the ship—named Fitburg—allegedly caused the breakage of several cables after dragging its anchor over a long stretch of the seabed (at least 130 km) . The incident affected critical underwater communication infrastructures in the region.",
+        "original_text_zh": "根据该国检察官办公室的说法，芬兰已对一艘货船的船长和导航员提出指控，他们被指控在去年元旦期间损坏了波罗的海的海底电信电缆。据调查，名为Fitburg的船据称在海底拖锚长距离（至少130公里）后导致多条电缆断裂。该事件影响了该地区关键的水下通信基础设施。",
+        "reason": "Ship dragging anchor over seabed",
+        "repair_date": "Unknown"
+      }
+    },
+    "created_at": "2026-07-27T05:48:42+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -635,7 +685,7 @@
       }
     },
     "created_at": "2026-07-14T04:50:07+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -686,7 +736,7 @@
       }
     },
     "created_at": "2026-07-17T05:11:19+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -737,7 +787,7 @@
       }
     },
     "created_at": "2026-07-20T05:39:58+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -788,7 +838,7 @@
       }
     },
     "created_at": "2026-07-20T05:39:58+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -839,7 +889,7 @@
       }
     },
     "created_at": "2026-07-24T05:20:52+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -887,7 +937,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:38+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -938,7 +988,7 @@
       }
     },
     "created_at": "2026-07-20T05:36:11+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -989,7 +1039,7 @@
       }
     },
     "created_at": "2026-07-20T05:36:11+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -1040,7 +1090,7 @@
       }
     },
     "created_at": "2026-07-21T05:17:55+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -1091,7 +1141,7 @@
       }
     },
     "created_at": "2026-07-22T05:16:39+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -1145,7 +1195,109 @@
       }
     },
     "created_at": "2026-07-23T05:21:09+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
+    "sources": [
+      "Google News"
+    ],
+    "evidence_urls": [
+      "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/"
+    ]
+  },
+  {
+    "event_uid": "evt_403730e49838c794c686",
+    "cable_name": "FALCON",
+    "submarine_name": "FALCON",
+    "normalized_cable_id": "FALCON",
+    "accident_location": "Iranian territorial waters",
+    "reason": "Iran's demand for permits and protection fees, leading to repair pauses",
+    "accident_type": "Cut",
+    "affected_area": "Middle East Gulf, South Asia, East Africa, Europe",
+    "occurrence_date": "2026-05-18",
+    "repair_date": null,
+    "published_date": "2026-05-18",
+    "source": "Google News",
+    "url": "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/",
+    "title": "Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’",
+    "original_text": "The IRGC has demanded foreign cable operators obtain Iranian permits and pay 'protection fees' to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused.",
+    "original_text_zh": "伊朗伊斯兰革命卫队要求外国电缆运营商获得伊朗许可证并支付'保护费'以维护海底基础设施。主要的电缆铺设运营商已发布波斯湾业务的不可抗力通知。维修人员实际上已暂停工作。",
+    "verification_status": "verified",
+    "TrustWorthy": "verified",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOamduNWFqRzFXOEtVSGxpaTJ0T0M5Z1ZSWVRkemdYbThkTjFKay1tZVhoNTVlc3RlTkxCY3JEMnJJV09lc0VfaHduY2VnRU10eTRIemFpd2JZOXB0TERhbzFkM0xIR3VhVnlXZi1zcXh1TVp2ZW9DdVVUa3ZraTl0NnljSmVUdlk0WVdpdXROY0hPeUk?oc=5",
+    "raw_data": {
+      "article": {
+        "content": "May 18, 2026 11 min read Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’ What’s inside? At a Glance Of the dozens of submarine cables crossing the Middle East Gulf, only two — FALCON and GBI (Gulf Bridge International) — pass directly through Iranian territorial waters, per CNN . The IRGC has demanded foreign cable operators obtain Iranian permits and pay “protection fees” to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused. Red Sea cables from 2023–2024 Houthi-era cuts remain partially unrepaired. Geographic redundancy is being eroded from both sides simultaneously. Submarine cables carry more than 95% of international data traffic . The Gulf is now the second active maritime corridor where that flow is at risk. A New Chokepoint, Drawn on the Seabed The image above, captured on the Windward Maritime AI™ platform, shows the cable lattice that ties the Middle East Gulf to South Asia, East Africa, and Europe. Kuwait, Bahrain, Qatar, the UAE, Oman, then onward to Karachi, Mumbai, and the Bay of Bengal. Dozens of systems converge inside the same narrow corridor that handles roughly a fifth of the world’s seaborne oil . Two of those systems — FALCON and GBI — run through Iranian territorial waters. That is the leverage Tehran is now testing. What Iran Has Actually Said IRGC military spokesperson Ebrahim Zolfaghari posted on X that Iran would “impose fees on internet cables”, and lawmakers in Tehran have opened discussions on a framework that would target submarine cables linking Arab Gulf states to Europe and Asia. The IRGC has gone further, declaring that foreign operators must obtain Iranian permits and pay protection fees to keep infrastructure on the Iranian seabed, citing national sovereignty. Iran has not explicitly said it will sever the cables. It has, instead, signaled that the seabed inside its waters is now its jurisdiction to license, and that operators who do not pay can be denied repair access. The Repair Problem Is Already Here The most operationally consequential development is not the threat itself. It is that cable-laying operators have issued force majeure notices covering Gulf operations. Cable ships and repair crews have effectively paused activity in waters adjacent to the conflict zone. That changes the math entirely. A cable cut in peacetime is an inconvenience: a repair vessel arrives, the cable is grappled up, the break is spliced, traffic is restored, usually inside two to three weeks. A cable cut in the current posture may simply stay cut. The repair window is no longer measured in days. Repair operations also require specialized deep-sea vessels with manifested routes through the Strait of Hormuz . Under the regime Tehran is proposing, those vessels would need Iranian permits to enter the work area at all. There is also a physical security dimension that the force majeure notices capture only partially. Cable repair is slow, stationary work. A cable ship spends days, sometimes weeks, holding position directly above a known fault while it grapples, lifts, and splices. The vessel is large, easily identifiable on AIS and visually, and effectively defenseless. In peacetime that exposure is routine. In a contested Gulf with active drone, missile, and small-boat operations, it is a different risk picture entirely, and one no commercial cable-laying operator has had to send civilian crews into before. The Houthi campaign on Red Sea shipping has already reset war-risk premiums and crew-safety thinking for vessels in transit. A stationary repair ship in the Persian Gulf would face a worse version of the same problem, with none of the option of simply increasing speed and leaving the threat envelope. Intentional sabotage of a Gulf cable does not just damage infrastructure. It pulls civilian crews into an active conflict zone to fix it, and that, in turn, hands Tehran a second escalation rung: target the repair operation itself, and the repair pause becomes indefinite. Red Sea Precedent: Redundancy Is Already Thin This is not happening in isolation. Cables in the Red Sea — including AAE-1, SEACOM, and EIG — were severed during 2023–2024 Houthi operations and remain only partially repaired. Those Red Sea incidents alone disrupted an estimated 25% of internet traffic between Europe and Asia in 2024. The Middle East Gulf and the Red Sea are the two principal maritime corridors connecting European and Asian internet backbones. Disrupting one forces traffic onto the other. Pressuring both simultaneously is the scenario carriers and Gulf states have spent the last decade trying to avoid. What the Threat Looks Like Iran’s naval and coastal forces include combat divers, midget submarines, and underwater drones. The IRGC has, in recent weeks, struck data-center and port infrastructure in Bahrain and the UAE with one-way attack drones , and has signaled that the Strait of Hormuz can be mined in response to ground operations in the region. Cable sabotage is technically straightforward. A submarine cable resting on the seabed in 50–100 meters of water can be cut with equipment a single fishing trawler can deploy. Attribution is the hard part. Which is why this sits among the more attractive tools in Tehran’s asymmetric inventory . What Tehran Is After The most plausible reading is that the objective is not to cut the cables. It is to hold the repair infrastructure hostage. Operators face a choice: pay protection fees and accept Iranian licensing over Middle East Gulf seabed activity, or accept that future faults may go unrepaired indefinitely. A single transoceanic cable system costs between $300 million and $1 billion to deploy. The expected value of an Iranian protection fee, from Tehran’s perspective, is structured to sit well below that. For data-dependent economies — the UAE, India, Saudi Arabia, Qatar — even partial degradation carries measurable cost. Gulf banking, regional cloud regions, and energy trading desks all run on millisecond-sensitive infrastructure. The threat is less about a single cut and more about long-term degradation of repair access. What to Watch Next Cable fault reporting. Any new fault on FALCON, GBI, the Qatar–UAE Submarine Cable System, or GBICS/MENA. Faults will not be repaired on the usual schedule. Vessel behavior on cable corridors. Fishing trawlers, research vessels, or unflagged craft loitering on known cable routes in the southern Gulf and Gulf of Oman. Insurance market response. War-risk premiums for cable-laying and repair operations in the Gulf, and whether London market underwriters carve out Iranian-adjacent waters. Gulf state countermoves. UAE, Saudi, Omani, or Qatari announcements on rerouting traffic, accelerating alternate cables routed around Iranian waters, or invoking diplomatic channels. Tehran’s next escalation step. Whether the “protection fee” framework is formalized into law, and whether it is paired with vessel-side action in the Strait of Hormuz. How Windward Sees This The patterns that precede a cable incident look almost identical to the activity that surrounds the cable every day. Long loitering windows above a cable. Slow-speed passes that mimic trawling. Anchor drops dressed up as accidents. AIS gaps directly over known cable corridors. Without the cable layer underneath the traffic picture, those behaviors blend into normal Gulf activity. Windward’s Critical Maritime Infrastructure Protection solution closes that gap. It maps vessel behavior against the proprietary Windward cable layer — every major cable, every landing station, every active repair corridor — and runs the resulting traffic through multi-source intelligence: AIS, SAR, RF, ownership, and behavioral models. The output is a continuous picture of which vessels are behaving inconsistently above a cable, ranked by risk, anywhere in the world. For Middle East Gulf operators that picture is now operationally relevant in a way it was not three months ago. Cable owners, telecoms, Gulf state agencies, and the cable-laying companies deciding whether to send a repair ship into the strait all need the same thing: a clear, time-stamped read on activity around their seabed assets, and a ranked list of which vessels are worth a second look, before a fault becomes an incident. Explore Critical Maritime Infrastructure Protection . Map vessel behavior against the cable layer, anywhere in the world. Track the Strait of Hormuz in real time . Daily intelligence on transits, vessel risk, and incidents across the strait. Strait of Hormuz Live Tracker Monitor live HORMUZ INTELLIGENCE July 26, 2026 The Red Sea Reopens as a Second Front While Saudi Crude Routes Around the Blockade At a Glance Operational Overview The Red Sea has reopened as a second active front. The Houthis resumed attacks on July 22 following a September 2025 ceasefire, hit a Saudi Aramco refinery at Jizan on July 25, and launched missiles intercepted before reaching Yanbu. Four vessels have been hit or affected across the reporting period.... Read more HORMUZ INTELLIGENCE July 23, 2026 Selective Enforcement: Saudi Crude Keeps Moving Under the Houthi Blockade A Blockade, Declared and Partly Kinetic On July 20, Houthi-aligned forces announced a full naval blockade of Saudi Arabia, framed as retaliation for Saudi strikes on Sanaa airport. The declaration named Saudi, Israeli, and U.S.-linked tonnage as targets. Within days, Houthi channels claimed strikes on two Saudi tankers. One is corroborated: UKMTO logged a projectile... Read more HORMUZ INTELLIGENCE July 22, 2026 Two Days After the Houthi Blockade Announcement, the Red Sea Split in Two The Houthis declared a naval blockade against Saudi Arabia on July 20, escalating threats across the Red Sea corridor while Iranian forces struck three tankers in the Strait of Hormuz within 48 hours. That ambiguity is doing real work. Within a day, Windward tracked the market splitting into two opposite flows: commercial tonnage pulling back... Read more HORMUZ INTELLIGENCE July 12, 2026 Iran Formally Closes the Strait of Hormuz as the U.S. Launches a Third Round of Strikes At a Glance Operational Overview Iran has formally closed the Strait of Hormuz. The IRGC declared the waterway closed until further notice following its strike on a Cyprus-flagged container ship for using what it described as an unauthorized route, marking the first formal closure declaration of the conflict. The U.S. responded with a third round... Read more HORMUZ INTELLIGENCE July 9, 2026 The Ceasefire Collapses: 80+ Strikes, a Revoked Oil Waiver, and a 1.95-Million-Barrel U-Turn At a Glance Operational Overview The Strait of Hormuz is once again operating under full conflict conditions. Overnight into July 8, U.S. Central Command struck more than 80 targets inside Iran in direct response to Iranian attacks on three commercial vessels transiting the Strait. Iran retaliated against U.S. military sites in Bahrain and Kuwait, President... Read more",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOamduNWFqRzFXOEtVSGxpaTJ0T0M5Z1ZSWVRkemdYbThkTjFKay1tZVhoNTVlc3RlTkxCY3JEMnJJV09lc0VfaHduY2VnRU10eTRIemFpd2JZOXB0TERhbzFkM0xIR3VhVnlXZi1zcXh1TVp2ZW9DdVVUa3ZraTl0NnljSmVUdlk0WVdpdXROY0hPeUk?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-05-18",
+        "source": "Google News",
+        "title": "Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’",
+        "url": "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/"
+      },
+      "extracted": {
+        "accident_location": "Iranian territorial waters",
+        "accident_type": "Cut",
+        "affected_area": "Middle East Gulf, South Asia, East Africa, Europe",
+        "cable_name": "FALCON",
+        "occurrence_date": "2026",
+        "original_text": "The IRGC has demanded foreign cable operators obtain Iranian permits and pay 'protection fees' to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused.",
+        "original_text_zh": "伊朗伊斯兰革命卫队要求外国电缆运营商获得伊朗许可证并支付'保护费'以维护海底基础设施。主要的电缆铺设运营商已发布波斯湾业务的不可抗力通知。维修人员实际上已暂停工作。",
+        "reason": "Iran's demand for permits and protection fees, leading to repair pauses",
+        "repair_date": "Not specified (repairs paused)"
+      }
+    },
+    "created_at": "2026-07-27T05:45:19+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
+    "sources": [
+      "Google News"
+    ],
+    "evidence_urls": [
+      "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/"
+    ]
+  },
+  {
+    "event_uid": "evt_70d2c95e2ed7d32330ef",
+    "cable_name": "GBI (Gulf Bridge International)",
+    "submarine_name": "GBI (Gulf Bridge International)",
+    "normalized_cable_id": "GBI (GULF BRIDGE INTERNATIONAL)",
+    "accident_location": "Iranian territorial waters",
+    "reason": "Iran's demand for permits and protection fees, leading to repair pauses",
+    "accident_type": "Cut",
+    "affected_area": "Middle East Gulf, South Asia, East Africa, Europe",
+    "occurrence_date": "2026-05-18",
+    "repair_date": null,
+    "published_date": "2026-05-18",
+    "source": "Google News",
+    "url": "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/",
+    "title": "Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’",
+    "original_text": "The IRGC has demanded foreign cable operators obtain Iranian permits and pay 'protection fees' to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused.",
+    "original_text_zh": "伊朗伊斯兰革命卫队要求外国电缆运营商获得伊朗许可证并支付'保护费'以维护海底基础设施。主要的电缆铺设运营商已发布波斯湾业务的不可抗力通知。维修人员实际上已暂停工作。",
+    "verification_status": "verified",
+    "TrustWorthy": "verified",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOamduNWFqRzFXOEtVSGxpaTJ0T0M5Z1ZSWVRkemdYbThkTjFKay1tZVhoNTVlc3RlTkxCY3JEMnJJV09lc0VfaHduY2VnRU10eTRIemFpd2JZOXB0TERhbzFkM0xIR3VhVnlXZi1zcXh1TVp2ZW9DdVVUa3ZraTl0NnljSmVUdlk0WVdpdXROY0hPeUk?oc=5",
+    "raw_data": {
+      "article": {
+        "content": "May 18, 2026 11 min read Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’ What’s inside? At a Glance Of the dozens of submarine cables crossing the Middle East Gulf, only two — FALCON and GBI (Gulf Bridge International) — pass directly through Iranian territorial waters, per CNN . The IRGC has demanded foreign cable operators obtain Iranian permits and pay “protection fees” to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused. Red Sea cables from 2023–2024 Houthi-era cuts remain partially unrepaired. Geographic redundancy is being eroded from both sides simultaneously. Submarine cables carry more than 95% of international data traffic . The Gulf is now the second active maritime corridor where that flow is at risk. A New Chokepoint, Drawn on the Seabed The image above, captured on the Windward Maritime AI™ platform, shows the cable lattice that ties the Middle East Gulf to South Asia, East Africa, and Europe. Kuwait, Bahrain, Qatar, the UAE, Oman, then onward to Karachi, Mumbai, and the Bay of Bengal. Dozens of systems converge inside the same narrow corridor that handles roughly a fifth of the world’s seaborne oil . Two of those systems — FALCON and GBI — run through Iranian territorial waters. That is the leverage Tehran is now testing. What Iran Has Actually Said IRGC military spokesperson Ebrahim Zolfaghari posted on X that Iran would “impose fees on internet cables”, and lawmakers in Tehran have opened discussions on a framework that would target submarine cables linking Arab Gulf states to Europe and Asia. The IRGC has gone further, declaring that foreign operators must obtain Iranian permits and pay protection fees to keep infrastructure on the Iranian seabed, citing national sovereignty. Iran has not explicitly said it will sever the cables. It has, instead, signaled that the seabed inside its waters is now its jurisdiction to license, and that operators who do not pay can be denied repair access. The Repair Problem Is Already Here The most operationally consequential development is not the threat itself. It is that cable-laying operators have issued force majeure notices covering Gulf operations. Cable ships and repair crews have effectively paused activity in waters adjacent to the conflict zone. That changes the math entirely. A cable cut in peacetime is an inconvenience: a repair vessel arrives, the cable is grappled up, the break is spliced, traffic is restored, usually inside two to three weeks. A cable cut in the current posture may simply stay cut. The repair window is no longer measured in days. Repair operations also require specialized deep-sea vessels with manifested routes through the Strait of Hormuz . Under the regime Tehran is proposing, those vessels would need Iranian permits to enter the work area at all. There is also a physical security dimension that the force majeure notices capture only partially. Cable repair is slow, stationary work. A cable ship spends days, sometimes weeks, holding position directly above a known fault while it grapples, lifts, and splices. The vessel is large, easily identifiable on AIS and visually, and effectively defenseless. In peacetime that exposure is routine. In a contested Gulf with active drone, missile, and small-boat operations, it is a different risk picture entirely, and one no commercial cable-laying operator has had to send civilian crews into before. The Houthi campaign on Red Sea shipping has already reset war-risk premiums and crew-safety thinking for vessels in transit. A stationary repair ship in the Persian Gulf would face a worse version of the same problem, with none of the option of simply increasing speed and leaving the threat envelope. Intentional sabotage of a Gulf cable does not just damage infrastructure. It pulls civilian crews into an active conflict zone to fix it, and that, in turn, hands Tehran a second escalation rung: target the repair operation itself, and the repair pause becomes indefinite. Red Sea Precedent: Redundancy Is Already Thin This is not happening in isolation. Cables in the Red Sea — including AAE-1, SEACOM, and EIG — were severed during 2023–2024 Houthi operations and remain only partially repaired. Those Red Sea incidents alone disrupted an estimated 25% of internet traffic between Europe and Asia in 2024. The Middle East Gulf and the Red Sea are the two principal maritime corridors connecting European and Asian internet backbones. Disrupting one forces traffic onto the other. Pressuring both simultaneously is the scenario carriers and Gulf states have spent the last decade trying to avoid. What the Threat Looks Like Iran’s naval and coastal forces include combat divers, midget submarines, and underwater drones. The IRGC has, in recent weeks, struck data-center and port infrastructure in Bahrain and the UAE with one-way attack drones , and has signaled that the Strait of Hormuz can be mined in response to ground operations in the region. Cable sabotage is technically straightforward. A submarine cable resting on the seabed in 50–100 meters of water can be cut with equipment a single fishing trawler can deploy. Attribution is the hard part. Which is why this sits among the more attractive tools in Tehran’s asymmetric inventory . What Tehran Is After The most plausible reading is that the objective is not to cut the cables. It is to hold the repair infrastructure hostage. Operators face a choice: pay protection fees and accept Iranian licensing over Middle East Gulf seabed activity, or accept that future faults may go unrepaired indefinitely. A single transoceanic cable system costs between $300 million and $1 billion to deploy. The expected value of an Iranian protection fee, from Tehran’s perspective, is structured to sit well below that. For data-dependent economies — the UAE, India, Saudi Arabia, Qatar — even partial degradation carries measurable cost. Gulf banking, regional cloud regions, and energy trading desks all run on millisecond-sensitive infrastructure. The threat is less about a single cut and more about long-term degradation of repair access. What to Watch Next Cable fault reporting. Any new fault on FALCON, GBI, the Qatar–UAE Submarine Cable System, or GBICS/MENA. Faults will not be repaired on the usual schedule. Vessel behavior on cable corridors. Fishing trawlers, research vessels, or unflagged craft loitering on known cable routes in the southern Gulf and Gulf of Oman. Insurance market response. War-risk premiums for cable-laying and repair operations in the Gulf, and whether London market underwriters carve out Iranian-adjacent waters. Gulf state countermoves. UAE, Saudi, Omani, or Qatari announcements on rerouting traffic, accelerating alternate cables routed around Iranian waters, or invoking diplomatic channels. Tehran’s next escalation step. Whether the “protection fee” framework is formalized into law, and whether it is paired with vessel-side action in the Strait of Hormuz. How Windward Sees This The patterns that precede a cable incident look almost identical to the activity that surrounds the cable every day. Long loitering windows above a cable. Slow-speed passes that mimic trawling. Anchor drops dressed up as accidents. AIS gaps directly over known cable corridors. Without the cable layer underneath the traffic picture, those behaviors blend into normal Gulf activity. Windward’s Critical Maritime Infrastructure Protection solution closes that gap. It maps vessel behavior against the proprietary Windward cable layer — every major cable, every landing station, every active repair corridor — and runs the resulting traffic through multi-source intelligence: AIS, SAR, RF, ownership, and behavioral models. The output is a continuous picture of which vessels are behaving inconsistently above a cable, ranked by risk, anywhere in the world. For Middle East Gulf operators that picture is now operationally relevant in a way it was not three months ago. Cable owners, telecoms, Gulf state agencies, and the cable-laying companies deciding whether to send a repair ship into the strait all need the same thing: a clear, time-stamped read on activity around their seabed assets, and a ranked list of which vessels are worth a second look, before a fault becomes an incident. Explore Critical Maritime Infrastructure Protection . Map vessel behavior against the cable layer, anywhere in the world. Track the Strait of Hormuz in real time . Daily intelligence on transits, vessel risk, and incidents across the strait. Strait of Hormuz Live Tracker Monitor live HORMUZ INTELLIGENCE July 26, 2026 The Red Sea Reopens as a Second Front While Saudi Crude Routes Around the Blockade At a Glance Operational Overview The Red Sea has reopened as a second active front. The Houthis resumed attacks on July 22 following a September 2025 ceasefire, hit a Saudi Aramco refinery at Jizan on July 25, and launched missiles intercepted before reaching Yanbu. Four vessels have been hit or affected across the reporting period.... Read more HORMUZ INTELLIGENCE July 23, 2026 Selective Enforcement: Saudi Crude Keeps Moving Under the Houthi Blockade A Blockade, Declared and Partly Kinetic On July 20, Houthi-aligned forces announced a full naval blockade of Saudi Arabia, framed as retaliation for Saudi strikes on Sanaa airport. The declaration named Saudi, Israeli, and U.S.-linked tonnage as targets. Within days, Houthi channels claimed strikes on two Saudi tankers. One is corroborated: UKMTO logged a projectile... Read more HORMUZ INTELLIGENCE July 22, 2026 Two Days After the Houthi Blockade Announcement, the Red Sea Split in Two The Houthis declared a naval blockade against Saudi Arabia on July 20, escalating threats across the Red Sea corridor while Iranian forces struck three tankers in the Strait of Hormuz within 48 hours. That ambiguity is doing real work. Within a day, Windward tracked the market splitting into two opposite flows: commercial tonnage pulling back... Read more HORMUZ INTELLIGENCE July 12, 2026 Iran Formally Closes the Strait of Hormuz as the U.S. Launches a Third Round of Strikes At a Glance Operational Overview Iran has formally closed the Strait of Hormuz. The IRGC declared the waterway closed until further notice following its strike on a Cyprus-flagged container ship for using what it described as an unauthorized route, marking the first formal closure declaration of the conflict. The U.S. responded with a third round... Read more HORMUZ INTELLIGENCE July 9, 2026 The Ceasefire Collapses: 80+ Strikes, a Revoked Oil Waiver, and a 1.95-Million-Barrel U-Turn At a Glance Operational Overview The Strait of Hormuz is once again operating under full conflict conditions. Overnight into July 8, U.S. Central Command struck more than 80 targets inside Iran in direct response to Iranian attacks on three commercial vessels transiting the Strait. Iran retaliated against U.S. military sites in Bahrain and Kuwait, President... Read more",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOamduNWFqRzFXOEtVSGxpaTJ0T0M5Z1ZSWVRkemdYbThkTjFKay1tZVhoNTVlc3RlTkxCY3JEMnJJV09lc0VfaHduY2VnRU10eTRIemFpd2JZOXB0TERhbzFkM0xIR3VhVnlXZi1zcXh1TVp2ZW9DdVVUa3ZraTl0NnljSmVUdlk0WVdpdXROY0hPeUk?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-05-18",
+        "source": "Google News",
+        "title": "Gulf Subsea Cable Repairs Pause as Iran Demands ‘Protection Fees’",
+        "url": "https://windward.ai/blog/gulf-subsea-cable-repairs-pause-as-iran-demands-protection-fees/"
+      },
+      "extracted": {
+        "accident_location": "Iranian territorial waters",
+        "accident_type": "Cut",
+        "affected_area": "Middle East Gulf, South Asia, East Africa, Europe",
+        "cable_name": "GBI (Gulf Bridge International)",
+        "occurrence_date": "2026",
+        "original_text": "The IRGC has demanded foreign cable operators obtain Iranian permits and pay 'protection fees' to maintain seabed infrastructure. Major cable-laying operators have issued force majeure notices for Persian Gulf operations. Repair crews are effectively paused.",
+        "original_text_zh": "伊朗伊斯兰革命卫队要求外国电缆运营商获得伊朗许可证并支付'保护费'以维护海底基础设施。主要的电缆铺设运营商已发布波斯湾业务的不可抗力通知。维修人员实际上已暂停工作。",
+        "reason": "Iran's demand for permits and protection fees, leading to repair pauses",
+        "repair_date": "Not specified (repairs paused)"
+      }
+    },
+    "created_at": "2026-07-27T05:45:19+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -1193,7 +1345,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:40+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1242,7 +1394,7 @@
       }
     },
     "created_at": "2026-07-08T03:02:57+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1291,7 +1443,7 @@
       }
     },
     "created_at": "2026-07-16T05:01:55+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1339,7 +1491,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:42+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1390,7 +1542,7 @@
       }
     },
     "created_at": "2026-07-24T05:18:31+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -1439,7 +1591,7 @@
       }
     },
     "created_at": "2026-07-08T03:02:57+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1488,7 +1640,7 @@
       }
     },
     "created_at": "2026-07-15T04:52:52+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1537,7 +1689,7 @@
       }
     },
     "created_at": "2026-07-16T05:01:55+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1586,7 +1738,7 @@
       }
     },
     "created_at": "2026-07-24T05:23:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1635,7 +1787,7 @@
       }
     },
     "created_at": "2026-07-25T05:17:04+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1683,7 +1835,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:45+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1732,7 +1884,7 @@
       }
     },
     "created_at": "2026-07-08T03:03:10+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1781,7 +1933,7 @@
       }
     },
     "created_at": "2026-07-15T04:53:30+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1829,7 +1981,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:47+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1878,7 +2030,7 @@
       }
     },
     "created_at": "2026-07-19T05:21:39+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1927,7 +2079,7 @@
       }
     },
     "created_at": "2026-07-26T05:31:21+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -1978,7 +2130,7 @@
       }
     },
     "created_at": "2026-07-25T05:14:57+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2029,7 +2181,7 @@
       }
     },
     "created_at": "2026-07-16T04:58:32+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2080,7 +2232,7 @@
       }
     },
     "created_at": "2026-07-19T05:18:52+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2131,7 +2283,7 @@
       }
     },
     "created_at": "2026-07-21T05:19:10+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2182,7 +2334,7 @@
       }
     },
     "created_at": "2026-07-24T05:19:05+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2231,7 +2383,7 @@
       }
     },
     "created_at": "2026-07-08T03:02:05+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2282,7 +2434,7 @@
       }
     },
     "created_at": "2026-07-16T04:59:18+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2332,7 +2484,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:01+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2383,7 +2535,7 @@
       }
     },
     "created_at": "2026-07-17T05:12:13+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2434,7 +2586,7 @@
       }
     },
     "created_at": "2026-07-17T05:12:13+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2483,7 +2635,7 @@
       }
     },
     "created_at": "2026-07-08T03:01:44+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2532,7 +2684,7 @@
       }
     },
     "created_at": "2026-07-08T03:01:44+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2581,7 +2733,7 @@
       }
     },
     "created_at": "2026-07-16T04:59:51+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2630,7 +2782,7 @@
       }
     },
     "created_at": "2026-07-17T05:15:13+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2679,7 +2831,7 @@
       }
     },
     "created_at": "2026-07-19T05:22:08+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2730,7 +2882,7 @@
       }
     },
     "created_at": "2026-07-20T05:36:49+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2781,7 +2933,7 @@
       }
     },
     "created_at": "2026-07-22T05:17:04+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2830,7 +2982,7 @@
       }
     },
     "created_at": "2026-07-22T05:19:56+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2879,7 +3031,7 @@
       }
     },
     "created_at": "2026-07-24T05:22:01+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -2930,7 +3082,7 @@
       }
     },
     "created_at": "2026-07-23T05:22:15+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -2981,7 +3133,7 @@
       }
     },
     "created_at": "2026-07-17T05:11:54+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3011,7 +3163,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3063,7 +3215,7 @@
       }
     },
     "created_at": "2026-07-17T05:11:54+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3093,7 +3245,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3143,7 +3295,7 @@
       }
     },
     "created_at": "2026-07-08T03:02:05+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -3192,7 +3344,7 @@
       }
     },
     "created_at": "2026-07-15T04:52:08+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum"
     ],
@@ -3222,7 +3374,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3253,7 +3405,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3284,7 +3436,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3315,7 +3467,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3346,7 +3498,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3377,7 +3529,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -3427,7 +3579,7 @@
       }
     },
     "created_at": "2026-07-18T04:46:09+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3458,7 +3610,7 @@
     "discovered_url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOb0gyT3U0UEo5bjU2V3kwd2Y4aWZPNW9BT0NvSEUwNzNyRjFZV3Vvd3hCX2NsUkM0Vk15SnhjcFNZaUlpTXctLUg2VUpkRmJCOG5Mc2IwbG9td1V5cjJCU1I4Y2VxZlRBNUVLTkNiX0NpTjVnS0NBRUpiR0xyN2xUcDFfVWExS1ZILUZUYU5uQ2U3LWwwUTNtbVh6WEtlVG15WEZERFpxSXhZOEJ0NHEydklvU3c0S3psU21QQWpjMXl4ekxDU3NQZ0pOZU42dmJuOXNydmlHSzM?oc=5",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News",
       "SubTel Forum",
@@ -3513,7 +3665,7 @@
       }
     },
     "created_at": "2026-07-17T05:12:28+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3565,7 +3717,7 @@
       }
     },
     "created_at": "2026-07-17T05:13:04+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3616,7 +3768,7 @@
       }
     },
     "created_at": "2026-07-22T05:18:14+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3667,7 +3819,7 @@
       }
     },
     "created_at": "2026-07-23T05:23:01+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -3697,7 +3849,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3728,7 +3880,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3759,7 +3911,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3790,7 +3942,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -3820,7 +3972,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "SubTel Forum",
       "history"
@@ -3851,7 +4003,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -3881,7 +4033,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -3911,7 +4063,7 @@
     "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcDRlWk1JdGUtcjNGMEJ2VU42NzdXbmRkYWtxU0RSOGRqSF9YWjJJZWNwU0xfeFVVYmVGd1J0aDYyTTh5MUtpcElrT3p3RUdfYzJOZkd0S0NSTkZwRkhlRkkwMVpmMkNQNjlKR0UtdER0UXU4NHloRXYtekFnamFuNk83X2xyWm9tVUw4Tw?oc=5",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News",
       "history"
@@ -3943,7 +4095,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -3973,7 +4125,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4001,7 +4153,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4029,7 +4181,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4057,7 +4209,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4106,7 +4258,7 @@
       }
     },
     "created_at": "2026-07-22T05:18:39+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -4136,7 +4288,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4164,7 +4316,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4192,7 +4344,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4220,7 +4372,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4248,7 +4400,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4276,7 +4428,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4304,7 +4456,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4332,7 +4484,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4360,7 +4512,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4388,7 +4540,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4416,7 +4568,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4444,7 +4596,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4472,7 +4624,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4500,7 +4652,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4528,7 +4680,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4556,7 +4708,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4584,7 +4736,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4612,7 +4764,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4640,7 +4792,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4668,7 +4820,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4696,7 +4848,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4724,7 +4876,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4752,7 +4904,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4780,7 +4932,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4808,7 +4960,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4836,7 +4988,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4864,7 +5016,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4892,7 +5044,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4920,7 +5072,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4948,7 +5100,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -4976,7 +5128,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5004,7 +5156,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5032,7 +5184,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5060,7 +5212,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5088,7 +5240,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5116,7 +5268,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5144,7 +5296,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5172,7 +5324,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5200,7 +5352,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5228,7 +5380,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5256,7 +5408,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5284,7 +5436,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5333,7 +5485,7 @@
       }
     },
     "created_at": "2026-07-20T05:39:25+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Google News"
     ],
@@ -5363,7 +5515,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5391,7 +5543,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5419,7 +5571,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5447,7 +5599,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5475,7 +5627,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5503,7 +5655,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5531,7 +5683,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5559,7 +5711,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5587,7 +5739,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5615,7 +5767,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5643,7 +5795,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5671,7 +5823,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5699,7 +5851,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5727,7 +5879,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5755,7 +5907,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5783,7 +5935,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5811,7 +5963,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5839,7 +5991,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5867,7 +6019,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5895,7 +6047,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5923,7 +6075,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5951,7 +6103,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -5979,7 +6131,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6007,7 +6159,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6035,7 +6187,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6063,7 +6215,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6091,7 +6243,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6119,7 +6271,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6147,7 +6299,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6175,7 +6327,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6203,7 +6355,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6231,7 +6383,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6259,7 +6411,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6287,7 +6439,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6315,7 +6467,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6343,7 +6495,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6371,7 +6523,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6399,7 +6551,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6427,7 +6579,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -6458,7 +6610,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -6489,7 +6641,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6517,7 +6669,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6545,7 +6697,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -6576,7 +6728,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6604,7 +6756,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6632,7 +6784,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6660,7 +6812,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6688,7 +6840,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6716,7 +6868,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6744,7 +6896,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6772,7 +6924,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6800,7 +6952,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6828,7 +6980,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6856,7 +7008,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6884,7 +7036,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6912,7 +7064,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6940,7 +7092,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6968,7 +7120,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -6996,7 +7148,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7024,7 +7176,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7052,7 +7204,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7080,7 +7232,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7108,7 +7260,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7136,7 +7288,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7164,7 +7316,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7192,7 +7344,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7220,7 +7372,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7248,7 +7400,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7276,7 +7428,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7304,7 +7456,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7332,7 +7484,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7360,7 +7512,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7388,7 +7540,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7416,7 +7568,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7444,7 +7596,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7472,7 +7624,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7500,7 +7652,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7528,7 +7680,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7556,7 +7708,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7584,7 +7736,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7612,7 +7764,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7640,7 +7792,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7668,7 +7820,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7696,7 +7848,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7724,7 +7876,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7752,7 +7904,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7780,7 +7932,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7808,7 +7960,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7836,7 +7988,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7864,7 +8016,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7892,7 +8044,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7920,7 +8072,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7948,7 +8100,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -7976,7 +8128,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8004,7 +8156,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8032,7 +8184,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8060,7 +8212,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8088,7 +8240,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8116,7 +8268,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -8147,7 +8299,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8175,7 +8327,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -8207,7 +8359,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -8239,7 +8391,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -8270,7 +8422,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8298,7 +8450,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8326,7 +8478,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8354,7 +8506,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8382,7 +8534,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "Submarine Networks",
       "history"
@@ -8413,7 +8565,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8441,7 +8593,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8469,7 +8621,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8497,7 +8649,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:23+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8525,7 +8677,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8553,7 +8705,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8581,7 +8733,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8609,7 +8761,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8637,7 +8789,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8665,7 +8817,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8693,7 +8845,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8721,7 +8873,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8749,7 +8901,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8777,7 +8929,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8805,7 +8957,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8833,7 +8985,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8861,7 +9013,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8889,7 +9041,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8917,7 +9069,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8945,7 +9097,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -8973,7 +9125,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9001,7 +9153,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9029,7 +9181,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:08:26+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9057,7 +9209,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9085,7 +9237,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-08T02:09:22+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9113,7 +9265,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9141,7 +9293,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
@@ -9169,7 +9321,7 @@
     "discovered_url": "",
     "raw_data": {},
     "created_at": "2026-07-07T12:58:06+00:00",
-    "updated_at": "2026-07-26T05:34:05+00:00",
+    "updated_at": "2026-07-27T05:51:36+00:00",
     "sources": [
       "history"
     ],
