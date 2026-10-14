@@ -80,6 +80,16 @@ class FetchRecoveryTests(unittest.TestCase):
             rss.assert_called_once()
             browser.assert_not_called()
 
+    def test_two_http_transport_failures_can_use_normal_browser(self):
+        from curl_cffi.requests.exceptions import ConnectionError as CurlConnectionError
+        scraper = ArticleScraper(Config(article_queue_path=''))
+        with patch.object(scraper.session, 'get', side_effect=requests.ConnectionError()), patch.object(scraper, '_browser_get', side_effect=CurlConnectionError('connection failed')), patch.object(scraper, '_render_get', return_value=response()) as render, patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '1'}):
+            self.assertEqual(scraper.get('https://publisher.example/story').status_code, 200)
+            render.assert_called_once()
+
+    def test_localized_challenge_is_not_article_content(self):
+        self.assertTrue(ArticleScraper._blocked_html('<title>请稍候…</title>正在进行安全验证'))
+
     def test_429_respects_retry_after_across_restarts(self):
         with tempfile.TemporaryDirectory() as tmp:
             config = Config(article_queue_path=str(Path(tmp) / 'queue.json'))
