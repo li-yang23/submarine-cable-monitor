@@ -28,7 +28,11 @@
           "evt_50591464518b00b97d78"
         ],
         "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
-      }
+      },
+      "cross_source_parents": [
+        "fbcc106b28075aac8cfe0c5b84d53636",
+        "6eac7d66cc7ecf8f21a2847f32b35798"
+      ]
     },
     "4200778ed95f4759bac19937c0c81521": {
       "queue_id": "4200778ed95f4759bac19937c0c81521",
@@ -57,7 +61,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE02eDFXMnp3a29qdVhWWGQwUEdLcENqSjhyYkQ4OFJqckp5dVlLdkI4ZHF4UWNySUxRbllzM3QxTGFraV9kNVpKemhuMG10alA5dzFuQ04wRGhUeVZ3ZzZXRFFGd2VMODNseXZNdGdubDhUNGhqOXA2ZUIxQWNXakk?oc=5",
       "published_date": "2026-10-07",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.214795+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.594435+00:00",
       "queries": [
         "submarine cable fault",
         "submarine cable outage",
@@ -96,7 +100,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPU3ZuMHdmQ2RsTjZaOUh6aVpLbkRIeG1BWHhNU3JWaFdvWlVHOC1qWlJRZFNNX3BOaURENW8yZkVpTjEyQjBMcXFYdHVYSjVaZ096aHY1eEhsT2tHdWp6NnlxakJIeHA3aEtadFZDQVJ0RTQtTm51eXpSeklMR2tidkl2ZXRjVDRyQkwtQlZ0emk1T3l5c21XRg?oc=5",
       "published_date": "2026-10-05",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:37.783364+00:00",
+      "last_seen_at": "2026-10-14T17:52:48.135473+00:00",
       "queries": [
         "submarine cable fault"
       ],
@@ -135,7 +139,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWnUtb3Bhb3daaDFBYVhodXpIclc1d3dpZk9CVXNTeTkzYmt6enJ2MS0yR1ZEMDFPY3M5RVVTUWtkQ3JIY3NzQzBIdFljTVFicGg2bFJsT0Z0VnVleHdreWU4VUxyVTlGNXRib3psUmE3Wi1FT2RwUWpkWWdmOHZJdU1qTzZSWTJoRGpTbjJ1amNnZzlZdlROLXlxdERydERGcUF5Y0xkVEtOOUVObEw4Wmktcm5HUHprMndtU21BbHk2ZUE?oc=5",
       "published_date": "2026-10-08",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:37.797582+00:00",
+      "last_seen_at": "2026-10-14T17:52:48.156073+00:00",
       "queries": [
         "submarine cable fault"
       ],
@@ -157,7 +161,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcDlBTWhsT29Xd21NTVQxa1pqdjVDcXd4dzdWTTdfajJnSExMcHFHRkpPdjE0bUdGcDI0dnZUOWdNZ3ppTW5LV1lVcmtxMXFncmRHcVprYkdPa29CYUd5SjhYaFBRaVJsQ0hKNjRzdDJmVGFMQ1RmMC1vZlVRdjNWdXh0aW1GQ1ZSeHJsOUQ5RENKUHphanc1Mzl3?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.243612+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.526913+00:00",
       "queries": [
         "submarine cable fault",
         "undersea cable damage"
@@ -180,7 +184,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcUtTTlcxRTBtR0FvWmxtMTBZNy1COVBpcmtFT1RUM1U0aGp2UUM2dW5rM3lqTG1udEoyX2toX3lmZDlDWGNGX3FCV3E5NmFIaDVpazJxQ3BMVjk4STA3dzJRMmhNVkpoai1JN1NrMnZINF9yMFNyZlhXQnRYRkNzTUZVUXhkNjlFU3BGZmk1YnJpbk53cURsLTdycjBzNlRWV0d3T1NzQQ?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.237577+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.620106+00:00",
       "queries": [
         "submarine cable fault",
         "submarine cable outage",
@@ -206,7 +210,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5tWmMyUjRMN2YwNm0xM01YSnFUM1BJdnlDNGxvamRYS2FzakxTdVpKMlFnOXZVVEpVX0hjWFBaS29yd2VMZTIzMlg2QzVsUFZxeTRuYm5zd0ZfeDdmOTdkUUFJbkdralNWcUIyd1VkOFVueXhkMHVR?oc=5",
       "published_date": "2026-10-12",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:41.245177+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.599764+00:00",
       "queries": [
         "submarine cable fault",
         "subsea cable disruption",
@@ -230,7 +234,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWUxsRzFsTFRKYVJwZm9sYWlJQWVnX2VuQUdZZkxzNlJzNzFTU0M4TXc1ZGtneUJXanVsRm5ETGhFNHRkU0pHdTB6NUZUQ0VuR0VuYnZtVi1zOXI3d3ZiUXo5Uy1hSFZLYnNIWTdEcTJpMkNkbk9MNVR0VXc5YVVXd0sxTXJQazk5VkUxMzl1UmNpc0d4dllSWnNrQXRlZw?oc=5",
       "published_date": "2026-10-08",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.220577+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.501249+00:00",
       "queries": [
         "submarine cable fault",
         "submarine cable break",
@@ -285,7 +289,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1YM2FNdmpaakE2S2szLV9XbVVVdW1aNy1fd0Q2dVcyejlFYnppRjFxdWxidDBoX1Rud1NrNGgyOFRfSU96X21BTHBYUG1CU1dkWF83WlhEeHh5aFF3MWJhZDExamVCdEw1LTdwRW1YcmR4TWdDZm9FV0phOXUyYmc?oc=5",
       "published_date": "2026-10-02",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.732546+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.246756+00:00",
       "queries": [
         "submarine cable fault",
         "submarine cable outage",
@@ -340,7 +344,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkZFX2xxT0lta29PV2otVVFMVGcyWGNvT2lXalNwTGNDZ3FmSjA3SEdiNHg1djg3dWVrd281eUNzRkVHUXN6UjN4N3NubER6OXZVLVdiOXhBYVk1NWNTRzBQVUJFSzQwNzBZSDEzS0FCbDgwc25tZG5SN1UyUUFVLXBQd0ZOdUhuNmtrenBXNDJsNTZLY0N1R3AxRnJmOHdVclRhZlluTlA3SktQUUHSAbMBQVVfeXFMUERiUnBQQ0s2QWNJVGRnMFN6dGNzd3NybTBKUEtzMWNIZlRhdnBzcldmQVJqNWFfal9SRDlTcXkwWDMwQ2g4aU0tOVY5MExKTkwwXzJ6eERLUE9aM2k3T2kxa1dDMGhINVltaEZjc2hEel9XazlEaWtrT3pCMllkU05wN1hNc1ZrTGZsckhKWTY1dDN5QmhobzU5SlN1UlJwcm1OVFdGUWdzTmkxMVMzMWI0b1E?oc=5",
       "published_date": "2026-10-02",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.230594+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.611562+00:00",
       "queries": [
         "submarine cable outage",
         "submarine cable break",
@@ -376,7 +380,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdlZKSUFwSXkwMkF6R3lZRTR0Vm0xRjA0ekY2WWNkTzMtSUlkY25BTUp0VHdDMzRqTmFCMDNYWE9kdDFaSXk1UmtIMHBQVVlHU3FQcHdyVVZFcjVIaVpiYl90Vm14N0ZaZS1LNVg1aGRnazZjY2ZtNFBqWlc2Y3ZqRUkxYnR5cjJsZVNBMUFnRHZYeDlTMWVpalhmV3hCNDZfc2NDbFFmQXRrOWNU0gGzAUFVX3lxTE82d1k0SnVrU1g4Yy1SWkU4WTNxV3p4cFNsM1BmdjRaRUhsT0ZLWHBkSERoaE1HMlp6UGRLNmVYVGRsMnVBbGR4WUlJdmZYZ0ZkQk9kQ3F3aVowc21kMjVRSWVCNTZ2TW5WUVVTVlJRdXpJRFlBbDVMRV8tczBTa1ZEUFotdFNmcHF2VDdYVWV2N0Y5dHFCc0V0SWdMOXhpOE1QanFROHhYcWp4UjlWWkxCTlhn?oc=5",
       "published_date": "2026-10-05",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.644646+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.136948+00:00",
       "queries": [
         "submarine cable outage",
         "subsea cable disruption"
@@ -399,7 +403,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPNmhsV2dwc3gyV0o5Njg3ZEFfaTNCRmVnUXRwOE5UbDRSaDNHSldHN084a21OdXlOYWlRLTJScXpZa3RYdXZtUTVVSWlXNG5JMnB3aXFmVlJWejJLc3EwQVZvVUs4d2hvYzFHLTBOTW5nU2Nlenh6aDExUlRlYlFodnZBQWRzcGRaTUNWUExaRmJzcFVLNWxGWEFDUXBoazFrY01lV3FpaFFPek1WbVY1aTh4Y25iZm8yLW4ySFE4X1VYckprOHY4WGZ3MC1sQldub1kxRE1IQVlVcFhfaFBzN0Z4cG9URUtI0gHuAUFVX3lxTE5XRkNrRkVUTVowaklOem9jOTc0UGt4ejMwZzgyWlpJQVZreVFobVo3cnp0RGYxYTMxRzFnZGZRWjlCdXNnV1lIeHBCVGlkRUo5NGFuVHJ1TW1lNzJHOVRkc2RRSHpZMlpJRmZUQVcyeE5oZERYWHMxTkRGV2N6bldLa1FlTVJ5NEl5bnQtY01BSFAzZUdWWlphbEVnWDh4ZWFlRHVmbkN0ck43VlNXSE5jUmtyOGRjR3hDUjdZbnY5VWY5NnlGNTZuaXFHQkd6R05MWkIyQ3dzTDNCV2NtVDAyYldYRDF0V3pJVzhfcmc?oc=5",
       "published_date": "2026-10-02",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.678095+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.035263+00:00",
       "queries": [
         "submarine cable outage",
         "submarine cable break"
@@ -422,7 +426,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNjNyYXFtTWNuUDRWem1qVnpyWk5DSnNRTkQ2b3JESFBuSXZTN1hNVGlrbGxvLWQwR09CcEpjV0RsenRRZGxBSWxXekI5QU5ibTIwd1FyOEZRZjQxQ0VYcHkyRVR2TnU5cE1GS0MxeXMyY0lqU0E2NXhwNUZnaXA1SnhXbEJ1LVBncnJ5TWU0X3NoMWQ2TjM3TVhYczFQQQ?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.244594+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.628615+00:00",
       "queries": [
         "submarine cable outage",
         "submarine cable break",
@@ -458,7 +462,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPV01COEs3X1NFQldGSldtQWVQUGprR2dYcjY1eHFpZFQ5QnBwUjJEZGZkQmpyNGZHUHdaZWY4MzdMVUVseElSUWNobnZOVzNkeDRHZEUzRnZMbGw3MXFzdkpScHdwWG1WZE0tXy13b1ZCZUZJaUFhX2xIRVBGdF9OMEFIaUR0VE5rNkN2a2kzRWxGc1ZYeF9sUVdheEJOUDVZMF95OHpBd2tMX3dY?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.251618+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.637044+00:00",
       "queries": [
         "submarine cable outage",
         "undersea cable outage"
@@ -500,7 +504,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSFV6V0tyTWdOOHM3S2dHY2JSQ3FSZEVDM0lhaklaTm9VWGxwZmhiN250dHpxTW10S2pPZkFyNmlISVBlam1jbklKWUZWbkVlcEdzM0FiX1Zvb3RSWmZuR0pRM2V1dVZXOXoxQzFqSHhKMm1rVFJEdVNNNnQ1ZlNOM21jNXdYRkRaLTJDYjIxSVFrWGcz?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.736597+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.085461+00:00",
       "queries": [
         "submarine cable outage",
         "submarine cable break"
@@ -523,7 +527,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQeEo1WWFmUGZaZWRVZ0dlaUJRQlN4WlB6dlVPN2RpanIzOXJLYjhQVUVpczc0aWxlcFhCMnpiZGtjWVpRSUNSSE0xM2JTTGp4Q3JUR2prVHBwWW9LUm5lS3BtMklUNnFtakFtcTBfeWM3N0RTbmw2YUxRanFId3dDbFJCYldKOUViWkQ2OXZ6UGNzTWJsVXBFLV9n0gGfAUFVX3lxTE54MnBXdXUxTVJOVVVSSjFUZDRLR3pTaWNUNVd5d01Yb0NNb0lnLUNzVW1sZm1uUU1Sa29CaDZKdURELXBmR0hLWFFVTGVWUDAzdTZfT2I0RkZ2Skg5bDZoS0NaMEw3ZVFoVVNJejhtR0M4RFpaZXdjTC1UWVVjdC1aWXVwRE9UQlFKUVk4aHNlekYxVlZiRDIxbkNOZXAwTQ?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.258611+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.645611+00:00",
       "queries": [
         "submarine cable outage",
         "undersea cable outage"
@@ -557,7 +561,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdjFTNkRLYTNLUmVVQ01mWm8wOGFMamlyeEFrR2dHZXE4WVIxUjN6bk9vSmZvQkdZbmNhcUk4WVlNNmZqSFNRWEJzaDVvVGduTzBySzB0OTJXUF94R0V0VEdkRzYyalZJZ2NZazlRR1VCanpTMlVQaHVfbkZxbXIwbTJDdE5GU2YtUFhNenNmQllDeHVISEVydy1HWS1rVUZGZl9tUFFJa3h5dDhPV3BUSTd6RDlJZUVfWXoyRVZZaWh5VVBP?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.211564+00:00",
+      "last_seen_at": "2026-10-14T17:52:48.579730+00:00",
       "queries": [
         "submarine cable outage"
       ],
@@ -589,7 +593,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPU1BkdHdOS0EwelQzbkl5MktnaWxsaVBCSkZRMHRPSTJZT2xPOFVpcXRTM3libkJfeGM5bGJlUG9NdXNnVF9xZHhfVm83V2pUdS1kWkxLZlRSM0RtbGJiM2wyZE1xNEZ6RzFXMGlwbkNaNmhiSW9YTXB2ckwyZzQ5dDFpTGJXLVJseHk1Uw?oc=5",
       "published_date": "2026-10-05",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.724896+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.238117+00:00",
       "queries": [
         "submarine cable outage",
         "submarine cable break",
@@ -613,7 +617,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWmFORlJxcGNCZ0pCa0dWWWk3Ymp0bVo2TE15SmdyQ3FKR3hhMUlINnFYLWJyQi11RGEzcm9BVkpBMlZWZDg3OGs2QUhjci1qNVh5Q1NmRk9rZ2x2c1E1ZkNrRnppMjIzR3gwOHJPU1Zwd2preW1JZS1TRkRZMkRpR3ZKektfcnhIQS1hU1k2UmhNdFIyM1IzdzFnNHRiQm01?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.621600+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.120222+00:00",
       "queries": [
         "submarine cable break",
         "subsea cable disruption"
@@ -635,7 +639,10 @@
           "evt_50591464518b00b97d78"
         ],
         "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
-      }
+      },
+      "cross_source_parents": [
+        "fbcc106b28075aac8cfe0c5b84d53636"
+      ]
     },
     "dc2c25d2cc43bb3dd5c04f9365eea57d": {
       "queue_id": "dc2c25d2cc43bb3dd5c04f9365eea57d",
@@ -647,7 +654,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONm5lZk5NbEpPMm1GT0ROdU95dFBMdDQyTmw5SVNidFdmZmxJVDVmSWhnb1hKTWdBN3pBb01Mb004dkNoenpkd2VlU3RNUGwxQm14SmV5X2FDX3BHSzB1TkJIR3ZiWjg5cC1oSGtSc2lveXF4SVZ6S0dJZFFqSDdLNGNyeHd3X1o1ckVUQ1JmRG1XcW1YUzM3VjFBWnJUbFp6QTEydzNheGhWZ1ppYVVTTkozSmU5dw?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.658795+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.162756+00:00",
       "queries": [
         "submarine cable break",
         "subsea cable disruption"
@@ -669,7 +676,11 @@
           "evt_50591464518b00b97d78"
         ],
         "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
-      }
+      },
+      "cross_source_parents": [
+        "fbcc106b28075aac8cfe0c5b84d53636",
+        "6eac7d66cc7ecf8f21a2847f32b35798"
+      ]
     },
     "49025fa7abdd748931a72b6434f29ce8": {
       "queue_id": "49025fa7abdd748931a72b6434f29ce8",
@@ -681,7 +692,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVjFNWm1Oejl2TFlpVVNlem1ZOUx1VDBWbDlQVnNUcGNfbmlwUGswcnBCcUpjZVVLU05ic1FOT0VPakE4SXZOeU4yNjZRWnQ4WFdRWXBQTmVNNG1qZmVmQXl5RHpDTFphQVRFd0pXSGswbDgxQ29LOWR1OFFnZHMwYS1pbWZhZXlpc2pqbUhRcHZBZDJ1d1HSAZsBQVVfeXFMTmNHSjhVcFZwdFRHZXJPRGJoUjIxMmF1SHNldXJEWkhxZnRqWjJWc2w5cUpDeDItMVl5YjVVLTFCUERPcDNzLTBTbXRMR1phaEJJallJcnN1MVBGam05V05sdV9LVkJrenFWenlIMVRjOU5QTUdLSG1QUjJ4cGtSOGswR2dVcGQyenhyVHFYUFpGZDJkWUxvRE50cjA?oc=5",
       "published_date": "2026-10-05",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.667608+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.026972+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -714,7 +725,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNaklERGZ6RVI1XzkxTnEzNUhlWmtjdHNKSzlEVHFDLTRzNVBTdlVXUUtTemlkOEhLRlFVNHBtM2QxOW1ZWGl4TXp2bUxYd09GLUlJX3ZsOWd5N3RkTFRUWHMxajRHcG5aSzRxcEdqVmVsNWVibm04Z2dWVE13S1pBMkE0Yy1TMzg4LUJLR2NTVjZkRHc?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.693600+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.051992+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -747,7 +758,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNNDlQWU5KVWluTXFLNXNlNDYxYTNSbC1nZzByVjJyTEUzNjBfVGlQUHVvUXFqVnFndHZ2M1JrM2pLT2JCSnpZZlBTeHlqWmVfRkVhdWo4WHIwVWRUVHdIV0xSQXRndjNhZEJHNW9HZ2htcmREUkZvTl9aN3l4ZjRBNFF3?oc=5",
       "published_date": "2026-10-07",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.701514+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.060400+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -779,7 +790,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBRS3RxNXNPQV9BcEZ1bllIMWhsYUNHdWlHUzRCdENRRE9YMndLb2tpQmxraWFZaGZXcVBzT0RHNzFoRWFuRG9GcE54TVRpS252QzdET1ZMeW9GZkR0dWJjUVVPVVdYbjR4OHhraVVlYUhRN3BBQlJnN3ZYUldqaXM?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.708589+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.068666+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -801,7 +812,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYkJ5Tjd3YWJwMHNPa1pZemJTeEZlVHhVdUdIQnFoRUZhVVlZZzdoWF9zdmFmcFZWMlJPSHpXcmxUWEktVHpNZks2ZnFQcG5EanZJREdpc1llQ0lZajFHYVJqbmlTbXZpdndFLTY5STBNdEZGV0dxM1c3RHpSdjJtdC1URQ?oc=5",
       "published_date": "2026-10-06",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.722651+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.105222+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -832,7 +843,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcXl6VHBTYUZQRkpJZzhYaFR3RUNFYllzRDFkSS1qcDJzaW9ldDRncnVYRFdFYkRiU1c0eDRaLUpiSDRhb3RXMTFqTXUtd3lWQWhEVDlqS05ZXzZTNHlRdjZNa2lLeDV5OGhxZzRXamhPWGc4TUNwR1RlOEw5RlJtSTBxM2lwX2ZQVXVWeFpaYlNwVV8tZHlIT1JmZjdHSmduVHVBTjlrakRYeDg?oc=5",
       "published_date": "2026-10-09",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.743575+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.113682+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -854,7 +865,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbmIwYjJfNzBtaHZtSTJld3FCdzU2UThZOXZTZlVIeFA2MWFEcGEwbkR6dzQwMTdOM2FacmpIeHpoeGthd0FVdC1oMm5mVUlWRlQ1RGJfbkFkZnBzRnlLcDZEanNKdUZPZEo4b0FpUHZ1VWo4RWZGWW5nR2JXYTlWallXOUIydjg3bEE?oc=5",
       "published_date": "2026-10-07",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.765498+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.130258+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -876,7 +887,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9FbU5qR21GMnJYMjVqN3N0SVR6UnVWeXZVaXZ5Sk5PLXdtVmpFMmRCUDFJMnpQRExZWUJrcEFQem82Y2ppRlhBM05wa2lObW91Q0xWLURZQThveXRMQWZuaS1qcDg3NmFXakdhRGNrVE9jQQ?oc=5",
       "published_date": "2026-10-08",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:41.256714+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.608688+00:00",
       "queries": [
         "submarine cable break",
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
@@ -899,7 +910,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWGtGWi15RzBYQjE0cW9Eb24xSEdJNGNLSGlXaWN4ZXM2dW1mZ3JYcW9MaVo2X1RXbTZPNDRtUzVESk50aG1PY3gxYV9iUldhbE44RDNkQTR1RkpRTVBkenVQYnZZVEZZcm9yamp6ekxJMm04UWNXSnFnUGQwcFVQNVZqQ1FnYzBvNjdKZ01nLVZVX3FkSzBKelJ2MUJPMzlCeTVz?oc=5",
       "published_date": "2026-10-06",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.787593+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.163867+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -961,7 +972,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRmJHSDQ1TmYtRGE5MWhjYm9GLTg5VWpxV3gzMnlkNlJCZ1lNVGY2SzVHTGxRWlFjcDBPTGR1b1Y4VnhubDEtSkxKT25DRHhmQ0c4a0dWMlBDMjJyZ3IxS1VLTVpZazdENkMwbzRTVEFUUVN6aF84QXZZSlZnb2Y1cFVscXBoYzFZOXpub25CVlhnQlhjWnN0dGV6anVsOWx1VlV6ajBqMzQ0NlluSUw2Qll1RUpidk5wUzFycjFLdXMxSFk?oc=5",
       "published_date": "2026-10-11",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:38.794569+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.172104+00:00",
       "queries": [
         "submarine cable break"
       ],
@@ -983,7 +994,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORnhtU2x5enNnS1pBUHdxSk1PMFZpXzJreVJHYjdORzgtbFBybWZkWkk2a0hMcm96Z05ZWU45WTU1Z29mYl9IUVhIcF9zTFZxOENCRFllZWZBZUM0dmIyM3d6N1VJWlFuZ2pwS18yUUJwRzktVjJxeXJzaTJsbUQ1OXBGVkJDeDZVSEtLTzNTb3l2VE1sX2VJLWdBTmJYNThWYnBaNWxfcnBzeklQdTJIcFJLWGlUSFZIUFdXVTEzVi12UQ?oc=5",
       "published_date": "2026-10-10",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.582081+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.086201+00:00",
       "queries": [
         "undersea cable damage",
         "subsea cable disruption"
@@ -1006,7 +1017,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNUHhqRkxtcDhscGZDMkpXNkkzVEFXYU5hb3BJT2x6MDJCWWxadFprY0lNNVdkTGFYc0xVeVBEU0lmTmdrbzJSMWtaZktIYi1IRGVwYjY5QTI1aHVkXzg5TDRicnhBMjg0LXZTUVZKR2NVTXpRNnIwbkt6MHV4RVhzUUFzbExvd0htVEZLallrYjV2Y3RPcHIzU2Rsamc3RGpSN3JRcEZOV18xZkczX0g3VjNpNzR6SkFZZ2tZQVpad0xzdk4ybjZUaDhaQWxuZm1QVmVsdFFyVVktUGhYMDZoMFBtMUVJeUFOd015MEs2YWNYV0E0LVBKRWdwcnFPNWpscnBkQTVDa3BZQTV0YU1SbWRR0gGXAkFVX3lxTE1MWlhlX3JxYTlRSThkWERVZXNqTDd2aXRRQjhhY1UtUmRtUzl0ZnptYWVNSGY2dExGV09NUzR2dk9sR3lFOXlkeXVtN3hOLUlYOTQyQmR4ejFBaG1nWHptQ25UMGFCYlpsWWczTmtZMlFidEIwZ3ZuNW41VXdVVlBlYjFobW0tRm16VkkwQjI0eDhiMF8xSm44dGZfOWR6QWlVMkJsSjF0Q3ExRHcwcjd2QXM5el9CX2JJR2tIZmNHTl9oUFM0djlhdnR0bEJCM193aEFwQ1dsNnU1VlBCa01nNklNaXhwYlcxaHR1bVBDdkV3Q1RmOHB3MUdoZml0aUU1UFRhX0dmbTI3dWZPTjJ4NnRQM1o4OA?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.279661+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.569444+00:00",
       "queries": [
         "undersea cable damage"
       ],
@@ -1074,7 +1085,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSUEtb2UyN3FuX1pQZmgtd2J1VWl1QnVPS0JtUXUwSUJZY0hwVDNjLWRrWktlSkVPN2pILVpNYWFKWExyano5b1JOYUFuLXAtc01JWEVNSm5RTEVpYnRlUGlucnFDVUJ1RG9sMVE0Z2ZHN1BmMWZxRnZnOUk2TnRVS0ozSWJqcE1wUXZ6Q0RTZ1lyc0l3SGV3VTVuS1NxWVJQWjRRY0l4QjJMcTJ0RE4w0gG0AUFVX3lxTFA4clFYelpFakJ1WEd4Q2FsVVJtOEZpZkdoUFJvTnA5TkVaVGdxZzlTNmktY1FnUEdzOVdyazBxVGx3Uno2ckJIcEFJZ1lrREZXNFVuc3FTVlNJYllQX3ZSR05TY2t2anRjQ2FXbldyYTY0dENySDl0QzFZV2pQU3BrR3lrTEdKc0xyeE13SnFtYTFCUnE4VXRRTVRxNlJZQXRRb2JQYXJXcEdsRnJWQS1hZE0xRA?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.206601+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.483453+00:00",
       "queries": [
         "undersea cable damage"
       ],
@@ -1107,7 +1118,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYTlTbnBjdlBqQ25BNnpHVlFGRlhDTGd2SFg2ckxXTUpOODZMcU5ja0V5bUNfRTBGQ05GQkFKX3JCdDluOVhlbVgtbjZtbFI2Rnl1c1BUUkpBbmYyZm5mUFN6V3h0TlBsb1ZBNzdSbFFiVVZmY0tFY09rT1pkTERidFNRTmpiREN5dmFIXzRtYTJNcEVIZkFDbW1hYWN0NndQODRyamxGUXN3dw?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.250661+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.535477+00:00",
       "queries": [
         "undersea cable damage"
       ],
@@ -1129,7 +1140,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5wZzlhM0FpZGhOSUZpajNYNHM2NkJyNjdRVGpWTFk5N1Y4U3F2OWY3eWJfYncxOWFaSEtVck90LVAyQkw3QVRxYVE3M04yZkhFVFE?oc=5",
       "published_date": "2026-10-12",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.265579+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.552534+00:00",
       "queries": [
         "undersea cable damage"
       ],
@@ -1160,7 +1171,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNcHAwZG5UbEhycS1XNTdndE5XY3luWUxXQ2thaHVsQk15U0U2cjk4T3g4aE5YdjFOa2dKVnRaVHh2MWZFM0o3eVJGQmpwODBRb3RyMUJUYTdHM0VNMDRlQ2FUNjdqZFVFMXMyUzIyYUR2dThGbjFTZnd2S0lUeHR6WnBYYlVkdzRON1phVVRPYmJ1Y1Z2TWZnX0xCVEwtaG5RMXc?oc=5",
       "published_date": "2026-10-09",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.272587+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.561023+00:00",
       "last_attempt_at": "2026-10-14T04:11:35.217330+00:00",
       "url": "https://international.astroawani.com/global-news/nato-allies-foil-russian-subsea-cable-sabotage-plot",
       "reason": "no_candidates",
@@ -1182,7 +1193,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPNlhpSTZRWUJwaWRsMTNiYkQyV0g4cm5tUEdMVG5xTms1cEJWRW5MY2pJRUNvdUlnWk5wWDNFME5iVmlaZHNnWUFwRXN2ZWh6b3lHRWg5YXpXWHByN0tIc0ZSb2pKMi03aTlFdHpWMVh2SF81ZWhjeXdhU2xpanJJNFNhUkdaRGFmSDRLZg?oc=5",
       "published_date": "2026-10-13",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.651571+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.154307+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1214,7 +1225,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.614640+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.111869+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1246,7 +1257,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcVl5Nldsb1pLR00wMDVud3hjQVliTm9SYS1DZlNhY25MX0tWc2QzM0I0TlFoeHhSa00zdFdzYUprOWF5UWdCT1dmX29LeWVhRzZzYWJFWHl3R1luRTUtTlF1Z3JZZmk3SUFUajB6Z1Joa01rSkQzV3VnaWEwcHIyN0JYUzJVR20zQlhFX3Nwc1NLaGU1R29WckhSWFlCNXBXRTZrVG8zb0lTYTEwUWNqWE4wQklXTWNMc0ptR1pfQ191bWxSZHNsY0hIaEFtWVhpRlR0RnhrRkliSms?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.672538+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.179590+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1286,8 +1297,8 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:24:09.538985+00:00",
       "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
-      "reason": "cross_source_date_conflict",
-      "review_at": "2026-10-14T17:44:56.375105+00:00",
+      "reason": "cross_source_primary_correction_required",
+      "review_at": "2026-10-14T17:53:55.229775+00:00",
       "next_attempt_at": null,
       "force_retry": false,
       "manual_review": {
@@ -1348,6 +1359,53 @@
         },
         "requires_primary_correction": true,
         "previous_report": "research/reviews/final-six-2026-10-14.json"
+      },
+      "cross_source": {
+        "last_attempt_at": "2026-10-14T17:53:46.797953+00:00",
+        "next_search_at": "2026-10-15T17:53:46.797953+00:00",
+        "attempts": 1,
+        "original_failure_reason": "cross_source_date_conflict",
+        "original_full_text_read": false,
+        "sources": [
+          {
+            "url": "https://canadianinquirer.net/2026/10/03/globe-reroutes-internet-traffic-after-subsea-cable-break-disrupts-services/",
+            "title": "Globe reroutes internet traffic after subsea cable break disrupts services",
+            "published_date": "2026-10-03",
+            "publisher_group": "canadian-inquirer",
+            "content_length": 1972,
+            "content_sha256": "c49631182012f507b4dc84f16119288d51221812b705208190a9107757c9d477"
+          },
+          {
+            "url": "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
+            "title": "PH-SG subsea cable cut disrupts Internet as telcos reroute traffic",
+            "published_date": "2026-10-03",
+            "publisher_group": "newsbytes",
+            "content_length": 2696,
+            "content_sha256": "8a955a1eff4b79392cb97ae8b616fadaf4d47eb00774574949c86bd6614d7583"
+          },
+          {
+            "url": "https://tribune.net.ph/2026/10/03/globe-taps-backup-links-after-cable-break-2",
+            "title": "Globe taps backup links after cable break",
+            "published_date": "2026-10-03",
+            "publisher_group": "daily-tribune",
+            "content_length": 1265,
+            "content_sha256": "e9a5d23633ff5c51d3b403cf942d832565f0d9cf11ca40d79f68b58cb73d9cce"
+          },
+          {
+            "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+            "title": "Globe restores internet services after subsea cable disruption",
+            "published_date": "2026-10-04",
+            "publisher_group": "businessworld",
+            "content_length": 1488,
+            "content_sha256": "56561b168390e0a38954fc2400a2a82fdab8d950fa558c615b80b9a7038722bd"
+          }
+        ],
+        "reason": "primary_correction_required",
+        "queries": [
+          "Globe reroutes data traffic after subsea cable break disrupts internet services after:2026-09-19 before:2026-10-18",
+          "Globe (submarine OR subsea OR undersea) (outage OR disruption OR fault) after:2026-09-19 before:2026-10-18"
+        ],
+        "evidence_fingerprint": "9e0312bfabeff4796b9befe21f5e98b4ed8f2e87c730e7879bf999e7d01ca93d"
       }
     },
     "3a913dc1b58b0a1148745229d00fe549": {
@@ -1360,7 +1418,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUXQ5RGJ2TlV5MUI4ckdNZ1MtU2YyUDZDYnlGcU51ZHFhU3dCSnFPaHJCeTdoZkVzZTJCVzIxV2xCMFVzanpwc0kyV0VXVkkwckxHVXFORUFFV3E4U2J5R1VTNTVDNG5TTDZKbmp2andJQmtEU2NVNWNNbUoyTDhMMVJpWlNKOVF2ODV0T21OMW1RZy13M1FHUDZqRQ?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.679609+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.187966+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1399,7 +1457,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPN3BjU0Q2bWNjNkc2Z1Voeko3U0s2Qzh1UmtFbncyS3kzdDdGcF80MksyTUwtdHQ1aEZGb092MHpqRFZDTjRMcU5WamRGRi1IMnBVT00xd0l5MG5aVFZDRTVrNHlmV1k5RXlld3gwNHRRQlNORjg3T01IWW9mSV9aM0FKR2ZzVEpEa0w5R9IBkgFBVV95cUxOREk3SE11MHlwX1NZLXNtM3NZWmZscy1kNXI4WWVLWjVFeVJRZkl2VUZBdWhvd2NBT01yRm5XcjVoMUtvMXk5QTJZSFpLUFYwd296aXZ0RjRfMmdvNF9LNThobGd6emJ5a0lPTnVDeUlmQ2FmNVdzZDAzdTVCcVptNXhCMC1Fa3F1bUdra24xMVBWZw?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.693703+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.204845+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1431,7 +1489,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONzVjUzA3azdIaC05dzJuY1lHT1d0RnRULUoyc0piSXFadDBkVWhhTUU1MDIwLUFnVmRWcVM2bkNVZ0h5bHNzcEwxR1dKVE8tTWRwWVd4cExLdXhqWmpaLTNldzNvWkZxdURfUndqRkUwUzlka1JwNm9iV1lLNXVKNUxIVHF6cEpLYXpxeVc0YkVEdEFkeV9lZ3J6ZXkySGoyLWpHQ2lVaFB5Wlg2VWhnSHQ4NA?oc=5",
       "published_date": "2026-10-04",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.700589+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.213141+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1464,7 +1522,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMXlWWXJUcENEdDJCeDBSd09NdGNWZHRSNGVMNDdSc0VFSU5lcE9QWnQ3N1JmUERVRFNEUkllVFZVaDltZHNKendteEZVcU5ET2xPVTF4d1haUEdfTnNqR3pDUmR3S1VDSFZrQjI2clpodW4tMnZuRjg3YnJKZmRQcG44Yw?oc=5",
       "published_date": "2026-10-03",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.707611+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.221480+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1484,7 +1542,10 @@
           "evt_50591464518b00b97d78"
         ],
         "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
-      }
+      },
+      "cross_source_parents": [
+        "fbcc106b28075aac8cfe0c5b84d53636"
+      ]
     },
     "6fd6a406c2043d56e4d9e81d6c96193c": {
       "queue_id": "6fd6a406c2043d56e4d9e81d6c96193c",
@@ -1496,7 +1557,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1XLUdxX1hBenVjMTNVV0NocmdOU0RYVEZxWl9GTmV6VzNBa0hfVThVd21ZMDZ5Q2pMZGtoWFhidkhPbkk3Yk91V0FDeDNEVHluek14Sk1MdUZmS0V1OU92bjhRQQ?oc=5",
       "published_date": "2026-10-01",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:39.714596+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.229815+00:00",
       "queries": [
         "subsea cable disruption"
       ],
@@ -1518,18 +1579,18 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1vYUh3djFTRFBFdDF5TTk4RVpJckJKTjF3dFZua211VllpbnQwQkk5ZDU3WFM4ZW13YU8wSHhJOUJ0VWU4NWQ1VGloVkROTFYyNlRHZ2lxdnZPcDUyS1B0ZHlKWW40Z0pmYk1NQ1ljd2c?oc=5",
       "published_date": "2026-10-01",
       "initial_since": "2026-09-30",
-      "last_seen_at": "2026-10-14T17:20:40.222691+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.603019+00:00",
       "queries": [
         "undersea cable outage"
       ],
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.730992+00:00",
       "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
-      "reason": "cross_source_original_scope_unknown",
+      "reason": "cross_source_quote_not_in_body",
       "error_type": "HTTPError",
       "http_status": 403,
       "next_attempt_at": null,
-      "review_at": "2026-10-14T17:44:56.375155+00:00",
+      "review_at": "2026-10-14T17:54:29.387172+00:00",
       "force_retry": false,
       "manual_review": {
         "classification": "review_required",
@@ -1551,6 +1612,38 @@
         ],
         "requires_primary_correction": false,
         "previous_report": "research/reviews/final-six-2026-10-14.json"
+      },
+      "cross_source": {
+        "last_attempt_at": "2026-10-14T17:53:55.238294+00:00",
+        "next_search_at": "2026-10-15T17:53:55.238294+00:00",
+        "attempts": 1,
+        "original_failure_reason": "cross_source_original_scope_unknown",
+        "original_full_text_read": false,
+        "sources": [
+          {
+            "url": "https://canadianinquirer.net/2026/10/03/globe-reroutes-internet-traffic-after-subsea-cable-break-disrupts-services/",
+            "title": "Globe reroutes internet traffic after subsea cable break disrupts services",
+            "published_date": "2026-10-03",
+            "publisher_group": "canadian-inquirer",
+            "content_length": 1972,
+            "content_sha256": "c49631182012f507b4dc84f16119288d51221812b705208190a9107757c9d477"
+          },
+          {
+            "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+            "title": "Globe restores internet services after subsea cable disruption",
+            "published_date": "2026-10-04",
+            "publisher_group": "businessworld",
+            "content_length": 1488,
+            "content_sha256": "56561b168390e0a38954fc2400a2a82fdab8d950fa558c615b80b9a7038722bd"
+          }
+        ],
+        "reason": "quote_not_in_body",
+        "queries": [
+          "Australia s banks show how to prepare for cable blackouts after:2026-09-17 before:2026-10-16",
+          "Australia (submarine OR subsea OR undersea) (outage OR disruption OR fault) after:2026-09-17 before:2026-10-16"
+        ],
+        "evidence_fingerprint": "9fed2d2700c6fbac58c11c02df77c63e7136521bc18a59cd1aa0a19bcc796ee3",
+        "last_review_fingerprint": "9fed2d2700c6fbac58c11c02df77c63e7136521bc18a59cd1aa0a19bcc796ee3"
       }
     },
     "b76abfb647261b1d41ccf7e6dce1b13e": {
@@ -1598,7 +1691,7 @@
         "submarine cable fault"
       ],
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-10-14T17:20:37.790619+00:00",
+      "last_seen_at": "2026-10-14T17:52:48.145500+00:00",
       "last_attempt_at": "2026-10-14T04:11:39.676278+00:00",
       "url": "https://www.lowyinstitute.org/the-interpreter/fibre-sensing-how-undersea-cables-learned-to-listen",
       "reason": "no_candidates",
@@ -1644,7 +1737,7 @@
         "undersea cable damage"
       ],
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-10-14T17:20:39.227583+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.509784+00:00",
       "last_attempt_at": "2026-10-14T04:24:05.633768+00:00",
       "url": "https://www.taiwannews.com.tw/news/6449159",
       "reason": "no_candidates",
@@ -1666,7 +1759,7 @@
         "undersea cable damage"
       ],
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-10-14T17:20:39.258603+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.543984+00:00",
       "last_attempt_at": "2026-10-14T09:37:15.875266+00:00",
       "url": "https://finance.biggo.com/news/f5d080f7-6387-4395-8fc0-77b154cf21e8",
       "reason": "no_candidates",
@@ -1690,7 +1783,7 @@
         "subsea cable disruption"
       ],
       "keyword": "subsea cable disruption",
-      "last_seen_at": "2026-10-14T17:20:39.665611+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.171238+00:00",
       "last_attempt_at": "2026-10-14T04:25:03.217205+00:00",
       "url": "https://www.telecompaper.com/news/chief-telecom-google-cloud-launch-data-routing-service-to-counter-subsea-cable-disruptions--1584246",
       "reason": "no_candidates",
@@ -8279,7 +8372,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOEF6QzJkamRXcV9JSUJqR01ER0FxRXRiYWJSQ25WZzFJN0NLcGxHaWEzTjVsMno1bDdRcmoxWGdoYUx6T2ZMcGVHcjBDREdFclIzYUNGRUZJcXdaTlBETU9YZDhaS21hQkRpTkk1UlVlTHBaajUzSFZkUVg3OEFLWnR0bVV4b1Z0aVdkcnJ4eXpaOVhkU0VfNFg1Y0xWZWdSbjFuMDJzZktFMW9sUXdkLWRWcTNuSW01SFAzQ0oxeG9NYnV5N3hwZWF3?oc=5",
       "initial_since": "2026-09-30",
       "source": "Google News",
-      "last_seen_at": "2026-10-14T17:20:39.637592+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.145807+00:00",
       "last_attempt_at": "2026-10-14T09:36:32.267162+00:00",
       "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/globe-telecom-restores-services-while-analysts-rate-globe-telecom-stock-strong-buy/70319686",
       "reason": "manual_review:supporting_report",
@@ -8311,7 +8404,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5XZ3F4b0NUa3ZzcEQzNDhpYXRNd2o0S09qSlF4eVNrTlFqWG5Ya1NqS0tqUXVLVjZGdVZpZzlIRnVCaEVtbDlvSDE2XzVxLUsyWWZMVzVn?oc=5",
       "initial_since": "2026-09-30",
       "source": "Google News",
-      "last_seen_at": "2026-10-14T17:20:39.213577+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.491988+00:00",
       "last_attempt_at": "2026-10-14T09:36:57.845341+00:00",
       "url": "https://www.ynetnews.com/article/syjaxyxygl",
       "reason": "no_candidates",
@@ -8364,7 +8457,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1hZkFtTVlWOXlmWk9USnBsMkNHbTkzSFByV0RfZ3hBR2h1Rmx6MEpFeVhLN1plUkthanI2Skk0NWlHakFmWlEyYW1MOExzYXJGYjFXMEpkWXhJa3g4YlM1RjVVMEk?oc=5",
       "initial_since": "2026-09-30",
       "source": "Google News",
-      "last_seen_at": "2026-10-14T17:20:39.286565+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.577863+00:00",
       "last_attempt_at": "2026-10-14T09:36:41.467911+00:00",
       "url": "https://splash247.com/elisabeth-braw-the-undersea-war/",
       "reason": "manual_review:historical_context",
@@ -8429,7 +8522,7 @@
         "undersea cable damage"
       ],
       "published_date": "2026-10-14",
-      "last_seen_at": "2026-10-14T17:20:39.191209+00:00",
+      "last_seen_at": "2026-10-14T17:52:49.466021+00:00",
       "last_attempt_at": "2026-10-14T11:26:52.583342+00:00",
       "url": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
       "reason": "manual_review:historical_context",
@@ -8518,7 +8611,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "published_date": "2026-10-10",
-      "last_seen_at": "2026-10-14T17:20:40.982112+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.342972+00:00",
       "last_attempt_at": "2026-10-14T11:27:15.668919+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/mvista/asiahub-one-and-ntt-ink-loi-on-mvista",
       "reason": "no_candidates",
@@ -8540,7 +8633,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "published_date": "2026-10-13",
-      "last_seen_at": "2026-10-14T17:20:40.989834+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.351834+00:00",
       "last_attempt_at": "2026-10-14T11:27:09.467363+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/ciaj-selects-softbank,-ips,-and-shikoku-electric-under-japan-mic%E2%80%99s-subsea-route-diversification-program",
       "reason": "no_candidates",
@@ -8562,7 +8655,7 @@
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "published_date": "2026-10-07",
-      "last_seen_at": "2026-10-14T17:20:41.263656+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.617149+00:00",
       "last_attempt_at": "2026-10-14T11:27:18.479522+00:00",
       "url": "https://subtelforum.com/subco-weighs-australian-cable-ship-and-survey-usv/",
       "reason": "already_processed",
@@ -8584,7 +8677,7 @@
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "published_date": "2026-10-13",
-      "last_seen_at": "2026-10-14T17:20:41.270621+00:00",
+      "last_seen_at": "2026-10-14T17:52:51.625680+00:00",
       "last_attempt_at": "2026-10-14T11:27:13.139269+00:00",
       "url": "https://subtelforum.com/oms-group-cs-resilience-keel-laying/",
       "reason": "no_candidates",
@@ -8594,29 +8687,32 @@
     },
     "3476cd1cb75cae50e293f16c3941e961": {
       "queue_id": "3476cd1cb75cae50e293f16c3941e961",
-      "status": "retry",
+      "status": "review",
       "first_seen_at": "2026-10-14T17:20:37.767035+00:00",
-      "attempts": 1,
+      "attempts": 2,
       "published_date": "2026-10-14",
       "queries": [
         "submarine cable fault",
         "submarine cable outage",
         "submarine cable break",
         "undersea cable damage",
-        "undersea cable outage"
+        "undersea cable outage",
+        "subsea cable disruption"
       ],
       "keyword": "submarine cable fault",
       "title": "Submarine Cable Resilience Faces Growing Threats From Aging Fleets and Concentrated Ownership - CircleID",
       "source": "Google News",
       "initial_since": "2026-09-30",
       "discovered_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQeVhneHlDYVpPNXRVNXNpY09JdEdwRkN0aERtZkJNVG5NSFZVY2JES25rRk92RUUwUldpWHFTNDFVLTREWW1ldGVlbHExNmRublFJakptemp6M1FWOHAxVHRaN25UWUVZeEM1YjlIaFhsWEpfUDk0aVFYT3dHQnNOZHpodmZRWkZCazloSHdnT0x5dzlhTzFNMDUwc29zbHUyb01zODRHYTNfdWF2NW1iUjdDdzNOaUhiZFVXeQ?oc=5",
-      "last_seen_at": "2026-10-14T17:20:40.206728+00:00",
-      "last_attempt_at": "2026-10-14T17:23:25.807514+00:00",
+      "last_seen_at": "2026-10-14T17:52:50.585121+00:00",
+      "last_attempt_at": "2026-10-14T17:52:51.643479+00:00",
       "url": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-      "reason": "request_timeout",
+      "reason": "candidates_rejected",
       "error_type": "ExtractionUnavailable",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T17:29:13.037181+00:00"
+      "next_attempt_at": null,
+      "review_at": "2026-10-14T17:53:46.783721+00:00",
+      "force_retry": false
     },
     "57ff5443e05514d7c7b533029e02939f": {
       "queue_id": "57ff5443e05514d7c7b533029e02939f",
