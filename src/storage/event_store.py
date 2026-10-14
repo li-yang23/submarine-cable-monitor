@@ -13,7 +13,7 @@ from src.processing.normalization import (
     parse_date,
     text_similarity,
 )
-from src.processing.extractor import clean_translation
+from src.processing.extractor import clean_translation, unnamed_event_rejection_reason
 
 
 class EventStore:
@@ -163,6 +163,15 @@ class EventStore:
         for existing in candidates:
             same_url = event.get("url") and event.get("url") == existing.get("url")
             existing_cable = normalize_cable_name(existing.get("cable_name") or existing.get("submarine_name"))
+            # Unknown cable identity cannot justify merging different news reports;
+            # identical wording alone may describe separate simultaneous faults.
+            if not cable or not existing_cable:
+                if (not cable and not existing_cable and same_url and event_date
+                        and event_date == existing.get("occurrence_date")
+                        and clean_text(event.get("affected_area")) == clean_text(existing.get("affected_area"))
+                        and clean_text(event.get("original_text")) == clean_text(existing.get("original_text"))):
+                    return existing
+                continue
             same_cable = cable and existing_cable and cable == existing_cable
             same_date = event_date and event_date == existing.get("occurrence_date")
             same_cable_date = (
@@ -333,16 +342,22 @@ def is_better_cable_name(candidate: Any, current: Any) -> bool:
 
 
 def should_drop_event(event: dict[str, Any]) -> bool:
+    return bool(event_drop_reason(event))
+
+
+def event_drop_reason(event: dict[str, Any]) -> str:
     has_cable = bool(clean_text(event.get("cable_name") or event.get("submarine_name")))
     has_area = bool(clean_text(event.get("affected_area")))
     has_reason = bool(clean_text(event.get("reason")))
     if not has_cable:
-        return True
+        reason = unnamed_event_rejection_reason(event)
+        if reason:
+            return reason
     if not has_area and not has_reason:
-        return True
+        return "missing_area_and_reason"
     if is_google_news_source(event.get("source"), event.get("sources", [])) and is_google_news_url(event.get("url")):
-        return True
-    return False
+        return "unresolved_google_news_url"
+    return ""
 
 
 def is_google_news_source(source: Any, sources: Any) -> bool:

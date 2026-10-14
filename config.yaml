@@ -25,9 +25,31 @@ article_sources:
   subtelforum_max_articles: 8
   google_news_max_articles: 12
   google_news_max_attempts: 30
+  google_news_lookback_days: 14
+  # All queries are discovered first, then recent articles are fetched round-robin.
+  google_news_keywords:
+    - submarine cable fault
+    - submarine cable outage
+    - submarine cable break
+    - undersea cable damage
+    - subsea cable disruption
+    - undersea cable outage
+    - 海缆故障
+    - 海底电缆故障
   submarine_networks_links_path: data/cable-links.json
   submarine_networks_max_cables: 50
   submarine_networks_articles_per_cable: 3
+
+# One JSONL trace + JSON/Markdown summaries per run; no article bodies or LLM responses.
+logging:
+  audit_dir: logs/runs
+
+# Only successful LLM processing is cached; failures remain eligible for retry.
+article_state:
+  path: data/article-state.json
+  refresh_days: 7
+  retention_days: 30
+  max_urls: 2000
 
 # Scraper configurations
 scrapers:

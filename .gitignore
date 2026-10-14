@@ -6,6 +6,7 @@ data/*
 !data/events.jsonl
 !data/events.json
 !data/events.csv
+!data/article-state.json
 
 # Local secrets
 .env
@@ -50,3 +51,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Authenticated website runtime
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*

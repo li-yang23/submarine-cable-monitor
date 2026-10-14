@@ -2,6 +2,7 @@
 """Submarine Cable Monitor CLI."""
 
 import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -22,6 +23,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--run", action="store_true", help="Run the article collection and event extraction pipeline.")
     parser.add_argument("--dry-run", action="store_true", help="Fetch and process a small sample without writing data.")
     parser.add_argument("--since", help="Only collect articles/events on or after YYYY-MM-DD when source dates are known.")
+    parser.add_argument("--audit-dir", help="Directory for per-run JSONL traces and summaries (default: logs/runs).")
+    parser.add_argument("--audit-search", metavar="TEXT", help="Search saved traces by title, URL, article ID, event UID or reason, including linked article stages; does not collect news.")
+    parser.add_argument("--audit-run", metavar="RUN_ID", help="Restrict --audit-search to one run ID.")
+    parser.add_argument("--audit-limit", type=int, default=200, help="Maximum search results (0 for all).")
     parser.add_argument(
         "--sources",
         "--scrapers",
@@ -49,7 +54,22 @@ def main() -> int:
     args = parse_args()
     logger = get_logger("main")
     config = Config.from_yaml(resolve_path(args.config))
+    config.audit_dir = resolve_path(args.audit_dir or config.audit_dir)
+    config.article_state_path = resolve_path(config.article_state_path)
+    if args.audit_search is not None:
+        from src.utils.audit import search_audit
+
+        count = 0
+        for record in search_audit(config.audit_dir, args.audit_search, args.audit_run):
+            if args.audit_limit > 0 and count >= args.audit_limit:
+                logger.info("Results truncated at %s; use --audit-limit 0 for all matches.", args.audit_limit)
+                break
+            print(json.dumps(record, ensure_ascii=False))
+            count += 1
+        logger.info("Found %s audit records in %s", count, config.audit_dir)
+        return 0
     store = EventStore(resolve_path(config.event_store_path))
+    exit_code = 0
 
     if args.init_db:
         store.save()
@@ -92,6 +112,8 @@ def main() -> int:
         pipeline = MonitorPipeline(config, store=store)
         summary = pipeline.run(sources=normalize_sources(args.sources), since=args.since, dry_run=args.dry_run)
         logger.info("Pipeline summary: %s", summary.to_dict())
+        if summary.errors:
+            exit_code = 1
 
     if args.export_json:
         store.export_json(resolve_path(args.export_json))
@@ -101,7 +123,7 @@ def main() -> int:
         store.export_csv(resolve_path(args.export_csv))
         logger.info("Exported CSV to %s", args.export_csv)
 
-    return 0
+    return exit_code
 
 
 def normalize_sources(sources: list[str] | None) -> list[str] | None:

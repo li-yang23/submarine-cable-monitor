@@ -38,6 +38,13 @@ class Config:
     subtelforum_max_articles: int = 8
     google_news_max_articles: int = 12
     google_news_max_attempts: int = 30
+    google_news_lookback_days: int = 14
+    google_news_keywords: list[str] = field(default_factory=list)
+    audit_dir: str = "logs/runs"
+    article_state_path: str = "data/article-state.json"
+    article_state_refresh_days: int = 7
+    article_state_retention_days: int = 30
+    article_state_max_urls: int = 2000
     submarine_networks_links_path: str = "data/cable-links.json"
     submarine_networks_max_cables: int = 50
     submarine_networks_articles_per_cable: int = 3
@@ -103,6 +110,14 @@ class Config:
         config.subtelforum_max_articles = article_sources.get("subtelforum_max_articles", config.subtelforum_max_articles)
         config.google_news_max_articles = article_sources.get("google_news_max_articles", config.google_news_max_articles)
         config.google_news_max_attempts = article_sources.get("google_news_max_attempts", config.google_news_max_attempts)
+        config.google_news_lookback_days = article_sources.get("google_news_lookback_days", config.google_news_lookback_days)
+        config.google_news_keywords = article_sources.get("google_news_keywords", config.google_news_keywords)
+        config.audit_dir = data.get("logging", {}).get("audit_dir", config.audit_dir)
+        article_state = data.get("article_state", {})
+        config.article_state_path = article_state.get("path", config.article_state_path)
+        config.article_state_refresh_days = article_state.get("refresh_days", config.article_state_refresh_days)
+        config.article_state_retention_days = article_state.get("retention_days", config.article_state_retention_days)
+        config.article_state_max_urls = article_state.get("max_urls", config.article_state_max_urls)
         config.submarine_networks_links_path = article_sources.get(
             "submarine_networks_links_path",
             config.submarine_networks_links_path,
@@ -151,6 +166,8 @@ class Config:
                 "subtelforum_max_articles": self.subtelforum_max_articles,
                 "google_news_max_articles": self.google_news_max_articles,
                 "google_news_max_attempts": self.google_news_max_attempts,
+                "google_news_lookback_days": self.google_news_lookback_days,
+                "google_news_keywords": self.google_news_keywords,
                 "submarine_networks_links_path": self.submarine_networks_links_path,
                 "submarine_networks_max_cables": self.submarine_networks_max_cables,
                 "submarine_networks_articles_per_cable": self.submarine_networks_articles_per_cable,
@@ -160,5 +177,12 @@ class Config:
                 "base_url": self.llm_base_url,
                 "embedding_model": self.embedding_model,
             },
-            "user_agent": self.user_agent
+            "user_agent": self.user_agent,
+            "logging": {"audit_dir": self.audit_dir},
+            "article_state": {
+                "path": self.article_state_path,
+                "refresh_days": self.article_state_refresh_days,
+                "retention_days": self.article_state_retention_days,
+                "max_urls": self.article_state_max_urls,
+            },
         }

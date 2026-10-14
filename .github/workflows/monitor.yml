@@ -7,6 +7,10 @@ on:
     paths:
       - "docs/**"
       - "data/**"
+      - "src/**"
+      - "tests/**"
+      - "config.yaml"
+      - "requirements.txt"
       - ".github/workflows/monitor.yml"
   schedule:
     - cron: "0 2 * * *"
@@ -14,6 +18,10 @@ on:
     inputs:
       sources:
         description: "Optional sources: google_news subtelforum submarinenetworks"
+        required: false
+        default: ""
+      since:
+        description: "Only collect articles on/after YYYY-MM-DD (blank uses configured lookback)"
         required: false
         default: ""
       dry_run:
@@ -24,6 +32,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
   pages: write
   id-token: write
 
@@ -44,17 +53,19 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python
-        if: ${{ github.event_name != 'push' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
       - name: Install dependencies
-        if: ${{ github.event_name != 'push' }}
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Run regression checks
+        run: |
+          python -m unittest discover -s tests
 
       - name: Initialize event store
         if: ${{ github.event_name != 'push' }}
@@ -70,34 +81,48 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LLM_MODEL: ${{ vars.LLM_MODEL || 'deepseek-ai/DeepSeek-V3' }}
           EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL || 'BAAI/bge-m3' }}
+          MONITOR_SOURCES: ${{ github.event.inputs.sources }}
+          MONITOR_SINCE: ${{ github.event.inputs.since }}
+          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
-          if [ "${{ github.event.inputs.sources }}" != "" ]; then
-            SOURCE_ARGS="--sources ${{ github.event.inputs.sources }}"
-          else
-            SOURCE_ARGS=""
+          ARGS=(--run)
+          if [ -n "$MONITOR_SOURCES" ]; then
+            read -r -a SOURCES <<< "$MONITOR_SOURCES"
+            ARGS+=(--sources "${SOURCES[@]}")
           fi
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            DRY_RUN="--dry-run"
+          if [ -n "$MONITOR_SINCE" ]; then ARGS+=(--since "$MONITOR_SINCE"); fi
+          if [ "$MONITOR_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          python -m src.main "${ARGS[@]}"
+
+      - name: Publish diagnostic summary
+        if: ${{ always() && github.event_name != 'push' }}
+        run: |
+          if [ -f logs/runs/latest-summary.md ]; then
+            cat logs/runs/latest-summary.md >> "$GITHUB_STEP_SUMMARY"
+            python -c 'import json; s=json.load(open("logs/runs/latest-summary.json")); print("::warning::Collection was degraded; inspect the diagnostic summary and audit artifact.") if s.get("status") == "degraded" else None'
           else
-            DRY_RUN=""
+            echo "No diagnostic summary produced; inspect the failed step and monitor artifacts." >> "$GITHUB_STEP_SUMMARY"
           fi
-          python -m src.main --run $SOURCE_ARGS $DRY_RUN
 
       - name: Export data for GitHub Pages
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
         run: |
           python -m src.main --clean-store --translate-missing --export-json docs/data/events.json --export-csv docs/data/events.csv
 
       - name: Upload monitor artifacts
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ always() && github.event_name != 'push' }}
         uses: actions/upload-artifact@v4
         with:
-          name: monitor-output
+          name: monitor-output-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             data/events.jsonl
+            data/article-state.json
             docs/data/events.json
             docs/data/events.csv
+            logs/runs/
+            logs/*.log
           retention-days: 30
+          if-no-files-found: warn
 
       - name: Commit and push data updates
         if: ${{ github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
@@ -105,6 +130,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/events.jsonl docs/data/events.json docs/data/events.csv
+          if [ -f data/article-state.json ]; then git add data/article-state.json; fi
           if git diff --quiet && git diff --staged --quiet; then
             echo "No data changes to commit."
             exit 0
@@ -114,9 +140,11 @@ jobs:
           git push origin HEAD:main
 
       - name: Setup Pages
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: "docs/"
@@ -124,6 +152,7 @@ jobs:
   deploy-pages:
     name: Deploy GitHub Pages
     needs: monitor
+    if: ${{ github.event.inputs.dry_run != 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

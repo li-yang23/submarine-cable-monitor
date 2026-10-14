@@ -1,0 +1,30 @@
+name: Regression checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'codex/**'
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt
+      - name: Python regression tests
+        run: python -m unittest discover -s tests
+      - name: Authentication regression tests when available
+        run: |
+          if [ -f tests/test_auth.mjs ]; then node --test tests/test_auth.mjs; fi

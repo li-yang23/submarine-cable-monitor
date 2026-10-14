@@ -5,6 +5,7 @@ import re
 from typing import Any
 
 from .normalization import clean_text, normalize_accident_type, parse_date
+from src.utils.audit import article_fields, emit, error_details
 
 
 ACCIDENT_KEYWORDS = (
@@ -16,12 +17,22 @@ ACCIDENT_KEYWORDS = (
     "cable damage",
     "internet outage",
     "service disruption",
+    "subsea cable disruption",
+    "subsea cable outage",
+    "subsea cable damage",
+    "undersea cable disruption",
+    "undersea cable outage",
+    "undersea cable damage",
+    "submarine cable disruption",
+    "submarine cable outage",
+    "submarine cable damage",
     "repair",
     "海缆故障",
     "海底电缆故障",
 )
 
 CABLE_PATTERNS = (
+    r"\bC2C\b",
     r"SEA[-\s]?ME[-\s]?WE\s*\d+",
     r"SMW\s*\d+",
     r"AAE[-\s]?\d+",
@@ -44,6 +55,7 @@ class EventExtractor:
         self.base_url = os.getenv("SILICONFLOW_BASE_URL") if self.siliconflow_key else os.getenv("OPENAI_BASE_URL")
         self._client = None
         self.logger = logging.getLogger(self.__class__.__name__)
+        self.last_extraction_method = "rules"
 
     @property
     def available(self) -> bool:
@@ -52,20 +64,33 @@ class EventExtractor:
     def extract(self, article: dict[str, Any]) -> list[dict[str, Any]]:
         if self.available:
             try:
+                self.last_extraction_method = "llm"
                 return self._extract_with_llm(article)
             except Exception as exc:
-                self.logger.warning("LLM extraction failed, falling back to rules: %s", exc)
+                self.last_extraction_method = "rules_fallback"
+                emit("extract", "fallback", **article_fields(article), reason="llm_error", method="rules_fallback", **error_details(exc))
+                self.logger.warning("LLM extraction failed, falling back to rules: %s", type(exc).__name__)
                 return self._extract_with_rules(article)
+        self.last_extraction_method = "rules"
         return self._extract_with_rules(article)
 
     def is_real_event(self, event: dict[str, Any]) -> bool:
-        if not clean_text(event.get("cable_name") or event.get("submarine_name")):
-            return False
+        return not self.rejection_reason(event)
+
+    def rejection_reason(self, event: dict[str, Any]) -> str:
+        cable_name = clean_text(event.get("cable_name") or event.get("submarine_name"))
+        if not cable_name:
+            return unnamed_event_rejection_reason(event)
+        # A publisher may use a full system name absent from our acronym list,
+        # e.g. "a fault on its Australia-Singapore Cable". Require the name and
+        # incident in the quoted evidence, not merely the model's generated fields.
+        if has_named_cable_incident(clean_text(event.get("original_text")), cable_name):
+            return ""
         text = " ".join(
             clean_text(event.get(key))
             for key in ("title", "original_text", "reason", "accident_type", "affected_area")
         ).lower()
-        return any(keyword in text for keyword in ACCIDENT_KEYWORDS)
+        return "" if any(keyword in text for keyword in ACCIDENT_KEYWORDS) or has_named_cable_incident(text) else "no_incident_keyword"
 
     def is_duplicate(self, new_event: dict[str, Any], existing_event: dict[str, Any]) -> bool:
         if self.available:
@@ -107,8 +132,17 @@ Text:
         prompt = f"""
 Extract information about any submarine cable accidents described in the following article. For each submarine cable accident, provide the details in JSON format.
 
+Evidence rules:
+- Include only incidents that actually occurred or are ongoing. Do not create incidents from policy discussions, hypothetical risks, drills, planned maintenance, or precautionary testing alone. If there are no supported incidents, return {{"submarine_accidents": []}}.
+- Use only cable names explicitly identified in the article. If no specific cable is named, leave cable_name empty; never infer a name from the operator, route, destinations, or a related article.
+- Do not invent a cause. Keep reason null when the root cause is unknown, and preserve attribution or uncertainty for alleged causes.
+- Return occurrence_date and repair_date as YYYY-MM-DD only when the full date is supported. Otherwise use null. Never invent a missing month or day, and never substitute the publication date for the incident date.
+- A repair estimate, expected restoration date, or repair work starting is not a completed repair. Keep repair_date null unless actual restoration or repair completion is reported with a supported full date.
+- The publication date below is context only for explicitly stated relative dates (such as "yesterday"). Resolve a relative date only when its reference is unambiguous; otherwise leave it null.
+
 Article URL: {article.get("url", "")}
 Article title: {article.get("title", "")}
+Article publication date (relative-date context only): {article.get("published_date") or "unknown"}
 Article Text:
 {content}
 
@@ -137,8 +171,8 @@ Example Response:
       "reason": "Reason for the Accident",
       "accident_type": "Cut",
       "affected_area": "Affected Area",
-      "occurrence_date": "Occurrence Date",
-      "repair_date": "Repair Date",
+      "occurrence_date": null,
+      "repair_date": null,
       "original_text": "Original Text Relate to the Accident",
       "original_text_zh": "与事故相关的原文中文翻译"
     }}
@@ -153,7 +187,9 @@ Output accident in JSON format DIRECTLY, do not use symbols like ```json.
         )
         raw = response.choices[0].message.content or ""
         data = self._parse_json(raw)
-        events = data.get("submarine_accidents", []) if isinstance(data, dict) else []
+        if not isinstance(data, dict) or not isinstance(data.get("submarine_accidents"), list):
+            raise ValueError("LLM response is missing the submarine_accidents array")
+        events = data["submarine_accidents"]
         return [self._decorate_event(event, article) for event in events if isinstance(event, dict)]
 
     def check_event_against_context(self, context: str, accident: dict[str, Any]) -> bool:
@@ -202,7 +238,7 @@ Existing event:
         title = clean_text(article.get("title"))
         content = clean_text(article.get("content"))
         text = f"{title}. {content}"
-        if not any(keyword in text.lower() for keyword in ACCIDENT_KEYWORDS):
+        if not any(keyword in text.lower() for keyword in ACCIDENT_KEYWORDS) and not has_explicit_subsea_incident(text) and not has_named_cable_incident(text):
             return []
 
         evidence = best_evidence_sentence(text)
@@ -213,8 +249,10 @@ Existing event:
             "accident_location": extract_location(evidence),
             "reason": extract_reason(evidence),
             "accident_type": normalize_accident_type("", text),
-            "affected_area": extract_affected_area(evidence),
-            "occurrence_date": clean_text(article.get("published_date")),
+            "affected_area": extract_affected_area(evidence) or extract_affected_area(text),
+            # Rule extraction cannot reliably distinguish incident dates from
+            # publication, repair estimates, or other dates mentioned in prose.
+            "occurrence_date": None,
             "repair_date": "",
             "original_text": evidence or text[:1200],
         }
@@ -228,8 +266,8 @@ Existing event:
             "reason": clean_text(event.get("reason")),
             "accident_type": normalize_accident_type(event.get("accident_type"), original_text),
             "affected_area": clean_text(event.get("affected_area")),
-            "occurrence_date": parse_date(event.get("occurrence_date")) or parse_date(article.get("published_date")),
-            "repair_date": parse_date(event.get("repair_date")),
+            "occurrence_date": parse_incident_date(event.get("occurrence_date")),
+            "repair_date": parse_incident_date(event.get("repair_date")),
             "original_text": original_text,
             "original_text_zh": clean_text(event.get("original_text_zh") or event.get("chinese_translation")),
             "url": clean_text(event.get("url") or article.get("url")),
@@ -253,6 +291,15 @@ Existing event:
             if match:
                 return json.loads(match.group(0))
             raise
+
+
+def parse_incident_date(value: Any) -> str | None:
+    text = clean_text(value)
+    # The general date parser accepts month/year for historical display, but its
+    # implicit first day is not evidence of an incident or repair completion date.
+    if re.fullmatch(r"[A-Za-z]+\s+\d{4}", text):
+        return None
+    return parse_date(text)
 
 
 def extract_cable_name(text: str) -> str:
@@ -283,7 +330,11 @@ def best_evidence_sentence(text: str) -> str:
         if any(noise in lower for noise in ("read more", "sign up", "straight to your inbox", "tags:")):
             continue
         score = sum(1 for keyword in ACCIDENT_KEYWORDS if keyword in lower)
+        score += 3 if has_explicit_subsea_incident(sentence) else 0
         score += 2 if extract_cable_name(sentence) else 0
+        score += 3 if has_named_cable_incident(sentence) else 0
+        if len(sentence) < 60:
+            score -= 1
         if score:
             scored.append((score, sentence))
     if not scored:
@@ -299,12 +350,70 @@ def extract_reason(text: str) -> str:
 
 
 def extract_affected_area(text: str) -> str:
+    if re.search(r"\bPhilippines\b|\bFilipino\b", text, re.I):
+        return "Philippines"
+    if re.search(r"\bHong Kong\b", text, re.I):
+        return "Hong Kong"
+    if re.search(r"\bSingapore\b", text, re.I):
+        return "Singapore"
     if re.search(r"\bPakistan\b", text, re.I):
         return "Pakistan"
     if re.search(r"\bVietnam\b", text, re.I):
         return "Vietnam"
     if re.search(r"\bSouth Africa\b", text, re.I):
         return "South Africa"
+    return ""
+
+
+def has_explicit_subsea_incident(text: str) -> bool:
+    """Require a cable-specific factual incident, not a general network outage."""
+    telecom = r"(?:telecom(?:munications?)?|communications?|internet|fiber[ -]?optic|fibre[ -]?optic)"
+    cable = rf"(?:submarine|undersea|subsea)\s+(?:{telecom}\s+)?cables?"
+    incident = r"(?:disrupt\w*|outages?|damag\w*|faults?|cut(?:s|ting)?|breaks?|broken|sever\w*)"
+    for sentence in re.split(r"(?<=[.!?])\s+", clean_text(text)):
+        if re.search(r"\b(?:may|might|could|would|potential|hypothetical|risk of|if there|no evidence|no reported|no submarine|no undersea|no subsea|does not establish|drills?|exercises?|simulat\w*|scenarios?|policy (?:review|proposal|discussion))\b", sentence, re.I):
+            continue
+        if re.search(rf"\b{cable}\b[^.!?]{{0,80}}\b{incident}\b|\b{incident}\b[^.!?]{{0,80}}\b{cable}\b", sentence, re.I):
+            return True
+        # Some reports establish the underwater setting through a seabed anchor
+        # drag, then explicitly describe cutting telecom cables (e.g. Fitburg).
+        if re.search(rf"\b(?:seabed|sea[- ]?floor)\b[^.!?]{{0,80}}\b(?:cut(?:s|ting)?|sever(?:ed|ing)?|damag(?:ed|ing))\b[^.!?]{{0,30}}\b{telecom}\s+cables?\b", sentence, re.I):
+            return True
+        if re.search(r"(?:海缆|海底(?:光缆|电缆)).{0,30}(?:中断|故障|断裂|损坏)", sentence):
+            return True
+    return False
+
+
+def has_named_cable_incident(text: str, cable_name: str = "") -> bool:
+    for sentence in re.split(r"(?<=[.!?])\s+", clean_text(text)):
+        known_name = extract_cable_name(sentence)
+        if cable_name:
+            # Unknown full names need explicit cable and communications context;
+            # a model-generated name alone cannot turn a generic fault into news.
+            if not re.search(re.escape(cable_name), sentence, re.I):
+                continue
+            if not known_name and not (re.search(r"\bcable\b", cable_name, re.I) and re.search(r"\b(?:internet|telecom\w*|ethernet|traffic|connectivity|bandwidth)\b", sentence, re.I)):
+                continue
+        elif not known_name:
+            continue
+        if re.search(r"\b(?:may|might|could|would|potential|hypothetical|risk of|does not establish|no evidence|no reported|drills?|exercises?|simulat\w*|scenarios?|policy (?:review|proposal|discussion))\b", sentence, re.I):
+            continue
+        incident = r"(?:outages?|disrupt\w*|offline|down|restor\w*|repair\w*|faults?|cuts?|breaks?|damag\w*)"
+        name = re.escape(cable_name) if cable_name else "(?:" + "|".join(CABLE_PATTERNS) + ")"
+        if re.search(rf"\b{name}\b[^.!?]{{0,80}}\b{incident}\b|\b{incident}\b[^.!?]{{0,80}}\b{name}\b", sentence, re.I):
+            return True
+    return False
+
+
+def unnamed_event_rejection_reason(event: dict[str, Any]) -> str:
+    if not parse_date(event.get("occurrence_date")):
+        return "unnamed_missing_date"
+    if not clean_text(event.get("affected_area")):
+        return "unnamed_missing_area"
+    # Evidence must come from the article, not only the model's generated reason.
+    evidence = " ".join(clean_text(event.get(key)) for key in ("title", "original_text"))
+    if not has_explicit_subsea_incident(evidence):
+        return "unnamed_no_explicit_subsea_incident"
     return ""
 
 
