@@ -1,0 +1,48 @@
+name: Test monitor email
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: monitor-email-test
+  cancel-in-progress: false
+
+jobs:
+  send-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Send one test email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+        run: |
+          python - <<'PY'
+          import os
+          from scripts.notify_monitor import Report, send_email, error_kind
+          report = Report(False, 'email-test', '[海缆监控] 邮件通知测试',
+              '这是一封从 GitHub Actions 发出的测试邮件，不代表发生了余额不足。\n\n'
+              '实际遇到模型余额不足时，系统会暂停模型处理、保留未处理新闻并通知你充值。'
+              '北京时间次日定时任务将重试；若仍然余额不足，再次暂停并通知。\n\n'
+              f"测试运行：https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}")
+          try:
+              send_email(report, dict(os.environ))
+          except Exception as exc:
+              print(f'::error::Test email failed: {error_kind(exc)}')
+              raise SystemExit(1)
+          print('SMTP server accepted the test email; inbox delivery needs recipient confirmation.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as handle:
+              handle.write('测试邮件已被 SMTP 服务器接受，请在收件箱或垃圾邮件中确认。\n')
+          PY
