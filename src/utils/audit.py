@@ -16,7 +16,7 @@ from uuid import uuid4
 _current: ContextVar["AuditRun | None"] = ContextVar("collection_audit", default=None)
 _FIELDS = {
     "source", "title", "url", "discovered_url", "published_date", "query", "queries",
-    "article_id", "reason", "error_type", "http_status", "entry_count", "content_length",
+    "article_id", "reason", "error_type", "http_status", "entry_count", "content_length", "anchor_count",
     "candidate_count", "candidate_index", "event_uid", "candidate_uid", "cable_name",
     "occurrence_date", "method", "verification_method", "selected_sources", "since",
     "dry_run", "max_articles", "max_attempts", "attempts", "article_count", "path",

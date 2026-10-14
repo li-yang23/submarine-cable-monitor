@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import re
+from datetime import date, timedelta
 from typing import Any
 
 from .normalization import clean_text, normalize_accident_type, parse_date
@@ -128,6 +129,8 @@ class EventExtractor:
         return not self.rejection_reason(event)
 
     def rejection_reason(self, event: dict[str, Any]) -> str:
+        if event.get("evidence_supported") is False:
+            return "evidence_not_in_article"
         cable_name = clean_text(event.get("cable_name") or event.get("submarine_name"))
         if not cable_name:
             return unnamed_event_rejection_reason(event)
@@ -188,7 +191,10 @@ Evidence rules:
 - Include only incidents that actually occurred or are ongoing. Do not create incidents from policy discussions, hypothetical risks, drills, planned maintenance, or precautionary testing alone. If there are no supported incidents, return {{"submarine_accidents": []}}.
 - Use only cable names explicitly identified in the article. If no specific cable is named, leave cable_name empty; never infer a name from the operator, route, destinations, or a related article.
 - Do not invent a cause. Keep reason null when the root cause is unknown, and preserve attribution or uncertainty for alleged causes.
+- Choose Cut only when this incident's quoted evidence explicitly reports physical cable/fiber cutting, breakage, severing, or damage. A segment being affected/down is Limit; slow/degraded connectivity is Fluctuate. A possible fiber cut elsewhere in the article is not proof of a cut for this incident.
 - Return occurrence_date and repair_date as YYYY-MM-DD only when the full date is supported. Otherwise use null. Never invent a missing month or day, and never substitute the publication date for the incident date.
+- original_text must be an exact quote from this article's body, not a paraphrase or a quote invented to support a claim.
+- For any non-null occurrence_date, also return occurrence_date_evidence: the shortest exact quote from the article body describing only when this incident happened. Do not quote the publication/update header or mix in repair/restoration/expected dates. A vague interval such as "over the weekend" cannot establish a single day; use null.
 - A repair estimate, expected restoration date, or repair work starting is not a completed repair. Keep repair_date null unless actual restoration or repair completion is reported with a supported full date.
 - The publication date below is context only for explicitly stated relative dates (such as "yesterday"). Resolve a relative date only when its reference is unambiguous; otherwise leave it null.
 
@@ -224,6 +230,7 @@ Example Response:
       "accident_type": "Cut",
       "affected_area": "Affected Area",
       "occurrence_date": null,
+      "occurrence_date_evidence": "",
       "repair_date": null,
       "original_text": "Original Text Relate to the Accident",
       "original_text_zh": "与事故相关的原文中文翻译"
@@ -262,13 +269,35 @@ Output accident in JSON format DIRECTLY, do not use symbols like ```json.
         for event in events:
             if not isinstance(event, dict) or not fields <= event.keys():
                 raise ValueError("Invalid incident object schema")
-            if any(value is not None and not isinstance(value, str) for key, value in event.items() if key in fields | {"original_text_zh", "chinese_translation"}):
+            if any(value is not None and not isinstance(value, str) for key, value in event.items() if key in fields | {"original_text_zh", "chinese_translation", "occurrence_date_evidence"}):
                 raise ValueError("Invalid incident field type")
             if not clean_text(event.get("original_text")):
                 raise ValueError("Incident evidence is missing")
             if event.get("accident_type") not in {"Limit", "Cut", "Fluctuate"}:
                 raise ValueError("Invalid incident type")
-        return [self._decorate_event(event, article) for event in events]
+        result = []
+        for index, event in enumerate(events):
+            candidate = dict(event)
+            evidence = clean_text(event.get("original_text"))
+            evidence_supported = evidence.casefold() in clean_text(article.get("content")).casefold()
+            if event["accident_type"] == "Cut" and not (evidence_supported and has_physical_cut_evidence(evidence)):
+                supported_type = normalize_accident_type("", evidence)
+                candidate["accident_type"] = supported_type if supported_type in {"Limit", "Fluctuate", "Maintenance"} else "Limit"
+                emit("verify", "corrected", **article_fields(article), candidate_index=index,
+                     reason="unsupported_physical_cut")
+            candidate["occurrence_date"] = supported_occurrence_date(
+                event.get("occurrence_date"), event.get("occurrence_date_evidence") or evidence, article,
+            )
+            if parse_incident_date(event.get("occurrence_date")) and not candidate["occurrence_date"]:
+                emit("verify", "corrected", **article_fields(article), candidate_index=index,
+                     reason="unsupported_occurrence_date")
+            decorated = self._decorate_event(candidate, article)
+            decorated["evidence_supported"] = evidence_supported
+            # Preserve the original model fields for review, while only the
+            # evidence-supported values enter normalized event fields.
+            decorated["raw_data"]["extracted"] = event
+            result.append(decorated)
+        return result
 
     def check_event_against_context(self, context: str, accident: dict[str, Any]) -> bool:
         if not self.available:
@@ -378,6 +407,87 @@ def parse_incident_date(value: Any) -> str | None:
     if re.fullmatch(r"[A-Za-z]+\s+\d{4}", text):
         return None
     return parse_date(text)
+
+
+def has_physical_cut_evidence(text: str) -> bool:
+    for sentence in re.split(r"(?<=[.!?])\s+", clean_text(text)):
+        cable = r"(?:cables?|fibers?|fibres?|" + "|".join(CABLE_PATTERNS) + ")"
+        physical = r"(?:cut(?:s|ting)?|sever(?:ed|ing)?|broken|break(?:s|age)?|damag(?:e|ed|ing))"
+        for match in re.finditer(rf"\b{physical}\b", sentence, re.I):
+            before = sentence[max(0, match.start() - 80):match.start()]
+            after = sentence[match.end():match.end() + 80]
+            if not re.search(rf"\b{cable}\b", before + " " + after, re.I):
+                continue
+            # Qualify the physical-damage assertion itself. A month named May
+            # or a subsequently unknown root cause is not uncertainty about it.
+            if re.search(r"\b(?:may|might|could|would)\b[^\d.!?]{0,40}$|\b(?:possible|possibly|potential|suspected|hypothetical|whether|either)\b[^.!?]{0,45}$|\b(?:no evidence|not confirmed|cannot confirm|can't confirm)\b[^.!?]{0,60}$", before, re.I):
+                continue
+            if re.search(r"\bnot(?:\s+\w+){0,2}\s*$|\b(?:no|without)\s+(?:(?:a|physical|submarine|undersea|subsea|cable|fiber|fibre)\s+)*$", before, re.I):
+                continue
+            if re.search(r"^\s+(?:is|was|remains|has been)\s+(?:possible|unconfirmed|unclear|unknown|ruled out|not confirmed|denied)\b", after, re.I):
+                continue
+            return True
+        for match in re.finditer(r"(?:海缆|海底光缆|光纤)(.{0,30}?)(?:切断|断裂|损坏|斩断)", sentence):
+            prefix = sentence[max(0, match.start() - 12):match.start()]
+            if re.search(r"(?:没有|并无|无法确认|不能确认|尚未确认)$", prefix):
+                continue
+            if not re.search(r"未|没有|并无|不曾|不会|不确定|可能|或许|疑似|是否", match.group(1)):
+                return True
+    return False
+
+
+def supported_occurrence_date(value: Any, evidence: Any, article: dict[str, Any]) -> str | None:
+    """Keep a date only when a real incident-time quote can support that day."""
+    parsed = parse_incident_date(value)
+    quote = clean_text(evidence)
+    content = clean_text(article.get("content"))
+    if not parsed or not quote or quote.casefold() not in content.casefold():
+        return None
+    if re.search(r"\b(?:published|updated|publication date|last modified|media release|press release)\b", quote, re.I):
+        return None  # Metadata is never evidence of an incident's occurrence.
+    if re.search(r"\b(?:repair\w*|restor\w*|expected|estimated|scheduled|planned|forecast)\b|预计|预期|计划|修复|恢复", quote, re.I):
+        return None  # Mixed occurrence/restoration/planning dates need review.
+    if not re.search(r"\b(?:outage|disrupt\w*|disconnect\w*|interrupt\w*|degrad\w*|slow\w*|down|affected|offline|cut|broken|break\w*|damag\w*|fault|occur\w*)\b|中断|故障|断裂|损坏", quote, re.I):
+        return None
+    day = date.fromisoformat(parsed)
+    month_name = rf"(?:{day.strftime('%B')}|{day.strftime('%b')}\.?)"
+    full_patterns = (
+        rf"\b{day.year}[-/.]0?{day.month}[-/.]0?{day.day}\b",
+        rf"\b{month_name}\s+0?{day.day}(?:st|nd|rd|th)?[,]?\s+{day.year}\b",
+        rf"\b0?{day.day}(?:st|nd|rd|th)?\s+{month_name}[,]?\s+{day.year}\b",
+        rf"{day.year}年0?{day.month}月0?{day.day}日",
+    )
+    if any(re.search(pattern, quote, re.I) for pattern in full_patterns):
+        return parsed
+    published = parse_date(article.get("published_date"))
+    if not published:
+        return None
+    reference = date.fromisoformat(published)
+    # A recent month/day mention can use the publication year as context. An
+    # explicit conflicting year must never be silently replaced.
+    years = re.findall(r"\b(?:19|20)\d{2}\b", quote)
+    short_pattern = rf"\b(?:{month_name}\s+0?{day.day}(?:st|nd|rd|th)?|0?{day.day}(?:st|nd|rd|th)?\s+{month_name})\b"
+    if not years and 0 <= (reference - day).days <= 31 and re.search(short_pattern, quote, re.I):
+        return parsed
+    # Do not use a weekday to override an explicit but different calendar date.
+    months = "|".join(date(2000, number, 1).strftime("%B") + "|" + date(2000, number, 1).strftime("%b") for number in range(1, 13))
+    if re.search(rf"\b(?:{months})\.?\s+\d{{1,2}}\b|\b\d{{1,2}}\s+(?:{months})\b|\b\d{{4}}[-/.]\d{{1,2}}[-/.]\d{{1,2}}\b", quote, re.I):
+        return None
+    for phrase, offset in (("day before yesterday", 2), ("yesterday", 1), ("today", 0)):
+        if re.search(rf"\b{phrase}\b", quote, re.I):
+            return parsed if day == reference - timedelta(days=offset) else None
+    weekdays = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+    for match in re.finditer(r"\b(on|since|last|this)\s+(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b", quote, re.I):
+        prefix, weekday = (part.lower() for part in match.groups())
+        index = weekdays.index(weekday)
+        if prefix == "this" and reference.weekday() < index:
+            continue
+        distance = (reference.weekday() - index) % 7
+        if prefix == "last" and distance == 0:
+            distance = 7
+        if day == reference - timedelta(days=distance):
+            return parsed
+    return None
 
 
 def extract_cable_name(text: str) -> str:

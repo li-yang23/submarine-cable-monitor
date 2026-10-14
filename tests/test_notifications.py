@@ -101,6 +101,19 @@ class ReportTests(unittest.TestCase):
                 self.assertEqual(report.body.count(expected), 1)
                 self.assertNotIn("模型不可用", report.body)
 
+    def test_model_call_failure_does_not_claim_rule_fallback(self):
+        report = notify.build_report(healthy(counts={"extract.failed.invalid_response": 1}))
+        self.assertIn("模型调用失败：1", report.body)
+        self.assertNotIn("规则回退", report.body)
+
+    def test_rule_fallback_only_appears_for_actual_extraction_fallback(self):
+        report = notify.build_report(healthy(counts={"extract.failed.invalid_response": 1, "extract.fallback.missing_api_key": 2}))
+        self.assertIn("模型调用失败：1", report.body)
+        self.assertIn("检测到规则回退：2", report.body)
+        unrelated = notify.build_report(healthy(counts={"discover.fallback.category_fetch_error": 1, "extract.failed.rule_fallback_disabled": 1}))
+        self.assertNotIn("检测到规则回退", unrelated.body)
+        self.assertIn("模型调用失败：1", unrelated.body)
+
     def test_repeat_change_and_recovery_delivery_schedule(self):
         warning = notify.build_report(healthy(warnings=1))
         changed = notify.build_report(healthy(warnings=2))
