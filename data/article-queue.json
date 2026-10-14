@@ -3,7 +3,7 @@
   "items": {
     "156d0dfe31d0081fb0321beaecd5485f": {
       "queue_id": "156d0dfe31d0081fb0321beaecd5485f",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.409699+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -13,12 +13,22 @@
       "discovered_url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
       "last_seen_at": "2026-10-14T03:54:43.409699+00:00",
       "last_attempt_at": "2026-10-14T04:10:57.683653+00:00",
-      "reason": "manual_review_unsupported_occurrence_date",
+      "reason": "manual_review:supporting_report",
       "error_type": "ReadTimeout",
       "http_status": null,
       "next_attempt_at": null,
       "review_at": "2026-10-14T04:41:19.905777+00:00",
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286388+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "4200778ed95f4759bac19937c0c81521": {
       "queue_id": "4200778ed95f4759bac19937c0c81521",
@@ -39,7 +49,7 @@
     },
     "f3cc9fb40537ca58bee1309c5f50e85c": {
       "queue_id": "f3cc9fb40537ca58bee1309c5f50e85c",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.410840+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -58,10 +68,23 @@
       "keyword": "submarine cable fault",
       "last_attempt_at": "2026-10-14T09:36:54.589022+00:00",
       "url": "https://tech-insider.org/undersea-cable-outage-prediction-market-bet-2026/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:54.882433+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286407+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "10 月 2 日菲律宾两条路径故障和 2025 年红海故障均为已知事故背景；预测市场概率不是新事故证据。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78",
+          "evt_f01d0ef92599007ddb8f",
+          "evt_237e2cd4861e39f4316b"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "afb7ef9dc3cbc70a7ee413a4bedb26fd": {
       "queue_id": "afb7ef9dc3cbc70a7ee413a4bedb26fd",
@@ -80,10 +103,17 @@
       "keyword": "submarine cable fault",
       "last_attempt_at": "2026-10-14T09:36:55.167961+00:00",
       "url": "https://mb.com.ph/2026/10/05/5-year-subsea-investment-safeguarded-converge-from-recent-outage",
-      "reason": "article_fetch_error",
-      "error_type": "HTTPError",
+      "reason": "publisher_access_blocked",
+      "error_type": "",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:55.400207+00:00"
+      "next_attempt_at": "2026-10-15T11:22:12.286439+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "publisher_access_blocked",
+        "note": "HTTP 403 或安全验证页面；普通浏览器未稳定返回可读取全文。保留待重试，不以标题或其他媒体报道代替此文全文。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "965dfaf1a251618ebe53c15fe5877d8b": {
       "queue_id": "965dfaf1a251618ebe53c15fe5877d8b",
@@ -205,7 +235,7 @@
     },
     "575ab68fe97132bf11ac85c673b9fcd8": {
       "queue_id": "575ab68fe97132bf11ac85c673b9fcd8",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.412817+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -216,14 +246,23 @@
       "last_seen_at": "2026-10-14T03:54:43.412817+00:00",
       "last_attempt_at": "2026-10-14T09:36:29.356233+00:00",
       "url": "https://www.telecomreviewasia.com/news/technology-news/30489-singtel-sit-and-nvidia-partner-to-scale-enterprise-ai-solutions/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:no_reported_incident",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:29.697092+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286448+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "no_reported_incident",
+        "note": "企业 AI 合作公告，没有实际海缆事故。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "f94ba6f8f197ad2c385c900e77666ffa": {
       "queue_id": "f94ba6f8f197ad2c385c900e77666ffa",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.413036+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -241,10 +280,22 @@
       "keyword": "submarine cable fault",
       "last_attempt_at": "2026-10-14T09:37:02.206670+00:00",
       "url": "https://www.gizguide.com/2026/10/dict-submarine-cable-outage-triggers.html",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 429,
-      "next_attempt_at": "2026-10-14T09:47:03.158367+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286452+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "正文确认 10 月 2 日两条路径受影响；路径名称不冒充具体电缆名称，故障原因仍待调查。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78",
+          "evt_f01d0ef92599007ddb8f"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "78c9f01af166cb4f93376e03a719a077": {
       "queue_id": "78c9f01af166cb4f93376e03a719a077",
@@ -266,7 +317,7 @@
     },
     "eb294b68b50c6b55f386ce051b6b0459": {
       "queue_id": "eb294b68b50c6b55f386ce051b6b0459",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.413709+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -283,10 +334,22 @@
       "keyword": "submarine cable outage",
       "last_attempt_at": "2026-10-14T09:36:57.290963+00:00",
       "url": "https://newsinfo.inquirer.net/2315897/many-internet-connections-down-due-to-offline-ph-singapore-cable-link-2",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:57.523069+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286458+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "正文确认 10 月 2 日菲律宾至新加坡离线，另提及香港线路异常；未据此认定所有运营商属于同一根电缆。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78",
+          "evt_f01d0ef92599007ddb8f"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "73e17de3938267f5fab6881fcbaf6522": {
       "queue_id": "73e17de3938267f5fab6881fcbaf6522",
@@ -336,7 +399,7 @@
     },
     "68b84ed985cd00d44f6c6332f6cd301d": {
       "queue_id": "68b84ed985cd00d44f6c6332f6cd301d",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.414632+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -354,10 +417,21 @@
       "keyword": "submarine cable outage",
       "last_attempt_at": "2026-10-14T09:36:32.013961+00:00",
       "url": "https://newsbytes.ph/2026/10/13/ph-needs-more-undersea-cables-not-just-faster-internet-tech-exec/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:32.261750+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286464+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "b5e213d4545c3b1167448f59fcb6b056": {
       "queue_id": "b5e213d4545c3b1167448f59fcb6b056",
@@ -377,10 +451,17 @@
       "keyword": "submarine cable outage",
       "last_attempt_at": "2026-10-14T09:36:54.887936+00:00",
       "url": "https://mb.com.ph/2026/10/03/slow-internet-connectivity-issues-reported-due-to-undersea-cable-segment-outage",
-      "reason": "article_fetch_error",
-      "error_type": "HTTPError",
+      "reason": "publisher_access_blocked",
+      "error_type": "",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:55.162369+00:00"
+      "next_attempt_at": "2026-10-15T11:22:12.286468+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "publisher_access_blocked",
+        "note": "HTTP 403 或安全验证页面；普通浏览器未稳定返回可读取全文。保留待重试，不以标题或其他媒体报道代替此文全文。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "081836ce8e27532ae290e4f4f704c7fb": {
       "queue_id": "081836ce8e27532ae290e4f4f704c7fb",
@@ -407,7 +488,7 @@
     },
     "a9607227345b1ed93b98d6c8491940d4": {
       "queue_id": "a9607227345b1ed93b98d6c8491940d4",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.415726+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -423,14 +504,25 @@
       "keyword": "submarine cable outage",
       "last_attempt_at": "2026-10-14T09:36:55.405669+00:00",
       "url": "https://newsinfo.inquirer.net/2316216/ph-singapore-link-fully-restored-internet-back-to-normal",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:55.773498+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286471+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "InfiniVAN 明确称 C2C 菲律宾至新加坡段于 10 月 3 日恢复；香港线路另处于维护状态。",
+        "linked_event_uids": [
+          "evt_f31edbfe4d33fc4c02d2"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "929c2cb80ce03c20a7d146afcf550491": {
       "queue_id": "929c2cb80ce03c20a7d146afcf550491",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.416003+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -445,10 +537,20 @@
       "keyword": "submarine cable outage",
       "last_attempt_at": "2026-10-14T04:23:59.010768+00:00",
       "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/03/philippines-singapore-internet-link-restored-after-cable-outage",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:supporting_report",
       "review_at": "2026-10-14T04:24:05.284742+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286477+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "Inquirer/ANN 转载明确确认 C2C 菲律宾至新加坡段 10 月 3 日恢复，关联既有事件。",
+        "linked_event_uids": [
+          "evt_f31edbfe4d33fc4c02d2"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "557067ad4902535346253bd5fcc19c74": {
       "queue_id": "557067ad4902535346253bd5fcc19c74",
@@ -476,7 +578,7 @@
     },
     "1a597b6fcbba1e594776c12c873577de": {
       "queue_id": "1a597b6fcbba1e594776c12c873577de",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.417509+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -492,14 +594,25 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:37:19.331935+00:00",
       "url": "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:47:19.573536+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286482+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "dc2c25d2cc43bb3dd5c04f9365eea57d": {
       "queue_id": "dc2c25d2cc43bb3dd5c04f9365eea57d",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.417828+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -515,14 +628,25 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:37:19.579026+00:00",
       "url": "https://canadianinquirer.net/2026/10/03/globe-reroutes-internet-traffic-after-subsea-cable-break-disrupts-services/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:47:19.861803+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286487+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "49025fa7abdd748931a72b6434f29ce8": {
       "queue_id": "49025fa7abdd748931a72b6434f29ce8",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.418147+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -537,14 +661,25 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:37:15.330113+00:00",
       "url": "https://newsinfo.inquirer.net/2317174/pldt-internet-services-fully-restored-after-cable-cut",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:47:15.593967+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286490+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "PLDT 确认 10 月 2 日故障，10 月 4 日 16:30 服务恢复；分流恢复服务不等于物理修复完成。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "b78e2892d030688354a8d5c46b47a30c": {
       "queue_id": "b78e2892d030688354a8d5c46b47a30c",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.419919+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -559,14 +694,25 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:37:15.599604+00:00",
       "url": "https://newsbytes.ph/2026/10/04/internet-services-normalize-after-ph-singapore-cable-cut/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:47:15.869594+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286494+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "b7ec18969dd743feb2ba5899d3846624": {
       "queue_id": "b7ec18969dd743feb2ba5899d3846624",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.420217+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -581,10 +727,20 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T04:23:30.195185+00:00",
       "url": "https://restofworld.org/2026/google-meta-red-sea-subsea-cables-houthi-yemen/",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T04:23:41.118861+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286498+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_context",
+        "note": "仅回顾已记录的历史事故，不构成 2026 年新事故。关联仅用于事件检索，不为旧记录日期背书，未把月份或年份补成某一天。",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "9ed87e62ca4f5c4f433503ba2b5cf6df": {
       "queue_id": "9ed87e62ca4f5c4f433503ba2b5cf6df",
@@ -610,7 +766,7 @@
     },
     "e40c24334cb5b07fc05c4b29bd455c78": {
       "queue_id": "e40c24334cb5b07fc05c4b29bd455c78",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.421132+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -625,10 +781,19 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:36:57.528325+00:00",
       "url": "https://www.israelhayom.com/2026/06/10/israel-is-no-longer-only-an-air-power/",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:no_reported_incident",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:57.839701+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286501+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "no_reported_incident",
+        "note": "战争能力与威胁分析，正文未报告已发生的海缆事故；页面实际发表时间早于 RSS 所示时间。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "6081a76bce7fc56eb2d56a9627be585c": {
       "queue_id": "6081a76bce7fc56eb2d56a9627be585c",
@@ -735,10 +900,17 @@
       "keyword": "submarine cable break",
       "last_attempt_at": "2026-10-14T09:37:19.076306+00:00",
       "url": "https://malaya.com.ph/business/business-news/telcos-restore-services-nationwide-after-ph-singapore-cable-disruption/",
-      "reason": "article_fetch_error",
-      "error_type": "HTTPError",
+      "reason": "publisher_access_blocked",
+      "error_type": "",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:47:19.326565+00:00"
+      "next_attempt_at": "2026-10-15T11:22:12.286504+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "publisher_access_blocked",
+        "note": "HTTP 403 或安全验证页面；普通浏览器未稳定返回可读取全文。保留待重试，不以标题或其他媒体报道代替此文全文。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "9b0c1c0c3eb12ac0f5f869aacdde87c0": {
       "queue_id": "9b0c1c0c3eb12ac0f5f869aacdde87c0",
@@ -787,7 +959,7 @@
     },
     "e38f709b00aa4f3d84a0433258a0253d": {
       "queue_id": "e38f709b00aa4f3d84a0433258a0253d",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.424880+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -802,14 +974,25 @@
       "keyword": "undersea cable damage",
       "last_attempt_at": "2026-10-14T04:22:59.516785+00:00",
       "url": "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T04:23:13.496886+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286507+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_context",
+        "note": "仅回顾已记录的历史事故，不构成 2026 年新事故。关联仅用于事件检索，不为旧记录日期背书，未把月份或年份补成某一天。",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614",
+          "evt_237e2cd4861e39f4316b"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "e05d671aa47bebc85b74c171c9c66592": {
       "queue_id": "e05d671aa47bebc85b74c171c9c66592",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.425685+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -824,14 +1007,27 @@
       "keyword": "undersea cable damage",
       "last_attempt_at": "2026-10-14T09:36:30.893752+00:00",
       "url": "https://nypost.com/2026/10/11/us-news/russia-and-china-could-send-us-back-to-the-dark-ages/",
-      "reason": "short_content",
+      "reason": "manual_review:historical_incidents_backfilled",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T09:46:32.007953+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286511+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_incidents_backfilled",
+        "note": "两起 2024 年 11 月波罗的海事故原库缺失，已用运营商公告及 Telia 接受 LRT 采访补证后补录。马祖为旧事故背景，不推断新日期。",
+        "linked_event_uids": [
+          "evt_a294211df980ea47ced2",
+          "evt_72afc87008286c746fe7",
+          "evt_552a611dce379888700b"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "0eeb0a7d99d867906c567e7351a4133a": {
       "queue_id": "0eeb0a7d99d867906c567e7351a4133a",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.427120+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -846,10 +1042,21 @@
       "keyword": "undersea cable damage",
       "last_attempt_at": "2026-10-14T04:21:59.509950+00:00",
       "url": "https://www.aljazeera.com/news/2026/10/13/iran-threatens-gulf-data-centres-how-exposed-is-the-regions-internet",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T04:22:09.582099+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286515+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_context",
+        "note": "仅回顾已记录的历史事故，不构成 2026 年新事故。关联仅用于事件检索，不为旧记录日期背书，未把月份或年份补成某一天。",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614",
+          "evt_237e2cd4861e39f4316b"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "c1d0e1ca09a27be5ad77e7ad52e261f8": {
       "queue_id": "c1d0e1ca09a27be5ad77e7ad52e261f8",
@@ -875,7 +1082,7 @@
     },
     "bd0cb8b6634aac4f61ebce8379df1378": {
       "queue_id": "bd0cb8b6634aac4f61ebce8379df1378",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.428076+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -890,10 +1097,19 @@
       "keyword": "undersea cable damage",
       "last_attempt_at": "2026-10-14T09:36:55.785966+00:00",
       "url": "https://www.iranintl.com/en/202610126090",
-      "reason": "short_content",
+      "reason": "manual_review:no_reported_incident",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T09:46:56.919519+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286518+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "no_reported_incident",
+        "note": "攻击海缆的威胁，未报告实际切断。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "6adc02c926a3d1b5d751a02956b0154a": {
       "queue_id": "6adc02c926a3d1b5d751a02956b0154a",
@@ -919,7 +1135,7 @@
     },
     "1266b8dfb95db41687f5fb02b0d182f2": {
       "queue_id": "1266b8dfb95db41687f5fb02b0d182f2",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.429664+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -934,14 +1150,24 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:22:09.588759+00:00",
       "url": "https://itbrief.com.au/story/retn-adds-sixth-subsea-route-to-boost-taiwan-resilience",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T04:22:17.483039+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286522+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_context",
+        "note": "仅回顾已记录的历史事故，不构成 2026 年新事故。关联仅用于事件检索，不为旧记录日期背书，未把月份或年份补成某一天。",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "2aa0d7de4574770dd26ee5bc50cf8ae9": {
       "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.430504+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -956,15 +1182,24 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:22:29.610512+00:00",
       "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
-      "reason": "manual_review_unsupported_occurrence_date",
-      "completed_at": "2026-10-14T04:22:38.345214+00:00",
+      "reason": "manual_review:supporting_report",
+      "completed_at": "2026-10-14T11:22:12.286532+00:00",
       "next_attempt_at": null,
       "force_retry": false,
-      "review_at": "2026-10-14T04:41:19.905770+00:00"
+      "review_at": "2026-10-14T04:41:19.905770+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "ed040b052619cb2a94c3a5b0beb8b5e1": {
       "queue_id": "ed040b052619cb2a94c3a5b0beb8b5e1",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.432732+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -979,10 +1214,21 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T09:36:52.030517+00:00",
       "url": "https://manilastandard.net/tech/tech-news/314801111/globe-fully-restores-internet-services-following-international-subsea-cable-disruption.html",
-      "reason": "short_content",
+      "reason": "manual_review:supporting_report",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T09:46:52.909674+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286537+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "Globe 通过菲律宾登陆站重新激活系统恢复服务，仍在确认故障位置与性质。未给出可独立确定的故障起始日。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "fbcc106b28075aac8cfe0c5b84d53636": {
       "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
@@ -1001,10 +1247,19 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:24:09.538985+00:00",
       "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-14T04:24:17.536072+00:00",
+      "reason": "identity_date_requires_confirmation",
+      "review_at": "2026-10-14T11:22:12.286542+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "identity_date_requires_confirmation",
+        "note": "浏览器已取得实际正文：Globe 称故障始于 Thursday night（按 10 月 3 日发表日可解为 10 月 1 日），且未说明断点或电缆名称。与 10 月 2 日记录存在日期差异，不能仅按相似标题强制合并或新增。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "3a913dc1b58b0a1148745229d00fe549": {
       "queue_id": "3a913dc1b58b0a1148745229d00fe549",
@@ -1023,14 +1278,21 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T09:36:54.240848+00:00",
       "url": "https://mb.com.ph/2026/10/04/globe-restores-full-internet-service-after-subsea-cable-disruption",
-      "reason": "article_fetch_error",
-      "error_type": "HTTPError",
+      "reason": "publisher_access_blocked",
+      "error_type": "",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:54.583394+00:00"
+      "next_attempt_at": "2026-10-15T11:22:12.286545+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "publisher_access_blocked",
+        "note": "HTTP 403 或安全验证页面；普通浏览器未稳定返回可读取全文。保留待重试，不以标题或其他媒体报道代替此文全文。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "1b3643a073819ea585f8d3902c0dba46": {
       "queue_id": "1b3643a073819ea585f8d3902c0dba46",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.434665+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -1045,14 +1307,24 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:23:41.398720+00:00",
       "url": "https://backendnews.net/globe-restores-internet-after-ph-singapore-cable-disruption/",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:supporting_report",
       "review_at": "2026-10-14T04:23:50.333111+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286548+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "正文明确区分系统重新激活、服务恢复与可能持续数周的物理维修；不修改已有 repair_date。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "26d862343da99f70989ab627202cdfed": {
       "queue_id": "26d862343da99f70989ab627202cdfed",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.435113+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -1067,14 +1339,25 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T09:36:56.924898+00:00",
       "url": "https://manilastandard.net/business/314801165/globe-restores-internet-services-after-subsea-cable-disruption.html",
-      "reason": "short_content",
+      "reason": "manual_review:supporting_report",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T09:46:57.285722+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286552+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "Globe 菲律宾至新加坡服务恢复后续报道；未确认具体电缆或物理修复完成日。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "c78e5cf69f37efd103f4bb767fc79a61": {
       "queue_id": "c78e5cf69f37efd103f4bb767fc79a61",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.435556+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -1089,10 +1372,20 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:24:37.895911+00:00",
       "url": "https://tribune.net.ph/2026/10/03/globe-taps-backup-links-after-cable-break-2",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:supporting_report",
       "review_at": "2026-10-14T04:24:48.030935+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286556+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "6fd6a406c2043d56e4d9e81d6c96193c": {
       "queue_id": "6fd6a406c2043d56e4d9e81d6c96193c",
@@ -1118,7 +1411,7 @@
     },
     "6eac7d66cc7ecf8f21a2847f32b35798": {
       "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
-      "status": "retry",
+      "status": "review",
       "first_seen_at": "2026-10-14T03:54:43.437906+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -1133,14 +1426,23 @@
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.730992+00:00",
       "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
-      "reason": "article_fetch_error",
+      "reason": "subscription_required",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:52.024612+00:00"
+      "next_attempt_at": null,
+      "review_at": "2026-10-14T11:22:12.286559+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "subscription_required",
+        "note": "普通浏览器明确显示 Subscribe to unlock this article。未取得正文，保留待复核；需合法订阅访问或公开版本。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "b76abfb647261b1d41ccf7e6dce1b13e": {
       "queue_id": "b76abfb647261b1d41ccf7e6dce1b13e",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T03:54:43.440402+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -1155,10 +1457,19 @@
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.436394+00:00",
       "url": "https://en.tempo.co/read/2121475/pln-batam-denies-viral-claim-of-three-day-power-outage",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:unconfirmed_claim_in_power_outage_denial",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T09:46:51.725737+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286562+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "unconfirmed_claim_in_power_outage_denial",
+        "note": "PLN Batam 澄清三天停电消息为谣言，称流传的海缆消息与电力恢复无关；未独立确认电信海缆事故、日期或具体电缆。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "ab81bd5dfcfe97529f56d7591447e885": {
       "queue_id": "ab81bd5dfcfe97529f56d7591447e885",
@@ -7842,7 +8153,7 @@
     },
     "30d4cd0c47a4c87b7ff94a49fff47b8c": {
       "queue_id": "30d4cd0c47a4c87b7ff94a49fff47b8c",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T09:35:12.244100+00:00",
       "attempts": 1,
       "queries": [
@@ -7858,10 +8169,20 @@
       "last_seen_at": "2026-10-14T09:35:12.844224+00:00",
       "last_attempt_at": "2026-10-14T09:36:32.267162+00:00",
       "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/globe-telecom-restores-services-while-analysts-rate-globe-telecom-stock-strong-buy/70319686",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:supporting_report",
       "review_at": "2026-10-14T09:36:41.461492+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286565+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "supporting_report",
+        "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "e32e7bf2c59a18ff04fd4a24f490fb50": {
       "queue_id": "e32e7bf2c59a18ff04fd4a24f490fb50",
@@ -7887,7 +8208,7 @@
     },
     "aa20353db4d77b64f04527f43dde3b42": {
       "queue_id": "aa20353db4d77b64f04527f43dde3b42",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T09:35:12.558808+00:00",
       "attempts": 1,
       "queries": [
@@ -7902,14 +8223,23 @@
       "last_seen_at": "2026-10-14T09:35:12.558808+00:00",
       "last_attempt_at": "2026-10-14T09:36:52.920346+00:00",
       "url": "https://www.iranintl.com/en/202610122248",
-      "reason": "short_content",
+      "reason": "manual_review:no_reported_incident",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T09:41:54.235601+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:22:12.286571+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "no_reported_incident",
+        "note": "读者对攻击威胁的评论，未报告实际切断。",
+        "linked_event_uids": [],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     },
     "be94fd248279df0d29e5e5139d6b57ec": {
       "queue_id": "be94fd248279df0d29e5e5139d6b57ec",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T09:35:12.577335+00:00",
       "attempts": 1,
       "queries": [
@@ -7924,10 +8254,20 @@
       "last_seen_at": "2026-10-14T09:35:12.577335+00:00",
       "last_attempt_at": "2026-10-14T09:36:41.467911+00:00",
       "url": "https://splash247.com/elisabeth-braw-the-undersea-war/",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T09:36:51.431310+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:22:12.286575+00:00",
+      "manual_review": {
+        "report": "research/reviews/backlog-2026-10-14.json",
+        "classification": "historical_context",
+        "note": "仅回顾已记录的历史事故，不构成 2026 年新事故。关联仅用于事件检索，不为旧记录日期背书，未把月份或年份补成某一天。",
+        "linked_event_uids": [
+          "evt_56f4dcfb0e69eb5b76f1"
+        ],
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00"
+      }
     }
   },
   "cursors": {

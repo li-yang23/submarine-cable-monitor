@@ -59,7 +59,9 @@
     "duplicate_count": 1,
     "event_uid": "evt_f31edbfe4d33fc4c02d2",
     "evidence_urls": [
-      "https://subtelforum.com/philippines-singapore-c2c-link-restored/"
+      "https://newsinfo.inquirer.net/2316216/ph-singapore-link-fully-restored-internet-back-to-normal",
+      "https://subtelforum.com/philippines-singapore-c2c-link-restored/",
+      "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/03/philippines-singapore-internet-link-restored-after-cable-outage"
     ],
     "normalized_cable_id": "C2C",
     "occurrence_date": "2026-10-02",
@@ -75,7 +77,21 @@
         ],
         "method": "llm_candidates_reconciled_to_source",
         "review_key": "c2c"
-      }
+      },
+      "reviewed_related_reports": [
+        {
+          "note": "InfiniVAN 明确称 C2C 菲律宾至新加坡段于 10 月 3 日恢复；香港线路另处于维护状态。",
+          "published_date": "2026-10-03",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsinfo.inquirer.net/2316216/ph-singapore-link-fully-restored-internet-back-to-normal"
+        },
+        {
+          "note": "Inquirer/ANN 转载明确确认 C2C 菲律宾至新加坡段 10 月 3 日恢复，关联既有事件。",
+          "published_date": "2026-10-03",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/03/philippines-singapore-internet-link-restored-after-cable-outage"
+        }
+      ]
     },
     "reason": "原因未披露；报道不确认物理断缆。",
     "repair_date": "2026-10-03",
@@ -127,7 +143,93 @@
         "original_text_zh": "Pampanga Digital Evolution Company, Inc. (PADECO)、Converge和UP Diliman网络帮助台均发布公告称，连接菲律宾和新加坡的海底电缆段中断。",
         "reason": null,
         "repair_date": null
-      }
+      },
+      "reviewed_related_reports": [
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-04",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+        },
+        {
+          "note": "10 月 2 日菲律宾两条路径故障和 2025 年红海故障均为已知事故背景；预测市场概率不是新事故证据。",
+          "published_date": "2026-10-07",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://tech-insider.org/undersea-cable-outage-prediction-market-bet-2026/"
+        },
+        {
+          "note": "正文确认 10 月 2 日两条路径受影响；路径名称不冒充具体电缆名称，故障原因仍待调查。",
+          "published_date": "2026-10-02",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://www.gizguide.com/2026/10/dict-submarine-cable-outage-triggers.html"
+        },
+        {
+          "note": "正文确认 10 月 2 日菲律宾至新加坡离线，另提及香港线路异常；未据此认定所有运营商属于同一根电缆。",
+          "published_date": "2026-10-02",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsinfo.inquirer.net/2315897/many-internet-connections-down-due-to-offline-ph-singapore-cable-link-2"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-13",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsbytes.ph/2026/10/13/ph-needs-more-undersea-cables-not-just-faster-internet-tech-exec/"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-03",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-03",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://canadianinquirer.net/2026/10/03/globe-reroutes-internet-traffic-after-subsea-cable-break-disrupts-services/"
+        },
+        {
+          "note": "PLDT 确认 10 月 2 日故障，10 月 4 日 16:30 服务恢复；分流恢复服务不等于物理修复完成。",
+          "published_date": "2026-10-05",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsinfo.inquirer.net/2317174/pldt-internet-services-fully-restored-after-cable-cut"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-04",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsbytes.ph/2026/10/04/internet-services-normalize-after-ph-singapore-cable-cut/"
+        },
+        {
+          "note": "Globe 通过菲律宾登陆站重新激活系统恢复服务，仍在确认故障位置与性质。未给出可独立确定的故障起始日。",
+          "published_date": "2026-10-04",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://manilastandard.net/tech/tech-news/314801111/globe-fully-restores-internet-services-following-international-subsea-cable-disruption.html"
+        },
+        {
+          "note": "正文明确区分系统重新激活、服务恢复与可能持续数周的物理维修；不修改已有 repair_date。",
+          "published_date": "2026-10-04",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://backendnews.net/globe-restores-internet-after-ph-singapore-cable-disruption/"
+        },
+        {
+          "note": "Globe 菲律宾至新加坡服务恢复后续报道；未确认具体电缆或物理修复完成日。",
+          "published_date": "2026-10-04",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://manilastandard.net/business/314801165/globe-restores-internet-services-after-subsea-cable-disruption.html"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-03",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://tribune.net.ph/2026/10/03/globe-taps-backup-links-after-cable-break-2"
+        },
+        {
+          "note": "同周菲律宾至新加坡故障的运营商分流或恢复后续报道；作为相关报道保存，不据此新增事故或修改未知日期、具体电缆名称及物理修复时间。",
+          "published_date": "2026-10-14",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/globe-telecom-restores-services-while-analysts-rate-globe-telecom-stock-strong-buy/70319686"
+        }
+      ]
     },
     "reason": "",
     "repair_date": null,
@@ -198,7 +300,27 @@
         "reviewed_at": "2026-10-14T04:41:19+00:00",
         "source_run_id": "38509829243",
         "source_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
-      }
+      },
+      "reviewed_related_reports": [
+        {
+          "note": "10 月 2 日菲律宾两条路径故障和 2025 年红海故障均为已知事故背景；预测市场概率不是新事故证据。",
+          "published_date": "2026-10-07",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://tech-insider.org/undersea-cable-outage-prediction-market-bet-2026/"
+        },
+        {
+          "note": "正文确认 10 月 2 日两条路径受影响；路径名称不冒充具体电缆名称，故障原因仍待调查。",
+          "published_date": "2026-10-02",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://www.gizguide.com/2026/10/dict-submarine-cable-outage-triggers.html"
+        },
+        {
+          "note": "正文确认 10 月 2 日菲律宾至新加坡离线，另提及香港线路异常；未据此认定所有运营商属于同一根电缆。",
+          "published_date": "2026-10-02",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://newsinfo.inquirer.net/2315897/many-internet-connections-down-due-to-offline-ph-singapore-cable-link-2"
+        }
+      ]
     },
     "reason": "",
     "repair_date": null,
@@ -11636,7 +11758,15 @@
         "original_text_zh": "损坏发生在 SEA-ME-WE-4 和 IMEWE 电缆系统上，这两条系统都经过沙特阿拉伯吉达附近的高风险走廊。",
         "reason": "Unknown",
         "repair_date": "Unknown"
-      }
+      },
+      "reviewed_related_reports": [
+        {
+          "note": "10 月 2 日菲律宾两条路径故障和 2025 年红海故障均为已知事故背景；预测市场概率不是新事故证据。",
+          "published_date": "2026-10-07",
+          "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+          "url": "https://tech-insider.org/undersea-cable-outage-prediction-market-bet-2026/"
+        }
+      ]
     },
     "reason": "Unknown, but the area is high-risk",
     "repair_date": null,
@@ -12231,6 +12361,80 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://stratnewsglobal.com/australia/who-is-cutting-the-worlds-internet-cables/",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "manual_source_verified",
+    "accident_location": "Baltic Sea",
+    "accident_type": "Cut",
+    "affected_area": "Finland, Germany",
+    "cable_name": "C-Lion1",
+    "created_at": "2026-10-14T11:22:12+00:00",
+    "discovered_url": "",
+    "event_uid": "evt_a294211df980ea47ced2",
+    "evidence_urls": [
+      "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany"
+    ],
+    "normalized_cable_id": "C-LION1",
+    "occurrence_date": "2024-11-18",
+    "original_text": "Due to the fault, the services provided over the C-Lion1 are down. The location of the cable cut is in the Baltic Sea",
+    "original_text_zh": "Cinia 确认 C-Lion1 于 2024 年 11 月 18 日 04:04（EET）发生故障，服务中断；断点位于波罗的海，原因未明。",
+    "published_date": "2024-11-18",
+    "raw_data": {
+      "manual_review": {
+        "cause_attribution": "Unknown; ship involvement is not treated as established sabotage.",
+        "date_basis": "Operator notice states 18 November 2024 at 04:04 EET.",
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+        "trigger_queue_id": "e05d671aa47bebc85b74c171c9c66592"
+      }
+    },
+    "reason": "Cause not confirmed",
+    "repair_date": null,
+    "source": "Cinia",
+    "sources": [
+      "Cinia"
+    ],
+    "submarine_name": "C-Lion1",
+    "title": "Submarine cable cut between Finland, Germany",
+    "updated_at": "2026-10-14T11:22:12+00:00",
+    "url": "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
+    "verification_status": "manual_source_verified"
+  },
+  {
+    "TrustWorthy": "manual_source_verified",
+    "accident_location": "Baltic Sea",
+    "accident_type": "Cut",
+    "affected_area": "Lithuania, Sweden",
+    "cable_name": "",
+    "created_at": "2026-10-14T11:22:12+00:00",
+    "discovered_url": "",
+    "event_uid": "evt_72afc87008286c746fe7",
+    "evidence_urls": [
+      "https://www.lrt.lt/en/news-in-english/19/2416006/undersea-cable-between-lithuania-and-sweden-damaged-telia"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2024-11-17",
+    "original_text": "The cable was cut on Sunday morning, at around 10:00.",
+    "original_text_zh": "Telia 技术负责人向 LRT 确认立陶宛至瑞典海缆于 2024 年 11 月 17 日约 10 时被切断，分流后用户连接恢复。该证据未明确电缆名称。",
+    "published_date": "2024-11-18",
+    "raw_data": {
+      "manual_review": {
+        "cause_attribution": "Unknown; ship involvement is not treated as established sabotage.",
+        "date_basis": "LRT published Monday 18 November 2024; Telia said Sunday morning, therefore 17 November.",
+        "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
+        "trigger_queue_id": "e05d671aa47bebc85b74c171c9c66592"
+      }
+    },
+    "reason": "Cause not confirmed",
+    "repair_date": null,
+    "source": "LRT / Telia statement",
+    "sources": [
+      "LRT / Telia statement"
+    ],
+    "submarine_name": "",
+    "title": "Submarine cable cut between Lithuania, Sweden",
+    "updated_at": "2026-10-14T11:22:12+00:00",
+    "url": "https://www.lrt.lt/en/news-in-english/19/2416006/undersea-cable-between-lithuania-and-sweden-damaged-telia",
+    "verification_status": "manual_source_verified"
   },
   {
     "TrustWorthy": "False",

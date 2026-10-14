@@ -28,6 +28,26 @@ class FetchRecoveryTests(unittest.TestCase):
         html = "<div class='entry-content featured-image'>Photo</div><div class='entry-content'><p>Actual submarine cable outage evidence.</p></div>"
         self.assertEqual(article_body_text(BeautifulSoup(html, 'html.parser')), 'Actual submarine cable outage evidence.')
 
+    def test_tagdiv_body_excludes_sidebar_news(self):
+        html = '<article><div class="tdb_single_content">Subsea cable cut evidence.</div><div>RELEVANT STORIES: unrelated outage</div></article>'
+        self.assertEqual(article_body_text(BeautifulSoup(html, 'html.parser')), 'Subsea cable cut evidence.')
+
+    def test_dynamic_shell_never_counts_as_fetched_body(self):
+        scraper = GoogleNewsArticleScraper(Config(article_queue_path=''))
+        shell = response(200, '<main>' + 'Newsletter navigation ' * 80 + '</main>')
+        with patch.object(scraper, 'get', return_value=shell), patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '0'}):
+            with self.assertRaisesRegex(ValueError, 'dynamic_article_body_missing'):
+                scraper.extract_page_text('https://www.abs-cbn.com/news/story')
+        hydrated = response(200, '<div id="bodyTopPart">' + 'A submarine cable cut caused service disruption. ' * 10 + '</div>')
+        with patch.object(scraper, 'get', return_value=shell), patch.object(scraper, '_render_get', return_value=hydrated), patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '1'}):
+            self.assertNotIn('Newsletter', scraper.extract_page_text('https://www.abs-cbn.com/news/story')['content'])
+
+    def test_subscription_page_remains_unprocessed(self):
+        scraper = ArticleScraper(Config(article_queue_path=''))
+        with patch.object(scraper, 'get', return_value=response(200, '<main>Subscribe to unlock this article</main>')):
+            with self.assertRaisesRegex(ValueError, 'article_requires_subscription'):
+                scraper.extract_page_text('https://www.ft.com/content/example')
+
     def test_streamed_body_is_reassembled_without_recommendations(self):
         html = '''<article><p>Intro.</p><template id="B:1"></template></article>
         <aside><template id="B:2"></template></aside>
