@@ -15,6 +15,7 @@ database:
 
 # LLM settings. API keys must come from environment variables/GitHub Secrets.
 llm:
+  request_timeout: 120  # One attempt; timeouts stay queued, no paid fallback.
   model: deepseek-ai/DeepSeek-V3
   base_url: https://api.siliconflow.cn/v1/
   embedding_model: BAAI/bge-m3
@@ -44,6 +45,15 @@ article_sources:
   submarine_networks_links_path: data/cable-links.json
   submarine_networks_max_cables: 0
   submarine_networks_articles_per_cable: 0
+
+# Public Google News RSS + allowlisted publisher bodies; no Parallel dependency.
+# Two independently reported, quote-supported sources are needed for completion.
+cross_source:
+  enabled: true
+  max_articles: 2
+  max_candidates: 4
+  time_budget_seconds: 300
+  retry_hours: 24
 
 # One JSONL trace + JSON/Markdown summaries per run; no article bodies or LLM responses.
 logging:

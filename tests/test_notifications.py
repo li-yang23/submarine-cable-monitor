@@ -49,9 +49,22 @@ class ReportTests(unittest.TestCase):
                           counts={"discovery.failed": 1, "fetch.failed.http_403": 1, "extraction.fallback": 2, "selection.skipped.budget": 3})
         report = notify.build_report(summary)
         self.assertTrue(report.active)
-        for text in ("模型调用因余额耗尽失败", "发现源", "站点拒绝", "额度已用尽", "需要处理"):
+        for text in ("模型调用因余额耗尽失败", "发现源", "站点拒绝", "本轮处理达到时长或篇数上限", "需要处理"):
             self.assertIn(text, report.body)
         self.assertNotIn("private-amount", report.body)
+
+    def test_actual_timeout_and_directory_limit_never_claim_balance_exhaustion(self):
+        report = notify.build_report(healthy(status="degraded", errors=1,
+            failure_summary={"model": {"count": 1}}, queue={"pending": 0, "retry": 1, "review": 0},
+            model_health={"provider": "siliconflow", "status": "unavailable", "available": False, "reason": "request_timeout"},
+            counts={"discover.deferred.discovery_budget": 1, "extract.failed.request_timeout": 1}), "failure")
+        self.assertIn("SiliconFlow 请求超时", report.body)
+        self.assertIn("目录发现达到本轮时长或页数上限", report.body)
+        self.assertNotIn("额度已用尽", report.body)
+        self.assertNotIn("充值后重试", report.body)
+        self.assertNotIn("Parallel", report.body)
+        self.assertNotIn("processing_limit", report.conditions)
+        self.assertIn("model_request_timeout", report.conditions)
 
     def test_fingerprint_ignores_run_ids_processed_counts_and_private_fields(self):
         first = notify.build_report(healthy(warnings=1, articles=1, run_id="first", smtp_password="secret"), run_url="https://github.com/owner/repo/actions/runs/1")

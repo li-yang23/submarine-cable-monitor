@@ -88,7 +88,8 @@ def extraction_failure(exc: Exception, provider: str) -> ExtractionUnavailable:
 
 
 class EventExtractor:
-    def __init__(self, model: str | None = None, *, allow_rule_fallback: bool = False):
+    def __init__(self, model: str | None = None, *, allow_rule_fallback: bool = False, request_timeout: int = 120):
+        self.request_timeout = request_timeout
         self.siliconflow_key = os.getenv("SILICONFLOW_API_KEY")
         self.openai_key = os.getenv("OPENAI_API_KEY")
         self.api_key = self.siliconflow_key or self.openai_key
@@ -123,6 +124,37 @@ class EventExtractor:
         self.last_extraction_method = "unavailable"
         # The original SDK exception may contain a full request or provider body.
         # Raise outside the except block without attaching that exception.
+        raise failure from None
+
+    def review_cross_sources(self, parent: dict[str, Any], articles: list[dict[str, Any]]) -> dict[str, Any]:
+        """Same provider and credentials as extraction; never use a fallback model."""
+        from .cross_source import REVIEW_INSTRUCTIONS
+        if not self.available:
+            raise ExtractionUnavailable("missing_api_key", provider=self.provider)
+        payload = {"unread_original": {k: parent.get(k) for k in ("title", "url", "published_date")},
+                   "sources": [{"source_index": i, **{k: a.get(k) for k in ("url", "title", "published_date", "content")}}
+                               for i, a in enumerate(articles)]}
+        failure = None
+        try:
+            response = self._client_instance().chat.completions.create(
+                model=self.model, messages=[{"role": "system", "content": REVIEW_INSTRUCTIONS},
+                                            {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}])
+            usage = getattr(response, "usage", None)
+            tokens = {}
+            for name in ("prompt_tokens", "completion_tokens", "total_tokens"):
+                value = usage.get(name) if isinstance(usage, dict) else getattr(usage, name, None)
+                if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+                    tokens[name] = value
+            emit("model_usage", "reported" if tokens else "unavailable", **article_fields(parent),
+                 provider=self.provider, model=self.model, api_operation="cross_source_review", **tokens)
+            if response.choices[0].finish_reason != "stop":
+                raise ValueError("Incomplete cross-source response")
+            result = self._parse_json(response.choices[0].message.content or "")
+            if not isinstance(result, dict):
+                raise ValueError("Invalid cross-source response")
+            return result
+        except Exception as exc:
+            failure = extraction_failure(exc, self.provider)
         raise failure from None
 
     def is_real_event(self, event: dict[str, Any]) -> bool:
@@ -176,7 +208,7 @@ Text:
 
             # Failed articles remain queued for a future run. SDK retries can
             # multiply charges on timeouts, so one attempt is made per run.
-            kwargs = {"api_key": self.api_key, "timeout": 45, "max_retries": 0}
+            kwargs = {"api_key": self.api_key, "timeout": self.request_timeout, "max_retries": 0}
             if self.base_url:
                 kwargs["base_url"] = self.base_url
             self._client = OpenAI(**kwargs)

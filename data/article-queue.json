@@ -1271,7 +1271,7 @@
     },
     "fbcc106b28075aac8cfe0c5b84d53636": {
       "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
-      "status": "done",
+      "status": "review",
       "first_seen_at": "2026-10-14T03:54:43.433097+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -1286,20 +1286,20 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:24:09.538985+00:00",
       "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
-      "reason": "manual_review:review_complete_date_uncertainty_preserved",
-      "review_at": "2026-10-14T11:22:12.286542+00:00",
+      "reason": "cross_source_date_conflict",
+      "review_at": "2026-10-14T17:44:56.375105+00:00",
       "next_attempt_at": null,
       "force_retry": false,
       "manual_review": {
-        "classification": "review_complete_date_uncertainty_preserved",
-        "note": "ABS-CBN 原文在前轮公共浏览器中已读；本轮完成交叉复核。确定是来源中的时间说法及范围冲突，无法确定 Globe 精确故障起始日，明确记为未知。作为相关报道及争议记录保存，结束重复复核队列，不制造日期确定性。",
+        "classification": "review_required",
+        "note": "Globe 精确起始日和与 C2C 的身份关系未证实；需要原始公告或更正，不能用其他运营商日期替代。",
         "linked_event_uids": [
           "evt_50591464518b00b97d78"
         ],
-        "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
+        "reviewed_at": "2026-10-14T17:44:56.375095+00:00",
         "original_full_text_read": true,
         "coverage_limit": "关联报道主题及可独立核实的事实；原文不可读时不保证覆盖其全部段落。",
-        "report": "research/reviews/final-six-2026-10-14.json",
+        "report": "research/reviews/closure-correction-2026-10-15.json",
         "alternative_evidence_urls": [
           "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
           "https://context.ph/2026/10/03/globe-reroutes-international-traffic-after-subsea-fiber-break-repairs-expected-in-weeks/",
@@ -1345,9 +1345,10 @@
           "finding": "冲突存在于报道措辞、时间所指的动作及运营商范围。10 月 3 日为周六，周四为 10 月 1 日；不是把发布日期当故障日即可解决的问题。未找到可独立核对时间戳的 Globe 原始公告或更正，不能断言 ABS-CBN 写错，也不能用 PLDT 的 10 月 2 日替代 Globe 起始日。",
           "decision": "完成有证据边界的人工复核：保留 Globe 报道、冲突和服务恢复记录；精确起始日为空。仅关联同周菲律宾区域事件，不认定同一根电缆，不新增假定为 10 月 1 日的独立事故，不改动 GMA 明确报道的 10 月 2 日事件。",
           "reopen_trigger": "后续出现带明确发生日期、时间及电缆身份的 Globe 原始公告或新闻更正时重新核对；无需重复抓取现有冲突页面。"
-        }
-      },
-      "completed_at": "2026-10-14T11:58:12.060371+00:00"
+        },
+        "requires_primary_correction": true,
+        "previous_report": "research/reviews/final-six-2026-10-14.json"
+      }
     },
     "3a913dc1b58b0a1148745229d00fe549": {
       "queue_id": "3a913dc1b58b0a1148745229d00fe549",
@@ -1509,7 +1510,7 @@
     },
     "6eac7d66cc7ecf8f21a2847f32b35798": {
       "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
-      "status": "done",
+      "status": "review",
       "first_seen_at": "2026-10-14T03:54:43.437906+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -1524,32 +1525,33 @@
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.730992+00:00",
       "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
-      "reason": "manual_review:cross_source_preparedness_topic_review",
+      "reason": "cross_source_original_scope_unknown",
       "error_type": "HTTPError",
       "http_status": 403,
       "next_attempt_at": null,
-      "review_at": "2026-10-14T11:22:12.286559+00:00",
+      "review_at": "2026-10-14T17:44:56.375155+00:00",
       "force_retry": false,
       "manual_review": {
-        "classification": "cross_source_preparedness_topic_review",
-        "note": "FT 全文仍需订阅。用演练主办方公告和澳大利亚官方资料交叉核实可识别主题为海缆中断演练与韧性准备，未确认新的澳大利亚事故。搜索线索提及的越南背景另用 Tuoi Tre 正文核实，已有对应记录。本次为公开主题范围的证据复核，不宣称已逐段审读 FT 付费全文。",
+        "classification": "review_required",
+        "note": "FT 付费全文未读，仅核实公开演练主题不能证明全文没有其他事故线索；保留复核及既有替代来源。",
         "linked_event_uids": [
           "evt_e74e1e60d0c5fe6a3610",
           "evt_6765aedabe6455682eba",
           "evt_f83fcdfc654406276bc4"
         ],
-        "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
+        "reviewed_at": "2026-10-14T17:44:56.375095+00:00",
         "original_full_text_read": false,
         "coverage_limit": "公开主题已核实，付费正文未读；不能证明 FT 全文不包含其他未公开细节。相关越南事件关联表示独立背景核查，不声称 FT 全文逐一列出了这些电缆。",
-        "report": "research/reviews/final-six-2026-10-14.json",
+        "report": "research/reviews/closure-correction-2026-10-15.json",
         "alternative_evidence_urls": [
           "https://www.perspectify.com/article/946653122/australias-banks-show-how-to-prepare-for-cable-blackouts?q=digital+markets+act",
           "https://perthusasia.edu.au/events/black-swan-summit-workshop/",
           "https://www.cisc.gov.au/how-we-support-industry/events-and-outreach/town-halls-and-awareness-sessions",
           "https://news.tuoitre.vn/vietnams-international-internet-connection-affected-by-faults-on-three-undersea-cables-103260827144107718.htm"
-        ]
-      },
-      "completed_at": "2026-10-14T11:58:12.060380+00:00"
+        ],
+        "requires_primary_correction": false,
+        "previous_report": "research/reviews/final-six-2026-10-14.json"
+      }
     },
     "b76abfb647261b1d41ccf7e6dce1b13e": {
       "queue_id": "b76abfb647261b1d41ccf7e6dce1b13e",

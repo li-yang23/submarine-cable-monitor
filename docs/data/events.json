@@ -448,7 +448,13 @@
           "relationship": "related_report_not_confirmed_same_physical_cable",
           "review_record": "research/reviews/final-six-2026-10-14.json",
           "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
-          "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148"
+          "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
+          "completion_superseded": {
+            "report": "research/reviews/closure-correction-2026-10-15.json",
+            "status": "review",
+            "reason": "date_conflict",
+            "note": "Globe 精确起始日和与 C2C 的身份关系未证实；需要原始公告或更正，不能用其他运营商日期替代。"
+          }
         }
       ]
     },
@@ -2201,7 +2207,13 @@
           "relationship": "independently_checked_background",
           "review_record": "research/reviews/final-six-2026-10-14.json",
           "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
-          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be"
+          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
+          "completion_superseded": {
+            "report": "research/reviews/closure-correction-2026-10-15.json",
+            "status": "review",
+            "reason": "original_scope_unknown",
+            "note": "FT 付费全文未读，仅核实公开演练主题不能证明全文没有其他事故线索；保留复核及既有替代来源。"
+          }
         }
       ]
     },
@@ -2272,7 +2284,13 @@
           "relationship": "independently_checked_background",
           "review_record": "research/reviews/final-six-2026-10-14.json",
           "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
-          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be"
+          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
+          "completion_superseded": {
+            "report": "research/reviews/closure-correction-2026-10-15.json",
+            "status": "review",
+            "reason": "original_scope_unknown",
+            "note": "FT 付费全文未读，仅核实公开演练主题不能证明全文没有其他事故线索；保留复核及既有替代来源。"
+          }
         }
       ]
     },
@@ -2346,7 +2364,13 @@
           "relationship": "independently_checked_background",
           "review_record": "research/reviews/final-six-2026-10-14.json",
           "reviewed_at": "2026-10-14T11:58:12.057949+00:00",
-          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be"
+          "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
+          "completion_superseded": {
+            "report": "research/reviews/closure-correction-2026-10-15.json",
+            "status": "review",
+            "reason": "original_scope_unknown",
+            "note": "FT 付费全文未读，仅核实公开演练主题不能证明全文没有其他事故线索；保留复核及既有替代来源。"
+          }
         }
       ]
     },

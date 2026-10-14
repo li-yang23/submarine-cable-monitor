@@ -1,0 +1,18 @@
+{
+  "run_id": "38605709947",
+  "model_provider": "siliconflow",
+  "model_failure_reason": "request_timeout",
+  "http_status": null,
+  "parallel_called": false,
+  "balance_exhausted_observed": false,
+  "root_causes": [
+    "SiliconFlow inference exceeded the previous 45-second SDK timeout; original CircleID body was fetched successfully and the article remains queued.",
+    "The notifier grouped every counter containing budget under an exhausted processing allowance, including discover.deferred.discovery_budget. That is a directory discovery runtime/page limit, not account credit."
+  ],
+  "changes": [
+    "Provider-specific timeout/authentication/rate-limit/balance labels.",
+    "Separate discovery and article-processing runtime limits.",
+    "120-second configurable model timeout with no same-run SDK retries or provider fallback."
+  ],
+  "corrected_notification_preview_not_sent": "[海缆监控] 采集需要处理\n\n本次没有收到模型账户余额不足的返回；无需根据这封邮件判断是否充值。\n- 目录发现达到本轮时长或页数上限，已保存续扫位置（非账户余额）：1\n- 处理错误：1\n- 模型调用失败：1\n- SiliconFlow 请求超时；未处理新闻已保留供后续重试：需要处理\n- 队列 retry：1\n- 采集健康状态异常：degraded\n- 工作流未成功完成：failure\n\n请检查 Actions 运行摘要和 audit.jsonl，按上述原因处理；待处理新闻仍需完成重试。\n\n运行记录：https://github.com/li-yang23/submarine-cable-monitor/actions/runs/38605709947"
+}
