@@ -150,7 +150,7 @@ jobs:
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
           ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
           MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
-          WORKFLOW_HEALTH: ${{ failure() && 'failure' || steps.collection.outcome != 'success' && 'failure' || steps.export.outcome == 'failure' && 'failure' || steps.persist_collection.outcome == 'failure' && 'failure' || 'success' }}
+          WORKFLOW_HEALTH: ${{ job.status != 'success' && 'failure' || steps.collection.outcome != 'success' && 'failure' || steps.export.outcome == 'failure' && 'failure' || steps.persist_collection.outcome == 'failure' && 'failure' || 'success' }}
         run: |
           ARGS=(--summary logs/runs/latest-summary.json --state data/alert-state.json --workflow-status "$WORKFLOW_HEALTH")
           if [ "$MONITOR_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
