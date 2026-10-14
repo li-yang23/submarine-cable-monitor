@@ -202,9 +202,9 @@ class CrossSourceRecovery:
                 found = parse_rss_entries(rss.content)
                 successful += 1
                 entries.extend(found[:20])
-                emit("cross_source_search", "completed", **article_fields(row), query=query, entry_count=len(found))
+                emit("cross_source_search", "completed", **{**article_fields(row), "query": query}, entry_count=len(found))
             except Exception as exc:
-                emit("cross_source_search", "failed", **article_fields(row), reason="search_failed", **error_details(exc))
+                emit("cross_source_search", "failed", **{**article_fields(row), "query": query}, reason="search_failed", **error_details(exc))
         if not successful:
             return [], "search_failed"
         articles, seen = [], set()
