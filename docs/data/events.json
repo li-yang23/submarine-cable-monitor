@@ -1,5 +1,111 @@
 [
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "separate locations (from Dubai and Oman)",
+    "accident_type": "Cut",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW-4",
+    "created_at": "2026-10-14T11:27:48+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE03QmJ1Wlhha3lfMzZRSk9fSVFXSDdSdVYzcFc2UUZ2NnpITGRVaFJFQjVhb19Fbk8xLUdqdE15SnpNUWtrMmFhV1dLLTZvUnlkMW83VUJVVU1ib1lxbU5seHFSeTlQeUhlUU9GZ2ZQanM5MHNhXzVDaFBQZVA5SWc?oc=5",
+    "event_uid": "evt_ca9b8705401c27e1ece3",
+    "evidence_urls": [
+      "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 4",
+    "occurrence_date": null,
+    "original_text": "Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed.",
+    "original_text_zh": "SMW-4和SMW-Fa电缆在从迪拜和阿曼的路线沿线被切断，目前尚未完成维修。",
+    "published_date": "2026-10-12",
+    "raw_data": {
+      "article": {
+        "content": "In Islamabad, two fiber-optic cables linking Pakistan globally have been severed from separate locations. This incident is expected to cause significant disruptions for internet users across the country. According to sources within the Telecommunications Authority, the damage to these major fiber optic cables will impact both mobile and landline internet users, leading to difficulties in accessing the internet. Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed. Mobile phone companies have notified users via SMS about anticipated slow internet speeds.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE03QmJ1Wlhha3lfMzZRSk9fSVFXSDdSdVYzcFc2UUZ2NnpITGRVaFJFQjVhb19Fbk8xLUdqdE15SnpNUWtrMmFhV1dLLTZvUnlkMW83VUJVVU1ib1lxbU5seHFSeTlQeUhlUU9GZ2ZQanM5MHNhXzVDaFBQZVA5SWc?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-12",
+        "queue_id": "fc82843b04e470c219a4e87b70a2e3d8",
+        "source": "Google News",
+        "title": "Internet again down in Pakistan: Here’s why",
+        "url": "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why"
+      },
+      "extracted": {
+        "accident_location": "separate locations (from Dubai and Oman)",
+        "accident_type": "Cut",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW-4",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed.",
+        "original_text_zh": "SMW-4和SMW-Fa电缆在从迪拜和阿曼的路线沿线被切断，目前尚未完成维修。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW-4",
+    "title": "Internet again down in Pakistan: Here’s why",
+    "updated_at": "2026-10-14T11:27:48+00:00",
+    "url": "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "separate locations (from Dubai and Oman)",
+    "accident_type": "Cut",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW-Fa",
+    "created_at": "2026-10-14T11:27:48+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE03QmJ1Wlhha3lfMzZRSk9fSVFXSDdSdVYzcFc2UUZ2NnpITGRVaFJFQjVhb19Fbk8xLUdqdE15SnpNUWtrMmFhV1dLLTZvUnlkMW83VUJVVU1ib1lxbU5seHFSeTlQeUhlUU9GZ2ZQanM5MHNhXzVDaFBQZVA5SWc?oc=5",
+    "event_uid": "evt_629502002d3e0db335bd",
+    "evidence_urls": [
+      "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why"
+    ],
+    "normalized_cable_id": "SMW-FA",
+    "occurrence_date": null,
+    "original_text": "Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed.",
+    "original_text_zh": "SMW-4和SMW-Fa电缆在从迪拜和阿曼的路线沿线被切断，目前尚未完成维修。",
+    "published_date": "2026-10-12",
+    "raw_data": {
+      "article": {
+        "content": "In Islamabad, two fiber-optic cables linking Pakistan globally have been severed from separate locations. This incident is expected to cause significant disruptions for internet users across the country. According to sources within the Telecommunications Authority, the damage to these major fiber optic cables will impact both mobile and landline internet users, leading to difficulties in accessing the internet. Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed. Mobile phone companies have notified users via SMS about anticipated slow internet speeds.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE03QmJ1Wlhha3lfMzZRSk9fSVFXSDdSdVYzcFc2UUZ2NnpITGRVaFJFQjVhb19Fbk8xLUdqdE15SnpNUWtrMmFhV1dLLTZvUnlkMW83VUJVVU1ib1lxbU5seHFSeTlQeUhlUU9GZ2ZQanM5MHNhXzVDaFBQZVA5SWc?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-12",
+        "queue_id": "fc82843b04e470c219a4e87b70a2e3d8",
+        "source": "Google News",
+        "title": "Internet again down in Pakistan: Here’s why",
+        "url": "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why"
+      },
+      "extracted": {
+        "accident_location": "separate locations (from Dubai and Oman)",
+        "accident_type": "Cut",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW-Fa",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Both the SMW-4 and SMW-Fa cables have been cut along routes from Dubai and Oman, and repairs have not yet been completed.",
+        "original_text_zh": "SMW-4和SMW-Fa电缆在从迪拜和阿曼的路线沿线被切断，目前尚未完成维修。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW-Fa",
+    "title": "Internet again down in Pakistan: Here’s why",
+    "updated_at": "2026-10-14T11:27:48+00:00",
+    "url": "https://www.bolnews.com/pakistan/internet-again-down-in-pakistan-heres-why",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "Syria",
     "accident_type": "Cut",
