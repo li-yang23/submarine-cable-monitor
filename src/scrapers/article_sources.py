@@ -263,6 +263,9 @@ class GoogleNewsArticleScraper(ArticleScraper):
         )
 
     def get(self, url: str) -> requests.Response:
+        # RSS uses a short deadline; publisher bodies need the shared recovery path.
+        if urlparse(url).hostname != "news.google.com":
+            return super().get(url)
         response = self.session.get(url, timeout=(5, 10), allow_redirects=True)
         response.raise_for_status()
         return response

@@ -7,7 +7,7 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 import requests
 
-from src.scrapers.article_sources import ArticleScraper, article_body_text
+from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper, article_body_text
 from src.utils import Config
 from src.utils.audit import AuditRun
 from scripts.notify_monitor import build_report
@@ -49,6 +49,16 @@ class FetchRecoveryTests(unittest.TestCase):
             scraper.get('https://publisher.example/another')
             plain.assert_called_once()
             self.assertEqual(browser.call_count, 2)
+
+    def test_google_news_publisher_uses_shared_recovery(self):
+        scraper = GoogleNewsArticleScraper(Config(article_queue_path=''))
+        with patch.object(scraper.session, 'get', return_value=response(403)), patch.object(scraper, '_browser_get', return_value=response()) as browser, patch('time.sleep'):
+            self.assertEqual(scraper.get('https://publisher.example/story').status_code, 200)
+            browser.assert_called_once()
+        with patch.object(scraper.session, 'get', return_value=response()) as rss, patch.object(scraper, '_browser_get') as browser:
+            scraper.get('https://news.google.com/rss/search?q=cable')
+            rss.assert_called_once()
+            browser.assert_not_called()
 
     def test_429_respects_retry_after_across_restarts(self):
         with tempfile.TemporaryDirectory() as tmp:
