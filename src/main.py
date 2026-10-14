@@ -25,6 +25,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--since", help="Only collect articles/events on or after YYYY-MM-DD when source dates are known.")
     parser.add_argument("--audit-dir", help="Directory for per-run JSONL traces and summaries (default: logs/runs).")
     parser.add_argument("--audit-search", metavar="TEXT", help="Search saved traces by title, URL, article ID, event UID or reason, including linked article stages; does not collect news.")
+    parser.add_argument("--queue-list", action="store_true", help="List pending, retry and review article metadata without fetching.")
+    parser.add_argument("--queue-retry", metavar="ID_OR_URL", help="Requeue an article by ID/URL, or all-retry/all-review.")
+    parser.add_argument("--enqueue-url", action="append", default=[], metavar="URL", help="Add a known public article URL to the durable queue (repeatable).")
+    parser.add_argument("--queue-import-audit", metavar="JSONL", help="Recover discovered article metadata from a previous audit trace.")
     parser.add_argument("--audit-run", metavar="RUN_ID", help="Restrict --audit-search to one run ID.")
     parser.add_argument("--audit-limit", type=int, default=200, help="Maximum search results (0 for all).")
     parser.add_argument(
@@ -56,6 +60,7 @@ def main() -> int:
     config = Config.from_yaml(resolve_path(args.config))
     config.audit_dir = resolve_path(args.audit_dir or config.audit_dir)
     config.article_state_path = resolve_path(config.article_state_path)
+    config.article_queue_path = resolve_path(config.article_queue_path)
     if args.audit_search is not None:
         from src.utils.audit import search_audit
 
@@ -68,6 +73,44 @@ def main() -> int:
             count += 1
         logger.info("Found %s audit records in %s", count, config.audit_dir)
         return 0
+    queue_action = args.queue_list or args.queue_retry or args.enqueue_url or args.queue_import_audit
+    if queue_action:
+        from src.storage.article_queue import ArticleQueue
+        from src.utils.audit import safe_url
+        from urllib.parse import urlsplit
+
+        queue = ArticleQueue.from_config(config, dry_run=args.dry_run)
+        for url in args.enqueue_url:
+            parts = urlsplit(url)
+            if parts.scheme not in {"https", "http"} or not parts.hostname or parts.username or parts.password:
+                raise ValueError("A public HTTP(S) article URL without credentials is required")
+            queue.enqueue({"source": "Google News", "url": safe_url(url), "discovered_url": safe_url(url), "title": "Manually queued article", "keyword": "manual"})
+        if args.queue_import_audit:
+            with Path(resolve_path(args.queue_import_audit)).open(encoding="utf-8") as handle:
+                for line in handle:
+                    row = json.loads(line)
+                    if row.get("stage") == "discover" and row.get("outcome") == "found" and (row.get("url") or row.get("discovered_url")):
+                        if args.since and row.get("published_date") and row["published_date"] < args.since:
+                            continue
+                        item = {key: row[key] for key in queue.metadata_fields if row.get(key)}
+                        if args.since:
+                            item["initial_since"] = args.since
+                        queue.enqueue(item)
+        if args.queue_retry:
+            if args.queue_retry in {"all-retry", "all-review"}:
+                status = args.queue_retry.removeprefix("all-")
+                for row in list(queue.items.values()):
+                    if row["status"] == status:
+                        queue.requeue(row)
+            elif not queue.requeue(args.queue_retry):
+                logger.error("Article not found in queue")
+                return 1
+            queue.persist()
+        if args.queue_list:
+            for row in queue.items.values():
+                if row["status"] != "done":
+                    print(json.dumps(row, ensure_ascii=False))
+        logger.info("Article queue: %s", queue.stats())
     store = EventStore(resolve_path(config.event_store_path))
     exit_code = 0
 
@@ -104,6 +147,7 @@ def main() -> int:
             args.export_json,
             args.export_csv,
             args.init_db,
+            queue_action,
         ]
     )
     if should_run:
@@ -112,7 +156,7 @@ def main() -> int:
         pipeline = MonitorPipeline(config, store=store)
         summary = pipeline.run(sources=normalize_sources(args.sources), since=args.since, dry_run=args.dry_run)
         logger.info("Pipeline summary: %s", summary.to_dict())
-        if summary.errors:
+        if summary.status != "success":
             exit_code = 1
 
     if args.export_json:

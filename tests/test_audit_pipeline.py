@@ -32,7 +32,7 @@ def read_records(audit):
 class DiscoveryAuditTests(unittest.TestCase):
     def test_later_queries_are_discovered_and_fetched_with_fair_budget(self):
         with tempfile.TemporaryDirectory() as tmp:
-            config = Config(google_news_keywords=["first", "last"], google_news_max_attempts=2, google_news_max_articles=2)
+            config = Config(article_queue_path=str(Path(tmp) / "queue.json"), google_news_keywords=["first", "last"], google_news_max_attempts=2, google_news_max_articles=2)
             scraper = GoogleNewsArticleScraper(config)
             feeds = [rss(("old", "Old", "Thu, 01 Oct 2026 01:00:00 GMT"), ("new", "New", "Fri, 02 Oct 2026 01:00:00 GMT")), rss(("globe", "Globe outage", "Sat, 03 Oct 2026 01:00:00 GMT"))]
             audit = AuditRun(tmp)
@@ -50,7 +50,7 @@ class DiscoveryAuditTests(unittest.TestCase):
 
     def test_failed_feed_does_not_abort_later_query_and_preserves_trace(self):
         with tempfile.TemporaryDirectory() as tmp:
-            scraper = GoogleNewsArticleScraper(Config(google_news_keywords=["bad", "good"]))
+            scraper = GoogleNewsArticleScraper(Config(article_queue_path=str(Path(tmp) / "queue.json"), google_news_keywords=["bad", "good"]))
             audit = AuditRun(tmp)
             audit.activate()
             with patch.object(scraper, "get", side_effect=[requests.Timeout("SECRET body"), SimpleNamespace(content=rss(("a", "Cable outage", "Thu, 01 Oct 2026 01:00:00 GMT")))]), patch.object(scraper, "_fetch_news_article", return_value=None):
@@ -62,7 +62,7 @@ class DiscoveryAuditTests(unittest.TestCase):
             self.assertNotIn("SECRET", (audit.path / "audit.jsonl").read_text())
 
     def test_duplicates_and_old_news_do_not_consume_fetch_attempts(self):
-        scraper = GoogleNewsArticleScraper(Config(google_news_keywords=["a", "b"], google_news_max_attempts=2))
+        scraper = GoogleNewsArticleScraper(Config(article_queue_path="", google_news_keywords=["a", "b"], google_news_max_attempts=2))
         feeds = [rss(("old", "Old", "Wed, 01 Oct 2025 01:00:00 GMT"), ("same", "Same", "Thu, 01 Oct 2026 01:00:00 GMT")), rss(("same", "Same", "Thu, 01 Oct 2026 01:00:00 GMT"), ("later", "Later", "Thu, 01 Oct 2026 01:00:00 GMT"))]
         with patch.object(scraper, "get", side_effect=[SimpleNamespace(content=f) for f in feeds]), patch.object(scraper, "_fetch_news_article", return_value=None) as fetch:
             scraper.scrape_articles(since="2026-10-01")
@@ -74,7 +74,7 @@ class DiscoveryAuditTests(unittest.TestCase):
 
     def test_decode_and_short_body_have_distinct_reasons(self):
         with tempfile.TemporaryDirectory() as tmp:
-            scraper = GoogleNewsArticleScraper(Config())
+            scraper = GoogleNewsArticleScraper(Config(article_queue_path=""))
             audit = AuditRun(tmp)
             audit.activate()
             with patch.object(scraper, "_resolve_google_news_url", return_value=""):
@@ -87,24 +87,28 @@ class DiscoveryAuditTests(unittest.TestCase):
 
 
 class PipelineAuditTests(unittest.TestCase):
-    def test_rejections_fallback_and_merge_are_traceable_without_bodies(self):
+    def test_rejections_and_merge_are_traceable_without_bodies(self):
         with tempfile.TemporaryDirectory() as tmp:
-            config = Config(audit_dir=str(Path(tmp) / "runs"), article_state_path=str(Path(tmp) / "article-state.json"))
+            config = Config(audit_dir=str(Path(tmp) / "runs"), article_state_path=str(Path(tmp) / "article-state.json"), article_queue_path=str(Path(tmp) / "queue.json"))
             extractor = EventExtractor()
             extractor.api_key = "not-a-real-key"
             articles = [
                 {"source": "fixture", "title": "WACS cable fault", "url": "https://example.com/good", "content": "WACS cable fault affected South Africa.", "published_date": "2026-10-01"},
                 {"source": "fixture", "title": "Internet outage", "url": "https://example.com/rejected", "content": "Internet outage in the Philippines.", "published_date": "2026-10-01"},
             ]
+            articles.append({**articles[0], "url": "https://example.com/second-report"})
             store = EventStore(str(Path(tmp) / "events.jsonl"))
-            pipeline = MonitorPipeline(config, store, extractor)
-            fake_scraper = SimpleNamespace(scrape_articles=lambda **kwargs: articles + [articles[0]])
-            with patch("src.pipeline.SCRAPER_CLASSES", {"fixture": lambda config: fake_scraper}), patch.object(extractor, "_extract_with_llm", side_effect=RuntimeError("SECRET LLM response")):
+            pipeline = MonitorPipeline(config, store, extractor, health_checker=lambda *args: {"status": "healthy", "available": True})
+            fake_scraper = SimpleNamespace(scrape_articles=lambda **kwargs: articles)
+            def extracted(article):
+                return [extractor._decorate_event({"cable_name": "WACS" if "WACS" in article["title"] else "", "occurrence_date": None, "affected_area": "South Africa" if "WACS" in article["title"] else "Philippines", "original_text": article["content"]}, article)]
+            with patch("src.pipeline.SCRAPER_CLASSES", {"fixture": lambda config: fake_scraper}), patch.object(extractor, "_extract_with_llm", side_effect=extracted):
                 summary = pipeline.run(["fixture"])
             records = [json.loads(line) for line in (Path(summary.audit_path) / "audit.jsonl").read_text().splitlines()]
             self.assertEqual(summary.status, "degraded")
             self.assertEqual((summary.inserted, summary.merged, summary.rejected), (1, 1, 1))
-            self.assertTrue(any(r.get("method") == "rules_fallback" for r in records))
+            self.assertTrue(any(r.get("method") == "llm" for r in records))
+            self.assertEqual(summary.queue["review"], 1)
             self.assertTrue(any(r.get("reason") == "unnamed_missing_date" for r in records))
             self.assertTrue(any(r["outcome"] == "merged" and r.get("event_uid") for r in records))
             self.assertEqual(store.events[0]["verification_status"], "rule_verified")
@@ -115,7 +119,7 @@ class PipelineAuditTests(unittest.TestCase):
 
     def test_source_failure_still_finalizes_audit(self):
         with tempfile.TemporaryDirectory() as tmp:
-            pipeline = MonitorPipeline(Config(audit_dir=tmp, article_state_path=str(Path(tmp) / "article-state.json")), EventStore(str(Path(tmp) / "events.jsonl")))
+            pipeline = MonitorPipeline(Config(audit_dir=tmp, article_state_path=str(Path(tmp) / "article-state.json"), article_queue_path=str(Path(tmp) / "queue.json")), EventStore(str(Path(tmp) / "events.jsonl")), health_checker=lambda *args: {"status": "healthy", "available": True})
             with patch("src.pipeline.SCRAPER_CLASSES", {"bad": lambda config: (_ for _ in ()).throw(RuntimeError("secret"))}):
                 summary = pipeline.run(["bad"])
             self.assertEqual(summary.status, "failed")
@@ -146,7 +150,7 @@ class PipelineAuditTests(unittest.TestCase):
 
 class UnnamedIncidentTests(unittest.TestCase):
     def setUp(self):
-        self.extractor = EventExtractor()
+        self.extractor = EventExtractor(allow_rule_fallback=True)
         self.extractor.api_key = None
 
     def test_globe_incident_is_kept_without_inventing_cable_name(self):

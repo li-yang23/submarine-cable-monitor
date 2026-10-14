@@ -5,7 +5,7 @@ import re
 from typing import Any
 
 from .normalization import clean_text, normalize_accident_type, parse_date
-from src.utils.audit import article_fields, emit, error_details
+from src.utils.audit import article_fields, emit
 
 
 ACCIDENT_KEYWORDS = (
@@ -46,33 +46,83 @@ CABLE_PATTERNS = (
 )
 
 
+class ExtractionUnavailable(Exception):
+    """Safe, structured failure: never retain response bodies, prompts, or keys."""
+
+    def __init__(self, reason: str, *, http_status: int | None = None, retryable: bool = False, provider: str = "unknown"):
+        self.reason = reason
+        self.http_status = http_status
+        self.retryable = retryable
+        self.provider = provider
+        super().__init__(reason)
+
+
+def extraction_failure(exc: Exception, provider: str) -> ExtractionUnavailable:
+    if isinstance(exc, ExtractionUnavailable):
+        return exc
+    status = getattr(exc, "status_code", None)
+    if status is None:
+        status = getattr(getattr(exc, "response", None), "status_code", None)
+    if not isinstance(status, int):
+        status = None
+    if status == 402:
+        reason, retryable = "balance_exhausted", False
+    elif status in (401, 403):
+        reason, retryable = "authentication_failed", False
+    elif status == 429:
+        reason, retryable = "rate_limited", True
+    elif status is not None and status >= 500:
+        reason, retryable = "provider_unavailable", True
+    elif status is not None:
+        reason, retryable = "request_rejected", False
+    elif isinstance(exc, (ValueError, TypeError, IndexError, AttributeError)):
+        reason, retryable = "invalid_response", True
+    elif "timeout" in type(exc).__name__.lower():
+        reason, retryable = "request_timeout", True
+    elif "connection" in type(exc).__name__.lower():
+        reason, retryable = "connection_failed", True
+    else:
+        reason, retryable = "extraction_failed", True
+    return ExtractionUnavailable(reason, http_status=status, retryable=retryable, provider=provider)
+
+
 class EventExtractor:
-    def __init__(self, model: str | None = None):
+    def __init__(self, model: str | None = None, *, allow_rule_fallback: bool = False):
         self.siliconflow_key = os.getenv("SILICONFLOW_API_KEY")
         self.openai_key = os.getenv("OPENAI_API_KEY")
         self.api_key = self.siliconflow_key or self.openai_key
         self.model = model or os.getenv("LLM_MODEL") or ("deepseek-ai/DeepSeek-V3" if self.siliconflow_key else "gpt-4o-mini")
-        self.base_url = os.getenv("SILICONFLOW_BASE_URL") if self.siliconflow_key else os.getenv("OPENAI_BASE_URL")
+        self.provider = "siliconflow" if self.siliconflow_key else "openai"
+        self.base_url = (os.getenv("SILICONFLOW_BASE_URL") or "https://api.siliconflow.cn/v1") if self.siliconflow_key else os.getenv("OPENAI_BASE_URL")
+        self.allow_rule_fallback = allow_rule_fallback
         self._client = None
         self.logger = logging.getLogger(self.__class__.__name__)
-        self.last_extraction_method = "rules"
+        self.last_extraction_method = "unavailable"
 
     @property
     def available(self) -> bool:
         return bool(self.api_key)
 
     def extract(self, article: dict[str, Any]) -> list[dict[str, Any]]:
+        failure = None
         if self.available:
             try:
                 self.last_extraction_method = "llm"
                 return self._extract_with_llm(article)
             except Exception as exc:
-                self.last_extraction_method = "rules_fallback"
-                emit("extract", "fallback", **article_fields(article), reason="llm_error", method="rules_fallback", **error_details(exc))
-                self.logger.warning("LLM extraction failed, falling back to rules: %s", type(exc).__name__)
-                return self._extract_with_rules(article)
-        self.last_extraction_method = "rules"
-        return self._extract_with_rules(article)
+                failure = extraction_failure(exc, self.provider)
+        else:
+            failure = ExtractionUnavailable("missing_api_key", provider=self.provider)
+        if self.allow_rule_fallback:
+            self.last_extraction_method = "rules_fallback" if self.available else "rules"
+            emit("extract", "fallback", **article_fields(article), reason=failure.reason,
+                 method=self.last_extraction_method, http_status=failure.http_status)
+            self.logger.warning("Explicit rule fallback enabled: %s", failure.reason)
+            return self._extract_with_rules(article)
+        self.last_extraction_method = "unavailable"
+        # The original SDK exception may contain a full request or provider body.
+        # Raise outside the except block without attaching that exception.
+        raise failure from None
 
     def is_real_event(self, event: dict[str, Any]) -> bool:
         return not self.rejection_reason(event)
@@ -121,7 +171,9 @@ Text:
         if self._client is None:
             from openai import OpenAI
 
-            kwargs = {"api_key": self.api_key, "timeout": 45}
+            # Failed articles remain queued for a future run. SDK retries can
+            # multiply charges on timeouts, so one attempt is made per run.
+            kwargs = {"api_key": self.api_key, "timeout": 45, "max_retries": 0}
             if self.base_url:
                 kwargs["base_url"] = self.base_url
             self._client = OpenAI(**kwargs)
@@ -185,12 +237,38 @@ Output accident in JSON format DIRECTLY, do not use symbols like ```json.
             model=self.model,
             messages=[{"role": "user", "content": prompt}],
         )
-        raw = response.choices[0].message.content or ""
+        usage = getattr(response, "usage", None)
+        tokens = {}
+        for name in ("prompt_tokens", "completion_tokens", "total_tokens"):
+            value = usage.get(name) if isinstance(usage, dict) else getattr(usage, name, None)
+            # Missing usage and mock SDK attributes are unknown, never fabricated
+            # zeroes. Do not calculate total_tokens from partially returned fields.
+            if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+                tokens[name] = value
+        model = getattr(response, "model", None)
+        if not isinstance(model, str) or not model.strip():
+            model = self.model
+        emit("model_usage", "reported" if tokens else "unavailable", **article_fields(article),
+             provider=self.provider, model=model, api_operation="chat.completions.create", **tokens)
+        choice = response.choices[0]
+        if getattr(choice, "finish_reason", None) in {"length", "content_filter"}:
+            raise ValueError("Incomplete model response")
+        raw = choice.message.content or ""
         data = self._parse_json(raw)
         if not isinstance(data, dict) or not isinstance(data.get("submarine_accidents"), list):
             raise ValueError("LLM response is missing the submarine_accidents array")
         events = data["submarine_accidents"]
-        return [self._decorate_event(event, article) for event in events if isinstance(event, dict)]
+        fields = {"cable_name", "accident_location", "reason", "accident_type", "affected_area", "occurrence_date", "repair_date", "original_text"}
+        for event in events:
+            if not isinstance(event, dict) or not fields <= event.keys():
+                raise ValueError("Invalid incident object schema")
+            if any(value is not None and not isinstance(value, str) for key, value in event.items() if key in fields | {"original_text_zh", "chinese_translation"}):
+                raise ValueError("Invalid incident field type")
+            if not clean_text(event.get("original_text")):
+                raise ValueError("Incident evidence is missing")
+            if event.get("accident_type") not in {"Limit", "Cut", "Fluctuate"}:
+                raise ValueError("Invalid incident type")
+        return [self._decorate_event(event, article) for event in events]
 
     def check_event_against_context(self, context: str, accident: dict[str, Any]) -> bool:
         if not self.available:

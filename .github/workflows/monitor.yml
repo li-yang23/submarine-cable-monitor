@@ -8,12 +8,13 @@ on:
       - "docs/**"
       - "data/**"
       - "src/**"
+      - "scripts/notify_monitor.py"
       - "tests/**"
       - "config.yaml"
       - "requirements.txt"
       - ".github/workflows/monitor.yml"
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "17 */4 * * *"
   workflow_dispatch:
     inputs:
       sources:
@@ -45,6 +46,10 @@ jobs:
     name: Collect, Export, and Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    outputs:
+      pages-ready: ${{ steps.pages_artifact.outcome }}
+      notification-outcome: ${{ steps.notify.outcome }}
+      infrastructure-failed: ${{ steps.persist_alert.outcome == 'failure' || steps.monitor_artifacts.outcome == 'failure' || steps.pages_setup.outcome == 'failure' || steps.pages_artifact.outcome == 'failure' }}
 
     steps:
       - name: Checkout repository
@@ -74,7 +79,9 @@ jobs:
           python -m src.main --init-db
 
       - name: Run monitor
+        id: collection
         if: ${{ github.event_name != 'push' }}
+        continue-on-error: true
         env:
           SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
           SILICONFLOW_BASE_URL: ${{ secrets.SILICONFLOW_BASE_URL }}
@@ -105,11 +112,66 @@ jobs:
           fi
 
       - name: Export data for GitHub Pages
-        if: ${{ github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
+        id: export
+        if: ${{ always() && github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
+        continue-on-error: true
         run: |
-          python -m src.main --clean-store --translate-missing --export-json docs/data/events.json --export-csv docs/data/events.csv
+          python -m src.main --export-json docs/data/events.json --export-csv docs/data/events.csv
+
+      - name: Persist completed events and unfinished queue
+        id: persist_collection
+        if: ${{ always() && github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          for file in data/events.jsonl data/article-state.json data/article-queue.json data/alert-state.json docs/data/events.json docs/data/events.csv; do
+            if [ -f "$file" ]; then git add -- "$file"; fi
+          done
+          if git diff --staged --quiet; then
+            echo "No collection state changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: persist cable events and collection queue"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Notify collection health
+        id: notify
+        if: ${{ always() && github.event_name != 'push' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALERT_GITHUB_USER: li-yang23
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          WORKFLOW_HEALTH: ${{ failure() && 'failure' || steps.collection.outcome != 'success' && 'failure' || steps.export.outcome == 'failure' && 'failure' || steps.persist_collection.outcome == 'failure' && 'failure' || 'success' }}
+        run: |
+          ARGS=(--summary logs/runs/latest-summary.json --state data/alert-state.json --workflow-status "$WORKFLOW_HEALTH")
+          if [ "$MONITOR_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          python scripts/notify_monitor.py "${ARGS[@]}"
+
+      - name: Persist delivered notification state
+        id: persist_alert
+        if: ${{ always() && github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if [ ! -f data/alert-state.json ]; then exit 0; fi
+          git add -- data/alert-state.json
+          if git diff --staged --quiet; then exit 0; fi
+          git commit -m "chore: persist monitor notification state"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
 
       - name: Upload monitor artifacts
+        id: monitor_artifacts
         if: ${{ always() && github.event_name != 'push' }}
         uses: actions/upload-artifact@v4
         with:
@@ -117,6 +179,8 @@ jobs:
           path: |
             data/events.jsonl
             data/article-state.json
+            data/article-queue.json
+            data/alert-state.json
             docs/data/events.json
             docs/data/events.csv
             logs/runs/
@@ -124,35 +188,52 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
-      - name: Commit and push data updates
-        if: ${{ github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add data/events.jsonl docs/data/events.json docs/data/events.csv
-          if [ -f data/article-state.json ]; then git add data/article-state.json; fi
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "No data changes to commit."
-            exit 0
-          fi
-          git commit -m "chore: update submarine cable events"
-          git pull --rebase --autostash origin main
-          git push origin HEAD:main
-
       - name: Setup Pages
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+        id: pages_setup
+        if: ${{ always() && github.event.inputs.dry_run != 'true' && (github.event_name == 'push' && success() || steps.export.outcome == 'success' && steps.persist_collection.outcome == 'success') }}
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+        id: pages_artifact
+        if: ${{ always() && steps.pages_setup.outcome == 'success' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: "docs/"
 
+      - name: Require healthy collection and durable state
+        if: ${{ always() && github.event_name != 'push' }}
+        env:
+          COLLECTION_OUTCOME: ${{ steps.collection.outcome }}
+          EXPORT_OUTCOME: ${{ steps.export.outcome }}
+          PERSIST_COLLECTION_OUTCOME: ${{ steps.persist_collection.outcome }}
+          NOTIFY_OUTCOME: ${{ steps.notify.outcome }}
+          PERSIST_ALERT_OUTCOME: ${{ steps.persist_alert.outcome }}
+          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          required = ["COLLECTION_OUTCOME", "NOTIFY_OUTCOME"]
+          if os.environ["MONITOR_DRY_RUN"] != "true":
+              required += ["EXPORT_OUTCOME", "PERSIST_COLLECTION_OUTCOME", "PERSIST_ALERT_OUTCOME"]
+          failures = [name for name in required if os.environ[name] != "success"]
+          try:
+              summary = json.loads(Path("logs/runs/latest-summary.json").read_text())
+              if summary.get("status") != "success":
+                  failures.append("collection_health")
+          except (OSError, ValueError, AttributeError):
+              failures.append("missing_or_invalid_summary")
+          if failures:
+              print("::error::Collection requires attention: " + ", ".join(failures) + ". Inspect the saved queue, health notification and audit artifact.")
+              raise SystemExit(1)
+          PY
+
   deploy-pages:
     name: Deploy GitHub Pages
     needs: monitor
-    if: ${{ github.event.inputs.dry_run != 'true' }}
+    if: ${{ always() && github.event.inputs.dry_run != 'true' && needs.monitor.outputs.pages-ready == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -164,28 +245,49 @@ jobs:
 
   notify-on-failure:
     needs: [monitor, deploy-pages]
-    if: failure()
+    if: ${{ always() && github.event.inputs.dry_run != 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Create issue on failure
+      - name: Notify infrastructure or notification failure
         uses: actions/github-script@v7
+        env:
+          INFRA_FAILED: ${{ needs.deploy-pages.result == 'failure' || needs.monitor.outputs.infrastructure-failed == 'true' || (needs.monitor.result == 'failure' || needs.monitor.result == 'cancelled') && needs.monitor.outputs.notification-outcome != 'success' }}
         with:
           script: |
+            const title = '[monitor] Workflow infrastructure requires attention';
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `@li-yang23\n\n采集工作流或告警投递未成功完成，请检查运行记录：${runUrl}。未假定本次新闻已处理或邮件已发送。`;
             const issues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
-              labels: 'monitoring-failure'
+              per_page: 100
             });
-            if (issues.data.length === 0) {
+            const existing = issues.data.find(issue => issue.title === title && !issue.pull_request);
+            if (process.env.INFRA_FAILED !== 'true') {
+              if (existing) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: existing.number,
+                  body: `工作流保存、通知及部署步骤已恢复。采集内容是否仍待处理请查看独立的采集健康告警。运行：${runUrl}`
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: existing.number, state: 'closed'
+                });
+              }
+              return;
+            }
+            if (existing) {
+              if (Date.now() - Date.parse(existing.updated_at) < 24 * 60 * 60 * 1000) return;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: existing.number, body
+              });
+            } else {
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                title: 'Submarine Cable Monitor Failed',
-                body: 'The scheduled submarine cable monitoring workflow failed. Check the workflow logs for details.',
-                labels: ['monitoring-failure']
+                title, body
               });
             }

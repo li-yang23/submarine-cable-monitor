@@ -7,6 +7,8 @@ data/*
 !data/events.json
 !data/events.csv
 !data/article-state.json
+!data/article-queue.json
+!data/alert-state.json
 
 # Local secrets
 .env

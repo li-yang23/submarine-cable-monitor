@@ -10,6 +10,7 @@ from src.pipeline import MonitorPipeline
 from src.processing.extractor import EventExtractor
 from src.scrapers.article_sources import GoogleNewsArticleScraper
 from src.storage import EventStore
+from src.storage.article_queue import ArticleQueue
 from src.storage.article_state import ArticleState
 from src.utils import Config
 from src.utils.audit import AuditRun
@@ -20,14 +21,14 @@ def article(key="a"):
 
 
 def config_for(directory, **kwargs):
-    return Config(audit_dir=str(Path(directory) / "runs"), article_state_path=str(Path(directory) / "article-state.json"), **kwargs)
+    return Config(audit_dir=str(Path(directory) / "runs"), article_state_path=str(Path(directory) / "article-state.json"), article_queue_path=str(Path(directory) / "queue.json"), **kwargs)
 
 
 def run_fixture(config, extractor, articles=None, store=None, dry_run=False):
     store = store or EventStore(str(Path(config.article_state_path).with_name("events.jsonl")))
     scraper = SimpleNamespace(scrape_articles=lambda **kwargs: articles or [article()])
     with patch("src.pipeline.SCRAPER_CLASSES", {"fixture": lambda config: scraper}):
-        return MonitorPipeline(config, store, extractor).run(["fixture"], dry_run=dry_run)
+        return MonitorPipeline(config, store, extractor, health_checker=lambda *args: {"status": "healthy", "available": True}).run(["fixture"], dry_run=dry_run)
 
 
 def feed(*keys):
@@ -51,7 +52,7 @@ class ArticleStateTests(unittest.TestCase):
             client.chat.completions.create.assert_called_once()
             self.assertTrue(ArticleState.from_config(config).is_processed(article()["url"]))
 
-    def test_successful_zero_candidate_and_rejected_articles_are_cached_by_both_urls(self):
+    def test_zero_candidate_cached_by_both_urls_but_rejections_wait_for_review(self):
         with tempfile.TemporaryDirectory() as tmp:
             config = config_for(tmp)
             # A lightweight fake extractor need not expose the optional available property.
@@ -59,14 +60,18 @@ class ArticleStateTests(unittest.TestCase):
             summary = run_fixture(config, extractor, [article("zero"), article("rejected")])
             self.assertEqual(summary.rejected, 1)
             state = ArticleState.from_config(config)
-            for key in ("zero", "rejected"):
-                self.assertTrue(state.is_processed(f"https://news.google.com/{key}"))
-                self.assertTrue(state.is_processed(f"https://example.com/{key}"))
+            for prefix in ("https://news.google.com", "https://example.com"):
+                self.assertTrue(state.is_processed(f"{prefix}/zero"))
+                self.assertFalse(state.is_processed(f"{prefix}/rejected"))
+            self.assertEqual(ArticleQueue.from_config(config).get(article("rejected"))["status"], "review")
+            self.assertEqual(summary.queue["review"], 1)
+            self.assertEqual(summary.status, "degraded")
             extractor.extract.reset_mock()
             summary = run_fixture(config, extractor, [article("zero"), article("rejected")])
             extractor.extract.assert_not_called()
             records = [json.loads(line) for line in (Path(summary.audit_path) / "audit.jsonl").read_text().splitlines()]
-            self.assertEqual(sum(r.get("reason") == "already_processed" for r in records), 2)
+            self.assertEqual(sum(r.get("reason") == "already_processed" for r in records), 1)
+            self.assertEqual(sum(r.get("reason") == "awaiting_review" for r in records), 1)
 
     def test_fallback_and_extraction_errors_remain_retryable(self):
         for method, result in (("rules_fallback", []), ("llm", RuntimeError("temporary failure")), ("rules", [])):
@@ -78,6 +83,10 @@ class ArticleStateTests(unittest.TestCase):
                 self.assertFalse(ArticleState.from_config(config).is_processed(article()["url"]))
                 extractor.last_extraction_method = "llm"
                 extractor.extract = Mock(return_value=[])
+                queue = ArticleQueue.from_config(config)
+                self.assertEqual(queue.get(article())["status"], "retry")
+                self.assertTrue(queue.requeue(article()))
+                queue.persist()
                 run_fixture(config, extractor)
                 extractor.extract.assert_called_once()
                 self.assertTrue(ArticleState.from_config(config).is_processed(article()["url"]))
@@ -107,6 +116,9 @@ class ArticleStateTests(unittest.TestCase):
             with patch.object(store, "upsert", side_effect=RuntimeError("temporary store failure")):
                 self.assertEqual(run_fixture(config, extractor, store=store).errors, 1)
             self.assertFalse(ArticleState.from_config(config).is_processed(article()["url"]))
+            queue = ArticleQueue.from_config(config)
+            self.assertTrue(queue.requeue(article()))
+            queue.persist()
             self.assertEqual(run_fixture(config, extractor, store=store).inserted, 1)
             self.assertTrue(ArticleState.from_config(config).is_processed(article()["url"]))
 

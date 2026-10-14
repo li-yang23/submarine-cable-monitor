@@ -21,7 +21,10 @@ _FIELDS = {
     "occurrence_date", "method", "verification_method", "selected_sources", "since",
     "dry_run", "max_articles", "max_attempts", "attempts", "article_count", "path",
     "github_run_id", "github_run_attempt", "status", "errors", "warnings",
+    "queue_id", "provider", "available", "low_balance", "model", "api_operation",
+    "prompt_tokens", "completion_tokens", "total_tokens",
 }
+_TOKEN_FIELDS = ("prompt_tokens", "completion_tokens", "total_tokens")
 _SECRET = re.compile(r"(secret|password|passwd|token|api.?key|authorization|signature)", re.I)
 
 
@@ -48,7 +51,7 @@ def error_details(exc: Exception) -> dict[str, Any]:
 
 
 def article_fields(article: dict[str, Any]) -> dict[str, Any]:
-    fields = {key: article.get(key) for key in ("source", "title", "url", "discovered_url", "published_date") if article.get(key)}
+    fields = {key: article.get(key) for key in ("source", "title", "url", "discovered_url", "published_date", "queue_id") if article.get(key)}
     identity = article.get("discovered_url") or article.get("url") or article.get("title") or ""
     fields["article_id"] = hashlib.sha256(str(identity).encode()).hexdigest()[:20]
     if article.get("keyword"):
@@ -74,6 +77,10 @@ class AuditRun:
         self.source_counts: Counter[str] = Counter()
         self.failures = 0
         self.token = None
+        self.usage_responses = 0
+        self.usage_responses_with_usage = 0
+        self.usage_tokens: Counter[str] = Counter()
+        self.usage_reported: Counter[str] = Counter()
 
     def activate(self) -> None:
         self.token = _current.set(self)
@@ -82,6 +89,8 @@ class AuditRun:
         record = {"schema_version": 1, "run_id": self.run_id, "timestamp": datetime.now(timezone.utc).isoformat(), "stage": stage, "outcome": outcome}
         for key, value in fields.items():
             if key not in _FIELDS or value is None:
+                continue
+            if key in _TOKEN_FIELDS and (not isinstance(value, int) or isinstance(value, bool) or value < 0):
                 continue
             if key in {"url", "discovered_url"}:
                 value = safe_url(value)
@@ -96,14 +105,27 @@ class AuditRun:
             self.source_counts[f"{fields['source']}:{stage}.{outcome}"] += 1
         if outcome in {"failed", "fallback"}:
             self.failures += 1
+        if stage == "model_usage":
+            self.usage_responses += 1
+            present = [key for key in _TOKEN_FIELDS if key in record]
+            self.usage_responses_with_usage += int(bool(present))
+            for key in present:
+                self.usage_tokens[key] += record[key]
+                self.usage_reported[key] += 1
 
     def finish(self, summary: dict[str, Any]) -> dict[str, Any]:
         self._handle.close()
         if self.token is not None:
             _current.reset(self.token)
-        data = {"schema_version": 1, "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
+        usage = {"responses": self.usage_responses, "responses_with_usage": self.usage_responses_with_usage,
+                 **{key: self.usage_tokens[key] if self.usage_reported[key] else None for key in _TOKEN_FIELDS},
+                 "reported_responses": {key: self.usage_reported[key] for key in _TOKEN_FIELDS}}
+        data = {"schema_version": 1, "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "model_usage": usage, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
         markdown = f"## Collection audit — {self.run_id}\n\nStatus: **{data.get('status', 'unknown')}**\n\n"
         markdown += " | ".join(f"{key}: {data.get(key, 0)}" for key in ("articles", "candidates", "inserted", "merged", "rejected", "errors", "warnings")) + "\n\n"
+        markdown += "Queue: " + json.dumps(data.get("queue", {}), ensure_ascii=False) + "\n\n"
+        markdown += "Model health: " + json.dumps(data.get("model_health", {}), ensure_ascii=False) + "\n\n"
+        markdown += "Model usage (provider-reported tokens only; null means unavailable): " + json.dumps(usage, ensure_ascii=False) + "\n\n"
         markdown += "| Stage / outcome / reason | Count |\n| --- | ---: |\n"
         markdown += "".join(f"| {key} | {value} |\n" for key, value in sorted(self.counts.items()))
         markdown += "\nSearch this run's audit.jsonl by article title, URL, article_id, or event_uid; bodies and model responses are omitted.\n"
