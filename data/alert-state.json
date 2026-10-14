@@ -1,28 +1,28 @@
 {
   "email": {
     "conditions": [
-      "fetch_failure",
+      "budget",
+      "errors",
+      "model_failure",
+      "model_health",
       "queue.retry",
-      "queue.review",
-      "source_failure",
       "status",
-      "warnings",
       "workflow"
     ],
-    "fingerprint": "eefb712d4fe4fb7fe0923c4b9e67ffe8a6fc697dbd30dd406976876e249a0431",
-    "last_sent": 1791970642.271767
+    "fingerprint": "d27f8bfa778d03860ff7c24f8d043bf031a2371ede5a499743dcf03eb1349545",
+    "last_sent": 1791998661.4214149
   },
   "github": {
     "conditions": [
-      "fetch_failure",
+      "budget",
+      "errors",
+      "model_failure",
+      "model_health",
       "queue.retry",
-      "queue.review",
-      "source_failure",
       "status",
-      "warnings",
       "workflow"
     ],
-    "fingerprint": "eefb712d4fe4fb7fe0923c4b9e67ffe8a6fc697dbd30dd406976876e249a0431",
-    "last_sent": 1791970642.271767
+    "fingerprint": "d27f8bfa778d03860ff7c24f8d043bf031a2371ede5a499743dcf03eb1349545",
+    "last_sent": 1791998661.4214149
   }
 }
