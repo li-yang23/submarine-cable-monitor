@@ -265,12 +265,23 @@ jobs:
             const title = '[monitor] Workflow infrastructure requires attention';
             const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const body = `@li-yang23\n\n采集工作流或告警投递未成功完成，请检查运行记录：${runUrl}。未假定本次新闻已处理或邮件已发送。`;
-            const issues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100
-            });
+            // Retry only this read. Retrying a comment/create after an unknown
+            // server response could send duplicate notifications.
+            let issues;
+            for (let attempt = 0; attempt < 3; attempt++) {
+              try {
+                issues = await github.rest.issues.listForRepo({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  per_page: 100
+                });
+                break;
+              } catch (error) {
+                if (attempt === 2 || error.status < 500 || error.status >= 600) throw error;
+                await new Promise(resolve => setTimeout(resolve, 1000 * (attempt + 1)));
+              }
+            }
             const existing = issues.data.find(issue => issue.title === title && !issue.pull_request);
             if (process.env.INFRA_FAILED !== 'true') {
               if (existing) {

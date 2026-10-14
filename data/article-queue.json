@@ -8277,7 +8277,7 @@
     },
     "c4d9cabe02a5e95bbdf2c5bda4009226": {
       "queue_id": "c4d9cabe02a5e95bbdf2c5bda4009226",
-      "status": "retry",
+      "status": "done",
       "first_seen_at": "2026-10-14T11:26:50.184229+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -8292,14 +8292,25 @@
       "last_seen_at": "2026-10-14T11:26:50.184229+00:00",
       "last_attempt_at": "2026-10-14T11:27:18.646010+00:00",
       "url": "https://manilastandard.net/business/314801620/converge-reports-minimal-disruption-from-ph-singapore-cable-outage.html",
-      "reason": "article_fetch_error",
+      "reason": "manual_review:supporting_report",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-14T11:32:37.416162+00:00"
+      "next_attempt_at": null,
+      "completed_at": "2026-10-14T11:36:50.354628+00:00",
+      "force_retry": false,
+      "manual_review": {
+        "classification": "supporting_report",
+        "note": "普通浏览器已取得正文。Converge 回顾 10 月 2 日菲律宾至新加坡故障及分流；Bifrost、SEA-H2X 是备用和冗余线路，不是本文确认损坏的电缆。",
+        "linked_event_uids": [
+          "evt_50591464518b00b97d78"
+        ],
+        "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+        "report": "research/reviews/validation-run-38556533394.json"
+      }
     },
     "0d2d1d54133f9f1ad0c2745c45e1f6b3": {
       "queue_id": "0d2d1d54133f9f1ad0c2745c45e1f6b3",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T11:26:50.987970+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -8314,10 +8325,23 @@
       "last_seen_at": "2026-10-14T11:26:50.987970+00:00",
       "last_attempt_at": "2026-10-14T11:26:52.583342+00:00",
       "url": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:historical_context",
       "review_at": "2026-10-14T11:27:01.398464+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:36:50.354606+00:00",
+      "manual_review": {
+        "classification": "historical_context",
+        "note": "原解析只读到最长的一个正文块（3048 字符）；修复后读取全部 7 个正文块。全文回顾 2024 年 12 月 Eagle S、2024 年 11 月 Yi Peng 3、2025 年 2 月台湾断缆等已记录事故；其他内容为威胁、演练及未建成项目，未确认新增事故。",
+        "linked_event_uids": [
+          "evt_56f4dcfb0e69eb5b76f1",
+          "evt_a294211df980ea47ced2",
+          "evt_72afc87008286c746fe7",
+          "evt_0dda29d0eca6af30be76"
+        ],
+        "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+        "report": "research/reviews/validation-run-38556533394.json"
+      }
     },
     "fc82843b04e470c219a4e87b70a2e3d8": {
       "queue_id": "fc82843b04e470c219a4e87b70a2e3d8",
@@ -8343,7 +8367,7 @@
     },
     "f59c79b2e47b37ec369c0fe12246c55b": {
       "queue_id": "f59c79b2e47b37ec369c0fe12246c55b",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-14T11:26:51.378032+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -8358,10 +8382,20 @@
       "last_seen_at": "2026-10-14T11:26:51.378032+00:00",
       "last_attempt_at": "2026-10-14T11:27:01.407016+00:00",
       "url": "https://itbrief.co.nz/story/retn-adds-sixth-subsea-route-to-boost-taiwan-resilience",
-      "reason": "candidates_rejected",
+      "reason": "manual_review:syndicated_historical_context",
       "review_at": "2026-10-14T11:27:09.458755+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "completed_at": "2026-10-14T11:36:50.354621+00:00",
+      "manual_review": {
+        "classification": "syndicated_historical_context",
+        "note": "ITBrief 新西兰地区版本，与已复核的 RETN 新线路报道内容一致；2024 年红海故障为历史背景。",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614"
+        ],
+        "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+        "report": "research/reviews/validation-run-38556533394.json"
+      }
     },
     "220c1277a8d7647f2639e07c17de1da7": {
       "queue_id": "220c1277a8d7647f2639e07c17de1da7",
