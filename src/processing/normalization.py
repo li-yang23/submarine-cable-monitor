@@ -101,12 +101,16 @@ def normalize_cable_name(value: Any) -> str:
 
 
 def event_uid(event: dict[str, Any]) -> str:
+    cable = normalize_cable_name(event.get("cable_name") or event.get("submarine_name"))
     parts = [
         normalize_key(event.get("url")),
-        normalize_key(normalize_cable_name(event.get("cable_name") or event.get("submarine_name"))),
+        normalize_key(cable),
         normalize_key(event.get("occurrence_date")),
         normalize_key(event.get("accident_location") or event.get("location")),
     ]
+    if not cable:
+        # A single article can report several unnamed faults on the same date.
+        parts.extend([normalize_key(event.get("affected_area")), normalize_key(event.get("original_text"))])
     key = "|".join(part for part in parts if part)
     if not key:
         key = normalize_key(event.get("original_text") or event.get("description") or event.get("title"))
