@@ -54,6 +54,24 @@ python -m src.main --run --sources google_news subtelforum submarinenetworks
 python -m src.main --run --dry-run
 ```
 
+## Diagnostics
+
+每次采集在 `logs/runs/<run_id>/` 生成 `audit.jsonl`、`summary.json` 和 `summary.md`。日志包含所有关键词的发现结果，以及每篇新闻的预算/缓存跳过、抓取失败、模型回退、拒绝原因和入库/合并 UID，不保存全文、模型响应或密钥。Actions Summary 显示 success/degraded/failed；失败时也尝试上传 `monitor-output-<run_id>-<attempt>` 附件，保留30天。
+
+```bash
+python -m src.main --run --sources google_news --since 2026-10-01
+python -m src.main --audit-search Philippines
+python -m src.main --audit-search gmanetwork.com --audit-limit 0
+gh run download RUN_ID --pattern 'monitor-output-*' --dir /tmp/monitor-audit
+python -m src.main --audit-dir /tmp/monitor-audit/logs/runs --audit-search Philippines
+```
+
+可用 `--audit-run RUN_ID` 限定运行。查询会关联同一 article_id 的其他处理阶段；日志未命中不能证明 Google 从未收录。
+
+Google 默认查询近14天，先发现全部关键词，再轮流选择文章，每次仍最多尝试30篇、成功抓取12篇。仅成功模型处理的文章缓存7天（包括无候选结果），失败和规则回退会重试；`data/article-state.json` 保留30天、最多2000个URL。正文排除推荐栏，未知发生日期不使用发表日补齐。`rule_verified` 仅表示规则检查通过。
+
+2026-10-14 的漏报证据与定点修复见[排查报告](research/incident-audit-2026-10-14.md)。
+
 ## API Configuration
 
 本地开发可以放 `.env` 或 `config.env`，GitHub Actions 使用 Secrets/Variables。

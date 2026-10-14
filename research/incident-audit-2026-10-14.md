@@ -69,4 +69,4 @@
 
 备份与逐条修复映射位于 `logs/repairs/20261014-reviewed-repair-network/`：`final-minimal-plan.before.jsonl`、`final-minimal-plan.applied.jsonl`、`final-minimal-verification.json`。该目录被Git忽略。其他历史重复、推测缆名及部分误用日期已列在同目录的 `same-source-cable-matches.md`，本次不批量改写这些非推荐区污染记录；它们不应被视为已全面清洗。
 
-截至本次检查，以上改动尚未推送或上线。Cloudflare凭据待用户更新；远程推送被自动审批阻止，等待明确的仓库发布授权。真实访问限制上线时还需要关闭旧GitHub Pages并将存储事件数据的仓库设为私有。
+用户已授权通过PR检查后合并发布采集、日志和定点数据修复，本次发布保留现有GitHub Pages。登录后端和Cloudflare Radar页面另行准备，等待有效Cloudflare凭据后再迁移；真实访问限制上线时需要关闭旧GitHub Pages并将存储事件数据的仓库设为私有。
