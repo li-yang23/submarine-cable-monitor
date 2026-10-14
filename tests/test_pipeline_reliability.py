@@ -5,8 +5,11 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
 
+import requests
+
 from src.pipeline import MonitorPipeline
 from src.processing.extractor import EventExtractor, ExtractionUnavailable
+from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper
 from src.storage import EventStore
 from src.storage.article_queue import ArticleQueue
 from src.storage.article_state import ArticleState
@@ -109,6 +112,50 @@ class PipelineReliabilityTests(unittest.TestCase):
         self.assertEqual(calls, [article(source, key)["url"] for key in ("a", "b") for source in sources])
         self.assertEqual(summary.queue["done"], 6)
         self.assertEqual(summary.status, "success")
+
+    def test_slow_failing_fetches_yield_before_exhausting_other_source_budget(self):
+        # Exercise both actual fetch generators, rather than a fixture that is
+        # already cooperative. Each failing request consumes 6 of 10 seconds.
+        for scraper_base in (ArticleScraper, GoogleNewsArticleScraper):
+            with self.subTest(scraper=scraper_base.__name__), tempfile.TemporaryDirectory() as tmp:
+                config = Config(audit_dir=str(Path(tmp) / "runs"), event_store_path=str(Path(tmp) / "events.jsonl"),
+                                article_queue_path=str(Path(tmp) / "queue.json"), article_state_path=str(Path(tmp) / "cache.json"),
+                                collection_time_budget_seconds=10)
+                elapsed = [0.0]
+                trace = []
+
+                class Source(scraper_base):
+                    def __init__(self, cfg, source):
+                        self.source_name = source
+                        super().__init__(cfg)
+
+                    def scrape_articles(self, **kwargs):
+                        for key in (["a", "b", "c"] if self.source_name == "broken" else ["a"]):
+                            self.article_queue.enqueue(article(self.source_name, key))
+                        return []
+
+                    def _fetch_article(self, url):
+                        trace.append((self.source_name, url))
+                        elapsed[0] += 6 if self.source_name == "broken" else 1
+                        if self.source_name == "broken":
+                            raise requests.Timeout("fixture failure")
+                        return {**article(self.source_name), "content": "A cable fault affected services."}
+
+                    def _fetch_news_article(self, url, *args):
+                        return self._fetch_article(url)
+
+                extractor = self.extractor()
+                classes = {source: (lambda cfg, source=source: Source(cfg, source)) for source in ("broken", "healthy")}
+                pipeline = MonitorPipeline(config, EventStore(config.event_store_path), extractor, health_checker=lambda *args: HEALTHY)
+                with patch("src.pipeline.SCRAPER_CLASSES", classes), patch("time.monotonic", side_effect=lambda: elapsed[0]):
+                    summary = pipeline.run(["broken", "healthy"])
+                self.assertEqual([source for source, _ in trace[:2]], ["broken", "healthy"])
+                self.assertEqual(summary.articles, 1)
+                self.assertEqual(summary.queue["done"], 1)
+                self.assertEqual(summary.queue["retry"], 2)
+                self.assertEqual(summary.queue["pending"], 1)
+                extractor.extract.assert_called_once()
+                self.assertEqual(extractor.extract.call_args.args[0]["source"], "healthy")
 
     def test_store_save_failure_leaves_url_unacknowledged_and_cache_unchanged(self):
         item = article()
