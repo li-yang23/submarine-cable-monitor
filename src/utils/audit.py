@@ -76,6 +76,7 @@ class AuditRun:
         self.counts: Counter[str] = Counter()
         self.source_counts: Counter[str] = Counter()
         self.failures = 0
+        self._failure_keys: set[tuple[str, str, str]] = set()
         self.token = None
         self.usage_responses = 0
         self.usage_responses_with_usage = 0
@@ -104,7 +105,19 @@ class AuditRun:
         if fields.get("source"):
             self.source_counts[f"{fields['source']}:{stage}.{outcome}"] += 1
         if outcome in {"failed", "fallback"}:
-            self.failures += 1
+            group = ("source_discovery" if stage in {"discover", "discovery_seed", "cable_page", "rss", "source"}
+                     else "article_fetch" if stage in {"fetch", "resolve"}
+                     else "model" if stage in {"extract", "extraction", "model_health"} else stage)
+            source = str(fields.get("source", ""))
+            identity = str(fields.get("url") or fields.get("discovered_url") or fields.get("article_id") or "")
+            # Lower-layer diagnostics and their propagated error are one problem.
+            # A source-wide summary adds no extra failure to its failed requests.
+            matching = {key for key in self._failure_keys if key[:2] == (group, source)}
+            if identity:
+                self._failure_keys.discard((group, source, ""))
+            if identity or not matching:
+                self._failure_keys.add((group, source, identity))
+            self.failures = len(self._failure_keys)
         if stage == "model_usage":
             self.usage_responses += 1
             present = [key for key in _TOKEN_FIELDS if key in record]
@@ -120,7 +133,12 @@ class AuditRun:
         usage = {"responses": self.usage_responses, "responses_with_usage": self.usage_responses_with_usage,
                  **{key: self.usage_tokens[key] if self.usage_reported[key] else None for key in _TOKEN_FIELDS},
                  "reported_responses": {key: self.usage_reported[key] for key in _TOKEN_FIELDS}}
-        data = {"schema_version": 1, "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "model_usage": usage, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
+        failure_summary = {}
+        for group, source, identity in sorted(self._failure_keys):
+            item = failure_summary.setdefault(group, {"count": 0, "sources": {}})
+            item["count"] += 1
+            item["sources"][source or "unknown"] = item["sources"].get(source or "unknown", 0) + 1
+        data = {"schema_version": 1, "failure_summary": failure_summary, "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "model_usage": usage, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
         markdown = f"## Collection audit — {self.run_id}\n\nStatus: **{data.get('status', 'unknown')}**\n\n"
         markdown += " | ".join(f"{key}: {data.get(key, 0)}" for key in ("articles", "candidates", "inserted", "merged", "rejected", "errors", "warnings")) + "\n\n"
         markdown += "Queue: " + json.dumps(data.get("queue", {}), ensure_ascii=False) + "\n\n"
