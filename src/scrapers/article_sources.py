@@ -165,7 +165,7 @@ class ArticleScraper:
 
     @staticmethod
     def _blocked_html(text: str) -> bool:
-        return bool(re.search(r"<title>\s*(?:just a moment|access denied|security verification|attention required)|verify you are human|enable javascript and cookies to continue|in order to continue, we need to verify", text[:12000], re.I))
+        return bool(re.search(r"<title>\s*(?:just a moment|please wait|请稍候|access denied|security verification|attention required)|正在进行安全验证|verify you are human|enable javascript and cookies to continue|in order to continue, we need to verify", text[:12000], re.I))
 
     @staticmethod
     def _blocked_response(response) -> bool:
@@ -196,7 +196,16 @@ class ArticleScraper:
                     if host in self._browser_hosts:
                         raise
                     emit("transport", "retry", source=self.source_name, url=url, reason="browser_transport_error")
-                    response = self._browser_get(url)
+                    try:
+                        response = self._browser_get(url)
+                    except Exception as exc:
+                        # Both HTTP libraries can fail on the same TLS/connection
+                        # path while an ordinary browser can load the public page.
+                        # Browser certificate validation remains enabled.
+                        if not type(exc).__module__.startswith("curl_cffi") or os.getenv("MONITOR_BROWSER_FALLBACK") != "1":
+                            raise
+                        emit("transport", "retry", source=self.source_name, url=url, reason="public_browser_after_transport_error")
+                        response = self._render_get(url)
                 if self._blocked_response(response) and host not in self._browser_hosts:
                     emit("transport", "retry", source=self.source_name, url=url, reason="browser_compatibility", http_status=response.status_code)
                     time.sleep(max(1, float(getattr(self.config, "request_delay_min", 1))))
