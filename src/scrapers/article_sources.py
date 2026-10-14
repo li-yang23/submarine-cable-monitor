@@ -780,6 +780,11 @@ def article_body_text(soup: BeautifulSoup) -> str:
     # bodies. Match their template classes, preserving the same words in prose.
     for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .sib-form, .sib-form-bc, .billboard_article, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
         node.decompose()
+    # Ars separates one article into multiple columns around ad slots. Taking
+    # just the longest block silently drops the beginning and later sections.
+    segments = soup.select("article .post-content-double")
+    if segments:
+        return clean_text(" ".join(node.get_text(" ") for node in segments))
     candidates = soup.select("[itemprop='articleBody'], .article-body, .post-content, .entry-content, .tdb_single_content, .td-post-content, #FOR_target_content, #bodyTopPart")
     # The first entry-content can be an empty featured-image caption. Prefer the
     # populated body, never an unrelated article card or an entire news feed.

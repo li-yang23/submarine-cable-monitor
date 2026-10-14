@@ -28,6 +28,11 @@ class FetchRecoveryTests(unittest.TestCase):
         html = "<div class='entry-content featured-image'>Photo</div><div class='entry-content'><p>Actual submarine cable outage evidence.</p></div>"
         self.assertEqual(article_body_text(BeautifulSoup(html, 'html.parser')), 'Actual submarine cable outage evidence.')
 
+    def test_split_article_keeps_all_body_sections(self):
+        html = '<article><div class="post-content post-content-double">First cable cut.</div><aside>Unrelated outage.</aside><div class="post-content post-content-double">Long second interview section about cable resilience.</div><div class="post-content post-content-double">Last restoration update.</div></article>'
+        text = article_body_text(BeautifulSoup(html, 'html.parser'))
+        self.assertEqual(text, 'First cable cut. Long second interview section about cable resilience. Last restoration update.')
+
     def test_tagdiv_body_excludes_sidebar_news(self):
         html = '<article><div class="tdb_single_content">Subsea cable cut evidence.</div><div>RELEVANT STORIES: unrelated outage</div></article>'
         self.assertEqual(article_body_text(BeautifulSoup(html, 'html.parser')), 'Subsea cable cut evidence.')

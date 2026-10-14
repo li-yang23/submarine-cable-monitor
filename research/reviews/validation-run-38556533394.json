@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/38556533394",
+  "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+  "results": [
+    {
+      "queue_id": "0d2d1d54133f9f1ad0c2745c45e1f6b3",
+      "url": "https://arstechnica.com/gadgets/2026/10/the-internets-undersea-backbone-is-slipping-into-to-the-danger-zone/",
+      "title": "The Internet’s undersea backbone is slipping into the danger zone - Ars Technica",
+      "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+      "previous_status": "review",
+      "status": "done",
+      "classification": "historical_context",
+      "note": "原解析只读到最长的一个正文块（3048 字符）；修复后读取全部 7 个正文块。全文回顾 2024 年 12 月 Eagle S、2024 年 11 月 Yi Peng 3、2025 年 2 月台湾断缆等已记录事故；其他内容为威胁、演练及未建成项目，未确认新增事故。",
+      "linked_event_uids": [
+        "evt_56f4dcfb0e69eb5b76f1",
+        "evt_a294211df980ea47ced2",
+        "evt_72afc87008286c746fe7",
+        "evt_0dda29d0eca6af30be76"
+      ],
+      "content_length": 15680,
+      "content_sha256": "3b3b266d642a9c6084d3fc24616a804a647378fca3bde2d4b3f9185d0717b199",
+      "recovery_method": "all_seven_public_body_blocks"
+    },
+    {
+      "queue_id": "f59c79b2e47b37ec369c0fe12246c55b",
+      "url": "https://itbrief.co.nz/story/retn-adds-sixth-subsea-route-to-boost-taiwan-resilience",
+      "title": "RETN adds sixth subsea route to boost Taiwan resilience - IT Brief New Zealand",
+      "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+      "previous_status": "review",
+      "status": "done",
+      "classification": "syndicated_historical_context",
+      "note": "ITBrief 新西兰地区版本，与已复核的 RETN 新线路报道内容一致；2024 年红海故障为历史背景。",
+      "linked_event_uids": [
+        "evt_136f611619bcf8d22614"
+      ],
+      "recovery_method": "public_http_body_review"
+    },
+    {
+      "queue_id": "c4d9cabe02a5e95bbdf2c5bda4009226",
+      "url": "https://manilastandard.net/business/314801620/converge-reports-minimal-disruption-from-ph-singapore-cable-outage.html",
+      "title": "Converge reports minimal disruption from PH-Singapore cable outage - Manila Standard",
+      "reviewed_at": "2026-10-14T11:36:50.354049+00:00",
+      "previous_status": "retry",
+      "status": "done",
+      "classification": "supporting_report",
+      "note": "普通浏览器已取得正文。Converge 回顾 10 月 2 日菲律宾至新加坡故障及分流；Bifrost、SEA-H2X 是备用和冗余线路，不是本文确认损坏的电缆。",
+      "linked_event_uids": [
+        "evt_50591464518b00b97d78"
+      ],
+      "recovery_method": "public_browser_dom_review"
+    }
+  ],
+  "queue_after": {
+    "pending": 0,
+    "retry": 4,
+    "done": 473,
+    "review": 2
+  },
+  "infrastructure_note": "GitHub Issues read returned HTTP 503; data persistence and Pages deployment succeeded. Notification deduplication suppressed repeat messages. Add bounded retries to this GET only."
+}
