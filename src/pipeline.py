@@ -124,6 +124,10 @@ class MonitorPipeline:
                         audit.emit("source", "failed", source=source, reason="scraper_error", **error_details(exc))
                         continue
                     remaining.append((source, iterator))
+                    if article is None:
+                        # A fetch attempt made durable progress without a body.
+                        # Give other sources their turn before retrying this one.
+                        continue
                     fields = article_fields(article)
                     row = queue.get(article) or queue.enqueue(article)
                     if row["status"] in {"done", "review"}:

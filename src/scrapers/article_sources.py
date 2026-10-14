@@ -72,6 +72,7 @@ class ArticleScraper:
         return self.article_queue.enqueue(item)
 
     def iter_queued_articles(self, dry_run: bool = False):
+        """Yield a body or None after a request, so callers can rotate sources."""
         self._prepare_queue(dry_run)
         max_articles = 3 if dry_run else (self.config.subtelforum_max_articles if self.source_name == "SubTel Forum" else 0)
         per_cable = (1 if dry_run else self.config.submarine_networks_articles_per_cable) if self.source_name == "Submarine Networks" else 0
@@ -104,12 +105,14 @@ class ArticleScraper:
                 emit("fetch", "failed", **fields, reason="article_fetch_error", **details)
                 self.article_queue.mark_retry(item, reason="article_fetch_error", **details)
                 self.article_queue.persist()
+                yield None  # Let the pipeline rotate sources after a failed request.
                 continue
             article.update(queue_id=item["queue_id"], discovered_url=url)
             if not item.get("force_retry") and item.get("initial_since") and article.get("published_date") and article["published_date"] < item["initial_since"]:
                 self.article_queue.mark_done(item, reason="outside_initial_window")
                 self.article_queue.persist()
                 emit("select", "skipped", **article_fields(article), reason="outside_initial_window")
+                yield None
                 continue
             if cable:
                 article["cable_name"] = cable
@@ -239,9 +242,10 @@ class GoogleNewsArticleScraper(ArticleScraper):
                 if queue:
                     ordered.append(queue.pop(0))
         self._discovered_order = ordered
-        return list(self.iter_queued_articles(dry_run=dry_run))
+        return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
     def iter_queued_articles(self, dry_run: bool = False):
+        """Yield a body or None after a request, so callers can rotate sources."""
         self._prepare_queue(dry_run)
         max_articles = 3 if dry_run else int(self.config.google_news_max_articles)
         max_attempts = 8 if dry_run else int(self.config.google_news_max_attempts)
@@ -282,11 +286,13 @@ class GoogleNewsArticleScraper(ArticleScraper):
                 emit("fetch", "failed", **fields, reason="article_fetch_error", **error_details(exc))
                 self.article_queue.mark_retry(item, "article_fetch_error", **error_details(exc))
                 self.article_queue.persist()
+                yield None
                 continue
             if self._last_fetch_already_processed:
                 attempts -= 1
                 self.article_queue.mark_done(item, reason="already_processed")
                 self.article_queue.persist()
+                yield None
                 continue
             if article:
                 article["queue_id"] = item["queue_id"]
@@ -297,6 +303,7 @@ class GoogleNewsArticleScraper(ArticleScraper):
                     self.article_queue.mark_retry(item, "duplicate_final_url", delay_seconds=0)
                     self.article_queue.persist()
                     emit("select", "deferred", **article_fields(article), reason="duplicate_final_url")
+                    yield None
                     continue
                 real_urls.add(article["url"])
                 article_count += 1
@@ -305,6 +312,7 @@ class GoogleNewsArticleScraper(ArticleScraper):
                 failure = self._last_fetch_failure or {"reason": "article_unavailable"}
                 self.article_queue.mark_retry(item, **failure)
                 self.article_queue.persist()
+                yield None
         emit("collection", "completed", source=self.source_name, attempts=attempts, article_count=article_count, max_articles=max_articles, max_attempts=max_attempts)
 
     def _fetch_news_article(
@@ -455,7 +463,7 @@ class SubTelForumScraper(ArticleScraper):
             self._discover_urls(since=since, dry_run=dry_run)
         except Exception as exc:
             emit("discover", "failed", source=self.source_name, reason="source_discovery_error", **error_details(exc))
-        return list(self.iter_queued_articles(dry_run=dry_run))
+        return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
     def _discover_urls(self, since: str | None, dry_run: bool) -> list[str]:
         urls: list[str] = []
@@ -570,7 +578,7 @@ class SubmarineNetworksScraper(ArticleScraper):
             for url in discovered_urls:
                 self._enqueue({"url": url, "cable_name": cable_name})
             self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
-        return list(self.iter_queued_articles(dry_run=dry_run))
+        return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
     def _load_cable_links(self) -> list[dict[str, Any]]:
         path = Path(getattr(self.config, "submarine_networks_links_path", "data/cable-links.json"))
