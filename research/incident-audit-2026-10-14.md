@@ -47,6 +47,8 @@
 
 可访问的 [SubTel 故障报道](https://subtelforum.com/philippines-cable-disruption-slows-internet/)明确引用 GMA 的 10 月 2 日报道，自身发表于 10 月 5 日；它没有确认具体海缆、物理断点或根因。[SubTel C2C 恢复报道](https://subtelforum.com/philippines-singapore-c2c-link-restored/)引用 10 月 3 日报道，明确 C2C 菲律宾—新加坡段于当天恢复、香港段同时处于维护，但不证明发生物理断缆。
 
+容量表述以随后真实运行保存的 GMA 正文为准：原话“capacity na nawala ... around 300 gig ... cover the loss of capacity”说明此次总受影响容量约为 300 Gbit/s，PLDT 称其备用容量足以覆盖损失。把 300 Gbit/s 仅解释为备用容量不准确；报道也不支持把这项总量归到 C2C、新加坡段或香港段中的某一根海缆，更不能据此断定物理损坏或损坏程度。
+
 ## 定点修复建议
 
 1. 先保留污染记录及其所有 evidence_urls 的修复前快照，重新抓取并剔除非正文区域；审计记录保留旧 UID、新 UID 与修复理由。
@@ -55,7 +57,7 @@
 4. 让关键词公平获得抓取机会；记录发现、跳过、URL 解码、正文长度、抽取模式、回退错误、拒绝原因、入库/合并目标 UID。审计文件作为 Actions artifact 保存，关键异常进入 Job Summary。
 5. 对 402 做当次运行降级告警，区分 `llm`、`rules` 和 `rules_fallback`，不要把有 API key 等同于模型验证成功。
 
-本次未修改线上数据或仓库既有代码。读取的日志和 RSS 原始快照位于本机 `/tmp/cable-job-*.log`、`/tmp/cable-google-rss-probe.json`、`/tmp/cable-remote-events-20261013.json`，临时目录不应作为长期审计存储。
+首次排查阶段仅进行了读取；后续修复与发布见下文。该阶段读取的日志和 RSS 原始快照位于本机 `/tmp/cable-job-*.log`、`/tmp/cable-google-rss-probe.json`、`/tmp/cable-remote-events-20261013.json`，临时目录不应作为长期审计存储。
 
 
 ## 已完成的本地修复与验证
@@ -70,3 +72,22 @@
 备份与逐条修复映射位于 `logs/repairs/20261014-reviewed-repair-network/`：`final-minimal-plan.before.jsonl`、`final-minimal-plan.applied.jsonl`、`final-minimal-verification.json`。该目录被Git忽略。其他历史重复、推测缆名及部分误用日期已列在同目录的 `same-source-cable-matches.md`，本次不批量改写这些非推荐区污染记录；它们不应被视为已全面清洗。
 
 用户已授权通过PR检查后合并发布采集、日志和定点数据修复，本次发布保留现有GitHub Pages。登录后端和Cloudflare Radar页面另行准备，等待有效Cloudflare凭据后再迁移；真实访问限制上线时需要关闭旧GitHub Pages并将存储事件数据的仓库设为私有。
+
+## 真实运行 38509829243 的两条定点事实复核
+
+[Actions 运行 38509829243](https://github.com/li-yang23/submarine-cable-monitor/actions/runs/38509829243)已保存 GMA 与 BusinessWorld 的正文。这次只修正该运行新增的两条记录，不扩大处理其他历史事件。
+
+- `evt_f01d0ef92599007ddb8f`：GMA 对菲律宾—香港段仅确认“受到影响”，并明确原因仍在调查，不能分类为已确认物理断缆。`accident_type` 从 `Cut` 改为 `Limit`；发生日不变。复核依据写入 `raw_data.manual_review`，原始 `raw_data.extracted` 原样保留。
+- `evt_fe23e0c8e78874b1a80d`：[BusinessWorld 原文](https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/)仅说“over the weekend”，没有支持 `2026-10-01` 的具体发生日，也不能用发表日或另一篇报道的日期代替。由于海缆亦未具名，该条移出正式事件库；完整原记录与发生日为 `null` 的复核版本保存至 [reviews/run-38509829243-event-corrections.json](reviews/run-38509829243-event-corrections.json)，待进一步核实。
+- BusinessWorld 的 RSS 队列 `2aa0d7de4574770dd26ee5bc50cf8ae9` 与直接 URL 别名 `156d0dfe31d0081fb0321beaecd5485f` 均改为 `review`，并仅清除其 canonical URL、RSS URL 两个 processed cache 键。现有 `ArticleQueue.requeue()` 会设置 `force_retry=True`，人工重试可以越过处理缓存；本次不自动重新采集。
+
+正式记录由 445 条变为 444 条，其余 443 条逐条指纹及原始行字节均不变。香港原始抽取结果、BusinessWorld 全文源字段、队列变更与缓存清理均可在上述复核记录中追溯；JSON/CSV 使用 `EventStore.export_json()`、`EventStore.export_csv()` 官方导出方法生成。
+
+
+## 已发布的可靠性修复与运行验证
+
+[PR #2](https://github.com/li-yang23/submarine-cable-monitor/pull/2) 和 [PR #3](https://github.com/li-yang23/submarine-cable-monitor/pull/3) 已发布持久待处理队列、全部关键词发现、来源轮转、严格模型失败、实际 token 用量和 GitHub 通知。生产不再按文章条数截断；1200 秒时间预算耗尽时保留未完成工作，定时每 4 小时续跑。余额不足、认证失败或无效响应不会退回规则抽取。SiliconFlow 已停用余额查询接口，当前只能报告余额预检不可用并捕获实际调用故障，不能承诺提前获知低余额。
+
+真实运行 38509829243 处理 35 篇正文，产生 20 个候选、11 个新增和 1 个合并，消耗服务商报告的 44,146 tokens；发生 1 次无效模型响应，规则回退为 0。运行保存 25 项 retry、8 项 review，并实际创建 [GitHub 告警 #4](https://github.com/li-yang23/submarine-cable-monitor/issues/4)。工作流因仍有问题如实失败，保存、通知和部署均执行成功；上述两条人工事实复核后，当前队列为 24 项 retry、10 项 review（包含同篇新闻的两个 URL 别名），正式事件为 444 条。邮件暂不启用，遵循用户当前选择。
+
+另发现排队的 push 运行 38510253869 在采集发布后检出旧触发 SHA f27cc6c，并把网页从 445 条覆盖回 434 条。修复为 checkout 显式使用当前分支 ref，保留覆盖采集至部署的串行锁，避免旧触发快照覆盖较新的采集数据。Submarine Networks 旧运行虽遍历了 301 个目录却零发现，因旧日志缺少页面特征无法确定原因；补充 HTTP 状态、页面标题、字节数、链接数与匹配数，并对完整遍历零发现告警。当前本地同代码读取 AAG 目录可发现 5 篇故障报道，此结果不能反推旧运行的响应内容。

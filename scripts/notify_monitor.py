@@ -135,7 +135,8 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
         # Fixed labels prevent arbitrary scraped/provider text from entering alerts.
         groups = {
             "source_failure": ("发现源或搜索请求失败", lambda key: ("discover" in key or "rss" in key or "source" in key or "search" in key) and "failed" in key),
-            "model_failure": ("模型失败或发生规则回退", lambda key: "fallback" in key or ("extract" in key and "failed" in key)),
+            "model_failure": ("模型调用失败", lambda key: key.split(".")[:2] in (["extract", "failed"], ["extraction", "failed"])),
+            "model_fallback": ("检测到规则回退", lambda key: key.split(".")[:2] in (["extract", "fallback"], ["extraction", "fallback"])),
             "fetch_failure": ("正文获取失败，新闻仍需重试或复核", lambda key: "fetch" in key and "failed" in key),
             "blocked_403": ("站点拒绝访问，需复核", lambda key: "403" in key or "access_denied" in key or "forbidden" in key),
             "budget": ("本轮处理额度已用尽，仍有新闻等待处理", lambda key: "budget" in key),

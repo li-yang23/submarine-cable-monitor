@@ -3,7 +3,7 @@
   "items": {
     "156d0dfe31d0081fb0321beaecd5485f": {
       "queue_id": "156d0dfe31d0081fb0321beaecd5485f",
-      "status": "retry",
+      "status": "review",
       "first_seen_at": "2026-10-14T03:54:43.409699+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -13,10 +13,12 @@
       "discovered_url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
       "last_seen_at": "2026-10-14T03:54:43.409699+00:00",
       "last_attempt_at": "2026-10-14T04:10:57.683653+00:00",
-      "reason": "article_fetch_error",
+      "reason": "manual_review_unsupported_occurrence_date",
       "error_type": "ReadTimeout",
       "http_status": null,
-      "next_attempt_at": "2026-10-14T04:16:07.895775+00:00"
+      "next_attempt_at": null,
+      "review_at": "2026-10-14T04:41:19.905777+00:00",
+      "force_retry": false
     },
     "4200778ed95f4759bac19937c0c81521": {
       "queue_id": "4200778ed95f4759bac19937c0c81521",
@@ -935,7 +937,7 @@
     },
     "2aa0d7de4574770dd26ee5bc50cf8ae9": {
       "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
-      "status": "done",
+      "status": "review",
       "first_seen_at": "2026-10-14T03:54:43.430504+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -950,10 +952,11 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:22:29.610512+00:00",
       "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
-      "reason": "processed",
+      "reason": "manual_review_unsupported_occurrence_date",
       "completed_at": "2026-10-14T04:22:38.345214+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "review_at": "2026-10-14T04:41:19.905770+00:00"
     },
     "ed040b052619cb2a94c3a5b0beb8b5e1": {
       "queue_id": "ed040b052619cb2a94c3a5b0beb8b5e1",

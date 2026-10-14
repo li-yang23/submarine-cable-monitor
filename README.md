@@ -66,7 +66,7 @@ gh run download RUN_ID --pattern 'monitor-output-*' --dir /tmp/monitor-audit
 python -m src.main --audit-dir /tmp/monitor-audit/logs/runs --audit-search Philippines
 ```
 
-可用 `--audit-run RUN_ID` 限定运行。查询会关联同一 article_id 的其他处理阶段；日志未命中不能证明 Google 从未收录。
+可用 `--audit-run RUN_ID` 限定运行。查询会关联同一 article_id 的其他处理阶段；日志未命中不能证明 Google 从未收录。 Submarine Networks 目录日志还记录 HTTP 状态、页面标题、响应字节数、链接数和匹配新闻数；明显空页或防爬页、缺失种子文件、完整目录遍历零发现会显式告警，便于区分来源故障与正常无新增。
 
 Google 默认查询近14天。生产配置不再设置固定文章数量配额；发现的新闻先写入 `data/article-queue.json`，再按队列处理。单次运行设1200秒采集预算，未完成新闻留到下次运行，不因预算耗尽、RSS 过期或旧缓存淘汰而删除。工作流总时限45分钟，为导出、保存和通知留出时间。正文抓取失败或模型异常保留为 retry 并退避重试；模型候选因证据不足等原因被拒绝时保留为 review，两种状态都会告警。
 

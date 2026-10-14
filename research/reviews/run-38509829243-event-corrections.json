@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "review_id": "run-38509829243-event-corrections",
+  "reviewed_at": "2026-10-14T04:41:19+00:00",
+  "method": "source_text_review",
+  "source_run_id": "38509829243",
+  "scope": "Only two verified factual issues from this run; all other canonical events are preserved.",
+  "updated_event": {
+    "event_uid": "evt_f01d0ef92599007ddb8f",
+    "original_record": {
+      "TrustWorthy": "rule_verified",
+      "accident_location": "between the Philippines and Hong Kong",
+      "accident_type": "Cut",
+      "affected_area": "Philippines",
+      "cable_name": "",
+      "created_at": "2026-10-14T04:11:20+00:00",
+      "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+      "event_uid": "evt_f01d0ef92599007ddb8f",
+      "evidence_urls": [
+        "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+      ],
+      "normalized_cable_id": "",
+      "occurrence_date": "2026-10-02",
+      "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+      "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+      "published_date": "2026-10-02",
+      "raw_data": {
+        "article": {
+          "content": "ADVERTISEMENT Filtered By: Scitech SciTech By MARIZ UMALI, GMA News Published October 2, 2026 8:08pm + Add GMA on Google Make this your preferred source to get more updates from this publisher on Google. The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. Internet users in parts of the Philippines experienced slow or intermittent connectivity on Friday following the reported outage of submarine cable segments connecting the country to Singapore and Hong Kong. Telecommunications companies issued advisories warning subscribers that the cable disruptions could affect internet speeds and overall connectivity. Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down. They also reported that the segment connecting the Philippines and Hong Kong was likewise affected. Other Stories NTC: Fine vs telcos for poor internet service not limited to NCR DICT probes possible data breach involving 48 firms in accreditation program CICC apologizes for inconvenience caused by Discord ban The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. DICT Secretary Henry Aguda said authorities are still determining the cause. “They’re still determining the cause.” Aguda said possible sabotage is among the scenarios being investigated, but stressed that it is too early to draw conclusions. “Isa yun, syempre. Kasama yun. Pero it’s too early to say. For all you know, it’s… Either a fiber cut through natural causes or as I said, baka may equipment failure.” Despite the disruption, Aguda said internet connectivity has not been completely lost and telecommunications companies are working to address the reduced capacity. He said PLDT had assured him that it has sufficient capacity to cover the loss. “Yung capacity na nawala is around 300 gig which they claim naman is they have more than enough provision to cover the loss of capacity.” Some schools and institutions have already issued notices about possible connectivity problems. However, Aguda said there are currently no reports of critical infrastructure being significantly affected by the submarine cable outages. The DICT continues to monitor the situation while telecommunications providers work to restore the affected cable segments and maintain internet services. —NB, GMA News Tags: slow internet , Internet , DICT , submarine cable More Videos Most Popular LOADING CONTENT LOAD MORE ARTICLES RETRY LOADING",
+          "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+          "keyword": "manual",
+          "published_date": "2026-10-02",
+          "queue_id": "4200778ed95f4759bac19937c0c81521",
+          "source": "Google News",
+          "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+          "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+        },
+        "extracted": {
+          "accident_location": "between the Philippines and Hong Kong",
+          "accident_type": "Cut",
+          "affected_area": "Philippines",
+          "cable_name": "",
+          "occurrence_date": "2026-10-02",
+          "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+          "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+          "reason": null,
+          "repair_date": null
+        }
+      },
+      "reason": "",
+      "repair_date": null,
+      "source": "Google News",
+      "sources": [
+        "Google News"
+      ],
+      "submarine_name": "",
+      "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+      "updated_at": "2026-10-14T04:11:20+00:00",
+      "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+      "verification_status": "rule_verified"
+    },
+    "reviewed_record": {
+      "TrustWorthy": "rule_verified",
+      "accident_location": "between the Philippines and Hong Kong",
+      "accident_type": "Limit",
+      "affected_area": "Philippines",
+      "cable_name": "",
+      "created_at": "2026-10-14T04:11:20+00:00",
+      "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+      "event_uid": "evt_f01d0ef92599007ddb8f",
+      "evidence_urls": [
+        "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+      ],
+      "normalized_cable_id": "",
+      "occurrence_date": "2026-10-02",
+      "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+      "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+      "published_date": "2026-10-02",
+      "raw_data": {
+        "article": {
+          "content": "ADVERTISEMENT Filtered By: Scitech SciTech By MARIZ UMALI, GMA News Published October 2, 2026 8:08pm + Add GMA on Google Make this your preferred source to get more updates from this publisher on Google. The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. Internet users in parts of the Philippines experienced slow or intermittent connectivity on Friday following the reported outage of submarine cable segments connecting the country to Singapore and Hong Kong. Telecommunications companies issued advisories warning subscribers that the cable disruptions could affect internet speeds and overall connectivity. Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down. They also reported that the segment connecting the Philippines and Hong Kong was likewise affected. Other Stories NTC: Fine vs telcos for poor internet service not limited to NCR DICT probes possible data breach involving 48 firms in accreditation program CICC apologizes for inconvenience caused by Discord ban The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. DICT Secretary Henry Aguda said authorities are still determining the cause. “They’re still determining the cause.” Aguda said possible sabotage is among the scenarios being investigated, but stressed that it is too early to draw conclusions. “Isa yun, syempre. Kasama yun. Pero it’s too early to say. For all you know, it’s… Either a fiber cut through natural causes or as I said, baka may equipment failure.” Despite the disruption, Aguda said internet connectivity has not been completely lost and telecommunications companies are working to address the reduced capacity. He said PLDT had assured him that it has sufficient capacity to cover the loss. “Yung capacity na nawala is around 300 gig which they claim naman is they have more than enough provision to cover the loss of capacity.” Some schools and institutions have already issued notices about possible connectivity problems. However, Aguda said there are currently no reports of critical infrastructure being significantly affected by the submarine cable outages. The DICT continues to monitor the situation while telecommunications providers work to restore the affected cable segments and maintain internet services. —NB, GMA News Tags: slow internet , Internet , DICT , submarine cable More Videos Most Popular LOADING CONTENT LOAD MORE ARTICLES RETRY LOADING",
+          "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+          "keyword": "manual",
+          "published_date": "2026-10-02",
+          "queue_id": "4200778ed95f4759bac19937c0c81521",
+          "source": "Google News",
+          "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+          "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+        },
+        "extracted": {
+          "accident_location": "between the Philippines and Hong Kong",
+          "accident_type": "Cut",
+          "affected_area": "Philippines",
+          "cable_name": "",
+          "occurrence_date": "2026-10-02",
+          "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+          "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+          "reason": null,
+          "repair_date": null
+        },
+        "manual_review": {
+          "reviewed_at": "2026-10-14T04:41:19+00:00",
+          "method": "source_text_review",
+          "source_run_id": "38509829243",
+          "source_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+          "review_record": "research/reviews/run-38509829243-event-corrections.json",
+          "changes": {
+            "accident_type": {
+              "before": "Cut",
+              "after": "Limit"
+            }
+          },
+          "reason": "The article reports that the Philippines-Hong Kong segment was affected; authorities were still determining the cause. This does not establish a physical cut.",
+          "evidence": [
+            "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+            "DICT Secretary Henry Aguda said authorities are still determining the cause."
+          ],
+          "original_extracted_preserved": true
+        }
+      },
+      "reason": "",
+      "repair_date": null,
+      "source": "Google News",
+      "sources": [
+        "Google News"
+      ],
+      "submarine_name": "",
+      "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+      "updated_at": "2026-10-14T04:41:19+00:00",
+      "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+      "verification_status": "rule_verified"
+    }
+  },
+  "quarantine": {
+    "status": "review",
+    "canonical_eligible": false,
+    "event_uid": "evt_fe23e0c8e78874b1a80d",
+    "reason": "unnamed_incident_without_supported_exact_occurrence_date",
+    "original_record": {
+      "TrustWorthy": "rule_verified",
+      "accident_location": "between the Philippines and Singapore",
+      "accident_type": "Limit",
+      "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+      "cable_name": "",
+      "created_at": "2026-10-14T04:22:38+00:00",
+      "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+      "event_uid": "evt_fe23e0c8e78874b1a80d",
+      "evidence_urls": [
+        "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+      ],
+      "normalized_cable_id": "",
+      "occurrence_date": "2026-10-01",
+      "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+      "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+      "published_date": "2026-10-04",
+      "raw_data": {
+        "article": {
+          "content": "GLOBE Telecom, Inc. said it has restored internet services in areas affected by a disruption along an international submarine cable between the Philippines and Singapore, although repairs to the damaged fiber are expected to take several weeks. The telecommunications company said it rerouted data traffic through alternative international links over the weekend after the cable disruption reduced available bandwidth and slowed internet speeds. “Our teams are working continuously to ease congestion and restore normal internet service as quickly as possible. In parallel, we are working with our partners to validate the cause of the disruption,” Globe Head of Service Planning and Engineering Joel R. Agustin said in a media release on Sunday. Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links. Globe said repairs to the submarine fiber are expected to be completed within the next few weeks. The company also said its primary information technology (IT) systems were operating normally after an earlier issue affected access to some applications, particularly logins using Android devices. “Globe’s primary IT systems are normal and operational. An earlier issue affecting access to some applications particularly during login using Android phones has been resolved quickly,” it said. — Ashley Erika O. Jose",
+          "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+          "keyword": "subsea cable disruption",
+          "published_date": "2026-10-04",
+          "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+          "source": "Google News",
+          "title": "Globe restores internet services after subsea cable disruption",
+          "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+        },
+        "extracted": {
+          "accident_location": "between the Philippines and Singapore",
+          "accident_type": "Cut",
+          "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+          "cable_name": "",
+          "occurrence_date": "2026-10-01",
+          "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+          "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+          "reason": null,
+          "repair_date": null
+        }
+      },
+      "reason": "",
+      "repair_date": null,
+      "source": "Google News",
+      "sources": [
+        "Google News"
+      ],
+      "submarine_name": "",
+      "title": "Globe restores internet services after subsea cable disruption",
+      "updated_at": "2026-10-14T04:22:38+00:00",
+      "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+      "verification_status": "rule_verified"
+    },
+    "reviewed_record": {
+      "TrustWorthy": "needs_review",
+      "accident_location": "between the Philippines and Singapore",
+      "accident_type": "Limit",
+      "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+      "cable_name": "",
+      "created_at": "2026-10-14T04:22:38+00:00",
+      "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+      "event_uid": "evt_fe23e0c8e78874b1a80d",
+      "evidence_urls": [
+        "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+      ],
+      "normalized_cable_id": "",
+      "occurrence_date": null,
+      "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+      "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+      "published_date": "2026-10-04",
+      "raw_data": {
+        "article": {
+          "content": "GLOBE Telecom, Inc. said it has restored internet services in areas affected by a disruption along an international submarine cable between the Philippines and Singapore, although repairs to the damaged fiber are expected to take several weeks. The telecommunications company said it rerouted data traffic through alternative international links over the weekend after the cable disruption reduced available bandwidth and slowed internet speeds. “Our teams are working continuously to ease congestion and restore normal internet service as quickly as possible. In parallel, we are working with our partners to validate the cause of the disruption,” Globe Head of Service Planning and Engineering Joel R. Agustin said in a media release on Sunday. Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links. Globe said repairs to the submarine fiber are expected to be completed within the next few weeks. The company also said its primary information technology (IT) systems were operating normally after an earlier issue affected access to some applications, particularly logins using Android devices. “Globe’s primary IT systems are normal and operational. An earlier issue affecting access to some applications particularly during login using Android phones has been resolved quickly,” it said. — Ashley Erika O. Jose",
+          "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+          "keyword": "subsea cable disruption",
+          "published_date": "2026-10-04",
+          "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+          "source": "Google News",
+          "title": "Globe restores internet services after subsea cable disruption",
+          "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+        },
+        "extracted": {
+          "accident_location": "between the Philippines and Singapore",
+          "accident_type": "Cut",
+          "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+          "cable_name": "",
+          "occurrence_date": "2026-10-01",
+          "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+          "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+          "reason": null,
+          "repair_date": null
+        },
+        "manual_review": {
+          "reviewed_at": "2026-10-14T04:41:19+00:00",
+          "method": "source_text_review",
+          "source_run_id": "38509829243",
+          "source_url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+          "review_record": "research/reviews/run-38509829243-event-corrections.json",
+          "changes": {
+            "occurrence_date": {
+              "before": "2026-10-01",
+              "after": null
+            }
+          },
+          "reason": "The source says over the weekend and does not state an exact incident date. No substitute date can be justified. The cable is unnamed, so this candidate requires review rather than canonical publication.",
+          "original_extracted_preserved": true,
+          "legacy_uid_retained_for_traceability_only": true
+        }
+      },
+      "reason": "",
+      "repair_date": null,
+      "source": "Google News",
+      "sources": [
+        "Google News"
+      ],
+      "submarine_name": "",
+      "title": "Globe restores internet services after subsea cable disruption",
+      "updated_at": "2026-10-14T04:41:19+00:00",
+      "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+      "verification_status": "needs_review"
+    }
+  },
+  "queue_changes": [
+    {
+      "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+      "before": {
+        "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+        "status": "done",
+        "first_seen_at": "2026-10-14T03:54:43.430504+00:00",
+        "attempts": 1,
+        "source": "Google News",
+        "title": "Globe restores internet services after subsea cable disruption - BusinessWorld Online",
+        "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+        "published_date": "2026-10-04",
+        "initial_since": "2026-09-30",
+        "last_seen_at": "2026-10-14T04:08:42.132931+00:00",
+        "queries": [
+          "subsea cable disruption"
+        ],
+        "keyword": "subsea cable disruption",
+        "last_attempt_at": "2026-10-14T04:22:29.610512+00:00",
+        "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "reason": "processed",
+        "completed_at": "2026-10-14T04:22:38.345214+00:00",
+        "next_attempt_at": null,
+        "force_retry": false
+      },
+      "after": {
+        "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+        "status": "review",
+        "first_seen_at": "2026-10-14T03:54:43.430504+00:00",
+        "attempts": 1,
+        "source": "Google News",
+        "title": "Globe restores internet services after subsea cable disruption - BusinessWorld Online",
+        "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+        "published_date": "2026-10-04",
+        "initial_since": "2026-09-30",
+        "last_seen_at": "2026-10-14T04:08:42.132931+00:00",
+        "queries": [
+          "subsea cable disruption"
+        ],
+        "keyword": "subsea cable disruption",
+        "last_attempt_at": "2026-10-14T04:22:29.610512+00:00",
+        "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "reason": "manual_review_unsupported_occurrence_date",
+        "completed_at": "2026-10-14T04:22:38.345214+00:00",
+        "next_attempt_at": null,
+        "force_retry": false,
+        "review_at": "2026-10-14T04:41:19.905770+00:00"
+      }
+    },
+    {
+      "queue_id": "156d0dfe31d0081fb0321beaecd5485f",
+      "before": {
+        "queue_id": "156d0dfe31d0081fb0321beaecd5485f",
+        "status": "retry",
+        "first_seen_at": "2026-10-14T03:54:43.409699+00:00",
+        "attempts": 1,
+        "source": "Google News",
+        "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "title": "Manually queued article",
+        "keyword": "manual",
+        "discovered_url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "last_seen_at": "2026-10-14T03:54:43.409699+00:00",
+        "last_attempt_at": "2026-10-14T04:10:57.683653+00:00",
+        "reason": "article_fetch_error",
+        "error_type": "ReadTimeout",
+        "http_status": null,
+        "next_attempt_at": "2026-10-14T04:16:07.895775+00:00"
+      },
+      "after": {
+        "queue_id": "156d0dfe31d0081fb0321beaecd5485f",
+        "status": "review",
+        "first_seen_at": "2026-10-14T03:54:43.409699+00:00",
+        "attempts": 1,
+        "source": "Google News",
+        "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "title": "Manually queued article",
+        "keyword": "manual",
+        "discovered_url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+        "last_seen_at": "2026-10-14T03:54:43.409699+00:00",
+        "last_attempt_at": "2026-10-14T04:10:57.683653+00:00",
+        "reason": "manual_review_unsupported_occurrence_date",
+        "error_type": "ReadTimeout",
+        "http_status": null,
+        "next_attempt_at": null,
+        "review_at": "2026-10-14T04:41:19.905777+00:00",
+        "force_retry": false
+      }
+    }
+  ],
+  "removed_processed_cache_entries": {
+    "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/": "2026-10-14T04:22:38.351627+00:00",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5": "2026-10-14T04:22:38.351627+00:00"
+  },
+  "capacity_interpretation": "GMA reports approximately 300 Gbit/s of total affected capacity and says PLDT has enough alternate capacity to cover that loss. It does not allocate that total to any one cable or establish physical damage.",
+  "verification": {
+    "canonical_before_count": 445,
+    "canonical_after_count": 444,
+    "unrelated_event_fingerprints_unchanged": 443,
+    "unrelated_event_fingerprints_sha256": "3273b6546b4e349d6d3393a2a997645aa1b33f9ca5bd90be4fe3f732fc69686e",
+    "canonical_before_sha256": "5d8fdebab0163bc3c4d0ac3ffaed95a59f1a242a88fe9e58b363eaaff68d8c64",
+    "canonical_after_sha256": "32564263289b9695c5a91125515ca3839e02b6e526daa95aab7ca593b8c1fe85",
+    "original_model_extractions_preserved": true,
+    "unrelated_original_line_bytes_unchanged": true,
+    "unrelated_queue_items_unchanged": true,
+    "removed_cache_entry_count": 2,
+    "other_cache_entries_unchanged": true,
+    "official_json_export_count": 444,
+    "official_csv_export_count": 444,
+    "manual_retry_bypasses_cache": true,
+    "queue_review_status_remains_persisted": true
+  }
+}

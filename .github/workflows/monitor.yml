@@ -55,6 +55,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # Resolve the branch after waiting for the prior collection/deploy run.
+          # The triggering SHA can predate data committed while this run queued.
+          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: Set up Python

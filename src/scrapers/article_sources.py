@@ -555,6 +555,7 @@ class SubmarineNetworksScraper(ArticleScraper):
         max_cables = 3 if dry_run else int(self.config.submarine_networks_max_cables)
         cursor = int(self.article_queue.get_cursor(self.source_name, 0) or 0) % max(1, len(links))
         started = time.monotonic()
+        discovered_count = 0
         for offset in range(len(links)):
             index = (cursor + offset) % len(links)
             if (max_cables > 0 and offset >= max_cables) or self._discovery_expired(started):
@@ -577,20 +578,35 @@ class SubmarineNetworksScraper(ArticleScraper):
                 continue
             for url in discovered_urls:
                 self._enqueue({"url": url, "cable_name": cable_name})
+            discovered_count += len(discovered_urls)
             self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
+        else:
+            if links and not discovered_count:
+                emit("discover", "failed", source=self.source_name, reason="no_articles_in_seed_traversal", entry_count=0)
         return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
     def _load_cable_links(self) -> list[dict[str, Any]]:
         path = Path(getattr(self.config, "submarine_networks_links_path", "data/cable-links.json"))
         if not path.exists():
             self.logger.warning("Missing Submarine Networks cable link seed file: %s", path)
+            emit("discovery_seed", "failed", source=self.source_name, path=str(path), reason="missing_seed_file", entry_count=0)
             return []
-        return json.loads(path.read_text(encoding="utf-8"))
+        links = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(links, list) or any(not isinstance(row, dict) or not clean_text(row.get("href")) for row in links):
+            raise ValueError("Cable discovery seeds require a list of nonempty href entries")
+        emit("discovery_seed", "completed" if links else "failed", source=self.source_name, path=str(path), entry_count=len(links), reason="loaded" if links else "empty_seed_file")
+        return links
 
     def _discover_article_urls(self, cable_url: str) -> list[str]:
-        soup = BeautifulSoup(self.get(cable_url).text, "html.parser")
+        response = self.get(cable_url)
+        soup = BeautifulSoup(response.text, "html.parser")
         urls: list[str] = []
-        for link in soup.select("a[href]"):
+        links = soup.select("a[href]")
+        title = clean_text(soup.title.get_text(" ")) if soup.title else ""
+        fields = {"source": self.source_name, "discovered_url": cable_url, "url": getattr(response, "url", cable_url),
+                  "http_status": getattr(response, "status_code", 200), "content_length": len(response.text.encode("utf-8")),
+                  "title": title, "anchor_count": len(links)}
+        for link in links:
             href = urljoin(cable_url, link.get("href", ""))
             text = clean_text(link.get_text(" "))
             if not text or href == cable_url:
@@ -598,6 +614,11 @@ class SubmarineNetworksScraper(ArticleScraper):
             if "/articles/" in href or re.search(r"(fault|repair|cut|outage|damage|disrupt)", text, re.I):
                 if "submarinenetworks.com" in href and href not in urls:
                     urls.append(href)
+        emit("cable_page", "completed", **fields, entry_count=len(urls))
+        page_text = clean_text(soup.get_text(" ")).lower()
+        if not links or re.search(r"just a moment|checking your browser|enable javascript and cookies to continue|verify you are human", page_text):
+            emit("cable_page", "failed", **fields, entry_count=len(urls), reason="empty_or_challenge_page")
+            raise ValueError("Cable directory did not provide a usable page")
         return urls
 
     def _fetch_article(self, url: str) -> dict[str, Any]:
