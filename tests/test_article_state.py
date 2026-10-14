@@ -7,6 +7,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from src.pipeline import MonitorPipeline
+from src.processing.extractor import EventExtractor
 from src.scrapers.article_sources import GoogleNewsArticleScraper
 from src.storage import EventStore
 from src.storage.article_state import ArticleState
@@ -34,6 +35,22 @@ def feed(*keys):
 
 
 class ArticleStateTests(unittest.TestCase):
+    def test_llm_empty_response_is_successful_and_cached(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = config_for(tmp)
+            extractor = EventExtractor()
+            extractor.api_key = "test-only"
+            client = Mock()
+            client.chat.completions.create.return_value = SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content='{"submarine_accidents": []}'))])
+            with patch.object(extractor, "_client_instance", return_value=client):
+                first = run_fixture(config, extractor)
+                run_fixture(config, extractor)
+            self.assertEqual(first.status, "success")
+            self.assertEqual(first.candidates, 0)
+            self.assertEqual(extractor.last_extraction_method, "llm")
+            client.chat.completions.create.assert_called_once()
+            self.assertTrue(ArticleState.from_config(config).is_processed(article()["url"]))
+
     def test_successful_zero_candidate_and_rejected_articles_are_cached_by_both_urls(self):
         with tempfile.TemporaryDirectory() as tmp:
             config = config_for(tmp)

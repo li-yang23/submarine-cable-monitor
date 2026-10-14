@@ -105,7 +105,7 @@ class PipelineAuditTests(unittest.TestCase):
             self.assertEqual(summary.status, "degraded")
             self.assertEqual((summary.inserted, summary.merged, summary.rejected), (1, 1, 1))
             self.assertTrue(any(r.get("method") == "rules_fallback" for r in records))
-            self.assertTrue(any(r.get("reason") == "unnamed_no_explicit_subsea_incident" for r in records))
+            self.assertTrue(any(r.get("reason") == "unnamed_missing_date" for r in records))
             self.assertTrue(any(r["outcome"] == "merged" and r.get("event_uid") for r in records))
             self.assertEqual(store.events[0]["verification_status"], "rule_verified")
             text = (Path(summary.audit_path) / "audit.jsonl").read_text()
@@ -151,10 +151,31 @@ class UnnamedIncidentTests(unittest.TestCase):
 
     def test_globe_incident_is_kept_without_inventing_cable_name(self):
         article = {"source": "Google News", "url": "https://example.com/globe", "title": "Globe internet disrupted in Philippines", "published_date": "2026-10-04", "content": "An undersea cable disruption caused about 300Gbps of capacity loss in the Philippines."}
-        event = self.extractor.extract(article)[0]
+        event = self.extractor._decorate_event({"cable_name": "", "occurrence_date": "2026-10-03", "affected_area": "Philippines", "original_text": article["content"]}, article)
         self.assertEqual(event["cable_name"], "")
+        self.assertEqual(event["occurrence_date"], "2026-10-03")
         self.assertTrue(self.extractor.is_real_event(event))
         self.assertFalse(should_drop_event(event))
+
+    def test_unknown_or_incomplete_incident_dates_never_use_publication_date(self):
+        article = {"published_date": "2026-10-04", "content": "WACS cable fault affected South Africa."}
+        for value in (None, "", "unknown", "June 2026", "Jun 2026", "2026-06", "2026"):
+            with self.subTest(value=value):
+                event = self.extractor._decorate_event({"occurrence_date": value, "repair_date": value}, article)
+                self.assertIsNone(event["occurrence_date"])
+                self.assertIsNone(event["repair_date"])
+                self.assertEqual(event["published_date"], "2026-10-04")
+        rule_event = self.extractor.extract(article)[0]
+        self.assertIsNone(rule_event["occurrence_date"])
+        self.assertIsNone(rule_event["repair_date"])
+
+    def test_explicit_incident_and_repair_dates_are_preserved(self):
+        event = self.extractor._decorate_event(
+            {"occurrence_date": "2026-09-04", "repair_date": "September 12, 2026"},
+            {"published_date": "2026-10-04"},
+        )
+        self.assertEqual(event["occurrence_date"], "2026-09-04")
+        self.assertEqual(event["repair_date"], "2026-09-12")
 
     def test_general_outage_and_unsubstantiated_incident_are_rejected(self):
         base = {"title": "Internet outage", "original_text": "Internet outage in Philippines after a router failure.", "affected_area": "Philippines", "occurrence_date": "2026-10-04"}
@@ -191,6 +212,80 @@ class UnnamedIncidentTests(unittest.TestCase):
         self.assertEqual(event["cable_name"], "C2C")
         self.assertIn("InfiniVAN", event["original_text"])
         self.assertTrue(self.extractor.is_real_event(event))
+
+    def test_subtelforum_embedded_recommendation_sections_are_excluded(self):
+        soup = BeautifulSoup("""<article><div class='post-content'>
+            <p>The SEA-ME-WE 5 cable fault was repaired and Pakistan services restored.</p>
+            <section aria-labelledby='stf-related-cable-systems-title' class='stf-related-content stf-related-cable-systems' data-stf-related-cable-systems='1'>
+                <h2 id='stf-related-cable-systems-title'>Related cable systems</h2>
+                <article><a>Interactive cable map WACS Submarine Cable System</a></article>
+            </section>
+            <section aria-labelledby='stf-related-magazine-articles-title' class='stf-related-content stf-related-magazine-articles'>
+                <h2 id='stf-related-magazine-articles-title'>Related magazine articles</h2>
+                <article><h3>Complex Challenges: Solutions Made Simple</h3><p>SubTel Forum Magazine #98</p>
+                <div class='stf-related-content__topics'><span>Topics</span><a>Africa Connectivity</a></div></article>
+            </section>
+            <p>PTA continued monitoring connectivity after the restoration.</p>
+            </div></article>""", "html.parser")
+        content = article_body_text(soup)
+        for recommendation in ("Related cable systems", "WACS", "Related magazine articles", "Complex Challenges", "Topics", "Africa Connectivity"):
+            self.assertNotIn(recommendation, content)
+        self.assertIn("SEA-ME-WE 5 cable fault", content)
+        self.assertIn("PTA continued monitoring", content)
+
+    def test_related_cable_and_magazine_phrases_in_article_prose_are_preserved(self):
+        soup = BeautifulSoup("""<article><p>Related cable systems also carried rerouted traffic.</p>
+            <p>The report cited related magazine articles about repair delays.</p>
+            <p>Topics covered by the operator included outage duration and restoration.</p></article>""", "html.parser")
+        content = article_body_text(soup)
+        self.assertIn("Related cable systems also carried rerouted traffic.", content)
+        self.assertIn("related magazine articles about repair delays.", content)
+        self.assertIn("Topics covered by the operator", content)
+
+    def test_vocus_confirmed_fault_on_full_cable_name_is_accepted(self):
+        event = {
+            "cable_name": "Australia-Singapore Cable",
+            "title": "Vocus ASC Fault Disrupts Australia-Singapore Traffic",
+            "occurrence_date": "2026-09-04",
+            "affected_area": "Australia, Singapore, Christmas Island, Indonesia",
+            "original_text": "Vocus has confirmed a fault on its Australia-Singapore Cable, disrupting international internet and transmission services between Australia and Singapore and requiring affected traffic to be moved onto alternate routes.",
+        }
+        self.assertTrue(self.extractor.is_real_event(event))
+        self.assertFalse(should_drop_event(event))
+        testing_only = {**event, "original_text": "Emergency cable testing from Perth temporarily affected services on Christmas Island during the testing window."}
+        self.assertFalse(self.extractor.is_real_event(testing_only))
+
+    def test_named_cable_semantics_reject_hypothetical_policy_and_drill(self):
+        base = {"cable_name": "Australia-Singapore Cable", "occurrence_date": "2026-09-04", "affected_area": "Australia"}
+        for evidence in (
+            "Vocus could confirm a fault on its Australia-Singapore Cable, disrupting international internet services.",
+            "A policy review discussed a fault on the Australia-Singapore Cable and international internet resilience.",
+            "An exercise simulated a fault on the Australia-Singapore Cable, disrupting internet services.",
+            "A fault on a Vocus router disrupted international internet services.",
+        ):
+            with self.subTest(evidence=evidence):
+                self.assertFalse(self.extractor.is_real_event({**base, "original_text": evidence}))
+
+    def test_fitburg_seabed_cutting_telecom_cables_is_explicit_incident(self):
+        event = {
+            "cable_name": "",
+            "title": "Fitburg Trial Opens Over Baltic Cable Damage",
+            "occurrence_date": "2025-12-31",
+            "affected_area": "Finland and Estonia",
+            "original_text": "Prosecutors allege the vessel dragged a damaged anchor for at least 130 kilometers across the Gulf of Finland seabed, cutting two telecom cables and attempting to damage eight additional subsea connections.",
+        }
+        self.assertTrue(self.extractor.is_real_event(event))
+        self.assertFalse(should_drop_event(event))
+        alternate = {**event, "original_text": "The vessel damaged two subsea telecommunications cables linking Finland and Estonia."}
+        self.assertTrue(self.extractor.is_real_event(alternate))
+        for evidence in (
+            "An exercise simulated an anchor dragging across the seabed, cutting two telecom cables.",
+            "An anchor could drag across the seabed, cutting two telecom cables.",
+            "A policy review discussed damage to two subsea telecommunications cables.",
+            "A vessel crossed the seabed while a fault disrupted a land-based telecom router.",
+        ):
+            with self.subTest(evidence=evidence):
+                self.assertFalse(self.extractor.is_real_event({**event, "original_text": evidence}))
 
 
 if __name__ == "__main__":

@@ -486,7 +486,9 @@ class SubmarineNetworksScraper(ArticleScraper):
 
 
 def article_body_text(soup: BeautifulSoup) -> str:
-    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
+    # SubTel Forum embeds cable-map and magazine recommendations inside article
+    # bodies. Match their template classes, preserving the same words in prose.
+    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
         node.decompose()
     node = (soup.select_one("[itemprop='articleBody']") or soup.select_one(".article-body")
             or soup.select_one(".post-content") or soup.select_one(".entry-content")
