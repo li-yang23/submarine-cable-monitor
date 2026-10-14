@@ -179,6 +179,17 @@ class CrossSourceTests(unittest.TestCase):
             self.assertIn(self.parent['queue_id'],row['cross_source_parents'])
         self.assertTrue(all('content' not in source for source in record['sources']))
 
+    def test_search_audit_overrides_original_keyword_without_false_failure(self):
+        self.parent['keyword'] = 'original discovery query'
+        record = {'sources': []}
+        with patch.object(self.recovery.scraper, 'get', return_value=SimpleNamespace(content=b'fixture')), patch('src.processing.cross_source.parse_rss_entries', return_value=[]), patch('src.processing.cross_source.emit') as audit:
+            found, reason = self.recovery.retrieve(self.parent, record)
+        searches = [call for call in audit.call_args_list if call.args[0] == 'cross_source_search']
+        self.assertEqual(len(searches), 2)
+        self.assertTrue(all(call.args[1] == 'completed' for call in searches))
+        self.assertEqual([call.kwargs['query'] for call in searches], record['queries'])
+        self.assertEqual(reason, 'insufficient_sources')
+
     def test_model_402_during_recovery_pauses_all_further_calls(self):
         other=self.queue.enqueue(dict(source='Google News',url='https://mb.com.ph/other',title='AAG outage Vietnam',published_date='2026-10-03'))
         self.queue.mark_review(other,'cross_source_insufficient_sources'); self.queue.persist()
