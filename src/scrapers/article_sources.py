@@ -143,9 +143,15 @@ class ArticleScraper:
                 page = browser.new_page()
                 navigations = []
                 page.on("response", lambda r: navigations.append(r) if r.request.is_navigation_request() and r.frame == page.main_frame else None)
-                initial = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                initial = page.goto(url, wait_until="commit", timeout=15000)
                 try:
-                    page.wait_for_selector("article, main, #FOR_target_content, .entry-content, [itemprop='articleBody']", timeout=10000)
+                    page.wait_for_function("""() => {
+                        const text = document.body?.innerText || '';
+                        if (/正在进行安全验证|verify you are human|enable javascript and cookies|please wait|just a moment/i.test(text)) return false;
+                        const article = document.querySelector('#bodyTopPart, #FOR_target_content, .tdb_single_content, .entry-content, [itemprop="articleBody"], article');
+                        return (article && article.innerText.trim().length >= 300) ||
+                            (!document.querySelector('#bodyTopPart') && text.length >= 1000 && document.querySelectorAll('a[href]').length > 10);
+                    }""", timeout=15000)
                 except Exception:
                     pass
                 response = requests.Response()
@@ -227,6 +233,20 @@ class ArticleScraper:
     def extract_page_text(self, url: str) -> dict[str, Any]:
         response = self.get(url)
         soup = BeautifulSoup(response.text, "html.parser")
+        # ABS-CBN returns a 200 HTML shell before its body hydrates. Navigation
+        # and newsletter text must never count as a successfully fetched article.
+        if (urlparse(url).hostname or "").endswith("abs-cbn.com"):
+            body = soup.select_one("#bodyTopPart")
+            if body is None or len(body.get_text(" ", strip=True)) < 300:
+                if os.getenv("MONITOR_BROWSER_FALLBACK") == "1":
+                    response = self._render_get(url)
+                    response.raise_for_status()
+                    soup = BeautifulSoup(response.text, "html.parser")
+                    body = soup.select_one("#bodyTopPart")
+                if body is None or len(body.get_text(" ", strip=True)) < 300:
+                    raise ValueError("dynamic_article_body_missing")
+        if soup.select_one("#barrier-page") or re.search(r"subscribe to unlock this article", soup.get_text(" "), re.I):
+            raise ValueError("article_requires_subscription")
         title = clean_text((soup.select_one("h1") or soup.select_one("title") or soup).get_text(" "))
         published = extract_date_from_soup(soup)
         return {
@@ -749,9 +769,9 @@ def article_body_text(soup: BeautifulSoup) -> str:
     restore_streamed_html(soup)
     # SubTel Forum embeds cable-map and magazine recommendations inside article
     # bodies. Match their template classes, preserving the same words in prose.
-    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .sib-form, .billboard_article, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
+    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .sib-form, .sib-form-bc, .billboard_article, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
         node.decompose()
-    candidates = soup.select("[itemprop='articleBody'], .article-body, .post-content, .entry-content, #FOR_target_content")
+    candidates = soup.select("[itemprop='articleBody'], .article-body, .post-content, .entry-content, .tdb_single_content, .td-post-content, #FOR_target_content, #bodyTopPart")
     # The first entry-content can be an empty featured-image caption. Prefer the
     # populated body, never an unrelated article card or an entire news feed.
     node = (max(candidates, key=lambda n: len(n.get_text(" ")), default=None)
