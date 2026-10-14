@@ -281,13 +281,9 @@ jobs:
               }
               return;
             }
-            if (existing) {
-              if (Date.now() - Date.parse(existing.updated_at) < 24 * 60 * 60 * 1000) return;
-              await github.rest.issues.createComment({
-                owner: context.repo.owner, repo: context.repo.repo,
-                issue_number: existing.number, body
-              });
-            } else {
+            // An unresolved infrastructure incident already notified the user.
+            // Keep details in the run log instead of posting periodic reminders.
+            if (!existing) {
               await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,

@@ -121,12 +121,12 @@ class StrictExtractionTests(unittest.TestCase):
 
 
 class ModelHealthTests(unittest.TestCase):
-    def test_retired_siliconflow_balance_api_is_not_called_or_reported_healthy(self):
+    def test_balance_check_is_disabled_and_does_not_claim_model_availability(self):
         with patch("requests.sessions.Session.request") as request:
             result = check_model_health("private-key", "siliconflow", "https://api.siliconflow.cn/v1", 5)
         request.assert_not_called()
-        self.assertEqual(result["status"], "health_unknown")
-        self.assertEqual(result["reason"], "balance_api_retired")
+        self.assertEqual(result["status"], "not_checked")
+        self.assertEqual(result["reason"], "balance_check_disabled")
         self.assertIsNone(result["available"])
         self.assertIsNone(result["balance"])
         self.assertFalse(result["balance_supported"])
@@ -138,7 +138,7 @@ class ModelHealthTests(unittest.TestCase):
             with self.subTest(url=url), patch("requests.sessions.Session.request") as request:
                 result = check_model_health("private-key", "siliconflow", url)
                 request.assert_not_called()
-                self.assertEqual(result["status"], "health_unknown")
+                self.assertEqual(result["status"], "not_checked")
                 self.assertIsNone(result["available"])
                 self.assertNotIn("private-key", json.dumps(result))
                 self.assertNotIn("pass@", json.dumps(result))
@@ -148,8 +148,8 @@ class ModelHealthTests(unittest.TestCase):
             result = check_model_health("private-key", "openai", "https://api.openai.com/v1")
             missing = check_model_health(None, "siliconflow")
         request.assert_not_called()
-        self.assertEqual(result["status"], "health_unknown")
-        self.assertEqual(result["reason"], "balance_check_unsupported")
+        self.assertEqual(result["status"], "not_checked")
+        self.assertEqual(result["reason"], "balance_check_disabled")
         self.assertEqual(missing["reason"], "missing_api_key")
         self.assertFalse(missing["available"])
 

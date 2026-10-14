@@ -65,14 +65,18 @@ class MonitorPipeline:
             article_state = ArticleState.from_config(self.config)
             health = self.health_checker(
                 getattr(self.extractor, "api_key", None), getattr(self.extractor, "provider", "unknown"),
-                getattr(self.extractor, "base_url", None), self.config.low_balance_threshold,
             )
-            summary.model_health = {k: health[k] for k in ("status", "available", "low_balance", "reason", "provider", "http_status") if k in health}
-            audit.emit("model_health", "completed" if health.get("status") == "healthy" else "failed",
-                       **summary.model_health)
             model_available = health.get("available") is not False
+            # Account/balance preflight is disabled. A configured key permits an
+            # attempt; only an actual extraction can establish availability.
+            summary.model_health = {
+                "status": "not_checked", "available": None, "low_balance": False,
+                "reason": "balance_check_disabled", "provider": health.get("provider", "unknown"),
+            }
             if not model_available:
+                summary.model_health.update({k: health[k] for k in ("status", "available", "reason", "http_status") if k in health})
                 summary.errors += 1
+            audit.emit("model_health", "skipped" if model_available else "failed", **summary.model_health)
 
             # Always discover every source before spending time on extraction. All
             # discovered URLs are persisted even while the model is unavailable.
@@ -148,6 +152,10 @@ class MonitorPipeline:
                         method = getattr(self.extractor, "last_extraction_method", "unavailable")
                         if method != "llm":
                             raise ExtractionUnavailable("rule_fallback_disabled")
+                        summary.model_health = {
+                            "status": "available", "available": True, "low_balance": False,
+                            "reason": "inference_succeeded", "provider": getattr(self.extractor, "provider", "unknown"),
+                        }
                         consecutive_model_failures = 0
                         summary.candidates += len(events)
                         audit.emit("extract", "completed", **fields, method=method, candidate_count=len(events), reason="no_candidates" if not events else "candidates_found")
@@ -196,11 +204,10 @@ class MonitorPipeline:
                         queue.mark_retry(row, exc.reason, error_type=type(exc).__name__, http_status=exc.http_status)
                         queue.persist()
                         audit.emit("extract", "failed", **fields, reason=exc.reason, provider=exc.provider, http_status=exc.http_status)
+                        summary.model_health.update(status="unavailable", available=False, reason=exc.reason,
+                                                    provider=exc.provider, http_status=exc.http_status, low_balance=False)
                         if exc.reason in {"balance_exhausted", "authentication_failed", "missing_api_key", "rate_limited"} or consecutive_model_failures >= 3:
                             model_available = False
-                            summary.model_health.update(status="unavailable", available=False, reason=exc.reason,
-                                                        provider=exc.provider, http_status=exc.http_status,
-                                                        low_balance=exc.reason == "balance_exhausted")
                             audit.emit("model_health", "failed", reason="circuit_open", provider=exc.provider, http_status=exc.http_status)
                     except OSError:
                         # Store/queue disk failures are fatal: leave the durable URL

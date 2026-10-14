@@ -29,7 +29,6 @@ import requests
 MARKER = "<!-- submarine-cable-monitor-operational-alert:v1 -->"
 ISSUE_TITLE = "[monitor] Collection health requires attention"
 HEALTHY = "healthy"
-REMINDER_SECONDS = 24 * 60 * 60
 GOOD = {"success", "ok", "healthy", "available", "ready", "completed", "normal"}
 
 
@@ -39,6 +38,7 @@ class Report:
     fingerprint: str
     subject: str
     body: str
+    conditions: tuple[str, ...] = ()
 
 
 def quantity(value: Any) -> int:
@@ -84,49 +84,35 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
                 add(f"queue.{key}", f"队列 {key}", value)
 
     health = summary.get("model_health")
-    if isinstance(health, str) and health.lower() not in GOOD:
-        add("model_health", "模型不可用、余额不足或运行降级")
+    # Balance forecasts and unavailable balance APIs are intentionally silent.
+    # Only missing credentials or observed inference failures are actionable.
+    quiet_statuses = {"low_balance", "health_unknown", "unknown", "not_checked"}
+    quiet_reasons = {"balance_api_retired", "balance_check_unsupported", "balance_check_disabled", "balance_below_threshold"}
+    if isinstance(health, str) and health.lower() not in GOOD | quiet_statuses:
+        add("model_health", "模型调用不可用")
     elif isinstance(health, dict):
-        model_status = str(health.get("status", "healthy")).lower()
+        model_status = str(health.get("status", "unknown")).lower()
         reason = health.get("reason")
-        if reason == "balance_api_retired":
-            add("model_health", "服务商余额接口已下线，无法提前核查余额")
-        elif reason == "balance_exhausted":
-            add("model_balance", "模型余额已耗尽，请充值后重试")
-        elif reason == "authentication_failed":
+        http_status = health.get("http_status")
+        if http_status == 402 or reason == "balance_exhausted":
+            add("model_balance", "模型调用因余额耗尽失败，请充值后重试")
+        elif http_status in {401, 403} or reason in {"authentication_failed", "missing_api_key"}:
             add("model_auth", "模型凭据无效或无权访问，请检查 API 密钥与权限")
-        elif reason == "rate_limited":
+        elif http_status == 429 or reason == "rate_limited":
             add("model_rate_limit", "模型请求受到限流，稍后自动重试")
-        elif health.get("available") is False or health.get("ready") is False:
-            add("model_health", "模型不可用，请检查凭据、余额或服务状态")
-        elif model_status in {"health_unknown", "unknown"}:
-            add("model_health", "模型健康状态尚未确认，请查看运行记录")
-        elif model_status not in GOOD and model_status != "low_balance":
-            add("model_health", "模型运行出现告警")
-        if health.get("http_status") == 402 or reason == "balance_exhausted" or health.get("balance_status") == "exhausted":
-            add("model_balance", "模型余额已耗尽，请充值后重试")
-        elif health.get("balance_status") == "insufficient":
-            add("model_balance", "模型余额不足，请充值后重试")
-        elif health.get("low_balance") or health.get("balance_status") == "low" or model_status == "low_balance":
-            add("model_balance", "模型余额低于提醒阈值，请及时充值")
-        if health.get("http_status") == 429:
-            add("model_rate_limit", "模型请求受到限流，稍后自动重试")
+        elif reason not in quiet_reasons and model_status not in quiet_statuses:
+            if health.get("available") is False or health.get("ready") is False or model_status not in GOOD:
+                add("model_health", "模型调用不可用，请检查凭据或服务状态")
         if quantity(health.get("failures")):
             add("model_failures", "模型失败次数", quantity(health["failures"]))
 
-    # Silence is not evidence of recovery. A broken/old summary must not close an
-    # existing alert while unresolved work or the model's state is unknown.
-    model_checked = (isinstance(health, str) and health.lower() in GOOD) or (
-        isinstance(health, dict) and str(health.get("status", "")).lower() in GOOD
-        and health.get("available") is not False and health.get("ready") is not False
-    )
+    # Balance checks are disabled, so an untested model is not itself an alert.
+    # A missing queue summary still must not claim that unfinished work cleared.
     queue_checked = True
     for key in ("pending", "retry", "review"):
         value = summary.get(key, summary.get(key + "_count", queue.get(key) if isinstance(queue, dict) else None))
         if not isinstance(value, (int, float)) or isinstance(value, bool) or value < 0:
             queue_checked = False
-    if not model_checked and not any(key.startswith("model") for key in issues):
-        add("model_unchecked", "模型健康状态尚未确认")
     if not queue_checked:
         add("queue_unchecked", "待处理、重试及复核队列状态尚未确认")
 
@@ -147,7 +133,8 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
                 add(group, label, count)
 
     active = bool(issues)
-    fingerprint = hashlib.sha256(json.dumps(issues, sort_keys=True, ensure_ascii=False).encode()).hexdigest() if active else HEALTHY
+    conditions = tuple(sorted(issues))
+    fingerprint = hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY
     subject = "[海缆监控] 采集需要处理" if active else "[海缆监控] 采集已恢复"
     lines = [subject, ""]
     if active:
@@ -157,7 +144,7 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
         lines.append("本次采集已恢复正常，摘要中没有未处理队列、复核项或运行告警。")
     if run_url:
         lines.extend(["", f"运行记录：{run_url}"])
-    return Report(active, fingerprint, subject, "\n".join(lines))
+    return Report(active, fingerprint, subject, "\n".join(lines), conditions)
 
 
 def load_summary(path: Path) -> tuple[dict[str, Any], str | None]:
@@ -186,6 +173,9 @@ def load_state(path: Path) -> dict[str, Any]:
         item = value.get(channel)
         if isinstance(item, dict) and isinstance(item.get("fingerprint"), str) and isinstance(item.get("last_sent"), (float, int)):
             result[channel] = {"fingerprint": item["fingerprint"], "last_sent": item["last_sent"]}
+            conditions = item.get("conditions")
+            if isinstance(conditions, list) and all(isinstance(key, str) for key in conditions):
+                result[channel]["conditions"] = sorted(set(conditions))
     return result
 
 
@@ -199,9 +189,37 @@ def save_state(path: Path, state: dict[str, Any]) -> None:
 def due(report: Report, previous: dict[str, Any] | None, now: float) -> bool:
     if not previous:
         return report.active
-    if previous.get("fingerprint") != report.fingerprint:
+    if not report.active:
+        return previous.get("fingerprint") != HEALTHY
+    if previous.get("fingerprint") == HEALTHY:
         return True
-    return report.active and now - previous.get("last_sent", 0) >= REMINDER_SECONDS
+    conditions = previous.get("conditions")
+    if isinstance(conditions, list):
+        # Counts, disappearing categories and time passing do not send reminders.
+        # A newly observed failure category (e.g. actual HTTP 402) still alerts.
+        return bool(set(report.conditions) - set(conditions))
+    # Backward compatibility for state written before condition-level tracking.
+    return previous.get("fingerprint") != report.fingerprint
+
+
+def after_model_recovery(previous: dict[str, Any] | None, report: Report,
+                         summary: dict[str, Any]) -> dict[str, Any] | None:
+    """A successful inference re-arms model alerts without another notification.
+
+    Outstanding review work must not suppress a later, genuinely new model outage.
+    An untested model cannot establish recovery, and unrelated conditions stay seen.
+    """
+    if not previous or not report.active or not isinstance(previous.get("conditions"), list):
+        return previous
+    health = summary.get("model_health")
+    if not isinstance(health, dict) or health.get("status") != "available" or health.get("reason") != "inference_succeeded":
+        return previous
+    conditions = [key for key in previous["conditions"]
+                  if not key.startswith("model_") or key in report.conditions]
+    if conditions == previous["conditions"]:
+        return previous
+    return {**previous, "conditions": conditions,
+            "fingerprint": hashlib.sha256(json.dumps(tuple(sorted(conditions))).encode()).hexdigest()}
 
 
 def github_context(env: dict[str, str]) -> tuple[str, str, str | None]:
@@ -369,10 +387,17 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
                     failures += 1
                 continue
         configured += 1
-        previous = state.get(channel)
+        previous = after_model_recovery(state.get(channel), report, summary)
         recovery_lookup = channel == "github" and not report.active and not previous
         if not due(report, previous, now) and not recovery_lookup:
-            note(f"{channel}：状态未变化，未重复发送。", env)
+            if previous != state.get(channel):
+                try:
+                    state[channel] = previous
+                    save_state(args.state, state)
+                except OSError as exc:
+                    failures += 1
+                    note(f"{channel}：无法保存模型恢复状态 {error_kind(exc)}。", env, warning=True)
+            note(f"{channel}：没有新增故障类型，未重复发送。", env)
             continue
         try:
             delivered = True
@@ -382,12 +407,12 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
             else:
                 send_email(report, env)
             if delivered:
-                state[channel] = {"fingerprint": report.fingerprint, "last_sent": now}
+                state[channel] = {"fingerprint": report.fingerprint, "last_sent": now, "conditions": list(report.conditions)}
                 save_state(args.state, state)
                 note(f"{channel}：{'告警' if report.active else '恢复通知'}已发送。", env)
             else:
                 # No outstanding issue exists. Remember health without claiming delivery.
-                state[channel] = {"fingerprint": HEALTHY, "last_sent": now}
+                state[channel] = {"fingerprint": HEALTHY, "last_sent": now, "conditions": []}
                 save_state(args.state, state)
                 note(f"{channel}：没有待关闭的告警 issue，未发送恢复通知。", env)
         except Exception as exc:
