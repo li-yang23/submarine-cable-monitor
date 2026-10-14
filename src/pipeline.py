@@ -76,7 +76,15 @@ class MonitorPipeline:
             if not model_available:
                 summary.model_health.update({k: health[k] for k in ("status", "available", "reason", "http_status") if k in health})
                 summary.errors += 1
-            audit.emit("model_health", "skipped" if model_available else "failed", **summary.model_health)
+            if queue.balance_paused():
+                model_available = False
+                summary.model_health = {
+                    "status": "paused", "available": False, "low_balance": False,
+                    "reason": "balance_exhausted", "provider": health.get("provider", "unknown"),
+                    **queue.model_pause,
+                }
+                audit.emit("collection", "paused", reason="balance_exhausted", retry_at=queue.model_pause["retry_at"])
+            audit.emit("model_health", "skipped" if model_available or queue.balance_paused() else "failed", **summary.model_health)
 
             # Always discover every source before spending time on extraction. All
             # discovered URLs are persisted even while the model is unavailable.
@@ -156,6 +164,7 @@ class MonitorPipeline:
                             "status": "available", "available": True, "low_balance": False,
                             "reason": "inference_succeeded", "provider": getattr(self.extractor, "provider", "unknown"),
                         }
+                        queue.model_pause = {}
                         consecutive_model_failures = 0
                         summary.candidates += len(events)
                         audit.emit("extract", "completed", **fields, method=method, candidate_count=len(events), reason="no_candidates" if not events else "candidates_found")
@@ -201,11 +210,16 @@ class MonitorPipeline:
                     except ExtractionUnavailable as exc:
                         summary.errors += 1
                         consecutive_model_failures += 1
-                        queue.mark_retry(row, exc.reason, error_type=type(exc).__name__, http_status=exc.http_status)
+                        queue.mark_retry(row, exc.reason, error_type=type(exc).__name__, http_status=exc.http_status,
+                                         delay_seconds=0 if exc.reason == "balance_exhausted" else None)
+                        if exc.reason == "balance_exhausted":
+                            queue.pause_for_balance()
                         queue.persist()
                         audit.emit("extract", "failed", **fields, reason=exc.reason, provider=exc.provider, http_status=exc.http_status)
                         summary.model_health.update(status="unavailable", available=False, reason=exc.reason,
                                                     provider=exc.provider, http_status=exc.http_status, low_balance=False)
+                        if exc.reason == "balance_exhausted":
+                            summary.model_health.update(queue.model_pause)
                         if exc.reason in {"balance_exhausted", "authentication_failed", "missing_api_key", "rate_limited"} or consecutive_model_failures >= 3:
                             model_available = False
                             audit.emit("model_health", "failed", reason="circuit_open", provider=exc.provider, http_status=exc.http_status)

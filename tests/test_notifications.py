@@ -375,6 +375,46 @@ class CLITests(unittest.TestCase):
         self.assertEqual(github.return_value.send.call_count, 1)
 
     @patch.object(notify, "GitHubNotifier")
+    @patch.object(notify, "send_email")
+    def test_balance_email_once_per_actual_daily_failure_and_retry_failed_delivery(self, email, github):
+        github.return_value.send.return_value = True
+        env = {**github_env(), **email_env()}
+        health = {"status": "unavailable", "available": False, "reason": "balance_exhausted",
+                  "http_status": 402, "attempt_id": "2026-10-14T00:17:00+00:00", "retry_at": "2026-10-14T16:00:00+00:00"}
+        self.summary.write_text(json.dumps(healthy(warnings=1, model_health=health)))
+        self.assertEqual(self.call(env=env)[0], 0)
+        self.assertIn("请充值", email.call_args.args[0].subject)
+        self.assertIn("未处理新闻已保留", email.call_args.args[0].body)
+        self.summary.write_text(json.dumps(healthy(warnings=1, model_health={**health, "status": "paused"})))
+        self.call(env=env, now=200)
+        self.assertEqual(email.call_count, 1)
+        self.assertEqual(github.return_value.send.call_count, 1)
+        # Passing time alone must not trigger a reminder, even for the same summary.
+        self.call(env=env, now=100 + 2 * 86400)
+        self.assertEqual(email.call_count, 1)
+        self.summary.write_text(json.dumps(healthy(warnings=1, model_health={**health, "attempt_id": "2026-10-14T16:17:00+00:00"})))
+        email.side_effect = smtplib.SMTPException("private-error")
+        self.assertEqual(self.call(env=env, now=300)[0], 1)
+        self.assertEqual(github.return_value.send.call_count, 2)
+        self.assertTrue(github.return_value.send.call_args.kwargs["mention"])
+        self.assertEqual(json.loads(self.state.read_text())["email"]["balance_attempt"], health["attempt_id"])
+        email.side_effect = None
+        self.assertEqual(self.call(env=env, now=400)[0], 0)
+        self.call(env=env, now=500)
+        self.assertEqual(email.call_count, 3)
+        self.assertEqual(github.return_value.send.call_count, 2)
+
+    @patch.object(notify, "GitHubNotifier")
+    def test_balance_exhaustion_without_smtp_does_not_claim_email_delivered(self, github):
+        github.return_value.send.return_value = True
+        health = {"status": "unavailable", "available": False, "reason": "balance_exhausted", "attempt_id": "daily-attempt"}
+        self.summary.write_text(json.dumps(healthy(model_health=health)))
+        result, _, errors = self.call(env=github_env())
+        self.assertEqual(result, 1)
+        self.assertIn("未通知邮箱", errors)
+        self.assertNotIn("email", json.loads(self.state.read_text()))
+
+    @patch.object(notify, "GitHubNotifier")
     def test_missing_summary_and_failed_workflow_raise_alert(self, github):
         github.return_value.send.return_value = True
         self.summary.unlink()

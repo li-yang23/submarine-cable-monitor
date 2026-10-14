@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -95,6 +96,48 @@ class PipelineReliabilityTests(unittest.TestCase):
         self.assertEqual(self.trace[:3], [("discover", "first"), ("discover", "second"), ("discover", "third")])
         self.assertEqual(len([entry for entry in self.trace if entry[0] == "fetch"]), 1)
         self.assertFalse(ArticleState.from_config(self.config).is_processed(article()["url"]))
+
+    def test_balance_pause_survives_restart_and_resumes_next_beijing_day(self):
+        discoveries = {"first": [article("first", "old"), article("first", "waiting")]}
+        failed = self.extractor(side_effect=ExtractionUnavailable("balance_exhausted", http_status=402, provider="siliconflow"))
+        # 23:50 Beijing, not the UTC calendar boundary.
+        with patch("src.storage.article_queue.utcnow", return_value=datetime(2026, 10, 14, 15, 50, tzinfo=timezone.utc)):
+            first = self.run_pipeline(discoveries, failed)
+        self.assertEqual(first.model_health["retry_at"], "2026-10-14T16:00:00+00:00")
+        queue = ArticleQueue.from_config(self.config)
+        queue.requeue(article("first", "old"))
+        queue.persist()
+        skipped = self.extractor()
+        with patch("src.storage.article_queue.utcnow", return_value=datetime(2026, 10, 14, 15, 59, tzinfo=timezone.utc)):
+            paused = self.run_pipeline({"first": [article("first", "new")]}, skipped)
+        skipped.extract.assert_not_called()
+        self.assertEqual(paused.model_health["status"], "paused")
+        self.assertEqual(paused.model_health["attempt_id"], first.model_health["attempt_id"])
+        self.assertEqual(paused.queue["pending"], 3)
+        resumed = self.extractor()
+        with patch("src.storage.article_queue.utcnow", return_value=datetime(2026, 10, 14, 16, 17, tzinfo=timezone.utc)):
+            result = self.run_pipeline({"first": []}, resumed)
+        self.assertEqual(resumed.extract.call_count, 3)
+        self.assertEqual(result.queue["done"], 3)
+        self.assertEqual(ArticleQueue.from_config(self.config).model_pause, {})
+
+    def test_next_day_still_exhausted_pauses_again_without_losing_backlog(self):
+        failed = self.extractor(side_effect=ExtractionUnavailable("balance_exhausted", http_status=402, provider="siliconflow"))
+        with patch("src.storage.article_queue.utcnow", return_value=datetime(2026, 10, 14, 0, 17, tzinfo=timezone.utc)):
+            first = self.run_pipeline({"first": [article("first", "old"), article("first", "waiting")]}, failed)
+        with patch("src.storage.article_queue.utcnow", return_value=datetime(2026, 10, 14, 16, 17, tzinfo=timezone.utc)):
+            second = self.run_pipeline({"first": [article("first", "new")]}, failed)
+        self.assertEqual(failed.extract.call_count, 2)
+        self.assertNotEqual(first.model_health["attempt_id"], second.model_health["attempt_id"])
+        self.assertEqual(second.model_health["retry_at"], "2026-10-15T16:00:00+00:00")
+        self.assertEqual(second.queue["retry"], 1)
+        self.assertEqual(second.queue["pending"], 2)
+        self.assertEqual(second.queue["done"], 0)
+
+    def test_dry_run_balance_failure_does_not_persist_pause(self):
+        failed = self.extractor(side_effect=ExtractionUnavailable("balance_exhausted", http_status=402, provider="siliconflow"))
+        self.run_pipeline({"first": [article()]}, failed, dry_run=True)
+        self.assertFalse(Path(self.config.article_queue_path).exists())
 
     def test_missing_key_still_discovers_all_sources_without_fetching(self):
         extractor = self.extractor()

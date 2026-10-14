@@ -39,6 +39,7 @@ class Report:
     subject: str
     body: str
     conditions: tuple[str, ...] = ()
+    balance_attempt: str = ""
 
 
 def quantity(value: Any) -> int:
@@ -136,7 +137,17 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
     conditions = tuple(sorted(issues))
     fingerprint = hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY
     subject = "[海缆监控] 采集需要处理" if active else "[海缆监控] 采集已恢复"
+    balance_attempt = ""
+    if "model_balance" in issues:
+        subject = "[海缆监控] 模型余额不足，请充值；处理已暂停"
+        if isinstance(health, dict):
+            balance_attempt = str(health.get("attempt_id", ""))
     lines = [subject, ""]
+    if "model_balance" in issues:
+        lines.append("模型服务已返回余额不足，请为当前模型 API 账户充值。本轮模型处理已停止，未处理新闻已保留，不会改用规则或其他模型继续处理。")
+        lines.append("北京时间次日的定时任务将重试积压新闻和新发现新闻；如果余额仍不足，将再次暂停并提醒充值。")
+        if isinstance(health, dict) and health.get("retry_at"):
+            lines.append(f"暂停截止时间（UTC）：{health['retry_at']}，到期后的首次定时任务重试。")
     if active:
         lines.extend(f"- {label}：{value}" for _, (label, value) in sorted(issues.items()))
         lines.extend(["", "请检查 Actions 运行摘要和 audit.jsonl，按上述原因处理；待处理新闻仍需完成重试。"])
@@ -144,7 +155,7 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
         lines.append("本次采集已恢复正常，摘要中没有未处理队列、复核项或运行告警。")
     if run_url:
         lines.extend(["", f"运行记录：{run_url}"])
-    return Report(active, fingerprint, subject, "\n".join(lines), conditions)
+    return Report(active, fingerprint, subject, "\n".join(lines), conditions, balance_attempt)
 
 
 def load_summary(path: Path) -> tuple[dict[str, Any], str | None]:
@@ -173,6 +184,8 @@ def load_state(path: Path) -> dict[str, Any]:
         item = value.get(channel)
         if isinstance(item, dict) and isinstance(item.get("fingerprint"), str) and isinstance(item.get("last_sent"), (float, int)):
             result[channel] = {"fingerprint": item["fingerprint"], "last_sent": item["last_sent"]}
+            if isinstance(item.get("balance_attempt"), str):
+                result[channel]["balance_attempt"] = item["balance_attempt"]
             conditions = item.get("conditions")
             if isinstance(conditions, list) and all(isinstance(key, str) for key in conditions):
                 result[channel]["conditions"] = sorted(set(conditions))
@@ -192,6 +205,9 @@ def due(report: Report, previous: dict[str, Any] | None, now: float) -> bool:
     if not report.active:
         return previous.get("fingerprint") != HEALTHY
     if previous.get("fingerprint") == HEALTHY:
+        return True
+    if report.balance_attempt and report.balance_attempt != previous.get("balance_attempt"):
+        # Each actual next-day 402 sends once; skipped runs reuse the same attempt.
         return True
     conditions = previous.get("conditions")
     if isinstance(conditions, list):
@@ -383,7 +399,7 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
             enabled = bool(env.get("SMTP_HOST") and env.get("SMTP_FROM") and env.get("ALERT_EMAIL_TO"))
             if not enabled:
                 note("邮件告警未配置完整（需要 SMTP_HOST、SMTP_FROM、ALERT_EMAIL_TO），未通知邮箱；GitHub issue 渠道独立执行。", env, warning=True)
-                if any(env.get(key) for key in ("SMTP_HOST", "SMTP_USERNAME", "SMTP_PASSWORD", "SMTP_FROM")):
+                if report.balance_attempt or any(env.get(key) for key in ("SMTP_HOST", "SMTP_USERNAME", "SMTP_PASSWORD", "SMTP_FROM")):
                     failures += 1
                 continue
         configured += 1
@@ -403,11 +419,13 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
             delivered = True
             if channel == "github":
                 delivered = GitHubNotifier(env).send(report, recover_without_state=recovery_lookup,
-                                                     mention=not previous or previous.get("fingerprint") != report.fingerprint)
+                                                     mention=not previous or previous.get("fingerprint") != report.fingerprint or bool(report.balance_attempt and report.balance_attempt != previous.get("balance_attempt")))
             else:
                 send_email(report, env)
             if delivered:
                 state[channel] = {"fingerprint": report.fingerprint, "last_sent": now, "conditions": list(report.conditions)}
+                if report.balance_attempt:
+                    state[channel]["balance_attempt"] = report.balance_attempt
                 save_state(args.state, state)
                 note(f"{channel}：{'告警' if report.active else '恢复通知'}已发送。", env)
             else:
