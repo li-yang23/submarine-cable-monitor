@@ -107,11 +107,9 @@ API key 不应提交到仓库。Actions workflow 会从 GitHub Secrets 注入。
 
 ## Health Notifications
 
-SiliconFlow 已在[官方公告](https://api-docs.siliconflow.cn/docs/release-notes/overview)中明确：`/user/info` 于2026年8月14日下线，账户级替代接口将另行公布。截至2026年10月14日未找到受支持的替代余额 API，因此系统不会继续请求旧接口，也不能实现真实余额低于5时的提前提醒。运行摘要明确记录 `health_unknown / balance_api_retired`，不伪造余额或报告健康；`llm.low_balance_threshold` 暂留作未来接口兼容配置，目前不生效。严格提取仍可执行，实际余额不足、认证失败或其他模型故障会触发告警并保留队列。
+低余额提前预警已关闭。不查询余额，也不因余额未知、余额接口不可用或低于阈值发送提醒。未调用模型时记录 `not_checked / balance_check_disabled`，不计为采集异常；实际调用成功后才标记模型可用。真正发生余额耗尽（HTTP 402）、认证失败、限流或其他提取故障时仍告警并保留队列。
 
-为降低余额耗尽风险，可由账号持有人在 SiliconFlow 控制台自行设置[支付宝自动充值](https://docs.siliconflow.cn/docs/userguide/faqs/misc_finance)。官方说明该功能每10分钟检查余额，触发前发送短信；它涉及签约和实际扣款，本项目不会代为开启，也不能保证余额永远充足。不启用自动充值时，需要在控制台定期核对余额，不能把调用成功当作剩余额度充足。
-
-当前使用仓库 issue 通知 `@li-yang23`，不等待 SMTP 配置。需要 GitHub 账号通知设置允许邮件，issue 通知才会转发到账号邮箱；系统不会假定邮件已送达。通知包含运行链接、模型问题及未处理/待复核数量，不包含新闻全文或密钥。同一问题状态不变时每天提醒一次，状态变化即时通知，确认恢复后关闭告警。`data/alert-state.json` 只保存通知指纹和时间。
+当前使用仓库 issue 通知 `@li-yang23`，不等待 SMTP 配置。需要 GitHub 账号通知设置允许邮件，issue 通知才会转发到账号邮箱；系统不会假定邮件已送达。通知包含运行链接、模型问题及未处理/待复核数量，不包含新闻全文或密钥。回归检查只由 PR 触发，避免同一次提交同时触发分支 push 与 PR 的重复检查。仅首次故障、新增故障类别和全部恢复时通知；数量变化、部分问题消失和时间经过都不重复发送。详细数量仍记录在每次 Actions 摘要，确认全部恢复后关闭告警。`data/alert-state.json` 只保存问题类别、通知指纹和时间。
 
 要直接发送邮件，在仓库 Settings → Secrets and variables → Actions 配置以下 Secrets：
 

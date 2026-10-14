@@ -18,9 +18,7 @@ llm:
   model: deepseek-ai/DeepSeek-V3
   base_url: https://api.siliconflow.cn/v1/
   embedding_model: BAAI/bge-m3
-  # Reserved for a future verified balance API; SiliconFlow retired /user/info
-  # on 2026-08-14, so this threshold does not currently provide early warnings.
-  low_balance_threshold: 5.0
+  # Low-balance forecasting and advance warnings are disabled.
 
 # Zero limits mean unlimited. Runtime limits defer durable work to the next run.
 article_sources:

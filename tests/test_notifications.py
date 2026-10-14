@@ -49,7 +49,7 @@ class ReportTests(unittest.TestCase):
                           counts={"discovery.failed": 1, "fetch.failed.http_403": 1, "extraction.fallback": 2, "selection.skipped.budget": 3})
         report = notify.build_report(summary)
         self.assertTrue(report.active)
-        for text in ("模型余额已耗尽", "发现源", "站点拒绝", "额度已用尽", "需要处理"):
+        for text in ("模型调用因余额耗尽失败", "发现源", "站点拒绝", "额度已用尽", "需要处理"):
             self.assertIn(text, report.body)
         self.assertNotIn("private-amount", report.body)
 
@@ -67,7 +67,7 @@ class ReportTests(unittest.TestCase):
         for field in ("pending", "retry", "review"):
             queue = {"pending": 0, "retry": 0, "review": 0, field: 1}
             self.assertTrue(notify.build_report(healthy(queue=queue)).active)
-        self.assertTrue(notify.build_report(healthy(model_health={"status": "unknown"})).active)
+        self.assertFalse(notify.build_report(healthy(model_health={"status": "unknown"})).active)
 
     def test_workflow_failure_and_missing_summary_cannot_recover(self):
         self.assertTrue(notify.build_report(healthy(), "failure").active)
@@ -76,8 +76,8 @@ class ReportTests(unittest.TestCase):
     def test_retired_balance_api_is_unknown_not_a_claim_of_model_outage(self):
         report = notify.build_report(healthy(model_health={"status": "health_unknown", "available": None,
                                                            "low_balance": False, "reason": "balance_api_retired"}))
-        self.assertTrue(report.active)
-        self.assertIn("服务商余额接口已下线，无法提前核查余额", report.body)
+        self.assertFalse(report.active)
+        self.assertNotIn("服务商余额接口", report.body)
         self.assertNotIn("模型不可用", report.body)
         self.assertNotIn("模型余额不足", report.body)
         self.assertNotIn("充值", report.body)
@@ -85,12 +85,12 @@ class ReportTests(unittest.TestCase):
     def test_low_positive_balance_does_not_claim_model_is_unavailable(self):
         report = notify.build_report(healthy(model_health={"status": "low_balance", "available": True,
                                                            "low_balance": True, "reason": "balance_below_threshold"}))
-        self.assertTrue(report.active)
-        self.assertIn("余额低于提醒阈值", report.body)
+        self.assertFalse(report.active)
+        self.assertNotIn("余额低于提醒阈值", report.body)
         self.assertNotIn("模型不可用", report.body)
 
     def test_model_failure_reason_identifies_balance_credentials_or_rate_limit(self):
-        for reason, status, expected in (("balance_exhausted", 402, "模型余额已耗尽"),
+        for reason, status, expected in (("balance_exhausted", 402, "模型调用因余额耗尽失败"),
                                          ("authentication_failed", 401, "模型凭据无效或无权访问"),
                                          ("rate_limited", 429, "模型请求受到限流")):
             with self.subTest(reason=reason):
@@ -114,17 +114,33 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn("检测到规则回退", unrelated.body)
         self.assertIn("模型调用失败：1", unrelated.body)
 
-    def test_repeat_change_and_recovery_delivery_schedule(self):
-        warning = notify.build_report(healthy(warnings=1))
-        changed = notify.build_report(healthy(warnings=2))
-        previous = {"fingerprint": warning.fingerprint, "last_sent": 100}
+    def test_counts_and_elapsed_time_do_not_repeat_an_existing_incident(self):
+        warning = notify.build_report(healthy(warnings=1, queue={"pending": 0, "retry": 2, "review": 1}))
+        changed = notify.build_report(healthy(warnings=99, queue={"pending": 0, "retry": 25, "review": 10}))
+        previous = {"fingerprint": warning.fingerprint, "last_sent": 100, "conditions": list(warning.conditions)}
+        self.assertEqual(warning.fingerprint, changed.fingerprint)
         self.assertFalse(notify.due(warning, previous, 200))
-        self.assertTrue(notify.due(warning, previous, 100 + notify.REMINDER_SECONDS))
-        self.assertTrue(notify.due(changed, previous, 200))
+        self.assertFalse(notify.due(changed, previous, 100 + 30 * 86400))
+        fewer_categories = notify.build_report(healthy(warnings=1, queue={"pending": 0, "retry": 0, "review": 1}))
+        self.assertFalse(notify.due(fewer_categories, previous, 300))
         good = notify.build_report(healthy())
         self.assertTrue(notify.due(good, previous, 200))
         self.assertFalse(notify.due(good, None, 200))
         self.assertFalse(notify.due(good, {"fingerprint": "healthy", "last_sent": 1}, 999999))
+
+    def test_new_actual_balance_failure_still_alerts_immediately(self):
+        before = notify.build_report(healthy(warnings=1))
+        previous = {"fingerprint": before.fingerprint, "last_sent": 100, "conditions": list(before.conditions)}
+        exhausted = notify.build_report(healthy(warnings=1, model_health={"status": "unavailable", "available": False, "reason": "balance_exhausted", "http_status": 402}))
+        self.assertTrue(notify.due(exhausted, previous, 101))
+        self.assertIn("模型调用因余额耗尽失败", exhausted.body)
+
+    def test_unchecked_model_or_disabled_preflight_does_not_alert(self):
+        for status, reason in (("not_checked", "balance_check_disabled"), ("health_unknown", "balance_check_unsupported"), ("low_balance", "balance_below_threshold")):
+            with self.subTest(status=status):
+                report = notify.build_report(healthy(model_health={"status": status, "available": None, "reason": reason, "low_balance": True}))
+                self.assertFalse(report.active)
+                self.assertNotIn("充值", report.body)
 
 
 class EmailTests(unittest.TestCase):
@@ -309,21 +325,54 @@ class CLITests(unittest.TestCase):
         stored = self.state.read_text()
         for secret in ("private-password", "private-token", "recipient@example.com"):
             self.assertNotIn(secret, stored)
-        self.assertEqual(set(json.loads(stored)["email"]), {"fingerprint", "last_sent"})
+        self.assertEqual(set(json.loads(stored)["email"]), {"fingerprint", "last_sent", "conditions"})
 
     @patch.object(notify, "GitHubNotifier")
-    def test_recovery_delivered_once_and_reminders_wait_24_hours(self, github):
+    def test_no_scheduled_reminders_and_recovery_delivered_once(self, github):
         github.return_value.send.return_value = True
         self.call(env=github_env(), now=100)
         self.call(env=github_env(), now=101)
         self.assertEqual(github.return_value.send.call_count, 1)
-        self.call(env=github_env(), now=100 + notify.REMINDER_SECONDS)
-        self.assertEqual(github.return_value.send.call_count, 2)
+        self.summary.write_text(json.dumps(healthy(warnings=99)))
+        self.call(env=github_env(), now=100 + 30 * 86400)
+        self.assertEqual(github.return_value.send.call_count, 1)
         self.summary.write_text(json.dumps(healthy()))
-        self.call(env=github_env(), now=102 + notify.REMINDER_SECONDS)
-        self.call(env=github_env(), now=103 + notify.REMINDER_SECONDS)
-        self.assertEqual(github.return_value.send.call_count, 3)
+        self.call(env=github_env(), now=102 + 30 * 86400)
+        self.call(env=github_env(), now=103 + 30 * 86400)
+        self.assertEqual(github.return_value.send.call_count, 2)
         self.assertFalse(github.return_value.send.call_args.args[0].active)
+
+    @patch.object(notify, "GitHubNotifier")
+    def test_model_recovery_rearms_actual_failures_despite_outstanding_review(self, github):
+        github.return_value.send.return_value = True
+        queue = {"pending": 0, "retry": 0, "review": 1}
+        failed = healthy(warnings=1, queue=queue, model_health={"status": "unavailable", "available": False, "reason": "balance_exhausted", "http_status": 402})
+        self.summary.write_text(json.dumps(failed))
+        self.call(env=github_env(), now=100)
+        self.summary.write_text(json.dumps(healthy(warnings=1, queue=queue, model_health={"status": "available", "available": True, "reason": "inference_succeeded"})))
+        self.call(env=github_env(), now=200)
+        self.assertEqual(github.return_value.send.call_count, 1)
+        state = json.loads(self.state.read_text())["github"]
+        self.assertNotIn("model_balance", state["conditions"])
+        self.assertIn("queue.review", state["conditions"])
+        self.assertEqual(state["last_sent"], 100)
+        self.summary.write_text(json.dumps(failed))
+        self.call(env=github_env(), now=300)
+        self.assertEqual(github.return_value.send.call_count, 2)
+
+    @patch.object(notify, "GitHubNotifier")
+    def test_untested_model_cannot_rearm_an_existing_balance_failure(self, github):
+        github.return_value.send.return_value = True
+        queue = {"pending": 0, "retry": 0, "review": 1}
+        failed = healthy(warnings=1, queue=queue, model_health={"status": "unavailable", "available": False, "reason": "balance_exhausted", "http_status": 402})
+        self.summary.write_text(json.dumps(failed))
+        self.call(env=github_env(), now=100)
+        self.summary.write_text(json.dumps(healthy(warnings=1, queue=queue, model_health={"status": "not_checked", "available": None, "reason": "balance_check_disabled"})))
+        self.call(env=github_env(), now=200)
+        self.assertIn("model_balance", json.loads(self.state.read_text())["github"]["conditions"])
+        self.summary.write_text(json.dumps(failed))
+        self.call(env=github_env(), now=300)
+        self.assertEqual(github.return_value.send.call_count, 1)
 
     @patch.object(notify, "GitHubNotifier")
     def test_missing_summary_and_failed_workflow_raise_alert(self, github):

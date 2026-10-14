@@ -15,9 +15,10 @@ from src.storage.article_queue import ArticleQueue
 from src.storage.article_state import ArticleState
 from src.utils import Config
 from src.utils.audit import emit
+from src.utils.model_health import check_model_health
 
 
-HEALTHY = {"status": "healthy", "available": True, "low_balance": False, "reason": "balance_available", "provider": "siliconflow"}
+NOT_CHECKED = {"status": "not_checked", "available": None, "low_balance": False, "reason": "balance_check_disabled", "provider": "siliconflow"}
 
 
 def article(source="first", key="a"):
@@ -75,7 +76,8 @@ class PipelineReliabilityTests(unittest.TestCase):
     def run_pipeline(self, discoveries, extractor, health=None, **kwargs):
         classes = {source: (lambda config, source=source, items=items: QueueScraper(source, items, self.trace))
                    for source, items in discoveries.items()}
-        pipeline = MonitorPipeline(self.config, self.store, extractor, health_checker=lambda *args: dict(HEALTHY if health is None else health))
+        checker = check_model_health if health is None else lambda *args: dict(health)
+        pipeline = MonitorPipeline(self.config, self.store, extractor, health_checker=checker)
         with patch("src.pipeline.SCRAPER_CLASSES", classes):
             return pipeline.run(list(discoveries), **kwargs)
 
@@ -88,21 +90,23 @@ class PipelineReliabilityTests(unittest.TestCase):
         self.assertEqual(summary.queue["pending"], 5)
         self.assertEqual(summary.queue["done"], 0)
         self.assertEqual(summary.model_health["status"], "unavailable")
+        self.assertEqual(summary.model_health["reason"], "balance_exhausted")
+        self.assertFalse(summary.model_health["low_balance"])
         self.assertEqual(self.trace[:3], [("discover", "first"), ("discover", "second"), ("discover", "third")])
         self.assertEqual(len([entry for entry in self.trace if entry[0] == "fetch"]), 1)
         self.assertFalse(ArticleState.from_config(self.config).is_processed(article()["url"]))
 
-    def test_zero_balance_still_discovers_all_sources_without_fetching(self):
+    def test_missing_key_still_discovers_all_sources_without_fetching(self):
         extractor = self.extractor()
-        health = {**HEALTHY, "status": "unavailable", "available": False, "low_balance": True, "reason": "balance_exhausted", "balance": "secret-account-amount"}
-        summary = self.run_pipeline({source: [article(source)] for source in ("first", "second", "third")}, extractor, health)
+        extractor.api_key = None
+        summary = self.run_pipeline({source: [article(source)] for source in ("first", "second", "third")}, extractor)
         extractor.extract.assert_not_called()
         self.assertEqual(self.trace, [("discover", "first"), ("discover", "second"), ("discover", "third")])
         self.assertEqual(summary.queue["pending"], 3)
         self.assertEqual(ArticleQueue.from_config(self.config).counts()["pending"], 3)
         self.assertEqual(summary.status, "failed")
+        self.assertEqual(summary.model_health["reason"], "missing_api_key")
         self.assertNotIn("balance", summary.model_health)
-        self.assertNotIn("secret-account-amount", (Path(summary.audit_path) / "summary.json").read_text())
 
     def test_sources_are_processed_in_round_robin_order_after_discovery(self):
         extractor = self.extractor()
@@ -146,7 +150,7 @@ class PipelineReliabilityTests(unittest.TestCase):
 
                 extractor = self.extractor()
                 classes = {source: (lambda cfg, source=source: Source(cfg, source)) for source in ("broken", "healthy")}
-                pipeline = MonitorPipeline(config, EventStore(config.event_store_path), extractor, health_checker=lambda *args: HEALTHY)
+                pipeline = MonitorPipeline(config, EventStore(config.event_store_path), extractor, health_checker=lambda *args: NOT_CHECKED)
                 with patch("src.pipeline.SCRAPER_CLASSES", classes), patch("time.monotonic", side_effect=lambda: elapsed[0]):
                     summary = pipeline.run(["broken", "healthy"])
                 self.assertEqual([source for source, _ in trace[:2]], ["broken", "healthy"])
@@ -192,7 +196,7 @@ class PipelineReliabilityTests(unittest.TestCase):
     def test_queue_recovers_across_runs_even_after_news_disappears_from_rss(self):
         item = article()
         initial = self.extractor()
-        self.run_pipeline({"first": [item]}, initial, {**HEALTHY, "status": "unavailable", "available": False})
+        self.run_pipeline({"first": [item]}, initial, {**NOT_CHECKED, "status": "unavailable", "available": False, "reason": "missing_api_key"})
         initial.extract.assert_not_called()
         recovered = self.extractor(result=[event(item)])
         # A new store and queue instance mimic a fresh scheduled runner.
@@ -204,15 +208,54 @@ class PipelineReliabilityTests(unittest.TestCase):
         self.assertEqual(summary.queue["pending"], 0)
         self.assertEqual(summary.status, "success")
 
-    def test_low_balance_warns_without_disabling_available_model(self):
+    def test_legacy_low_balance_state_does_not_warn_or_disable_extraction(self):
         extractor = self.extractor()
-        health = {**HEALTHY, "status": "low_balance", "low_balance": True, "reason": "balance_below_threshold"}
+        health = {**NOT_CHECKED, "status": "low_balance", "available": True, "low_balance": True, "reason": "balance_below_threshold"}
         summary = self.run_pipeline({"first": [article()]}, extractor, health)
         extractor.extract.assert_called_once()
         self.assertEqual(summary.queue["done"], 1)
-        self.assertEqual(summary.model_health["status"], "low_balance")
-        self.assertEqual(summary.status, "degraded")
-        self.assertGreater(summary.warnings, 0)
+        self.assertEqual(summary.model_health["status"], "available")
+        self.assertEqual(summary.model_health["reason"], "inference_succeeded")
+        self.assertTrue(summary.model_health["available"])
+        self.assertFalse(summary.model_health["low_balance"])
+        self.assertEqual(summary.status, "success")
+        self.assertEqual(summary.warnings, 0)
+
+    def test_idle_run_does_not_check_balance_or_claim_model_availability(self):
+        extractor = self.extractor()
+        with patch("requests.sessions.Session.request") as request:
+            summary = self.run_pipeline({"first": []}, extractor)
+        request.assert_not_called()
+        extractor.extract.assert_not_called()
+        self.assertEqual(summary.model_health["status"], "not_checked")
+        self.assertIsNone(summary.model_health["available"])
+        self.assertEqual(summary.status, "success")
+        self.assertEqual(summary.warnings, 0)
+
+    def test_legacy_balance_preflight_uncertainty_is_not_a_failed_run(self):
+        for reason in ("balance_api_retired", "balance_check_unsupported", "health_unknown"):
+            with self.subTest(reason=reason):
+                health = {**NOT_CHECKED, "status": "health_unknown", "reason": reason}
+                summary = self.run_pipeline({"first": []}, self.extractor(), health)
+                self.assertEqual(summary.model_health["status"], "not_checked")
+                self.assertIsNone(summary.model_health["available"])
+                self.assertEqual(summary.status, "success")
+                self.assertEqual(summary.warnings, 0)
+                records = [json.loads(line) for line in (Path(summary.audit_path) / "audit.jsonl").read_text().splitlines()]
+                self.assertFalse(any(r["stage"] == "model_health" and r["outcome"] == "failed" for r in records))
+
+    def test_actual_model_errors_still_fail_and_keep_article_for_retry(self):
+        for index, (reason, status) in enumerate((("authentication_failed", 401), ("rate_limited", 429), ("invalid_response", None))):
+            with self.subTest(reason=reason):
+                extractor = self.extractor(side_effect=ExtractionUnavailable(reason, http_status=status, provider="siliconflow"))
+                summary = self.run_pipeline({"first": [article(key=str(index))]}, extractor)
+                extractor.extract.assert_called_once()
+                self.assertEqual(summary.model_health["status"], "unavailable")
+                self.assertEqual(summary.model_health["reason"], reason)
+                self.assertFalse(summary.model_health["available"])
+                self.assertEqual(summary.errors, 1)
+                self.assertNotEqual(summary.status, "success")
+                self.assertEqual(ArticleQueue.from_config(self.config).get(article(key=str(index)))["status"], "retry")
 
     def test_explicit_rule_fallback_is_never_allowed_to_write_production_events(self):
         item = article()
@@ -269,7 +312,7 @@ class PipelineReliabilityTests(unittest.TestCase):
             emit("discover", "deferred", source="first", reason="discovery_budget")
             return []
         scraper = SimpleNamespace(scrape_articles=discover, iter_queued_articles=lambda **kwargs: iter(()))
-        pipeline = MonitorPipeline(self.config, self.store, self.extractor(), health_checker=lambda *args: HEALTHY)
+        pipeline = MonitorPipeline(self.config, self.store, self.extractor(), health_checker=lambda *args: NOT_CHECKED)
         with patch("src.pipeline.SCRAPER_CLASSES", {"first": lambda config: scraper}):
             summary = pipeline.run(["first"])
         self.assertEqual(summary.queue["pending"], 0)
