@@ -55,7 +55,8 @@
     "affected_area": "Philippines-Singapore connectivity",
     "cable_name": "C2C",
     "created_at": "2026-10-14T02:02:57.503496+00:00",
-    "discovered_url": "",
+    "discovered_url": "https://subtelforum.com/philippines-singapore-c2c-link-restored/",
+    "duplicate_count": 1,
     "event_uid": "evt_f31edbfe4d33fc4c02d2",
     "evidence_urls": [
       "https://subtelforum.com/philippines-singapore-c2c-link-restored/"
@@ -84,9 +85,321 @@
     ],
     "submarine_name": "C2C",
     "title": "Philippines-Singapore C2C Link Restored",
-    "updated_at": "2026-10-14T02:02:57.503496+00:00",
+    "updated_at": "2026-10-14T04:11:35+00:00",
     "url": "https://subtelforum.com/philippines-singapore-c2c-link-restored/",
     "verification_status": "source_reviewed"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Singapore",
+    "accident_type": "Limit",
+    "affected_area": "Philippines",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:11:20+00:00",
+    "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+    "event_uid": "evt_50591464518b00b97d78",
+    "evidence_urls": [
+      "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down.",
+    "original_text_zh": "Pampanga Digital Evolution Company, Inc. (PADECO)、Converge和UP Diliman网络帮助台均发布公告称，连接菲律宾和新加坡的海底电缆段中断。",
+    "published_date": "2026-10-02",
+    "raw_data": {
+      "article": {
+        "content": "ADVERTISEMENT Filtered By: Scitech SciTech By MARIZ UMALI, GMA News Published October 2, 2026 8:08pm + Add GMA on Google Make this your preferred source to get more updates from this publisher on Google. The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. Internet users in parts of the Philippines experienced slow or intermittent connectivity on Friday following the reported outage of submarine cable segments connecting the country to Singapore and Hong Kong. Telecommunications companies issued advisories warning subscribers that the cable disruptions could affect internet speeds and overall connectivity. Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down. They also reported that the segment connecting the Philippines and Hong Kong was likewise affected. Other Stories NTC: Fine vs telcos for poor internet service not limited to NCR DICT probes possible data breach involving 48 firms in accreditation program CICC apologizes for inconvenience caused by Discord ban The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. DICT Secretary Henry Aguda said authorities are still determining the cause. “They’re still determining the cause.” Aguda said possible sabotage is among the scenarios being investigated, but stressed that it is too early to draw conclusions. “Isa yun, syempre. Kasama yun. Pero it’s too early to say. For all you know, it’s… Either a fiber cut through natural causes or as I said, baka may equipment failure.” Despite the disruption, Aguda said internet connectivity has not been completely lost and telecommunications companies are working to address the reduced capacity. He said PLDT had assured him that it has sufficient capacity to cover the loss. “Yung capacity na nawala is around 300 gig which they claim naman is they have more than enough provision to cover the loss of capacity.” Some schools and institutions have already issued notices about possible connectivity problems. However, Aguda said there are currently no reports of critical infrastructure being significantly affected by the submarine cable outages. The DICT continues to monitor the situation while telecommunications providers work to restore the affected cable segments and maintain internet services. —NB, GMA News Tags: slow internet , Internet , DICT , submarine cable More Videos Most Popular LOADING CONTENT LOAD MORE ARTICLES RETRY LOADING",
+        "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+        "keyword": "manual",
+        "published_date": "2026-10-02",
+        "queue_id": "4200778ed95f4759bac19937c0c81521",
+        "source": "Google News",
+        "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+        "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "Philippines",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down.",
+        "original_text_zh": "Pampanga Digital Evolution Company, Inc. (PADECO)、Converge和UP Diliman网络帮助台均发布公告称，连接菲律宾和新加坡的海底电缆段中断。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+    "updated_at": "2026-10-14T04:11:20+00:00",
+    "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Hong Kong",
+    "accident_type": "Cut",
+    "affected_area": "Philippines",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:11:20+00:00",
+    "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+    "event_uid": "evt_f01d0ef92599007ddb8f",
+    "evidence_urls": [
+      "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+    "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+    "published_date": "2026-10-02",
+    "raw_data": {
+      "article": {
+        "content": "ADVERTISEMENT Filtered By: Scitech SciTech By MARIZ UMALI, GMA News Published October 2, 2026 8:08pm + Add GMA on Google Make this your preferred source to get more updates from this publisher on Google. The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. Internet users in parts of the Philippines experienced slow or intermittent connectivity on Friday following the reported outage of submarine cable segments connecting the country to Singapore and Hong Kong. Telecommunications companies issued advisories warning subscribers that the cable disruptions could affect internet speeds and overall connectivity. Pampanga Digital Evolution Company, Inc. (PADECO), Converge, and the UP Diliman Network Help Desk all issued advisories that the submarine cable segment between the Philippines and Singapore was down. They also reported that the segment connecting the Philippines and Hong Kong was likewise affected. Other Stories NTC: Fine vs telcos for poor internet service not limited to NCR DICT probes possible data breach involving 48 firms in accreditation program CICC apologizes for inconvenience caused by Discord ban The Department of Information and Communications Technology (DICT) said it is now investigating what caused the submarine cable disruptions. DICT Secretary Henry Aguda said authorities are still determining the cause. “They’re still determining the cause.” Aguda said possible sabotage is among the scenarios being investigated, but stressed that it is too early to draw conclusions. “Isa yun, syempre. Kasama yun. Pero it’s too early to say. For all you know, it’s… Either a fiber cut through natural causes or as I said, baka may equipment failure.” Despite the disruption, Aguda said internet connectivity has not been completely lost and telecommunications companies are working to address the reduced capacity. He said PLDT had assured him that it has sufficient capacity to cover the loss. “Yung capacity na nawala is around 300 gig which they claim naman is they have more than enough provision to cover the loss of capacity.” Some schools and institutions have already issued notices about possible connectivity problems. However, Aguda said there are currently no reports of critical infrastructure being significantly affected by the submarine cable outages. The DICT continues to monitor the situation while telecommunications providers work to restore the affected cable segments and maintain internet services. —NB, GMA News Tags: slow internet , Internet , DICT , submarine cable More Videos Most Popular LOADING CONTENT LOAD MORE ARTICLES RETRY LOADING",
+        "discovered_url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+        "keyword": "manual",
+        "published_date": "2026-10-02",
+        "queue_id": "4200778ed95f4759bac19937c0c81521",
+        "source": "Google News",
+        "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+        "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Hong Kong",
+        "accident_type": "Cut",
+        "affected_area": "Philippines",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected.",
+        "original_text_zh": "他们还报告称，连接菲律宾和香港的电缆段同样受到影响。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Slow internet in PH on Friday, Oct. 2, 2026, linked to submarine cable outage",
+    "updated_at": "2026-10-14T04:11:20+00:00",
+    "url": "https://www.gmanetwork.com/news/scitech/technology/1004568/slow-intermittent-internet-in-ph-on-friday-oct-10-2026-linked-to-submarine-cable-outage/story/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Singapore",
+    "accident_type": "Limit",
+    "affected_area": "Philippines to Singapore",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:22:57+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPU1BkdHdOS0EwelQzbkl5MktnaWxsaVBCSkZRMHRPSTJZT2xPOFVpcXRTM3libkJfeGM5bGJlUG9NdXNnVF9xZHhfVm83V2pUdS1kWkxLZlRSM0RtbGJiM2wyZE1xNEZ6RzFXMGlwbkNaNmhiSW9YTXB2ckwyZzQ5dDFpTGJXLVJseHk1Uw?oc=5",
+    "event_uid": "evt_d7d9b781c0f93824adc2",
+    "evidence_urls": [
+      "https://tribune.net.ph/2026/10/05/converge-limits-impact-of-singapore-cable-outage-2"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "Converge ICT Solutions Inc. limited the impact of a submarine cable disruption between the Philippines and Singapore after shifting traffic to alternative international routes, preventing a wider interruption for its residential and enterprise customers. The fiber internet provider reported on Monday that it rerouted traffic following the disruption on Friday, with most of the affected traffic shifted through the Bifrost international cable system.",
+    "original_text_zh": "Converge ICT Solutions Inc. 通过将流量转移到其他国际路线，限制了菲律宾和新加坡之间海底电缆中断的影响，防止了其住宅和企业客户受到更广泛的中断。该光纤互联网提供商周一报告称，自上周五中断以来，其已重新路由流量，大部分受影响的流量通过Bifrost国际电缆系统转移。",
+    "published_date": "2026-10-05",
+    "raw_data": {
+      "article": {
+        "content": "Photo courtesy of Converge / FB Text size A− Reset A+ Save Converge ICT Solutions Inc. limited the impact of a submarine cable disruption between the Philippines and Singapore after shifting traffic to alternative international routes, preventing a wider interruption for its residential and enterprise customers. The fiber internet provider reported on Monday that it rerouted traffic following the disruption on Friday, with most of the affected traffic shifted through the Bifrost international cable system. “This allowed minimal disruption in our services to both our residential and enterprise customers due to the cable issue between Singapore and the Philippines,” Converge CEO Dennis Anthony Uy said. Cable disruption Some customers experienced difficulties accessing applications and websites hosted in Singapore following the cable disruption. Converge said its investments in additional international cable systems gave it alternative routes to handle traffic during outages, reducing its reliance on individual connections between the Philippines and overseas destinations. “We have planned our investments in these international cable systems as early as five years ago precisely in anticipation of these incidents. Investment in Bifrost Our investments in Bifrost along with SEA-H2X (Southeast Asia — Hainan — Hong Kong Express Cable) have allowed us to achieve international network redundancy that’s most important at a time like this,” Uy said. The Trans-Pacific Bifrost Cable System spans more than 20,000 kilometers and connects the Philippines to Singapore, Indonesia, Guam and the United States. It has a total design capacity of more than 240 terabits per second. Converge serves as the Philippine landing party for Bifrost through its landing station in Davao and owns one fiber pair in the cable's trunk. Consortium owning SEA-H2X submarine cable The company is also part of the consortium that owns the 6,000-kilometer SEA-H2X submarine cable, which links Hong Kong, Hainan, the Philippines, Thailand, and Singapore. The system has a design capacity of more than 200 Tbps and lands in La Union.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPU1BkdHdOS0EwelQzbkl5MktnaWxsaVBCSkZRMHRPSTJZT2xPOFVpcXRTM3libkJfeGM5bGJlUG9NdXNnVF9xZHhfVm83V2pUdS1kWkxLZlRSM0RtbGJiM2wyZE1xNEZ6RzFXMGlwbkNaNmhiSW9YTXB2ckwyZzQ5dDFpTGJXLVJseHk1Uw?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-10-05",
+        "queue_id": "557067ad4902535346253bd5fcc19c74",
+        "source": "Google News",
+        "title": "Converge limits impact of Singapore cable outage",
+        "url": "https://tribune.net.ph/2026/10/05/converge-limits-impact-of-singapore-cable-outage-2"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "Philippines to Singapore",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "Converge ICT Solutions Inc. limited the impact of a submarine cable disruption between the Philippines and Singapore after shifting traffic to alternative international routes, preventing a wider interruption for its residential and enterprise customers. The fiber internet provider reported on Monday that it rerouted traffic following the disruption on Friday, with most of the affected traffic shifted through the Bifrost international cable system.",
+        "original_text_zh": "Converge ICT Solutions Inc. 通过将流量转移到其他国际路线，限制了菲律宾和新加坡之间海底电缆中断的影响，防止了其住宅和企业客户受到更广泛的中断。该光纤互联网提供商周一报告称，自上周五中断以来，其已重新路由流量，大部分受影响的流量通过Bifrost国际电缆系统转移。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Converge limits impact of Singapore cable outage",
+    "updated_at": "2026-10-14T04:22:57+00:00",
+    "url": "https://tribune.net.ph/2026/10/05/converge-limits-impact-of-singapore-cable-outage-2",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "submarine cable segments linking the country to Singapore and Hong Kong",
+    "accident_type": "Fluctuate",
+    "affected_area": "Philippines",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:23:30+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSFV6V0tyTWdOOHM3S2dHY2JSQ3FSZEVDM0lhaklaTm9VWGxwZmhiN250dHpxTW10S2pPZkFyNmlISVBlam1jbklKWUZWbkVlcEdzM0FiX1Zvb3RSWmZuR0pRM2V1dVZXOXoxQzFqSHhKMm1rVFJEdVNNNnQ1ZlNOM21jNXdYRkRaLTJDYjIxSVFrWGcz?oc=5",
+    "event_uid": "evt_4e45914a15f797922f52",
+    "evidence_urls": [
+      "https://www.yugatech.com/news/submarine-cable-outage-disrupts-internet-across-philippines/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "Internet users across the Philippines experienced slow and intermittent connectivity on Friday, October 2, following a reported outage of submarine cable segments linking the country to Singapore and Hong Kong.",
+    "original_text_zh": "10月2日星期五，菲律宾全国互联网用户遭遇网速缓慢和间歇性连接问题，原因是连接菲律宾与新加坡和香港的海底电缆段发生故障。",
+    "published_date": "2026-10-03",
+    "raw_data": {
+      "article": {
+        "content": "Internet users across the Philippines experienced slow and intermittent connectivity on Friday, October 2, following a reported outage of submarine cable segments linking the country to Singapore and Hong Kong. Multiple telcos and network monitors confirmed the damage, advising subscribers to expect connection issues in the meantime. The Department of Information and Communications Technology (DICT) Secretary Henry Aguda said they are still working to pin down what caused the break. He floated a few possibilities, ranging from accidental fiber damage to equipment malfunction, while not ruling out deliberate sabotage. He was careful to note that nothing has been confirmed yet. Aguda said the outage wiped out roughly 300 gigabits of capacity, though PLDT has told him its network can absorb the shortfall without major issues. He also pointed out that service hasn’t gone dark entirely, just slower, as providers work around the gap. The disruption was enough to prompt some schools and institutions to send out their own connectivity warnings. Still, Aguda maintained that no critical systems appear to have taken a significant hit so far. Source ( 1 ) ( 2 ) React to this article: 👍 ❤️ 😂 😮 😢 😡 Share this article:",
+        "discovered_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSFV6V0tyTWdOOHM3S2dHY2JSQ3FSZEVDM0lhaklaTm9VWGxwZmhiN250dHpxTW10S2pPZkFyNmlISVBlam1jbklKWUZWbkVlcEdzM0FiX1Zvb3RSWmZuR0pRM2V1dVZXOXoxQzFqSHhKMm1rVFJEdVNNNnQ1ZlNOM21jNXdYRkRaLTJDYjIxSVFrWGcz?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-10-03",
+        "queue_id": "081836ce8e27532ae290e4f4f704c7fb",
+        "source": "Google News",
+        "title": "Submarine cable outage disrupts internet across PH providers",
+        "url": "https://www.yugatech.com/news/submarine-cable-outage-disrupts-internet-across-philippines/"
+      },
+      "extracted": {
+        "accident_location": "submarine cable segments linking the country to Singapore and Hong Kong",
+        "accident_type": "Cut",
+        "affected_area": "Philippines",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "Internet users across the Philippines experienced slow and intermittent connectivity on Friday, October 2, following a reported outage of submarine cable segments linking the country to Singapore and Hong Kong.",
+        "original_text_zh": "10月2日星期五，菲律宾全国互联网用户遭遇网速缓慢和间歇性连接问题，原因是连接菲律宾与新加坡和香港的海底电缆段发生故障。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Submarine cable outage disrupts internet across PH providers",
+    "updated_at": "2026-10-14T04:23:30+00:00",
+    "url": "https://www.yugatech.com/news/submarine-cable-outage-disrupts-internet-across-philippines/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between Philippines and Singapore",
+    "accident_type": "Fluctuate",
+    "affected_area": "Philippines, Singapore",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:24:26+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcUtTTlcxRTBtR0FvWmxtMTBZNy1COVBpcmtFT1RUM1U0aGp2UUM2dW5rM3lqTG1udEoyX2toX3lmZDlDWGNGX3FCV3E5NmFIaDVpazJxQ3BMVjk4STA3dzJRMmhNVkpoai1JN1NrMnZINF9yMFNyZlhXQnRYRkNzTUZVUXhkNjlFU3BGZmk1YnJpbk53cURsLTdycjBzNlRWV0d3T1NzQQ?oc=5",
+    "event_uid": "evt_8e78e9f89fc51bc938fd",
+    "evidence_urls": [
+      "https://www.rappler.com/technology/submarine-cable-cut-philippines-singapore-disrupts-internet-services/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "Internet users in the Philippines experienced slower and intermittent connections on Friday, October 2, after an undersea cable segment linking the Philippines and Singapore went offline, affecting several telecommunications providers and internet service providers.",
+    "original_text_zh": "菲律宾的互联网用户在10月2日星期五经历了较慢且间歇性的连接，原因是连接菲律宾和新加坡的一段海底电缆离线，影响了多家电信提供商和互联网服务提供商。",
+    "published_date": "2026-10-03",
+    "raw_data": {
+      "article": {
+        "content": "MANILA, Philippines – Internet users in the Philippines experienced slower and intermittent connections on Friday, October 2, after an undersea cable segment linking the Philippines and Singapore went offline, affecting several telecommunications providers and internet service providers. PLDT said the submarine cable cut affected services nationwide. The telco said it had successfully rerouted most of the affected traffic and expected service to normalize shortly. Converge ICT Solutions likewise said it had rerouted internet and data traffic going to and coming from Singapore through other submarine cables. Its technical teams were continuing to monitor connections to apps and websites hosted in Singapore. Globe, meanwhile, advised customers that they could experience slow internet access on both mobile and broadband services because of a technical issue, saying it was working to restore normal access as soon as possible. The UP Diliman Network Helpdesk also issued an advisory saying one of the undersea cable segments between the Philippines and Singapore was offline. The university said many of its upstream internet providers connect through these major international data routes, which could result in “increased latencies and intermittent performance,” particularly when users access websites and services hosted overseas. What the cable cut means for consumers For ordinary internet users, a submarine cable outage does not necessarily mean losing internet access entirely. Telecommunications companies can redirect, or reroute, data through other submarine cables and international connections. But with traffic moved away from its usual route, data may have to travel farther or share capacity with more users. Consumers may therefore notice slower website loading, higher latency or “ping,” video buffering, sluggish downloads and intermittent connections, particularly when accessing apps, websites, cloud services or game servers hosted outside the Philippines. Services hosted locally may be less affected, while connections that normally pass through Singapore or other affected international routes could experience more noticeable slowdowns. Submarine cables carry much of the internet traffic moving between countries. Having multiple cable routes allows telecommunications companies to keep users connected when one link fails, although performance can temporarily suffer while traffic is being rerouted. PLDT and Converge said they had already rerouted affected traffic as of October 2, while Globe said restoration efforts were underway. – Rappler.com",
+        "discovered_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcUtTTlcxRTBtR0FvWmxtMTBZNy1COVBpcmtFT1RUM1U0aGp2UUM2dW5rM3lqTG1udEoyX2toX3lmZDlDWGNGX3FCV3E5NmFIaDVpazJxQ3BMVjk4STA3dzJRMmhNVkpoai1JN1NrMnZINF9yMFNyZlhXQnRYRkNzTUZVUXhkNjlFU3BGZmk1YnJpbk53cURsLTdycjBzNlRWV0d3T1NzQQ?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-10-03",
+        "queue_id": "1a3278227e26edb0335edd5aad45b32a",
+        "source": "Google News",
+        "title": "Subsea cable cut between Philippines and Singapore disrupts internet services",
+        "url": "https://www.rappler.com/technology/submarine-cable-cut-philippines-singapore-disrupts-internet-services/"
+      },
+      "extracted": {
+        "accident_location": "between Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "Philippines, Singapore",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "Internet users in the Philippines experienced slower and intermittent connections on Friday, October 2, after an undersea cable segment linking the Philippines and Singapore went offline, affecting several telecommunications providers and internet service providers.",
+        "original_text_zh": "菲律宾的互联网用户在10月2日星期五经历了较慢且间歇性的连接，原因是连接菲律宾和新加坡的一段海底电缆离线，影响了多家电信提供商和互联网服务提供商。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Subsea cable cut between Philippines and Singapore disrupts internet services",
+    "updated_at": "2026-10-14T04:24:26+00:00",
+    "url": "https://www.rappler.com/technology/submarine-cable-cut-philippines-singapore-disrupts-internet-services/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Singapore",
+    "accident_type": "Limit",
+    "affected_area": "Philippines and Singapore",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:24:32+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWGtGWi15RzBYQjE0cW9Eb24xSEdJNGNLSGlXaWN4ZXM2dW1mZ3JYcW9MaVo2X1RXbTZPNDRtUzVESk50aG1PY3gxYV9iUldhbE44RDNkQTR1RkpRTVBkenVQYnZZVEZZcm9yamp6ekxJMm04UWNXSnFnUGQwcFVQNVZqQ1FnYzBvNjdKZ01nLVZVX3FkSzBKelJ2MUJPMzlCeTVz?oc=5",
+    "event_uid": "evt_06f199347ef1ee262fa2",
+    "evidence_urls": [
+      "https://pampanganewsnow.com/converge-no-major-interruption-after-ph-sg-cable-break-thanks-to-bifrost/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "a submarine cable disruption between the Philippines and Singapore last Friday — the same break that affected some users trying to access Singapore-based apps and websites.",
+    "original_text_zh": "上周五菲律宾和新加坡之间的一条海底电缆发生故障——此次中断影响了部分试图访问新加坡应用和网站的用户。",
+    "published_date": "2026-10-06",
+    "raw_data": {
+      "article": {
+        "content": "Skip to content Converge: No major interruption after PH-SG cable break — thanks to Bifrost By PNN Admin October 6, 2026 12:19 pm No Comments No major brownout for Converge users! Leading fiber provider Converge ICT Solutions Inc. says its services remained stable after a submarine cable disruption between the Philippines and Singapore last Friday — the same break that affected some users trying to access Singapore-based apps and websites. While some customers reported slow access to SG-hosted sites, Converge said it immediately rerouted traffic to alternative international paths, mostly through its new Bifrost cable system. “This allowed none to minimal disruption in our services to both our residential and enterprise customers due to the cable issue between Singapore and the Philippines,” said Converge CEO Dennis Anthony Uy. According to Uy, Converge was able to recover quickly because it invested early in two new international cables — Bifrost and SEA-H2X — for exactly this kind of emergency. Bifrost is a 20,000-km trans-Pacific cable linking PH to Singapore, Indonesia, Guam, and the US. Converge owns one fiber pair and is the PH landing party in Davao. Design capacity: 240 Tbps. SEA-H2X is a 6,000-km cable connecting Hong Kong, Hainan, La Union (PH), Thailand, and Singapore. Design capacity: 200 Tbps. Uy said with these two, Converge now has one of the most redundant international networks in the country — crucial as demand for AI and cloud services surges. The company said full rerouting is complete and services are stable while repairs on the affected PH-SG link continue. #Converge #InternetPH #BifrostCable #PampangaNewsNow Facebook Twitter LinkedIn Pinterest Prev Previous GCash brings investing closer to more Filipinos with digital platform GStocks PH Next Hann Foundation turns over Inclusive Learning Center in Bamban Next",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWGtGWi15RzBYQjE0cW9Eb24xSEdJNGNLSGlXaWN4ZXM2dW1mZ3JYcW9MaVo2X1RXbTZPNDRtUzVESk50aG1PY3gxYV9iUldhbE44RDNkQTR1RkpRTVBkenVQYnZZVEZZcm9yamp6ekxJMm04UWNXSnFnUGQwcFVQNVZqQ1FnYzBvNjdKZ01nLVZVX3FkSzBKelJ2MUJPMzlCeTVz?oc=5",
+        "keyword": "submarine cable break",
+        "published_date": "2026-10-06",
+        "queue_id": "158ba27b44ae5e47b9666ffb89a5abd1",
+        "source": "Google News",
+        "title": "Converge: No major interruption after PH-SG cable break — thanks to Bifrost",
+        "url": "https://pampanganewsnow.com/converge-no-major-interruption-after-ph-sg-cable-break-thanks-to-bifrost/"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "Philippines and Singapore",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "original_text": "a submarine cable disruption between the Philippines and Singapore last Friday — the same break that affected some users trying to access Singapore-based apps and websites.",
+        "original_text_zh": "上周五菲律宾和新加坡之间的一条海底电缆发生故障——此次中断影响了部分试图访问新加坡应用和网站的用户。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Converge: No major interruption after PH-SG cable break — thanks to Bifrost",
+    "updated_at": "2026-10-14T04:24:32+00:00",
+    "url": "https://pampanganewsnow.com/converge-no-major-interruption-after-ph-sg-cable-break-thanks-to-bifrost/",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "verified",
@@ -136,6 +449,110 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://subtelforum.com/ireland-uk-test-joint-subsea-cable-response/",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Singapore",
+    "accident_type": "Limit",
+    "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:22:38+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+    "event_uid": "evt_fe23e0c8e78874b1a80d",
+    "evidence_urls": [
+      "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-01",
+    "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+    "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+    "published_date": "2026-10-04",
+    "raw_data": {
+      "article": {
+        "content": "GLOBE Telecom, Inc. said it has restored internet services in areas affected by a disruption along an international submarine cable between the Philippines and Singapore, although repairs to the damaged fiber are expected to take several weeks. The telecommunications company said it rerouted data traffic through alternative international links over the weekend after the cable disruption reduced available bandwidth and slowed internet speeds. “Our teams are working continuously to ease congestion and restore normal internet service as quickly as possible. In parallel, we are working with our partners to validate the cause of the disruption,” Globe Head of Service Planning and Engineering Joel R. Agustin said in a media release on Sunday. Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links. Globe said repairs to the submarine fiber are expected to be completed within the next few weeks. The company also said its primary information technology (IT) systems were operating normally after an earlier issue affected access to some applications, particularly logins using Android devices. “Globe’s primary IT systems are normal and operational. An earlier issue affecting access to some applications particularly during login using Android phones has been resolved quickly,” it said. — Ashley Erika O. Jose",
+        "discovered_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3VibkthYlU4Y2pXS3g5TGxhQ3ZveXlGWmN1dzV4NnNqYUNoVzhIVU5YVUczMjVqRXBZS1FGZktmSkdrQzVNTEdtQzZiNDF2dTk5NVhkamwxME1CUE5lLUdyakZvV2ZhdC1yWk95TDlEbnFwOFFUUjJ0eHBXWnpKai1kUmlwNV9LMnEwV2lOZkxNN2NrWnRSeVV3SGVDNHVPZThxcl9KM2xwRlZoRkE5UWdJOFFJZEk?oc=5",
+        "keyword": "subsea cable disruption",
+        "published_date": "2026-10-04",
+        "queue_id": "2aa0d7de4574770dd26ee5bc50cf8ae9",
+        "source": "Google News",
+        "title": "Globe restores internet services after subsea cable disruption",
+        "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "areas affected by a disruption along an international submarine cable between the Philippines and Singapore",
+        "cable_name": "",
+        "occurrence_date": "2026-10-01",
+        "original_text": "Internet services were disrupted over the weekend after a submarine cable between the Philippines and Singapore was cut, prompting Globe, PLDT Inc., and Converge ICT Solutions, Inc. to reroute traffic through alternative links.",
+        "original_text_zh": "周末期间，菲律宾与新加坡之间的一条海底电缆被切断，导致互联网服务中断，促使Globe、PLDT Inc.和Converge ICT Solutions, Inc.通过备用链路重新路由流量。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Globe restores internet services after subsea cable disruption",
+    "updated_at": "2026-10-14T04:22:38+00:00",
+    "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "Singapore",
+    "accident_type": "Cut",
+    "affected_area": "Philippines",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:22:24+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdlZKSUFwSXkwMkF6R3lZRTR0Vm0xRjA0ekY2WWNkTzMtSUlkY25BTUp0VHdDMzRqTmFCMDNYWE9kdDFaSXk1UmtIMHBQVVlHU3FQcHdyVVZFcjVIaVpiYl90Vm14N0ZaZS1LNVg1aGRnazZjY2ZtNFBqWlc2Y3ZqRUkxYnR5cjJsZVNBMUFnRHZYeDlTMWVpalhmV3hCNDZfc2NDbFFmQXRrOWNU0gGzAUFVX3lxTE82d1k0SnVrU1g4Yy1SWkU4WTNxV3p4cFNsM1BmdjRaRUhsT0ZLWHBkSERoaE1HMlp6UGRLNmVYVGRsMnVBbGR4WUlJdmZYZ0ZkQk9kQ3F3aVowc21kMjVRSWVCNTZ2TW5WUVVTVlJRdXpJRFlBbDVMRV8tczBTa1ZEUFotdFNmcHF2VDdYVWV2N0Y5dHFCc0V0SWdMOXhpOE1QanFROHhYcWp4UjlWWkxCTlhn?oc=5",
+    "event_uid": "evt_186324d3147f79d1abe0",
+    "evidence_urls": [
+      "https://www.philstar.com/business/2026/10/06/2561137/converges-subsea-cables-spare-filipinos-internet-outage"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-09-29",
+    "original_text": "Converge CEO and co-founder Dennis Anthony Uy yesterday said the provider immediately brought back internet services when a submarine link to Singapore was cut last Friday.",
+    "original_text_zh": "Converge首席执行官兼联合创始人Dennis Anthony Uy昨天表示，当上周五一条通往新加坡的海底线路被切断时，该公司立即恢复了互联网服务。",
+    "published_date": "2026-10-05",
+    "raw_data": {
+      "article": {
+        "content": "Philstar.com HOME Headlines Opinion Nation World Business Sports Entertainment Lifestyle Events Other Sections The Philippine Star Pilipino Star Ngayon HOME Bansa Metro Probinsiya Opinyon Palaro Showbiz True Confessions Dr. Love Litra-talk Kutob Komiks The Freeman HOME Cebu News Opinion Metro Cebu Region Cebu Business Cebu Sports Cebu Lifestyle Cebu Entertainment Pang-Masa HOME Police Metro Punto Mo Pang Movies PM Sports Para Manalo Para Malibang Banat HOME Balita Opinyon Kalingawan Showbiz Palaro Imong Kapalaran Punsoy Interaksyon HOME Trends + Spotlights Politics + Issues Celebrities Hobbies + Interests Rumor Cop Coupons HOME Top Stores Offers By Category Latest Posts STOCK COMMENTARIES TECHNOLOGY BUSINESS AS USUAL BANKING REAL ESTATE AGRICULTURE TELECOMS BIZ MEMOS SUPPORT PHILSTAR About Us | Contact Us | Advertise | Privacy Policy | Member Agreement | Copyright Notice Copyright © 2026. Philstar Global Corp. All Rights Reserved My Profile Sign Out Subscribe Subscribe HOME HEADLINES OPINION NATION WORLD BUSINESS SPORTS ENTERTAINMENT LIFESTYLE EVENTS COUPONS OTHER SECTIONS X STOCK COMMENTARIES TECHNOLOGY BUSINESS AS USUAL BANKING REAL ESTATE AGRICULTURE TELECOMS BIZ MEMOS Business Converge’s subsea cables spare Filipinos from internet outage Elijah Felice Rosales - The Philippine Star October 6, 2026 | 12:00am Converge CEO and co-founder Dennis Anthony Uy yesterday said the provider immediately brought back internet services when a submarine link to Singapore was cut last Friday. STAR / File MANILA, Philippines — Broadband provider Converge ICT Solutions Inc. found an immediate return on investment in its new subsea cable to Singapore when it spared subscribers from internet disruption over the weekend. Converge CEO and co-founder Dennis Anthony Uy yesterday said the provider immediately brought back internet services when a submarine link to Singapore was cut last Friday. Uy said Converge rerouted data traffic through its Bifrost Cable System, a project that goes to Guam, Indonesia, Singapore and the US through the Celebes Sea and Java Sea. Bifrost extends for around 20,000 kilometers across the Pacific Ocean. It is designed to transmit data among parties by about 240 terabits per second, landing in the Philippines via Davao. Apart from this, Uy said Converge relied on the Southeast Asia-Hainan-Hong Kong Express Cable System for redundancy. SEA-H2X lands in the country via La Union. SEA-H2X crosses more than 6,000 kilometers of waters between China and Southeast Asia, with the capacity to transfer over 200 Tbps across China, Hong Kong, the Philippines, Singapore and Thailand. “We planned our investments in these international cable systems as early as five years ago precisely in anticipation of these incidents,” Uy said. “Our investments in Bifrost, along with the SEA-H2X, allowed us to achieve international network redundancy that’s most important at a time like this,” he added. Last week, the University of the Philippines Diliman Network Helpdesk flagged erratic access to its information pipelines. The desk attributed the downtime to a fiber cut in one of the submarine cables to Singapore, where its data are hosted. Afterward, leading Philippine telcos PLDT Inc. and Globe Telecom Inc. confirmed that they are also subscribed to the disrupted subsea cable. In response, they rerouted their data traffic to other lines, knowing that fiber cuts, especially underwater, take weeks to repair. Subsea links like Bifrost act as passageways for data transmission between and among countries, so telcos invest on them to expedite internet traffic and strengthen infrastructure redundancy. Mostly, telcos subscribe to submarine cables that plug into countries where tech giants host their data offices, such as Japan, Singapore and the US. CONVERGE BrandSpace Articles Trends and ReadyLinks say IR and hospitality sectors can modernize connectivity infrastructure sans expensive overhauls Baby Poco is back with new faces and a chance to get free fries for a year! Toyota’s 10.10 deals are worth your 'a-ten-ten-tion' this October! SM Pickleball expands to SM City East Ortigas 150 healthcare educators and leaders gather in Manila to advance simulation-based nursing education SMDC on reclaiming time: How a young family swapped a 5-hour commute for home-cooked meals Anne Curtis’ passion project Dream Machine grants dreams of Puerto Princesa children Learn and grow: Bayan Family of Foundations and Global Dominion Partner 5 things every Filipino should know about writing a will Cardinal Santos Medical Center, Singlife Philippines partner to expand access to high-value healthcare < > Latest Trending Trending Latest Trending abtest abtest Attracting investments By Boo Chanco | 12 hours ago BBM must really think so poorly of us to claim he made his recent Singapore F1 Grand Prix trip to bring in investments. Indeed,... Business Price Tracker: Oil, fuel monitor for October 13-19, 2026 By Renalyn Ramirez | 1 day ago Here are the estimated new prices of local oil and fuel products for October 13-19, 2026. Business ERC suspends power reserve market By Brix Lelis | 12 hours ago The Energy Regulatory Commission has temporarily halted Reserve Market operations to curb persistently high ancillary service... Business BSP trims BOP deficit forecasts for 2026, 2027 By Keisha Ta-Asan | 12 hours ago The Philippines may post narrower balance of payments deficits for the next two years than earlier expected, although elevated... Business NFA says rice imports could prevent food insecurity amid US import plans By Renalyn Ramirez | 22 hours ago The NFA said rice imports are still needed in the country to fill supply gaps and prevent food insecurity as local production... Business Latest More in Business PAGCOR targets casino exit by 2027 Soybean meal imports seen to rise 10% in 2027 DA sees P10 billion additional revenues from higher pork tariffs Philippines generates record-high sales at China-ASEAN Expo abtest Philippines among hotspots of scam operations By Aubrey Rose Inosante | 1 day ago The Philippines has become one of the hotspots for scam operations in the Association of Southeast Asian Nations, ASEAN Foundation... Business PAGCOR: Nearly 40K gamblers volunteer for self exclusion By Keisha Ta-Asan | 1 day ago The Philippine Amusement and Gaming Corp. has approved nearly 40,000 requests from gamblers seeking to bar themselves... Business Bargain hunting props up stocks By Richmond Mercurio | 1 day ago The local stock market kicked off the week on a positive note as investors continued to take advantage of relatively cheaper... Business ‘Good products come from good thinking’ By Rey Elbo | 1 day ago A reader asked me on a Facebook chat: “Who is better – an individual genius who gives ideas worth millions or an army of problem-solvers giving their two-cents worth?” My answer is both. Giving... Business GCash parent cashes in on oversubscribed IPO By Richmond Mercurio | 1 day ago The maiden offering of Mynt Inc., the parent company of e-wallet giant GCash, has recorded strong demand across brokerage... Business Recommended next OK Are you sure you want to log out? Yes No X Login Philstar.com is one of the most vibrant, opinionated, discerning communities of readers on cyberspace. With your meaningful insights, help shape the stories that can shape the country. Sign up now! Get Updated: Signup for the News Round now E-mail Address: Password REMEMBER ME FORGOT PASSWORD? SIGN IN or sign in with New user? CLICK HERE TO REGISTER This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdlZKSUFwSXkwMkF6R3lZRTR0Vm0xRjA0ekY2WWNkTzMtSUlkY25BTUp0VHdDMzRqTmFCMDNYWE9kdDFaSXk1UmtIMHBQVVlHU3FQcHdyVVZFcjVIaVpiYl90Vm14N0ZaZS1LNVg1aGRnazZjY2ZtNFBqWlc2Y3ZqRUkxYnR5cjJsZVNBMUFnRHZYeDlTMWVpalhmV3hCNDZfc2NDbFFmQXRrOWNU0gGzAUFVX3lxTE82d1k0SnVrU1g4Yy1SWkU4WTNxV3p4cFNsM1BmdjRaRUhsT0ZLWHBkSERoaE1HMlp6UGRLNmVYVGRsMnVBbGR4WUlJdmZYZ0ZkQk9kQ3F3aVowc21kMjVRSWVCNTZ2TW5WUVVTVlJRdXpJRFlBbDVMRV8tczBTa1ZEUFotdFNmcHF2VDdYVWV2N0Y5dHFCc0V0SWdMOXhpOE1QanFROHhYcWp4UjlWWkxCTlhn?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-10-05",
+        "queue_id": "73e17de3938267f5fab6881fcbaf6522",
+        "source": "Google News",
+        "title": "Converge’s subsea cables spare Filipinos from internet outage",
+        "url": "https://www.philstar.com/business/2026/10/06/2561137/converges-subsea-cables-spare-filipinos-internet-outage"
+      },
+      "extracted": {
+        "accident_location": "Singapore",
+        "accident_type": "Cut",
+        "affected_area": "Philippines",
+        "cable_name": "",
+        "occurrence_date": "2026-09-29",
+        "original_text": "Converge CEO and co-founder Dennis Anthony Uy yesterday said the provider immediately brought back internet services when a submarine link to Singapore was cut last Friday.",
+        "original_text_zh": "Converge首席执行官兼联合创始人Dennis Anthony Uy昨天表示，当上周五一条通往新加坡的海底线路被切断时，该公司立即恢复了互联网服务。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Converge’s subsea cables spare Filipinos from internet outage",
+    "updated_at": "2026-10-14T04:22:24+00:00",
+    "url": "https://www.philstar.com/business/2026/10/06/2561137/converges-subsea-cables-spare-filipinos-internet-outage",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "verified",
@@ -4387,6 +4804,58 @@
     "verification_status": "verified"
   },
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "off the coast of Western Australia",
+    "accident_type": "Cut",
+    "affected_area": "Australia",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:23:21+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWUxsRzFsTFRKYVJwZm9sYWlJQWVnX2VuQUdZZkxzNlJzNzFTU0M4TXc1ZGtneUJXanVsRm5ETGhFNHRkU0pHdTB6NUZUQ0VuR0VuYnZtVi1zOXI3d3ZiUXo5Uy1hSFZLYnNIWTdEcTJpMkNkbk9MNVR0VXc5YVVXd0sxTXJQazk5VkUxMzl1UmNpc0d4dllSWnNrQXRlZw?oc=5",
+    "event_uid": "evt_56f5fb2ef424b1ac4ff9",
+    "evidence_urls": [
+      "https://www.6pr.com.au/suspicious-undersea-cable-damage-exposes-australias-defence-vulnerability/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-08-08",
+    "original_text": "Two subsea cables were severed off the coast of Western Australia over the weekend under suspicious circumstances, exposing a concerning vulnerability in Australia’s defence.",
+    "original_text_zh": "上周末，西澳大利亚海岸附近的两条海底电缆在可疑情况下被切断，暴露出澳大利亚国防中的一个令人担忧的漏洞。",
+    "published_date": "2026-08-10",
+    "raw_data": {
+      "article": {
+        "content": "6PR - Perth's Best Talk Station Latest News Listen Live 6PR – Perth’s favourite news and talk station Shows Australia Overnight The Best of 6PR The Best of 6PR 6PR Breakfast 6PR Mornings with Simon Beaumont The Long Lunch with Tod Johnston View all Football Audio The House of Wellness – Full Show Sunday Oct. 12 2025 The House of Wellness – Full Show Sunday Oct. 5 2025 The House of Wellness – Full Show Sunday September 28 2025 The House of Wellness – Full Show Sunday September 21 2025 The House of Wellness – Full Show Sunday September 14 2025 The House of Wellness – Full Show Sunday September 7 2025 View all Win Win a Summer Road Trip LONG LUNCH LIVE View all Money What’s On Variety WA “Spin 4 Kids” RSPCA WA Giving Day View all 6PR Supports Contact Us Advertise with us Latest News Listen Live Follow us Advertisement Advertisement Advertisement Advertisement Advertisement Home News WA Suspicious undersea cable damage exposes.. Suspicious undersea cable damage exposes Australia’s defence vulnerability 10/08/2026 Share this article Millsy & Karl Two subsea cables were severed off the coast of Western Australia over the weekend under suspicious circumstances, exposing a concerning vulnerability in Australia’s defence. Press PLAY to hear Michael Shoebridge discuss the vulnerability of Australia’s subsea cables Strategic Analysis Australia director Michael Shoebridge told 6PR Breakfast hosts Millsy and Karl that these cables – roughly the thickness of a wrist – carry 99 per cent of Australia’s internet traffic. He warned that there is little in place to protect these critical assets, leaving the nation at risk of being isolated from the world with no clear reconnection plan. “We’re less well repaired than you’d hope”, he said. Image: iStock Millsy & Karl Australia News WA Share this article Advertisement Advertisement ✖ Cookie and privacy notice We use cookies in order to personalise your experience and improve our services. See our privacy policy for more information. Accept 133 882 FEEDBACK",
+        "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWUxsRzFsTFRKYVJwZm9sYWlJQWVnX2VuQUdZZkxzNlJzNzFTU0M4TXc1ZGtneUJXanVsRm5ETGhFNHRkU0pHdTB6NUZUQ0VuR0VuYnZtVi1zOXI3d3ZiUXo5Uy1hSFZLYnNIWTdEcTJpMkNkbk9MNVR0VXc5YVVXd0sxTXJQazk5VkUxMzl1UmNpc0d4dllSWnNrQXRlZw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-10",
+        "queue_id": "d948141ad5e81d1fc4a5814764647aa3",
+        "source": "Google News",
+        "title": "Suspicious undersea cable damage exposes Australia’s defence vulnerability",
+        "url": "https://www.6pr.com.au/suspicious-undersea-cable-damage-exposes-australias-defence-vulnerability/"
+      },
+      "extracted": {
+        "accident_location": "off the coast of Western Australia",
+        "accident_type": "Cut",
+        "affected_area": "Australia",
+        "cable_name": "",
+        "occurrence_date": "2026-08-08",
+        "original_text": "Two subsea cables were severed off the coast of Western Australia over the weekend under suspicious circumstances, exposing a concerning vulnerability in Australia’s defence.",
+        "original_text_zh": "上周末，西澳大利亚海岸附近的两条海底电缆在可疑情况下被切断，暴露出澳大利亚国防中的一个令人担忧的漏洞。",
+        "reason": "suspicious circumstances",
+        "repair_date": null
+      }
+    },
+    "reason": "suspicious circumstances",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Suspicious undersea cable damage exposes Australia’s defence vulnerability",
+    "updated_at": "2026-10-14T04:23:21+00:00",
+    "url": "https://www.6pr.com.au/suspicious-undersea-cable-damage-exposes-australias-defence-vulnerability/",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "near Perth",
     "accident_type": "Cut",
@@ -6498,6 +6967,58 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://www.9dashline.com/article/taiwans-undersea-cables-are-an-indo-pacific-crisis-test",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between Norway and Denmark",
+    "accident_type": "Cut",
+    "affected_area": "Norway and Denmark",
+    "cable_name": "Skagerrak 2",
+    "created_at": "2026-10-14T04:22:47+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWnUtb3Bhb3daaDFBYVhodXpIclc1d3dpZk9CVXNTeTkzYmt6enJ2MS0yR1ZEMDFPY3M5RVVTUWtkQ3JIY3NzQzBIdFljTVFicGg2bFJsT0Z0VnVleHdreWU4VUxyVTlGNXRib3psUmE3Wi1FT2RwUWpkWWdmOHZJdU1qTzZSWTJoRGpTbjJ1amNnZzlZdlROLXlxdERydERGcUF5Y0xkVEtOOUVObEw4Wmktcm5HUHprMndtU21BbHk2ZUE?oc=5",
+    "event_uid": "evt_a1e47fa41480fd89d775",
+    "evidence_urls": [
+      "https://www.rivieramm.com/news-content-hub/skagerrak-2-cable-back-in-operation-after-fault-finding-and-fixing-completed-90171"
+    ],
+    "normalized_cable_id": "SKAGERRAK 2",
+    "occurrence_date": "2026-06-02",
+    "original_text": "On 2 June 2026, an error occurred on Skagerrak 2, one of the four submarine cables between Norway and Denmark. The fault caused the cable to fall out. After troubleshooting, investigation and repair, the cable was back in regular operation on 20 September 2026, said asset owner Statnett.",
+    "original_text_zh": "2026年6月2日，挪威和丹麦之间的四条海底电缆之一Skagerrak 2发生故障，导致电缆中断。资产所有者Statnett表示，经过故障排查、调查和维修后，该电缆于2026年9月20日恢复正常运行。",
+    "published_date": "2026-10-08",
+    "raw_data": {
+      "article": {
+        "content": "ao link Home Contents News Features Opinion Videos Whitepapers Editor’s Choice Digital Editions Expert Views Survey’s/Polls (coming soon) Podcasts Partner Network - Siemens Partner Network - Nor-Shipping Partner Network - DNV Partner Network - Wärtsilä Voyage Special Reports (coming soon) Business Sectors Ballast Water Treatment CCS & C02 Shipping Container Shipping Tug & Salvage LNG Shipping Marine Propulsion Maritime Environmental Protection Optimisation & Communication Offshore Support Offshore Wind Passenger Ship Interiors Passenger Shipping Tankers Partner Network - Nor-Shipping Partner Network - Navtor Events Middle East Conflict New to Riviera? Register New to Riviera? Register Register or Login Subscribe Search Riviera Search Middle East Conflict Business Sectors Ballast Water Treatment CO2 Capture, Transport & Storage Container Shipping Tug & Salvage LNG Shipping Marine Propulsion LNG Shipping Marine Propulsion Maritime Environmental Protection Optimisation & Communication Offshore Support Offshore Wind Passenger Ship Interiors Offshore Wind Passenger Ship Interiors Passenger Shipping Tankers Partner Network - Nor-Shipping Partner Network - Navtor Business Sectors Business Sectors Ballast Water Treatment CO2 Capture, Transport & Storage Container Shipping Tug & Salvage LNG Shipping Marine Propulsion LNG Shipping Marine Propulsion Maritime Environmental Protection Optimisation & Communication Offshore Support Offshore Wind Passenger Ship Interiors Offshore Wind Passenger Ship Interiors Passenger Shipping Tankers Partner Network - Nor-Shipping Partner Network - Navtor Events Events All Events Webinar Library Next event: Contents Contents News Features Opinion Videos Videos Whitepapers Editor’s Choice Digital Editions Expert Views Digital Editions Expert Views Podcasts Partner Network - Nor-Shipping Survey’s/Polls (coming soon) Partner Network - Siemens Partner Network - DNV Partner Network - Wärtsilä Voyage Special Reports (coming soon) Read the views of the experts: VNS-100: Advanced 3D Navigation for Safer Decisions Sponsored by Furuno The VNS-100 is an advanced VR Navigation System designed to enhance situational awareness and support navigational decision-making. News Home Home | News Content Hub Home Back x You are viewing 1 of your 10 articles this month. Register to read more articles. Repair work on the Skagerrak cable was undertaken by Nexan's cable-lay and repair vessel Skagerrak (source: Nexans) Skagerrak 2 cable back in operation after fault-finding and fixing completed 08 Oct 2026 by David Foxwell One of the oldest submarine cables between Norway and Denmark, Skagerrak 2, has been put back into operation after being repaired On 2 June 2026, an error occurred on Skagerrak 2, one of the four submarine cables between Norway and Denmark. The fault caused the cable to fall out. After troubleshooting, investigation and repair, the cable was back in regular operation on 20 September 2026, said asset owner Statnett. The repair work was undertaken by Nexans using the vessel Skagerrak. Nexans, the owner of Skagerrak, has a framework agreement with the PRSI Pool, a repair pool managed by Equinor. Statnett is a member of PRSI. Skagerrak was mobilised in August to undertake the work. After the fault location was located, a cut and seal operation was carried out. The cable was cut on each side of the damage and the cable ends sealed to prevent water ingress. The cost of the repair were shared between Energinet and Statnett, and are estimated to be in excess of NKr160M. This is somewhat higher than originally estimated, because the repair took somewhat longer than anticipated, which as partly due to challenging weather conditions. Offshore Contractors Offshore Support Offshore Support Journal Safety & Incidents Editor's Choice Brazilian regulator halts production from Peregrino FPSO 19 Aug 2025 EU’s 18th sanctions package targets flag registry and 'shadow fleet', cuts oil price cap 18 Jul 2025 Biter loss: reactions split over MAIB's fatal incident review 18 Jul 2025 AI versus AI: keep humans in the loop 07 Jul 2025 US-built SEACOR Marine PSVs find new home in the Middle East 06 May 2025 Editor's Choice Update: world’s first dual-fuel methanol escort tug arrives in Canada Piracy: hijacked Eureka tanker reportedly abandoned, hostage crew taken ashore ​Piracy: ​hijackings turn deadly as two tankers freed, with third reportedly abandoned How the current tanker boom could be sowing the seeds of the next bust Related to this Story Starnav's first domestically-built hybrid-battery PSV ushers in new era in Brazil 13 Oct 2026 4-stroke Engines Batteries & Electrical Systems Bio Products Fleet Performance & Maintenance Hybrid Electric & Fuel Cells Hybrid Propulsion offshore support Offshore Support Journal Offshore Support Vessels Propulsion Shipbuilding & Design Shipyards Vessel Classification Strait of Hormuz tanker attacks surge: two missing after attack off Oman; US 'disables' vessel 13 Oct 2026 Crude Oil Tanker Gas Ships LNG Shipping LNG Shipping & Terminals Middle East Conflict Safety & Incidents Tanker Shipping & Trade Tankers Fugro upgrades emergency communications on supply ship 13 Oct 2026 Aerials Bridge Equipment Communications Fleet Performance & Maintenance Maritime Optimisation & Communications Offshore Support Journal Offshore Support Vessels Optimisation & Communication Retrofits Satellite Communications Terminals US offshore supply vessels rescue crew, support ship salvage 13 Oct 2026 Accidents Int. Tug & Salvage Offshore Support Journal Offshore Support Vessels Safety & Incidents Tug & Salvage Events View All Maritime Regulations Webinar Week 16 Dec 2025 GMT - ONLINE On 16 December, Riviera will be holding a webinar on how to achieve IMO compliance while powering sustainable shipping practices. This webinar delivers practical guidance on managing compliance ... Floating energy: successfully unlocking stranded gas using FLNGs and FSRUs 24 Feb 2026 GMT - ONLINE Stranded gas represents untapped value and floating LNG and FSRUs offer the quickest way to monetise it. To capitalise on these opportunities, you must master both the technology behind floating gas ... Quick Links About Us Riviera News Marketing Services Subscribe Get in Touch Contact Us Our Team Our Offices Careers Legal Cookie Policy Privacy Policy Terms & Conditions RSS Feeds Sustainability Policy London Office Phone: +44 20 8364 1551 Email: info.london@rivieramm.com Singapore Office Phone: +65 6809 1278 Email: info.singapore@rivieramm.com © 2026 Riviera Maritime Media Ltd. By clicking “Accept Cookies” you agree to the storing of cookies on your device to enhance site navigation, personalise experience, analyse site usage, and assist us in our marketing efforts. Accept Additional Cookies Reject Additional Cookies Cookie Settings",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWnUtb3Bhb3daaDFBYVhodXpIclc1d3dpZk9CVXNTeTkzYmt6enJ2MS0yR1ZEMDFPY3M5RVVTUWtkQ3JIY3NzQzBIdFljTVFicGg2bFJsT0Z0VnVleHdreWU4VUxyVTlGNXRib3psUmE3Wi1FT2RwUWpkWWdmOHZJdU1qTzZSWTJoRGpTbjJ1amNnZzlZdlROLXlxdERydERGcUF5Y0xkVEtOOUVObEw4Wmktcm5HUHprMndtU21BbHk2ZUE?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-10-08",
+        "queue_id": "965dfaf1a251618ebe53c15fe5877d8b",
+        "source": "Google News",
+        "title": "Skagerrak 2 cable back in operation after fault-finding and fixing completed",
+        "url": "https://www.rivieramm.com/news-content-hub/skagerrak-2-cable-back-in-operation-after-fault-finding-and-fixing-completed-90171"
+      },
+      "extracted": {
+        "accident_location": "between Norway and Denmark",
+        "accident_type": "Cut",
+        "affected_area": "Norway and Denmark",
+        "cable_name": "Skagerrak 2",
+        "occurrence_date": "2026-06-02",
+        "original_text": "On 2 June 2026, an error occurred on Skagerrak 2, one of the four submarine cables between Norway and Denmark. The fault caused the cable to fall out. After troubleshooting, investigation and repair, the cable was back in regular operation on 20 September 2026, said asset owner Statnett.",
+        "original_text_zh": "2026年6月2日，挪威和丹麦之间的四条海底电缆之一Skagerrak 2发生故障，导致电缆中断。资产所有者Statnett表示，经过故障排查、调查和维修后，该电缆于2026年9月20日恢复正常运行。",
+        "reason": null,
+        "repair_date": "2026-09-20"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-09-20",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Skagerrak 2",
+    "title": "Skagerrak 2 cable back in operation after fault-finding and fixing completed",
+    "updated_at": "2026-10-14T04:22:47+00:00",
+    "url": "https://www.rivieramm.com/news-content-hub/skagerrak-2-cable-back-in-operation-after-fault-finding-and-fixing-completed-90171",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "verified",
@@ -13182,6 +13703,58 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://www.tomshardware.com/tech-industry/red-sea-cable-cut-takes-azure-routes-down",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "Bab al-Mandeb",
+    "accident_type": "Cut",
+    "affected_area": "Middle East and South Asia",
+    "cable_name": "",
+    "created_at": "2026-10-14T04:23:13+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNUHhqRkxtcDhscGZDMkpXNkkzVEFXYU5hb3BJT2x6MDJCWWxadFprY0lNNVdkTGFYc0xVeVBEU0lmTmdrbzJSMWtaZktIYi1IRGVwYjY5QTI1aHVkXzg5TDRicnhBMjg0LXZTUVZKR2NVTXpRNnIwbkt6MHV4RVhzUUFzbExvd0htVEZLallrYjV2Y3RPcHIzU2Rsamc3RGpSN3JRcEZOV18xZkczX0g3VjNpNzR6SkFZZ2tZQVpad0xzdk4ybjZUaDhaQWxuZm1QVmVsdFFyVVktUGhYMDZoMFBtMUVJeUFOd015MEs2YWNYV0E0LVBKRWdwcnFPNWpscnBkQTVDa3BZQTV0YU1SbWRR0gGXAkFVX3lxTE1MWlhlX3JxYTlRSThkWERVZXNqTDd2aXRRQjhhY1UtUmRtUzl0ZnptYWVNSGY2dExGV09NUzR2dk9sR3lFOXlkeXVtN3hOLUlYOTQyQmR4ejFBaG1nWHptQ25UMGFCYlpsWWczTmtZMlFidEIwZ3ZuNW41VXdVVlBlYjFobW0tRm16VkkwQjI0eDhiMF8xSm44dGZfOWR6QWlVMkJsSjF0Q3ExRHcwcjd2QXM5el9CX2JJR2tIZmNHTl9oUFM0djlhdnR0bEJCM193aEFwQ1dsNnU1VlBCa01nNklNaXhwYlcxaHR1bVBDdkV3Q1RmOHB3MUdoZml0aUU1UFRhX0dmbTI3dWZPTjJ4NnRQM1o4OA?oc=5",
+    "event_uid": "evt_9462f41dc4b75e2ba97c",
+    "evidence_urls": [
+      "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2024-02-01",
+    "original_text": "Undersea cables have also been damaged during regional conflicts. In February 2024, three cables were cut after the cargo ship Rubymar was disabled by a Houthi missile. Industry assessments linked the damage to the ship’s anchor, while the Houthis denied responsibility for the cable cuts.",
+    "original_text_zh": "海底电缆在地区冲突中也遭到了破坏。2024年2月，货船Rubymar被胡塞武装的导弹击中后，三根电缆被切断。行业评估认为损坏是由船锚造成的，而胡塞武装则否认对电缆切断负责。",
+    "published_date": "2026-10-13",
+    "raw_data": {
+      "article": {
+        "content": "Agencies The Gulf has invested billions of dollars in artificial intelligence, cloud computing and digital infrastructure. But a warning from Iran has raised questions about how secure these ambitions would be if conflict with the United States resumes. Iranian security official Mohsen Rezaei told Al Jazeera that the data centres, artificial intelligence facilities, and communication cables in the area could be attacked if hostility resumes. This is after the drone attack on the AWS facility in the UAE and Bahrain when the US-Israel was attacking Iran, reported by Al Jazeera. Also Read | Saudi Arabia spends $83 billion on defence. Why are missiles and drones still getting through? The concern extends beyond individual technology companies. The Gulf’s digital economy depends on undersea cables, reliable electricity and large computing facilities that can be difficult to protect during a conflict. Why the Gulf’s internet cables are vulnerable Most of the data that moves between Europe and Asia moves via fibre-optic cables laid under the ocean. The cables contain data related to business transactions, cloud computing services, and even normal Internet browsing. Live Events Al Jazeera reports that, according to estimates provided by research firm TeleGeography, more than 90 per cent of data capacity between Europe and Asia travels via cables that go through the Red Sea. Most of the cables pass through Bab al-Mandeb, which is a narrow strip of water that connects the Red Sea and the Gulf of Aden. Also Read | Amelia Earhart disappeared in 1937. Nearly a century later, why are scientists now investigating a possible clue beneath the water? The fact that there are lots of cables moving along certain paths can be seen as a potential vulnerability. The cables can be damaged by anchors or even subjected to deliberate interference. The data centres are equally vulnerable to such threats. These buildings provide support for the servers that run banking software, governmental services and even artificial intelligence. According to Andreas Krieg, an expert in security studies from King's College London, as reported by Al Jazeera, there is no need for any actual destruction for such buildings to stop functioning. Technology companies have already faced attacks Iran’s warning follows earlier statements identifying technology infrastructure as a potential target. Al Jazeera reported that the Islamic Revolutionary Guard Corps named companies including Google, Microsoft, Oracle, Meta and Apple, as well as Emirati AI company G42, in communications outlining potential targets. In March, AWS said two of its facilities in the UAE had been directly struck by drones. A strike near another facility in Bahrain caused physical damage to infrastructure, the company reported. Also Read | In 2019, Amsterdam began using bubble barriers to catch river plastic. Now the US wants to bring the technology to the Great Lakes These incidents demonstrated how attacks can affect commercial services even when their stated objectives are military or political. Abu Dhabi Commercial Bank reported an outage affecting its application during a wider IT disruption, although it did not directly attribute the incident to AWS. Undersea cables have also been damaged during regional conflicts. In February 2024, three cables were cut after the cargo ship Rubymar was disabled by a Houthi missile. Industry assessments linked the damage to the ship’s anchor, while the Houthis denied responsibility for the cable cuts. Two more cables were damaged near Jeddah in September 2025, slowing internet access across parts of the Middle East and South Asia. The cause was not confirmed, according to Al Jazeera . Krieg told the outlet that the attacks exposed the limits of assuming commercial infrastructure would automatically be protected by national air defences. Can the Gulf protect its AI ambitions? The risks matter because technology has become central to Gulf economic diversification plans. The UAE is developing the Stargate UAE AI campus with OpenAI, Nvidia, G42 and other partners. Similar threats confront data centres. Also Read | 2026 Midterm Campaigns: Why some Democratic candidates are keeping Kamala Harris and AOC at a distance while turning to Pete Buttigieg They provide space for storage of servers that support banking systems, governments, and artificial intelligence systems. Data centres depend on uninterrupted supply of electricity, cooling, and telecommunications. In an interview on Al Jazeera, Andreas Krieg, a security studies expert at King's College London, explained that physical damage is not necessary for the disruption of infrastructure. One response is to develop alternative routes. Iraq signed an agreement with Qatar’s Ooredoo in September to carry data from the Gulf towards Europe through Iraqi territory and Türkiye. Ooredoo’s international arm subsequently agreed to acquire fibre capacity from Iraq’s iQ Networks to extend connectivity, subject to government approval. These would help avoid the use of risky maritime routes, but infrastructure construction is time-consuming. According to Krieg, cited by Al Jazeera, geographical redundancy, even if this involves locations beyond the Gulf, will help build resilience. This poses a problem for governments that would want to maintain control over sensitive data and computing resources within their jurisdiction. Why digital security is becoming a geopolitical issue For Gulf governments, attracting technology companies is only part of the challenge. They must also convince investors that critical services can continue operating during a regional crisis. In contrast to the AI strategy of the UAE, which depends on American technological firms, the Saudi Arabian and Qatari governments are developing infrastructure that will cater for regional and international clients. Any disruption might impact financial service providers, cloud services and firms far from the zone of conflict. The protection of all cables and data centres may prove to be challenging. Power backups, different network routes and geographical location of the infrastructure can minimise the impacts of any failure. But such efforts demand huge investments. The Houthis’ presence around the Red Sea adds further uncertainty. No direct proof of attacks on internet cables by the group has been found, but engaging in combat in the vicinity of important shipping routes makes the process of fixing damage difficult. The Iranian warning points to how digital infrastructure has come to be both an economic and geopolitical asset. Add as a Reliable and Trusted News Source Add Now! (You can now subscribe to our Economic Times WhatsApp channel ) Read More News on Gulf digital infrastructure security Iran cyber threat undersea internet cables Gulf AI investments data center vulnerabilities telecommunications infrastructure geopolitical implications of technology regional conflicts digital impact cloud computing security Houthi attacks on infrastructure (You can now subscribe to our Economic Times WhatsApp channel ) Read More News on Gulf digital infrastructure security Iran cyber threat undersea internet cables Gulf AI investments data center vulnerabilities telecommunications infrastructure geopolitical implications of technology regional conflicts digital impact cloud computing security Houthi attacks on infrastructure",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNUHhqRkxtcDhscGZDMkpXNkkzVEFXYU5hb3BJT2x6MDJCWWxadFprY0lNNVdkTGFYc0xVeVBEU0lmTmdrbzJSMWtaZktIYi1IRGVwYjY5QTI1aHVkXzg5TDRicnhBMjg0LXZTUVZKR2NVTXpRNnIwbkt6MHV4RVhzUUFzbExvd0htVEZLallrYjV2Y3RPcHIzU2Rsamc3RGpSN3JRcEZOV18xZkczX0g3VjNpNzR6SkFZZ2tZQVpad0xzdk4ybjZUaDhaQWxuZm1QVmVsdFFyVVktUGhYMDZoMFBtMUVJeUFOd015MEs2YWNYV0E0LVBKRWdwcnFPNWpscnBkQTVDa3BZQTV0YU1SbWRR0gGXAkFVX3lxTE1MWlhlX3JxYTlRSThkWERVZXNqTDd2aXRRQjhhY1UtUmRtUzl0ZnptYWVNSGY2dExGV09NUzR2dk9sR3lFOXlkeXVtN3hOLUlYOTQyQmR4ejFBaG1nWHptQ25UMGFCYlpsWWczTmtZMlFidEIwZ3ZuNW41VXdVVlBlYjFobW0tRm16VkkwQjI0eDhiMF8xSm44dGZfOWR6QWlVMkJsSjF0Q3ExRHcwcjd2QXM5el9CX2JJR2tIZmNHTl9oUFM0djlhdnR0bEJCM193aEFwQ1dsNnU1VlBCa01nNklNaXhwYlcxaHR1bVBDdkV3Q1RmOHB3MUdoZml0aUU1UFRhX0dmbTI3dWZPTjJ4NnRQM1o4OA?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-13",
+        "queue_id": "e38f709b00aa4f3d84a0433258a0253d",
+        "source": "Google News",
+        "title": "Could Iran target the Gulf’s digital backbone? The risks to data centres and internet cables explained",
+        "url": "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr"
+      },
+      "extracted": {
+        "accident_location": "Bab al-Mandeb",
+        "accident_type": "Cut",
+        "affected_area": "Middle East and South Asia",
+        "cable_name": "",
+        "occurrence_date": "2024-02-01",
+        "original_text": "Undersea cables have also been damaged during regional conflicts. In February 2024, three cables were cut after the cargo ship Rubymar was disabled by a Houthi missile. Industry assessments linked the damage to the ship’s anchor, while the Houthis denied responsibility for the cable cuts.",
+        "original_text_zh": "海底电缆在地区冲突中也遭到了破坏。2024年2月，货船Rubymar被胡塞武装的导弹击中后，三根电缆被切断。行业评估认为损坏是由船锚造成的，而胡塞武装则否认对电缆切断负责。",
+        "reason": "ship’s anchor",
+        "repair_date": null
+      }
+    },
+    "reason": "ship’s anchor",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Could Iran target the Gulf’s digital backbone? The risks to data centres and internet cables explained",
+    "updated_at": "2026-10-14T04:23:13+00:00",
+    "url": "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "imported",
