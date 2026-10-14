@@ -1,16 +1,28 @@
 {
-  "github": {
+  "email": {
     "conditions": [
-      "errors",
       "fetch_failure",
-      "model_failure",
       "queue.retry",
       "queue.review",
+      "source_failure",
       "status",
       "warnings",
       "workflow"
     ],
-    "fingerprint": "ba111384eeb18c4ed25cabd54e172eec8ee54913367d3601b3fd90b251030f4f",
-    "last_sent": 1791951909.1904333
+    "fingerprint": "eefb712d4fe4fb7fe0923c4b9e67ffe8a6fc697dbd30dd406976876e249a0431",
+    "last_sent": 1791970642.271767
+  },
+  "github": {
+    "conditions": [
+      "fetch_failure",
+      "queue.retry",
+      "queue.review",
+      "source_failure",
+      "status",
+      "warnings",
+      "workflow"
+    ],
+    "fingerprint": "eefb712d4fe4fb7fe0923c4b9e67ffe8a6fc697dbd30dd406976876e249a0431",
+    "last_sent": 1791970642.271767
   }
 }
