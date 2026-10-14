@@ -92,15 +92,21 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
     if isinstance(health, str) and health.lower() not in GOOD | quiet_statuses:
         add("model_health", "模型调用不可用")
     elif isinstance(health, dict):
+        provider = {"siliconflow": "SiliconFlow", "openai": "OpenAI"}.get(health.get("provider"), "当前模型服务")
         model_status = str(health.get("status", "unknown")).lower()
         reason = health.get("reason")
         http_status = health.get("http_status")
         if http_status == 402 or reason == "balance_exhausted":
-            add("model_balance", "模型调用因余额耗尽失败，请充值后重试")
+            add("model_balance", f"{provider} 模型调用因余额耗尽失败，请充值后重试")
         elif http_status in {401, 403} or reason in {"authentication_failed", "missing_api_key"}:
-            add("model_auth", "模型凭据无效或无权访问，请检查 API 密钥与权限")
+            add("model_auth", f"{provider} 模型凭据无效或无权访问，请检查 API 密钥与权限")
         elif http_status == 429 or reason == "rate_limited":
-            add("model_rate_limit", "模型请求受到限流，稍后自动重试")
+            add("model_rate_limit", f"{provider} 模型请求受到限流，稍后自动重试")
+        elif reason in {"request_timeout", "connection_failed", "provider_unavailable", "invalid_response", "request_rejected", "extraction_failed"}:
+            descriptions = {"request_timeout": "请求超时", "connection_failed": "连接失败",
+                            "provider_unavailable": "服务暂时不可用", "invalid_response": "返回内容不完整或格式无效",
+                            "request_rejected": "请求被拒绝", "extraction_failed": "调用失败"}
+            add("model_" + reason, f"{provider} {descriptions[reason]}；未处理新闻已保留供后续重试")
         elif reason not in quiet_reasons and model_status not in quiet_statuses:
             if health.get("available") is False or health.get("ready") is False or model_status not in GOOD:
                 add("model_health", "模型调用不可用，请检查凭据或服务状态")
@@ -126,7 +132,9 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
             "model_fallback": ("检测到规则回退", lambda key: key.split(".")[:2] in (["extract", "fallback"], ["extraction", "fallback"])),
             "fetch_failure": ("正文获取失败，新闻仍需重试或复核", lambda key: key.split(".")[:2] == ["fetch", "failed"]),
             "blocked_403": ("站点拒绝访问，需复核", lambda key: "403" in key or "access_denied" in key or "forbidden" in key),
-            "budget": ("本轮处理额度已用尽，仍有新闻等待处理", lambda key: "budget" in key),
+            "discovery_limit": ("目录发现达到本轮时长或页数上限，已保存续扫位置（非账户余额）", lambda key: key == "discover.deferred.discovery_budget"),
+            "processing_limit": ("本轮处理达到时长或篇数上限，剩余新闻留待后续处理（非账户余额）", lambda key: key in {"collection.deferred.time_budget", "process.deferred.time_budget", "select.deferred.time_budget", "select.deferred.article_budget", "select.deferred.attempt_budget", "selection.skipped.budget"}),
+            "cross_source_review": ("替代来源证据不足或冲突，保留复核记录", lambda key: key.startswith("cross_source.review.")),
         }
         for group, (label, matches) in groups.items():
             if "failure_summary" in summary and group in {"source_failure", "fetch_failure"}:
@@ -161,6 +169,8 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
         if isinstance(health, dict) and health.get("retry_at"):
             lines.append(f"暂停截止时间（UTC）：{health['retry_at']}，到期后的首次定时任务重试。")
     if active:
+        if isinstance(health, dict) and health.get("reason") in {"request_timeout", "connection_failed", "provider_unavailable"}:
+            lines.append("本次没有收到模型账户余额不足的返回；无需根据这封邮件判断是否充值。")
         if isinstance(health, dict) and health.get("reason") == "inference_succeeded":
             lines.append(f"模型调用正常；本轮处理 {quantity(summary.get('articles'))} 篇，新增 {quantity(summary.get('inserted'))} 条事件。")
         lines.extend(f"- {label}：{value}" for _, (label, value) in sorted(issues.items()))

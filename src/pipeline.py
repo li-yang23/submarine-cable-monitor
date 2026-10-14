@@ -1,5 +1,6 @@
 from copy import deepcopy
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
 import time
 from typing import Any
 
@@ -47,7 +48,7 @@ class MonitorPipeline:
                  extractor: EventExtractor | None = None, *, health_checker=check_model_health):
         self.config = config
         self.store = store or EventStore(config.event_store_path)
-        self.extractor = extractor or EventExtractor(config.llm_model)
+        self.extractor = extractor or EventExtractor(config.llm_model, request_timeout=config.llm_request_timeout)
         self.health_checker = health_checker
         self.logger = get_logger("pipeline")
 
@@ -60,6 +61,9 @@ class MonitorPipeline:
         audit.emit("run", "started", selected_sources=selected_sources, since=since, dry_run=dry_run)
         queue = None
         deadline = time.monotonic() + max(1, self.config.collection_time_budget_seconds)
+        recovery_deadline = deadline
+        if self.config.cross_source_enabled:
+            deadline -= min(self.config.cross_source_time_budget_seconds, self.config.collection_time_budget_seconds / 4)
         try:
             queue = ArticleQueue.from_config(self.config, dry_run=dry_run)
             article_state = ArticleState.from_config(self.config)
@@ -235,8 +239,47 @@ class MonitorPipeline:
                         queue.persist()
                         audit.emit("process", "failed", **fields, reason="processing_error", **error_details(exc))
                 iterators = remaining
-            if time.monotonic() >= deadline:
+            if iterators and time.monotonic() >= deadline:
                 audit.emit("collection", "deferred", reason="time_budget")
+            if self.config.cross_source_enabled and model_available and not queue.balance_paused():
+                from src.processing.cross_source import CrossSourceRecovery
+                recovery = CrossSourceRecovery(self.config, queue, self.extractor, self.store, article_state,
+                                               deadline=recovery_deadline, dry_run=dry_run)
+                for row in recovery.eligible():
+                    if time.monotonic() >= recovery.deadline:
+                        audit.emit("cross_source", "deferred", **article_fields(row), reason="time_budget")
+                        break
+                    try:
+                        result = recovery.process(row)
+                        if result.get("model_succeeded"):
+                            summary.articles += 1
+                            summary.model_health = {"status": "available", "available": True, "low_balance": False,
+                                "reason": "inference_succeeded", "provider": getattr(self.extractor, "provider", "unknown")}
+                            queue.model_pause = {}
+                            queue.persist()
+                        summary.candidates += result.get("candidates", 0)
+                        summary.inserted += result.get("inserted", 0)
+                        summary.merged += result.get("merged", 0)
+                    except ExtractionUnavailable as exc:
+                        summary.errors += 1
+                        summary.articles += 1
+                        queue.mark_retry(row, exc.reason, http_status=exc.http_status,
+                                         delay_seconds=0 if exc.reason == "balance_exhausted" else None)
+                        if exc.reason == "balance_exhausted":
+                            queue.pause_for_balance()
+                        queue.persist()
+                        audit.emit("extract", "failed", **article_fields(row), reason=exc.reason,
+                                   provider=exc.provider, http_status=exc.http_status, method="cross_source")
+                        summary.model_health.update(status="unavailable", available=False, reason=exc.reason,
+                                                    provider=exc.provider, http_status=exc.http_status, low_balance=False)
+                        if exc.reason == "balance_exhausted":
+                            summary.model_health.update(queue.model_pause)
+                        row["cross_source"]["reason"] = exc.reason
+                        row["cross_source"]["next_search_at"] = (queue.model_pause["retry_at"] if exc.reason == "balance_exhausted"
+                            else (datetime.now(timezone.utc) + timedelta(minutes=5)).isoformat())
+                        queue.persist()
+                        # One failed recovery call ends recovery for this run.
+                        break
         except Exception as exc:
             summary.errors += 1
             summary.status = "failed"

@@ -22,7 +22,7 @@ _FIELDS = {
     "dry_run", "max_articles", "max_attempts", "attempts", "article_count", "path",
     "github_run_id", "github_run_attempt", "status", "errors", "warnings",
     "queue_id", "provider", "available", "low_balance", "model", "api_operation",
-    "prompt_tokens", "completion_tokens", "total_tokens",
+    "prompt_tokens", "completion_tokens", "total_tokens", "parent_queue_id", "content_sha256", "publisher_group", "retry_at",
 }
 _TOKEN_FIELDS = ("prompt_tokens", "completion_tokens", "total_tokens")
 _SECRET = re.compile(r"(secret|password|passwd|token|api.?key|authorization|signature)", re.I)

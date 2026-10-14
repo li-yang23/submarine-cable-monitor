@@ -52,6 +52,14 @@ class Config:
     submarine_networks_max_cables: int = 0
     submarine_networks_articles_per_cable: int = 0
 
+    # Public cross-source recovery is opt-in in deployment configuration.
+    cross_source_enabled: bool = False
+    cross_source_max_articles: int = 2
+    cross_source_max_candidates: int = 4
+    cross_source_time_budget_seconds: int = 300
+    cross_source_retry_hours: int = 24
+    llm_request_timeout: int = 120
+
     # LLM settings. API keys are read from env/GitHub Secrets only.
     llm_model: str = "deepseek-ai/DeepSeek-V3"
     llm_base_url: str = "https://api.siliconflow.cn/v1/"
@@ -136,7 +144,12 @@ class Config:
             config.submarine_networks_articles_per_cable,
         )
 
+        recovery = data.get("cross_source", {})
+        config.cross_source_enabled = recovery.get("enabled", config.cross_source_enabled)
+        for key in ("max_articles", "max_candidates", "time_budget_seconds", "retry_hours"):
+            setattr(config, "cross_source_" + key, max(1, int(recovery.get(key, getattr(config, "cross_source_" + key)))))
         llm = data.get("llm", {})
+        config.llm_request_timeout = max(1, int(llm.get("request_timeout", config.llm_request_timeout)))
         config.low_balance_threshold = llm.get("low_balance_threshold", config.low_balance_threshold)
         config.llm_model = os.getenv("LLM_MODEL") or llm.get("model", config.llm_model)
         config.llm_base_url = os.getenv("SILICONFLOW_BASE_URL") or llm.get("base_url", config.llm_base_url)
@@ -180,7 +193,13 @@ class Config:
                 "submarine_networks_max_cables": self.submarine_networks_max_cables,
                 "submarine_networks_articles_per_cable": self.submarine_networks_articles_per_cable,
             },
+            "cross_source": {"enabled": self.cross_source_enabled,
+                             "max_articles": self.cross_source_max_articles,
+                             "max_candidates": self.cross_source_max_candidates,
+                             "time_budget_seconds": self.cross_source_time_budget_seconds,
+                             "retry_hours": self.cross_source_retry_hours},
             "llm": {
+                "request_timeout": self.llm_request_timeout,
                 "model": self.llm_model,
                 "base_url": self.llm_base_url,
                 "embedding_model": self.embedding_model,
