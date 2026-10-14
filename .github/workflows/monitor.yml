@@ -71,6 +71,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install browser for public article rendering
+        if: ${{ github.event_name != 'push' }}
+        run: python -m playwright install --with-deps chromium
+
       - name: Run regression checks
         run: |
           python -m unittest discover -s tests
@@ -86,6 +90,7 @@ jobs:
         if: ${{ github.event_name != 'push' }}
         continue-on-error: true
         env:
+          MONITOR_BROWSER_FALLBACK: '1'
           SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
           SILICONFLOW_BASE_URL: ${{ secrets.SILICONFLOW_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

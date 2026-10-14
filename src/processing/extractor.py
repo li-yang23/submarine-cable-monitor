@@ -183,7 +183,7 @@ Text:
         return self._client
 
     def _extract_with_llm(self, article: dict[str, Any]) -> list[dict[str, Any]]:
-        content = clean_text(article.get("content"))[:5000]
+        content = clean_text(article.get("content"))
         prompt = f"""
 Extract information about any submarine cable accidents described in the following article. For each submarine cable accident, provide the details in JSON format.
 

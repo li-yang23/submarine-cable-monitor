@@ -1,5 +1,6 @@
 import email.utils
 import json
+import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
@@ -27,6 +28,9 @@ class ArticleScraper:
         self.article_queue = ArticleQueue.from_config(config)
         self.fetch_enabled = True
         self.deadline: float | None = None
+        self._last_request: dict[str, float] = {}
+        self._browser_hosts: set[str] = set()
+        self._browser_session = None
         self.logger = get_logger(self.__class__.__name__)
         self.session = requests.Session()
         self.session.headers.update(
@@ -123,18 +127,102 @@ class ArticleScraper:
             cable_counts[cable] = cable_counts.get(cable, 0) + 1
             yield article
 
-    def get(self, url: str) -> requests.Response:
-        last_error: Exception | None = None
-        for attempt in range(int(getattr(self.config, "max_retries", 3))):
+    def _browser_get(self, url: str):
+        from curl_cffi.requests import Session
+        if self._browser_session is None:
+            self._browser_session = Session(impersonate="chrome")
+        return self._browser_session.get(url, timeout=self.config.request_timeout)
+
+    def _render_get(self, url: str):
+        # A real browser is needed for public pages that render with JavaScript.
+        # Never click verification challenges, sign in, or use authenticated state.
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as runtime:
+            browser = runtime.chromium.launch(headless=True, channel="chromium")
             try:
-                response = self.session.get(url, timeout=self.config.request_timeout)
+                page = browser.new_page()
+                navigations = []
+                page.on("response", lambda r: navigations.append(r) if r.request.is_navigation_request() and r.frame == page.main_frame else None)
+                initial = page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                try:
+                    page.wait_for_selector("article, main, #FOR_target_content, .entry-content, [itemprop='articleBody']", timeout=10000)
+                except Exception:
+                    pass
+                response = requests.Response()
+                response.status_code = navigations[-1].status if navigations else initial.status if initial else 200
+                response.url = page.url
+                response._content = page.content().encode("utf-8")
+                response.encoding = "utf-8"
+                return response
+            finally:
+                browser.close()
+
+    @staticmethod
+    def _blocked_html(text: str) -> bool:
+        return bool(re.search(r"<title>\s*(?:just a moment|access denied|security verification|attention required)|verify you are human|enable javascript and cookies to continue|in order to continue, we need to verify", text[:12000], re.I))
+
+    @staticmethod
+    def _blocked_response(response) -> bool:
+        return response.status_code in {202, 403, 406} or ArticleScraper._blocked_html(response.text)
+
+    def get(self, url: str):
+        host = urlparse(url).hostname or ""
+        backoff_key = "http_retry_after:" + host
+        backoff = float(self.article_queue.get_cursor(backoff_key, 0) or 0)
+        if backoff > time.time():
+            response = requests.Response()
+            response.status_code = 429
+            response.url = url
+            raise requests.HTTPError("host_cooldown", response=response)
+        last_error = None
+        for attempt in range(max(1, int(getattr(self.config, "max_retries", 3)))):
+            wait = max(0, float(getattr(self.config, "request_delay_min", 1)) - (time.monotonic() - self._last_request.get(host, 0)))
+            if self._expired():
+                raise TimeoutError("collection_deadline")
+            if wait:
+                time.sleep(wait)
+            self._last_request[host] = time.monotonic()
+            try:
+                try:
+                    response = (self._browser_get(url) if host in self._browser_hosts
+                                else self.session.get(url, timeout=self.config.request_timeout))
+                except (requests.ConnectionError, requests.Timeout):
+                    if host in self._browser_hosts:
+                        raise
+                    emit("transport", "retry", source=self.source_name, url=url, reason="browser_transport_error")
+                    response = self._browser_get(url)
+                if self._blocked_response(response) and host not in self._browser_hosts:
+                    emit("transport", "retry", source=self.source_name, url=url, reason="browser_compatibility", http_status=response.status_code)
+                    time.sleep(max(1, float(getattr(self.config, "request_delay_min", 1))))
+                    response = self._browser_get(url)
+                    if not self._blocked_response(response) and response.status_code < 400:
+                        self._browser_hosts.add(host)
+                if self._blocked_response(response) and os.getenv("MONITOR_BROWSER_FALLBACK") == "1":
+                    emit("transport", "retry", source=self.source_name, url=url, reason="public_browser_render", http_status=response.status_code)
+                    response = self._render_get(url)
+                if response.status_code == 429:
+                    value = response.headers.get("Retry-After", "")
+                    try:
+                        delay = float(value)
+                    except ValueError:
+                        try:
+                            delay = email.utils.parsedate_to_datetime(value).timestamp() - time.time()
+                        except (ValueError, TypeError, OverflowError):
+                            delay = 900
+                    self.article_queue.set_cursor(backoff_key, time.time() + max(60, min(delay, 86400)))
+                    response.raise_for_status()
                 response.raise_for_status()
+                if self._blocked_response(response):
+                    raise requests.HTTPError("unusable_challenge_response", response=response)
                 return response
             except Exception as exc:
                 last_error = exc
-                if attempt < int(getattr(self.config, "max_retries", 3)) - 1:
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                if status in {202, 401, 403, 404, 406, 429}:
+                    raise
+                if attempt + 1 < max(1, int(getattr(self.config, "max_retries", 3))):
                     time.sleep(1 + attempt)
-        raise last_error or RuntimeError(f"Failed to fetch {url}")
+        raise last_error or RuntimeError("fetch_failed")
 
     def extract_page_text(self, url: str) -> dict[str, Any]:
         response = self.get(url)
@@ -175,6 +263,9 @@ class GoogleNewsArticleScraper(ArticleScraper):
         )
 
     def get(self, url: str) -> requests.Response:
+        # RSS uses a short deadline; publisher bodies need the shared recovery path.
+        if urlparse(url).hostname != "news.google.com":
+            return super().get(url)
         response = self.session.get(url, timeout=(5, 10), allow_redirects=True)
         response.raise_for_status()
         return response
@@ -556,6 +647,7 @@ class SubmarineNetworksScraper(ArticleScraper):
         cursor = int(self.article_queue.get_cursor(self.source_name, 0) or 0) % max(1, len(links))
         started = time.monotonic()
         discovered_count = 0
+        consecutive_blocked = 0
         for offset in range(len(links)):
             index = (cursor + offset) % len(links)
             if (max_cables > 0 and offset >= max_cables) or self._discovery_expired(started):
@@ -574,8 +666,14 @@ class SubmarineNetworksScraper(ArticleScraper):
                 emit("discover", "failed", source=self.source_name, url=cable_url, reason="cable_page_fetch_error", **error_details(exc))
                 self.logger.warning("Skipping cable page: %s", type(exc).__name__)
                 # Retry this cable on the next traversal; failures are never removed.
-                self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
+                status = error_details(exc).get("http_status")
+                consecutive_blocked = consecutive_blocked + 1 if status in {202, 403, 406, 429} or isinstance(exc, ValueError) else 0
+                self.article_queue.set_cursor(self.source_name, index)
+                if consecutive_blocked >= 3 or status == 429:
+                    emit("discover", "deferred", source=self.source_name, reason="host_unavailable", entry_count=len(links) - offset)
+                    break
                 continue
+            consecutive_blocked = 0
             for url in discovered_urls:
                 self._enqueue({"url": url, "cable_name": cable_name})
             discovered_count += len(discovered_urls)
@@ -614,11 +712,11 @@ class SubmarineNetworksScraper(ArticleScraper):
             if "/articles/" in href or re.search(r"(fault|repair|cut|outage|damage|disrupt)", text, re.I):
                 if "submarinenetworks.com" in href and href not in urls:
                     urls.append(href)
-        emit("cable_page", "completed", **fields, entry_count=len(urls))
         page_text = clean_text(soup.get_text(" ")).lower()
         if not links or re.search(r"just a moment|checking your browser|enable javascript and cookies to continue|verify you are human", page_text):
             emit("cable_page", "failed", **fields, entry_count=len(urls), reason="empty_or_challenge_page")
             raise ValueError("Cable directory did not provide a usable page")
+        emit("cable_page", "completed", **fields, entry_count=len(urls))
         return urls
 
     def _fetch_article(self, url: str) -> dict[str, Any]:
@@ -634,13 +732,29 @@ class SubmarineNetworksScraper(ArticleScraper):
         }
 
 
+def restore_streamed_html(soup: BeautifulSoup) -> None:
+    for script in list(soup.select("script")):
+        for operation, first, second in re.findall(r'\$(RC|RS)\("([^"<>]+)","([^"<>]+)"\)', script.get_text()):
+            marker_id, payload_id = (first, second) if operation == "RC" else (second, first)
+            marker, payload = soup.find(id=marker_id), soup.find(id=payload_id)
+            if marker is None or payload is None or marker is payload:
+                continue
+            for child in list(payload.contents):
+                marker.insert_before(child.extract())
+            marker.decompose()
+            payload.decompose()
+
+
 def article_body_text(soup: BeautifulSoup) -> str:
+    restore_streamed_html(soup)
     # SubTel Forum embeds cable-map and magazine recommendations inside article
     # bodies. Match their template classes, preserving the same words in prose.
-    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
+    for node in soup.select("script, style, nav, footer, header, aside, .related-posts, .fusion-related-posts, .stf-related-cable-systems, .stf-related-magazine-articles, .fusion-sharing-box, .sharing-box, .social-share, .newsletter, .sib-form, .billboard_article, .comments-area, #respond, [class*='related-post'], [id*='related-post']"):
         node.decompose()
-    node = (soup.select_one("[itemprop='articleBody']") or soup.select_one(".article-body")
-            or soup.select_one(".post-content") or soup.select_one(".entry-content")
+    candidates = soup.select("[itemprop='articleBody'], .article-body, .post-content, .entry-content, #FOR_target_content")
+    # The first entry-content can be an empty featured-image caption. Prefer the
+    # populated body, never an unrelated article card or an entire news feed.
+    node = (max(candidates, key=lambda n: len(n.get_text(" ")), default=None)
             or soup.select_one("article") or soup.select_one("main") or soup.body or soup)
     content = clean_text(node.get_text(" "))
     # Some publisher themes append recommendations inside the same body element.

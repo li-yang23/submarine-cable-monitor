@@ -69,12 +69,12 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
     status = str(summary.get("status", "unknown")).lower()
     if status not in GOOD and not summary_error:
         add("status", "采集健康状态异常", status if status in {"degraded", "failed", "failure", "unknown"} else "异常")
-    for key, label in (("errors", "处理错误"), ("warnings", "采集警告"),
+    for key, label in (("errors", "处理错误"), ("warnings", "采集异常计数（含未完成队列提示）"),
                        ("backlog", "未完成队列"), ("pending", "等待处理新闻"),
                        ("review", "需要复核新闻"), ("retry", "需要重试新闻"), ("pending_count", "等待处理新闻"),
                        ("review_count", "需要复核新闻")):
         value = quantity(summary.get(key))
-        if value:
+        if value and not (key == "warnings" and "failure_summary" in summary):
             add(key, label, value)
 
     queue = summary.get("queue", {})
@@ -121,18 +121,30 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
     if isinstance(counts, dict):
         # Fixed labels prevent arbitrary scraped/provider text from entering alerts.
         groups = {
-            "source_failure": ("发现源或搜索请求失败", lambda key: ("discover" in key or "rss" in key or "source" in key or "search" in key) and "failed" in key),
+            "source_failure": ("发现源或搜索请求失败", lambda key: key.split(".")[:2] in (["discover", "failed"], ["discovery", "failed"], ["rss", "failed"], ["source", "failed"], ["search", "failed"])) ,
             "model_failure": ("模型调用失败", lambda key: key.split(".")[:2] in (["extract", "failed"], ["extraction", "failed"])),
             "model_fallback": ("检测到规则回退", lambda key: key.split(".")[:2] in (["extract", "fallback"], ["extraction", "fallback"])),
-            "fetch_failure": ("正文获取失败，新闻仍需重试或复核", lambda key: "fetch" in key and "failed" in key),
+            "fetch_failure": ("正文获取失败，新闻仍需重试或复核", lambda key: key.split(".")[:2] == ["fetch", "failed"]),
             "blocked_403": ("站点拒绝访问，需复核", lambda key: "403" in key or "access_denied" in key or "forbidden" in key),
             "budget": ("本轮处理额度已用尽，仍有新闻等待处理", lambda key: "budget" in key),
         }
         for group, (label, matches) in groups.items():
+            if "failure_summary" in summary and group in {"source_failure", "fetch_failure"}:
+                continue
             count = sum(quantity(value) for key, value in counts.items() if matches(str(key).lower()))
             if count:
                 add(group, label, count)
 
+    for group, key, label in (("article_fetch", "fetch_failure", "新闻正文获取失败（按 URL 去重）"),
+                              ("source_discovery", "source_failure", "目录或搜索请求失败（按 URL 去重，非新闻篇数）")):
+        details = summary.get("failure_summary", {}).get(group, {})
+        if quantity(details.get("count")):
+            sources = details.get("sources", {})
+            add(key, label, quantity(details["count"]))
+            # Known source labels only; no publisher-controlled strings in email.
+            names = [name for name in ("Google News", "SubTel Forum", "Submarine Networks") if sources.get(name)]
+            if names:
+                issues[key] = (label + "；来源：" + "、".join(names), quantity(details["count"]))
     active = bool(issues)
     conditions = tuple(sorted(issues))
     fingerprint = hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY
@@ -149,6 +161,8 @@ def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
         if isinstance(health, dict) and health.get("retry_at"):
             lines.append(f"暂停截止时间（UTC）：{health['retry_at']}，到期后的首次定时任务重试。")
     if active:
+        if isinstance(health, dict) and health.get("reason") == "inference_succeeded":
+            lines.append(f"模型调用正常；本轮处理 {quantity(summary.get('articles'))} 篇，新增 {quantity(summary.get('inserted'))} 条事件。")
         lines.extend(f"- {label}：{value}" for _, (label, value) in sorted(issues.items()))
         lines.extend(["", "请检查 Actions 运行摘要和 audit.jsonl，按上述原因处理；待处理新闻仍需完成重试。"])
     else:

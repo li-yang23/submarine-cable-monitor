@@ -5,3 +5,7 @@ urllib3>=2.0.0
 beautifulsoup4>=4.12.0
 openai>=1.0.0
 python-dotenv>=1.0.0
+
+# Browser-compatible TLS for public news pages rejected by the default client.
+curl_cffi>=0.13,<0.14
+playwright>=1.51,<2
