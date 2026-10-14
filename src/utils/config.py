@@ -34,20 +34,23 @@ class Config:
 
     # Scraper configurations
     scrapers: dict[str, ScraperConfig] = field(default_factory=dict)
-    subtelforum_max_pages: int = 3
-    subtelforum_max_articles: int = 8
-    google_news_max_articles: int = 12
-    google_news_max_attempts: int = 30
+    subtelforum_max_pages: int = 0
+    subtelforum_max_articles: int = 0
+    google_news_max_articles: int = 0
+    google_news_max_attempts: int = 0
     google_news_lookback_days: int = 14
     google_news_keywords: list[str] = field(default_factory=list)
     audit_dir: str = "logs/runs"
+    article_queue_path: str = "data/article-queue.json"
+    collection_time_budget_seconds: int = 1200
+    low_balance_threshold: float = 5.0
     article_state_path: str = "data/article-state.json"
     article_state_refresh_days: int = 7
     article_state_retention_days: int = 30
     article_state_max_urls: int = 2000
     submarine_networks_links_path: str = "data/cable-links.json"
-    submarine_networks_max_cables: int = 50
-    submarine_networks_articles_per_cable: int = 3
+    submarine_networks_max_cables: int = 0
+    submarine_networks_articles_per_cable: int = 0
 
     # LLM settings. API keys are read from env/GitHub Secrets only.
     llm_model: str = "deepseek-ai/DeepSeek-V3"
@@ -113,6 +116,8 @@ class Config:
         config.google_news_lookback_days = article_sources.get("google_news_lookback_days", config.google_news_lookback_days)
         config.google_news_keywords = article_sources.get("google_news_keywords", config.google_news_keywords)
         config.audit_dir = data.get("logging", {}).get("audit_dir", config.audit_dir)
+        config.article_queue_path = data.get("article_queue", {}).get("path", config.article_queue_path)
+        config.collection_time_budget_seconds = article_sources.get("time_budget_seconds", config.collection_time_budget_seconds)
         article_state = data.get("article_state", {})
         config.article_state_path = article_state.get("path", config.article_state_path)
         config.article_state_refresh_days = article_state.get("refresh_days", config.article_state_refresh_days)
@@ -132,6 +137,7 @@ class Config:
         )
 
         llm = data.get("llm", {})
+        config.low_balance_threshold = llm.get("low_balance_threshold", config.low_balance_threshold)
         config.llm_model = os.getenv("LLM_MODEL") or llm.get("model", config.llm_model)
         config.llm_base_url = os.getenv("SILICONFLOW_BASE_URL") or llm.get("base_url", config.llm_base_url)
         config.embedding_model = os.getenv("EMBEDDING_MODEL") or llm.get("embedding_model", config.embedding_model)
@@ -161,7 +167,9 @@ class Config:
                 }
                 for name, sc in self.scrapers.items()
             },
+            "article_queue": {"path": self.article_queue_path},
             "article_sources": {
+                "time_budget_seconds": self.collection_time_budget_seconds,
                 "subtelforum_max_pages": self.subtelforum_max_pages,
                 "subtelforum_max_articles": self.subtelforum_max_articles,
                 "google_news_max_articles": self.google_news_max_articles,
@@ -176,6 +184,7 @@ class Config:
                 "model": self.llm_model,
                 "base_url": self.llm_base_url,
                 "embedding_model": self.embedding_model,
+                "low_balance_threshold": self.low_balance_threshold,
             },
             "user_agent": self.user_agent,
             "logging": {"audit_dir": self.audit_dir},

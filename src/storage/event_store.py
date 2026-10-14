@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
@@ -38,9 +39,17 @@ class EventStore:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         for event in self.events:
             event["evidence_urls"] = clean_url_list(event.get("evidence_urls", []))
-        with self.path.open("w", encoding="utf-8") as handle:
-            for event in sorted(self.events, key=lambda item: item.get("occurrence_date") or "", reverse=True):
-                handle.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
+        descriptor, temporary = tempfile.mkstemp(prefix=f".{self.path.name}.", suffix=".tmp", dir=self.path.parent)
+        try:
+            with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+                for event in sorted(self.events, key=lambda item: item.get("occurrence_date") or "", reverse=True):
+                    handle.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.replace(temporary, self.path)
+        finally:
+            if os.path.exists(temporary):
+                os.unlink(temporary)
 
     def import_history_csv(self, csv_path: str) -> int:
         imported = 0

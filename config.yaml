@@ -18,13 +18,17 @@ llm:
   model: deepseek-ai/DeepSeek-V3
   base_url: https://api.siliconflow.cn/v1/
   embedding_model: BAAI/bge-m3
+  # Reserved for a future verified balance API; SiliconFlow retired /user/info
+  # on 2026-08-14, so this threshold does not currently provide early warnings.
+  low_balance_threshold: 5.0
 
-# Article-source controls for GitHub Actions runtime.
+# Zero limits mean unlimited. Runtime limits defer durable work to the next run.
 article_sources:
-  subtelforum_max_pages: 3
-  subtelforum_max_articles: 8
-  google_news_max_articles: 12
-  google_news_max_attempts: 30
+  time_budget_seconds: 1200
+  subtelforum_max_pages: 0
+  subtelforum_max_articles: 0
+  google_news_max_articles: 0
+  google_news_max_attempts: 0
   google_news_lookback_days: 14
   # All queries are discovered first, then recent articles are fetched round-robin.
   google_news_keywords:
@@ -37,14 +41,18 @@ article_sources:
     - 海缆故障
     - 海底电缆故障
   submarine_networks_links_path: data/cable-links.json
-  submarine_networks_max_cables: 50
-  submarine_networks_articles_per_cable: 3
+  submarine_networks_max_cables: 0
+  submarine_networks_articles_per_cable: 0
 
 # One JSONL trace + JSON/Markdown summaries per run; no article bodies or LLM responses.
 logging:
   audit_dir: logs/runs
 
-# Only successful LLM processing is cached; failures remain eligible for retry.
+# Discovered metadata never expires; pending work survives RSS windows.
+article_queue:
+  path: data/article-queue.json
+
+# Legacy success cache; durable done entries prevent repeated extraction.
 article_state:
   path: data/article-state.json
   refresh_days: 7
