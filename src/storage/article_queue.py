@@ -27,6 +27,7 @@ class ArticleQueue:
         self.dry_run = dry_run
         self.items: dict[str, dict[str, Any]] = {}
         self.cursors: dict[str, Any] = {}
+        self.model_pause: dict[str, Any] = {}
         if self.path and self.path.exists():
             # Fail closed on a corrupt queue; overwriting it would silently lose work.
             data = json.loads(self.path.read_text(encoding="utf-8"))
@@ -34,6 +35,10 @@ class ArticleQueue:
                 raise ValueError("Invalid article queue format; restore its last good copy")
             self.items = data["items"]
             self.cursors = data.get("cursors", {})
+            self.model_pause = data.get("model_pause", {})
+            if self.model_pause:
+                # Invalid pause state must fail closed instead of spending again.
+                datetime.fromisoformat(self.model_pause["retry_at"])
 
     @classmethod
     def from_config(cls, config: Any, dry_run: bool = False) -> "ArticleQueue":
@@ -125,6 +130,16 @@ class ArticleQueue:
         row.update(status="pending", reason=reason, next_attempt_at=None, requeued_at=utcnow().isoformat(), force_retry=True)
         return True
 
+    def pause_for_balance(self) -> None:
+        now = utcnow()
+        local = now.astimezone(timezone(timedelta(hours=8)))
+        tomorrow = (local + timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
+        self.model_pause = {"reason": "balance_exhausted", "attempt_id": now.isoformat(),
+                            "retry_at": tomorrow.astimezone(timezone.utc).isoformat()}
+
+    def balance_paused(self) -> bool:
+        return bool(self.model_pause and utcnow() < datetime.fromisoformat(self.model_pause["retry_at"]))
+
     def counts(self) -> dict[str, int]:
         return {status: sum(row["status"] == status for row in self.items.values()) for status in ("pending", "retry", "done", "review")}
 
@@ -147,7 +162,7 @@ class ArticleQueue:
         descriptor, temporary = tempfile.mkstemp(prefix=f".{self.path.name}.", suffix=".tmp", dir=self.path.parent)
         try:
             with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
-                json.dump({"version": 1, "items": self.items, "cursors": self.cursors}, handle, ensure_ascii=False, indent=2)
+                json.dump({"version": 1, "items": self.items, "cursors": self.cursors, "model_pause": self.model_pause}, handle, ensure_ascii=False, indent=2)
                 handle.write("\n")
                 handle.flush()
                 os.fsync(handle.fileno())
