@@ -3,26 +3,26 @@
     "conditions": [
       "cross_source_review",
       "discovery_limit",
-      "fetch_failure",
+      "queue.retry",
       "queue.review",
       "source_failure",
       "status",
       "workflow"
     ],
-    "fingerprint": "9e6b2920cea69f3dedd3242928e59dedaaf85795c3a7c71c963f4bbf62b7d485",
-    "last_sent": 1792040119.2656252
+    "fingerprint": "377032021b1befcf0a0dfbc3fd6bd25f0a5dd79fbb0a9cccfc35eae5a0fe798f",
+    "last_sent": 1792094444.1430368
   },
   "github": {
     "conditions": [
       "cross_source_review",
       "discovery_limit",
-      "fetch_failure",
+      "queue.retry",
       "queue.review",
       "source_failure",
       "status",
       "workflow"
     ],
-    "fingerprint": "9e6b2920cea69f3dedd3242928e59dedaaf85795c3a7c71c963f4bbf62b7d485",
-    "last_sent": 1792040119.2656252
+    "fingerprint": "377032021b1befcf0a0dfbc3fd6bd25f0a5dd79fbb0a9cccfc35eae5a0fe798f",
+    "last_sent": 1792094444.1430368
   }
 }
