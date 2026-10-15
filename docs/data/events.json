@@ -41,11 +41,11 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "evidence_urls": [],
           "note": "CircleID 仅给出2025年9月；不采用模型臆造的9月1日，仍缺逐条海缆的确切故障日与第三条身份。",
           "previous_fields": {},
-          "evidence_urls": []
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
@@ -3033,25 +3033,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-19",
-            "repair_date": null,
-            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-19",
+            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3109,25 +3109,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-19",
-            "repair_date": null,
-            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-19",
+            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3185,25 +3185,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2024-08-01",
-            "repair_date": null,
-            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2024-08-01",
+            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3261,25 +3261,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2024-08-01",
-            "repair_date": null,
-            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2024-08-01",
+            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3337,25 +3337,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2023-08-01",
-            "repair_date": "2023-08-26",
-            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2023-08-01",
+            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+            "repair_date": "2023-08-26",
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3413,25 +3413,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2023-08-01",
-            "repair_date": "2023-08-26",
-            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2023-08-01",
+            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+            "repair_date": "2023-08-26",
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -3751,82 +3751,6 @@
     "verification_status": "verified"
   },
   {
-    "TrustWorthy": "manual_partial_review",
-    "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Limit",
-    "affected_area": "Perth to Sydney, and Perth to Jakarta and Singapore",
-    "cable_name": "Indigo West and Indigo Central",
-    "created_at": "2026-08-15T02:47:21+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
-    "event_uid": "evt_455d7ce6dfac3186b9bf",
-    "evidence_urls": [
-      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-    ],
-    "normalized_cable_id": "INDIGO WEST AND INDIGO CENTRAL",
-    "occurrence_date": null,
-    "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a 'concerning development' because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
-    "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
-    "published_date": "2026-08-13",
-    "raw_data": {
-      "article": {
-        "content": "JEAN-SEBASTIEN EVRARD/Stringer/Getty Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these “submarine cables are the digital lifeblood of our nation”. Slattery called on federal police to investigate the issue urgently . The subsea cable damage occurred within the Perth Submarine Cable Protection Zone , an area specifically designed to keep these cables safe. However, this safe zone extends over 100 kilometers offshore with the cables on the seabed, making them difficult to monitor and access. But there is a way Australia can practically safeguard these cables. Connecting us to the rest of the world Australia is connected to the global internet by fewer than two dozen undersea fibre optic cables, which carry more than 95% of our international internet traffic. Each cable has multiple strands of optical fibre – structured glass about an eighth of a millimetre across – and can carry more than 20 terabits per second. In other words, two of these fibres could carry all of the National Broadband Network’s data . The Indigo West and Indigo Central cables that were affected connect Perth to Sydney, and Perth to Jakarta and Singapore. These are part of a web of fibre optic cables that connect Australia to the world. Australia’s access to the global internet depends on a surprisingly small number of undersea cables – just 22 are connected or currently being built . Satellites are valuable for connecting remote areas, but they cannot yet carry anything like the enormous amount of data that travels through these cables. This map shows the approximate location of international submarine cables presently landing in Australia. Australian Communications and Media Authority What could have caused the damage? Slattery called the issues a “ shunt fault ”. This is where the electrical part of the cable is damaged, degrading performance or stopping the cable from working entirely. Subsea optical cables are able to span thousands of kilometres due to the use of optical amplifiers which boost the signal every 50 to 100 kilometres. These optical amplifiers need electrical power to run, and so high-voltage direct current power is transmitted through metal wires alongside the glass optical fibres. There can be multiple causes of shunt faults that short out this power supply. There is increasing concern about deliberate interference. But most often these faults are accidental , caused by anchors or trawler nets dragging along the seafloor . Slattery said we “will not know the root cause” of the fault “until the cable is recovered during repair”. But how can we more effectively monitor these cables? Home-grown tech to keep us connected to the world Distributed acoustic sensing is a laser technology that can sense vibrations travelling across fibre optic cables. It is an evolving technology only recently adopted by fibre optic communications companies for monitoring their infrastructure. You can think of this technology a bit like shouting “coo-ee”: listening for the echoes can tell you something about what they reflected off. Similarly, distributed acoustic sensing measures light “echoing” off small changes along the length of a fibre. Crucially, it can sense the environment around the fibre to tell us things about vessel activity, seabed disturbances, and other physical interactions near the cable. The technology can also be used to map the structure of the soil and rock around the fibre, or to monitor and provide early warning of earthquakes and tsunamis. Slattery said that if distributed acoustic sensing had been installed on the affected cables, it would have been possible to identify the vessel responsible for the fault almost instantly. He also said that because the technology is installed on nearby unaffected cables in the same area, “we can confirm no seabed activity around or near” those other cables. Working towards more resilient national infrastructure Distributed acoustic sensing can provide both environmental monitoring of the world around us and a way to safeguard key national infrastructure. Our team’s work has also shown that this evolving technology and high speed data can simultaneously work right next to each other in the same fibre . This is important as telcos have stringent requirements on keeping data flowing through these cables, with heavy penalties for non-compliance. We think we can help get more distributed acoustic sensing into our fibres in two ways: by demonstrating it can live side-by-side in modern optical communications systems with data, and by leveraging optical microcomb technologies to make the technology smaller, better, and perhaps cheaper. Our research is showing that the existing fibres that connect Australia to the rest of the world could carry significantly more data than they are currently. They could also reveal new insights about the world around us. By making this technology affordable and deployable, we will make Australia’s future communications networks not only faster, but safer and more resilient. Internet Telecommunications Engineering Lasers Undersea cables submarine cables",
-        "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-13",
-        "source": "Google News",
-        "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-        "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Sydney, and Perth to Jakarta and Singapore",
-        "cable_name": "Indigo West and Indigo Central",
-        "occurrence_date": "Over the weekend (date unspecified)",
-        "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a 'concerning development' because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
-        "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
-        "reason": "Unknown (suspected accidental or deliberate interference)",
-        "repair_date": "Not specified"
-      },
-      "manual_reviews": [
-        {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-13",
-            "repair_date": null,
-            "reason": "Unknown (suspected accidental or deliberate interference)",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
-          "evidence_urls": [
-            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-          ],
-          "supported_window": {
-            "from": "2026-08-08",
-            "to": "2026-08-09",
-            "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
-          }
-        }
-      ]
-    },
-    "reason": "",
-    "repair_date": null,
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West and Indigo Central",
-    "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-    "updated_at": "2026-10-15T01:52:02.966976+00:00",
-    "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-    "verification_status": "manual_partial_review"
-  },
-  {
     "TrustWorthy": "verified",
     "accident_location": "Perth area, Australia",
     "accident_type": "Limit",
@@ -4119,82 +4043,6 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://subtelforum.com/subco-reports-concurrent-perth-cable-faults/",
     "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "manual_partial_review",
-    "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Limit",
-    "affected_area": "Perth to Sydney, Perth to Jakarta and Singapore",
-    "cable_name": "Indigo West, Indigo Central",
-    "created_at": "2026-08-27T12:17:31+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
-    "event_uid": "evt_064ea3d2d93479f205e9",
-    "evidence_urls": [
-      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-    ],
-    "normalized_cable_id": "INDIGO WEST, INDIGO CENTRAL",
-    "occurrence_date": null,
-    "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
-    "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
-    "published_date": "2026-08-13",
-    "raw_data": {
-      "article": {
-        "content": "JEAN-SEBASTIEN EVRARD/Stringer/Getty Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these “submarine cables are the digital lifeblood of our nation”. Slattery called on federal police to investigate the issue urgently . The subsea cable damage occurred within the Perth Submarine Cable Protection Zone , an area specifically designed to keep these cables safe. However, this safe zone extends over 100 kilometers offshore with the cables on the seabed, making them difficult to monitor and access. But there is a way Australia can practically safeguard these cables. Connecting us to the rest of the world Australia is connected to the global internet by fewer than two dozen undersea fibre optic cables, which carry more than 95% of our international internet traffic. Each cable has multiple strands of optical fibre – structured glass about an eighth of a millimetre across – and can carry more than 20 terabits per second. In other words, two of these fibres could carry all of the National Broadband Network’s data . The Indigo West and Indigo Central cables that were affected connect Perth to Sydney, and Perth to Jakarta and Singapore. These are part of a web of fibre optic cables that connect Australia to the world. Australia’s access to the global internet depends on a surprisingly small number of undersea cables – just 22 are connected or currently being built . Satellites are valuable for connecting remote areas, but they cannot yet carry anything like the enormous amount of data that travels through these cables. This map shows the approximate location of international submarine cables presently landing in Australia. Australian Communications and Media Authority What could have caused the damage? Slattery called the issues a “ shunt fault ”. This is where the electrical part of the cable is damaged, degrading performance or stopping the cable from working entirely. Subsea optical cables are able to span thousands of kilometres due to the use of optical amplifiers which boost the signal every 50 to 100 kilometres. These optical amplifiers need electrical power to run, and so high-voltage direct current power is transmitted through metal wires alongside the glass optical fibres. There can be multiple causes of shunt faults that short out this power supply. There is increasing concern about deliberate interference. But most often these faults are accidental , caused by anchors or trawler nets dragging along the seafloor . Slattery said we “will not know the root cause” of the fault “until the cable is recovered during repair”. But how can we more effectively monitor these cables? Home-grown tech to keep us connected to the world Distributed acoustic sensing is a laser technology that can sense vibrations travelling across fibre optic cables. It is an evolving technology only recently adopted by fibre optic communications companies for monitoring their infrastructure. You can think of this technology a bit like shouting “coo-ee”: listening for the echoes can tell you something about what they reflected off. Similarly, distributed acoustic sensing measures light “echoing” off small changes along the length of a fibre. Crucially, it can sense the environment around the fibre to tell us things about vessel activity, seabed disturbances, and other physical interactions near the cable. The technology can also be used to map the structure of the soil and rock around the fibre, or to monitor and provide early warning of earthquakes and tsunamis. Slattery said that if distributed acoustic sensing had been installed on the affected cables, it would have been possible to identify the vessel responsible for the fault almost instantly. He also said that because the technology is installed on nearby unaffected cables in the same area, “we can confirm no seabed activity around or near” those other cables. Working towards more resilient national infrastructure Distributed acoustic sensing can provide both environmental monitoring of the world around us and a way to safeguard key national infrastructure. Our team’s work has also shown that this evolving technology and high speed data can simultaneously work right next to each other in the same fibre . This is important as telcos have stringent requirements on keeping data flowing through these cables, with heavy penalties for non-compliance. We think we can help get more distributed acoustic sensing into our fibres in two ways: by demonstrating it can live side-by-side in modern optical communications systems with data, and by leveraging optical microcomb technologies to make the technology smaller, better, and perhaps cheaper. Our research is showing that the existing fibres that connect Australia to the rest of the world could carry significantly more data than they are currently. They could also reveal new insights about the world around us. By making this technology affordable and deployable, we will make Australia’s future communications networks not only faster, but safer and more resilient. Internet Telecommunications Engineering Lasers Undersea cables submarine cables",
-        "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-13",
-        "source": "Google News",
-        "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-        "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Sydney, Perth to Jakarta and Singapore",
-        "cable_name": "Indigo West, Indigo Central",
-        "occurrence_date": "Weekend before announcement (specific date not provided)",
-        "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
-        "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
-        "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
-        "repair_date": "Not specified (pending investigation and recovery)"
-      },
-      "manual_reviews": [
-        {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-13",
-            "repair_date": null,
-            "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
-          "evidence_urls": [
-            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-          ],
-          "supported_window": {
-            "from": "2026-08-08",
-            "to": "2026-08-09",
-            "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
-          }
-        }
-      ]
-    },
-    "reason": "",
-    "repair_date": null,
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West, Indigo Central",
-    "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-    "updated_at": "2026-10-15T01:52:02.966976+00:00",
-    "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-    "verification_status": "manual_partial_review"
   },
   {
     "TrustWorthy": "verified",
@@ -4636,6 +4484,158 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://subtelforum.com/subco-reports-concurrent-perth-cable-faults/",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Sydney, and Perth to Jakarta and Singapore",
+    "cable_name": "Indigo West and Indigo Central",
+    "created_at": "2026-08-15T02:47:21+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
+    "event_uid": "evt_455d7ce6dfac3186b9bf",
+    "evidence_urls": [
+      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST AND INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a 'concerning development' because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
+    "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
+    "published_date": "2026-08-13",
+    "raw_data": {
+      "article": {
+        "content": "JEAN-SEBASTIEN EVRARD/Stringer/Getty Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these “submarine cables are the digital lifeblood of our nation”. Slattery called on federal police to investigate the issue urgently . The subsea cable damage occurred within the Perth Submarine Cable Protection Zone , an area specifically designed to keep these cables safe. However, this safe zone extends over 100 kilometers offshore with the cables on the seabed, making them difficult to monitor and access. But there is a way Australia can practically safeguard these cables. Connecting us to the rest of the world Australia is connected to the global internet by fewer than two dozen undersea fibre optic cables, which carry more than 95% of our international internet traffic. Each cable has multiple strands of optical fibre – structured glass about an eighth of a millimetre across – and can carry more than 20 terabits per second. In other words, two of these fibres could carry all of the National Broadband Network’s data . The Indigo West and Indigo Central cables that were affected connect Perth to Sydney, and Perth to Jakarta and Singapore. These are part of a web of fibre optic cables that connect Australia to the world. Australia’s access to the global internet depends on a surprisingly small number of undersea cables – just 22 are connected or currently being built . Satellites are valuable for connecting remote areas, but they cannot yet carry anything like the enormous amount of data that travels through these cables. This map shows the approximate location of international submarine cables presently landing in Australia. Australian Communications and Media Authority What could have caused the damage? Slattery called the issues a “ shunt fault ”. This is where the electrical part of the cable is damaged, degrading performance or stopping the cable from working entirely. Subsea optical cables are able to span thousands of kilometres due to the use of optical amplifiers which boost the signal every 50 to 100 kilometres. These optical amplifiers need electrical power to run, and so high-voltage direct current power is transmitted through metal wires alongside the glass optical fibres. There can be multiple causes of shunt faults that short out this power supply. There is increasing concern about deliberate interference. But most often these faults are accidental , caused by anchors or trawler nets dragging along the seafloor . Slattery said we “will not know the root cause” of the fault “until the cable is recovered during repair”. But how can we more effectively monitor these cables? Home-grown tech to keep us connected to the world Distributed acoustic sensing is a laser technology that can sense vibrations travelling across fibre optic cables. It is an evolving technology only recently adopted by fibre optic communications companies for monitoring their infrastructure. You can think of this technology a bit like shouting “coo-ee”: listening for the echoes can tell you something about what they reflected off. Similarly, distributed acoustic sensing measures light “echoing” off small changes along the length of a fibre. Crucially, it can sense the environment around the fibre to tell us things about vessel activity, seabed disturbances, and other physical interactions near the cable. The technology can also be used to map the structure of the soil and rock around the fibre, or to monitor and provide early warning of earthquakes and tsunamis. Slattery said that if distributed acoustic sensing had been installed on the affected cables, it would have been possible to identify the vessel responsible for the fault almost instantly. He also said that because the technology is installed on nearby unaffected cables in the same area, “we can confirm no seabed activity around or near” those other cables. Working towards more resilient national infrastructure Distributed acoustic sensing can provide both environmental monitoring of the world around us and a way to safeguard key national infrastructure. Our team’s work has also shown that this evolving technology and high speed data can simultaneously work right next to each other in the same fibre . This is important as telcos have stringent requirements on keeping data flowing through these cables, with heavy penalties for non-compliance. We think we can help get more distributed acoustic sensing into our fibres in two ways: by demonstrating it can live side-by-side in modern optical communications systems with data, and by leveraging optical microcomb technologies to make the technology smaller, better, and perhaps cheaper. Our research is showing that the existing fibres that connect Australia to the rest of the world could carry significantly more data than they are currently. They could also reveal new insights about the world around us. By making this technology affordable and deployable, we will make Australia’s future communications networks not only faster, but safer and more resilient. Internet Telecommunications Engineering Lasers Undersea cables submarine cables",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-13",
+        "source": "Google News",
+        "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
+        "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Sydney, and Perth to Jakarta and Singapore",
+        "cable_name": "Indigo West and Indigo Central",
+        "occurrence_date": "Over the weekend (date unspecified)",
+        "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a 'concerning development' because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
+        "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
+        "reason": "Unknown (suspected accidental or deliberate interference)",
+        "repair_date": "Not specified"
+      },
+      "manual_reviews": [
+        {
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-13",
+            "reason": "Unknown (suspected accidental or deliberate interference)",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
+            "from": "2026-08-08",
+            "precision": "weekend",
+            "to": "2026-08-09"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West and Indigo Central",
+    "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Sydney, Perth to Jakarta and Singapore",
+    "cable_name": "Indigo West, Indigo Central",
+    "created_at": "2026-08-27T12:17:31+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
+    "event_uid": "evt_064ea3d2d93479f205e9",
+    "evidence_urls": [
+      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST, INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
+    "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
+    "published_date": "2026-08-13",
+    "raw_data": {
+      "article": {
+        "content": "JEAN-SEBASTIEN EVRARD/Stringer/Getty Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these “submarine cables are the digital lifeblood of our nation”. Slattery called on federal police to investigate the issue urgently . The subsea cable damage occurred within the Perth Submarine Cable Protection Zone , an area specifically designed to keep these cables safe. However, this safe zone extends over 100 kilometers offshore with the cables on the seabed, making them difficult to monitor and access. But there is a way Australia can practically safeguard these cables. Connecting us to the rest of the world Australia is connected to the global internet by fewer than two dozen undersea fibre optic cables, which carry more than 95% of our international internet traffic. Each cable has multiple strands of optical fibre – structured glass about an eighth of a millimetre across – and can carry more than 20 terabits per second. In other words, two of these fibres could carry all of the National Broadband Network’s data . The Indigo West and Indigo Central cables that were affected connect Perth to Sydney, and Perth to Jakarta and Singapore. These are part of a web of fibre optic cables that connect Australia to the world. Australia’s access to the global internet depends on a surprisingly small number of undersea cables – just 22 are connected or currently being built . Satellites are valuable for connecting remote areas, but they cannot yet carry anything like the enormous amount of data that travels through these cables. This map shows the approximate location of international submarine cables presently landing in Australia. Australian Communications and Media Authority What could have caused the damage? Slattery called the issues a “ shunt fault ”. This is where the electrical part of the cable is damaged, degrading performance or stopping the cable from working entirely. Subsea optical cables are able to span thousands of kilometres due to the use of optical amplifiers which boost the signal every 50 to 100 kilometres. These optical amplifiers need electrical power to run, and so high-voltage direct current power is transmitted through metal wires alongside the glass optical fibres. There can be multiple causes of shunt faults that short out this power supply. There is increasing concern about deliberate interference. But most often these faults are accidental , caused by anchors or trawler nets dragging along the seafloor . Slattery said we “will not know the root cause” of the fault “until the cable is recovered during repair”. But how can we more effectively monitor these cables? Home-grown tech to keep us connected to the world Distributed acoustic sensing is a laser technology that can sense vibrations travelling across fibre optic cables. It is an evolving technology only recently adopted by fibre optic communications companies for monitoring their infrastructure. You can think of this technology a bit like shouting “coo-ee”: listening for the echoes can tell you something about what they reflected off. Similarly, distributed acoustic sensing measures light “echoing” off small changes along the length of a fibre. Crucially, it can sense the environment around the fibre to tell us things about vessel activity, seabed disturbances, and other physical interactions near the cable. The technology can also be used to map the structure of the soil and rock around the fibre, or to monitor and provide early warning of earthquakes and tsunamis. Slattery said that if distributed acoustic sensing had been installed on the affected cables, it would have been possible to identify the vessel responsible for the fault almost instantly. He also said that because the technology is installed on nearby unaffected cables in the same area, “we can confirm no seabed activity around or near” those other cables. Working towards more resilient national infrastructure Distributed acoustic sensing can provide both environmental monitoring of the world around us and a way to safeguard key national infrastructure. Our team’s work has also shown that this evolving technology and high speed data can simultaneously work right next to each other in the same fibre . This is important as telcos have stringent requirements on keeping data flowing through these cables, with heavy penalties for non-compliance. We think we can help get more distributed acoustic sensing into our fibres in two ways: by demonstrating it can live side-by-side in modern optical communications systems with data, and by leveraging optical microcomb technologies to make the technology smaller, better, and perhaps cheaper. Our research is showing that the existing fibres that connect Australia to the rest of the world could carry significantly more data than they are currently. They could also reveal new insights about the world around us. By making this technology affordable and deployable, we will make Australia’s future communications networks not only faster, but safer and more resilient. Internet Telecommunications Engineering Lasers Undersea cables submarine cables",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-13",
+        "source": "Google News",
+        "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
+        "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Sydney, Perth to Jakarta and Singapore",
+        "cable_name": "Indigo West, Indigo Central",
+        "occurrence_date": "Weekend before announcement (specific date not provided)",
+        "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
+        "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
+        "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
+        "repair_date": "Not specified (pending investigation and recovery)"
+      },
+      "manual_reviews": [
+        {
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-13",
+            "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
+            "repair_date": null,
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
+            "from": "2026-08-08",
+            "precision": "weekend",
+            "to": "2026-08-09"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West, Indigo Central",
+    "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+    "verification_status": "manual_partial_review"
   },
   {
     "TrustWorthy": "verified",
@@ -5319,25 +5319,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-01",
-            "repair_date": "2026-08-26",
-            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-01",
+            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+            "repair_date": "2026-08-26",
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -5395,25 +5395,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-01",
-            "repair_date": "2026-08-26",
-            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-01",
+            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+            "repair_date": "2026-08-26",
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -5470,25 +5470,25 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
-          "previous_fields": {
-            "occurrence_date": "2026-08-01",
-            "repair_date": "2026-08-26",
-            "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
-            "accident_type": "Cut",
-            "verification_status": "verified",
-            "TrustWorthy": "verified"
-          },
           "evidence_urls": [
             "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
           ],
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "TrustWorthy": "verified",
+            "accident_type": "Cut",
+            "occurrence_date": "2026-08-01",
+            "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
+            "repair_date": "2026-08-26",
+            "verification_status": "verified"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
           "supported_window": {
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown",
             "from": "2026-08-08",
-            "to": "2026-08-09",
             "precision": "weekend",
-            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+            "to": "2026-08-09"
           }
         }
       ]
@@ -11526,13 +11526,13 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "芬兰警方确认2025-12-31，受损为 Elisa 和 Arelion 的芬兰—爱沙尼亚通信海缆；未给出系统名称，不把 Fitburg 船名当海缆名。",
-          "previous_fields": {},
           "evidence_urls": [
             "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded"
-          ]
+          ],
+          "note": "芬兰警方确认2025-12-31，受损为 Elisa 和 Arelion 的芬兰—爱沙尼亚通信海缆；未给出系统名称，不把 Fitburg 船名当海缆名。",
+          "previous_fields": {},
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
@@ -12866,43 +12866,43 @@
     "verification_status": "imported"
   },
   {
-    "event_uid": "evt_6dbb4a9dbb55b3d50f98",
-    "cable_name": "Taiwan-Matsu No. 2",
-    "submarine_name": "Taiwan-Matsu No. 2",
-    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "TrustWorthy": "manual_source_verified",
     "accident_location": "Off New Taipei; Taiwan–Matsu",
-    "reason": "",
     "accident_type": "Cut",
     "affected_area": "Matsu",
-    "occurrence_date": "2025-02-16",
-    "repair_date": null,
-    "published_date": "2025-02-17",
-    "source": "Taiwan Ministry of Digital Affairs",
-    "url": "https://moda.gov.tw/press/press-releases/15210",
-    "title": "Taiwan Ministry of Digital Affairs",
-    "original_text": "114年2月16日中午12時49分，位於我國新北市外海的臺馬二號海纜發生全斷障礙。",
-    "original_text_zh": "数发部确认台马2号于2025年2月16日12:49发生全断，属既有故障进一步发展；维修预计日期不作为修复完成日期。",
-    "verification_status": "manual_source_verified",
-    "TrustWorthy": "manual_source_verified",
-    "discovered_url": "",
-    "raw_data": {
-      "manual_review": {
-        "report": "research/reviews/remaining-three-2026-10-15.json",
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-        "source_role": "primary_operator_or_measurement",
-        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
-      }
-    },
+    "cable_name": "Taiwan-Matsu No. 2",
     "created_at": "2026-10-15T01:52:02+00:00",
-    "updated_at": "2026-10-15T01:52:02+00:00",
-    "sources": [
-      "Taiwan Ministry of Digital Affairs"
-    ],
+    "discovered_url": "",
+    "event_uid": "evt_6dbb4a9dbb55b3d50f98",
     "evidence_urls": [
       "https://moda.gov.tw/press/press-releases/15210",
       "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-2502161350"
-    ]
+    ],
+    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "occurrence_date": "2025-02-16",
+    "original_text": "114年2月16日中午12時49分，位於我國新北市外海的臺馬二號海纜發生全斷障礙。",
+    "original_text_zh": "数发部确认台马2号于2025年2月16日12:49发生全断，属既有故障进一步发展；维修预计日期不作为修复完成日期。",
+    "published_date": "2025-02-17",
+    "raw_data": {
+      "manual_review": {
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement"
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Taiwan Ministry of Digital Affairs",
+    "sources": [
+      "Taiwan Ministry of Digital Affairs"
+    ],
+    "submarine_name": "Taiwan-Matsu No. 2",
+    "title": "Taiwan Ministry of Digital Affairs",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "url": "https://moda.gov.tw/press/press-releases/15210",
+    "verification_status": "manual_source_verified"
   },
   {
     "TrustWorthy": "imported",
@@ -12936,44 +12936,44 @@
     "verification_status": "imported"
   },
   {
-    "event_uid": "evt_55226de6c8095293754b",
-    "cable_name": "Taiwan-Matsu No. 2",
-    "submarine_name": "Taiwan-Matsu No. 2",
-    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "TrustWorthy": "manual_source_verified",
     "accident_location": "Off New Taipei; Taiwan–Matsu",
-    "reason": "",
     "accident_type": "Cut",
     "affected_area": "Matsu",
-    "occurrence_date": "2025-01-22",
-    "repair_date": null,
-    "published_date": "2025-01-22",
-    "source": "Chunghwa Telecom",
-    "url": "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
-    "title": "Chunghwa Telecom",
-    "original_text": "台馬第二海纜於114年1月22日 05:34 發生障礙",
-    "original_text_zh": "中華電信确认台马2号于2025年1月22日05:34发生故障；数发部后续说明为芯线断裂，不能与2月16日全断合并。",
-    "verification_status": "manual_source_verified",
-    "TrustWorthy": "manual_source_verified",
-    "discovered_url": "",
-    "raw_data": {
-      "manual_review": {
-        "report": "research/reviews/remaining-three-2026-10-15.json",
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-        "source_role": "primary_operator_or_measurement",
-        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
-      }
-    },
+    "cable_name": "Taiwan-Matsu No. 2",
     "created_at": "2026-10-15T01:52:02+00:00",
-    "updated_at": "2026-10-15T01:52:02+00:00",
-    "sources": [
-      "Chunghwa Telecom"
-    ],
+    "discovered_url": "",
+    "event_uid": "evt_55226de6c8095293754b",
     "evidence_urls": [
       "https://moda.gov.tw/press/press-releases/15082",
       "https://moda.gov.tw/press/press-releases/15210",
       "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500"
-    ]
+    ],
+    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "occurrence_date": "2025-01-22",
+    "original_text": "台馬第二海纜於114年1月22日 05:34 發生障礙",
+    "original_text_zh": "中華電信确认台马2号于2025年1月22日05:34发生故障；数发部后续说明为芯线断裂，不能与2月16日全断合并。",
+    "published_date": "2025-01-22",
+    "raw_data": {
+      "manual_review": {
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement"
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Chunghwa Telecom",
+    "sources": [
+      "Chunghwa Telecom"
+    ],
+    "submarine_name": "Taiwan-Matsu No. 2",
+    "title": "Chunghwa Telecom",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "url": "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+    "verification_status": "manual_source_verified"
   },
   {
     "TrustWorthy": "imported",
@@ -12997,14 +12997,14 @@
     "raw_data": {
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "确认台马3号2025-01-15故障；保留原有修复记录，不据预计日期改写。",
-          "previous_fields": {},
           "evidence_urls": [
             "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
             "https://moda.gov.tw/press/press-releases/15210"
-          ]
+          ],
+          "note": "确认台马3号2025-01-15故障；保留原有修复记录，不据预计日期改写。",
+          "previous_fields": {},
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
@@ -13215,44 +13215,44 @@
     "verification_status": "verified"
   },
   {
-    "event_uid": "evt_58ad5cff0074f783b0f0",
-    "cable_name": "C-Lion1",
-    "submarine_name": "C-Lion1",
-    "normalized_cable_id": "C-LION1",
+    "TrustWorthy": "manual_source_verified",
     "accident_location": "Gulf of Finland, southeast of Porkkalanniemi",
-    "reason": "",
     "accident_type": "Cut",
     "affected_area": "Finland; Germany",
-    "occurrence_date": "2024-12-25",
-    "repair_date": "2025-01-06",
-    "published_date": "2025-01-07",
-    "source": "Cinia",
-    "url": "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
-    "title": "Cinia",
-    "original_text": "The break in Cinia's C-Lion1 submarine cable has been repaired",
-    "original_text_zh": "Cinia 确认 C-Lion1 于2024年12月25日18:44（EET）发生故障，2025年1月6日修复；原因仍在调查。",
-    "verification_status": "manual_source_verified",
-    "TrustWorthy": "manual_source_verified",
-    "discovered_url": "",
-    "raw_data": {
-      "manual_review": {
-        "report": "research/reviews/remaining-three-2026-10-15.json",
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-        "source_role": "primary_operator_or_measurement",
-        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
-      }
-    },
+    "cable_name": "C-Lion1",
     "created_at": "2026-10-15T01:52:02+00:00",
-    "updated_at": "2026-10-15T01:52:02+00:00",
-    "sources": [
-      "Cinia"
-    ],
+    "discovered_url": "",
+    "event_uid": "evt_58ad5cff0074f783b0f0",
     "evidence_urls": [
       "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
       "https://www.cinia.fi/en/news/fault-detected-in-cinia-c-lion1-submarine-cable",
       "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
-    ]
+    ],
+    "normalized_cable_id": "C-LION1",
+    "occurrence_date": "2024-12-25",
+    "original_text": "The break in Cinia's C-Lion1 submarine cable has been repaired",
+    "original_text_zh": "Cinia 确认 C-Lion1 于2024年12月25日18:44（EET）发生故障，2025年1月6日修复；原因仍在调查。",
+    "published_date": "2025-01-07",
+    "raw_data": {
+      "manual_review": {
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement"
+      }
+    },
+    "reason": "",
+    "repair_date": "2025-01-06",
+    "source": "Cinia",
+    "sources": [
+      "Cinia"
+    ],
+    "submarine_name": "C-Lion1",
+    "title": "Cinia",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "url": "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
+    "verification_status": "manual_source_verified"
   },
   {
     "TrustWorthy": "verified",
@@ -13383,14 +13383,14 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "运营商及 RIPE 核实 C-Lion1 为2024-11-18；BCS 是前一天，分开关联。",
-          "previous_fields": {},
           "evidence_urls": [
             "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
             "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
-          ]
+          ],
+          "note": "运营商及 RIPE 核实 C-Lion1 为2024-11-18；BCS 是前一天，分开关联。",
+          "previous_fields": {},
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
@@ -13444,42 +13444,42 @@
     "verification_status": "manual_source_verified"
   },
   {
-    "event_uid": "evt_711d1a396fb050d9937f",
-    "cable_name": "BCS East-West Interlink",
-    "submarine_name": "BCS East-West Interlink",
-    "normalized_cable_id": "BCS EAST-WEST INTERLINK",
+    "TrustWorthy": "manual_source_verified",
     "accident_location": "Baltic Sea; Sweden–Lithuania",
-    "reason": "",
     "accident_type": "Cut",
     "affected_area": "Sweden; Lithuania",
+    "cable_name": "BCS East-West Interlink",
+    "created_at": "2026-10-15T01:52:02+00:00",
+    "discovered_url": "",
+    "event_uid": "evt_711d1a396fb050d9937f",
+    "evidence_urls": [
+      "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
+    ],
+    "normalized_cable_id": "BCS EAST-WEST INTERLINK",
     "occurrence_date": "2024-11-17",
-    "repair_date": null,
-    "published_date": "2024-11-20",
-    "source": "RIPE NCC / RIPE Labs",
-    "url": "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/",
-    "title": "RIPE NCC / RIPE Labs",
     "original_text": "On Sunday 17 November, the BCS East-West Interlink Internet cable connection between Sweden and Lithuania stopped working.",
     "original_text_zh": "RIPE NCC 的测量分析确认，2024年11月17日瑞典与立陶宛之间的 BCS East-West Interlink 中断。",
-    "verification_status": "manual_source_verified",
-    "TrustWorthy": "manual_source_verified",
-    "discovered_url": "",
+    "published_date": "2024-11-20",
     "raw_data": {
       "manual_review": {
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
         "report": "research/reviews/remaining-three-2026-10-15.json",
         "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-        "source_role": "primary_operator_or_measurement",
-        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
+        "source_role": "primary_operator_or_measurement"
       }
     },
-    "created_at": "2026-10-15T01:52:02+00:00",
-    "updated_at": "2026-10-15T01:52:02+00:00",
+    "reason": "",
+    "repair_date": null,
+    "source": "RIPE NCC / RIPE Labs",
     "sources": [
       "RIPE NCC / RIPE Labs"
     ],
-    "evidence_urls": [
-      "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
-    ]
+    "submarine_name": "BCS East-West Interlink",
+    "title": "RIPE NCC / RIPE Labs",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "url": "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/",
+    "verification_status": "manual_source_verified"
   },
   {
     "TrustWorthy": "False",
@@ -14861,20 +14861,20 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-          "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。",
-          "previous_fields": {
-            "occurrence_date": "2024-02-01",
-            "repair_date": "2024-07-01",
-            "reason": "Unknown cause",
-            "cable_name": "AE-1, SEACOM, and EIG",
-            "submarine_name": "AE-1, SEACOM, and EIG",
-            "normalized_cable_id": "EIG"
-          },
           "evidence_urls": [
             "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
-          ]
+          ],
+          "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。",
+          "previous_fields": {
+            "cable_name": "AE-1, SEACOM, and EIG",
+            "normalized_cable_id": "EIG",
+            "occurrence_date": "2024-02-01",
+            "reason": "Unknown cause",
+            "repair_date": "2024-07-01",
+            "submarine_name": "AE-1, SEACOM, and EIG"
+          },
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
@@ -14932,17 +14932,17 @@
       },
       "manual_reviews": [
         {
-          "report": "research/reviews/remaining-three-2026-10-15.json",
-          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "evidence_urls": [
+            "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+          ],
           "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。",
           "previous_fields": {
             "occurrence_date": "2024-02-01",
-            "repair_date": null,
-            "reason": "ship’s anchor"
+            "reason": "ship’s anchor",
+            "repair_date": null
           },
-          "evidence_urls": [
-            "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
-          ]
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00"
         }
       ]
     },
