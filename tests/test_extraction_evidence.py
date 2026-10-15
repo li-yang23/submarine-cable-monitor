@@ -24,6 +24,17 @@ class ExtractionEvidenceTests(unittest.TestCase):
         article = {"content": content, "published_date": published, "source": "fixture", "url": "https://example.test/news", "title": "Submarine cable outage"}
         return extractor._extract_with_llm(article)[0]
 
+    def test_named_baltic_and_indigo_incidents_are_not_rejected_by_registry(self):
+        extractor = EventExtractor()
+        for cable, text in (
+            ("C-Lion1 and BCS East-West Interlink", "C-Lion1 and BCS East-West Interlink cables were cut in the Baltic Sea."),
+            ("Indigo West and Indigo Central", "Indigo West and Indigo Central cables off Perth were damaged."),
+        ):
+            event = {"cable_name": cable, "original_text": text, "evidence_supported": True}
+            self.assertEqual(extractor.rejection_reason(event), "")
+            event["original_text"] = text.replace("were", "could be")
+            self.assertEqual(extractor.rejection_reason(event), "no_incident_keyword")
+
     def test_affected_hong_kong_segment_is_not_a_confirmed_cut(self):
         evidence = "They also reported that the segment connecting the Philippines and Hong Kong was likewise affected."
         timing = "Internet users experienced slow connectivity on Friday following the reported outage of submarine cable segments."

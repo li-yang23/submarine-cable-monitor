@@ -33,6 +33,9 @@ ACCIDENT_KEYWORDS = (
 )
 
 CABLE_PATTERNS = (
+    r"C[- ]?Lion[- ]?1",
+    r"BCS[ -]East[ -]West[ -]Interlink",
+    r"INDIGO[ -](?:West|Central)",
     r"\bC2C\b",
     r"SEA[-\s]?ME[-\s]?WE\s*\d+",
     r"SMW\s*\d+",

@@ -1,0 +1,573 @@
+{
+  "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+  "original_run": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/38610190183",
+  "sources": {
+    "circle": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+    "cinia_nov": "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
+    "cinia_dec": "https://www.cinia.fi/en/news/fault-detected-in-cinia-c-lion1-submarine-cable",
+    "cinia_repaired": "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
+    "ripe": "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/",
+    "cht_jan": "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+    "cht_feb": "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-2502161350",
+    "moda_jan": "https://moda.gov.tw/press/press-releases/15082",
+    "moda_feb": "https://moda.gov.tw/press/press-releases/15210",
+    "fitburg": "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded",
+    "cf_redsea": "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
+    "itnews": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
+    "perth": "https://perthusasia.edu.au/events/black-swan-summit-workshop/",
+    "context": "https://context.ph/2026/10/03/globe-reroutes-international-traffic-after-subsea-fiber-break-repairs-expected-in-weeks/",
+    "newsbytes": "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
+    "sweden": "https://www.government.se/articles/2023/10/damaged-telecommunications-cable-between-sweden-and-estonia/",
+    "dec_authority": "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+  },
+  "circleid": {
+    "queue_id": "3476cd1cb75cae50e293f16c3941e961",
+    "candidate_total": 10,
+    "accepted": 1,
+    "rejected": 9,
+    "index_base": 0,
+    "historical_candidates": [
+      {
+        "candidate_index": 0,
+        "cable_name": "Taima No. 2 and Taima No. 3",
+        "outcome": "rejected",
+        "reason": "no_incident_keyword",
+        "historical_evidence_excerpt_available": false
+      },
+      {
+        "candidate_index": 1,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 2,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 3,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 4,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 5,
+        "cable_name": "C-Lion1 and BCS East-West Interlink",
+        "outcome": "rejected",
+        "reason": "no_incident_keyword",
+        "historical_evidence_excerpt_available": false
+      },
+      {
+        "candidate_index": 6,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 7,
+        "cable_name": "SEA-ME-WE 4 and IMEWE",
+        "outcome": "accepted",
+        "historical_evidence_excerpt_available": true
+      },
+      {
+        "candidate_index": 8,
+        "cable_name": "",
+        "outcome": "rejected",
+        "reason": "unnamed_missing_date",
+        "historical_evidence_excerpt_available": false,
+        "claim_mapping": null,
+        "missing_evidence": [
+          "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+          "可识别事故范围及来源支持的完整发生日期"
+        ]
+      },
+      {
+        "candidate_index": 9,
+        "cable_name": "Indigo West and Indigo Central",
+        "outcome": "rejected",
+        "reason": "no_incident_keyword",
+        "historical_evidence_excerpt_available": false
+      }
+    ],
+    "limitation": "未命名6条没有原始模型候选片段；本次按原文线索重新核实，不声称恢复原始编号映射。",
+    "claims": [
+      {
+        "id": "matsu",
+        "claim": "台马多年度汇总与2025年初故障",
+        "result": "partial",
+        "linked_event_uids": [
+          "evt_49edbe14ea89d2a98533",
+          "evt_55226de6c8095293754b",
+          "evt_6dbb4a9dbb55b3d50f98"
+        ],
+        "missing": "2018—2022年27次及2023—2025年其余历史故障的逐次记录；本次已确认的三次不能替代全量清单。",
+        "evidence_urls": [
+          "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+          "https://moda.gov.tw/press/press-releases/15082",
+          "https://moda.gov.tw/press/press-releases/15210",
+          "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-2502161350"
+        ]
+      },
+      {
+        "id": "baltic_nov_2024",
+        "candidate_index": 5,
+        "claim": "C-Lion1 与 BCS East-West Interlink",
+        "result": "confirmed",
+        "linked_event_uids": [
+          "evt_a294211df980ea47ced2",
+          "evt_711d1a396fb050d9937f"
+        ],
+        "finding": "分别为2024-11-18和2024-11-17；名称白名单缺失导致误拦，已修复。",
+        "evidence_urls": [
+          "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
+          "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
+        ]
+      },
+      {
+        "id": "indigo_aug_2026",
+        "candidate_index": 9,
+        "claim": "珀斯 INDIGO 双故障",
+        "result": "partial",
+        "missing": "逐条电缆故障时间、修复报告、所指油轮与损伤的确定因果证据。",
+        "finding": "名称规则漏认已修复；只证实2026-08-08至09周末窗口，不填精确日；撤回相关旧数据错误日期。",
+        "evidence_urls": [
+          "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+        ]
+      },
+      {
+        "id": "baltic_dec_2024",
+        "claim": "2024年12月波罗的海多缆受损",
+        "result": "partial",
+        "linked_event_uids": [
+          "evt_58ad5cff0074f783b0f0"
+        ],
+        "finding": "新增有运营商确切日期的 C-Lion1 2024-12-25，修复2025-01-06。",
+        "missing": "其他线路逐条系统名称及时间，不能把 EstLink 2 电力电缆当通信海缆。",
+        "evidence_urls": [
+          "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland",
+          "https://www.cinia.fi/en/news/fault-detected-in-cinia-c-lion1-submarine-cable",
+          "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored"
+        ]
+      },
+      {
+        "id": "fitburg",
+        "claim": "2025年12月芬兰—爱沙尼亚通信故障",
+        "result": "confirmed_scope_limited",
+        "linked_event_uids": [
+          "evt_7c6e7ffddea09029d55b"
+        ],
+        "finding": "警方确认2025-12-31、Elisa和Arelion两条通信缆；旧相关记录补证，系统名称未公布。",
+        "evidence_urls": [
+          "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded"
+        ]
+      },
+      {
+        "id": "redsea_2024",
+        "claim": "2024年2月红海三条通信缆受损",
+        "result": "confirmed_scope_limited",
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614",
+          "evt_9462f41dc4b75e2ba97c"
+        ],
+        "finding": "更正日期为2024-02-24、系统名AAE-1/SEACOM-Tata/EIG；不将疑似船锚归因写为确定原因。",
+        "evidence_urls": [
+          "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+        ]
+      },
+      {
+        "id": "redsea_2025",
+        "candidate_index": 7,
+        "claim": "2025年9月红海故障",
+        "result": "partial",
+        "linked_event_uids": [
+          "evt_ce3de8a00fa790930dd6"
+        ],
+        "missing": "SMW4、IMEWE各自精确发生日及第三条系统身份；现有记录日期保持未知。",
+        "evidence_urls": [
+          "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+        ]
+      },
+      {
+        "id": "baltic_oct_2023",
+        "claim": "2023年10月波罗的海多设施损伤",
+        "result": "partial",
+        "finding": "瑞典政府证实瑞典—爱沙尼亚通信缆损伤；不可把附近天然气管道及不同线路合成一条。",
+        "missing": "每条通信缆完整身份与确切发生时刻；船只归因还需对应调查证据。",
+        "evidence_urls": [
+          "https://www.government.se/articles/2023/10/damaged-telecommunications-cable-between-sweden-and-estonia/"
+        ]
+      },
+      {
+        "id": "historical",
+        "claim": "1914、1939、2006年历史例证",
+        "result": "review",
+        "missing": "档案或运营商逐缆报告及日期；聚合描述不能拆成臆造的单缆记录。",
+        "evidence_urls": [
+          "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+        ]
+      },
+      {
+        "id": "other_taiwan",
+        "claim": "台澎3号刑事案件及2026年4月马祖沉船说法",
+        "result": "review",
+        "missing": "对应事故发生日期、线路身份、主管部门事故或调查原始记录；判决日期不等于故障日期。",
+        "evidence_urls": [
+          "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+        ]
+      }
+    ]
+  },
+  "data_changes": [
+    {
+      "event_uid": "evt_a294211df980ea47ced2",
+      "previous_fields": {},
+      "updated_fields": {},
+      "note": "运营商及 RIPE 核实 C-Lion1 为2024-11-18；BCS 是前一天，分开关联。"
+    },
+    {
+      "event_uid": "evt_49edbe14ea89d2a98533",
+      "previous_fields": {},
+      "updated_fields": {},
+      "note": "确认台马3号2025-01-15故障；保留原有修复记录，不据预计日期改写。"
+    },
+    {
+      "event_uid": "evt_7c6e7ffddea09029d55b",
+      "previous_fields": {},
+      "updated_fields": {},
+      "note": "芬兰警方确认2025-12-31，受损为 Elisa 和 Arelion 的芬兰—爱沙尼亚通信海缆；未给出系统名称，不把 Fitburg 船名当海缆名。"
+    },
+    {
+      "event_uid": "evt_ce3de8a00fa790930dd6",
+      "previous_fields": {},
+      "updated_fields": {},
+      "note": "CircleID 仅给出2025年9月；不采用模型臆造的9月1日，仍缺逐条海缆的确切故障日与第三条身份。"
+    },
+    {
+      "event_uid": "evt_3cf0ec8d7b6f1b8ab664",
+      "previous_fields": {
+        "occurrence_date": "2026-08-19",
+        "repair_date": null,
+        "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_97aafa098ac981aea3ad",
+      "previous_fields": {
+        "occurrence_date": "2026-08-19",
+        "repair_date": null,
+        "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_455d7ce6dfac3186b9bf",
+      "previous_fields": {
+        "occurrence_date": "2026-08-13",
+        "repair_date": null,
+        "reason": "Unknown (suspected accidental or deliberate interference)",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_064ea3d2d93479f205e9",
+      "previous_fields": {
+        "occurrence_date": "2026-08-13",
+        "repair_date": null,
+        "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_68fb9601a93311dcd65f",
+      "previous_fields": {
+        "occurrence_date": "2026-08-01",
+        "repair_date": "2026-08-26",
+        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_fcf0e6e211f655dc8f2f",
+      "previous_fields": {
+        "occurrence_date": "2026-08-01",
+        "repair_date": "2026-08-26",
+        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_baf67a426838e5a03344",
+      "previous_fields": {
+        "occurrence_date": "2026-08-01",
+        "repair_date": "2026-08-26",
+        "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_ea2c974d17ea896185b8",
+      "previous_fields": {
+        "occurrence_date": "2024-08-01",
+        "repair_date": null,
+        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_4b98c064bd31aebd6765",
+      "previous_fields": {
+        "occurrence_date": "2024-08-01",
+        "repair_date": null,
+        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_b8b15e83f4fcb3413c39",
+      "previous_fields": {
+        "occurrence_date": "2023-08-01",
+        "repair_date": "2023-08-26",
+        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_c7770bcb2730ad476427",
+      "previous_fields": {
+        "occurrence_date": "2023-08-01",
+        "repair_date": "2023-08-26",
+        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+        "accident_type": "Cut",
+        "verification_status": "verified",
+        "TrustWorthy": "verified"
+      },
+      "updated_fields": {
+        "occurrence_date": null,
+        "repair_date": null,
+        "reason": "",
+        "accident_type": "Limit",
+        "verification_status": "manual_partial_review",
+        "TrustWorthy": "manual_partial_review"
+      },
+      "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。"
+    },
+    {
+      "event_uid": "evt_136f611619bcf8d22614",
+      "previous_fields": {
+        "occurrence_date": "2024-02-01",
+        "repair_date": "2024-07-01",
+        "reason": "Unknown cause",
+        "cable_name": "AE-1, SEACOM, and EIG",
+        "submarine_name": "AE-1, SEACOM, and EIG",
+        "normalized_cable_id": "EIG"
+      },
+      "updated_fields": {
+        "occurrence_date": "2024-02-24",
+        "repair_date": null,
+        "reason": "",
+        "cable_name": "AAE-1, SEACOM/Tata, EIG",
+        "submarine_name": "AAE-1, SEACOM/Tata, EIG",
+        "normalized_cable_id": "AAE-1, SEACOM/Tata, EIG"
+      },
+      "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。"
+    },
+    {
+      "event_uid": "evt_9462f41dc4b75e2ba97c",
+      "previous_fields": {
+        "occurrence_date": "2024-02-01",
+        "repair_date": null,
+        "reason": "ship’s anchor"
+      },
+      "updated_fields": {
+        "occurrence_date": "2024-02-24",
+        "repair_date": null,
+        "reason": ""
+      },
+      "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。"
+    }
+  ],
+  "added_event_uids": [
+    "evt_711d1a396fb050d9937f",
+    "evt_58ad5cff0074f783b0f0",
+    "evt_55226de6c8095293754b",
+    "evt_6dbb4a9dbb55b3d50f98"
+  ],
+  "queue_decisions": [
+    {
+      "queue_id": "3476cd1cb75cae50e293f16c3941e961",
+      "status": "review",
+      "note": "已补四条可确认事件并关联已有事件；仍有聚合历史、日期及归因缺口，保留复核。",
+      "missing_evidence": [
+        "原运行未命名候选的证据片段缺失",
+        "见逐条 claims 的 missing 字段"
+      ]
+    },
+    {
+      "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
+      "status": "review",
+      "note": "本次公共页面提取只返回标题和发布时间；已复读替代报道，未找到 Globe 可核对时间戳的原始公告或更正，日期争议仍在。",
+      "missing_evidence": [
+        "Globe 故障起始时刻及相关电缆身份的原始公告或报道更正",
+        "区分周四的流量疏转时间与实际故障时间，不用 PLDT 的日期替代 Globe"
+      ]
+    },
+    {
+      "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
+      "status": "review",
+      "note": "公开主办方资料只证明海缆中断演练主题；付费全文未读。上轮找到的两篇菲律宾 Globe 文章与澳大利亚银行演练范围不符，不能作为补证。",
+      "missing_evidence": [
+        "可合法读取的 FT 正文或授权完整转载",
+        "若正文含真实事故，需要每项事故的独立原始证据"
+      ]
+    }
+  ]
+}
