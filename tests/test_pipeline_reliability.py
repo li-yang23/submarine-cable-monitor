@@ -82,6 +82,28 @@ class PipelineReliabilityTests(unittest.TestCase):
         with patch("src.pipeline.SCRAPER_CLASSES", classes):
             return pipeline.run(list(discoveries), **kwargs)
 
+    def test_rejected_candidate_excerpt_and_claimed_date_remain_traceable(self):
+        item = article()
+        candidate = event(item)
+        candidate.update(cable_name="", occurrence_date=None, original_text="Short evidence. " + "x" * 700,
+                         raw_data={"article": {"content": "FULL_BODY_NOT_TO_LOG"},
+                                   "extracted": {"occurrence_date": "2025-09-01", "occurrence_date_evidence": "September 2025"}})
+        result = self.run_pipeline({"first": [item]}, self.extractor(result=[candidate], valid=False))
+        row = ArticleQueue.from_config(self.config).get(item['url'])
+        saved = row['candidate_reviews'][0]
+        self.assertEqual(row['status'], 'review')
+        self.assertEqual(saved['candidate_index'], 0)
+        self.assertEqual(saved['outcome'], 'rejected')
+        self.assertEqual(saved['claimed_occurrence_date'], '2025-09-01')
+        self.assertIsNone(saved['occurrence_date'])
+        self.assertEqual(saved['date_evidence_excerpt'], 'September 2025')
+        self.assertLessEqual(len(saved['evidence_excerpt']), 400)
+        audit = (Path(result.audit_path) / 'audit.jsonl').read_text()
+        self.assertIn('Short evidence.', audit)
+        self.assertNotIn('FULL_BODY_NOT_TO_LOG', audit)
+        self.assertEqual(row['candidate_review_count'], 1)
+        self.assertFalse(row['candidate_reviews_truncated'])
+
     def test_first_402_stops_model_calls_but_keeps_all_other_news_pending(self):
         extractor = self.extractor(side_effect=ExtractionUnavailable("balance_exhausted", http_status=402, provider="siliconflow"))
         discoveries = {source: [article(source, "a"), article(source, "b")] for source in ("first", "second", "third")}

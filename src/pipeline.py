@@ -14,6 +14,7 @@ from src.storage.event_store import event_drop_reason
 from src.utils import Config, get_logger
 from src.utils.audit import AuditRun, article_fields, error_details
 from src.utils.model_health import check_model_health
+from src.processing.normalization import clean_text
 
 
 SCRAPER_CLASSES = {
@@ -172,12 +173,26 @@ class MonitorPipeline:
                         consecutive_model_failures = 0
                         summary.candidates += len(events)
                         audit.emit("extract", "completed", **fields, method=method, candidate_count=len(events), reason="no_candidates" if not events else "candidates_found")
+                        row["candidate_reviews"] = []
+                        row["candidate_review_count"] = len(events)
+                        row["candidate_reviews_truncated"] = len(events) > 100
                         for index, event in enumerate(events):
-                            candidate = {**fields, "candidate_index": index, "cable_name": event.get("cable_name"), "occurrence_date": event.get("occurrence_date"), "method": method}
+                            raw = event.get("raw_data", {}).get("extracted", {})
+                            review = {"candidate_index": index, "cable_name": clean_text(event.get("cable_name"))[:200],
+                                      "accident_location": clean_text(event.get("accident_location"))[:200],
+                                      "occurrence_date": event.get("occurrence_date"),
+                                      "claimed_occurrence_date": clean_text(raw.get("occurrence_date"))[:40],
+                                      "evidence_excerpt": clean_text(event.get("original_text"))[:400],
+                                      "date_evidence_excerpt": clean_text(raw.get("occurrence_date_evidence"))[:300],
+                                      "outcome": "pending"}
+                            if index < 100:
+                                row["candidate_reviews"].append(review)
+                            candidate = {**fields, **{k:v for k,v in review.items() if k != "outcome"}, "method": method}
                             if not self.extractor.is_real_event(event):
                                 summary.rejected += 1
                                 rejected = True
                                 reason = self.extractor.rejection_reason(event) if hasattr(self.extractor, "rejection_reason") else "verification_rejected"
+                                review.update(outcome="rejected", reason=reason)
                                 audit.emit("verify", "rejected", **candidate, reason=reason, verification_method="rules")
                                 continue
                             event["verification_status"] = "rule_verified"
@@ -187,8 +202,10 @@ class MonitorPipeline:
                             if reason:
                                 summary.rejected += 1
                                 rejected = True
+                                review.update(outcome="rejected", reason=reason)
                                 audit.emit("quality", "rejected", **candidate, reason=reason)
                                 continue
+                            review.update(outcome="accepted", event_uid=event["event_uid"])
                             audit.emit("verify", "accepted", **candidate, verification_method="rules")
                             if dry_run:
                                 audit.emit("store", "skipped", **candidate, reason="dry_run", event_uid=event["event_uid"])

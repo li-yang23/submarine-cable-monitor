@@ -38,7 +38,16 @@
         "original_text_zh": "2025年9月，包括SEA-ME-WE 4和IMEWE在内的三条主要电缆在红海被切断。",
         "reason": null,
         "repair_date": null
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "CircleID 仅给出2025年9月；不采用模型臆造的9月1日，仍缺逐条海缆的确切故障日与第三条身份。",
+          "previous_fields": {},
+          "evidence_urls": []
+        }
+      ]
     },
     "reason": "",
     "repair_date": null,
@@ -48,7 +57,7 @@
     ],
     "submarine_name": "SEA-ME-WE 4 and IMEWE",
     "title": "Submarine Cable Resilience Faces Growing Threats From Aging Fleets and Concentrated Ownership",
-    "updated_at": "2026-10-14T17:53:46+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
     "verification_status": "rule_verified"
   },
@@ -2984,19 +2993,20 @@
     "verification_status": "verified"
   },
   {
-    "TrustWorthy": "verified",
+    "TrustWorthy": "manual_partial_review",
     "accident_location": "Perth Submarine Cable Protection Zone, approximately 100-112km offshore",
-    "accident_type": "Cut",
+    "accident_type": "Limit",
     "affected_area": "Perth to Indonesia and Singapore",
     "cable_name": "Indigo West",
     "created_at": "2026-09-06T06:50:31+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
     "event_uid": "evt_3cf0ec8d7b6f1b8ab664",
     "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
     ],
     "normalized_cable_id": "INDIGO WEST",
-    "occurrence_date": "2026-08-19",
+    "occurrence_date": null,
     "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
     "original_text_zh": "发生了什么印度洋西部和印度洋中部这两个系统受到影响，服务于不同的路线：印度洋西部连接珀斯到印度尼西亚和新加坡，而印度洋中部则连接珀斯到悉尼、维多利亚和塔斯马尼亚。两者都发生了分流故障，即电缆外部绝缘层破裂，使海水接触到内部电源导体，导致沿其长度的光中继器电路短路。",
     "published_date": "2026-08-19",
@@ -3020,9 +3030,33 @@
         "original_text_zh": "发生了什么印度洋西部和印度洋中部这两个系统受到影响，服务于不同的路线：印度洋西部连接珀斯到印度尼西亚和新加坡，而印度洋中部则连接珀斯到悉尼、维多利亚和塔斯马尼亚。两者都发生了分流故障，即电缆外部绝缘层破裂，使海水接触到内部电源导体，导致沿其长度的光中继器电路短路。",
         "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
         "repair_date": "Estimated 26 August 2026"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-19",
+            "repair_date": null,
+            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
     },
-    "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+    "reason": "",
     "repair_date": null,
     "source": "Google News",
     "sources": [
@@ -3030,24 +3064,25 @@
     ],
     "submarine_name": "Indigo West",
     "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
+    "verification_status": "manual_partial_review"
   },
   {
-    "TrustWorthy": "verified",
+    "TrustWorthy": "manual_partial_review",
     "accident_location": "Perth Submarine Cable Protection Zone, approximately 100-112km offshore",
-    "accident_type": "Cut",
+    "accident_type": "Limit",
     "affected_area": "Perth to Sydney, Victoria and Tasmania",
     "cable_name": "Indigo Central",
     "created_at": "2026-09-06T06:50:31+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
     "event_uid": "evt_97aafa098ac981aea3ad",
     "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
     ],
     "normalized_cable_id": "INDIGO CENTRAL",
-    "occurrence_date": "2026-08-19",
+    "occurrence_date": null,
     "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
     "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者均发生分流故障，即电缆外绝缘层破裂导致海水进入内部电源导体，短路为沿其长度分布的光学中继器供电的电路。故障发生在珀斯海底电缆保护区内，该区域延伸至离岸约100-112公里，限制抛锚和海底接触活动。",
     "published_date": "2026-08-19",
@@ -3071,9 +3106,33 @@
         "original_text_zh": "两者都发生了分流故障，即电缆外部绝缘层破裂，使海水接触到内部电源导体，导致沿其长度的光中继器电路短路。这些故障发生在珀斯海底电缆保护区内，这是一个延伸约100-112公里离岸的走廊，锚定和海底接触活动受到限制。",
         "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
         "repair_date": "Estimated 26 August 2026"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-19",
+            "repair_date": null,
+            "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
     },
-    "reason": "Shunt fault due to breach in cable’s outer insulation, allowing seawater to reach the internal power conductor",
+    "reason": "",
     "repair_date": null,
     "source": "Google News",
     "sources": [
@@ -3081,9 +3140,313 @@
     ],
     "submarine_name": "Indigo Central",
     "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Indonesia and Singapore",
+    "cable_name": "Indigo West",
+    "created_at": "2026-09-07T07:01:53+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+    "event_uid": "evt_ea2c974d17ea896185b8",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST",
+    "occurrence_date": null,
+    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+    "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
+    "published_date": "2026-08-19",
+    "raw_data": {
+      "article": {
+        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles Metro Connect Texas data centre demand could lift ERCOT peak by 125%, Datacloud USA panel hears 03 September 2026 4 minutes Metro Connect 41 fibre deals recorded in US so far in 2026 as consolidation wave builds, Metro Connect Fall panel hears 03 September 2026 4 minutes Metro Connect Fibre overtakes power as data centres’ top constraint, Metro Connect panel finds 03 September 2026 3 minutes ITW Global Leaders’ Forum (GLF) Sparkle and Hellas Sat achieve quantum-safe satellite first 03 September 2026 4 minutes Metro Connect Datacloud USA: $500bn Nvidia pact spotlights 20-year data centre financing gap 02 September 2026 3 minutes",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-19",
+        "source": "Google News",
+        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Indonesia and Singapore",
+        "cable_name": "Indigo West",
+        "occurrence_date": "August 2024",
+        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+        "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
+        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+        "repair_date": "26 August 2024 (estimated)"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2024-08-01",
+            "repair_date": null,
+            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West",
+    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Sydney, Victoria, and Tasmania",
+    "cable_name": "Indigo Central",
+    "created_at": "2026-09-07T07:01:53+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+    "event_uid": "evt_4b98c064bd31aebd6765",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+    "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
+    "published_date": "2026-08-19",
+    "raw_data": {
+      "article": {
+        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles Metro Connect Texas data centre demand could lift ERCOT peak by 125%, Datacloud USA panel hears 03 September 2026 4 minutes Metro Connect 41 fibre deals recorded in US so far in 2026 as consolidation wave builds, Metro Connect Fall panel hears 03 September 2026 4 minutes Metro Connect Fibre overtakes power as data centres’ top constraint, Metro Connect panel finds 03 September 2026 3 minutes ITW Global Leaders’ Forum (GLF) Sparkle and Hellas Sat achieve quantum-safe satellite first 03 September 2026 4 minutes Metro Connect Datacloud USA: $500bn Nvidia pact spotlights 20-year data centre financing gap 02 September 2026 3 minutes",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-19",
+        "source": "Google News",
+        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Sydney, Victoria, and Tasmania",
+        "cable_name": "Indigo Central",
+        "occurrence_date": "August 2024",
+        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+        "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
+        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+        "repair_date": "26 August 2024 (estimated)"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2024-08-01",
+            "repair_date": null,
+            "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo Central",
+    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Indonesia and Singapore",
+    "cable_name": "Indigo West",
+    "created_at": "2026-09-14T07:32:09+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+    "event_uid": "evt_b8b15e83f4fcb3413c39",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST",
+    "occurrence_date": null,
+    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
+    "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
+    "published_date": "2026-08-19",
+    "raw_data": {
+      "article": {
+        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles News Finland’s opposition calls for data centre permitting system after Google’s €13bn deal 11 September 2026 3 minutes News Anthropic’s bioweapon report exposes an infrastructure blind spot 11 September 2026 7 minutes News Why hyperscalers are laying their own subsea cables 10 September 2026 5 minutes News Google commits at least €13bn to Finnish AI infrastructure in its largest single European investment 09 September 2026 4 minutes News UK unveils £7.8bn Space Strategy, with satellite connectivity central to reducing reliance on Starlink 09 September 2026 3 minutes",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-19",
+        "source": "Google News",
+        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Indonesia and Singapore",
+        "cable_name": "Indigo West",
+        "occurrence_date": "August 2023",
+        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+        "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
+        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+        "repair_date": "26 August 2023"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2023-08-01",
+            "repair_date": "2023-08-26",
+            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West",
+    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "Perth Submarine Cable Protection Zone",
+    "accident_type": "Limit",
+    "affected_area": "Perth to Sydney, Victoria and Tasmania",
+    "cable_name": "Indigo Central",
+    "created_at": "2026-09-14T07:32:09+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+    "event_uid": "evt_c7770bcb2730ad476427",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
+    "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
+    "published_date": "2026-08-19",
+    "raw_data": {
+      "article": {
+        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles News Finland’s opposition calls for data centre permitting system after Google’s €13bn deal 11 September 2026 3 minutes News Anthropic’s bioweapon report exposes an infrastructure blind spot 11 September 2026 7 minutes News Why hyperscalers are laying their own subsea cables 10 September 2026 5 minutes News Google commits at least €13bn to Finnish AI infrastructure in its largest single European investment 09 September 2026 4 minutes News UK unveils £7.8bn Space Strategy, with satellite connectivity central to reducing reliance on Starlink 09 September 2026 3 minutes",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-19",
+        "source": "Google News",
+        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
+      },
+      "extracted": {
+        "accident_location": "Perth Submarine Cable Protection Zone",
+        "accident_type": "Cut",
+        "affected_area": "Perth to Sydney, Victoria and Tasmania",
+        "cable_name": "Indigo Central",
+        "occurrence_date": "August 2023",
+        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
+        "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
+        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+        "repair_date": "26 August 2023"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2023-08-01",
+            "repair_date": "2023-08-26",
+            "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo Central",
+    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+    "verification_status": "manual_partial_review"
   },
   {
     "TrustWorthy": "verified",
@@ -3388,19 +3751,20 @@
     "verification_status": "verified"
   },
   {
-    "TrustWorthy": "verified",
+    "TrustWorthy": "manual_partial_review",
     "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Cut",
+    "accident_type": "Limit",
     "affected_area": "Perth to Sydney, and Perth to Jakarta and Singapore",
     "cable_name": "Indigo West and Indigo Central",
     "created_at": "2026-08-15T02:47:21+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
     "event_uid": "evt_455d7ce6dfac3186b9bf",
     "evidence_urls": [
-      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
+      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
     ],
     "normalized_cable_id": "INDIGO WEST AND INDIGO CENTRAL",
-    "occurrence_date": "2026-08-13",
+    "occurrence_date": null,
     "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a 'concerning development' because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
     "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
     "published_date": "2026-08-13",
@@ -3424,9 +3788,33 @@
         "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，上周末两条电缆出现故障。他认为这是一个'令人担忧的发展'，因为这些'海底电缆是我们国家的数字命脉'。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆安全而设计的区域。",
         "reason": "Unknown (suspected accidental or deliberate interference)",
         "repair_date": "Not specified"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-13",
+            "repair_date": null,
+            "reason": "Unknown (suspected accidental or deliberate interference)",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
     },
-    "reason": "Unknown (suspected accidental or deliberate interference)",
+    "reason": "",
     "repair_date": null,
     "source": "Google News",
     "sources": [
@@ -3434,9 +3822,9 @@
     ],
     "submarine_name": "Indigo West and Indigo Central",
     "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-    "verification_status": "verified"
+    "verification_status": "manual_partial_review"
   },
   {
     "TrustWorthy": "verified",
@@ -3733,19 +4121,20 @@
     "verification_status": "verified"
   },
   {
-    "TrustWorthy": "verified",
+    "TrustWorthy": "manual_partial_review",
     "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Cut",
+    "accident_type": "Limit",
     "affected_area": "Perth to Sydney, Perth to Jakarta and Singapore",
     "cable_name": "Indigo West, Indigo Central",
     "created_at": "2026-08-27T12:17:31+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMzZSemdOYVdXQ2lGS284TVo2ZW9CTFR6OEhyVi11anhIOEJUc2Y4c0gwUkxjM2ZTQ2tObVFhdms1ZThuZWphUWhTTVhJc0luQmZRZF9iYUsxWExRcnBWNFlPdUpRSUJDcU5qbjBEaXMtTjdERHp2ZGxROFJsS2hvZzhxRC1FVTctRW1jb0hCSWloOHl2ZlV4WW5VUDljRXVLakJqb0FQNkppamZOTkZSZGNybjgxbE9tYmc?oc=5",
     "event_uid": "evt_064ea3d2d93479f205e9",
     "evidence_urls": [
-      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601"
+      "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
     ],
     "normalized_cable_id": "INDIGO WEST, INDIGO CENTRAL",
-    "occurrence_date": "2026-08-13",
+    "occurrence_date": null,
     "original_text": "Earlier this week, Bevan Slattery, the chief executive of subsea cable company SubCo, announced that two cables had experienced faults over the weekend. He deemed it a “concerning development” because these 'submarine cables are the digital lifeblood of our nation'. Slattery called on federal police to investigate the issue urgently. The subsea cable damage occurred within the Perth Submarine Cable Protection Zone, an area specifically designed to keep these cables safe.",
     "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
     "published_date": "2026-08-13",
@@ -3769,9 +4158,33 @@
         "original_text_zh": "本周早些时候，海底电缆公司SubCo的首席执行官Bevan Slattery宣布，周末期间两条电缆发生了故障。他认为这是一个“令人担忧的事态发展”，因为这些“海底电缆是我们国家的数字命脉”。Slattery呼吁联邦警察紧急调查此事。海底电缆损坏发生在珀斯海底电缆保护区，这是一个专门为保护这些电缆而设计的区域。",
         "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
         "repair_date": "Not specified (pending investigation and recovery)"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-13",
+            "repair_date": null,
+            "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
     },
-    "reason": "Unknown (shunt fault suspected, possibly accidental or deliberate interference)",
+    "reason": "",
     "repair_date": null,
     "source": "Google News",
     "sources": [
@@ -3779,9 +4192,9 @@
     ],
     "submarine_name": "Indigo West, Indigo Central",
     "title": "Two subsea cables off Perth suffer ‘concerning’ damage. Lasers could help protect them",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://theconversation.com/two-subsea-cables-off-perth-suffer-concerning-damage-lasers-could-help-protect-them-289601",
-    "verification_status": "verified"
+    "verification_status": "manual_partial_review"
   },
   {
     "TrustWorthy": "verified",
@@ -4866,6 +5279,233 @@
     "verification_status": "verified"
   },
   {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "near Perth",
+    "accident_type": "Limit",
+    "affected_area": "Singapore-Perth-Sydney link",
+    "cable_name": "Indigo West",
+    "created_at": "2026-08-28T13:43:49+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+    "event_uid": "evt_68fb9601a93311dcd65f",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST",
+    "occurrence_date": null,
+    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+    "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
+    "published_date": "2026-08-11",
+    "raw_data": {
+      "article": {
+        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Partner Content AI’s Next Challenge Isn’t Models — It’s Managing Data at Scale Why AI governance matters at scale Partner Content AI agents are reshaping identity governance, and attackers are already exploiting the gap Partner Content How the Fair Work Commission safely deployed Agentic AI in weeks, not years SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
+        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-11",
+        "source": "Google News",
+        "title": "AFP assessing report in connection with Perth cable faults",
+        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+      },
+      "extracted": {
+        "accident_location": "near Perth",
+        "accident_type": "Cut",
+        "affected_area": "Singapore-Perth-Sydney link",
+        "cable_name": "Indigo West",
+        "occurrence_date": "August 2026",
+        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+        "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
+        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+        "repair_date": "August 26 2026"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-01",
+            "repair_date": "2026-08-26",
+            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West",
+    "title": "AFP assessing report in connection with Perth cable faults",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "near Perth",
+    "accident_type": "Limit",
+    "affected_area": "Singapore-Perth-Sydney link",
+    "cable_name": "Indigo Central",
+    "created_at": "2026-08-28T13:43:49+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+    "event_uid": "evt_fcf0e6e211f655dc8f2f",
+    "evidence_urls": [
+      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+    "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
+    "published_date": "2026-08-11",
+    "raw_data": {
+      "article": {
+        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Partner Content AI’s Next Challenge Isn’t Models — It’s Managing Data at Scale Why AI governance matters at scale Partner Content AI agents are reshaping identity governance, and attackers are already exploiting the gap Partner Content How the Fair Work Commission safely deployed Agentic AI in weeks, not years SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
+        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-11",
+        "source": "Google News",
+        "title": "AFP assessing report in connection with Perth cable faults",
+        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+      },
+      "extracted": {
+        "accident_location": "near Perth",
+        "accident_type": "Cut",
+        "affected_area": "Singapore-Perth-Sydney link",
+        "cable_name": "Indigo Central",
+        "occurrence_date": "August 2026",
+        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+        "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
+        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+        "repair_date": "August 26 2026"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-01",
+            "repair_date": "2026-08-26",
+            "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo Central",
+    "title": "AFP assessing report in connection with Perth cable faults",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
+    "verification_status": "manual_partial_review"
+  },
+  {
+    "TrustWorthy": "manual_partial_review",
+    "accident_location": "near Perth, in protection zones",
+    "accident_type": "Limit",
+    "affected_area": "Singapore-Perth-Sydney link",
+    "cable_name": "Indigo West and Indigo Central",
+    "created_at": "2026-09-02T06:45:40+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+    "event_uid": "evt_baf67a426838e5a03344",
+    "evidence_urls": [
+      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+    ],
+    "normalized_cable_id": "INDIGO WEST AND INDIGO CENTRAL",
+    "occurrence_date": null,
+    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+    "original_text_zh": "SUBCO检测到其Indigo West和Indigo Central海底电缆系统出现'短路故障'，这两条电缆共同连接新加坡和悉尼，并在珀斯着陆。海底电缆的短路故障是指线路的外部绝缘层损坏，使内部组件暴露在海水中，通常归因于船舶锚和捕鱼活动。",
+    "published_date": "2026-08-11",
+    "raw_data": {
+      "article": {
+        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Seven West Media drops Teradata in intelligence layer modernisation State of Security 2026: Data Security Partner Content Predictable costs, provable control drives data repatriation Promoted Content Digital sovereignty is no longer optional - Agentic AI has made it fundamental SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
+        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-08-11",
+        "source": "Google News",
+        "title": "AFP assessing report in connection with Perth cable faults",
+        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+      },
+      "extracted": {
+        "accident_location": "near Perth, in protection zones",
+        "accident_type": "Cut",
+        "affected_area": "Singapore-Perth-Sydney link",
+        "cable_name": "Indigo West and Indigo Central",
+        "occurrence_date": "August 2026",
+        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
+        "original_text_zh": "SUBCO检测到其Indigo West和Indigo Central海底电缆系统出现'短路故障'，这两条电缆共同连接新加坡和悉尼，并在珀斯着陆。海底电缆的短路故障是指线路的外部绝缘层损坏，使内部组件暴露在海水中，通常归因于船舶锚和捕鱼活动。",
+        "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
+        "repair_date": "August 26, 2026"
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认2026年8月周末发生两条 INDIGO shunt faults；不能把月初、报道日或修复预计日当故障日。保留旧值审计，不猜具体哪条在8日或9日受损；船只归因未获确认。",
+          "previous_fields": {
+            "occurrence_date": "2026-08-01",
+            "repair_date": "2026-08-26",
+            "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
+            "accident_type": "Cut",
+            "verification_status": "verified",
+            "TrustWorthy": "verified"
+          },
+          "evidence_urls": [
+            "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+          ],
+          "supported_window": {
+            "from": "2026-08-08",
+            "to": "2026-08-09",
+            "precision": "weekend",
+            "basis": "2026-08-11 iTnews: weekend / Saturday evening; individual cable timestamp unknown"
+          }
+        }
+      ]
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Indigo West and Indigo Central",
+    "title": "AFP assessing report in connection with Perth cable faults",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
+    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
+    "verification_status": "manual_partial_review"
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "Kamchatka, Russia",
     "accident_type": "Maintenance",
@@ -5362,110 +6002,6 @@
   },
   {
     "TrustWorthy": "verified",
-    "accident_location": "near Perth",
-    "accident_type": "Cut",
-    "affected_area": "Singapore-Perth-Sydney link",
-    "cable_name": "Indigo West",
-    "created_at": "2026-08-28T13:43:49+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-    "event_uid": "evt_68fb9601a93311dcd65f",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-    ],
-    "normalized_cable_id": "INDIGO WEST",
-    "occurrence_date": "2026-08-01",
-    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-    "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
-    "published_date": "2026-08-11",
-    "raw_data": {
-      "article": {
-        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Partner Content AI’s Next Challenge Isn’t Models — It’s Managing Data at Scale Why AI governance matters at scale Partner Content AI agents are reshaping identity governance, and attackers are already exploiting the gap Partner Content How the Fair Work Commission safely deployed Agentic AI in weeks, not years SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
-        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-11",
-        "source": "Google News",
-        "title": "AFP assessing report in connection with Perth cable faults",
-        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-      },
-      "extracted": {
-        "accident_location": "near Perth",
-        "accident_type": "Cut",
-        "affected_area": "Singapore-Perth-Sydney link",
-        "cable_name": "Indigo West",
-        "occurrence_date": "August 2026",
-        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-        "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
-        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-        "repair_date": "August 26 2026"
-      }
-    },
-    "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-    "repair_date": "2026-08-26",
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West",
-    "title": "AFP assessing report in connection with Perth cable faults",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
-    "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "near Perth",
-    "accident_type": "Cut",
-    "affected_area": "Singapore-Perth-Sydney link",
-    "cable_name": "Indigo Central",
-    "created_at": "2026-08-28T13:43:49+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-    "event_uid": "evt_fcf0e6e211f655dc8f2f",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-    ],
-    "normalized_cable_id": "INDIGO CENTRAL",
-    "occurrence_date": "2026-08-01",
-    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-    "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
-    "published_date": "2026-08-11",
-    "raw_data": {
-      "article": {
-        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Partner Content AI’s Next Challenge Isn’t Models — It’s Managing Data at Scale Why AI governance matters at scale Partner Content AI agents are reshaping identity governance, and attackers are already exploiting the gap Partner Content How the Fair Work Commission safely deployed Agentic AI in weeks, not years SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
-        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-11",
-        "source": "Google News",
-        "title": "AFP assessing report in connection with Perth cable faults",
-        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-      },
-      "extracted": {
-        "accident_location": "near Perth",
-        "accident_type": "Cut",
-        "affected_area": "Singapore-Perth-Sydney link",
-        "cable_name": "Indigo Central",
-        "occurrence_date": "August 2026",
-        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-        "original_text_zh": "SUBCO在其连接新加坡和悉尼并在珀斯设有登陆点的Indigo West和Indigo Central海底电缆系统中检测到“旁路故障”。海底电缆的旁路故障指的是电缆外部绝缘层受损，导致内部组件暴露于海水中的情况，这通常归因于船只锚和捕鱼活动。",
-        "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-        "repair_date": "August 26 2026"
-      }
-    },
-    "reason": "shunt faults commonly attributed to ships' anchors and fishing activity",
-    "repair_date": "2026-08-26",
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo Central",
-    "title": "AFP assessing report in connection with Perth cable faults",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
-    "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "verified",
     "accident_location": "Asia",
     "accident_type": "Cut",
     "affected_area": "Vietnam's international internet capacity",
@@ -5671,57 +6207,6 @@
     "title": "Cable Faults Cut Vietnam’s International Internet Capacity by 30%",
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://circleid.com/posts/cable-faults-cut-vietnams-international-internet-capacity-by-30",
-    "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "near Perth, in protection zones",
-    "accident_type": "Cut",
-    "affected_area": "Singapore-Perth-Sydney link",
-    "cable_name": "Indigo West and Indigo Central",
-    "created_at": "2026-09-02T06:45:40+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-    "event_uid": "evt_baf67a426838e5a03344",
-    "evidence_urls": [
-      "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-    ],
-    "normalized_cable_id": "INDIGO WEST AND INDIGO CENTRAL",
-    "occurrence_date": "2026-08-01",
-    "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-    "original_text_zh": "SUBCO检测到其Indigo West和Indigo Central海底电缆系统出现'短路故障'，这两条电缆共同连接新加坡和悉尼，并在珀斯着陆。海底电缆的短路故障是指线路的外部绝缘层损坏，使内部组件暴露在海水中，通常归因于船舶锚和捕鱼活动。",
-    "published_date": "2026-08-11",
-    "raw_data": {
-      "article": {
-        "content": "Home News Technology Telco/ISP AFP assessing report in connection with Perth cable faults By Andrew Colley Aug 11 2026 6:42AM Singapore-Perth link goes dark after shunt faults detected. The Australian Federal Police is assessing a report of a potential crime after the owner of two undersea cables laid in protection zones near Perth revealed faults commonly attributed to ship activity. Bevan Slattery, co-chief and founder of SUBCO, which owns the two Indigo cable systems, confirmed to iTnews that the company reported the incidents to the AFP which, he said, occurred near each other and at a similar time. Slattery first raised the alarm about the incidents in a post on LinkedIn on the weekend, shortly after SUBCO detected “shunt faults” on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity. A spokesperson for the AFP told iTnews that the agency was looking into the incident but stopped short of saying it is actively investigating it as a crime. “The AFP has received a report of crime in relation to this matter. This report is currently being assessed based on the information provided. Further comment will be made at an appropriate time,” the spokesperson said. In the LinkedIn post, Slattery pointed to a ship tracking chart showing what he described as “suspicious/coincidental” vessel activity in the area. However, he stopped short of declaring that the cables had been deliberately damaged. “This could be a coincidence or an external aggression event,” Slattery wrote, explaining that the cause of the fault would have been known instantly had the cables been monitored using FibreSense, an advanced detection system used on some of SUBCO’s other undersea cables. “Indigo West and Central do not have FiberSense installed and, unfortunately, the consortium will not know the root cause until the cable is recovered during repair,” he wrote. Nevertheless, Slattery said that it was still important that authorities investigate as it may be the second time such an incident has occurred in a cable protection zone. “This maybe a coincidence, but it’s important for the Australian Federal Police to investigate the issue urgently,” Slattery wrote. Regional internet provider AusInternet, which uses the Indigo West cable, has been advising of an outage on the link on its website since Saturday evening, saying that it has been routing traffic around the apparent break. Early yesterday it was advising customers that the earliest fix to the cable was expected August 26. “The Indigo team has engaged their marine maintenance operator for vessel allocation and planning of the repairs. ETA is on August 26 2026. All timelines remain subject to clearance, logistics arrangement and weather conditions,” it advised. Slattery said that SUBCO would be following up its report to the AFP with more information soon. Add iTnews as your trusted source Got a news tip for our journalists? Share it with us anonymously here . Copyright © iTnews.com.au . All rights reserved. Tags: government indigo central indigo west subco telco/isp Partner Content Seven West Media drops Teradata in intelligence layer modernisation State of Security 2026: Data Security Partner Content Predictable costs, provable control drives data repatriation Promoted Content Digital sovereignty is no longer optional - Agentic AI has made it fundamental SPONSORED RESOURCES ITIL® AI Governance 2026 Wasabi Global Cloud Storage Index The Mythos Moment: When AI Outpaces Remediation - How Can Enterprises Respond Innovate anywhere with HPE and Azure Local Cloud Covered Report: New Zealand Events Integrate 2026 Security Exhibition & Conference NiCE World APAC 2026 iTnews State of Security Breakfast Melbourne NiCE World APAC 2026",
-        "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZXR5YWJlQWVaZVpDYjhfYlB5TkRTczNJYTh5WjRCTnRTdThuRG5NSW5USk91VG5ackNPS0VOeENUMlhmNnVPUFNTRDlBMmNqb3RzR0pkY3RBNVZ0WDJEaDduTlVMcUVLdUtsZVdEVXVGLW1RRFZkd1pTbXA3ZVIxZmloVmpJYkI1aVVGUG1hWElEVUx1SUQxRWNVR1c?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-11",
-        "source": "Google News",
-        "title": "AFP assessing report in connection with Perth cable faults",
-        "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
-      },
-      "extracted": {
-        "accident_location": "near Perth, in protection zones",
-        "accident_type": "Cut",
-        "affected_area": "Singapore-Perth-Sydney link",
-        "cable_name": "Indigo West and Indigo Central",
-        "occurrence_date": "August 2026",
-        "original_text": "SUBCO detected 'shunt faults' on its Indigo West and Indigo Central cable systems, which together connect Singapore and Sydney with a landing at Perth in-between. Shunt faults in undersea cables refer to a condition where the outer insulating layers of the line become damaged exposing the interior components to sea water and are commonly attributed to ships' anchors and fishing activity.",
-        "original_text_zh": "SUBCO检测到其Indigo West和Indigo Central海底电缆系统出现'短路故障'，这两条电缆共同连接新加坡和悉尼，并在珀斯着陆。海底电缆的短路故障是指线路的外部绝缘层损坏，使内部组件暴露在海水中，通常归因于船舶锚和捕鱼活动。",
-        "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
-        "repair_date": "August 26, 2026"
-      }
-    },
-    "reason": "shunt faults commonly attributed to ship activity, potentially anchors or fishing",
-    "repair_date": "2026-08-26",
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West and Indigo Central",
-    "title": "AFP assessing report in connection with Perth cable faults",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061",
     "verification_status": "verified"
   },
   {
@@ -11012,6 +11497,7 @@
     "discovered_url": "",
     "event_uid": "evt_7c6e7ffddea09029d55b",
     "evidence_urls": [
+      "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded",
       "https://subtelforum.com/fitburg-trial-opens-over-baltic-cable-damage/"
     ],
     "normalized_cable_id": "BALTIC TELECOM CABLES (TWO CABLES UNSPECIFIED BY NAME)",
@@ -11037,7 +11523,18 @@
         "original_text_zh": "检方指控该船在芬兰湾海底拖拽受损锚链至少130公里，切断了两条电信电缆并试图损坏另外八条海底连接。",
         "reason": "Vessel Fitburg dragged a damaged anchor across seabed",
         "repair_date": "Not specified"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "芬兰警方确认2025-12-31，受损为 Elisa 和 Arelion 的芬兰—爱沙尼亚通信海缆；未给出系统名称，不把 Fitburg 船名当海缆名。",
+          "previous_fields": {},
+          "evidence_urls": [
+            "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded"
+          ]
+        }
+      ]
     },
     "reason": "Vessel Fitburg dragged a damaged anchor across seabed",
     "repair_date": null,
@@ -11047,7 +11544,7 @@
     ],
     "submarine_name": "Baltic telecom cables (two cables unspecified by name)",
     "title": "Fitburg Trial Opens Over Baltic Cable Damage",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://subtelforum.com/fitburg-trial-opens-over-baltic-cable-damage/",
     "verification_status": "verified"
   },
@@ -12369,6 +12866,45 @@
     "verification_status": "imported"
   },
   {
+    "event_uid": "evt_6dbb4a9dbb55b3d50f98",
+    "cable_name": "Taiwan-Matsu No. 2",
+    "submarine_name": "Taiwan-Matsu No. 2",
+    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "accident_location": "Off New Taipei; Taiwan–Matsu",
+    "reason": "",
+    "accident_type": "Cut",
+    "affected_area": "Matsu",
+    "occurrence_date": "2025-02-16",
+    "repair_date": null,
+    "published_date": "2025-02-17",
+    "source": "Taiwan Ministry of Digital Affairs",
+    "url": "https://moda.gov.tw/press/press-releases/15210",
+    "title": "Taiwan Ministry of Digital Affairs",
+    "original_text": "114年2月16日中午12時49分，位於我國新北市外海的臺馬二號海纜發生全斷障礙。",
+    "original_text_zh": "数发部确认台马2号于2025年2月16日12:49发生全断，属既有故障进一步发展；维修预计日期不作为修复完成日期。",
+    "verification_status": "manual_source_verified",
+    "TrustWorthy": "manual_source_verified",
+    "discovered_url": "",
+    "raw_data": {
+      "manual_review": {
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
+      }
+    },
+    "created_at": "2026-10-15T01:52:02+00:00",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "sources": [
+      "Taiwan Ministry of Digital Affairs"
+    ],
+    "evidence_urls": [
+      "https://moda.gov.tw/press/press-releases/15210",
+      "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-2502161350"
+    ]
+  },
+  {
     "TrustWorthy": "imported",
     "accident_location": "S9 segment to Singapore and S1.9 segment to Malaysia",
     "accident_type": "Fluctuate",
@@ -12400,6 +12936,46 @@
     "verification_status": "imported"
   },
   {
+    "event_uid": "evt_55226de6c8095293754b",
+    "cable_name": "Taiwan-Matsu No. 2",
+    "submarine_name": "Taiwan-Matsu No. 2",
+    "normalized_cable_id": "TAIWAN-MATSU NO. 2",
+    "accident_location": "Off New Taipei; Taiwan–Matsu",
+    "reason": "",
+    "accident_type": "Cut",
+    "affected_area": "Matsu",
+    "occurrence_date": "2025-01-22",
+    "repair_date": null,
+    "published_date": "2025-01-22",
+    "source": "Chunghwa Telecom",
+    "url": "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+    "title": "Chunghwa Telecom",
+    "original_text": "台馬第二海纜於114年1月22日 05:34 發生障礙",
+    "original_text_zh": "中華電信确认台马2号于2025年1月22日05:34发生故障；数发部后续说明为芯线断裂，不能与2月16日全断合并。",
+    "verification_status": "manual_source_verified",
+    "TrustWorthy": "manual_source_verified",
+    "discovered_url": "",
+    "raw_data": {
+      "manual_review": {
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
+      }
+    },
+    "created_at": "2026-10-15T01:52:02+00:00",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "sources": [
+      "Chunghwa Telecom"
+    ],
+    "evidence_urls": [
+      "https://moda.gov.tw/press/press-releases/15082",
+      "https://moda.gov.tw/press/press-releases/15210",
+      "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500"
+    ]
+  },
+  {
     "TrustWorthy": "imported",
     "accident_location": "Taiwan Strait",
     "accident_type": "Limit",
@@ -12409,14 +12985,29 @@
     "discovered_url": "",
     "event_uid": "evt_49edbe14ea89d2a98533",
     "evidence_urls": [
-      "https://subtelforum.com/taiwan-matsu-undersea-cable-repairs-completed/"
+      "https://moda.gov.tw/press/press-releases/15210",
+      "https://subtelforum.com/taiwan-matsu-undersea-cable-repairs-completed/",
+      "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500"
     ],
     "normalized_cable_id": "Taiwan Penghu Kinmen Matsu No.3 (TPKM3)",
     "occurrence_date": "2025-01-15",
     "original_text": "The repairs on the Taiwan-Matsu No. 3 fiber-optic cable that broke down on Jan. 15 were completed in the early hours of Sunday, Chunghwa Telecom said in a news release.",
     "original_text_zh": "中华电信在新闻稿中表示，1月15日中断的台马三号海缆已于周日凌晨修复完成。 （说明：严格保留专有名词\"Taiwan-Matsu No.3/台马三号\"、\"Chunghwa Telecom/中华电信\"及日期\"Jan.15/1月15日\"，采用\"海缆\"作为行业术语，将修复时间\"early hours of Sunday\"本地化为符合中文新闻习惯的\"周日凌晨\"，整句调整为中文主谓宾语序）",
     "published_date": "2025-03-02",
-    "raw_data": {},
+    "raw_data": {
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "确认台马3号2025-01-15故障；保留原有修复记录，不据预计日期改写。",
+          "previous_fields": {},
+          "evidence_urls": [
+            "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+            "https://moda.gov.tw/press/press-releases/15210"
+          ]
+        }
+      ]
+    },
     "reason": "natural deterioration",
     "repair_date": "2025-03-02",
     "source": "history",
@@ -12425,7 +13016,7 @@
     ],
     "submarine_name": "Taiwan-Matsu No. 3 fiber-optic cable",
     "title": "https://subtelforum.com/taiwan-matsu-undersea-cable-repairs-completed/",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://subtelforum.com/taiwan-matsu-undersea-cable-repairs-completed/",
     "verification_status": "imported"
   },
@@ -12624,6 +13215,46 @@
     "verification_status": "verified"
   },
   {
+    "event_uid": "evt_58ad5cff0074f783b0f0",
+    "cable_name": "C-Lion1",
+    "submarine_name": "C-Lion1",
+    "normalized_cable_id": "C-LION1",
+    "accident_location": "Gulf of Finland, southeast of Porkkalanniemi",
+    "reason": "",
+    "accident_type": "Cut",
+    "affected_area": "Finland; Germany",
+    "occurrence_date": "2024-12-25",
+    "repair_date": "2025-01-06",
+    "published_date": "2025-01-07",
+    "source": "Cinia",
+    "url": "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
+    "title": "Cinia",
+    "original_text": "The break in Cinia's C-Lion1 submarine cable has been repaired",
+    "original_text_zh": "Cinia 确认 C-Lion1 于2024年12月25日18:44（EET）发生故障，2025年1月6日修复；原因仍在调查。",
+    "verification_status": "manual_source_verified",
+    "TrustWorthy": "manual_source_verified",
+    "discovered_url": "",
+    "raw_data": {
+      "manual_review": {
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
+      }
+    },
+    "created_at": "2026-10-15T01:52:02+00:00",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "sources": [
+      "Cinia"
+    ],
+    "evidence_urls": [
+      "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored",
+      "https://www.cinia.fi/en/news/fault-detected-in-cinia-c-lion1-submarine-cable",
+      "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+    ]
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "Baltic Sea",
     "accident_type": "Cut",
@@ -12735,6 +13366,7 @@
     "discovered_url": "",
     "event_uid": "evt_a294211df980ea47ced2",
     "evidence_urls": [
+      "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/",
       "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany"
     ],
     "normalized_cable_id": "C-LION1",
@@ -12748,7 +13380,19 @@
         "date_basis": "Operator notice states 18 November 2024 at 04:04 EET.",
         "reviewed_at": "2026-10-14T11:22:12.274803+00:00",
         "trigger_queue_id": "e05d671aa47bebc85b74c171c9c66592"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "运营商及 RIPE 核实 C-Lion1 为2024-11-18；BCS 是前一天，分开关联。",
+          "previous_fields": {},
+          "evidence_urls": [
+            "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
+            "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
+          ]
+        }
+      ]
     },
     "reason": "Cause not confirmed",
     "repair_date": null,
@@ -12758,7 +13402,7 @@
     ],
     "submarine_name": "C-Lion1",
     "title": "Submarine cable cut between Finland, Germany",
-    "updated_at": "2026-10-14T11:22:12+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
     "verification_status": "manual_source_verified"
   },
@@ -12798,6 +13442,44 @@
     "updated_at": "2026-10-14T11:22:12+00:00",
     "url": "https://www.lrt.lt/en/news-in-english/19/2416006/undersea-cable-between-lithuania-and-sweden-damaged-telia",
     "verification_status": "manual_source_verified"
+  },
+  {
+    "event_uid": "evt_711d1a396fb050d9937f",
+    "cable_name": "BCS East-West Interlink",
+    "submarine_name": "BCS East-West Interlink",
+    "normalized_cable_id": "BCS EAST-WEST INTERLINK",
+    "accident_location": "Baltic Sea; Sweden–Lithuania",
+    "reason": "",
+    "accident_type": "Cut",
+    "affected_area": "Sweden; Lithuania",
+    "occurrence_date": "2024-11-17",
+    "repair_date": null,
+    "published_date": "2024-11-20",
+    "source": "RIPE NCC / RIPE Labs",
+    "url": "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/",
+    "title": "RIPE NCC / RIPE Labs",
+    "original_text": "On Sunday 17 November, the BCS East-West Interlink Internet cable connection between Sweden and Lithuania stopped working.",
+    "original_text_zh": "RIPE NCC 的测量分析确认，2024年11月17日瑞典与立陶宛之间的 BCS East-West Interlink 中断。",
+    "verification_status": "manual_source_verified",
+    "TrustWorthy": "manual_source_verified",
+    "discovered_url": "",
+    "raw_data": {
+      "manual_review": {
+        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "source_role": "primary_operator_or_measurement",
+        "related_article": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "notes": "仅补入已读来源支持的具体事件；不代表 CircleID 全部候选已完成。"
+      }
+    },
+    "created_at": "2026-10-15T01:52:02+00:00",
+    "updated_at": "2026-10-15T01:52:02+00:00",
+    "sources": [
+      "RIPE NCC / RIPE Labs"
+    ],
+    "evidence_urls": [
+      "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
+    ]
   },
   {
     "TrustWorthy": "False",
@@ -13073,108 +13755,6 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "Pakistan Internet Issues Linked to Faulty Submarine Cable.txt",
     "verification_status": "False"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
-    "accident_type": "Cut",
-    "affected_area": "Perth to Indonesia and Singapore",
-    "cable_name": "Indigo West",
-    "created_at": "2026-09-07T07:01:53+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-    "event_uid": "evt_ea2c974d17ea896185b8",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-    ],
-    "normalized_cable_id": "INDIGO WEST",
-    "occurrence_date": "2024-08-01",
-    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-    "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
-    "published_date": "2026-08-19",
-    "raw_data": {
-      "article": {
-        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles Metro Connect Texas data centre demand could lift ERCOT peak by 125%, Datacloud USA panel hears 03 September 2026 4 minutes Metro Connect 41 fibre deals recorded in US so far in 2026 as consolidation wave builds, Metro Connect Fall panel hears 03 September 2026 4 minutes Metro Connect Fibre overtakes power as data centres’ top constraint, Metro Connect panel finds 03 September 2026 3 minutes ITW Global Leaders’ Forum (GLF) Sparkle and Hellas Sat achieve quantum-safe satellite first 03 September 2026 4 minutes Metro Connect Datacloud USA: $500bn Nvidia pact spotlights 20-year data centre financing gap 02 September 2026 3 minutes",
-        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-19",
-        "source": "Google News",
-        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Indonesia and Singapore",
-        "cable_name": "Indigo West",
-        "occurrence_date": "August 2024",
-        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-        "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
-        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-        "repair_date": "26 August 2024 (estimated)"
-      }
-    },
-    "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-    "repair_date": null,
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West",
-    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
-    "accident_type": "Cut",
-    "affected_area": "Perth to Sydney, Victoria, and Tasmania",
-    "cable_name": "Indigo Central",
-    "created_at": "2026-09-07T07:01:53+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-    "event_uid": "evt_4b98c064bd31aebd6765",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-    ],
-    "normalized_cable_id": "INDIGO CENTRAL",
-    "occurrence_date": "2024-08-01",
-    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-    "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
-    "published_date": "2026-08-19",
-    "raw_data": {
-      "article": {
-        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles Metro Connect Texas data centre demand could lift ERCOT peak by 125%, Datacloud USA panel hears 03 September 2026 4 minutes Metro Connect 41 fibre deals recorded in US so far in 2026 as consolidation wave builds, Metro Connect Fall panel hears 03 September 2026 4 minutes Metro Connect Fibre overtakes power as data centres’ top constraint, Metro Connect panel finds 03 September 2026 3 minutes ITW Global Leaders’ Forum (GLF) Sparkle and Hellas Sat achieve quantum-safe satellite first 03 September 2026 4 minutes Metro Connect Datacloud USA: $500bn Nvidia pact spotlights 20-year data centre financing gap 02 September 2026 3 minutes",
-        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-19",
-        "source": "Google News",
-        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone, roughly 100-112km offshore",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Sydney, Victoria, and Tasmania",
-        "cable_name": "Indigo Central",
-        "occurrence_date": "August 2024",
-        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-        "original_text_zh": "受影响的Indigo West和Indigo Central系统服务于不同的路线：Indigo West连接珀斯与印度尼西亚和新加坡，而Indigo Central连接珀斯与悉尼、维多利亚和塔斯马尼亚。两者都出现了分流故障，即电缆外部绝缘层破损导致海水渗入内部电源导体，短路为沿电缆长度提供电力的光中继器供电的电路。",
-        "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-        "repair_date": "26 August 2024 (estimated)"
-      }
-    },
-    "reason": "Shunt faults due to a breach in the cable’s outer insulation, allowing seawater to reach the internal power conductor. Suspicious or coincidental vessel activity noted.",
-    "repair_date": null,
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo Central",
-    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
   },
   {
     "TrustWorthy": "False",
@@ -14245,15 +14825,16 @@
     "accident_location": "Red Sea",
     "accident_type": "Cut",
     "affected_area": "Europe, Asia, and the Middle East",
-    "cable_name": "AE-1, SEACOM, and EIG",
+    "cable_name": "AAE-1, SEACOM/Tata, EIG",
     "created_at": "2026-07-20T05:39:25+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcDRlWk1JdGUtcjNGMEJ2VU42NzdXbmRkYWtxU0RSOGRqSF9YWjJJZWNwU0xfeFVVYmVGd1J0aDYyTTh5MUtpcElrT3p3RUdfYzJOZkd0S0NSTkZwRkhlRkkwMVpmMkNQNjlKR0UtdER0UXU4NHloRXYtekFnamFuNk83X2xyWm9tVUw4Tw?oc=5",
     "event_uid": "evt_136f611619bcf8d22614",
     "evidence_urls": [
+      "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
       "https://www.tomshardware.com/tech-industry/red-sea-cable-cut-takes-azure-routes-down"
     ],
-    "normalized_cable_id": "EIG",
-    "occurrence_date": "2024-02-01",
+    "normalized_cable_id": "AAE-1, SEACOM/Tata, EIG",
+    "occurrence_date": "2024-02-24",
     "original_text": "In February 2024, multiple submarine cables, including AE-1, SEACOM, and EIG, were damaged by an unknown cause.",
     "original_text_zh": "2024年2月，包括 AE-1、SEACOM 和 EIG 在内的多条海底电缆因未知原因受损。",
     "published_date": "2025-09-07",
@@ -14277,17 +14858,35 @@
         "original_text_zh": "2024年2月，包括 AE-1、SEACOM 和 EIG 在内的多条海底电缆因未知原因受损。",
         "reason": "Unknown cause",
         "repair_date": "July 2024 for AAE-1 (reported completion), others unspecified"
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。",
+          "previous_fields": {
+            "occurrence_date": "2024-02-01",
+            "repair_date": "2024-07-01",
+            "reason": "Unknown cause",
+            "cable_name": "AE-1, SEACOM, and EIG",
+            "submarine_name": "AE-1, SEACOM, and EIG",
+            "normalized_cable_id": "EIG"
+          },
+          "evidence_urls": [
+            "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+          ]
+        }
+      ]
     },
-    "reason": "Unknown cause",
-    "repair_date": "2024-07-01",
+    "reason": "",
+    "repair_date": null,
     "source": "Google News",
     "sources": [
       "Google News"
     ],
-    "submarine_name": "AE-1, SEACOM, and EIG",
+    "submarine_name": "AAE-1, SEACOM/Tata, EIG",
     "title": "Multiple undersea cable cuts in the Red Sea, hampering internet performance — international cables connecting Europe, Asia, and the Middle East are compromised | Tom's Hardware",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://www.tomshardware.com/tech-industry/red-sea-cable-cut-takes-azure-routes-down",
     "verification_status": "verified"
   },
@@ -14301,10 +14900,11 @@
     "discovered_url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNUHhqRkxtcDhscGZDMkpXNkkzVEFXYU5hb3BJT2x6MDJCWWxadFprY0lNNVdkTGFYc0xVeVBEU0lmTmdrbzJSMWtaZktIYi1IRGVwYjY5QTI1aHVkXzg5TDRicnhBMjg0LXZTUVZKR2NVTXpRNnIwbkt6MHV4RVhzUUFzbExvd0htVEZLallrYjV2Y3RPcHIzU2Rsamc3RGpSN3JRcEZOV18xZkczX0g3VjNpNzR6SkFZZ2tZQVpad0xzdk4ybjZUaDhaQWxuZm1QVmVsdFFyVVktUGhYMDZoMFBtMUVJeUFOd015MEs2YWNYV0E0LVBKRWdwcnFPNWpscnBkQTVDa3BZQTV0YU1SbWRR0gGXAkFVX3lxTE1MWlhlX3JxYTlRSThkWERVZXNqTDd2aXRRQjhhY1UtUmRtUzl0ZnptYWVNSGY2dExGV09NUzR2dk9sR3lFOXlkeXVtN3hOLUlYOTQyQmR4ejFBaG1nWHptQ25UMGFCYlpsWWczTmtZMlFidEIwZ3ZuNW41VXdVVlBlYjFobW0tRm16VkkwQjI0eDhiMF8xSm44dGZfOWR6QWlVMkJsSjF0Q3ExRHcwcjd2QXM5el9CX2JJR2tIZmNHTl9oUFM0djlhdnR0bEJCM193aEFwQ1dsNnU1VlBCa01nNklNaXhwYlcxaHR1bVBDdkV3Q1RmOHB3MUdoZml0aUU1UFRhX0dmbTI3dWZPTjJ4NnRQM1o4OA?oc=5",
     "event_uid": "evt_9462f41dc4b75e2ba97c",
     "evidence_urls": [
+      "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
       "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr"
     ],
     "normalized_cable_id": "",
-    "occurrence_date": "2024-02-01",
+    "occurrence_date": "2024-02-24",
     "original_text": "Undersea cables have also been damaged during regional conflicts. In February 2024, three cables were cut after the cargo ship Rubymar was disabled by a Houthi missile. Industry assessments linked the damage to the ship’s anchor, while the Houthis denied responsibility for the cable cuts.",
     "original_text_zh": "海底电缆在地区冲突中也遭到了破坏。2024年2月，货船Rubymar被胡塞武装的导弹击中后，三根电缆被切断。行业评估认为损坏是由船锚造成的，而胡塞武装则否认对电缆切断负责。",
     "published_date": "2026-10-13",
@@ -14329,9 +14929,24 @@
         "original_text_zh": "海底电缆在地区冲突中也遭到了破坏。2024年2月，货船Rubymar被胡塞武装的导弹击中后，三根电缆被切断。行业评估认为损坏是由船锚造成的，而胡塞武装则否认对电缆切断负责。",
         "reason": "ship’s anchor",
         "repair_date": null
-      }
+      },
+      "manual_reviews": [
+        {
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "note": "Cloudflare确认2024-02-24受损；撤回月初占位日期和没有完成证据的修复日期；Rubymar锚损仅为归因说法，非已裁定事实。",
+          "previous_fields": {
+            "occurrence_date": "2024-02-01",
+            "repair_date": null,
+            "reason": "ship’s anchor"
+          },
+          "evidence_urls": [
+            "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+          ]
+        }
+      ]
     },
-    "reason": "ship’s anchor",
+    "reason": "",
     "repair_date": null,
     "source": "Google News",
     "sources": [
@@ -14339,7 +14954,7 @@
     ],
     "submarine_name": "",
     "title": "Could Iran target the Gulf’s digital backbone? The risks to data centres and internet cables explained",
-    "updated_at": "2026-10-14T04:23:13+00:00",
+    "updated_at": "2026-10-15T01:52:02.966976+00:00",
     "url": "https://economictimes.indiatimes.com/news/international/world-news/could-iran-target-the-gulfs-digital-backbone-the-risks-to-data-centres-and-internet-cables-explained/articleshow/134925481.cms?from=mdr",
     "verification_status": "rule_verified"
   },
@@ -14533,108 +15148,6 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "Africa Cable Breaks Worse Than Reported.txt",
     "verification_status": "imported"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Cut",
-    "affected_area": "Perth to Indonesia and Singapore",
-    "cable_name": "Indigo West",
-    "created_at": "2026-09-14T07:32:09+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-    "event_uid": "evt_b8b15e83f4fcb3413c39",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-    ],
-    "normalized_cable_id": "INDIGO WEST",
-    "occurrence_date": "2023-08-01",
-    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
-    "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
-    "published_date": "2026-08-19",
-    "raw_data": {
-      "article": {
-        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles News Finland’s opposition calls for data centre permitting system after Google’s €13bn deal 11 September 2026 3 minutes News Anthropic’s bioweapon report exposes an infrastructure blind spot 11 September 2026 7 minutes News Why hyperscalers are laying their own subsea cables 10 September 2026 5 minutes News Google commits at least €13bn to Finnish AI infrastructure in its largest single European investment 09 September 2026 4 minutes News UK unveils £7.8bn Space Strategy, with satellite connectivity central to reducing reliance on Starlink 09 September 2026 3 minutes",
-        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-19",
-        "source": "Google News",
-        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Indonesia and Singapore",
-        "cable_name": "Indigo West",
-        "occurrence_date": "August 2023",
-        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-        "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
-        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-        "repair_date": "26 August 2023"
-      }
-    },
-    "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-    "repair_date": "2023-08-26",
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo West",
-    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
-  },
-  {
-    "TrustWorthy": "verified",
-    "accident_location": "Perth Submarine Cable Protection Zone",
-    "accident_type": "Cut",
-    "affected_area": "Perth to Sydney, Victoria and Tasmania",
-    "cable_name": "Indigo Central",
-    "created_at": "2026-09-14T07:32:09+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-    "event_uid": "evt_c7770bcb2730ad476427",
-    "evidence_urls": [
-      "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-    ],
-    "normalized_cable_id": "INDIGO CENTRAL",
-    "occurrence_date": "2023-08-01",
-    "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted.",
-    "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
-    "published_date": "2026-08-19",
-    "raw_data": {
-      "article": {
-        "content": "This prompted an Australian Federal Police assessment and arriving days before a government-funded paper argued Australia should position itself as the region’s safest place to land a cable. What happened Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length. The faults occurred inside the Perth Submarine Cable Protection Zone, a corridor extending roughly 100-112km offshore where anchoring and seabed-contact activities are restricted. SUBCO founder and co-chief executive Bevan Slattery raised the issue publicly, describing the faults as occurring “straight after each other and in close proximity to each other.” He flagged what he called suspicious or coincidental vessel activity near the location and timing of the faults, but was careful not to assign cause: “This could be a coincidence or an external aggression event,” he said, adding that root cause won’t be confirmed until the cable is physically recovered, since neither Indigo system has FibreSense monitoring installed. The Australian Federal Police confirmed on 11 August that it had received a report of crime and was assessing the information provided. It has not characterised the incident as sabotage, named a vessel, or confirmed a cause. Repairs are being planned through Indigo’s marine maintenance operator, with an estimated completion date of 26 August, subject to clearance, logistics and weather. Why attribution remains genuinely uncertain The instinct to read deliberate action into two near-simultaneous faults inside a protected zone is understandable, but the base rate cuts against it. The International Cable Protection Committee estimates that roughly 70-80% of global cable faults are caused by fishing gear and ship anchors, ordinary accidents rather than sabotage. This same Perth protection zone has direct precedent for exactly that outcome: in 2021, the Australian Transport Safety Bureau found a vessel had damaged cables here after dragging its anchor, and the AFP later charged that ship’s master. Independent vessel-tracking analysis has added a layer of scrutiny without resolving the question. Maritime intelligence firm Windward ran a multi-sensor review combining AIS behavioural history, electro-optical imagery and synthetic aperture radar, and found a vessel whose movements aligned with the timing and location of the damage. No vessel has been named publicly, and alignment in time and space does not establish cause. Why the timing matters more than the incident itself The faults landed just days before the ANU National Security College published a government-funded paper making the case that Australia should market itself as the Indo-Pacific’s preferred, safest cable-landing hub. The paper, produced under a Department of Defence strategic policy grant, argues that Australia’s political stability, legal protections and distance from contested maritime chokepoints position it to capture landing stations, repair infrastructure and route diversity that hyperscalers are increasingly seeking as they route around less stable waters. That argument aligns with the 2024 New York Joint Statement, a commitment endorsed by the US, Australia, the EU and the UK to favour low-risk cable providers and coordinate repair and maintenance practices. The Perth incident functions, whether by coincidence or not, as an unplanned early test of whether that framework holds up in practice: a live investigation, a firm repair timeline, and a protection zone whose enforcement is now under fresh scrutiny, all playing out just as the policy case for Australia’s hub ambitions was published. Google, Meta and other hyperscalers are already redrawing Indo-Pacific cable routes to avoid geopolitical chokepoints, part of the broader shift toward hyperscaler-led cable investment reshaping the region’s connectivity logic . RELATED STORIES How Asia’s subsea cables are changing connectivity logic State of the Sector: Subsea ITW Asia 2026 01 December 2026 ITW Asia brings together the whole connectivity and digital infrastructure industry to get business done. Join 1700+ leaders from carriers, MNOs, cloud solution providers, hyperscalers, content service providers, data centres, satellite operators, investors, regulatory authorities and more, to define the future of connectivity in Asia. Register now See event details Saf Malik Senior Content and Insights Manager Share Share on LinkedIn Share on Twitter Copy Link URL Top Articles News Finland’s opposition calls for data centre permitting system after Google’s €13bn deal 11 September 2026 3 minutes News Anthropic’s bioweapon report exposes an infrastructure blind spot 11 September 2026 7 minutes News Why hyperscalers are laying their own subsea cables 10 September 2026 5 minutes News Google commits at least €13bn to Finnish AI infrastructure in its largest single European investment 09 September 2026 4 minutes News UK unveils £7.8bn Space Strategy, with satellite connectivity central to reducing reliance on Starlink 09 September 2026 3 minutes",
-        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYmw5LVNRSG4td3pudm5WVlUxaFE1RkQyT0thME04cTQwcHpYOElRTkNyMlJxRjRoVjFPMUpoYlBqWEowUi0zQ1U3Tnpmc2Q5WWIwaFBUQi1EYTFZdEhUQVY5eFplOHBJMVZEdXZZdzJ4YzgzSFF4TkZqUUJhTXpKZG1Edw?oc=5",
-        "keyword": "submarine cable fault",
-        "published_date": "2026-08-19",
-        "source": "Google News",
-        "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-        "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/"
-      },
-      "extracted": {
-        "accident_location": "Perth Submarine Cable Protection Zone",
-        "accident_type": "Cut",
-        "affected_area": "Perth to Sydney, Victoria and Tasmania",
-        "cable_name": "Indigo Central",
-        "occurrence_date": "August 2023",
-        "original_text": "Indigo West and Indigo Central, the two systems affected, serve different routes: Indigo West connects Perth to Indonesia and Singapore, while Indigo Central links Perth to Sydney, Victoria and Tasmania. Both developed shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length.",
-        "original_text_zh": "受影响的Indigo West和Indigo Central两条系统服务于不同路线：Indigo West连接珀斯至印度尼西亚和新加坡，而Indigo Central则连接珀斯至悉尼、维多利亚和塔斯马尼亚。两者均发生了分流故障，即电缆外部绝缘层破损使海水接触到内部电力导体，导致沿其长度供电的光学中继器短路。",
-        "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-        "repair_date": "26 August 2023"
-      }
-    },
-    "reason": "shunt faults, where a breach in a cable’s outer insulation allows seawater to reach the internal power conductor, shorting the circuit that powers the optical repeaters along its length",
-    "repair_date": "2023-08-26",
-    "source": "Google News",
-    "sources": [
-      "Google News"
-    ],
-    "submarine_name": "Indigo Central",
-    "title": "Two Perth subsea cable faults test Australia's bid to be the Indo-Pacific's safest landing point - Capacity",
-    "updated_at": "2026-10-13T08:57:51+00:00",
-    "url": "https://capacityglobal.com/news/two-perth-subsea-cable-faults-test-australia/",
-    "verification_status": "verified"
   },
   {
     "TrustWorthy": "Mentioned",
