@@ -60,6 +60,14 @@ class ReportTests(unittest.TestCase):
         self.assertIn('New article',message.body)
         self.assertFalse(notify.due(first,previous,999999))
 
+    def test_legacy_alert_migration_does_not_claim_existing_reviews_are_new(self):
+        row={'queue_id':'a','title':'Existing article','url':'https://example.org/a','status':'review','reason':'candidates_rejected'}
+        report=self.detailed([row])
+        message=notify.with_change_details(report,{'conditions':['queue.review','status'],'last_sent':1,'fingerprint':'old'})
+        self.assertIn('基线',message.subject)
+        self.assertNotIn('新增或变化 1 项',message.body)
+        self.assertIn('不计作本轮新增',message.body)
+
     def test_discovery_continuation_is_informational(self):
         report=self.detailed([],counts={'discover.deferred.discovery_budget':1})
         self.assertFalse(report.active)
