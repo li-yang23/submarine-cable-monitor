@@ -229,8 +229,8 @@ jobs:
           failures = [name for name in required if os.environ[name] != "success"]
           try:
               summary = json.loads(Path("logs/runs/latest-summary.json").read_text())
-              if summary.get("status") != "success":
-                  failures.append("collection_health")
+              if summary.get("runtime_status", summary.get("status")) != "success":
+                  failures.append("collection_runtime")
           except (OSError, ValueError, AttributeError):
               failures.append("missing_or_invalid_summary")
           if failures:

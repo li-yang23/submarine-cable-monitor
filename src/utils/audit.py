@@ -76,6 +76,7 @@ class AuditRun:
         self.counts: Counter[str] = Counter()
         self.source_counts: Counter[str] = Counter()
         self.failures = 0
+        self.failure_details = {}
         self._failure_keys: set[tuple[str, str, str]] = set()
         self.token = None
         self.usage_responses = 0
@@ -118,6 +119,7 @@ class AuditRun:
             if identity or not matching:
                 self._failure_keys.add((group, source, identity))
             self.failures = len(self._failure_keys)
+            self.failure_details[(group, source, identity)] = {k: record[k] for k in ("stage", "source", "url", "discovered_url", "reason", "http_status", "title") if k in record}
         if stage == "model_usage":
             self.usage_responses += 1
             present = [key for key in _TOKEN_FIELDS if key in record]
@@ -138,9 +140,11 @@ class AuditRun:
             item = failure_summary.setdefault(group, {"count": 0, "sources": {}})
             item["count"] += 1
             item["sources"][source or "unknown"] = item["sources"].get(source or "unknown", 0) + 1
-        data = {"schema_version": 1, "failure_summary": failure_summary, "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "model_usage": usage, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
+        data = {"schema_version": 1, "failure_summary": failure_summary, "failure_details": [self.failure_details[k] for k in sorted(self._failure_keys) if k in self.failure_details], "run_id": self.run_id, "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **summary, "model_usage": usage, "counts": dict(sorted(self.counts.items())), "source_counts": dict(sorted(self.source_counts.items())), "audit_file": str(self.path / "audit.jsonl")}
         markdown = f"## Collection audit — {self.run_id}\n\nStatus: **{data.get('status', 'unknown')}**\n\n"
         markdown += " | ".join(f"{key}: {data.get(key, 0)}" for key in ("articles", "candidates", "inserted", "merged", "rejected", "errors", "warnings")) + "\n\n"
+        markdown += "Runtime: " + str(data.get("runtime_status", data.get("status"))) + "; evidence review: " + str(data.get("review_status", "unknown")) + "\n\n"
+        markdown += "Queue changes: " + json.dumps(data.get("queue_changes", {}), ensure_ascii=False) + "\n\n"
         markdown += "Queue: " + json.dumps(data.get("queue", {}), ensure_ascii=False) + "\n\n"
         markdown += "Model health: " + json.dumps(data.get("model_health", {}), ensure_ascii=False) + "\n\n"
         markdown += "Model usage (provider-reported tokens only; null means unavailable): " + json.dumps(usage, ensure_ascii=False) + "\n\n"

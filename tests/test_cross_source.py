@@ -60,6 +60,81 @@ class CrossSourceTests(unittest.TestCase):
         self.assertFalse(event['raw_data']['cross_source']['original_full_text_read'])
         self.assertIsNone(event['repair_date']); self.assertFalse(event['reason'])
 
+    def test_manual_exclusion_enforced_even_if_model_returns_corroborated(self):
+        self.parent['manual_review'] = {'excluded_alternative_sources': [{'url': articles()[1]['url']}]}
+        self.assertEqual(self.validate()[1], 'manually_excluded_source')
+
+    def test_candidate_review_is_eligible_and_partial_success_never_completes_parent(self):
+        self.queue.mark_review(self.parent, 'candidates_rejected')
+        self.parent['candidate_reviews'] = [dict(candidate_index=i, cable_name='AAG', accident_location='Vietnam',
+            evidence_excerpt=Q1, claimed_occurrence_date='2026-10-02', outcome='rejected') for i in range(2)]
+        self.assertIn(self.parent, self.recovery.eligible())
+        with patch.object(self.recovery, 'retrieve', return_value=(articles(), 'ready')), patch.object(self.extractor, 'review_cross_sources', return_value=review()):
+            result = self.recovery.process(self.parent)
+        self.assertEqual(result['inserted'], 1)
+        self.assertEqual(self.parent['status'], 'review')
+        self.assertEqual(self.parent['candidate_reviews'][0]['recovery']['status'], 'verified')
+        self.assertNotIn('recovery', self.parent['candidate_reviews'][1])
+        self.assertFalse(self.state.is_processed(self.parent['url']))
+        self.assertEqual(len(EventStore(self.config.event_store_path).events), 1)
+
+    def test_all_candidates_verified_completes_parent_after_store(self):
+        self.queue.mark_review(self.parent, 'candidates_rejected')
+        self.parent['candidate_reviews'] = [dict(candidate_index=0, cable_name='AAG', accident_location='Vietnam',
+            evidence_excerpt=Q1, claimed_occurrence_date='2026-10-02', outcome='rejected')]
+        with patch.object(self.recovery, 'retrieve', return_value=(articles(), 'ready')), patch.object(self.extractor, 'review_cross_sources', return_value=review()):
+            self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'], 'done')
+        self.assertTrue(self.state.is_processed(self.parent['url']))
+
+    def test_candidate_balance_failure_keeps_unfinished_work(self):
+        self.queue.mark_review(self.parent, 'candidates_rejected')
+        self.parent['candidate_reviews']=[dict(candidate_index=0,evidence_excerpt=Q1,outcome='rejected')]
+        with patch.object(self.recovery,'retrieve',return_value=(articles(),'ready')), patch.object(self.extractor,'review_cross_sources',side_effect=ExtractionUnavailable('balance_exhausted',provider='siliconflow',http_status=402)):
+            with self.assertRaises(ExtractionUnavailable):self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'],'review')
+        self.assertFalse(self.state.is_processed(self.parent['url']))
+        self.assertEqual(self.store.events,[])
+
+    def test_manual_exclusion_keeps_article_query_identity(self):
+        from src.processing.cross_source import excluded_source
+        self.parent['manual_review']={'excluded_alternative_sources':[{'url':'https://www.cga.gov.tw/news?id=1'}]}
+        self.assertTrue(excluded_source(self.parent,'https://www.cga.gov.tw/news?id=1&utm_source=test'))
+        self.assertFalse(excluded_source(self.parent,'https://www.cga.gov.tw/news?id=2'))
+
+    def test_partial_manual_scope_cannot_be_auto_completed(self):
+        self.queue.mark_review(self.parent, 'candidates_rejected')
+        self.parent['candidate_reviews']=[dict(candidate_index=0,evidence_excerpt=Q1,outcome='rejected')]
+        self.parent['manual_review']={'completion_authorized':False,'missing_evidence':['other historical claims']}
+        with patch.object(self.recovery,'retrieve',return_value=(articles(),'ready')), patch.object(self.extractor,'review_cross_sources',return_value=review()):
+            self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'],'review')
+        self.assertEqual(self.parent['candidate_reviews'][0]['recovery']['status'],'verified')
+
+    def test_candidate_insufficient_evidence_keeps_reason_and_rotates(self):
+        self.queue.mark_review(self.parent, 'candidates_rejected')
+        self.parent['candidate_reviews'] = [dict(candidate_index=i, evidence_excerpt=Q1, outcome='rejected') for i in range(2)]
+        with patch.object(self.recovery, 'retrieve', return_value=([], 'insufficient_sources')):
+            self.recovery.process(self.parent)
+            self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'], 'review')
+        self.assertTrue(all(c['recovery']['reason']=='insufficient_sources' for c in self.parent['candidate_reviews']))
+        self.assertEqual(self.recovery.eligible(), [])
+
+    def test_unrelated_australia_lead_rejects_philippine_bodies(self):
+        from src.processing.cross_source import relevant_source
+        self.parent['title'] = 'Australia banks prepare cable blackouts'
+        self.assertFalse(relevant_source(self.parent, 'Globe restores internet', 'Globe restores internet in Philippines. Australia is nearby.'))
+
+    def test_excluded_sources_never_fetched(self):
+        entries=[{'link':a['url'],'title':a['title'],'published_date':a['published_date']} for a in articles()]
+        self.parent['manual_review']={'excluded_alternative_sources':entries}
+        # metadata uses url, not RSS link
+        self.parent['manual_review']['excluded_alternative_sources']=[{'url':a['url']} for a in articles()]
+        with patch.object(self.recovery.scraper,'get',return_value=SimpleNamespace(content=b'fixture')), patch('src.processing.cross_source.parse_rss_entries',return_value=entries), patch.object(self.recovery.scraper,'_resolve_google_news_url',side_effect=lambda u:u), patch.object(self.recovery.scraper,'extract_page_text') as fetch:
+            found,reason=self.recovery.retrieve(self.parent,{'sources':[]})
+        fetch.assert_not_called(); self.assertEqual(reason,'insufficient_sources')
+
     def test_untrusted_and_tricky_domains_are_rejected(self):
         for url in ('http://newsbytes.ph/a', 'https://newsbytes.ph.attacker.com/a', 'https://u:p@newsbytes.ph/a',
                     'https://127.0.0.1/a', 'https://newsbytes.ph:99/a', 'https://unknown.example/a'):

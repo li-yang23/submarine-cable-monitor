@@ -134,7 +134,7 @@ class EventExtractor:
         from .cross_source import REVIEW_INSTRUCTIONS
         if not self.available:
             raise ExtractionUnavailable("missing_api_key", provider=self.provider)
-        payload = {"unread_original": {k: parent.get(k) for k in ("title", "url", "published_date")},
+        payload = {"rejected_candidate": parent.get("rejected_candidate"), "unread_original": {k: parent.get(k) for k in ("title", "url", "published_date")},
                    "sources": [{"source_index": i, **{k: a.get(k) for k in ("url", "title", "published_date", "content")}}
                                for i, a in enumerate(articles)]}
         failure = None

@@ -17,7 +17,7 @@ import smtplib
 import ssl
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from email.message import EmailMessage
 from email.utils import parseaddr
 from typing import Any
@@ -40,6 +40,8 @@ class Report:
     body: str
     conditions: tuple[str, ...] = ()
     balance_attempt: str = ""
+    details: tuple = ()
+    detailed: bool = False
 
 
 def quantity(value: Any) -> int:
@@ -54,9 +56,93 @@ def quantity(value: Any) -> int:
     return 0
 
 
+REASON_LABELS = {
+    "candidates_rejected": "候选证据未通过，等待逐项补证", "short_content": "未取得完整正文",
+    "cross_source_insufficient_sources": "缺少足够的独立可靠来源",
+    "cross_source_quote_not_in_body": "模型引用不在来源正文中",
+    "cross_source_primary_correction_required": "日期冲突，缺少原始公告或更正",
+    "candidate_evidence_incomplete": "部分候选已补证，其他候选仍缺证据",
+    "historical_candidate_evidence_missing": "旧日志缺少候选片段，需要重新提取原文",
+}
+
+
+def detail_report(summary, workflow_status, summary_error, run_url):
+    # Keep actual model failures/recharge instructions identical to legacy reports.
+    base = build_report({k: v for k, v in summary.items() if k != "runtime_status"},
+                        workflow_status, summary_error=summary_error, run_url=run_url)
+    details = {}
+    def add(kind, identity, text):
+        digest = hashlib.sha256(str(identity).encode()).hexdigest()[:20]
+        details[kind + ":" + digest] = text
+    runtime = summary.get("runtime_status")
+    if summary_error:
+        add("runtime", "summary", "运行故障：本轮摘要无法读取")
+    for item in summary.get("failure_details", []):
+        url = item.get("url") or item.get("discovered_url") or item.get("source") or item.get("stage")
+        reason = item.get("reason", "unknown")
+        code = item.get("http_status")
+        add("runtime", (item.get("stage"), url, reason, code),
+            f"运行故障：{item.get('source') or item.get('stage')}；{reason}" + (f"；HTTP {code}" if code else "") + f"；{url}")
+    model_keys = [key for key in base.conditions if key.startswith("model_")]
+    for key in model_keys:
+        label = next((line for line in base.body.splitlines() if line.startswith("- ") and ("模型" in line or "SiliconFlow" in line)), key)
+        add("model", key, label.removeprefix("- "))
+    if runtime != "success" and not details:
+        add("runtime", runtime, "运行故障：" + str(runtime) + "；检查本轮日志")
+    if workflow_status not in GOOD and runtime == "success":
+        add("runtime", "workflow", "运行故障：采集之外的导出、保存或工作流步骤失败")
+    for item in summary.get("queue_items", []):
+        if item.get("status") not in {"retry", "review"}:
+            continue
+        kind = "review" if item["status"] == "review" else "retry"
+        reason = item.get("reason", "unknown")
+        title = " ".join(str(item.get("title") or item.get("queue_id")).split())[:240]
+        add(kind, (item.get("queue_id"), reason),
+            f"{'待复核' if kind == 'review' else '待重试'}：{title}；{REASON_LABELS.get(reason, reason)}；{item.get('url') or item.get('queue_id')}")
+    conditions = tuple(sorted(details))
+    active = bool(conditions)
+    subject = (base.subject if base.balance_attempt or "model_balance" in base.conditions else
+               "[海缆监控] 运行故障" if runtime != "success" or any(k.startswith("runtime:") for k in conditions) else
+               "[海缆监控] 新增待复核或重试事项" if active else "[海缆监控] 运行正常")
+    queue = summary.get("queue", {})
+    lines = [subject, "", f"运行状态：{runtime}；证据状态：{summary.get('review_status', 'unknown')}。",
+             f"本轮处理 {quantity(summary.get('articles'))} 篇，新增 {quantity(summary.get('inserted'))} 条事件；累计待重试 {quantity(queue.get('retry'))} 条、待复核 {quantity(queue.get('review'))} 条、待处理 {quantity(queue.get('pending'))} 条。"]
+    if "model_balance" in base.conditions:
+        lines.extend(line for line in base.body.splitlines() if "充值" in line or "暂停" in line or "次日" in line)
+    changes = summary.get("queue_changes", {})
+    lines.append(f"本轮队列变化：新增 {len(changes.get('new', []))} 项，原因或状态变化 {len(changes.get('changed', []))} 项，完成 {len(changes.get('resolved', []))} 项。")
+    if summary.get("counts", {}).get("discover.deferred.discovery_budget"):
+        lines.append("目录扫描已保存续扫位置，下轮继续；这是进度信息，不计作运行故障。")
+    lines.append("待复核不表示事件已确认，也不计作程序故障；未确认记录继续保留证据缺口。")
+    if run_url:
+        lines.append("运行记录：" + run_url)
+    return Report(active, hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY,
+                  subject, "\n".join(lines), conditions, base.balance_attempt, tuple(details.items()), True)
+
+
+def with_change_details(report, previous):
+    if not report.detailed:
+        return report
+    seen = set((previous or {}).get("conditions", []))
+    new = [(key, label) for key, label in report.details if key not in seen]
+    old = [(key, label) for key, label in report.details if key in seen]
+    resolved = seen - set(report.conditions)
+    lines = [report.body, "", f"相对上次检查，新增或变化 {len(new)} 项（首次启用逐项记录时建立基线）："]
+    lines.extend("- " + label for _, label in new)
+    if not new:
+        lines.append("- 无新增问题")
+    lines.append(f"仍未解决的既有事项：{len(old)} 项。")
+    lines.extend("- " + label for _, label in old)
+    if resolved:
+        lines.append(f"上次问题本轮未再出现或已解决：{len(resolved)} 项；历史证据仍保存在队列和审计记录中。")
+    return replace(report, body="\n".join(lines))
+
+
 def build_report(summary: dict[str, Any], workflow_status: str = "success", *,
                  summary_error: str | None = None, run_url: str | None = None) -> Report:
     """Interpret both existing audit counts and the durable queue health fields."""
+    if "runtime_status" in summary:
+        return detail_report(summary, workflow_status, summary_error, run_url)
     issues: dict[str, tuple[str, int | str]] = {}
 
     def add(key: str, label: str, value: int | str = "需要处理") -> None:
@@ -429,7 +515,10 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
         configured += 1
         previous = after_model_recovery(state.get(channel), report, summary)
         recovery_lookup = channel == "github" and not report.active and not previous
+        delivery_report = with_change_details(report, previous)
         if not due(report, previous, now) and not recovery_lookup:
+            if report.detailed and previous:
+                previous = {**previous, "conditions": list(report.conditions), "fingerprint": report.fingerprint}
             if previous != state.get(channel):
                 try:
                     state[channel] = previous
@@ -442,10 +531,10 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
         try:
             delivered = True
             if channel == "github":
-                delivered = GitHubNotifier(env).send(report, recover_without_state=recovery_lookup,
+                delivered = GitHubNotifier(env).send(delivery_report, recover_without_state=recovery_lookup,
                                                      mention=not previous or previous.get("fingerprint") != report.fingerprint or bool(report.balance_attempt and report.balance_attempt != previous.get("balance_attempt")))
             else:
-                send_email(report, env)
+                send_email(delivery_report, env)
             if delivered:
                 state[channel] = {"fingerprint": report.fingerprint, "last_sent": now, "conditions": list(report.conditions)}
                 if report.balance_attempt:

@@ -248,15 +248,17 @@ class PipelineReliabilityTests(unittest.TestCase):
         summary = self.run_pipeline({"first": [item]}, extractor)
         self.assertEqual(summary.rejected, 1)
         self.assertEqual(summary.queue["review"], 1)
-        self.assertEqual(summary.status, "degraded")
-        self.assertGreater(summary.warnings, 0)
+        self.assertEqual(summary.runtime_status, "success")
+        self.assertEqual(summary.review_status, "needs_review")
+        self.assertEqual(summary.warnings, 0)
         self.assertFalse(ArticleState.from_config(self.config).is_processed(item["url"]))
         self.assertEqual(self.store.events, [])
         extractor.extract.reset_mock()
         again = self.run_pipeline({"first": []}, extractor)
         extractor.extract.assert_not_called()
         self.assertEqual(again.queue["review"], 1)
-        self.assertNotEqual(again.status, "success")
+        self.assertEqual(again.runtime_status, "success")
+        self.assertEqual(again.review_status, "needs_review")
 
     def test_queue_recovers_across_runs_even_after_news_disappears_from_rss(self):
         item = article()
@@ -381,8 +383,8 @@ class PipelineReliabilityTests(unittest.TestCase):
         with patch("src.pipeline.SCRAPER_CLASSES", {"first": lambda config: scraper}):
             summary = pipeline.run(["first"])
         self.assertEqual(summary.queue["pending"], 0)
-        self.assertGreater(summary.warnings, 0)
-        self.assertEqual(summary.status, "degraded")
+        self.assertEqual(summary.warnings, 0)
+        self.assertEqual(summary.runtime_status, "success")
 
 
 if __name__ == "__main__":

@@ -35,6 +35,10 @@ class PipelineSummary:
     errors: int = 0
     warnings: int = 0
     status: str = "success"
+    runtime_status: str = "success"
+    review_status: str = "clear"
+    queue_items: list = field(default_factory=list)
+    queue_changes: dict = field(default_factory=dict)
     run_id: str = ""
     audit_path: str = ""
     model_health: dict[str, Any] = field(default_factory=dict)
@@ -61,12 +65,14 @@ class MonitorPipeline:
         audit.activate()
         audit.emit("run", "started", selected_sources=selected_sources, since=since, dry_run=dry_run)
         queue = None
+        queue_before = {}
         deadline = time.monotonic() + max(1, self.config.collection_time_budget_seconds)
         recovery_deadline = deadline
         if self.config.cross_source_enabled:
             deadline -= min(self.config.cross_source_time_budget_seconds, self.config.collection_time_budget_seconds / 4)
         try:
             queue = ArticleQueue.from_config(self.config, dry_run=dry_run)
+            queue_before = {k: (v["status"], v.get("reason", "")) for k, v in queue.items.items()}
             article_state = ArticleState.from_config(self.config)
             health = self.health_checker(
                 getattr(self.extractor, "api_key", None), getattr(self.extractor, "provider", "unknown"),
@@ -306,12 +312,26 @@ class MonitorPipeline:
             if queue is not None:
                 summary.queue = queue.stats()
             summary.warnings = max(0, audit.failures - summary.errors)
-            summary.warnings += sum(count for key, count in audit.counts.items()
-                                    if key.startswith(("discover.deferred.", "collection.deferred.")))
-            if any(summary.queue.get(key, 0) for key in ("pending", "retry", "review")):
-                summary.warnings += 1
-            if summary.status != "failed" and (summary.errors or summary.warnings):
-                summary.status = "failed" if summary.errors and not summary.articles else "degraded"
+            # Work deferred by a bounded scan and evidence awaiting review are
+            # durable work states, not crashed executions.
+            if queue is not None:
+                outstanding = {"pending", "retry", "review"}
+                summary.queue_changes = {"new": [], "changed": [], "resolved": []}
+                for key, row in queue.items.items():
+                    item = {k: row.get(k) for k in ("queue_id", "title", "url", "status", "reason")}
+                    if row["status"] in outstanding:
+                        summary.queue_items.append(item)
+                        previous = queue_before.get(key)
+                        category = "new" if not previous or previous[0] not in outstanding else "changed"
+                        if previous != (row["status"], row.get("reason", "")):
+                            summary.queue_changes[category].append(item)
+                    elif queue_before.get(key, (None,))[0] in outstanding:
+                        summary.queue_changes["resolved"].append(item)
+                summary.review_status = "needs_review" if summary.queue.get("review") else "clear"
+            summary.runtime_status = ("failed" if summary.status == "failed" or summary.errors and not summary.articles
+                                      else "degraded" if summary.errors or audit.failures or summary.model_health.get("available") is False
+                                      else "success")
+            summary.status = summary.runtime_status
             audit.emit("run", "completed", status=summary.status, errors=summary.errors, warnings=summary.warnings)
             audit.finish(summary.to_dict())
             self.logger.info("Audit run %s: %s (%s)", audit.run_id, summary.status, audit.path)

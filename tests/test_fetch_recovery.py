@@ -23,6 +23,17 @@ def response(status=200, body='<article>Public cable report</article>', headers=
     return r
 
 
+class ShortBodyRegressionTests(unittest.TestCase):
+    def test_caption_cannot_hide_complete_article_or_include_sidebar(self):
+        from bs4 import BeautifulSoup
+        from src.scrapers.article_sources import article_body_text
+        prose='SIG appointed its finance chief as its next CEO. ' * 10
+        html='<article><div itemprop="articleBody">Photo caption.</div><section>'+prose+'</section><aside>Unrelated undersea cable cut</aside></article>'
+        body=article_body_text(BeautifulSoup(html,'html.parser'))
+        self.assertIn(prose.strip(),body)
+        self.assertNotIn('undersea',body)
+
+
 class FetchRecoveryTests(unittest.TestCase):
     def test_featured_image_does_not_hide_real_entry_content(self):
         html = "<div class='entry-content featured-image'>Photo</div><div class='entry-content'><p>Actual submarine cable outage evidence.</p></div>"
