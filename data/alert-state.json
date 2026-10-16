@@ -1,36 +1,22 @@
 {
   "email": {
     "conditions": [
-      "retry:844d210c1d17eca502a5",
-      "review:17030cd8b1b1ec336bb0",
-      "review:1774ccefbbaf0cd050ab",
-      "review:1b42b66dc1026c98c2cb",
-      "review:5f585efe029a9cffa4f1",
-      "review:61cb263f006269fdf893",
-      "review:71133839843da79840d0",
-      "review:c05e81a46a9a031a5fbe",
-      "review:f8568fc50f3587500d52",
-      "runtime:8a89eafd7990a7ae180a",
-      "runtime:ab5f4224c6d8d3ffe2a7"
+      "review:2f9167a34f5db59d7c04",
+      "review:47686c4a5d4cfc5b7773",
+      "review:5bd3dc2e130f90a5b477",
+      "review:e6de40c97692c47e4005"
     ],
-    "fingerprint": "47602984663f5df0924cb93f7059ecf2fc980a1c735c1b29662200807f2c3a0b",
-    "last_sent": 1792119562.7457871
+    "fingerprint": "41b00139d2c186e381f12211ae2eae7772e1a67b6f12f7952471ee7880af7e51",
+    "last_sent": 1792123391.9991283
   },
   "github": {
     "conditions": [
-      "retry:844d210c1d17eca502a5",
-      "review:17030cd8b1b1ec336bb0",
-      "review:1774ccefbbaf0cd050ab",
-      "review:1b42b66dc1026c98c2cb",
-      "review:5f585efe029a9cffa4f1",
-      "review:61cb263f006269fdf893",
-      "review:71133839843da79840d0",
-      "review:c05e81a46a9a031a5fbe",
-      "review:f8568fc50f3587500d52",
-      "runtime:8a89eafd7990a7ae180a",
-      "runtime:ab5f4224c6d8d3ffe2a7"
+      "review:2f9167a34f5db59d7c04",
+      "review:47686c4a5d4cfc5b7773",
+      "review:5bd3dc2e130f90a5b477",
+      "review:e6de40c97692c47e4005"
     ],
-    "fingerprint": "47602984663f5df0924cb93f7059ecf2fc980a1c735c1b29662200807f2c3a0b",
-    "last_sent": 1792119562.7457871
+    "fingerprint": "41b00139d2c186e381f12211ae2eae7772e1a67b6f12f7952471ee7880af7e51",
+    "last_sent": 1792123391.9991283
   }
 }
