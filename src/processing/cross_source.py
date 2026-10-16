@@ -207,6 +207,7 @@ class CrossSourceRecovery:
         return sorted(rows, key=lambda r: r.get("cross_source", {}).get("last_attempt_at", r["first_seen_at"]))[:self.config.cross_source_max_articles]
 
     def retrieve(self, row, record):
+        record["unavailable_sources"], record["fetch_failures"] = [], []
         title = clean_text(row.get("title", "") if row.get("rejected_candidate") else re.split(r"\s[-|]\s", row.get("title", ""))[0])
         if not title or title == "Manually queued article":
             return [], "missing_search_identity"
@@ -216,11 +217,17 @@ class CrossSourceRecovery:
             return [], "missing_publication_date"
         window = 45 if row.get("rejected_candidate") else 14
         dates = f"after:{day-timedelta(days=window)} before:{day+timedelta(days=window+1)}"
+        # A retrospective primary report can establish an old occurrence. Do
+        # not restrict candidate corroboration to the parent publication week.
+        candidate = row.get("rejected_candidate")
+        if candidate and not candidate.get("claimed_occurrence_date"):
+            dates = ""
+        broad_dates = "" if candidate else dates
         terms = list(dict.fromkeys(re.findall(r"[\w-]+", title)))[:14]
         entities = [term for term in terms if term[0].isupper() and term.lower() in anchors(title)]
         identity = entities[:3] or sorted(anchors(title), key=lambda s: (-len(s), s))[:2]
         queries = list(dict.fromkeys([" ".join(terms) + " " + dates,
-                                    " ".join(identity) + " (submarine OR subsea OR undersea) (outage OR disruption OR fault) " + dates]))
+                                    " ".join(identity) + " (submarine OR subsea OR undersea) (outage OR disruption OR fault) " + broad_dates]))
         entries, successful, batches = [], 0, []
         for query in queries:
             if time.monotonic() >= self.deadline:
@@ -247,6 +254,8 @@ class CrossSourceRecovery:
             if not link or link in seen:
                 continue
             seen.add(link)
+            resolved = link
+            publisher_requested = False
             try:
                 resolved = self.scraper._resolve_google_news_url(link)
                 group = publisher_group(resolved)
@@ -258,6 +267,7 @@ class CrossSourceRecovery:
                 if any(a["url"] == resolved for a in articles):
                     continue
                 attempts += 1
+                publisher_requested = True
                 page = self.scraper.extract_page_text(resolved)
                 final = page.get("final_url") or resolved
                 if excluded_source(row, final) or not publisher_group(final) or publisher_group(final) == original:
@@ -266,7 +276,7 @@ class CrossSourceRecovery:
                 published = page.get("published_date") or entry.get("published_date")
                 if len(body) < 300 or len(body) > 60000 or not published:
                     continue  # Never substitute a headline or silently truncate a body.
-                if abs((date.fromisoformat(published) - day).days) > window:
+                if not candidate and abs((date.fromisoformat(published) - day).days) > window:
                     continue
                 if not relevant_source(row, page.get("title") or entry.get("title") or "", body):
                     emit("cross_source_fetch", "excluded", parent_queue_id=row["queue_id"], url=final, reason="identity_mismatch")
@@ -287,7 +297,16 @@ class CrossSourceRecovery:
                 record["sources"][-1].update(publisher_group=publisher_group(final), content_length=len(body), content_sha256=hashlib.sha256(body.encode()).hexdigest())
                 emit("cross_source_fetch", "completed", parent_queue_id=row["queue_id"], **record["sources"][-1])
             except Exception as exc:
-                emit("cross_source_fetch", "failed", parent_queue_id=row["queue_id"], url=link, reason="alternative_fetch_failed", **error_details(exc))
+                details = error_details(exc)
+                # Optional references can be inaccessible without breaking the
+                # research process. Keep the gap; never acknowledge the parent.
+                unavailable = publisher_requested and details.get("http_status") in {401, 403, 404, 410, 451}
+                failure = {"url": safe_url(resolved), "discovered_url": safe_url(link),
+                           "title": entry.get("title") or row.get("title", ""),
+                           "parent_queue_id": row["queue_id"],
+                           "reason": "alternative_unavailable" if unavailable else "alternative_fetch_failed", **details}
+                record.setdefault("unavailable_sources" if unavailable else "fetch_failures", []).append(failure)
+                emit("cross_source_fetch", "unavailable" if unavailable else "failed", **failure)
         record["queries"] = queries
         if successful != len(queries):
             return articles, "search_failed"

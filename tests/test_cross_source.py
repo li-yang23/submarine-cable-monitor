@@ -145,6 +145,65 @@ class CrossSourceTests(unittest.TestCase):
             found,reason=self.recovery.retrieve(self.parent,{'sources':[]})
         fetch.assert_not_called(); self.assertEqual(reason,'insufficient_sources')
 
+    def test_historical_candidate_allows_later_primary_reporting(self):
+        self.parent['rejected_candidate']={'claimed_occurrence_date':None,'evidence_excerpt':Q1}
+        self.parent['published_date']='2026-10-03'
+        entries=[{'link':a['url'],'title':a['title'],'published_date':'2024-10-03'} for a in articles()]
+        pages=[{**a,'published_date':'2024-10-03'} for a in articles()]
+        record={'sources':[]}
+        with patch.object(self.recovery.scraper,'get',return_value=SimpleNamespace(content=b'fixture')), patch('src.processing.cross_source.parse_rss_entries',return_value=entries), patch.object(self.recovery.scraper,'_resolve_google_news_url',side_effect=lambda u:u), patch.object(self.recovery.scraper,'extract_page_text',side_effect=pages):
+            found, reason=self.recovery.retrieve(self.parent,record)
+        self.assertEqual(reason,'ready')
+        self.assertEqual(len(found),2)
+        self.assertTrue(all('after:' not in query for query in record['queries']))
+        # Retrieval does not confirm an occurrence or complete the parent.
+        self.assertNotEqual(self.parent['status'],'done')
+        self.assertFalse(self.store.events)
+
+    def test_resolver_access_failure_remains_runtime_failure(self):
+        import requests
+        from src.utils.audit import AuditRun
+        response=requests.Response();response.status_code=401
+        record={'sources':[]}
+        audit=AuditRun(self.root/'audit');audit.activate()
+        try:
+            with patch.object(self.recovery.scraper,'get',return_value=SimpleNamespace(content=b'fixture')), patch('src.processing.cross_source.parse_rss_entries',return_value=[{'link':'https://news.google.com/rss/articles/opaque'}]), patch.object(self.recovery.scraper,'_resolve_google_news_url',side_effect=requests.HTTPError(response=response)):
+                self.recovery.retrieve(self.parent,record)
+        finally:
+            summary=audit.finish({})
+        self.assertEqual(audit.failures,1)
+        self.assertFalse(summary['unavailable_evidence'])
+
+    def test_optional_access_failure_keeps_gap_without_runtime_failure(self):
+        import requests
+        from src.utils.audit import AuditRun
+        for status in (401, 403, 404, 410, 451, 429, 500):
+            with self.subTest(status=status):
+                response = requests.Response(); response.status_code = status
+                error = requests.HTTPError("private response", response=response)
+                link = "https://news.google.com/rss/articles/opaque"
+                resolved = articles()[0]["url"]
+                entries = [{"link":link,"title":"AAG outage Vietnam","published_date":"2026-10-03"}]
+                record = {"sources":[]}
+                audit = AuditRun(self.root/'audit'); audit.activate()
+                try:
+                    with patch.object(self.recovery.scraper,'get',return_value=SimpleNamespace(content=b'fixture')), patch('src.processing.cross_source.parse_rss_entries',return_value=entries), patch.object(self.recovery.scraper,'_resolve_google_news_url',return_value=resolved), patch.object(self.recovery.scraper,'extract_page_text',side_effect=error):
+                        found, reason = self.recovery.retrieve(self.parent,record)
+                finally:
+                    summary = audit.finish({})
+                self.assertEqual(reason,'insufficient_sources')
+                self.assertFalse(found)
+                self.assertNotEqual(self.parent['status'],'done')
+                self.assertFalse(self.state.is_processed(self.parent['url']))
+                unavailable = status in (401,403,404,410,451)
+                self.assertEqual(audit.failures,0 if unavailable else 1)
+                items = summary['unavailable_evidence' if unavailable else 'failure_details']
+                self.assertEqual(len(items),1)
+                self.assertEqual(items[0]['url'],resolved)
+                self.assertEqual(items[0]['parent_queue_id'],self.parent['queue_id'])
+                self.assertEqual(items[0]['http_status'],status)
+                self.assertNotIn('private response',json.dumps(record))
+
     def test_untrusted_and_tricky_domains_are_rejected(self):
         for url in ('http://newsbytes.ph/a', 'https://newsbytes.ph.attacker.com/a', 'https://u:p@newsbytes.ph/a',
                     'https://127.0.0.1/a', 'https://newsbytes.ph:99/a', 'https://unknown.example/a'):
