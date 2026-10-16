@@ -9572,7 +9572,29 @@
           "evidence_excerpt": "The captain of the Hong Tai 58 was convicted in Taiwan and sentenced to three years over the Taiwan to Penghu No. 3 cable.",
           "claimed_occurrence_date": null,
           "outcome": "rejected",
-          "reason": "reextracted_for_corroboration"
+          "reason": "reextracted_for_corroboration",
+          "review_history": [
+            {
+              "reviewed_at": "2026-10-16T03:11:12.754957+00:00",
+              "previous_recovery": null,
+              "report": "research/reviews/recovery-ten-2026-10-16.json"
+            }
+          ],
+          "recovery": {
+            "status": "verified",
+            "reason": "manual_primary_source_corroborated",
+            "last_attempt_at": "2026-10-16T03:11:12.754957+00:00",
+            "linked_event_uids": [
+              "evt_91edc1640468d943092d",
+              "evt_c4a9157c86f5517f90f4",
+              "evt_42ff2021817a41639f55"
+            ],
+            "evidence_urls": [
+              "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
+            ],
+            "finding": "海巡署确认台澎三号于2025-02-25受损；只确认该候选，不完成整篇复核。",
+            "verification_method": "manual_primary_source"
+          }
         },
         {
           "candidate_index": 12,
@@ -9770,13 +9792,50 @@
             "last_review_fingerprint": "f3ec4efb13cf71db14e1ab2e5392bdd2814d2311b185398152449cb0dc55539f"
           },
           "recovery": {
-            "status": "review",
-            "reason": "cable_identity_not_supported",
-            "last_attempt_at": "2026-10-16T02:59:02.437377+00:00"
-          }
+            "status": "verified",
+            "reason": "manual_primary_source_corroborated",
+            "last_attempt_at": "2026-10-16T03:11:12.754957+00:00",
+            "linked_event_uids": [
+              "evt_91edc1640468d943092d",
+              "evt_c4a9157c86f5517f90f4",
+              "evt_42ff2021817a41639f55"
+            ],
+            "evidence_urls": [
+              "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
+            ],
+            "finding": "海巡署确认台澎三号于2025-02-25受损；只确认该候选，不完成整篇复核。",
+            "verification_method": "manual_primary_source"
+          },
+          "review_history": [
+            {
+              "reviewed_at": "2026-10-16T03:11:12.754957+00:00",
+              "previous_recovery": {
+                "status": "review",
+                "reason": "cable_identity_not_supported",
+                "last_attempt_at": "2026-10-16T02:59:02.437377+00:00"
+              },
+              "report": "research/reviews/recovery-ten-2026-10-16.json"
+            }
+          ]
+        },
+        {
+          "candidate_index": 1,
+          "cable_name": "SEA-ME-WE 5",
+          "accident_location": "Singapore–Kuakata",
+          "evidence_excerpt": "a 2024 repair to the SEA-ME-WE 5 cable was held up for two months by permitting rules alone.",
+          "claimed_occurrence_date": "2024-04-20",
+          "outcome": "rejected",
+          "reason": "manual_evidence_gap",
+          "date_provenance": "Retrieval lead only: Developing Telecoms 2024-04-22 reports an April 20 break; original Windward text gives year only.",
+          "supporting_source_urls": [
+            "https://developingtelecoms.com/telecom-technology/optical-fixed-networks/16586-sea-me-we-5-break-disrupts-internet-service-in-bangladesh.html"
+          ],
+          "missing_evidence": [
+            "核对运营商原始故障与完工公告，并区分2024年故障和原文链接跳到的2026年维修；两个月许可延期尚未独立核实。"
+          ]
         }
       ],
-      "candidate_review_count": 1,
+      "candidate_review_count": 2,
       "candidate_reviews_truncated": false
     },
     "94d17602356ddf178a90036e08ac2c26": {
@@ -10402,7 +10461,21 @@
       "reason": "article_fetch_error",
       "error_type": "HTTPError",
       "http_status": 403,
-      "next_attempt_at": "2026-10-16T03:02:33.743818+00:00"
+      "next_attempt_at": "2026-10-16T03:02:33.743818+00:00",
+      "manual_review": {
+        "reviewed_at": "2026-10-16T03:11:12.754957+00:00",
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "classification": "original_unavailable",
+        "completion_authorized": false,
+        "original_full_text_read": false,
+        "note": "线上公开网页读取返回403。Context.ph 同题全文只谈政策与维修审批，不能据此确认 Malaya 全文没有历史事故。",
+        "alternative_evidence_urls": [
+          "https://context.ph/2026/10/15/resilient-cables-need-stronger-govt-industry-ties/"
+        ],
+        "missing_evidence": [
+          "Malaya 完整正文或授权完整转载；现有政策报道不足以认定原文所有候选已处理。"
+        ]
+      }
     },
     "b119a3a74d6fe14d521ba5098a93decf": {
       "queue_id": "b119a3a74d6fe14d521ba5098a93decf",

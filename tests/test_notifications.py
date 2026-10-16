@@ -73,6 +73,14 @@ class ReportTests(unittest.TestCase):
         self.assertFalse(report.active)
         self.assertIn('续扫',report.body)
 
+    def test_optional_unavailable_evidence_is_visible_but_not_runtime_alarm(self):
+        item={'title':'Alternate source','url':'https://example.org/a','http_status':401,'parent_queue_id':'parent'}
+        report=self.detailed([],unavailable_evidence=[item])
+        self.assertFalse(report.active)
+        self.assertNotIn('运行故障',report.subject)
+        self.assertIn('Alternate source；HTTP 401',report.body)
+        self.assertIn('关联记录 parent',report.body)
+
     def test_url_failure_dedup_and_new_url_alerts(self):
         failure={'stage':'discover','source':'Submarine Networks','url':'https://example.org/a','reason':'cable_page_fetch_error','http_status':404}
         first=self.detailed([],runtime_status='degraded',failure_details=[failure])

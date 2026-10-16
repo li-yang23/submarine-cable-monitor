@@ -57,6 +57,9 @@ def quantity(value: Any) -> int:
 
 
 REASON_LABELS = {
+    "article_fetch_error": "原文抓取失败，保留重试及替代来源补证",
+    "alternative_fetch_failed": "补证来源请求异常",
+    "cross_source_cable_identity_not_supported": "来源不能证实同一海缆，不能合并为同一事件",
     "candidates_rejected": "候选证据未通过，等待逐项补证", "short_content": "未取得完整正文",
     "cross_source_insufficient_sources": "缺少足够的独立可靠来源",
     "cross_source_quote_not_in_body": "模型引用不在来源正文中",
@@ -116,6 +119,10 @@ def detail_report(summary, workflow_status, summary_error, run_url):
     if summary.get("counts", {}).get("discover.deferred.discovery_budget"):
         lines.append("目录扫描已保存续扫位置，下轮继续；这是进度信息，不计作运行故障。")
     lines.append("待复核不表示事件已确认，也不计作程序故障；未确认记录继续保留证据缺口。")
+    unavailable = summary.get("unavailable_evidence", [])
+    if unavailable:
+        lines.append(f"本轮有 {len(unavailable)} 个补证参考页面无法公开读取；已记录证据缺口，不计作程序故障：")
+        lines.extend(f"- {item.get('title') or item.get('parent_queue_id')}；HTTP {item.get('http_status')}；{item.get('url')}；关联记录 {item.get('parent_queue_id')}" for item in unavailable)
     if run_url:
         lines.append("运行记录：" + run_url)
     return Report(active, hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY,

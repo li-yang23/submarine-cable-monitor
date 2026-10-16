@@ -327,5 +327,33 @@
       "final_url": "https://www.submarinenetworks.com/en/systems/eurasia-terrestrial/djibouti-ethiopia",
       "links": 0
     }
-  ]
+  ],
+  "production_validation": {
+    "run_id": 38842714241,
+    "url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/38842714241",
+    "directory_pages_completed": 120,
+    "directory_request_failures": 0,
+    "runtime_status": "degraded",
+    "model_status": "available",
+    "new_primary_fetch_problem": {
+      "queue_id": "02011af52dd99d0f89547cb1d6c69034",
+      "http_status": 403,
+      "action": "kept retry with concrete missing evidence"
+    },
+    "optional_evidence_problem": {
+      "http_status": 401,
+      "action": "classify publisher access restriction separately; resolver, throttling and server failures remain runtime failures"
+    },
+    "queue_counts": {
+      "review": 8,
+      "retry": 1,
+      "pending": 2
+    },
+    "candidate_followup": {
+      "circleid_candidate_11": "CGA confirmation applied to exact re-extracted candidate; parent remains review",
+      "windward_candidate_0": "CGA confirmation applied; parent remains review",
+      "windward_candidate_1": "Original repair-delay passage restored as unresolved candidate; source link points to April 2026 maintenance with a nested link to April 2024 break, so dates must not be mixed"
+    },
+    "scope": "These new retry and pending records were discovered during validation; they are not the original ten."
+  }
 }
