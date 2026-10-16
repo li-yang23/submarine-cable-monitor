@@ -102,6 +102,16 @@ class CrossSourceTests(unittest.TestCase):
         self.assertTrue(excluded_source(self.parent,'https://www.cga.gov.tw/news?id=1&utm_source=test'))
         self.assertFalse(excluded_source(self.parent,'https://www.cga.gov.tw/news?id=2'))
 
+    def test_unread_original_with_manual_scope_hold_saves_evidence_without_completion(self):
+        self.parent['manual_review']={'completion_authorized':False,'missing_evidence':['authorized full text']}
+        with patch.object(self.recovery,'retrieve',return_value=(articles(),'ready')), patch.object(self.extractor,'review_cross_sources',return_value=review()):
+            result=self.recovery.process(self.parent)
+        self.assertEqual(result['inserted'],1)
+        self.assertEqual(self.parent['status'],'review')
+        self.assertEqual(self.parent['reason'],'cross_source_manual_scope_remaining')
+        self.assertFalse(self.state.is_processed(self.parent['url']))
+        self.assertEqual(len(EventStore(self.config.event_store_path).events),1)
+
     def test_partial_manual_scope_cannot_be_auto_completed(self):
         self.queue.mark_review(self.parent, 'candidates_rejected')
         self.parent['candidate_reviews']=[dict(candidate_index=0,evidence_excerpt=Q1,outcome='rejected')]

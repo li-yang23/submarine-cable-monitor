@@ -435,6 +435,13 @@ class CrossSourceRecovery:
             candidate["recovery"].update(status="verified", linked_event_uids=uids)
             self.queue.persist()
             return {"candidates": len(events), "inserted": inserted, "merged": merged, "model_succeeded": model_succeeded}
+        if row.get("manual_review", {}).get("completion_authorized") is False:
+            # A human has identified an unread/partial original scope. Even
+            # valid alternate incidents do not establish coverage of that body.
+            record["reason"] = "manual_scope_remaining"
+            self.queue.mark_review(row, "cross_source_manual_scope_remaining")
+            self.queue.persist()
+            return {"candidates": len(events), "inserted": inserted, "merged": merged, "model_succeeded": model_succeeded}
         self.queue.mark_done(row, "cross_source_corroborated")
         self.queue.persist()  # Acknowledgement always follows durable event writes.
         self.state.mark_processed(row.get("url"), row.get("discovered_url"))
