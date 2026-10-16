@@ -57,6 +57,8 @@ def quantity(value: Any) -> int:
 
 
 REASON_LABELS = {
+    "publisher_access_blocked": "原网站拒绝公开访问，有限重试后保留缺口并停止",
+    "publisher_missing": "原网站返回页面不存在，有限重试后保留缺口并停止",
     "article_fetch_error": "原文抓取失败，保留重试及替代来源补证",
     "alternative_fetch_failed": "补证来源请求异常",
     "cross_source_cable_identity_not_supported": "来源不能证实同一海缆，不能合并为同一事件",
@@ -116,13 +118,14 @@ def detail_report(summary, workflow_status, summary_error, run_url):
         lines.extend(line for line in base.body.splitlines() if "充值" in line or "暂停" in line or "次日" in line)
     changes = summary.get("queue_changes", {})
     lines.append(f"本轮队列变化：新增 {len(changes.get('new', []))} 项，原因或状态变化 {len(changes.get('changed', []))} 项，完成 {len(changes.get('resolved', []))} 项。")
+    lines.append(f"因证据缺失停止核查：本轮 {len(changes.get('closed_unresolved', []))} 项，累计 {quantity(queue.get('unresolved'))} 项；保留原因，不计作已完成。")
     if summary.get("counts", {}).get("discover.deferred.discovery_budget"):
         lines.append("目录扫描已保存续扫位置，下轮继续；这是进度信息，不计作运行故障。")
     lines.append("待复核不表示事件已确认，也不计作程序故障；未确认记录继续保留证据缺口。")
     unavailable = summary.get("unavailable_evidence", [])
     if unavailable:
-        lines.append(f"本轮有 {len(unavailable)} 个补证参考页面无法公开读取；已记录证据缺口，不计作程序故障：")
-        lines.extend(f"- {item.get('title') or item.get('parent_queue_id')}；HTTP {item.get('http_status')}；{item.get('url')}；关联记录 {item.get('parent_queue_id')}" for item in unavailable)
+        lines.append(f"本轮有 {len(unavailable)} 个原文或补证页面无法公开读取；已记录证据缺口，不计作程序故障：")
+        lines.extend(f"- {item.get('title') or item.get('parent_queue_id')}；HTTP {item.get('http_status')}；{item.get('url')}；关联记录 {item.get('parent_queue_id') or '见新闻链接'}" for item in unavailable)
     if run_url:
         lines.append("运行记录：" + run_url)
     return Report(active, hashlib.sha256(json.dumps(conditions).encode()).hexdigest() if active else HEALTHY,
@@ -152,7 +155,7 @@ def with_change_details(report, previous):
     lines.append(f"仍未解决的既有事项：{len(old)} 项。")
     lines.extend("- " + label for _, label in old)
     if resolved:
-        lines.append(f"上次问题本轮未再出现或已解决：{len(resolved)} 项；历史证据仍保存在队列和审计记录中。")
+        lines.append(f"上次告警本轮已退出活动列表（已解决、未再出现或停止核查）：{len(resolved)} 项；历史证据仍保存在队列和审计记录中。")
     return replace(report, body="\n".join(lines))
 
 

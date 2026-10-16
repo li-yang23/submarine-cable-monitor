@@ -355,5 +355,21 @@
       "windward_candidate_1": "Original repair-delay passage restored as unresolved candidate; source link points to April 2026 maintenance with a nested link to April 2024 break, so dates must not be mixed"
     },
     "scope": "These new retry and pending records were discovered during validation; they are not the original ten."
+  },
+  "followup_policy": {
+    "updated_at": "2026-10-16T03:54:28.720450+00:00",
+    "instruction": "如果数据真的缺失，不再核查；处理运行故障。",
+    "stopped_queue_ids": [
+      "fbcc106b28075aac8cfe0c5b84d53636",
+      "6eac7d66cc7ecf8f21a2847f32b35798",
+      "3476cd1cb75cae50e293f16c3941e961",
+      "2269b38069e82f4f397692c703d89d47",
+      "ef8f5a75f10b880d18b0a3bd4e095707",
+      "5026c7086feb380e82dcfc52a6d14d96",
+      "f9d540e46de59049cc6be473e3752d32",
+      "23ac292f8080963bbdaddb90f2b47b44"
+    ],
+    "status": "unresolved",
+    "preserve": "已取得证据、缺失原因、候选和既有事件关联全部保留；不写入 processed 缓存。"
   }
 }

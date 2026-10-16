@@ -121,7 +121,7 @@ class AuditRun:
                 self._failure_keys.add((group, source, identity))
             self.failures = len(self._failure_keys)
             self.failure_details[(group, source, identity)] = {k: record[k] for k in ("stage", "source", "url", "discovered_url", "reason", "http_status", "title", "parent_queue_id") if k in record}
-        if stage == "cross_source_fetch" and outcome == "unavailable":
+        if stage in {"cross_source_fetch", "fetch"} and outcome == "unavailable":
             self.unavailable_details[(record.get("parent_queue_id", ""), record.get("url", ""))] = {
                 k: record[k] for k in ("stage", "url", "discovered_url", "reason", "http_status", "title", "parent_queue_id") if k in record}
         if stage == "model_usage":

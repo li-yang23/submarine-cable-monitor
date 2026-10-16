@@ -1282,7 +1282,7 @@
     },
     "fbcc106b28075aac8cfe0c5b84d53636": {
       "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-14T03:54:43.433097+00:00",
       "attempts": 1,
       "source": "Google News",
@@ -1297,7 +1297,7 @@
       "keyword": "subsea cable disruption",
       "last_attempt_at": "2026-10-14T04:24:09.538985+00:00",
       "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
-      "reason": "cross_source_primary_correction_required",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:42:16.390444+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -1527,7 +1527,16 @@
           ],
           "completion_authorized": false
         }
-      ]
+      ],
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "cross_source_primary_correction_required",
+          "at": "2026-10-16T03:54:28.714842+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715111+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "3a913dc1b58b0a1148745229d00fe549": {
       "queue_id": "3a913dc1b58b0a1148745229d00fe549",
@@ -1692,7 +1701,7 @@
     },
     "6eac7d66cc7ecf8f21a2847f32b35798": {
       "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-14T03:54:43.437906+00:00",
       "attempts": 2,
       "source": "Google News",
@@ -1707,7 +1716,7 @@
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.730992+00:00",
       "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
-      "reason": "cross_source_original_scope_unknown",
+      "reason": "evidence_unavailable",
       "error_type": "HTTPError",
       "http_status": 403,
       "next_attempt_at": null,
@@ -1848,7 +1857,16 @@
             }
           ]
         }
-      ]
+      ],
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "cross_source_original_scope_unknown",
+          "at": "2026-10-16T03:54:28.715118+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715120+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "b76abfb647261b1d41ccf7e6dce1b13e": {
       "queue_id": "b76abfb647261b1d41ccf7e6dce1b13e",
@@ -8891,7 +8909,7 @@
     },
     "3476cd1cb75cae50e293f16c3941e961": {
       "queue_id": "3476cd1cb75cae50e293f16c3941e961",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-14T17:20:37.767035+00:00",
       "attempts": 2,
       "published_date": "2026-10-14",
@@ -8911,7 +8929,7 @@
       "last_seen_at": "2026-10-16T02:54:30.823054+00:00",
       "last_attempt_at": "2026-10-14T17:52:51.643479+00:00",
       "url": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "error_type": "ExtractionUnavailable",
       "http_status": null,
       "next_attempt_at": null,
@@ -9607,7 +9625,16 @@
         }
       ],
       "candidate_review_count": 13,
-      "candidate_reviews_truncated": false
+      "candidate_reviews_truncated": false,
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715123+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715124+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "57ff5443e05514d7c7b533029e02939f": {
       "queue_id": "57ff5443e05514d7c7b533029e02939f",
@@ -9707,7 +9734,7 @@
     },
     "2269b38069e82f4f397692c703d89d47": {
       "queue_id": "2269b38069e82f4f397692c703d89d47",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-14T23:18:34.351024+00:00",
       "attempts": 1,
       "queries": [
@@ -9722,7 +9749,7 @@
       "last_seen_at": "2026-10-15T04:51:42.756680+00:00",
       "last_attempt_at": "2026-10-14T23:21:43.253960+00:00",
       "url": "https://windward.ai/blog/undersea-cable-security-in-the-indo-pacific-starts-with-vessel-behavior/",
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:59:20.513135+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -9836,7 +9863,16 @@
         }
       ],
       "candidate_review_count": 2,
-      "candidate_reviews_truncated": false
+      "candidate_reviews_truncated": false,
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715126+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715127+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "94d17602356ddf178a90036e08ac2c26": {
       "queue_id": "94d17602356ddf178a90036e08ac2c26",
@@ -9863,7 +9899,7 @@
     },
     "ef8f5a75f10b880d18b0a3bd4e095707": {
       "queue_id": "ef8f5a75f10b880d18b0a3bd4e095707",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-14T23:18:34.491224+00:00",
       "attempts": 1,
       "queries": [
@@ -9878,7 +9914,7 @@
       "last_seen_at": "2026-10-16T02:54:30.005825+00:00",
       "last_attempt_at": "2026-10-14T23:22:00.238433+00:00",
       "url": "https://timesofindia.indiatimes.com/videos/international/trump-snubbed-mark-rutte-praises-canada-as-nato-allies-take-on-more-defence-burden/amp_videoshow/134950079.cms",
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:42:16.390524+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -9897,7 +9933,16 @@
         "linked_event_uids": [
           "evt_58ad5cff0074f783b0f0"
         ]
-      }
+      },
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715129+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715129+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "d59e5789ec41c91d0c73d9928c09d55c": {
       "queue_id": "d59e5789ec41c91d0c73d9928c09d55c",
@@ -10042,7 +10087,7 @@
     },
     "5026c7086feb380e82dcfc52a6d14d96": {
       "queue_id": "5026c7086feb380e82dcfc52a6d14d96",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-15T04:51:41.476455+00:00",
       "attempts": 1,
       "discovered_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0waFN6djRhTWlIUFZJV1h0V2lVQU55ajAwcFJWVFRhUWx3VWlGUlNGbkdCbEhUYmNkaEEzTFZ6bnlIbHdPNVJ2RzB5eDFPbzFZbWFPMENYQkx0OEMxWVBXR1hVUjNSUEpmTDU1SlE2cEwzV01iRW1QLW9tQQ?oc=5",
@@ -10101,7 +10146,7 @@
       ],
       "candidate_review_count": 2,
       "candidate_reviews_truncated": false,
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:42:16.390527+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -10121,7 +10166,16 @@
         "linked_event_uids": [
           "evt_7c6e7ffddea09029d55b"
         ]
-      }
+      },
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715132+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715132+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "f323f1766cf916f3a65ae8bd9aa27025": {
       "queue_id": "f323f1766cf916f3a65ae8bd9aa27025",
@@ -10228,7 +10282,7 @@
     },
     "f9d540e46de59049cc6be473e3752d32": {
       "queue_id": "f9d540e46de59049cc6be473e3752d32",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-15T19:56:08.722822+00:00",
       "attempts": 1,
       "title": "Inside the undersea kingdom: the secret, sinister battle to control what lies beneath the waves - The Guardian",
@@ -10263,7 +10317,7 @@
       ],
       "candidate_review_count": 1,
       "candidate_reviews_truncated": false,
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:42:16.390537+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -10282,7 +10336,16 @@
         "linked_event_uids": [
           "evt_58ad5cff0074f783b0f0"
         ]
-      }
+      },
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715134+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715135+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "a4d4a9ecad457fda24fc65b6805aba8f": {
       "queue_id": "a4d4a9ecad457fda24fc65b6805aba8f",
@@ -10336,7 +10399,7 @@
     },
     "23ac292f8080963bbdaddb90f2b47b44": {
       "queue_id": "23ac292f8080963bbdaddb90f2b47b44",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-15T19:56:08.788107+00:00",
       "attempts": 1,
       "title": "Iranian threats put Gulf internet and global data at risk - Minute Mirror",
@@ -10377,7 +10440,7 @@
       ],
       "candidate_review_count": 2,
       "candidate_reviews_truncated": false,
-      "reason": "candidate_evidence_incomplete",
+      "reason": "evidence_unavailable",
       "review_at": "2026-10-16T02:42:16.390546+00:00",
       "next_attempt_at": null,
       "force_retry": false,
@@ -10399,7 +10462,16 @@
           "evt_9462f41dc4b75e2ba97c",
           "evt_ce3de8a00fa790930dd6"
         ]
-      }
+      },
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "candidate_evidence_incomplete",
+          "at": "2026-10-16T03:54:28.715137+00:00"
+        }
+      ],
+      "archived_at": "2026-10-16T03:54:28.715137+00:00",
+      "archival_note": "按用户要求，既有核查已明确缺少原文、原始公告、完整日期或线路对应证据，停止继续核查；保留缺失原因及已有事件关联，不声称已完成。"
     },
     "79cd502b7395fa8fc96f585fd240a5c5": {
       "queue_id": "79cd502b7395fa8fc96f585fd240a5c5",

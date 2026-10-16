@@ -36,7 +36,7 @@ PUBLISHERS = {
     "theguardian.com": "guardian", "windward.ai": "windward",
 }
 FETCH_REASONS = {"article_fetch_error", "article_unavailable", "short_content", "google_news_decode_failed",
-                 "publisher_access_blocked", "subscription_required"}
+                 "publisher_access_blocked", "publisher_missing", "subscription_required"}
 REASONS = {"insufficient_evidence", "different_incident", "date_conflict", "identity_conflict",
            "syndicated_sources", "no_confirmed_incident", "original_scope_unknown"}
 STOP_WORDS = set("the a an and or to from after before of in on for with as by at is are was were has have its it said reports report news internet cable cables submarine subsea undersea disruption disruptions outage outages cut cuts break breaks damage fault faults restored restores restore service services traffic slow slowed connectivity issues recent full fully how why what when this that causes causes between following affected faces growing threats".split())
@@ -352,7 +352,7 @@ class CrossSourceRecovery:
                 emit("cross_source", "review", **article_fields(row), reason=record["reason"])
                 self.queue.persist()
                 return {}
-        unresolved = [c for c in candidates if c.get("outcome") != "accepted" and c.get("recovery", {}).get("status") != "verified"
+        unresolved = [c for c in candidates if c.get("outcome") != "accepted" and c.get("recovery", {}).get("status") not in {"verified", "unresolved"}
                       and not (c.get("manual_disposition") == "excluded" and c.get("exclusion_evidence_urls") and c.get("exclusion_reason"))]
         unresolved.sort(key=lambda c: c.get("recovery", {}).get("last_attempt_at", ""))
         totals = {"model_succeeded": refreshed}
@@ -371,10 +371,13 @@ class CrossSourceRecovery:
             result = self.process_article(lead, candidate=candidate)
             for key, value in result.items():
                 totals[key] = totals.get(key, 0) + value
-        unresolved = [c for c in candidates if c.get("outcome") != "accepted" and c.get("recovery", {}).get("status") != "verified"
+        unresolved = [c for c in candidates if c.get("outcome") != "accepted" and c.get("recovery", {}).get("status") not in {"verified", "unresolved"}
                       and not (c.get("manual_disposition") == "excluded" and c.get("exclusion_evidence_urls") and c.get("exclusion_reason"))]
         # Never infer complete coverage from a legacy/truncated/partial manual review.
-        if unresolved or not candidates or row.get("candidate_reviews_truncated") or row.get("manual_review", {}).get("completion_authorized") is False:
+        if not unresolved and any(c.get("recovery", {}).get("status") == "unresolved" for c in candidates):
+            self.queue.mark_unresolved(row, "candidate_evidence_unavailable")
+            record["reason"] = "candidate_evidence_unavailable"
+        elif unresolved or not candidates or row.get("candidate_reviews_truncated") or row.get("manual_review", {}).get("completion_authorized") is False:
             self.queue.mark_review(row, "candidate_evidence_incomplete")
             record["reason"] = "candidate_evidence_incomplete"
         else:
@@ -417,16 +420,26 @@ class CrossSourceRecovery:
                 model_succeeded = True
                 record["last_review_fingerprint"] = fingerprint
                 events, reason = validate_review(row, articles, result, self.extractor)
+        missing = reason in {"insufficient_sources", "insufficient_evidence", "no_confirmed_incident", "original_scope_unknown",
+                             "primary_correction_required", "date_conflict", "identity_conflict", "cable_identity_not_supported"}
+        # Only successful research with the same unresolved evidence can stop.
+        # Search/service failures and time limits never exhaust evidence attempts.
+        if not events and missing and not record.get("fetch_failures"):
+            same = previous.get("evidence_fingerprint") == fingerprint and previous.get("reason") == reason
+            record["unchanged_evidence_attempts"] = previous.get("unchanged_evidence_attempts", 0) + 1 if same else 1
+        exhausted = record.get("unchanged_evidence_attempts", 0) >= 3
         record["reason"] = reason
         emit("cross_source", "verified" if events else "review", **article_fields(row), reason=reason, candidate_count=len(events))
         if candidate is not None:
             candidate["cross_source"] = record
-            candidate["recovery"] = {"status": "review", "reason": reason, "last_attempt_at": now.isoformat()}
+            candidate["recovery"] = {"status": "unresolved" if exhausted else "review", "reason": reason, "last_attempt_at": now.isoformat()}
         if not events:
             if candidate is not None:
                 self.queue.persist()
                 return {"model_succeeded": model_succeeded}
-            if reason in {"search_failed", "search_time_limit", "review_time_limit"}:
+            if exhausted:
+                self.queue.mark_unresolved(row, "cross_source_"+reason)
+            elif reason in {"search_failed", "search_time_limit", "review_time_limit"}:
                 self.queue.mark_retry(row, "cross_source_"+reason, delay_seconds=self.config.cross_source_retry_hours*3600)
             else:
                 self.queue.mark_review(row, "cross_source_"+reason)

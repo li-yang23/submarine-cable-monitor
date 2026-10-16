@@ -73,6 +73,13 @@ class ReportTests(unittest.TestCase):
         self.assertFalse(report.active)
         self.assertIn('续扫',report.body)
 
+    def test_archived_missing_data_is_not_active_failure_or_completed(self):
+        report=self.detailed([],queue={'unresolved':8},queue_changes={'closed_unresolved':[{'queue_id':'a'}]})
+        self.assertFalse(report.active)
+        self.assertIn('本轮 1 项，累计 8 项',report.body)
+        self.assertIn('不计作已完成',report.body)
+        self.assertNotIn('运行故障',report.subject)
+
     def test_optional_unavailable_evidence_is_visible_but_not_runtime_alarm(self):
         item={'title':'Alternate source','url':'https://example.org/a','http_status':401,'parent_queue_id':'parent'}
         report=self.detailed([],unavailable_evidence=[item])

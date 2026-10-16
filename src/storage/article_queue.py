@@ -113,6 +113,24 @@ class ArticleQueue:
         row.update(status="retry", reason=reason, error_type=error_type, http_status=http_status,
                    next_attempt_at=(utcnow() + timedelta(seconds=delay_seconds)).isoformat())
 
+    def mark_unresolved(self, item: dict[str, Any] | str, reason: str) -> None:
+        """Retain an explicit coverage gap without claiming successful processing."""
+        row = self.get(item)
+        if row:
+            row.setdefault("resolution_history", []).append({"status": row["status"], "reason": row.get("reason"), "at": utcnow().isoformat()})
+            row.update(status="unresolved", reason=reason, archived_at=utcnow().isoformat(), next_attempt_at=None, force_retry=False)
+
+    def mark_publisher_unavailable(self, item: dict[str, Any] | str, reason: str, *, error_type: str = "", http_status: int | None = None) -> None:
+        row = self.get(item)
+        if not row:
+            return
+        row["availability_attempts"] = row.get("availability_attempts", 0) + 1
+        row.update(error_type=error_type, http_status=http_status)
+        if row["availability_attempts"] >= 3:
+            self.mark_unresolved(row, reason)
+        else:
+            self.mark_retry(row, reason, error_type=error_type, http_status=http_status, delay_seconds=86400)
+
     def mark_done(self, item: dict[str, Any] | str, reason: str = "processed") -> None:
         row = self.get(item)
         if row:
@@ -127,6 +145,7 @@ class ArticleQueue:
         row = self.get(item)
         if not row:
             return False
+        row["availability_attempts"] = 0
         row.update(status="pending", reason=reason, next_attempt_at=None, requeued_at=utcnow().isoformat(), force_retry=True)
         return True
 
@@ -141,7 +160,7 @@ class ArticleQueue:
         return bool(self.model_pause and utcnow() < datetime.fromisoformat(self.model_pause["retry_at"]))
 
     def counts(self) -> dict[str, int]:
-        return {status: sum(row["status"] == status for row in self.items.values()) for status in ("pending", "retry", "done", "review")}
+        return {status: sum(row["status"] == status for row in self.items.values()) for status in ("pending", "retry", "done", "review", "unresolved")}
 
     def stats(self) -> dict[str, Any]:
         pending = [row for row in self.items.values() if row["status"] in {"pending", "retry"}]

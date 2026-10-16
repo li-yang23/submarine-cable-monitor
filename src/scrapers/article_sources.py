@@ -75,6 +75,19 @@ class ArticleScraper:
         emit("discover", "found", **article_fields(item))
         return self.article_queue.enqueue(item)
 
+    @staticmethod
+    def _publisher_failure(details):
+        status = details.get("http_status")
+        return ("publisher_missing" if status in {404, 410} else
+                "publisher_access_blocked" if status in {401, 403, 451} else "article_fetch_error")
+
+    def _retain_fetch_failure(self, item, failure):
+        if failure["reason"] in {"publisher_missing", "publisher_access_blocked"}:
+            self.article_queue.mark_publisher_unavailable(item, **failure)
+        else:
+            self.article_queue.mark_retry(item, **failure)
+        self.article_queue.persist()
+
     def iter_queued_articles(self, dry_run: bool = False):
         """Yield a body or None after a request, so callers can rotate sources."""
         self._prepare_queue(dry_run)
@@ -106,9 +119,9 @@ class ArticleScraper:
                     raise ValueError("empty_article_content")
             except Exception as exc:
                 details = error_details(exc)
-                emit("fetch", "failed", **fields, reason="article_fetch_error", **details)
-                self.article_queue.mark_retry(item, reason="article_fetch_error", **details)
-                self.article_queue.persist()
+                reason = self._publisher_failure(details)
+                emit("fetch", "failed" if reason == "article_fetch_error" else "unavailable", **fields, reason=reason, **details)
+                self._retain_fetch_failure(item, {"reason": reason, **details})
                 yield None  # Let the pipeline rotate sources after a failed request.
                 continue
             article.update(queue_id=item["queue_id"], discovered_url=url)
@@ -430,8 +443,7 @@ class GoogleNewsArticleScraper(ArticleScraper):
                 yield article
             else:
                 failure = self._last_fetch_failure or {"reason": "article_unavailable"}
-                self.article_queue.mark_retry(item, **failure)
-                self.article_queue.persist()
+                self._retain_fetch_failure(item, failure)
                 yield None
         emit("collection", "completed", source=self.source_name, attempts=attempts, article_count=article_count, max_articles=max_articles, max_attempts=max_attempts)
 
@@ -459,8 +471,10 @@ class GoogleNewsArticleScraper(ArticleScraper):
         try:
             page = self.extract_page_text(real_url)
         except Exception as exc:
-            self._last_fetch_failure = {"reason": "article_fetch_error", **error_details(exc)}
-            emit("fetch", "failed", **fields, reason="article_fetch_error", **error_details(exc))
+            details = error_details(exc)
+            reason = self._publisher_failure(details)
+            self._last_fetch_failure = {"reason": reason, **details}
+            emit("fetch", "failed" if reason == "article_fetch_error" else "unavailable", **fields, reason=reason, **details)
             self.logger.warning("Skipping Google News article %s: %s", fields["article_id"], type(exc).__name__)
             return None
         content = clean_text(page.get("content"))
