@@ -684,14 +684,35 @@ class SubmarineNetworksScraper(ArticleScraper):
                 emit("discover", "deferred", source=self.source_name, reason="discovery_budget")
                 break
             cable = links[index]
-            cable_url = clean_text(cable.get("href"))
+            original_url = clean_text(cable.get("href"))
+            cable_url = self.article_queue.get_cursor("directory_route:" + original_url) or original_url
+            retry_key = "directory_retry:" + original_url
+            retry = self.article_queue.get_cursor(retry_key, {})
+            if retry.get("retry_at", 0) > time.time():
+                emit("discover", "failed", source=self.source_name, url=cable_url, reason="directory_unresolved", http_status=retry.get("http_status"))
+                self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
+                continue
             cable_name = clean_text(cable.get("cable_name"))
             if not cable_url:
                 self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
                 continue
             try:
-                discovered_urls = self._discover_article_urls(cable_url)
+                try:
+                    discovered_urls = self._discover_article_urls(cable_url)
+                except requests.HTTPError as exc:
+                    if error_details(exc).get("http_status") not in {404, 410}:
+                        raise
+                    repaired = self._repair_directory({**cable, "href": cable_url})
+                    if repaired is None:
+                        raise
+                    discovered_urls = repaired
+                    if original_url != cable_url:
+                        self.article_queue.set_cursor("directory_route:" + original_url, self.article_queue.get_cursor("directory_route:" + cable_url))
+                self.article_queue.set_cursor(retry_key, {})
             except Exception as exc:
+                status = error_details(exc).get("http_status")
+                if status in {404, 410}:
+                    self.article_queue.set_cursor(retry_key, {"http_status": status, "retry_at": time.time() + 86400})
                 emit("discover", "failed", source=self.source_name, url=cable_url, reason="cable_page_fetch_error", **error_details(exc))
                 self.logger.warning("Skipping cable page: %s", type(exc).__name__)
                 # Retry this cable on the next traversal; failures are never removed.
@@ -711,6 +732,29 @@ class SubmarineNetworksScraper(ArticleScraper):
             if links and not discovered_count:
                 emit("discover", "failed", source=self.source_name, reason="no_articles_in_seed_traversal", entry_count=0)
         return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
+
+    def _repair_directory(self, cable):
+        """Use only links actually advertised by the source; never guess paths."""
+        if not hasattr(self, "_directory_index"):
+            self._directory_index = BeautifulSoup(self.get("https://www.submarinenetworks.com/en/systems").text, "html.parser")
+        wanted = re.sub(r"[^a-z0-9]", "", cable.get("cable_name", "").lower())
+        old = urlparse(cable["href"])
+        choices = set()
+        for link in self._directory_index.select("a[href]"):
+            url = urljoin("https://www.submarinenetworks.com", link["href"])
+            parsed = urlparse(url)
+            name = re.sub(r"[^a-z0-9]", "", link.get_text(" ").lower())
+            if parsed.scheme != "https" or parsed.hostname not in {"www.submarinenetworks.com", "submarinenetworks.com"} or parsed.query or parsed.fragment or not parsed.path.startswith("/en/systems/"):
+                continue
+            if url != cable["href"] and (wanted and name == wanted or parsed.path.rsplit("/", 1)[-1] == old.path.rsplit("/", 1)[-1]):
+                choices.add(url)
+        if len(choices) != 1:
+            return None
+        replacement = choices.pop()
+        urls = self._discover_article_urls(replacement)  # verify before remembering
+        self.article_queue.set_cursor("directory_route:" + cable["href"], replacement)
+        emit("directory", "repaired", source=self.source_name, discovered_url=cable["href"], url=replacement, reason="advertised_replacement")
+        return urls
 
     def _load_cable_links(self) -> list[dict[str, Any]]:
         path = Path(getattr(self.config, "submarine_networks_links_path", "data/cable-links.json"))
@@ -739,7 +783,7 @@ class SubmarineNetworksScraper(ArticleScraper):
             if not text or href == cable_url:
                 continue
             if "/articles/" in href or re.search(r"(fault|repair|cut|outage|damage|disrupt)", text, re.I):
-                if "submarinenetworks.com" in href and href not in urls:
+                if urlparse(href).hostname in {"submarinenetworks.com", "www.submarinenetworks.com"} and href not in urls:
                     urls.append(href)
         page_text = clean_text(soup.get_text(" ")).lower()
         if not links or re.search(r"just a moment|checking your browser|enable javascript and cookies to continue|verify you are human", page_text):
@@ -791,6 +835,11 @@ def article_body_text(soup: BeautifulSoup) -> str:
     node = (max(candidates, key=lambda n: len(n.get_text(" ")), default=None)
             or soup.select_one("article") or soup.select_one("main") or soup.body or soup)
     content = clean_text(node.get_text(" "))
+    if len(content) < 300:
+        enclosing = node.find_parent("article") or soup.select_one("article")
+        if enclosing is not None and len(clean_text(enclosing.get_text(" "))) >= 300:
+            node = enclosing
+            content = clean_text(node.get_text(" "))
     # Some publisher themes append recommendations inside the same body element.
     return re.split(r"\b(?:news via inbox|sign up to get the latest updates straight to your inbox|share this story,? choose your platform|you might also like|related posts|related articles)\b", content, maxsplit=1, flags=re.I)[0].strip()
 

@@ -67,6 +67,21 @@ class NetworksDiscoveryTests(unittest.TestCase):
         self.assertEqual(seed_record["entry_count"], 3)
         self.assertEqual(self.scraper.article_queue.get_cursor(self.scraper.source_name), 0)
 
+    def test_directory_repair_only_uses_verified_advertised_same_site_link(self):
+        old='https://www.submarinenetworks.com/en/old/aag'
+        new='https://www.submarinenetworks.com/en/systems/trans-pacific/aag'
+        html=f'<a href="{new}">AAG</a><a href="https://evil.example/en/systems/aag">AAG</a>'
+        with patch.object(self.scraper,'get',return_value=self.response(html)), patch.object(self.scraper,'_discover_article_urls',return_value=['https://www.submarinenetworks.com/articles/fault']) as discover:
+            found=self.scraper._repair_directory({'href':old,'cable_name':'AAG'})
+        discover.assert_called_once_with(new)
+        self.assertEqual(self.scraper.article_queue.get_cursor('directory_route:'+old),new)
+        self.assertEqual(len(found),1)
+
+    def test_ambiguous_directory_replacement_is_not_guessed(self):
+        html='<a href="/en/systems/a/aag">AAG</a><a href="/en/systems/b/aag">AAG</a>'
+        with patch.object(self.scraper,'get',return_value=self.response(html)):
+            self.assertIsNone(self.scraper._repair_directory({'href':'https://www.submarinenetworks.com/en/old/aag','cable_name':'AAG'}))
+
     def test_missing_or_empty_seed_file_is_not_silent_success(self):
         self.assertEqual(self.scraper._load_cable_links(), [])
         Path(self.config.submarine_networks_links_path).write_text("[]")

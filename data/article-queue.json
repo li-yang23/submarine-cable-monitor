@@ -1298,19 +1298,19 @@
       "last_attempt_at": "2026-10-14T04:24:09.538985+00:00",
       "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
       "reason": "cross_source_primary_correction_required",
-      "review_at": "2026-10-15T20:00:20.074484+00:00",
+      "review_at": "2026-10-16T02:42:16.390444+00:00",
       "next_attempt_at": null,
       "force_retry": false,
       "manual_review": {
         "classification": "partial_evidence_review",
-        "note": "本次公共页面提取只返回标题和发布时间；已复读替代报道，未找到 Globe 可核对时间戳的原始公告或更正，日期争议仍在。",
+        "note": "未找到解决 Globe 起始日冲突的新原始公告；现有替代报道不能用 PLDT 日期替代 Globe。",
         "linked_event_uids": [
           "evt_50591464518b00b97d78"
         ],
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
         "original_full_text_read": true,
         "coverage_limit": "关联报道主题及可独立核实的事实；原文不可读时不保证覆盖其全部段落。",
-        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
         "alternative_evidence_urls": [
           "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
           "https://context.ph/2026/10/03/globe-reroutes-international-traffic-after-subsea-fiber-break-repairs-expected-in-weeks/",
@@ -1360,8 +1360,7 @@
         "requires_primary_correction": true,
         "previous_report": "research/reviews/final-six-2026-10-14.json",
         "missing_evidence": [
-          "Globe 故障起始时刻及相关电缆身份的原始公告或报道更正",
-          "区分周四的流量疏转时间与实际故障时间，不用 PLDT 的日期替代 Globe"
+          "可核对时间戳的 Globe 故障公告或更正，明确故障与疏转时间及线路身份"
         ],
         "completion_authorized": false
       },
@@ -1463,6 +1462,70 @@
           },
           "requires_primary_correction": true,
           "previous_report": "research/reviews/final-six-2026-10-14.json"
+        },
+        {
+          "classification": "partial_evidence_review",
+          "note": "本次公共页面提取只返回标题和发布时间；已复读替代报道，未找到 Globe 可核对时间戳的原始公告或更正，日期争议仍在。",
+          "linked_event_uids": [
+            "evt_50591464518b00b97d78"
+          ],
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "original_full_text_read": true,
+          "coverage_limit": "关联报道主题及可独立核实的事实；原文不可读时不保证覆盖其全部段落。",
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "alternative_evidence_urls": [
+            "https://newsbytes.ph/2026/10/03/ph-sg-subsea-cable-cut-disrupts-internet-as-telcos-reroute-traffic/",
+            "https://context.ph/2026/10/03/globe-reroutes-international-traffic-after-subsea-fiber-break-repairs-expected-in-weeks/",
+            "https://tribune.net.ph/2026/10/03/globe-taps-backup-links-after-cable-break-2",
+            "https://newsinfo.inquirer.net/2317174/pldt-internet-services-fully-restored-after-cable-cut",
+            "https://backendnews.net/globe-restores-internet-after-ph-singapore-cable-disruption/"
+          ],
+          "date_review": {
+            "status": "review_complete_exact_start_unknown",
+            "publication_date": "2026-10-03",
+            "publication_time_local": "11:48",
+            "timezone": "Asia/Manila",
+            "claims": [
+              {
+                "source": "ABS-CBN",
+                "field": "disruption_start",
+                "wording": "Thursday night",
+                "calendar_interpretation": "2026-10-01",
+                "basis": "prior_public_browser_body_review"
+              },
+              {
+                "source": "Newsbytes.PH / Daily Tribune",
+                "field": "rerouting_start",
+                "wording": "Thursday night",
+                "calendar_interpretation": "2026-10-01"
+              },
+              {
+                "source": "Context.ph",
+                "field": "rerouting_start",
+                "wording": "last night",
+                "calendar_interpretation": "2026-10-02"
+              },
+              {
+                "source": "PLDT via Inquirer",
+                "field": "PLDT_cable_cut_date",
+                "calendar_interpretation": "2026-10-02"
+              }
+            ],
+            "adopted_globe_occurrence_date": null,
+            "globe_service_restoration_reported_date": "2026-10-04",
+            "globe_physical_repair_date": null,
+            "same_physical_cable_as_c2c_confirmed": false,
+            "finding": "冲突存在于报道措辞、时间所指的动作及运营商范围。10 月 3 日为周六，周四为 10 月 1 日；不是把发布日期当故障日即可解决的问题。未找到可独立核对时间戳的 Globe 原始公告或更正，不能断言 ABS-CBN 写错，也不能用 PLDT 的 10 月 2 日替代 Globe 起始日。",
+            "decision": "完成有证据边界的人工复核：保留 Globe 报道、冲突和服务恢复记录；精确起始日为空。仅关联同周菲律宾区域事件，不认定同一根电缆，不新增假定为 10 月 1 日的独立事故，不改动 GMA 明确报道的 10 月 2 日事件。",
+            "reopen_trigger": "后续出现带明确发生日期、时间及电缆身份的 Globe 原始公告或新闻更正时重新核对；无需重复抓取现有冲突页面。"
+          },
+          "requires_primary_correction": true,
+          "previous_report": "research/reviews/final-six-2026-10-14.json",
+          "missing_evidence": [
+            "Globe 故障起始时刻及相关电缆身份的原始公告或报道更正",
+            "区分周四的流量疏转时间与实际故障时间，不用 PLDT 的日期替代 Globe"
+          ],
+          "completion_authorized": false
         }
       ]
     },
@@ -1644,32 +1707,31 @@
       "keyword": "undersea cable outage",
       "last_attempt_at": "2026-10-14T09:36:51.730992+00:00",
       "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
-      "reason": "cross_source_quote_not_in_body",
+      "reason": "cross_source_original_scope_unknown",
       "error_type": "HTTPError",
       "http_status": 403,
       "next_attempt_at": null,
-      "review_at": "2026-10-15T20:00:41.831943+00:00",
+      "review_at": "2026-10-16T02:42:16.390467+00:00",
       "force_retry": false,
       "manual_review": {
         "classification": "partial_evidence_review",
-        "note": "公开主办方资料只证明海缆中断演练主题；付费全文未读。上轮找到的两篇菲律宾 Globe 文章与澳大利亚银行演练范围不符，不能作为补证。",
+        "note": "FT 全文仍不可读；菲律宾 Globe 报道排除规则已接入自动流程。",
         "linked_event_uids": [
           "evt_e74e1e60d0c5fe6a3610",
           "evt_6765aedabe6455682eba",
           "evt_f83fcdfc654406276bc4"
         ],
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
         "original_full_text_read": false,
         "coverage_limit": "公开主题已核实，付费正文未读；不能证明 FT 全文不包含其他未公开细节。相关越南事件关联表示独立背景核查，不声称 FT 全文逐一列出了这些电缆。",
-        "report": "research/reviews/remaining-three-2026-10-15.json",
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
         "alternative_evidence_urls": [
           "https://perthusasia.edu.au/events/black-swan-summit-workshop/"
         ],
         "requires_primary_correction": false,
         "previous_report": "research/reviews/final-six-2026-10-14.json",
         "missing_evidence": [
-          "可合法读取的 FT 正文或授权完整转载",
-          "若正文含真实事故，需要每项事故的独立原始证据"
+          "可合法读取的完整正文或授权完整转载；澳大利亚银行演练不能证实全文全部事故线索"
         ],
         "completion_authorized": false,
         "excluded_alternative_sources": [
@@ -1744,6 +1806,47 @@
           ],
           "requires_primary_correction": false,
           "previous_report": "research/reviews/final-six-2026-10-14.json"
+        },
+        {
+          "classification": "partial_evidence_review",
+          "note": "公开主办方资料只证明海缆中断演练主题；付费全文未读。上轮找到的两篇菲律宾 Globe 文章与澳大利亚银行演练范围不符，不能作为补证。",
+          "linked_event_uids": [
+            "evt_e74e1e60d0c5fe6a3610",
+            "evt_6765aedabe6455682eba",
+            "evt_f83fcdfc654406276bc4"
+          ],
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "original_full_text_read": false,
+          "coverage_limit": "公开主题已核实，付费正文未读；不能证明 FT 全文不包含其他未公开细节。相关越南事件关联表示独立背景核查，不声称 FT 全文逐一列出了这些电缆。",
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "alternative_evidence_urls": [
+            "https://perthusasia.edu.au/events/black-swan-summit-workshop/"
+          ],
+          "requires_primary_correction": false,
+          "previous_report": "research/reviews/final-six-2026-10-14.json",
+          "missing_evidence": [
+            "可合法读取的 FT 正文或授权完整转载",
+            "若正文含真实事故，需要每项事故的独立原始证据"
+          ],
+          "completion_authorized": false,
+          "excluded_alternative_sources": [
+            {
+              "url": "https://canadianinquirer.net/2026/10/03/globe-reroutes-internet-traffic-after-subsea-cable-break-disrupts-services/",
+              "title": "Globe reroutes internet traffic after subsea cable break disrupts services",
+              "published_date": "2026-10-03",
+              "publisher_group": "canadian-inquirer",
+              "content_length": 1972,
+              "content_sha256": "c49631182012f507b4dc84f16119288d51221812b705208190a9107757c9d477"
+            },
+            {
+              "url": "https://bworldonline.com/corporate/2026/10/04/784204/globe-restores-internet-services-after-subsea-cable-disruption/",
+              "title": "Globe restores internet services after subsea cable disruption",
+              "published_date": "2026-10-04",
+              "publisher_group": "businessworld",
+              "content_length": 1488,
+              "content_sha256": "56561b168390e0a38954fc2400a2a82fdab8d950fa558c615b80b9a7038722bd"
+            }
+          ]
         }
       ]
     },
@@ -8808,23 +8911,280 @@
       "last_seen_at": "2026-10-15T23:07:10.888535+00:00",
       "last_attempt_at": "2026-10-14T17:52:51.643479+00:00",
       "url": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
-      "reason": "candidates_rejected",
+      "reason": "candidate_evidence_incomplete",
       "error_type": "ExtractionUnavailable",
       "http_status": null,
       "next_attempt_at": null,
-      "review_at": "2026-10-15T01:52:02.966976+00:00",
+      "review_at": "2026-10-16T02:42:16.390513+00:00",
       "force_retry": false,
       "manual_review_history": [
-        {}
+        {},
+        {
+          "classification": "partial_evidence_review",
+          "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
+          "report": "research/reviews/remaining-three-2026-10-15.json",
+          "note": "已补四条可确认事件并关联已有事件；仍有聚合历史、日期及归因缺口，保留复核。",
+          "missing_evidence": [
+            "原运行未命名候选的证据片段缺失",
+            "见逐条 claims 的 missing 字段"
+          ],
+          "completion_authorized": false,
+          "original_full_text_read": true,
+          "linked_event_uids": [
+            "evt_711d1a396fb050d9937f",
+            "evt_58ad5cff0074f783b0f0",
+            "evt_55226de6c8095293754b",
+            "evt_6dbb4a9dbb55b3d50f98",
+            "evt_49edbe14ea89d2a98533",
+            "evt_a294211df980ea47ced2",
+            "evt_7c6e7ffddea09029d55b",
+            "evt_136f611619bcf8d22614",
+            "evt_9462f41dc4b75e2ba97c",
+            "evt_ce3de8a00fa790930dd6"
+          ],
+          "historical_candidates": [
+            {
+              "candidate_index": 0,
+              "cable_name": "Taima No. 2 and Taima No. 3",
+              "outcome": "rejected",
+              "reason": "no_incident_keyword",
+              "historical_evidence_excerpt_available": false
+            },
+            {
+              "candidate_index": 1,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 3,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 4,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 5,
+              "cable_name": "C-Lion1 and BCS East-West Interlink",
+              "outcome": "rejected",
+              "reason": "no_incident_keyword",
+              "historical_evidence_excerpt_available": false
+            },
+            {
+              "candidate_index": 6,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 7,
+              "cable_name": "SEA-ME-WE 4 and IMEWE",
+              "outcome": "accepted",
+              "historical_evidence_excerpt_available": true
+            },
+            {
+              "candidate_index": 8,
+              "cable_name": "",
+              "outcome": "rejected",
+              "reason": "unnamed_missing_date",
+              "historical_evidence_excerpt_available": false,
+              "claim_mapping": null,
+              "missing_evidence": [
+                "原运行未保存该候选正文、地点及模型日期，不能将编号硬配给某段原文",
+                "可识别事故范围及来源支持的完整发生日期"
+              ]
+            },
+            {
+              "candidate_index": 9,
+              "cable_name": "Indigo West and Indigo Central",
+              "outcome": "rejected",
+              "reason": "no_incident_keyword",
+              "historical_evidence_excerpt_available": false
+            }
+          ],
+          "claims": [
+            {
+              "id": "matsu",
+              "claim": "台马多年度汇总与2025年初故障",
+              "result": "partial",
+              "linked_event_uids": [
+                "evt_49edbe14ea89d2a98533",
+                "evt_55226de6c8095293754b",
+                "evt_6dbb4a9dbb55b3d50f98"
+              ],
+              "missing": "2018—2022年27次及2023—2025年其余历史故障的逐次记录；本次已确认的三次不能替代全量清单。",
+              "evidence_urls": [
+                "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-250111-033500",
+                "https://moda.gov.tw/press/press-releases/15082",
+                "https://moda.gov.tw/press/press-releases/15210",
+                "https://www.cht.com.tw/zh-tw/home/cht/messages/2025/msg-2502161350"
+              ]
+            },
+            {
+              "id": "baltic_nov_2024",
+              "candidate_index": 5,
+              "claim": "C-Lion1 与 BCS East-West Interlink",
+              "result": "confirmed",
+              "linked_event_uids": [
+                "evt_a294211df980ea47ced2",
+                "evt_711d1a396fb050d9937f"
+              ],
+              "finding": "分别为2024-11-18和2024-11-17；名称白名单缺失导致误拦，已修复。",
+              "evidence_urls": [
+                "https://www.cinia.fi/en/news/a-fault-in-the-cinia-c-lion1-submarine-cable-between-finland-and-germany",
+                "https://labs.ripe.net/author/emileaben/does-the-internet-route-around-damage-baltic-sea-cable-cuts/"
+              ]
+            },
+            {
+              "id": "indigo_aug_2026",
+              "candidate_index": 9,
+              "claim": "珀斯 INDIGO 双故障",
+              "result": "partial",
+              "missing": "逐条电缆故障时间、修复报告、所指油轮与损伤的确定因果证据。",
+              "finding": "名称规则漏认已修复；只证实2026-08-08至09周末窗口，不填精确日；撤回相关旧数据错误日期。",
+              "evidence_urls": [
+                "https://www.itnews.com.au/news/afp-assessing-report-in-connection-with-perth-cable-faults-628061"
+              ]
+            },
+            {
+              "id": "baltic_dec_2024",
+              "claim": "2024年12月波罗的海多缆受损",
+              "result": "partial",
+              "linked_event_uids": [
+                "evt_58ad5cff0074f783b0f0"
+              ],
+              "finding": "新增有运营商确切日期的 C-Lion1 2024-12-25，修复2025-01-06。",
+              "missing": "其他线路逐条系统名称及时间，不能把 EstLink 2 电力电缆当通信海缆。",
+              "evidence_urls": [
+                "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland",
+                "https://www.cinia.fi/en/news/fault-detected-in-cinia-c-lion1-submarine-cable",
+                "https://www.cinia.fi/en/news/c-lion1-submarine-cable-fully-restored"
+              ]
+            },
+            {
+              "id": "fitburg",
+              "claim": "2025年12月芬兰—爱沙尼亚通信故障",
+              "result": "confirmed_scope_limited",
+              "linked_event_uids": [
+                "evt_7c6e7ffddea09029d55b"
+              ],
+              "finding": "警方确认2025-12-31、Elisa和Arelion两条通信缆；旧相关记录补证，系统名称未公布。",
+              "evidence_urls": [
+                "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded"
+              ]
+            },
+            {
+              "id": "redsea_2024",
+              "claim": "2024年2月红海三条通信缆受损",
+              "result": "confirmed_scope_limited",
+              "linked_event_uids": [
+                "evt_136f611619bcf8d22614",
+                "evt_9462f41dc4b75e2ba97c"
+              ],
+              "finding": "更正日期为2024-02-24、系统名AAE-1/SEACOM-Tata/EIG；不将疑似船锚归因写为确定原因。",
+              "evidence_urls": [
+                "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+              ]
+            },
+            {
+              "id": "redsea_2025",
+              "candidate_index": 7,
+              "claim": "2025年9月红海故障",
+              "result": "partial",
+              "linked_event_uids": [
+                "evt_ce3de8a00fa790930dd6"
+              ],
+              "missing": "SMW4、IMEWE各自精确发生日及第三条系统身份；现有记录日期保持未知。",
+              "evidence_urls": [
+                "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+              ]
+            },
+            {
+              "id": "baltic_oct_2023",
+              "claim": "2023年10月波罗的海多设施损伤",
+              "result": "partial",
+              "finding": "瑞典政府证实瑞典—爱沙尼亚通信缆损伤；不可把附近天然气管道及不同线路合成一条。",
+              "missing": "每条通信缆完整身份与确切发生时刻；船只归因还需对应调查证据。",
+              "evidence_urls": [
+                "https://www.government.se/articles/2023/10/damaged-telecommunications-cable-between-sweden-and-estonia/"
+              ]
+            },
+            {
+              "id": "historical",
+              "claim": "1914、1939、2006年历史例证",
+              "result": "review",
+              "missing": "档案或运营商逐缆报告及日期；聚合描述不能拆成臆造的单缆记录。",
+              "evidence_urls": [
+                "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+              ]
+            },
+            {
+              "id": "other_taiwan",
+              "claim": "台澎3号刑事案件及2026年4月马祖沉船说法",
+              "result": "partial",
+              "missing": "2026年4月马祖沉船说法的对应线路身份与原始事故报告",
+              "evidence_urls": [
+                "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+                "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
+              ],
+              "finding": "台澎三号2025-02-25已由海巡署补证",
+              "linked_event_uids": [
+                "evt_91edc1640468d943092d",
+                "evt_c4a9157c86f5517f90f4",
+                "evt_42ff2021817a41639f55"
+              ]
+            }
+          ]
+        }
       ],
       "manual_review": {
         "classification": "partial_evidence_review",
-        "reviewed_at": "2026-10-15T01:52:02.966976+00:00",
-        "report": "research/reviews/remaining-three-2026-10-15.json",
-        "note": "已补四条可确认事件并关联已有事件；仍有聚合历史、日期及归因缺口，保留复核。",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "note": "台澎三号/Hongtai58 的具体发生日已补证并更正既有事件；其余未确认历史候选继续逐项核实。",
         "missing_evidence": [
-          "原运行未命名候选的证据片段缺失",
-          "见逐条 claims 的 missing 字段"
+          "既有 claims 中除台澎三号外的历史、INDIGO 精确时间、马祖沉船及线路身份缺口"
         ],
         "completion_authorized": false,
         "original_full_text_read": true,
@@ -8838,7 +9198,10 @@
           "evt_7c6e7ffddea09029d55b",
           "evt_136f611619bcf8d22614",
           "evt_9462f41dc4b75e2ba97c",
-          "evt_ce3de8a00fa790930dd6"
+          "evt_ce3de8a00fa790930dd6",
+          "evt_91edc1640468d943092d",
+          "evt_c4a9157c86f5517f90f4",
+          "evt_42ff2021817a41639f55"
         ],
         "historical_candidates": [
           {
@@ -9060,12 +9423,22 @@
           {
             "id": "other_taiwan",
             "claim": "台澎3号刑事案件及2026年4月马祖沉船说法",
-            "result": "review",
-            "missing": "对应事故发生日期、线路身份、主管部门事故或调查原始记录；判决日期不等于故障日期。",
+            "result": "partial",
+            "missing": "2026年4月马祖沉船说法的对应线路身份与原始事故报告",
             "evidence_urls": [
-              "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership"
+              "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+              "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
+            ],
+            "finding": "台澎三号2025-02-25已由海巡署补证",
+            "linked_event_uids": [
+              "evt_91edc1640468d943092d",
+              "evt_c4a9157c86f5517f90f4",
+              "evt_42ff2021817a41639f55"
             ]
           }
+        ],
+        "alternative_evidence_urls": [
+          "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
         ]
       }
     },
@@ -9182,10 +9555,29 @@
       "last_seen_at": "2026-10-15T04:51:42.756680+00:00",
       "last_attempt_at": "2026-10-14T23:21:43.253960+00:00",
       "url": "https://windward.ai/blog/undersea-cable-security-in-the-indo-pacific-starts-with-vessel-behavior/",
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-14T23:21:54.720886+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-10-16T02:42:16.390519+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "partial_evidence_review",
+        "note": "已通读正文。Hongtai58 关联到2025-02-25台澎三号；船只缓行、测绘及风险预测不认定已发生断缆。",
+        "missing_evidence": [
+          "SEA-ME-WE 5 在2024年的故障和维修延期需对应运营商完整公告；不能把风险观测次数当故障次数"
+        ],
+        "completion_authorized": false,
+        "alternative_evidence_urls": [
+          "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+          "https://bscplc.portal.gov.bd/pages/press-releases"
+        ],
+        "linked_event_uids": [
+          "evt_91edc1640468d943092d",
+          "evt_c4a9157c86f5517f90f4",
+          "evt_42ff2021817a41639f55"
+        ]
+      }
     },
     "94d17602356ddf178a90036e08ac2c26": {
       "queue_id": "94d17602356ddf178a90036e08ac2c26",
@@ -9227,10 +9619,26 @@
       "last_seen_at": "2026-10-15T23:07:10.021586+00:00",
       "last_attempt_at": "2026-10-14T23:22:00.238433+00:00",
       "url": "https://timesofindia.indiatimes.com/videos/international/trump-snubbed-mark-rutte-praises-canada-as-nato-allies-take-on-more-defence-burden/amp_videoshow/134950079.cms",
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-14T23:22:06.947439+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-10-16T02:42:16.390524+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "partial_evidence_review",
+        "note": "公开视频说明确实提及2024年底芬兰—爱沙尼亚海缆损伤，不能只按标题当无关新闻删除；已关联同次官方调查背景。",
+        "missing_evidence": [
+          "视频完整字幕/转录和其所指通信电缆身份；公开说明不足以判定整段视频不含其他事故"
+        ],
+        "completion_authorized": false,
+        "alternative_evidence_urls": [
+          "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+        ],
+        "linked_event_uids": [
+          "evt_58ad5cff0074f783b0f0"
+        ]
+      }
     },
     "d59e5789ec41c91d0c73d9928c09d55c": {
       "queue_id": "d59e5789ec41c91d0c73d9928c09d55c",
@@ -9401,7 +9809,19 @@
           "evidence_excerpt": "FITBURG had dragged its anchor across the Elisa cable connecting Finland and Estonia on the last day of 2025.",
           "date_evidence_excerpt": "FITBURG had dragged its anchor across the Elisa cable connecting Finland and Estonia on the last day of 2025.",
           "outcome": "rejected",
-          "reason": "no_incident_keyword"
+          "reason": "no_incident_keyword",
+          "recovery": {
+            "status": "verified",
+            "method": "manual_primary_source",
+            "linked_event_uids": [
+              "evt_7c6e7ffddea09029d55b"
+            ],
+            "evidence_urls": [
+              "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded"
+            ],
+            "reason": "existing_event_corroborated",
+            "report": "research/reviews/recovery-ten-2026-10-16.json"
+          }
         },
         {
           "candidate_index": 1,
@@ -9412,19 +9832,41 @@
           "evidence_excerpt": "the EAGLE S’s sailing pattern, zooming in on the slow speed sailing that took place above the Estlink 2 power cable in the Gulf of Finland.",
           "date_evidence_excerpt": "",
           "outcome": "rejected",
-          "reason": "evidence_not_in_article"
+          "reason": "evidence_not_in_article",
+          "manual_disposition": "excluded",
+          "exclusion_reason": "Estlink 2 为电力电缆，不属于通信海缆事件范围",
+          "exclusion_evidence_urls": [
+            "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+          ]
         }
       ],
       "candidate_review_count": 2,
       "candidate_reviews_truncated": false,
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-15T04:55:06.165111+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-10-16T02:42:16.390527+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "partial_evidence_review",
+        "note": "Fitburg 线索关联既有警方核实事件；Estlink 2 是电力缆，排除该候选；汇总事故不拆造单条。",
+        "missing_evidence": [
+          "2023年以来11条损伤的逐项线路与日期对应；不能用Fitburg一案覆盖整个汇总"
+        ],
+        "completion_authorized": false,
+        "alternative_evidence_urls": [
+          "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded",
+          "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+        ],
+        "linked_event_uids": [
+          "evt_7c6e7ffddea09029d55b"
+        ]
+      }
     },
     "f323f1766cf916f3a65ae8bd9aa27025": {
       "queue_id": "f323f1766cf916f3a65ae8bd9aa27025",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-15T04:51:41.555873+00:00",
       "attempts": 1,
       "discovered_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSGx1THozWmhGRFlDd2l3clp1c0ltR1gwYzc3UWE0WTVGR1g2VG1ub0JiRGg4b2RfMnE0eEFJTWFzeXJjVkw0WmxiOWpTTzkzalh3cEdTa2lnQlFYd3FSVXhpWjhXSFVBZTZmb0JoaUd5OTg1eGs0RjFmNmZmYU9PdUtyMVZfZ0FWX3RGME5sT2F6RFBneTB3T3lPZzZvLWNUTHVVZVBkSHpjLWNzMVc2ZVZpUUxOUGt6QW5FN0tibmR3Wl81?oc=5",
@@ -9439,7 +9881,7 @@
       "last_seen_at": "2026-10-15T04:51:41.555873+00:00",
       "last_attempt_at": "2026-10-15T04:55:06.176387+00:00",
       "url": "https://www.telecomreviewasia.com/news/technology-news/30443-singtel-launches-ai-token-as-a-service-for-singapore-enterprises/",
-      "reason": "cross_source_insufficient_sources",
+      "reason": "manual_no_incident_reviewed",
       "error_type": "HTTPError",
       "http_status": 500,
       "next_attempt_at": null,
@@ -9458,7 +9900,21 @@
         "evidence_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
       "review_at": "2026-10-15T04:55:16.411819+00:00",
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "completed_no_incident",
+        "note": "已读完整报道正文，是AI服务发布；海缆故障检测在相关文章栏，不是本篇事故。运营商发布页确认主题。",
+        "missing_evidence": [],
+        "completion_authorized": true,
+        "alternative_evidence_urls": [
+          "https://www.singtel.com/about-us/media-centre/news-releases/singtel-reai-launches-ai-token-as-a-service"
+        ],
+        "linked_event_uids": [],
+        "original_full_text_read": true
+      },
+      "completed_at": "2026-10-16T02:42:16.390532+00:00"
     },
     "06920300dba37947f0248025d423003f": {
       "queue_id": "06920300dba37947f0248025d423003f",
@@ -9538,19 +9994,40 @@
           "evidence_excerpt": "O n Christmas Day 2024, six weeks before Estonia, Latvia and Lithuania were due to disconnect themselves from Russia’s power grid, a Finnish engineer was just about to sit down to lunch when his phone rang. He was responsible for the Finnish side of the undersea cables that keep Finland and the Baltic states supplied with electricity, and one was malfunctioning. Within a couple of hours, authoriti",
           "date_evidence_excerpt": "On Christmas Day 2024",
           "outcome": "rejected",
-          "reason": "unnamed_missing_date"
+          "reason": "unnamed_missing_date",
+          "manual_disposition": "excluded",
+          "exclusion_reason": "该候选属于电力电缆，不作为通信事故入库",
+          "exclusion_evidence_urls": [
+            "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+          ]
         }
       ],
       "candidate_review_count": 1,
       "candidate_reviews_truncated": false,
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-15T19:59:53.941174+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-10-16T02:42:16.390537+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "partial_evidence_review",
+        "note": "电力缆候选排除；通信缆身份仍需核实。",
+        "missing_evidence": [
+          "关联的通信缆身份与时间；不能把电力缆写入通信事故库"
+        ],
+        "completion_authorized": false,
+        "alternative_evidence_urls": [
+          "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+        ],
+        "linked_event_uids": [
+          "evt_58ad5cff0074f783b0f0"
+        ]
+      }
     },
     "a4d4a9ecad457fda24fc65b6805aba8f": {
       "queue_id": "a4d4a9ecad457fda24fc65b6805aba8f",
-      "status": "review",
+      "status": "done",
       "first_seen_at": "2026-10-15T19:56:08.778621+00:00",
       "attempts": 2,
       "title": "UK's SIG names finance chief Simon Kesterton as next CEO - Global Banking & Finance Review",
@@ -9565,7 +10042,7 @@
       "last_seen_at": "2026-10-15T19:56:08.778621+00:00",
       "last_attempt_at": "2026-10-15T23:10:09.542623+00:00",
       "url": "https://www.globalbankingandfinance.com/uks-sig-names-finance-chief-simon-kesterton-next-ceo/",
-      "reason": "cross_source_insufficient_sources",
+      "reason": "manual_no_incident_reviewed",
       "error_type": "",
       "http_status": null,
       "next_attempt_at": null,
@@ -9584,7 +10061,19 @@
         "evidence_fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
       "review_at": "2026-10-15T23:10:12.491876+00:00",
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "completed_no_incident",
+        "note": "已读正文至 Reuters 报道署名，是建材公司 SIG 的CEO任命。海缆内容位于页首其他新闻推荐，不属于正文。",
+        "missing_evidence": [],
+        "completion_authorized": true,
+        "alternative_evidence_urls": [],
+        "linked_event_uids": [],
+        "original_full_text_read": true
+      },
+      "completed_at": "2026-10-16T02:42:16.390541+00:00"
     },
     "23ac292f8080963bbdaddb90f2b47b44": {
       "queue_id": "23ac292f8080963bbdaddb90f2b47b44",
@@ -9629,10 +10118,29 @@
       ],
       "candidate_review_count": 2,
       "candidate_reviews_truncated": false,
-      "reason": "candidates_rejected",
-      "review_at": "2026-10-15T19:59:40.699308+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-10-16T02:42:16.390546+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "manual_review": {
+        "report": "research/reviews/recovery-ten-2026-10-16.json",
+        "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+        "classification": "partial_evidence_review",
+        "note": "2024年红海事故已关联既有证据；2025年9月报道的吉达位置与Cloudflare后续更正存在差异，保留冲突。威胁和数据中心受袭不当作新的海缆事故。",
+        "missing_evidence": [
+          "2025年故障逐缆起始时间；吉达初报与也门水域更正的原始调查证据"
+        ],
+        "completion_authorized": false,
+        "alternative_evidence_urls": [
+          "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
+          "https://blog.cloudflare.com/q3-2025-internet-disruption-summary/"
+        ],
+        "linked_event_uids": [
+          "evt_136f611619bcf8d22614",
+          "evt_9462f41dc4b75e2ba97c",
+          "evt_ce3de8a00fa790930dd6"
+        ]
+      }
     },
     "79cd502b7395fa8fc96f585fd240a5c5": {
       "queue_id": "79cd502b7395fa8fc96f585fd240a5c5",

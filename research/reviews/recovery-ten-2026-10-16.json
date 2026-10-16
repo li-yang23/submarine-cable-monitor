@@ -1,0 +1,331 @@
+{
+  "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+  "report": "research/reviews/recovery-ten-2026-10-16.json",
+  "scope": "用户指定原9条复核和1条重试；后者已被后续定时任务转入复核，本次仍纳入处理。",
+  "sources": {
+    "cga": "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+    "fitburg": "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded",
+    "traficom": "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland",
+    "cf2024": "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
+    "cf2025": "https://blog.cloudflare.com/q3-2025-internet-disruption-summary/",
+    "singtel": "https://www.singtel.com/about-us/media-centre/news-releases/singtel-reai-launches-ai-token-as-a-service",
+    "smw5": "https://bscplc.portal.gov.bd/pages/press-releases"
+  },
+  "event_changes": [
+    {
+      "event_uid": "evt_91edc1640468d943092d",
+      "report": "research/reviews/recovery-ten-2026-10-16.json",
+      "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+      "before": {
+        "cable_name": "Cable between Taiwan’s main island and Penghu",
+        "occurrence_date": "2026-06-12",
+        "repair_date": null,
+        "reason": "Togo-flagged Hongtai 58 was linked to damage to the cable",
+        "verification_status": "verified",
+        "evidence_urls": [
+          "https://www.9dashline.com/article/taiwans-undersea-cables-are-an-indo-pacific-crisis-test"
+        ]
+      },
+      "source_url": "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+      "finding": "海巡署明确故障日为民国114年2月25日，即2025-02-25；6月12日为判决日。原报道标注的2026-06-12不可作故障日。",
+      "quote": "去（114）年2月25日臺澎第三海底電纜於臺南將軍漁港西北方5浬遭多哥籍《宏泰58》貨輪破壞"
+    },
+    {
+      "event_uid": "evt_c4a9157c86f5517f90f4",
+      "report": "research/reviews/recovery-ten-2026-10-16.json",
+      "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+      "before": {
+        "cable_name": "Unspecified (Taiwan main island to Penghu)",
+        "occurrence_date": "2026-06-12",
+        "repair_date": null,
+        "reason": "Togo-flagged Hongtai 58 linked to cable damage",
+        "verification_status": "verified",
+        "evidence_urls": [
+          "https://www.9dashline.com/article/taiwans-undersea-cables-are-an-indo-pacific-crisis-test"
+        ]
+      },
+      "source_url": "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+      "finding": "海巡署明确故障日为民国114年2月25日，即2025-02-25；6月12日为判决日。原报道标注的2026-06-12不可作故障日。",
+      "quote": "去（114）年2月25日臺澎第三海底電纜於臺南將軍漁港西北方5浬遭多哥籍《宏泰58》貨輪破壞"
+    },
+    {
+      "event_uid": "evt_42ff2021817a41639f55",
+      "report": "research/reviews/recovery-ten-2026-10-16.json",
+      "reviewed_at": "2026-10-16T02:42:16.360970+00:00",
+      "before": {
+        "cable_name": "Unspecified cable between Taiwan’s main island and Penghu",
+        "occurrence_date": "2026-06-12",
+        "repair_date": null,
+        "reason": "The Togo-flagged Hongtai 58 was linked to damage to the cable",
+        "verification_status": "verified",
+        "evidence_urls": [
+          "https://www.9dashline.com/article/taiwans-undersea-cables-are-an-indo-pacific-crisis-test"
+        ]
+      },
+      "source_url": "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+      "finding": "海巡署明确故障日为民国114年2月25日，即2025-02-25；6月12日为判决日。原报道标注的2026-06-12不可作故障日。",
+      "quote": "去（114）年2月25日臺澎第三海底電纜於臺南將軍漁港西北方5浬遭多哥籍《宏泰58》貨輪破壞"
+    }
+  ],
+  "queue_decisions": [
+    {
+      "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
+      "title": "Globe reroutes data traffic after subsea cable break disrupts internet services - ABS-CBN",
+      "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "cross_source_primary_correction_required",
+      "finding": "未找到解决 Globe 起始日冲突的新原始公告；现有替代报道不能用 PLDT 日期替代 Globe。",
+      "missing_evidence": [
+        "可核对时间戳的 Globe 故障公告或更正，明确故障与疏转时间及线路身份"
+      ],
+      "evidence_urls": [
+        "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148"
+      ],
+      "linked_event_uids": []
+    },
+    {
+      "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
+      "title": "Australia’s banks show how to prepare for cable blackouts - Financial Times",
+      "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "cross_source_original_scope_unknown",
+      "finding": "FT 全文仍不可读；菲律宾 Globe 报道排除规则已接入自动流程。",
+      "missing_evidence": [
+        "可合法读取的完整正文或授权完整转载；澳大利亚银行演练不能证实全文全部事故线索"
+      ],
+      "evidence_urls": [
+        "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be"
+      ],
+      "linked_event_uids": []
+    },
+    {
+      "queue_id": "3476cd1cb75cae50e293f16c3941e961",
+      "title": "Submarine Cable Resilience Faces Growing Threats From Aging Fleets and Concentrated Ownership - CircleID",
+      "url": "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "台澎三号/Hongtai58 的具体发生日已补证并更正既有事件；其余未确认历史候选继续逐项核实。",
+      "missing_evidence": [
+        "既有 claims 中除台澎三号外的历史、INDIGO 精确时间、马祖沉船及线路身份缺口"
+      ],
+      "evidence_urls": [
+        "https://circleid.com/posts/submarine-cable-resilience-faces-growing-threats-from-aging-fleets-and-concentrated-ownership",
+        "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358"
+      ],
+      "linked_event_uids": [
+        "evt_91edc1640468d943092d",
+        "evt_c4a9157c86f5517f90f4",
+        "evt_42ff2021817a41639f55"
+      ]
+    },
+    {
+      "queue_id": "2269b38069e82f4f397692c703d89d47",
+      "title": "Undersea Cable Security in the Indo-Pacific Starts With Vessel Behavior - Windward",
+      "url": "https://windward.ai/blog/undersea-cable-security-in-the-indo-pacific-starts-with-vessel-behavior/",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "已通读正文。Hongtai58 关联到2025-02-25台澎三号；船只缓行、测绘及风险预测不认定已发生断缆。",
+      "missing_evidence": [
+        "SEA-ME-WE 5 在2024年的故障和维修延期需对应运营商完整公告；不能把风险观测次数当故障次数"
+      ],
+      "evidence_urls": [
+        "https://windward.ai/blog/undersea-cable-security-in-the-indo-pacific-starts-with-vessel-behavior/",
+        "https://www.cga.gov.tw/GipOpen/wSite/ct?ctNode=10619&mp=9998&xItem=167358",
+        "https://bscplc.portal.gov.bd/pages/press-releases"
+      ],
+      "linked_event_uids": [
+        "evt_91edc1640468d943092d",
+        "evt_c4a9157c86f5517f90f4",
+        "evt_42ff2021817a41639f55"
+      ]
+    },
+    {
+      "queue_id": "ef8f5a75f10b880d18b0a3bd4e095707",
+      "title": "Trump Snubbed? Mark Rutte Praises Canada As NATO Allies Take On More Defence Burden - The Times of India",
+      "url": "https://timesofindia.indiatimes.com/videos/international/trump-snubbed-mark-rutte-praises-canada-as-nato-allies-take-on-more-defence-burden/amp_videoshow/134950079.cms",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "公开视频说明确实提及2024年底芬兰—爱沙尼亚海缆损伤，不能只按标题当无关新闻删除；已关联同次官方调查背景。",
+      "missing_evidence": [
+        "视频完整字幕/转录和其所指通信电缆身份；公开说明不足以判定整段视频不含其他事故"
+      ],
+      "evidence_urls": [
+        "https://timesofindia.indiatimes.com/videos/international/trump-snubbed-mark-rutte-praises-canada-as-nato-allies-take-on-more-defence-burden/amp_videoshow/134950079.cms",
+        "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+      ],
+      "linked_event_uids": [
+        "evt_58ad5cff0074f783b0f0"
+      ]
+    },
+    {
+      "queue_id": "5026c7086feb380e82dcfc52a6d14d96",
+      "title": "Q2 2026 Undersea Cables Risk Report: Threats & Trends - Windward",
+      "url": "https://windward.ai/knowledge-base/q2-2026-undersea-cables-risk-report/",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "Fitburg 线索关联既有警方核实事件；Estlink 2 是电力缆，排除该候选；汇总事故不拆造单条。",
+      "missing_evidence": [
+        "2023年以来11条损伤的逐项线路与日期对应；不能用Fitburg一案覆盖整个汇总"
+      ],
+      "evidence_urls": [
+        "https://windward.ai/knowledge-base/q2-2026-undersea-cables-risk-report/",
+        "https://poliisi.fi/en/-/investigation-into-fitburg-cable-damage-concluded",
+        "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+      ],
+      "linked_event_uids": [
+        "evt_7c6e7ffddea09029d55b"
+      ]
+    },
+    {
+      "queue_id": "f323f1766cf916f3a65ae8bd9aa27025",
+      "title": "Singtel Launches AI Token-as-a-Service for Singapore Enterprises - Telecom Review Asia",
+      "url": "https://www.telecomreviewasia.com/news/technology-news/30443-singtel-launches-ai-token-as-a-service-for-singapore-enterprises/",
+      "before_status": "review",
+      "after_status": "done",
+      "reason": "manual_no_incident_reviewed",
+      "finding": "已读完整报道正文，是AI服务发布；海缆故障检测在相关文章栏，不是本篇事故。运营商发布页确认主题。",
+      "missing_evidence": [],
+      "evidence_urls": [
+        "https://www.telecomreviewasia.com/news/technology-news/30443-singtel-launches-ai-token-as-a-service-for-singapore-enterprises/",
+        "https://www.singtel.com/about-us/media-centre/news-releases/singtel-reai-launches-ai-token-as-a-service"
+      ],
+      "linked_event_uids": []
+    },
+    {
+      "queue_id": "f9d540e46de59049cc6be473e3752d32",
+      "title": "Inside the undersea kingdom: the secret, sinister battle to control what lies beneath the waves - The Guardian",
+      "url": "https://www.theguardian.com/lifeandstyle/2026/oct/01/inside-the-undersea-kingdom-the-secret-sinister-battle-to-control-what-lies-beneath-the-waves",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "电力缆候选排除；通信缆身份仍需核实。",
+      "missing_evidence": [
+        "关联的通信缆身份与时间；不能把电力缆写入通信事故库"
+      ],
+      "evidence_urls": [
+        "https://www.theguardian.com/lifeandstyle/2026/oct/01/inside-the-undersea-kingdom-the-secret-sinister-battle-to-control-what-lies-beneath-the-waves",
+        "https://www.traficom.fi/en/news/traficom-and-other-authorities-investigate-cable-damage-gulf-finland"
+      ],
+      "linked_event_uids": [
+        "evt_58ad5cff0074f783b0f0"
+      ]
+    },
+    {
+      "queue_id": "a4d4a9ecad457fda24fc65b6805aba8f",
+      "title": "UK's SIG names finance chief Simon Kesterton as next CEO - Global Banking & Finance Review",
+      "url": "https://www.globalbankingandfinance.com/uks-sig-names-finance-chief-simon-kesterton-next-ceo/",
+      "before_status": "review",
+      "after_status": "done",
+      "reason": "manual_no_incident_reviewed",
+      "finding": "已读正文至 Reuters 报道署名，是建材公司 SIG 的CEO任命。海缆内容位于页首其他新闻推荐，不属于正文。",
+      "missing_evidence": [],
+      "evidence_urls": [
+        "https://www.globalbankingandfinance.com/uks-sig-names-finance-chief-simon-kesterton-next-ceo/"
+      ],
+      "linked_event_uids": []
+    },
+    {
+      "queue_id": "23ac292f8080963bbdaddb90f2b47b44",
+      "title": "Iranian threats put Gulf internet and global data at risk - Minute Mirror",
+      "url": "https://minutemirror.com.pk/iranian-threats-put-gulf-internet-and-global-data-at-risk-644113/",
+      "before_status": "review",
+      "after_status": "review",
+      "reason": "candidate_evidence_incomplete",
+      "finding": "2024年红海事故已关联既有证据；2025年9月报道的吉达位置与Cloudflare后续更正存在差异，保留冲突。威胁和数据中心受袭不当作新的海缆事故。",
+      "missing_evidence": [
+        "2025年故障逐缆起始时间；吉达初报与也门水域更正的原始调查证据"
+      ],
+      "evidence_urls": [
+        "https://minutemirror.com.pk/iranian-threats-put-gulf-internet-and-global-data-at-risk-644113/",
+        "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/",
+        "https://blog.cloudflare.com/q3-2025-internet-disruption-summary/"
+      ],
+      "linked_event_uids": [
+        "evt_136f611619bcf8d22614",
+        "evt_9462f41dc4b75e2ba97c",
+        "evt_ce3de8a00fa790930dd6"
+      ]
+    }
+  ],
+  "directory_validation": [
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/trans-arctic/arctic-connect",
+      "cable_name": "Arctic Connect",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/arctic-connect",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "error": null,
+      "status": 200,
+      "verification_method": "public_browser_render_followup"
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/alasia",
+      "cable_name": "ALASIA",
+      "previous_href": "https://www.submarinenetworks.com/en/alasia",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/alasia",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/trans-arctic/polar-express",
+      "cable_name": "Polar Express",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/polar-express",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/trans-arctic/polar-express",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/trans-arctic/far-north-fiber",
+      "cable_name": "Far North Fiber",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/far-north-fiber",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/trans-arctic/far-north-fiber",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/intra-europe/barracuda",
+      "cable_name": "Barracuda",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/asia-europe-africa/barracuda",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/intra-europe/barracuda",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/asia-australia/png-national/png-national",
+      "cable_name": "KSCN",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/australia-usa/kscn",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/asia-australia/png-national/png-national",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/asia-australia",
+      "cable_name": "JASURAUS",
+      "previous_href": "https://www.submarinenetworks.com/en/systems/asia-australia/jasuraus",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "coverage_note": "JASURAUS has no current individual directory; retain Asia-Australia regional discovery and independent Google News discovery.",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/asia-australia",
+      "links": 0
+    },
+    {
+      "href": "https://www.submarinenetworks.com/en/systems/eurasia-terrestrial/djibouti-ethiopia",
+      "cable_name": "Djibouti-Ethiopia",
+      "previous_href": "https://www.submarinenetworks.com/en/djibouti-ethiopia",
+      "directory_verified_from": "https://www.submarinenetworks.com/en/systems",
+      "status": 200,
+      "final_url": "https://www.submarinenetworks.com/en/systems/eurasia-terrestrial/djibouti-ethiopia",
+      "links": 0
+    }
+  ]
+}

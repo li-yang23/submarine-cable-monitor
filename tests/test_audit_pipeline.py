@@ -105,7 +105,8 @@ class PipelineAuditTests(unittest.TestCase):
             with patch("src.pipeline.SCRAPER_CLASSES", {"fixture": lambda config: fake_scraper}), patch.object(extractor, "_extract_with_llm", side_effect=extracted):
                 summary = pipeline.run(["fixture"])
             records = [json.loads(line) for line in (Path(summary.audit_path) / "audit.jsonl").read_text().splitlines()]
-            self.assertEqual(summary.status, "degraded")
+            self.assertEqual(summary.runtime_status, "success")
+            self.assertEqual(summary.review_status, "needs_review")
             self.assertEqual((summary.inserted, summary.merged, summary.rejected), (1, 1, 1))
             self.assertTrue(any(r.get("method") == "llm" for r in records))
             self.assertEqual(summary.queue["review"], 1)

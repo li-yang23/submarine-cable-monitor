@@ -156,7 +156,7 @@ def main() -> int:
         pipeline = MonitorPipeline(config, store=store)
         summary = pipeline.run(sources=normalize_sources(args.sources), since=args.since, dry_run=args.dry_run)
         logger.info("Pipeline summary: %s", summary.to_dict())
-        if summary.status != "success":
+        if summary.runtime_status != "success":
             exit_code = 1
 
     if args.export_json:

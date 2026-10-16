@@ -42,6 +42,42 @@ def response(value, *, status=200):
 
 
 class ReportTests(unittest.TestCase):
+    def detailed(self, rows, **kwargs):
+        summary=healthy(runtime_status='success',review_status='needs_review',queue_items=rows,queue_changes={},failure_details=[])
+        summary.update(kwargs)
+        return notify.build_report(summary)
+
+    def test_review_is_not_runtime_failure_and_email_identifies_new_item(self):
+        old={'queue_id':'a','title':'Old article','url':'https://example.org/a','status':'review','reason':'candidates_rejected'}
+        new={**old,'queue_id':'b','title':'New article','url':'https://example.org/b'}
+        first=self.detailed([old]); second=self.detailed([old,new])
+        previous={'fingerprint':first.fingerprint,'last_sent':1,'conditions':list(first.conditions)}
+        self.assertTrue(notify.due(second,previous,2))
+        message=notify.with_change_details(second,previous)
+        self.assertIn('新增或变化 1 项',message.body)
+        self.assertIn('既有事项：1 项',message.body)
+        self.assertNotIn('运行故障',message.subject)
+        self.assertIn('New article',message.body)
+        self.assertFalse(notify.due(first,previous,999999))
+
+    def test_discovery_continuation_is_informational(self):
+        report=self.detailed([],counts={'discover.deferred.discovery_budget':1})
+        self.assertFalse(report.active)
+        self.assertIn('续扫',report.body)
+
+    def test_url_failure_dedup_and_new_url_alerts(self):
+        failure={'stage':'discover','source':'Submarine Networks','url':'https://example.org/a','reason':'cable_page_fetch_error','http_status':404}
+        first=self.detailed([],runtime_status='degraded',failure_details=[failure])
+        second=self.detailed([],runtime_status='degraded',failure_details=[failure,{**failure,'url':'https://example.org/b'}])
+        previous={'fingerprint':first.fingerprint,'last_sent':1,'conditions':list(first.conditions)}
+        self.assertTrue(notify.due(second,previous,2))
+        self.assertIn('HTTP 404',notify.with_change_details(second,previous).body)
+
+    def test_detailed_balance_failure_keeps_pause_and_recharge_instructions(self):
+        report=self.detailed([],runtime_status='failed',model_health={'provider':'siliconflow','status':'paused','available':False,'reason':'balance_exhausted','http_status':402,'attempt_id':'today'})
+        self.assertIn('充值',report.subject); self.assertIn('次日',report.body)
+        self.assertEqual(report.balance_attempt,'today')
+
     def test_failures_and_pending_work_are_actionable(self):
         summary = healthy(status="degraded", errors=1, warnings=2,
                           queue={"pending": 3, "retry": 4, "review": 1},
