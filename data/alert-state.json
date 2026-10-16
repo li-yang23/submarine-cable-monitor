@@ -1,20 +1,12 @@
 {
   "email": {
-    "conditions": [
-      "runtime:0e16963cc6ae328f3de5",
-      "runtime:43a007ee17c9510b06de",
-      "runtime:a7be4ecf7f974d459964"
-    ],
-    "fingerprint": "7550e7213c7cd97ae30ce7cd967ed061388f3978e83038cadfd2f1fe9bcda45c",
+    "conditions": [],
+    "fingerprint": "healthy",
     "last_sent": 1792179565.8453195
   },
   "github": {
-    "conditions": [
-      "runtime:0e16963cc6ae328f3de5",
-      "runtime:43a007ee17c9510b06de",
-      "runtime:a7be4ecf7f974d459964"
-    ],
-    "fingerprint": "7550e7213c7cd97ae30ce7cd967ed061388f3978e83038cadfd2f1fe9bcda45c",
+    "conditions": [],
+    "fingerprint": "healthy",
     "last_sent": 1792179565.8453195
   }
 }
