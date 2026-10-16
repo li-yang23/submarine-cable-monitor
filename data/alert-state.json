@@ -1,20 +1,36 @@
 {
   "email": {
     "conditions": [
-      "queue_unchecked",
-      "summary",
-      "workflow"
+      "retry:844d210c1d17eca502a5",
+      "review:17030cd8b1b1ec336bb0",
+      "review:1774ccefbbaf0cd050ab",
+      "review:1b42b66dc1026c98c2cb",
+      "review:5f585efe029a9cffa4f1",
+      "review:61cb263f006269fdf893",
+      "review:71133839843da79840d0",
+      "review:c05e81a46a9a031a5fbe",
+      "review:f8568fc50f3587500d52",
+      "runtime:8a89eafd7990a7ae180a",
+      "runtime:ab5f4224c6d8d3ffe2a7"
     ],
-    "fingerprint": "65b732e9397a52a39ff70b34a70bbc07494e903ba5a501fd0bc6561fc900cab9",
-    "last_sent": 1792119073.2370224
+    "fingerprint": "47602984663f5df0924cb93f7059ecf2fc980a1c735c1b29662200807f2c3a0b",
+    "last_sent": 1792119562.7457871
   },
   "github": {
     "conditions": [
-      "queue_unchecked",
-      "summary",
-      "workflow"
+      "retry:844d210c1d17eca502a5",
+      "review:17030cd8b1b1ec336bb0",
+      "review:1774ccefbbaf0cd050ab",
+      "review:1b42b66dc1026c98c2cb",
+      "review:5f585efe029a9cffa4f1",
+      "review:61cb263f006269fdf893",
+      "review:71133839843da79840d0",
+      "review:c05e81a46a9a031a5fbe",
+      "review:f8568fc50f3587500d52",
+      "runtime:8a89eafd7990a7ae180a",
+      "runtime:ab5f4224c6d8d3ffe2a7"
     ],
-    "fingerprint": "65b732e9397a52a39ff70b34a70bbc07494e903ba5a501fd0bc6561fc900cab9",
-    "last_sent": 1792119073.2370224
+    "fingerprint": "47602984663f5df0924cb93f7059ecf2fc980a1c735c1b29662200807f2c3a0b",
+    "last_sent": 1792119562.7457871
   }
 }
