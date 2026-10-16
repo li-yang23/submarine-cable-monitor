@@ -82,6 +82,41 @@ class PipelineReliabilityTests(unittest.TestCase):
         with patch("src.pipeline.SCRAPER_CLASSES", classes):
             return pipeline.run(list(discoveries), **kwargs)
 
+    def test_publisher_restriction_is_gap_but_429_and_500_fail_run(self):
+        self.config.cross_source_enabled=False
+        for status in (401,403,404,410,451,429,500):
+            with self.subTest(status=status):
+                source='Google News'
+                row={'source':source,'url':f'https://example.org/{status}','title':'Cable news','published_date':'2026-10-14'}
+                response=requests.Response();response.status_code=status
+                scraper=GoogleNewsArticleScraper(self.config)
+                def discover(**kwargs):
+                    scraper.article_queue.enqueue(row)
+                    return []
+                with patch('src.pipeline.SCRAPER_CLASSES',{'fixture':lambda c:scraper}), patch.object(scraper,'scrape_articles',side_effect=discover), patch.object(scraper,'_resolve_google_news_url',side_effect=lambda u:u), patch.object(scraper,'extract_page_text',side_effect=requests.HTTPError(response=response)):
+                    result=MonitorPipeline(self.config,self.store,self.extractor(),health_checker=lambda *args:dict(NOT_CHECKED)).run(['fixture'])
+                restricted=status in (401,403,404,410,451)
+                self.assertEqual(result.runtime_status,'success' if restricted else 'degraded')
+                saved=ArticleQueue.from_config(self.config).get(row)
+                self.assertEqual(saved['status'],'retry')
+                self.assertEqual(saved['reason'],('publisher_missing' if status in (404,410) else 'publisher_access_blocked') if restricted else 'article_fetch_error')
+                self.assertFalse(ArticleState.from_config(self.config).is_processed(row['url']))
+
+    def test_archiving_gap_is_not_reported_as_completed(self):
+        row=article('fixture')
+        q=ArticleQueue.from_config(self.config);q.enqueue(row)
+        scraper=QueueScraper('fixture',[],self.trace)
+        def close(**kwargs):
+            scraper.article_queue.mark_unresolved(row,'evidence_unavailable')
+            scraper.article_queue.persist()
+            return []
+        with patch('src.pipeline.SCRAPER_CLASSES',{'fixture':lambda c:scraper}), patch.object(scraper,'scrape_articles',side_effect=close):
+            result=MonitorPipeline(self.config,self.store,self.extractor(),health_checker=lambda *args:dict(NOT_CHECKED)).run(['fixture'])
+        self.assertEqual(result.runtime_status,'success')
+        self.assertEqual(result.queue_changes['resolved'],[])
+        self.assertEqual(len(result.queue_changes['closed_unresolved']),1)
+        self.assertEqual(result.queue['unresolved'],1)
+
     def test_rejected_candidate_excerpt_and_claimed_date_remain_traceable(self):
         item = article()
         candidate = event(item)

@@ -40,6 +40,33 @@ class DurableQueueTests(unittest.TestCase):
             self.assertTrue(reloaded.requeue(item))
             self.assertEqual(len(reloaded.due("Google News")), 1)
 
+    def test_unresolved_retains_evidence_without_refetch_or_processed_claim(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            q=ArticleQueue(str(Path(tmp)/'queue.json'))
+            row=q.enqueue({'source':'Google News','url':'https://example.org/missing'})
+            q.get(row)['manual_review']={'missing_evidence':['Full original body']}
+            q.mark_review(row,'cross_source_original_scope_unknown')
+            q.mark_unresolved(row,'evidence_unavailable');q.persist()
+            q=ArticleQueue(str(q.path));q.enqueue(row)
+            self.assertEqual(q.due(),[])
+            self.assertFalse(q.is_done(row['url']))
+            self.assertEqual(q.get(row)['manual_review']['missing_evidence'],['Full original body'])
+            self.assertEqual(q.counts()['unresolved'],1)
+            q.requeue(row)
+            self.assertEqual(len(q.due()),1)
+
+    def test_publisher_unavailable_retries_are_bounded_and_requeue_resets(self):
+        q=ArticleQueue('');row=q.enqueue({'source':'Google News','url':'https://example.org/blocked'})
+        for attempt in range(3):
+            q.mark_publisher_unavailable(row,'publisher_access_blocked',http_status=403)
+            self.assertEqual(q.get(row)['status'],'retry' if attempt<2 else 'unresolved')
+            self.assertFalse(q.is_done(row['url']))
+            self.assertEqual(q.due(),[])
+        self.assertEqual(q.get(row)['http_status'],403)
+        q.requeue(row);q.mark_publisher_unavailable(row,'publisher_access_blocked',http_status=403)
+        self.assertEqual(q.get(row)['availability_attempts'],1)
+        self.assertEqual(q.get(row)['status'],'retry')
+
     def test_failure_backoff_never_expires_or_drops_work(self):
         with tempfile.TemporaryDirectory() as tmp:
             queue = ArticleQueue(str(Path(tmp) / "queue.json"))

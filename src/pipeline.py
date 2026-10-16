@@ -316,7 +316,7 @@ class MonitorPipeline:
             # durable work states, not crashed executions.
             if queue is not None:
                 outstanding = {"pending", "retry", "review"}
-                summary.queue_changes = {"new": [], "changed": [], "resolved": []}
+                summary.queue_changes = {"new": [], "changed": [], "resolved": [], "closed_unresolved": []}
                 for key, row in queue.items.items():
                     item = {k: row.get(k) for k in ("queue_id", "title", "url", "status", "reason")}
                     if row["status"] in outstanding:
@@ -326,8 +326,8 @@ class MonitorPipeline:
                         if previous != (row["status"], row.get("reason", "")):
                             summary.queue_changes[category].append(item)
                     elif queue_before.get(key, (None,))[0] in outstanding:
-                        summary.queue_changes["resolved"].append(item)
-                summary.review_status = "needs_review" if summary.queue.get("review") else "clear"
+                        summary.queue_changes["closed_unresolved" if row["status"] == "unresolved" else "resolved"].append(item)
+                summary.review_status = "needs_review" if summary.queue.get("review") else "unresolved_archived" if summary.queue.get("unresolved") else "clear"
             summary.runtime_status = ("failed" if summary.status == "failed" or summary.errors and not summary.articles
                                       else "degraded" if summary.errors or audit.failures or summary.model_health.get("available") is False
                                       else "success")

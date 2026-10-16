@@ -60,6 +60,30 @@ class CrossSourceTests(unittest.TestCase):
         self.assertFalse(event['raw_data']['cross_source']['original_full_text_read'])
         self.assertIsNone(event['repair_date']); self.assertFalse(event['reason'])
 
+    def test_three_unchanged_evidence_gaps_stop_without_done(self):
+        with patch.object(self.recovery,'retrieve',return_value=([], 'insufficient_sources')):
+            for _ in range(3):
+                self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'],'unresolved')
+        self.assertFalse(self.state.is_processed(self.parent['url']))
+        self.assertEqual(self.recovery.eligible(),[])
+
+    def test_search_fault_never_archived_as_missing_data(self):
+        with patch.object(self.recovery,'retrieve',return_value=([], 'search_failed')):
+            for _ in range(4):
+                self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'],'retry')
+        self.assertNotIn('unchanged_evidence_attempts',self.parent['cross_source'])
+
+    def test_candidate_exhaustion_preserves_parent_and_missing_reason(self):
+        self.parent['candidate_reviews']=[dict(candidate_index=0,evidence_excerpt=Q1,outcome='rejected')]
+        with patch.object(self.recovery,'retrieve',return_value=([], 'insufficient_sources')):
+            for _ in range(3):
+                self.recovery.process(self.parent)
+        self.assertEqual(self.parent['status'],'unresolved')
+        self.assertEqual(self.parent['candidate_reviews'][0]['recovery']['reason'],'insufficient_sources')
+        self.assertFalse(self.state.is_processed(self.parent['url']))
+
     def test_manual_exclusion_enforced_even_if_model_returns_corroborated(self):
         self.parent['manual_review'] = {'excluded_alternative_sources': [{'url': articles()[1]['url']}]}
         self.assertEqual(self.validate()[1], 'manually_excluded_source')
