@@ -62,6 +62,8 @@ REASON_LABELS = {
     "cross_source_quote_not_in_body": "模型引用不在来源正文中",
     "cross_source_primary_correction_required": "日期冲突，缺少原始公告或更正",
     "candidate_evidence_incomplete": "部分候选已补证，其他候选仍缺证据",
+    "cross_source_manual_scope_remaining": "已有部分有效补证，但原文覆盖范围仍未确认",
+    "cross_source_original_scope_unknown": "原文范围无法确认，需要完整正文或授权转载",
     "historical_candidate_evidence_missing": "旧日志缺少候选片段，需要重新提取原文",
 }
 
