@@ -127,9 +127,18 @@ def with_change_details(report, previous):
     new = [(key, label) for key, label in report.details if key not in seen]
     old = [(key, label) for key, label in report.details if key in seen]
     resolved = seen - set(report.conditions)
-    lines = [report.body, "", f"相对上次检查，新增或变化 {len(new)} 项（首次启用逐项记录时建立基线）："]
+    legacy = bool(seen) and not any(":" in key for key in seen)
+    if legacy:
+        # Old state tracked categories, not article identities. It cannot prove
+        # which of today's individual records were newly observed.
+        new, old, resolved = [], list(report.details), set()
+        subject = report.subject.replace("新增待复核或重试事项", "待复核与重试记录基线")
+        report = replace(report, subject=subject, body=report.body.replace(report.subject, subject, 1))
+        lines = [report.body, "", "首次启用逐项告警：以下记录用于建立当前问题基线，不计作本轮新增；本轮实际队列变化见上方统计。"]
+    else:
+        lines = [report.body, "", f"相对上次检查，新增或变化 {len(new)} 项："]
     lines.extend("- " + label for _, label in new)
-    if not new:
+    if not new and not legacy:
         lines.append("- 无新增问题")
     lines.append(f"仍未解决的既有事项：{len(old)} 项。")
     lines.extend("- " + label for _, label in old)
