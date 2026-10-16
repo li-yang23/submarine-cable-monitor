@@ -1,28 +1,20 @@
 {
   "email": {
     "conditions": [
-      "cross_source_review",
-      "discovery_limit",
-      "queue.retry",
-      "queue.review",
-      "source_failure",
-      "status",
+      "queue_unchecked",
+      "summary",
       "workflow"
     ],
-    "fingerprint": "377032021b1befcf0a0dfbc3fd6bd25f0a5dd79fbb0a9cccfc35eae5a0fe798f",
-    "last_sent": 1792094444.1430368
+    "fingerprint": "65b732e9397a52a39ff70b34a70bbc07494e903ba5a501fd0bc6561fc900cab9",
+    "last_sent": 1792119073.2370224
   },
   "github": {
     "conditions": [
-      "cross_source_review",
-      "discovery_limit",
-      "queue.retry",
-      "queue.review",
-      "source_failure",
-      "status",
+      "queue_unchecked",
+      "summary",
       "workflow"
     ],
-    "fingerprint": "377032021b1befcf0a0dfbc3fd6bd25f0a5dd79fbb0a9cccfc35eae5a0fe798f",
-    "last_sent": 1792094444.1430368
+    "fingerprint": "65b732e9397a52a39ff70b34a70bbc07494e903ba5a501fd0bc6561fc900cab9",
+    "last_sent": 1792119073.2370224
   }
 }
