@@ -47,46 +47,36 @@ class ReportTests(unittest.TestCase):
         summary.update(kwargs)
         return notify.build_report(summary)
 
-    def test_review_is_not_runtime_failure_and_email_identifies_new_item(self):
-        old={'queue_id':'a','title':'Old article','url':'https://example.org/a','status':'review','reason':'candidates_rejected'}
-        new={**old,'queue_id':'b','title':'New article','url':'https://example.org/b'}
-        first=self.detailed([old]); second=self.detailed([old,new])
-        previous={'fingerprint':first.fingerprint,'last_sent':1,'conditions':list(first.conditions)}
-        self.assertTrue(notify.due(second,previous,2))
-        message=notify.with_change_details(second,previous)
-        self.assertIn('新增或变化 1 项',message.body)
-        self.assertIn('既有事项：1 项',message.body)
-        self.assertNotIn('运行故障',message.subject)
-        self.assertIn('New article',message.body)
-        self.assertFalse(notify.due(first,previous,999999))
+    def test_new_reviews_and_retries_never_trigger_notifications(self):
+        for status in ('review','retry','unresolved'):
+            row={'queue_id':'new','title':'Missing evidence','url':'https://example.org/a','status':status,'reason':'publisher_access_blocked'}
+            report=self.detailed([row],queue={status:1})
+            self.assertFalse(report.active)
+            self.assertFalse(notify.due(report,None,1))
+            self.assertNotIn('Missing evidence',report.body)
 
-    def test_legacy_alert_migration_does_not_claim_existing_reviews_are_new(self):
-        row={'queue_id':'a','title':'Existing article','url':'https://example.org/a','status':'review','reason':'candidates_rejected'}
-        report=self.detailed([row])
-        message=notify.with_change_details(report,{'conditions':['queue.review','status'],'last_sent':1,'fingerprint':'old'})
-        self.assertIn('基线',message.subject)
-        self.assertNotIn('新增或变化 1 项',message.body)
-        self.assertIn('不计作本轮新增',message.body)
+    def test_legacy_queue_alert_state_is_not_a_reason_to_send_recovery(self):
+        report=self.detailed([])
+        for conditions in (['queue.review','status'],['review:old','retry:old']):
+            self.assertFalse(notify.due(report,{'fingerprint':'old','conditions':conditions,'last_sent':1},2))
 
-    def test_discovery_continuation_is_informational(self):
-        report=self.detailed([],counts={'discover.deferred.discovery_budget':1})
+    def test_discovery_progress_and_unavailable_sources_are_log_only(self):
+        report=self.detailed([],counts={'discover.deferred.discovery_budget':1},queue={'unresolved':8},
+            queue_changes={'closed_unresolved':[{'queue_id':'a'}]},
+            unavailable_evidence=[{'title':'Alternate source','url':'https://example.org/a','http_status':401,'parent_queue_id':'parent'}])
         self.assertFalse(report.active)
-        self.assertIn('续扫',report.body)
+        for text in ('Alternate source','停止核查','续扫'):
+            self.assertNotIn(text,report.body)
 
-    def test_archived_missing_data_is_not_active_failure_or_completed(self):
-        report=self.detailed([],queue={'unresolved':8},queue_changes={'closed_unresolved':[{'queue_id':'a'}]})
-        self.assertFalse(report.active)
-        self.assertIn('本轮 1 项，累计 8 项',report.body)
-        self.assertIn('不计作已完成',report.body)
-        self.assertNotIn('运行故障',report.subject)
-
-    def test_optional_unavailable_evidence_is_visible_but_not_runtime_alarm(self):
-        item={'title':'Alternate source','url':'https://example.org/a','http_status':401,'parent_queue_id':'parent'}
-        report=self.detailed([],unavailable_evidence=[item])
-        self.assertFalse(report.active)
-        self.assertNotIn('运行故障',report.subject)
-        self.assertIn('Alternate source；HTTP 401',report.body)
-        self.assertIn('关联记录 parent',report.body)
+    def test_runtime_mail_excludes_unrelated_data_gaps(self):
+        row={'queue_id':'a','title':'Blocked news','status':'review','reason':'publisher_access_blocked'}
+        failure={'stage':'rss','url':'https://news.google.com/rss/search','reason':'rss_fetch_error','http_status':500}
+        report=self.detailed([row],runtime_status='degraded',failure_details=[failure])
+        message=notify.with_change_details(report,None)
+        self.assertTrue(report.active)
+        self.assertIn('HTTP 500',message.body)
+        self.assertNotIn('Blocked news',message.body)
+        self.assertFalse(any(k.startswith(('review:','retry:')) for k in report.conditions))
 
     def test_url_failure_dedup_and_new_url_alerts(self):
         failure={'stage':'discover','source':'Submarine Networks','url':'https://example.org/a','reason':'cable_page_fetch_error','http_status':404}
@@ -108,7 +98,7 @@ class ReportTests(unittest.TestCase):
                           counts={"discovery.failed": 1, "fetch.failed.http_403": 1, "extraction.fallback": 2, "selection.skipped.budget": 3})
         report = notify.build_report(summary)
         self.assertTrue(report.active)
-        for text in ("模型调用因余额耗尽失败", "发现源", "站点拒绝", "本轮处理达到时长或篇数上限", "需要处理"):
+        for text in ("模型调用因余额耗尽失败", "发现源", "需要处理"):
             self.assertIn(text, report.body)
         self.assertNotIn("private-amount", report.body)
 
@@ -118,7 +108,7 @@ class ReportTests(unittest.TestCase):
             model_health={"provider": "siliconflow", "status": "unavailable", "available": False, "reason": "request_timeout"},
             counts={"discover.deferred.discovery_budget": 1, "extract.failed.request_timeout": 1}), "failure")
         self.assertIn("SiliconFlow 请求超时", report.body)
-        self.assertIn("目录发现达到本轮时长或页数上限", report.body)
+        self.assertNotIn("目录发现达到本轮时长或页数上限", report.body)
         self.assertNotIn("额度已用尽", report.body)
         self.assertNotIn("充值后重试", report.body)
         self.assertNotIn("Parallel", report.body)
@@ -131,18 +121,16 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(first.fingerprint, second.fingerprint)
         self.assertNotIn("secret", first.body)
 
-    def test_no_recovery_from_success_status_alone(self):
-        incomplete = notify.build_report({"status": "success"})
-        self.assertTrue(incomplete.active)
-        self.assertIn("尚未确认", incomplete.body)
-        self.assertFalse(notify.build_report(healthy()).active)
-        for field in ("pending", "retry", "review"):
-            queue = {"pending": 0, "retry": 0, "review": 0, field: 1}
-            self.assertTrue(notify.build_report(healthy(queue=queue)).active)
-        self.assertFalse(notify.build_report(healthy(model_health={"status": "unknown"})).active)
+    def test_legacy_data_diagnostics_do_not_alert(self):
+        self.assertFalse(notify.build_report({'status':'success'}).active)
+        for field in ('pending','retry','review','unresolved'):
+            self.assertFalse(notify.build_report(healthy(status='degraded',warnings=10,queue={field:20})).active)
+        self.assertFalse(notify.build_report(healthy(counts={'fetch.failed.http_403':3})).active)
+        self.assertFalse(notify.build_report(healthy(model_health={'status':'unknown'})).active)
 
     def test_workflow_failure_and_missing_summary_cannot_recover(self):
         self.assertTrue(notify.build_report(healthy(), "failure").active)
+        self.assertTrue(notify.build_report(healthy(status="failed")).active)
         self.assertTrue(notify.build_report({}, summary_error="summary_unreadable").active)
 
     def test_retired_balance_api_is_unknown_not_a_claim_of_model_outage(self):
@@ -196,7 +184,7 @@ class ReportTests(unittest.TestCase):
         fewer_categories = notify.build_report(healthy(warnings=1, queue={"pending": 0, "retry": 0, "review": 1}))
         self.assertFalse(notify.due(fewer_categories, previous, 300))
         good = notify.build_report(healthy())
-        self.assertTrue(notify.due(good, previous, 200))
+        self.assertFalse(notify.due(good, previous, 200))
         self.assertFalse(notify.due(good, None, 200))
         self.assertFalse(notify.due(good, {"fingerprint": "healthy", "last_sent": 1}, 999999))
 
@@ -217,7 +205,7 @@ class ReportTests(unittest.TestCase):
 
 class EmailTests(unittest.TestCase):
     def setUp(self):
-        self.report = notify.build_report(healthy(warnings=1))
+        self.report = notify.build_report(healthy(errors=1))
 
     @patch.object(notify.smtplib, "SMTP")
     def test_starttls_precedes_password_and_checks_certificates(self, smtp):
@@ -267,7 +255,7 @@ class GitHubTests(unittest.TestCase):
         session = MagicMock()
         session.request.side_effect = [response([]), response({"number": 7})]
         client = notify.GitHubNotifier(github_env(), session)
-        self.assertTrue(client.send(notify.build_report(healthy(warnings=1))))
+        self.assertTrue(client.send(notify.build_report(healthy(errors=1))))
         create = session.request.call_args_list[1]
         self.assertEqual(create.args, ("POST", "https://api.github.com/repos/owner/repo/issues"))
         payload = create.kwargs["json"]
@@ -279,7 +267,7 @@ class GitHubTests(unittest.TestCase):
         session = MagicMock()
         session.request.side_effect = [response([{"number": 7, "title": notify.ISSUE_TITLE, "body": notify.MARKER, "state": "open"}]), response({}), response({})]
         client = notify.GitHubNotifier(github_env(), session)
-        client.send(notify.build_report(healthy(warnings=2)))
+        client.send(notify.build_report(healthy(errors=2)))
         self.assertEqual(session.request.call_args_list[1].args[0], "PATCH")
         self.assertTrue(session.request.call_args_list[2].args[1].endswith("/issues/7/comments"))
 
@@ -305,14 +293,14 @@ class GitHubTests(unittest.TestCase):
         session.request.side_effect = [response([]), response({})]
         env = github_env()
         env.pop("ALERT_GITHUB_USER")
-        notify.GitHubNotifier(env, session).send(notify.build_report(healthy(warnings=1)))
+        notify.GitHubNotifier(env, session).send(notify.build_report(healthy(errors=1)))
         self.assertNotIn("@owner", session.request.call_args.kwargs["json"]["body"])
 
     def test_api_redirect_is_not_followed(self):
         session = MagicMock()
         session.request.return_value = response({}, status=302)
         with self.assertRaises(RuntimeError):
-            notify.GitHubNotifier(github_env(), session).send(notify.build_report(healthy(warnings=1)))
+            notify.GitHubNotifier(github_env(), session).send(notify.build_report(healthy(errors=1)))
         self.assertIs(session.request.call_args.kwargs["allow_redirects"], False)
 
     def test_issue_discovered_after_first_page(self):
@@ -335,7 +323,7 @@ class CLITests(unittest.TestCase):
         self.root = Path(self.directory.name)
         self.summary = self.root / "summary.json"
         self.state = self.root / "state.json"
-        self.summary.write_text(json.dumps(healthy(warnings=1)))
+        self.summary.write_text(json.dumps(healthy(errors=1)))
         self.args = ["--summary", str(self.summary), "--state", str(self.state)]
 
     def call(self, *, env=None, now=100, args=None):
@@ -343,6 +331,24 @@ class CLITests(unittest.TestCase):
         with contextlib.redirect_stdout(output), contextlib.redirect_stderr(errors):
             result = notify.main(self.args if args is None else args, env={} if env is None else env, now=now)
         return result, output.getvalue(), errors.getvalue()
+
+    @patch.object(notify, "GitHubNotifier")
+    @patch.object(notify, "send_email")
+    def test_log_only_data_changes_never_send_even_after_old_alerts(self,email,github):
+        self.state.write_text(json.dumps({c:{'fingerprint':'old','last_sent':1,'conditions':['review:old']} for c in ('email','github')}))
+        for count in (4,8,1):
+            self.summary.write_text(json.dumps(healthy(runtime_status='success',review_status='needs_review',queue={'review':count},
+                queue_items=[{'queue_id':str(count),'title':'Unread news','status':'review','reason':'publisher_access_blocked'}],
+                unavailable_evidence=[{'http_status':403,'title':'Unread news'}])))
+            self.assertEqual(self.call(env={**github_env(),**email_env()})[0],0)
+        email.assert_not_called();github.assert_not_called()
+        # Removing suppressed conditions must not suppress the next real fault.
+        self.summary.write_text(json.dumps(healthy(runtime_status='degraded',errors=1,failure_details=[{'stage':'process','reason':'processing_error','url':'https://example.org/a'}])))
+        self.assertEqual(self.call(env={**github_env(),**email_env()})[0],0)
+        email.assert_called_once();github.return_value.send.assert_called_once()
+        self.summary.write_text(json.dumps(healthy(runtime_status='success',model_health={'reason':'inference_succeeded'})))
+        self.call(env={**github_env(),**email_env()})
+        self.assertEqual(email.call_count,1)
 
     @patch.object(notify, "GitHubNotifier")
     @patch.object(notify, "send_email")
@@ -400,7 +406,7 @@ class CLITests(unittest.TestCase):
         self.assertEqual(set(json.loads(stored)["email"]), {"fingerprint", "last_sent", "conditions"})
 
     @patch.object(notify, "GitHubNotifier")
-    def test_no_scheduled_reminders_and_recovery_delivered_once(self, github):
+    def test_no_scheduled_reminders_or_recovery_notifications(self, github):
         github.return_value.send.return_value = True
         self.call(env=github_env(), now=100)
         self.call(env=github_env(), now=101)
@@ -411,8 +417,7 @@ class CLITests(unittest.TestCase):
         self.summary.write_text(json.dumps(healthy()))
         self.call(env=github_env(), now=102 + 30 * 86400)
         self.call(env=github_env(), now=103 + 30 * 86400)
-        self.assertEqual(github.return_value.send.call_count, 2)
-        self.assertFalse(github.return_value.send.call_args.args[0].active)
+        self.assertEqual(github.return_value.send.call_count, 1)
 
     @patch.object(notify, "GitHubNotifier")
     def test_model_recovery_rearms_actual_failures_despite_outstanding_review(self, github):
@@ -426,7 +431,7 @@ class CLITests(unittest.TestCase):
         self.assertEqual(github.return_value.send.call_count, 1)
         state = json.loads(self.state.read_text())["github"]
         self.assertNotIn("model_balance", state["conditions"])
-        self.assertIn("queue.review", state["conditions"])
+        self.assertNotIn("queue.review", state["conditions"])
         self.assertEqual(state["last_sent"], 100)
         self.summary.write_text(json.dumps(failed))
         self.call(env=github_env(), now=300)
