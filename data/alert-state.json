@@ -1,22 +1,18 @@
 {
   "email": {
     "conditions": [
-      "runtime:30adcb8d6b1adea68048",
-      "runtime:9671b968b28d05181a16",
-      "runtime:b7b36b33861d74e34293",
-      "runtime:b86c077138f8e3d9405d"
+      "runtime:2de8d5130524a6d9f330",
+      "runtime:c351b1eea05ae2da5105"
     ],
-    "fingerprint": "cf4b7d52a4a945c0ff1c4014c07c9658b116a121b9b8bb9569a659c25cddb2c0",
-    "last_sent": 1792262243.438942
+    "fingerprint": "3b263225c0f8213971bba3d39ff55221badea4e38117f4b24f4847cb0f1deb1c",
+    "last_sent": 1792276215.6140797
   },
   "github": {
     "conditions": [
-      "runtime:30adcb8d6b1adea68048",
-      "runtime:9671b968b28d05181a16",
-      "runtime:b7b36b33861d74e34293",
-      "runtime:b86c077138f8e3d9405d"
+      "runtime:2de8d5130524a6d9f330",
+      "runtime:c351b1eea05ae2da5105"
     ],
-    "fingerprint": "cf4b7d52a4a945c0ff1c4014c07c9658b116a121b9b8bb9569a659c25cddb2c0",
-    "last_sent": 1792262243.438942
+    "fingerprint": "3b263225c0f8213971bba3d39ff55221badea4e38117f4b24f4847cb0f1deb1c",
+    "last_sent": 1792276215.6140797
   }
 }
