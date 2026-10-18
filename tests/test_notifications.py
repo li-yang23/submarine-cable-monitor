@@ -78,6 +78,15 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn('Blocked news',message.body)
         self.assertFalse(any(k.startswith(('review:','retry:')) for k in report.conditions))
 
+    def test_gateway_notification_explains_remote_failure(self):
+        failure = {'stage':'cross_source_fetch','url':'https://example.org/a','reason':'alternative_fetch_failed','http_status':502}
+        report = self.detailed([], runtime_status='degraded', failure_details=[failure])
+        body = notify.with_change_details(report, None).body
+        self.assertTrue(report.active)
+        self.assertIn('补证来源获取失败', body)
+        self.assertIn('HTTP 502', body)
+        self.assertIn('来源网站或上游网关暂时不可用', body)
+
     def test_url_failure_dedup_and_new_url_alerts(self):
         failure={'stage':'discover','source':'Submarine Networks','url':'https://example.org/a','reason':'cable_page_fetch_error','http_status':404}
         first=self.detailed([],runtime_status='degraded',failure_details=[failure])

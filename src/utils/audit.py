@@ -120,10 +120,10 @@ class AuditRun:
             if identity or not matching:
                 self._failure_keys.add((group, source, identity))
             self.failures = len(self._failure_keys)
-            self.failure_details[(group, source, identity)] = {k: record[k] for k in ("stage", "source", "url", "discovered_url", "reason", "http_status", "title", "parent_queue_id") if k in record}
-        if stage in {"cross_source_fetch", "fetch"} and outcome == "unavailable":
+            self.failure_details[(group, source, identity)] = {k: record[k] for k in ("stage", "source", "url", "discovered_url", "reason", "error_type", "http_status", "title", "parent_queue_id") if k in record}
+        if stage in {"cross_source_fetch", "fetch", "discover"} and outcome == "unavailable":
             self.unavailable_details[(record.get("parent_queue_id", ""), record.get("url", ""))] = {
-                k: record[k] for k in ("stage", "url", "discovered_url", "reason", "http_status", "title", "parent_queue_id") if k in record}
+                k: record[k] for k in ("stage", "source", "url", "discovered_url", "reason", "error_type", "http_status", "title", "parent_queue_id") if k in record}
         if stage == "model_usage":
             self.usage_responses += 1
             present = [key for key in _TOKEN_FIELDS if key in record]

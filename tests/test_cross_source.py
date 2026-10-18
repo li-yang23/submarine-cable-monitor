@@ -201,7 +201,7 @@ class CrossSourceTests(unittest.TestCase):
     def test_optional_access_failure_keeps_gap_without_runtime_failure(self):
         import requests
         from src.utils.audit import AuditRun
-        for status in (401, 403, 404, 410, 451, 429, 500):
+        for status in (202, 401, 403, 404, 406, 410, 451, 429, 500, 502):
             with self.subTest(status=status):
                 response = requests.Response(); response.status_code = status
                 error = requests.HTTPError("private response", response=response)
@@ -219,7 +219,7 @@ class CrossSourceTests(unittest.TestCase):
                 self.assertFalse(found)
                 self.assertNotEqual(self.parent['status'],'done')
                 self.assertFalse(self.state.is_processed(self.parent['url']))
-                unavailable = status in (401,403,404,410,451)
+                unavailable = status in (202,401,403,404,406,410,451)
                 self.assertEqual(audit.failures,0 if unavailable else 1)
                 items = summary['unavailable_evidence' if unavailable else 'failure_details']
                 self.assertEqual(len(items),1)

@@ -84,7 +84,7 @@ class PipelineReliabilityTests(unittest.TestCase):
 
     def test_publisher_restriction_is_gap_but_429_and_500_fail_run(self):
         self.config.cross_source_enabled=False
-        for status in (401,403,404,410,451,429,500):
+        for status in (202,401,403,404,406,410,451,429,500,502):
             with self.subTest(status=status):
                 source='Google News'
                 row={'source':source,'url':f'https://example.org/{status}','title':'Cable news','published_date':'2026-10-14'}
@@ -95,7 +95,7 @@ class PipelineReliabilityTests(unittest.TestCase):
                     return []
                 with patch('src.pipeline.SCRAPER_CLASSES',{'fixture':lambda c:scraper}), patch.object(scraper,'scrape_articles',side_effect=discover), patch.object(scraper,'_resolve_google_news_url',side_effect=lambda u:u), patch.object(scraper,'extract_page_text',side_effect=requests.HTTPError(response=response)):
                     result=MonitorPipeline(self.config,self.store,self.extractor(),health_checker=lambda *args:dict(NOT_CHECKED)).run(['fixture'])
-                restricted=status in (401,403,404,410,451)
+                restricted=status in (202,401,403,404,406,410,451)
                 self.assertEqual(result.runtime_status,'success' if restricted else 'degraded')
                 saved=ArticleQueue.from_config(self.config).get(row)
                 self.assertEqual(saved['status'],'retry')

@@ -1,11 +1,12 @@
 import json
 import tempfile
 import unittest
+import requests
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from src.scrapers.article_sources import SubmarineNetworksScraper
+from src.scrapers.article_sources import SubmarineNetworksScraper, PublisherAccessError
 from src.utils import Config
 from src.utils.audit import AuditRun
 
@@ -48,12 +49,50 @@ class NetworksDiscoveryTests(unittest.TestCase):
         record = next(row for row in self.records() if row["stage"] == "cable_page")
         self.assertEqual((record["outcome"], record["entry_count"], record["anchor_count"]), ("completed", 0, 1))
 
-    def test_http_200_empty_or_challenge_html_is_failure(self):
-        for html in ["<html></html>", "<title>Just a moment...</title><a href='/'>Home</a>"]:
-            with self.subTest(html=html), patch.object(self.scraper, "get", return_value=self.response(html)):
-                with self.assertRaises(ValueError):
-                    self.scraper._discover_article_urls("https://www.submarinenetworks.com/system")
-        self.assertEqual(sum(row.get("reason") == "empty_or_challenge_page" for row in self.records()), 2)
+    def test_http_200_empty_page_is_failure_but_challenge_is_access_restriction(self):
+        with patch.object(self.scraper, "get", return_value=self.response("<html></html>")):
+            with self.assertRaises(ValueError):
+                self.scraper._discover_article_urls("https://www.submarinenetworks.com/system")
+        with patch.object(self.scraper, "get", return_value=self.response("<title>Just a moment...</title><a href='/'>Home</a>")):
+            with self.assertRaises(PublisherAccessError):
+                self.scraper._discover_article_urls("https://www.submarinenetworks.com/system")
+        self.assertEqual(self.audit.failures, 1)
+
+    def test_blocked_directories_are_logged_cool_down_and_later_resume(self):
+        self.config.article_queue_path = str(self.root / 'queue.json')
+        self.scraper = SubmarineNetworksScraper(self.config)
+        self.scraper.fetch_enabled = False
+        seeds = [{"href": f"https://www.submarinenetworks.com/system/{i}", "cable_name": f"Cable {i}"} for i in range(2)]
+        Path(self.config.submarine_networks_links_path).write_text(json.dumps(seeds))
+        response = requests.Response(); response.status_code = 202
+        error = PublisherAccessError(response=response)
+        with patch.object(self.scraper, "_discover_article_urls", side_effect=error) as discover:
+            self.scraper.scrape_articles()
+            self.assertEqual(discover.call_count, 2)
+        self.scraper = SubmarineNetworksScraper(self.config)
+        self.scraper.fetch_enabled = False
+        with patch.object(self.scraper, '_discover_article_urls') as discover:
+            self.scraper.scrape_articles()
+            discover.assert_not_called()  # Cooldown survives a fresh process.
+        self.assertEqual(self.audit.failures, 0)
+        self.assertEqual(len(self.audit.unavailable_details), 2)
+        self.assertFalse(any(r.get('reason') == 'no_articles_in_seed_traversal' for r in self.records()))
+        retry_at = max(self.scraper.article_queue.get_cursor('directory_retry:' + seed['href'])['retry_at'] for seed in seeds)
+        with patch('src.scrapers.article_sources.time.time', return_value=retry_at + 1), patch.object(self.scraper, '_discover_article_urls', return_value=['https://www.submarinenetworks.com/articles/cut']) as discover:
+            self.scraper.scrape_articles()
+            self.assertEqual(discover.call_count, 2)
+        for seed in seeds:
+            self.assertEqual(self.scraper.article_queue.get_cursor('directory_retry:' + seed['href']), {})
+        self.assertIsNotNone(self.scraper.article_queue.get('https://www.submarinenetworks.com/articles/cut'))
+
+    def test_directory_gateway_error_remains_a_runtime_failure(self):
+        Path(self.config.submarine_networks_links_path).write_text(json.dumps([{'href':'https://www.submarinenetworks.com/system'}]))
+        response = requests.Response(); response.status_code = 502
+        with patch.object(self.scraper, '_discover_article_urls', side_effect=requests.HTTPError(response=response)):
+            self.scraper.scrape_articles()
+        self.assertEqual(self.audit.failures, 1)
+        self.assertEqual(next(iter(self.audit.failure_details.values()))['http_status'], 502)
+        self.assertFalse(self.audit.unavailable_details)
 
     def test_full_seed_traversal_with_no_articles_warns_and_reports_every_page(self):
         seeds = [{"href": f"https://www.submarinenetworks.com/system/{i}", "cable_name": f"Cable {i}"} for i in range(3)]

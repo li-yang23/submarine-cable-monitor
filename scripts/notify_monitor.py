@@ -71,8 +71,12 @@ def detail_report(summary, workflow_status, summary_error, run_url):
         url = item.get("url") or item.get("discovered_url") or item.get("source") or item.get("stage")
         reason = item.get("reason", "unknown")
         code = item.get("http_status")
+        label = {"cable_page_fetch_error": "海缆目录获取失败", "category_fetch_error": "新闻目录获取失败",
+                 "article_fetch_error": "新闻正文获取失败", "alternative_fetch_failed": "补证来源获取失败",
+                 "rss_fetch_error": "RSS 请求失败"}.get(reason, reason)
+        explanation = "；来源网站或上游网关暂时不可用" if code in {502, 503, 504} else ""
         add("runtime", (item.get("stage"), url, reason, code),
-            f"运行故障：{item.get('source') or item.get('stage')}；{reason}" + (f"；HTTP {code}" if code else "") + f"；{url}")
+            f"运行故障：{item.get('source') or item.get('stage')}；{label}" + (f"；HTTP {code}" if code else "") + explanation + f"；{url}")
     model_keys = [key for key in base.conditions if key.startswith("model_")]
     for key in model_keys:
         label = next((line for line in base.body.splitlines() if line.startswith("- ") and ("模型" in line or "SiliconFlow" in line)), key)
