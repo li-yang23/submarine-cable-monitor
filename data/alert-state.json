@@ -1,12 +1,16 @@
 {
   "email": {
-    "conditions": [],
-    "fingerprint": "healthy",
-    "last_sent": 1792276215.6140797
+    "conditions": [
+      "runtime:e4a9691b2246f690a6d5"
+    ],
+    "fingerprint": "3b97a3208f93826e0f0623b6562f5884f765080c1bf81ef4b9475fc5c546c006",
+    "last_sent": 1792327449.5143938
   },
   "github": {
-    "conditions": [],
-    "fingerprint": "healthy",
-    "last_sent": 1792276215.6140797
+    "conditions": [
+      "runtime:e4a9691b2246f690a6d5"
+    ],
+    "fingerprint": "3b97a3208f93826e0f0623b6562f5884f765080c1bf81ef4b9475fc5c546c006",
+    "last_sent": 1792327449.5143938
   }
 }
