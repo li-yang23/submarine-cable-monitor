@@ -19,6 +19,10 @@ from src.utils import Config, get_logger
 from src.utils.audit import article_fields, emit, error_details
 
 
+class PublisherAccessError(requests.HTTPError):
+    """A public page returned an access restriction or verification challenge."""
+
+
 class ArticleScraper:
     source_name = "article"
 
@@ -79,7 +83,7 @@ class ArticleScraper:
     def _publisher_failure(details):
         status = details.get("http_status")
         return ("publisher_missing" if status in {404, 410} else
-                "publisher_access_blocked" if status in {401, 403, 451} else "article_fetch_error")
+                "publisher_access_blocked" if status in {202, 401, 403, 406, 451} or details.get("error_type") == "PublisherAccessError" else "article_fetch_error")
 
     def _retain_fetch_failure(self, item, failure):
         if failure["reason"] in {"publisher_missing", "publisher_access_blocked"}:
@@ -182,7 +186,9 @@ class ArticleScraper:
 
     @staticmethod
     def _blocked_response(response) -> bool:
-        return response.status_code in {202, 403, 406} or ArticleScraper._blocked_html(response.text)
+        return (response.status_code in {202, 403, 406}
+                or getattr(response, "headers", {}).get("cf-mitigated") == "challenge"
+                or ArticleScraper._blocked_html(response.text))
 
     def get(self, url: str):
         host = urlparse(url).hostname or ""
@@ -222,12 +228,18 @@ class ArticleScraper:
                 if self._blocked_response(response) and host not in self._browser_hosts:
                     emit("transport", "retry", source=self.source_name, url=url, reason="browser_compatibility", http_status=response.status_code)
                     time.sleep(max(1, float(getattr(self.config, "request_delay_min", 1))))
-                    response = self._browser_get(url)
+                    try:
+                        response = self._browser_get(url)
+                    except Exception as exc:
+                        emit("transport", "retry", source=self.source_name, url=url, reason="browser_compatibility_failed", **error_details(exc))
                     if not self._blocked_response(response) and response.status_code < 400:
                         self._browser_hosts.add(host)
                 if self._blocked_response(response) and os.getenv("MONITOR_BROWSER_FALLBACK") == "1":
                     emit("transport", "retry", source=self.source_name, url=url, reason="public_browser_render", http_status=response.status_code)
-                    response = self._render_get(url)
+                    try:
+                        response = self._render_get(url)
+                    except Exception as exc:
+                        emit("transport", "retry", source=self.source_name, url=url, reason="public_browser_render_failed", **error_details(exc))
                 if response.status_code == 429:
                     value = response.headers.get("Retry-After", "")
                     try:
@@ -239,14 +251,14 @@ class ArticleScraper:
                             delay = 900
                     self.article_queue.set_cursor(backoff_key, time.time() + max(60, min(delay, 86400)))
                     response.raise_for_status()
-                response.raise_for_status()
                 if self._blocked_response(response):
-                    raise requests.HTTPError("unusable_challenge_response", response=response)
+                    raise PublisherAccessError("publisher_access_restricted", response=response)
+                response.raise_for_status()
                 return response
             except Exception as exc:
                 last_error = exc
                 status = getattr(getattr(exc, "response", None), "status_code", None)
-                if status in {202, 401, 403, 404, 406, 429}:
+                if isinstance(exc, PublisherAccessError) or status in {202, 401, 403, 404, 406, 410, 429, 451}:
                     raise
                 if attempt + 1 < max(1, int(getattr(self.config, "max_retries", 3))):
                     time.sleep(1 + attempt)
@@ -596,7 +608,10 @@ class SubTelForumScraper(ArticleScraper):
         try:
             self._discover_urls(since=since, dry_run=dry_run)
         except Exception as exc:
-            emit("discover", "failed", source=self.source_name, reason="source_discovery_error", **error_details(exc))
+            details = error_details(exc)
+            blocked = self._publisher_failure(details) == "publisher_access_blocked"
+            emit("discover", "unavailable" if blocked else "failed", source=self.source_name, url=self.feed_url,
+                 reason="directory_access_blocked" if blocked else "source_discovery_error", **details)
         return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
     def _discover_urls(self, since: str | None, dry_run: bool) -> list[str]:
@@ -617,7 +632,10 @@ class SubTelForumScraper(ArticleScraper):
             try:
                 soup = BeautifulSoup(self.get(next_url).text, "html.parser")
             except Exception as exc:
-                emit("discover", "fallback", source=self.source_name, url=next_url, reason="category_fetch_error", **error_details(exc))
+                details = error_details(exc)
+                blocked = self._publisher_failure(details) == "publisher_access_blocked"
+                emit("discover", "unavailable" if blocked else "fallback", source=self.source_name, url=next_url,
+                     reason="directory_access_blocked" if blocked else "category_fetch_error", **details)
                 self.logger.warning("SubTel Forum category page failed, falling back to feed: %s", type(exc).__name__)
                 self.article_queue.set_cursor(self.source_name, next_url)
                 return self._discover_urls_from_feed(max_articles=0)
@@ -690,6 +708,7 @@ class SubmarineNetworksScraper(ArticleScraper):
         cursor = int(self.article_queue.get_cursor(self.source_name, 0) or 0) % max(1, len(links))
         started = time.monotonic()
         discovered_count = 0
+        inspected_count = 0
         consecutive_blocked = 0
         for offset in range(len(links)):
             index = (cursor + offset) % len(links)
@@ -703,7 +722,9 @@ class SubmarineNetworksScraper(ArticleScraper):
             retry_key = "directory_retry:" + original_url
             retry = self.article_queue.get_cursor(retry_key, {})
             if retry.get("retry_at", 0) > time.time():
-                emit("discover", "failed", source=self.source_name, url=cable_url, reason="directory_unresolved", http_status=retry.get("http_status"))
+                blocked = retry.get("reason") == "directory_access_blocked"
+                emit("discover", "unavailable" if blocked else "failed", source=self.source_name, url=cable_url,
+                     reason="directory_access_cooldown" if blocked else "directory_unresolved", http_status=retry.get("http_status"))
                 self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
                 continue
             cable_name = clean_text(cable.get("cable_name"))
@@ -724,26 +745,30 @@ class SubmarineNetworksScraper(ArticleScraper):
                         self.article_queue.set_cursor("directory_route:" + original_url, self.article_queue.get_cursor("directory_route:" + cable_url))
                 self.article_queue.set_cursor(retry_key, {})
             except Exception as exc:
-                status = error_details(exc).get("http_status")
-                if status in {404, 410}:
-                    self.article_queue.set_cursor(retry_key, {"http_status": status, "retry_at": time.time() + 86400})
-                emit("discover", "failed", source=self.source_name, url=cable_url, reason="cable_page_fetch_error", **error_details(exc))
+                details = error_details(exc)
+                status = details.get("http_status")
+                blocked = self._publisher_failure(details) == "publisher_access_blocked"
+                if blocked or status in {404, 410}:
+                    self.article_queue.set_cursor(retry_key, {"http_status": status, "retry_at": time.time() + 86400,
+                                                            "reason": "directory_access_blocked" if blocked else "directory_unresolved"})
+                emit("discover", "unavailable" if blocked else "failed", source=self.source_name, url=cable_url,
+                     reason="directory_access_blocked" if blocked else "cable_page_fetch_error", **details)
                 self.logger.warning("Skipping cable page: %s", type(exc).__name__)
-                # Retry this cable on the next traversal; failures are never removed.
-                status = error_details(exc).get("http_status")
-                consecutive_blocked = consecutive_blocked + 1 if status in {202, 403, 406, 429} or isinstance(exc, ValueError) else 0
+                # Keep the seed; restricted directories resume after their cooldown.
+                consecutive_blocked = consecutive_blocked + 1 if blocked or status == 429 or isinstance(exc, ValueError) else 0
                 self.article_queue.set_cursor(self.source_name, index)
                 if consecutive_blocked >= 3 or status == 429:
                     emit("discover", "deferred", source=self.source_name, reason="host_unavailable", entry_count=len(links) - offset)
                     break
                 continue
             consecutive_blocked = 0
+            inspected_count += 1
             for url in discovered_urls:
                 self._enqueue({"url": url, "cable_name": cable_name})
             discovered_count += len(discovered_urls)
             self.article_queue.set_cursor(self.source_name, (index + 1) % len(links))
         else:
-            if links and not discovered_count:
+            if links and inspected_count == len(links) and not discovered_count:
                 emit("discover", "failed", source=self.source_name, reason="no_articles_in_seed_traversal", entry_count=0)
         return [article for article in self.iter_queued_articles(dry_run=dry_run) if article is not None]
 
@@ -800,7 +825,9 @@ class SubmarineNetworksScraper(ArticleScraper):
                 if urlparse(href).hostname in {"submarinenetworks.com", "www.submarinenetworks.com"} and href not in urls:
                     urls.append(href)
         page_text = clean_text(soup.get_text(" ")).lower()
-        if not links or re.search(r"just a moment|checking your browser|enable javascript and cookies to continue|verify you are human", page_text):
+        if self._blocked_response(response) or re.search(r"checking your browser|enable javascript and cookies to continue|verify you are human", page_text):
+            raise PublisherAccessError("publisher_access_restricted", response=response)
+        if not links:
             emit("cable_page", "failed", **fields, entry_count=len(urls), reason="empty_or_challenge_page")
             raise ValueError("Cable directory did not provide a usable page")
         emit("cable_page", "completed", **fields, entry_count=len(urls))

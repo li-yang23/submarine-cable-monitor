@@ -7,7 +7,7 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 import requests
 
-from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper, article_body_text
+from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper, PublisherAccessError, SubTelForumScraper, article_body_text
 from src.utils import Config
 from src.utils.audit import AuditRun
 from scripts.notify_monitor import build_report
@@ -130,6 +130,39 @@ class FetchRecoveryTests(unittest.TestCase):
         with patch.object(scraper.session, 'get', return_value=response(403)), patch.object(scraper, '_browser_get', return_value=response(403)), patch.object(scraper, '_render_get', return_value=response(403)) as render, patch('time.sleep'), patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '1'}):
             with self.assertRaises(requests.HTTPError): scraper.get('https://publisher.example/story')
             render.assert_called_once()
+
+    def test_html_200_challenge_is_typed_and_not_retried_as_runtime_error(self):
+        scraper = ArticleScraper(Config(article_queue_path=''))
+        challenge = response(200, '<title>Just a moment...</title>Verify you are human')
+        with patch.object(scraper.session, 'get', return_value=challenge) as plain, patch.object(scraper, '_browser_get', return_value=challenge), patch('time.sleep'), patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '0'}):
+            with self.assertRaises(PublisherAccessError) as caught:
+                scraper.get('https://publisher.example/story')
+            plain.assert_called_once()
+        from src.utils.audit import error_details
+        self.assertEqual(scraper._publisher_failure(error_details(caught.exception)), 'publisher_access_blocked')
+
+    def test_broken_fallback_does_not_erase_known_access_restriction(self):
+        scraper = ArticleScraper(Config(article_queue_path=''))
+        with patch.object(scraper.session, 'get', return_value=response(403)) as plain, patch.object(scraper, '_browser_get', side_effect=requests.ConnectionError()), patch.object(scraper, '_render_get', side_effect=TimeoutError()), patch('time.sleep'), patch.dict('os.environ', {'MONITOR_BROWSER_FALLBACK': '1'}):
+            with self.assertRaises(PublisherAccessError) as caught:
+                scraper.get('https://publisher.example/story')
+            plain.assert_called_once()
+            self.assertEqual(caught.exception.response.status_code, 403)
+
+    def test_category_access_restriction_keeps_feed_fallback_without_runtime_alert(self):
+        scraper = SubTelForumScraper(Config(article_queue_path=''))
+        scraper.fetch_enabled = False
+        with tempfile.TemporaryDirectory() as tmp:
+            audit = AuditRun(tmp); audit.activate()
+            try:
+                with patch.object(scraper, 'get', side_effect=PublisherAccessError(response=response(202))), patch.object(scraper, '_discover_urls_from_feed', return_value=['https://subtelforum.com/cable-cut/']) as feed:
+                    scraper.scrape_articles()
+                    feed.assert_called_once()
+            finally:
+                summary = audit.finish({'runtime_status':'success','status':'success'})
+            self.assertEqual(audit.failures, 0)
+            self.assertEqual(summary['unavailable_evidence'][0]['http_status'], 202)
+            self.assertFalse(build_report(summary).active)
 
     def test_duplicate_layers_count_urls_not_log_lines(self):
         with tempfile.TemporaryDirectory() as tmp:

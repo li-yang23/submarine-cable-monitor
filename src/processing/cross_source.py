@@ -300,7 +300,7 @@ class CrossSourceRecovery:
                 details = error_details(exc)
                 # Optional references can be inaccessible without breaking the
                 # research process. Keep the gap; never acknowledge the parent.
-                unavailable = publisher_requested and details.get("http_status") in {401, 403, 404, 410, 451}
+                unavailable = publisher_requested and self.scraper._publisher_failure(details) != "article_fetch_error"
                 failure = {"url": safe_url(resolved), "discovered_url": safe_url(link),
                            "title": entry.get("title") or row.get("title", ""),
                            "parent_queue_id": row["queue_id"],
