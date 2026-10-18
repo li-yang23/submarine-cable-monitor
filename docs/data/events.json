@@ -899,6 +899,59 @@
     "verification_status": "rule_verified"
   },
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between the Philippines and Singapore",
+    "accident_type": "Cut",
+    "affected_area": "nationwide",
+    "cable_name": "",
+    "created_at": "2026-10-18T12:42:29+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWVhLcGhTb3RiYmhlUXJJU19UbDhKbmdkbzlmNmpjS0s0Wktxd3ZVUEVfaVBtNEhRSHJtVFhkYXZibmRjWjM4SWs3MWJjWG1mOXNzSGZsSDl2QzVlUEN0VzVRZ2ttRlZBTHNOUlV4bUswanE5VHdBblFPd3MyR1c3RHlnWFFKbFVfVkh5TkVieTNyR0ktY2lnTnA1cFJ4RFdoNHpSN2NZVUg?oc=5",
+    "event_uid": "evt_72990378b60ca420b06a",
+    "evidence_urls": [
+      "https://www.communicationstoday.co.in/philippines-telcos-divert-data-traffic-after-undersea-cable-outage/"
+    ],
+    "normalized_cable_id": "",
+    "occurrence_date": "2026-10-02",
+    "original_text": "Services have fully normalized nationwide following the submarine cable cut between the Philippines and Singapore on Oct. 2",
+    "original_text_zh": "菲律宾与新加坡之间的海底电缆在10月2日被切断后，全国范围内的服务已完全恢复正常",
+    "published_date": "2026-10-05",
+    "raw_data": {
+      "article": {
+        "content": "A submarine cable disruption between the Philippines and Singapore affected internet services nationwide, forcing major telecommunications companies Globe Telecom Inc., PLDT Inc. and Converge ICT Solutions Inc. to reroute international data traffic as available bandwidth was reduced. Globe and PLDT said Sunday their network services had fully normalized following the Oct. 2 cable disruption, while telecommunications companies continued to monitor their networks and international connections. In an advisory issued at 4:30 p.m. on Oct. 4, PLDT said it had fully restored network services nationwide. “Services have fully normalized nationwide following the submarine cable cut between the Philippines and Singapore on Oct. 2,” PLDT said. Globe earlier said it had also fully restored internet services, with mobile and broadband customers who experienced intermittent connectivity and slower browsing expected to have normal service. Globe said traffic was restored after the Philippine cable landing station reactivated the system and normalized fiber connections. The company said it was coordinating with international network partners to determine the exact nature and location of the fault. PLDT had advised customers on Oct. 2 that a submarine cable cut was affecting services nationwide, although most traffic had been rerouted through alternative paths as the company worked to normalize connectivity. Converge ICT Solutions Inc. likewise said traffic to and from Singapore had been rerouted through other submarine cable systems. The company said it was monitoring its network as well as applications and websites hosted in Singapore. The disruption reduced available international bandwidth and underscored the importance of alternative submarine cable routes in maintaining connectivity when faults occur on major international links. Malaya Related Topics: Up Next Trump appoints intelligence chief Clayton to lead AI policy Don't Miss The EU Proposal for Critical Communication Systems, Strand Consult Click to comment You must be logged in to post a comment Login",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWVhLcGhTb3RiYmhlUXJJU19UbDhKbmdkbzlmNmpjS0s0Wktxd3ZVUEVfaVBtNEhRSHJtVFhkYXZibmRjWjM4SWs3MWJjWG1mOXNzSGZsSDl2QzVlUEN0VzVRZ2ttRlZBTHNOUlV4bUswanE5VHdBblFPd3MyR1c3RHlnWFFKbFVfVkh5TkVieTNyR0ktY2lnTnA1cFJ4RFdoNHpSN2NZVUg?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-10-05",
+        "queue_id": "a47e793d20eab095f350487185b54f98",
+        "source": "Google News",
+        "title": "Philippines telcos divert data traffic after undersea cable outage",
+        "url": "https://www.communicationstoday.co.in/philippines-telcos-divert-data-traffic-after-undersea-cable-outage/"
+      },
+      "extracted": {
+        "accident_location": "between the Philippines and Singapore",
+        "accident_type": "Cut",
+        "affected_area": "nationwide",
+        "cable_name": "",
+        "occurrence_date": "2026-10-02",
+        "occurrence_date_evidence": "following the submarine cable cut between the Philippines and Singapore on Oct. 2",
+        "original_text": "Services have fully normalized nationwide following the submarine cable cut between the Philippines and Singapore on Oct. 2",
+        "original_text_zh": "菲律宾与新加坡之间的海底电缆在10月2日被切断后，全国范围内的服务已完全恢复正常",
+        "reason": null,
+        "repair_date": "2026-10-04"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-10-04",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "",
+    "title": "Philippines telcos divert data traffic after undersea cable outage",
+    "updated_at": "2026-10-18T12:42:29+00:00",
+    "url": "https://www.communicationstoday.co.in/philippines-telcos-divert-data-traffic-after-undersea-cable-outage/",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "Syria",
     "accident_type": "Cut",
@@ -6964,6 +7017,59 @@
     "title": "PTA says submarine cable fault resolved, internet services back to normal - Tech - DAWN.COM",
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://www.dawn.com/news/2012653",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-10-18T12:42:37+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUlhHdjlONkl5NUtoUXZ6N014Nk81RHJNbUhLRGNvWjBkV0FSblR5azFIN1NvcHJSTFhhbFlPWmVCV0IyVl9fWEgzQWlXVE1zcHRUZmNTNFJkRVdBTFNPOENwNXdPM2dCSTVuY196OHVuYjNTWWtURkhNcnlzTTBVb2trWjNWYkxiMmhkNEF0T3R0X0V5dDF0Vm5IR244U2o3cDZvYQ?oc=5",
+    "event_uid": "evt_f6a3c9990e0ad5d78a56",
+    "evidence_urls": [
+      "https://www.techjuice.pk/smw5-submarine-cable-restored-internet-traffic-returns-to-normal-in-pakistan/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "A physical fault occurred within the SMW5 submarine cable. Because of this fault, Transworld Associates (TWA) lost a significant portion of its international IP transit capacity. Therefore, users across the country experienced internet connectivity issues.",
+    "original_text_zh": "SMW5海底电缆出现物理故障。由于这一故障，Transworld Associates (TWA)失去了很大一部分国际IP传输能力。因此，全国各地的用户都遭遇了互联网连接问题。",
+    "published_date": "2026-07-03",
+    "raw_data": {
+      "article": {
+        "content": "The Pakistan Telecommunication Authority (PTA) has officially confirmed the full restoration of the SEA-ME-WE 5 (SMW5) international submarine cable system. Consequently, internet traffic across Pakistan has returned to normal this morning, July 3, 2026. This development resolves the widespread internet disruption that affected users starting last night. Following the restoration, all services are now operating as usual. The connectivity issues began on Thursday night. A physical fault occurred within the SMW5 submarine cable. Because of this fault, Transworld Associates (TWA) lost a significant portion of its international IP transit capacity. Therefore, users across the country experienced internet connectivity issues. Fortunately, authorities took immediate steps to mitigate the impact. During the outage, providers rerouted internet traffic through alternate international links. This temporary measure successfully minimized service degradation while the main line remained down. Meanwhile, Transworld Associates (TWA) coordinated directly with the SMW5 Consortium to restore connectivity. Throughout the incident, the PTA monitored the situation closely. Furthermore, the regulatory body worked alongside TWA and other stakeholders to support the earliest possible restoration of services. Now, the SMW5 cable is fully operational again. PTA officials verify that internet services have stabilized, and routine traffic has resumed across Pakistan.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUlhHdjlONkl5NUtoUXZ6N014Nk81RHJNbUhLRGNvWjBkV0FSblR5azFIN1NvcHJSTFhhbFlPWmVCV0IyVl9fWEgzQWlXVE1zcHRUZmNTNFJkRVdBTFNPOENwNXdPM2dCSTVuY196OHVuYjNTWWtURkhNcnlzTTBVb2trWjNWYkxiMmhkNEF0T3R0X0V5dDF0Vm5IR244U2o3cDZvYQ?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-07-03",
+        "queue_id": "b9e1cfe2aa9fb4b7a45b63364c557948",
+        "source": "Google News",
+        "title": "SMW5 Submarine Cable Restored: Internet Traffic Returns to Normal in Pakistan",
+        "url": "https://www.techjuice.pk/smw5-submarine-cable-restored-internet-traffic-returns-to-normal-in-pakistan/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Cut",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": "2026-06-30",
+        "occurrence_date_evidence": "The connectivity issues began on Thursday night.",
+        "original_text": "A physical fault occurred within the SMW5 submarine cable. Because of this fault, Transworld Associates (TWA) lost a significant portion of its international IP transit capacity. Therefore, users across the country experienced internet connectivity issues.",
+        "original_text_zh": "SMW5海底电缆出现物理故障。由于这一故障，Transworld Associates (TWA)失去了很大一部分国际IP传输能力。因此，全国各地的用户都遭遇了互联网连接问题。",
+        "reason": "physical fault",
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "physical fault",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "SMW5 Submarine Cable Restored: Internet Traffic Returns to Normal in Pakistan",
+    "updated_at": "2026-10-18T12:42:37+00:00",
+    "url": "https://www.techjuice.pk/smw5-submarine-cable-restored-internet-traffic-returns-to-normal-in-pakistan/",
     "verification_status": "rule_verified"
   },
   {
