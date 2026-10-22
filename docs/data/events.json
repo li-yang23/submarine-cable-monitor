@@ -433,6 +433,59 @@
     "verification_status": "rule_verified"
   },
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "West African coast",
+    "cable_name": "WACS",
+    "created_at": "2026-10-22T05:05:28+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE42ZEwtYXdnZWhBVU92WGpVOExYM0s5UUM2TFFUTFRvUl9ZUG81Z0xXdkd5ZzdSOVhxZnlmY0VxdDhfc2JMcG52SXN0em5Ub2tsZy1SQWZVcXBTVmNtMjN3?oc=5",
+    "event_uid": "evt_476ea7f35b47bcd52d8b",
+    "evidence_urls": [
+      "https://tech.africa/telcables-nigeria-local-cloud/"
+    ],
+    "normalized_cable_id": "WACS",
+    "occurrence_date": null,
+    "original_text": "That has become a critical factor after the recent WACS cuts and disruptions.",
+    "original_text_zh": "在最近的WACS电缆切断和中断后，这已成为一个关键因素。",
+    "published_date": "2026-10-09",
+    "raw_data": {
+      "article": {
+        "content": "From 1 January 2027, payment transaction data generated in Nigeria has to be stored in Nigeria. The Central Bank of Nigeria (CBN) set that deadline in a circular dated 15 June 2026, addressed to banks, microfinance banks, mobile money operators, switches and other licensed payment firms, as tech.africa reported in July . That turns local cloud in Lagos, Nigeria, from a sales pitch into a compliance requirement, and carriers are positioning accordingly. TelCables Nigeria is the West African subsidiary of Angola Cables, which owns the SACS cable between Angola and Brazil and capacity on WACS and MONET. Its parent upgraded its Atlantic systems with Ciena last month. Fernando Fernandes, chief executive of TelCables Nigeria and West Africa since 2023, answered tech.africa’s written questions on what Nigerian banks and fintechs now ask for, where route diversity still falls short, and where the company is investing next. Buy Cloud Servers to target North, West, and Southern Africa. This Q&A has been edited for house style and length. The answers are Fernandes’s own words. Fernando Fernandes, chief executive of TelCables Nigeria and West Africa. Image: TelCables Nigeria For readers meeting TelCables Nigeria for the first time: what do you run today, and who buys from you? TelCables Nigeria is the Nigerian subsidiary of Angola Cables, a multinational telecommunications and digital services provider. Its other subsidiaries include TelCables Southern and East Africa, TelCables Middle East, TelCables Europe and TelCables Brazil. We sell international capacity and IP transit over our own subsea cables, SACS, WACS and MONET, and over partner systems including EllaLink, Equiano and 2Africa. The company owns and operates a 33,000 km subsea network and extends its reach to more than 50,000 km through those partnerships. That gives us direct, low-latency routes from West Africa to the US, South America and London. On top of the network we offer: Global connectivity: IP transit to Tier 1 carriers including Tata, Telxius, GTT and Cogent, dedicated internet access without the customer needing its own autonomous system number, and remote peering to more than 27 internet exchange points (IXPs) worldwide. Clouds2Africa: local infrastructure and platform services, virtual machines, backup, disaster recovery, business continuity and content delivery network (CDN) services. Go4AI: local GPU infrastructure to host AI workloads. Security and integration: Shields2Africa distributed denial-of-service (DDoS) protection with 15 Tbps of mitigation capacity and 12 scrubbing centres, SD-WAN, and direct on-ramps to AWS, Azure and Google Cloud. Our customers range from banks, fintechs and payment service providers to Tier 1 content providers such as Netflix, Facebook, Apple, Cloudflare and Akamai, as well as ISPs, OTT services, CDNs, research institutions, and small businesses and startups that need virtual machines on demand. Nigeria has no shortage of carriers and data-centre operators chasing the same enterprise and banking customers. What does TelCables Nigeria offer that they do not? Very simple, and those who know us know it very well. I will point out three things. First, we have route diversity that others don’t have. Our SACS cable is the only direct South Atlantic route from Africa to Latin America. Combined with MONET, WACS and EllaLink, we offer low-latency southern routes to the US, Brazil and Europe that bypass the congested West African coast. That has become a critical factor after the recent WACS cuts and disruptions. Second, our local cloud is truly local, technically and commercially. Clouds2Africa runs two live cloud nodes in Nigeria today, in the Tier III data centres of Rack Centre on the mainland and Digital Realty in Victoria Island. Because the data stays in Nigeria, there are no egress fees for most use cases and no migration fees. Bandwidth and IP are included, and billing is in naira via Paystack. The large international cloud providers charge in US dollars and bill for capacity or traffic. Third, it is compliant. Clouds2Africa holds Nigeria Data Protection Commission (NDPC) certification, plus ISO, SOC 1 and SOC 2, uses an AWS-compatible architecture, and is backed by a team of more than 30 engineers who can move workloads securely without downtime. What are banks and fintechs asking you for now that they were not asking for two years ago? Two years ago it was uptime with affordable international transit. Now it’s: CBN compliance: mandatory localisation of transaction data by 1 January 2027. Naira-priced cloud, to remove FX volatility. In-country backup and disaster recovery: two nodes, not one. Zero egress costs and predictable pricing, with a calculator. Local AI: Go4AI and a new multi-model AI API that gives one integration to Claude, Llama, DeepSeek and Kimi, with DDoS protection embedded. The conversation has shifted from “connect me” to “keep my data sovereign, compliant, AI-ready and secure”. Your op-ed makes the case for local cloud and resilient infrastructure. Which parts of that does TelCables provide itself, and where do you rely on partners? Angola Cables and TelCables provide the international backbone (SACS, WACS and MONET, with partner connections to anywhere), an extensive global network of more than 500 cloud nodes and the Clouds2Africa platform, Go4AI, Shields2Africa, IP transit and Global Data Centre Interconnect. With partners, we provide route diversity and physical resilience. We colocate in Rack Centre, Medallion and other Tier III facilities, and use metro networks such as Djoliba for West African reach. We also partner for hybrid cloud on-ramps, and for payments, with Paystack handling naira wallets. Which gap in Nigerian infrastructure costs your customers most today, and what is TelCables doing about it? There are essentially two hidden costs: FX and egress fees, and the fragility of depending on a single route, WACS, along the West African coast. What we are doing about it: terabit-scale dark-fibre rings interconnecting the major Lagos data centres, dual in-country nodes for backup and disaster recovery, southbound subsea diversity to reduce cable-cut risk, zero egress fees and naira billing. That localises traffic, cuts latency and removes transfer costs. Power and the last mile remain challenges. We address them through our multiple Tier III sites and our partnerships across Africa and the rest of the world. Where is TelCables Nigeria investing over the next two years, and why there? Deepening our footprint in Lagos: more capacity on the dark-fibre rings, and hardening the second mainland node. Expanding points of presence beyond Lagos: Abuja and Port Harcourt are the next logical step, following demand and the NFW multi-city expansion [Nigeria Fintech Week, which in 2026 ran programmes in Lagos, Abuja and Port Harcourt]. More local GPU capacity for sovereign AI. More data-centre integrations. Besides our connections to around 27 IXPs, we have access to more than 1,000 data centres globally, which is a particular advantage for hybrid cloud operators. Through partners such as Megaport, whose virtual fabric stretches across the globe, we can provide several “as a service” offerings depending on client requirements. Nigeria Fintech Week has just closed. Did anything you heard there change your plans? Three points stood out: Fintechs must move beyond payments to become economic infrastructure for credit, insurance and savings. Resilience is not about preventing failure, but about detecting, containing and recovering from disruptions. Scale is now massive. NIBSS Instant Payment processed about 11 billion transactions in 2024, against 5 billion in 2022, so dependence on infrastructure is that much higher. We have not changed our plans or our direction. We have accelerated them, with more focus on resilient dual-node cloud, naira economics, and payment infrastructure that can go cross-border from local bank accounts, a point Remita also made at the event.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE42ZEwtYXdnZWhBVU92WGpVOExYM0s5UUM2TFFUTFRvUl9ZUG81Z0xXdkd5ZzdSOVhxZnlmY0VxdDhfc2JMcG52SXN0em5Ub2tsZy1SQWZVcXBTVmNtMjN3?oc=5",
+        "keyword": "subsea cable disruption",
+        "published_date": "2026-10-09",
+        "queue_id": "d38d3c95047d77c398442e2e5edb3982",
+        "source": "Google News",
+        "title": "Q&A: TelCables Nigeria on local cloud and the CBN deadline",
+        "url": "https://tech.africa/telcables-nigeria-local-cloud/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Cut",
+        "affected_area": "West African coast",
+        "cable_name": "WACS",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "That has become a critical factor after the recent WACS cuts and disruptions.",
+        "original_text_zh": "在最近的WACS电缆切断和中断后，这已成为一个关键因素。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "WACS",
+    "title": "Q&A: TelCables Nigeria on local cloud and the CBN deadline",
+    "updated_at": "2026-10-22T05:05:28+00:00",
+    "url": "https://tech.africa/telcables-nigeria-local-cloud/",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "verified",
     "accident_location": "Syria",
     "accident_type": "Cut",
