@@ -1,16 +1,44 @@
 {
   "email": {
     "conditions": [
-      "runtime:085c2248e4a09cb4c285"
+      "runtime:05bb6b73e19bbc2de0cc",
+      "runtime:0a2e60cee7ccd983be5a",
+      "runtime:1030e38fe3352b48671a",
+      "runtime:19ffb13f8f08ccfadc34",
+      "runtime:3227ded08a5bf37525ad",
+      "runtime:4d646f50f272cd076bb0",
+      "runtime:566cd4082f63c6ca852b",
+      "runtime:5aca65b5d88309ecaa65",
+      "runtime:60367ed2ce14331d0e94",
+      "runtime:6484720daa510c7fa6db",
+      "runtime:835ec15b9538ec303bff",
+      "runtime:8d4f998ce54726f7d247",
+      "runtime:952705dab079b3da80b5",
+      "runtime:e610e03b8b4b349ebd2c",
+      "runtime:f5ade5b3ca0c0c810a6b"
     ],
-    "fingerprint": "630714e02aea359dd24c79d8ef2aff74f2cd6047d8e289ef7aa91d26aae1d881",
-    "last_sent": 1792785922.216445
+    "fingerprint": "77f005f61c2ae34598ac2eb08b25a43b810f677a4b326c98c3b4e01a2882bb00",
+    "last_sent": 1792797474.16059
   },
   "github": {
     "conditions": [
-      "runtime:085c2248e4a09cb4c285"
+      "runtime:05bb6b73e19bbc2de0cc",
+      "runtime:0a2e60cee7ccd983be5a",
+      "runtime:1030e38fe3352b48671a",
+      "runtime:19ffb13f8f08ccfadc34",
+      "runtime:3227ded08a5bf37525ad",
+      "runtime:4d646f50f272cd076bb0",
+      "runtime:566cd4082f63c6ca852b",
+      "runtime:5aca65b5d88309ecaa65",
+      "runtime:60367ed2ce14331d0e94",
+      "runtime:6484720daa510c7fa6db",
+      "runtime:835ec15b9538ec303bff",
+      "runtime:8d4f998ce54726f7d247",
+      "runtime:952705dab079b3da80b5",
+      "runtime:e610e03b8b4b349ebd2c",
+      "runtime:f5ade5b3ca0c0c810a6b"
     ],
-    "fingerprint": "630714e02aea359dd24c79d8ef2aff74f2cd6047d8e289ef7aa91d26aae1d881",
-    "last_sent": 1792785922.216445
+    "fingerprint": "77f005f61c2ae34598ac2eb08b25a43b810f677a4b326c98c3b4e01a2882bb00",
+    "last_sent": 1792797474.16059
   }
 }
