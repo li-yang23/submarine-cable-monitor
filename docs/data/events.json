@@ -1,6 +1,59 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "between Finland and Estonia",
+    "accident_type": "Cut",
+    "affected_area": "",
+    "cable_name": "Estlink 2",
+    "created_at": "2026-10-23T13:38:29+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaktScDNIUUFwbG5JVWZJWGZuOGZyOXhvNWJSSUdvR1c4MVIwMEFKOWJfOE9wNmRQV2tQbkhaT1RIbGdDV1Rqak1nbjlKZkdDVWJSYkRTdHJyUVZ6d0FIQ29DOU5VcUNreHZJVUUwSDlYZ2QxNzluUGI4N0dYUi1vTjBsSQ?oc=5",
+    "event_uid": "evt_06eb1670745adbc3c8c2",
+    "evidence_urls": [
+      "https://therecord.media/uk-undersea-cables-sabotage-new-sentencing-guidelines"
+    ],
+    "normalized_cable_id": "ESTLINK 2",
+    "occurrence_date": null,
+    "original_text": "Repairs to the Estlink 2 electricity cable between Finland and Estonia — damaged by the anchor of the Eagle S oil tanker on Christmas Day 2024 — were estimated by grid operator Elering at €50 million to €60 million ($56 million to $67 million).",
+    "original_text_zh": "爱沙尼亚电网运营商Elering估计，2024年圣诞节当天被Eagle S油轮锚损坏的芬兰和爱沙尼亚之间的Estlink 2电力电缆的维修费用为5000万至6000万欧元（5600万至6700万美元）。",
+    "published_date": "2026-10-23",
+    "raw_data": {
+      "article": {
+        "content": "An illustration of undersea cables. Image: Getty Images via Unsplash UK proposes 14-year prison terms for undersea cable sabotage The British government proposed on Thursday introducing prison sentences of up to 14 years and unlimited fines for damaging undersea cables and pipelines. It comes amid growing concerns over the vulnerability of subsea cables to so-called “hybrid warfare” by hostile states, including physical and cyberattacks targeting the cables themselves or the installations and digital systems on land. According to the consultation’s white paper , the new criminal offenses would cover telecommunications cables, electricity interconnectors and pipelines carrying 99% of the U.K.’s international data traffic and supplying 74% of its gas. The proposals would replace the Submarine Telegraph Act 1885, a Victorian-era law that carries a maximum fine of £1,000 — a fraction of the repair costs — and five years’ imprisonment in cases of deliberate damage. Repairs to the Estlink 2 electricity cable between Finland and Estonia — damaged by the anchor of the Eagle S oil tanker on Christmas Day 2024 — were estimated by grid operator Elering at €50 million to €60 million ($56 million to $67 million). Attempts to prosecute senior officers of that ship are ongoing . Under the new proposed law, alongside the 14 years for those found guilty of deliberate damage, perpetrators of reckless damage would face up to 10 years in prison and those of gross negligence up to two years. The government said it plans to introduce statutory security and resilience requirements for subsea telecommunications operators, with powers to direct cable and repair providers on national security grounds. Separate rules would govern fiber-optic sensing technology, which can detect activity at sea but could expose sensitive information. Telecoms minister Ian Murray and energy minister Michael Shanks said in a joint foreword that the risks to critical subsea infrastructure was involving, citing a warning earlier this year that a Royal Navy attack submarine had surfaced near a Russian spy ship mapping this infrastructure in British waters. Matt Western, the chair of Parliament’s Joint Committee on the National Security Strategy, welcomed the proposals, stating “the legislation covering attacks on undersea cables was written in a different age and it is right that a White Paper has been brought forward to bring it up to date.” Questions over jurisdiction in incidents of cable damage have complicated prosecutions elsewhere, alongside questions over whether they were truly reckless accidents or intentional attempts by Russia to undermine Europe. Finnish investigators initially suspected deliberate damage, but officials from several North Sea and Baltic countries later told Recorded Future News they increasingly believed that incident and other Baltic Sea cable breaks were accidental, citing investigations, intelligence and shipping data. The British government says the country’s cable network remains highly resilient and that most faults result from anchors, fishing nets, environmental hazards or technical failures while also warning of growing suspicious activity. In April, the Ministry of Defence said British and allied forces had tracked a Russian attack submarine and vessels linked to Russia’s Main Directorate of Deep Sea Research, or GUGI, near cables and pipelines north of Britain, allegedly mapping such infrastructure for potential wartime sabotage. The 12-week public consultation closes January 14, 2027. Technology Nation-state News Industry Government No previous article No new articles Alexander Martin is the UK Editor for Recorded Future News. He was previously a technology reporter for Sky News and a fellow at the European Cyber Conflict Research Initiative, now Virtual Routes. He can be reached securely using Signal on: AlexanderMartin.79",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaktScDNIUUFwbG5JVWZJWGZuOGZyOXhvNWJSSUdvR1c4MVIwMEFKOWJfOE9wNmRQV2tQbkhaT1RIbGdDV1Rqak1nbjlKZkdDVWJSYkRTdHJyUVZ6d0FIQ29DOU5VcUNreHZJVUUwSDlYZ2QxNzluUGI4N0dYUi1vTjBsSQ?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-23",
+        "queue_id": "a5678edfac886fbcdd88899f685a5a0f",
+        "source": "Google News",
+        "title": "UK proposes 14-year prison terms for undersea cable sabotage",
+        "url": "https://therecord.media/uk-undersea-cables-sabotage-new-sentencing-guidelines"
+      },
+      "extracted": {
+        "accident_location": "between Finland and Estonia",
+        "accident_type": "Cut",
+        "affected_area": null,
+        "cable_name": "Estlink 2",
+        "occurrence_date": "2024-12-25",
+        "occurrence_date_evidence": "damaged by the anchor of the Eagle S oil tanker on Christmas Day 2024",
+        "original_text": "Repairs to the Estlink 2 electricity cable between Finland and Estonia — damaged by the anchor of the Eagle S oil tanker on Christmas Day 2024 — were estimated by grid operator Elering at €50 million to €60 million ($56 million to $67 million).",
+        "original_text_zh": "爱沙尼亚电网运营商Elering估计，2024年圣诞节当天被Eagle S油轮锚损坏的芬兰和爱沙尼亚之间的Estlink 2电力电缆的维修费用为5000万至6000万欧元（5600万至6700万美元）。",
+        "reason": "anchor of the Eagle S oil tanker",
+        "repair_date": null
+      }
+    },
+    "reason": "anchor of the Eagle S oil tanker",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Estlink 2",
+    "title": "UK proposes 14-year prison terms for undersea cable sabotage",
+    "updated_at": "2026-10-23T13:38:29+00:00",
+    "url": "https://therecord.media/uk-undersea-cables-sabotage-new-sentencing-guidelines",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "Red Sea",
     "accident_type": "Cut",
     "affected_area": "approximately 25% of internet traffic flow between Asia, Europe and the Middle East",
