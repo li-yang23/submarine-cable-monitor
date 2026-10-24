@@ -1,6 +1,112 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "off Orkney",
+    "accident_type": "Cut",
+    "affected_area": "Shetland",
+    "cable_name": "Shefa-2",
+    "created_at": "2026-10-24T04:50:47+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUEdOTVpkaTNNQXI1RVE4RGF5X1JJX0ZBakFsMDFtcW01Ri1Cb0k2bmZ6TEtsYzJNTU1yLVZZX0Flc1Nia1VTTTNNbUdpV2VvMTJlTmEtQ2VVenhGTnBnZFk4d09kWndfMU5md1RzMEhMSUJCdTgwSHZHTVYxbm5pMWtIdU9uMS1iQ2lydFY1b2V5THluQ2FNcjRZMklhWThTM2lxX0d6NTQ?oc=5",
+    "event_uid": "evt_bb2c43408212640c1214",
+    "evidence_urls": [
+      "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/"
+    ],
+    "normalized_cable_id": "SHEFA-2",
+    "occurrence_date": null,
+    "original_text": "Repair works were are carried out on the Shefa-2 cable off Orkney after damage caused by Storm Amy.",
+    "original_text_zh": "由于风暴艾米造成的损坏，对奥克尼附近的Shefa-2电缆进行了维修工作。",
+    "published_date": "2026-10-24",
+    "raw_data": {
+      "article": {
+        "content": "New laws could see those who damage subsea cables around Shetland jailed By Andrew Hirst - a.hirst@shetlandtimes.co.uk Published: 05:30, 24 October 2026 Repair works were are carried out on the Shefa-2 cable off Orkney after damage caused by Storm Amy. New laws which could see those who damage subsea cables jailed are hoped to prevent the sort of disruption that has caused communication blackouts in Shetland. The UK government’s new criminal penalties regime has been proposed to protect critical undersea infrastructure (CUI) and improve the nation’s security. A white paper published this week outlines the UK’s growing dependence on CUI for modern digital services, as well as subsea pipelines and interconnectors. It also warns of growing risks posed by Russian submarines surveying cables in British waters, including near Shetland. Over recent years, Shetland has suffered several periods of disruption caused by damage to the Shefa-2 communications cable. Emergency services declared a major incident in 2022 when a complete communications blackout was caused when the cable was damaged in two places, leaving it without any backup. Further cable breaks caused prolonged disruption twice last year; first due to a mainland registered scallop dredger and then by Storm Amy. The white paper seeks to update the Submarine Telegraph Act 1885, which remains the UK’s principal piece of legislation designed specifically to protect subsea cables from harm. While it says the STA’s core rationale remains sound – that CUI warrants specific protection in criminal law, it also states the legislation is “very outdated” and does not reflect the growing importance of undersea infrastructure, or the evolving threat environment. New offences would be based on a three-tier culpability structure depending on whether the conduct is intentional, reckless or grossly negligent. Intentional conduct could result in up to 14 years’ imprisonment; whereas for gross negligence the jail term would be up to two years. Orkney and Shetland MP Alistair Carmichael has today welcomed the proposals - and would like to hear local views. He said: “Having been banging this drum for some time I am glad that the government is taking the security of subsea infrastructure more seriously. This is only the start of the process but there is a lot here that is to be welcomed, if it is enacted properly. “Telecommunications resilience is an especially acute issue here in the isles but it really ought to be a concern for the entire United Kingdom – so it is vital that we get this right and that islanders get their say. “We know that what looks like a “resilient” system from a Whitehall perspective is not necessarily resilient when viewed from the Northern Isles. “That is why I am calling on anyone with an interest in these matters to send me their views on these proposals and the wider issue of resilience, so that I can make the strongest possible submission on behalf of our islands.” Visit the UK government website to read the white paper. Crime Politics Shetland Islands Council Andrew Hirst",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUEdOTVpkaTNNQXI1RVE4RGF5X1JJX0ZBakFsMDFtcW01Ri1Cb0k2bmZ6TEtsYzJNTU1yLVZZX0Flc1Nia1VTTTNNbUdpV2VvMTJlTmEtQ2VVenhGTnBnZFk4d09kWndfMU5md1RzMEhMSUJCdTgwSHZHTVYxbm5pMWtIdU9uMS1iQ2lydFY1b2V5THluQ2FNcjRZMklhWThTM2lxX0d6NTQ?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-24",
+        "queue_id": "6d0048c0ccf40c60d6a5947f2dfe7b53",
+        "source": "Google News",
+        "title": "New laws could see those who damage subsea cables around Shetland jailed",
+        "url": "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/"
+      },
+      "extracted": {
+        "accident_location": "off Orkney",
+        "accident_type": "Cut",
+        "affected_area": "Shetland",
+        "cable_name": "Shefa-2",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Repair works were are carried out on the Shefa-2 cable off Orkney after damage caused by Storm Amy.",
+        "original_text_zh": "由于风暴艾米造成的损坏，对奥克尼附近的Shefa-2电缆进行了维修工作。",
+        "reason": "Storm Amy",
+        "repair_date": null
+      }
+    },
+    "reason": "Storm Amy",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Shefa-2",
+    "title": "New laws could see those who damage subsea cables around Shetland jailed",
+    "updated_at": "2026-10-24T04:50:47+00:00",
+    "url": "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Shetland",
+    "cable_name": "Shefa-2",
+    "created_at": "2026-10-24T04:50:47+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUEdOTVpkaTNNQXI1RVE4RGF5X1JJX0ZBakFsMDFtcW01Ri1Cb0k2bmZ6TEtsYzJNTU1yLVZZX0Flc1Nia1VTTTNNbUdpV2VvMTJlTmEtQ2VVenhGTnBnZFk4d09kWndfMU5md1RzMEhMSUJCdTgwSHZHTVYxbm5pMWtIdU9uMS1iQ2lydFY1b2V5THluQ2FNcjRZMklhWThTM2lxX0d6NTQ?oc=5",
+    "event_uid": "evt_f246aa506a3e5c8f047d",
+    "evidence_urls": [
+      "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/"
+    ],
+    "normalized_cable_id": "SHEFA-2",
+    "occurrence_date": null,
+    "original_text": "Further cable breaks caused prolonged disruption twice last year; first due to a mainland registered scallop dredger and then by Storm Amy.",
+    "original_text_zh": "去年，进一步的电缆断裂导致了两次长时间的通信中断；第一次是由于一艘大陆注册的扇贝捕捞船，第二次是由于风暴艾米。",
+    "published_date": "2026-10-24",
+    "raw_data": {
+      "article": {
+        "content": "New laws could see those who damage subsea cables around Shetland jailed By Andrew Hirst - a.hirst@shetlandtimes.co.uk Published: 05:30, 24 October 2026 Repair works were are carried out on the Shefa-2 cable off Orkney after damage caused by Storm Amy. New laws which could see those who damage subsea cables jailed are hoped to prevent the sort of disruption that has caused communication blackouts in Shetland. The UK government’s new criminal penalties regime has been proposed to protect critical undersea infrastructure (CUI) and improve the nation’s security. A white paper published this week outlines the UK’s growing dependence on CUI for modern digital services, as well as subsea pipelines and interconnectors. It also warns of growing risks posed by Russian submarines surveying cables in British waters, including near Shetland. Over recent years, Shetland has suffered several periods of disruption caused by damage to the Shefa-2 communications cable. Emergency services declared a major incident in 2022 when a complete communications blackout was caused when the cable was damaged in two places, leaving it without any backup. Further cable breaks caused prolonged disruption twice last year; first due to a mainland registered scallop dredger and then by Storm Amy. The white paper seeks to update the Submarine Telegraph Act 1885, which remains the UK’s principal piece of legislation designed specifically to protect subsea cables from harm. While it says the STA’s core rationale remains sound – that CUI warrants specific protection in criminal law, it also states the legislation is “very outdated” and does not reflect the growing importance of undersea infrastructure, or the evolving threat environment. New offences would be based on a three-tier culpability structure depending on whether the conduct is intentional, reckless or grossly negligent. Intentional conduct could result in up to 14 years’ imprisonment; whereas for gross negligence the jail term would be up to two years. Orkney and Shetland MP Alistair Carmichael has today welcomed the proposals - and would like to hear local views. He said: “Having been banging this drum for some time I am glad that the government is taking the security of subsea infrastructure more seriously. This is only the start of the process but there is a lot here that is to be welcomed, if it is enacted properly. “Telecommunications resilience is an especially acute issue here in the isles but it really ought to be a concern for the entire United Kingdom – so it is vital that we get this right and that islanders get their say. “We know that what looks like a “resilient” system from a Whitehall perspective is not necessarily resilient when viewed from the Northern Isles. “That is why I am calling on anyone with an interest in these matters to send me their views on these proposals and the wider issue of resilience, so that I can make the strongest possible submission on behalf of our islands.” Visit the UK government website to read the white paper. Crime Politics Shetland Islands Council Andrew Hirst",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUEdOTVpkaTNNQXI1RVE4RGF5X1JJX0ZBakFsMDFtcW01Ri1Cb0k2bmZ6TEtsYzJNTU1yLVZZX0Flc1Nia1VTTTNNbUdpV2VvMTJlTmEtQ2VVenhGTnBnZFk4d09kWndfMU5md1RzMEhMSUJCdTgwSHZHTVYxbm5pMWtIdU9uMS1iQ2lydFY1b2V5THluQ2FNcjRZMklhWThTM2lxX0d6NTQ?oc=5",
+        "keyword": "undersea cable damage",
+        "published_date": "2026-10-24",
+        "queue_id": "6d0048c0ccf40c60d6a5947f2dfe7b53",
+        "source": "Google News",
+        "title": "New laws could see those who damage subsea cables around Shetland jailed",
+        "url": "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/"
+      },
+      "extracted": {
+        "accident_location": "",
+        "accident_type": "Cut",
+        "affected_area": "Shetland",
+        "cable_name": "Shefa-2",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Further cable breaks caused prolonged disruption twice last year; first due to a mainland registered scallop dredger and then by Storm Amy.",
+        "original_text_zh": "去年，进一步的电缆断裂导致了两次长时间的通信中断；第一次是由于一艘大陆注册的扇贝捕捞船，第二次是由于风暴艾米。",
+        "reason": "a mainland registered scallop dredger",
+        "repair_date": null
+      }
+    },
+    "reason": "a mainland registered scallop dredger",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Shefa-2",
+    "title": "New laws could see those who damage subsea cables around Shetland jailed",
+    "updated_at": "2026-10-24T04:50:47+00:00",
+    "url": "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "between Finland and Estonia",
     "accident_type": "Cut",
     "affected_area": "",
@@ -50,6 +156,59 @@
     "title": "UK proposes 14-year prison terms for undersea cable sabotage",
     "updated_at": "2026-10-23T13:38:29+00:00",
     "url": "https://therecord.media/uk-undersea-cables-sabotage-new-sentencing-guidelines",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "near Car Nicobar",
+    "accident_type": "Limit",
+    "affected_area": "Car Nicobar",
+    "cable_name": "Chennai–Andaman and Nicobar Islands (CANI)",
+    "created_at": "2026-10-24T04:50:25+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBlVll1SjI4cnVWNWE1UmY5Sk9ZRjN6WVNVcWFORzlrV3BrbUJYclpqUnZGeHBTS0pSZmhzRmlPeW5tQ0tlTy1QOTBB?oc=5",
+    "event_uid": "evt_44c927268ff475bbeca6",
+    "evidence_urls": [
+      "https://andamansheekha.com/152997/"
+    ],
+    "normalized_cable_id": "CHENNAI–ANDAMAN AND NICOBAR ISLANDS (CANI)",
+    "occurrence_date": null,
+    "original_text": "the system has been running smoothly with only one major fault reported so far near Car Nicobar during September–October 2025. The fault was restored within one month through coordinated efforts, which he described as a significant achievement since submarine cable repairs normally take between three and six months.",
+    "original_text_zh": "该系统一直运行顺利，迄今为止仅在2025年9月至10月期间在卡尔尼科巴附近报告了一次重大故障。通过协调努力，该故障在一个月内得以修复，他认为这是一项重大成就，因为海底电缆的修复通常需要三到六个月的时间。",
+    "published_date": "2026-10-22",
+    "raw_data": {
+      "article": {
+        "content": "Spread the love Sri Vijaya Puram, Feb. 27:The submarine optical fibre cable project connecting the Andaman and Nicobar Islands with mainland India has significantly strengthened digital connectivity across the archipelago and is playing a vital role in the region’s development. This was stated by Dr. S. Murty, Principal General Manager, BSNL, Chennai , while explaining the importance and functioning of the Chennai–Andaman and Nicobar Islands (CANI) submarine optical fibre cable project. Talking to a media delegation, led by PIB, Port Blair, Andaman and Nicobar Islands, Dr. Murty said the project was funded by the Government of India through the Department of Telecommunications under the Universal Service Obligation Fund (USOF), which is now known as the Digital Bharat Nidhi (DBN). The total capital cost of the project was about ₹980 crore, and Bharat Sanchar Nigam Limited (BSNL) was entrusted with the responsibility of implementing and maintaining the project. He informed that the submarine cable project was commissioned in July 2020 and has been functioning successfully for nearly five and a half years. According to him, the system has been running smoothly with only one major fault reported so far near Car Nicobar during September–October 2025. The fault was restored within one month through coordinated efforts, which he described as a significant achievement since submarine cable repairs normally take between three and six months. Dr. Murty explained that the project involved laying about 1,500 kilometres of submarine optical fibre cable under the sea from Chennai to Sri Vijaya Puram (Port Blair). From Sri Vijaya Puram, the network has been extended to several other islands through additional cable links, ensuring high-speed connectivity across the region. A total of eight cable landing stations have been established under the project. Each cable coming from the sea terminates at a Beach Manhole (BMH) before being connected to the cable landing station through land-based optical fibre. To ensure reliability, the land cables have been laid through two separate routes—Path A and Path B—so that communication services remain uninterrupted even if one line is damaged. From Sri Vijaya Puram, three northern islands—Long Island, Swaraj Dweep (Havelock) and Rangat—have been connected through the network. On the southern side, connectivity has been extended to Hut Bay in Little Andaman, Car Nicobar, Kamorta and Campbell Bay in Great Nicobar. These connections have enabled the islands to receive high-speed bandwidth that supports modern communication and digital services. Dr. Murty said that optical fibre technology offers extremely high data capacity. At present, the CANI project provides a bandwidth capacity of around 400 gigabits per second. However, he explained that the fibre itself has virtually unlimited capacity and that the bandwidth can be increased further simply by upgrading the terminal equipment at both ends without replacing the existing cable. Under the project, four optical fibre pairs have been laid. Two fibres are used for the main and standby communication links, one fibre has been allocated for defence communication purposes, while the fourth fibre has been kept as a spare to ensure redundancy and reliability. He further said that in case the submarine cable is damaged, communication services in the islands would temporarily shift to satellite bandwidth, which was the earlier mode of connectivity before the submarine cable project was implemented. However, satellite bandwidth is limited compared to optical fibre connectivity, and internet speeds would be significantly reduced during such situations. Dr. Murty also mentioned that the Government of India is considering plans for additional submarine cable connectivity to the islands from another route to strengthen redundancy and expand connectivity to more remote islands. However, he clarified that the final decision and detailed plans would be announced by the Department of Telecommunications. Highlighting the importance of the project, he said the submarine optical fibre cable has transformed digital infrastructure in the Andaman and Nicobar Islands by providing reliable high-speed internet connectivity for residents, government services, tourism, education and defence operations. He added that continuous monitoring and maintenance systems have been put in place to ensure uninterrupted services and safeguard the cable infrastructure.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBlVll1SjI4cnVWNWE1UmY5Sk9ZRjN6WVNVcWFORzlrV3BrbUJYclpqUnZGeHBTS0pSZmhzRmlPeW5tQ0tlTy1QOTBB?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-10-22",
+        "queue_id": "ec8e75fde946d579280fa0f2c8c9dbb3",
+        "source": "Google News",
+        "title": "BSNL’s Submarine Optical Fibre Cable Project Strengthening Digital Connectivity in Andaman & Nicobar Islands",
+        "url": "https://andamansheekha.com/152997/"
+      },
+      "extracted": {
+        "accident_location": "near Car Nicobar",
+        "accident_type": "Limit",
+        "affected_area": "Car Nicobar",
+        "cable_name": "Chennai–Andaman and Nicobar Islands (CANI)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "the system has been running smoothly with only one major fault reported so far near Car Nicobar during September–October 2025. The fault was restored within one month through coordinated efforts, which he described as a significant achievement since submarine cable repairs normally take between three and six months.",
+        "original_text_zh": "该系统一直运行顺利，迄今为止仅在2025年9月至10月期间在卡尔尼科巴附近报告了一次重大故障。通过协调努力，该故障在一个月内得以修复，他认为这是一项重大成就，因为海底电缆的修复通常需要三到六个月的时间。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Chennai–Andaman and Nicobar Islands (CANI)",
+    "title": "BSNL’s Submarine Optical Fibre Cable Project Strengthening Digital Connectivity in Andaman & Nicobar Islands",
+    "updated_at": "2026-10-24T04:50:25+00:00",
+    "url": "https://andamansheekha.com/152997/",
     "verification_status": "rule_verified"
   },
   {
