@@ -82,7 +82,7 @@ class PipelineReliabilityTests(unittest.TestCase):
         with patch("src.pipeline.SCRAPER_CLASSES", classes):
             return pipeline.run(list(discoveries), **kwargs)
 
-    def test_publisher_restriction_is_gap_but_429_and_500_fail_run(self):
+    def test_external_failures_keep_retry_evidence_without_failing_program_health(self):
         self.config.cross_source_enabled=False
         for status in (202,401,403,404,406,410,451,429,500,502):
             with self.subTest(status=status):
@@ -96,7 +96,9 @@ class PipelineReliabilityTests(unittest.TestCase):
                 with patch('src.pipeline.SCRAPER_CLASSES',{'fixture':lambda c:scraper}), patch.object(scraper,'scrape_articles',side_effect=discover), patch.object(scraper,'_resolve_google_news_url',side_effect=lambda u:u), patch.object(scraper,'extract_page_text',side_effect=requests.HTTPError(response=response)):
                     result=MonitorPipeline(self.config,self.store,self.extractor(),health_checker=lambda *args:dict(NOT_CHECKED)).run(['fixture'])
                 restricted=status in (202,401,403,404,406,410,451)
-                self.assertEqual(result.runtime_status,'success' if restricted else 'degraded')
+                self.assertEqual(result.runtime_status,'success')
+                if not restricted:
+                    self.assertGreater(result.warnings, 0)
                 saved=ArticleQueue.from_config(self.config).get(row)
                 self.assertEqual(saved['status'],'retry')
                 self.assertEqual(saved['reason'],('publisher_missing' if status in (404,410) else 'publisher_access_blocked') if restricted else 'article_fetch_error')

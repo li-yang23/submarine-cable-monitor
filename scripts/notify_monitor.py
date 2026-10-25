@@ -25,6 +25,9 @@ from urllib.parse import urlsplit
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from src import notification_policy as policy
+
 
 MARKER = "<!-- submarine-cable-monitor-operational-alert:v1 -->"
 ISSUE_TITLE = "[monitor] Collection health requires attention"
@@ -465,7 +468,8 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--summary", type=Path, required=True)
     parser.add_argument("--state", type=Path, default=Path("data/alert-state.json"))
-    parser.add_argument("--workflow-status", default="success", choices=("success", "failure", "cancelled", "skipped", "unknown", "timed_out"))
+    parser.add_argument("--queue", type=Path, default=Path("data/article-queue.json"))
+    parser.add_argument("--workflow-status", default="success")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
     env = dict(os.environ if env is None else env)
@@ -473,86 +477,74 @@ def main(argv: list[str] | None = None, *, env: dict[str, str] | None = None, no
     summary, summary_error = load_summary(args.summary)
     run_url = None
     if env.get("GITHUB_REPOSITORY"):
-        try:
-            _, _, run_url = github_context(env)
-        except ValueError:
-            pass  # Delivery below explicitly fails if GitHub is configured incorrectly.
-    report = build_report(summary, args.workflow_status, summary_error=summary_error, run_url=run_url)
-    if args.dry_run:
-        print(report.body)
-        print("\nDry run: no email or GitHub issue sent; notification state unchanged.")
-        return 0
+        _, _, run_url = github_context(env)
+    # Fail closed on a corrupt ledger. Resetting it would duplicate notifications.
     try:
-        state = load_state(args.state)
-    except (OSError, RuntimeError, ValueError) as exc:
-        note(f"告警去重状态不可读取：{error_kind(exc)}；本次重新检查并发送，不假定已通知。", env, warning=True)
-        state = {}
+        state = json.loads(args.state.read_text()) if args.state.exists() else {}
+        if not isinstance(state, dict):
+            raise ValueError("invalid_state")
+        if "policy" in state:
+            saved = state["policy"]
+            if saved.get("version") != 2 or not isinstance(saved.get("issues"), dict) or not isinstance(saved.get("deliveries"), dict):
+                raise ValueError("invalid_policy")
+    except (OSError, ValueError, AttributeError) as exc:
+        note("通知状态无法读取，未重置去重记录：" + error_kind(exc), env, warning=True)
+        return 1
+    try:
+        queue = list(json.loads(args.queue.read_text())["items"].values()) if args.queue.exists() else []
+    except (OSError, ValueError, KeyError, AttributeError) as exc:
+        note("未能读取问题队列：" + error_kind(exc), env, warning=True)
+        return 1
+    records = []
+    # Read only the summary's adjacent audit; never follow an arbitrary path
+    # supplied by article content or a downloaded remote summary.
+    run_id = str(summary.get("run_id", ""))
+    audit = args.summary.parent / "audit.jsonl"
+    if not audit.exists() and re.fullmatch(r"[A-Za-z0-9_-]+", run_id):
+        audit = args.summary.parent / run_id / "audit.jsonl"
+    if audit.exists():
+        for line in audit.read_text().splitlines():
+            try:
+                row = json.loads(line)
+                if isinstance(row, dict): records.append(row)
+            except ValueError:
+                continue
+    steps = {key: env.get(key, "") for key in ("EXPORT_OUTCOME", "PERSIST_COLLECTION_OUTCOME", "DEPLOY_OUTCOME", "INFRA_OUTCOME")}
+    ledger = policy.reconcile(state, summary, queue, records, now, summary_error=summary_error,
+                              workflow_status=args.workflow_status, run_url=run_url, steps=steps)
+    email_enabled = bool(env.get("SMTP_HOST") and env.get("SMTP_FROM") and env.get("ALERT_EMAIL_TO"))
+    # One delivery channel prevents an SMTP mail plus a GitHub mention for the
+    # same incident. GitHub remains the fallback when email is not configured.
+    channel = "email" if email_enabled else "github"
+    messages = policy.plan(ledger, channel, now)
+    if args.dry_run:
+        print(json.dumps({"channel": channel, "messages": messages, "open_incidents":
+                         sum(i["status"] == "open" for i in ledger["issues"].values())}, ensure_ascii=False, indent=2))
+        print("Dry run: no email or GitHub issue sent; notification state unchanged.")
+        return 0
+    save_state(args.state, state)  # Observations survive even failed delivery.
+    if not messages:
+        note("已记录本轮问题；无新增用户操作，未到每周汇总时间，未发送邮件或 Issue 通知。", env)
+        return 0
+    if not email_enabled:
+        note("邮件未配置完整，未通知邮箱；尝试 GitHub 备用渠道。", env, warning=True)
     failures = 0
-    configured = 0
-    for channel in ("github", "email"):
-        if channel == "github":
-            enabled = bool(env.get("GITHUB_TOKEN"))
-            if not enabled:
-                note("GitHub 告警未配置（缺少 GITHUB_TOKEN），未创建或更新告警 issue。", env, warning=True)
-                if env.get("GITHUB_ACTIONS") == "true":
-                    failures += 1
-                continue
-        else:
-            enabled = bool(env.get("SMTP_HOST") and env.get("SMTP_FROM") and env.get("ALERT_EMAIL_TO"))
-            if not enabled:
-                note("邮件告警未配置完整（需要 SMTP_HOST、SMTP_FROM、ALERT_EMAIL_TO），未通知邮箱；GitHub issue 渠道独立执行。", env, warning=True)
-                if report.balance_attempt or any(env.get(key) for key in ("SMTP_HOST", "SMTP_USERNAME", "SMTP_PASSWORD", "SMTP_FROM")):
-                    failures += 1
-                continue
-        configured += 1
-        previous = after_model_recovery(state.get(channel), report, summary)
-        recovery_lookup = False  # Recovery and evidence-only observations never send notifications.
-        delivery_report = with_change_details(report, previous)
-        if not due(report, previous, now) and not recovery_lookup:
-            if previous:
-                observed = list(report.conditions)
-                health = summary.get("model_health", {})
-                confirmed = isinstance(health, dict) and health.get("reason") == "inference_succeeded"
-                if not report.active and not confirmed:
-                    # An untested model must not re-arm a previous balance alert.
-                    observed.extend(key for key in previous.get("conditions", []) if key.startswith(("model_", "model:")))
-                observed = sorted(set(observed))
-                previous = {**previous, "conditions": observed,
-                            "fingerprint": hashlib.sha256(json.dumps(tuple(observed)).encode()).hexdigest() if observed else HEALTHY}
-            if previous != state.get(channel):
-                try:
-                    state[channel] = previous
-                    save_state(args.state, state)
-                except OSError as exc:
-                    failures += 1
-                    note(f"{channel}：无法保存模型恢复状态 {error_kind(exc)}。", env, warning=True)
-            note(f"{channel}：没有新增故障类型，未重复发送。", env)
-            continue
+    for message in messages:
+        report = Report(True, hashlib.sha256(message["body"].encode()).hexdigest(), message["subject"], message["body"])
         try:
-            delivered = True
-            if channel == "github":
-                delivered = GitHubNotifier(env).send(delivery_report, recover_without_state=recovery_lookup,
-                                                     mention=not previous or previous.get("fingerprint") != report.fingerprint or bool(report.balance_attempt and report.balance_attempt != previous.get("balance_attempt")))
+            if email_enabled:
+                send_email(report, env)
+            elif env.get("GITHUB_TOKEN"):
+                GitHubNotifier(env).send(report, mention=message["type"] == "action")
             else:
-                send_email(delivery_report, env)
-            if delivered:
-                state[channel] = {"fingerprint": report.fingerprint, "last_sent": now, "conditions": list(report.conditions)}
-                if report.balance_attempt:
-                    state[channel]["balance_attempt"] = report.balance_attempt
-                save_state(args.state, state)
-                note(f"{channel}：{'告警' if report.active else '恢复通知'}已发送。", env)
-            else:
-                # No outstanding issue exists. Remember health without claiming delivery.
-                state[channel] = {"fingerprint": HEALTHY, "last_sent": now, "conditions": []}
-                save_state(args.state, state)
-                note(f"{channel}：没有待关闭的告警 issue，未发送恢复通知。", env)
+                raise RuntimeError("no_notification_channel")
+            policy.acknowledge(ledger, channel, message, now)
+            save_state(args.state, state)
+            note(channel + "：" + ("操作通知" if message["type"] == "action" else "每周汇总") + "已发送。", env)
         except Exception as exc:
             failures += 1
-            note(f"{channel}：通知失败 {error_kind(exc)}，本次不记录发送成功，下次重试。", env, warning=True)
-    if report.active and not configured:
-        failures += 1
-        note("存在采集告警，但没有可用通知渠道。", env, warning=True)
-    return 1 if failures else 0
+            note(channel + "：通知失败 " + error_kind(exc) + "，未标记已发送，下次任务重试。", env, warning=True)
+    return int(bool(failures))
 
 
 if __name__ == "__main__":

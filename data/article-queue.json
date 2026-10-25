@@ -14778,7 +14778,7 @@
     },
     "5e12901900d54c9afeb9ff4558cd90a3": {
       "queue_id": "5e12901900d54c9afeb9ff4558cd90a3",
-      "status": "review",
+      "status": "unresolved",
       "first_seen_at": "2026-10-21T20:14:36.873695+00:00",
       "attempts": 10,
       "initial_since": "2026-10-07",
@@ -14793,7 +14793,7 @@
       "last_seen_at": "2026-10-25T04:54:44.245389+00:00",
       "last_attempt_at": "2026-10-25T04:58:05.691943+00:00",
       "url": "https://www.thecommonsense.co.za/economics_and_policy/ai-data-centres-could-help-break-south-africa-s-low-growth",
-      "reason": "cross_source_insufficient_sources",
+      "reason": "subscription_required",
       "error_type": "ValueError",
       "http_status": null,
       "next_attempt_at": null,
@@ -14824,7 +14824,22 @@
         "unchanged_evidence_attempts": 1
       },
       "review_at": "2026-10-25T04:58:13.818938+00:00",
-      "force_retry": false
+      "force_retry": false,
+      "resolution_history": [
+        {
+          "status": "review",
+          "reason": "cross_source_insufficient_sources",
+          "at": "2026-10-25T08:52:20.188114+00:00"
+        }
+      ],
+      "archived_at": "2026-10-25T08:52:20.188512+00:00",
+      "availability_review": {
+        "reviewed_at": "2026-10-25",
+        "http_status": 200,
+        "finding": "公开页面明确显示 Subscribe to unlock this article；未取得付费正文。此前原文已尝试 10 次，已检索的替代报道未能确认同一事件，保留覆盖缺口并停止无效原文重试。",
+        "original_full_text_read": false,
+        "source_url": "https://www.thecommonsense.co.za/economics_and_policy/ai-data-centres-could-help-break-south-africa-s-low-growth"
+      }
     },
     "487a82e86f32979bbb9d67e6318f3969": {
       "queue_id": "487a82e86f32979bbb9d67e6318f3969",

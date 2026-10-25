@@ -7,7 +7,7 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 import requests
 
-from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper, PublisherAccessError, SubTelForumScraper, article_body_text
+from src.scrapers.article_sources import ArticleScraper, GoogleNewsArticleScraper, PublisherAccessError, SubscriptionRequiredError, SubTelForumScraper, article_body_text
 from src.utils import Config
 from src.utils.audit import AuditRun
 from scripts.notify_monitor import build_report
@@ -63,6 +63,18 @@ class FetchRecoveryTests(unittest.TestCase):
         with patch.object(scraper, 'get', return_value=response(200, '<main>Subscribe to unlock this article</main>')):
             with self.assertRaisesRegex(ValueError, 'article_requires_subscription'):
                 scraper.extract_page_text('https://www.ft.com/content/example')
+
+    def test_subscription_is_reviewable_gap_and_never_runtime_valueerror(self):
+        scraper = GoogleNewsArticleScraper(Config(article_queue_path=''))
+        row = scraper.article_queue.enqueue({'source': 'Google News', 'url': 'https://publisher.test/subscription'})
+        from src.utils.audit import error_details
+        reason = scraper._publisher_failure(error_details(SubscriptionRequiredError('article_requires_subscription')))
+        self.assertEqual(reason, 'subscription_required')
+        scraper._retain_fetch_failure(row, {'reason': reason})
+        saved = scraper.article_queue.get(row)
+        self.assertEqual(saved['status'], 'review')
+        self.assertEqual(scraper.article_queue.due(), [])
+        self.assertFalse(scraper.article_queue.is_done(row['url']))
 
     def test_streamed_body_is_reassembled_without_recommendations(self):
         html = '''<article><p>Intro.</p><template id="B:1"></template></article>
