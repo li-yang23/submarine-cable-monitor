@@ -132,6 +132,11 @@ class AuditRun:
                 self.usage_tokens[key] += record[key]
                 self.usage_reported[key] += 1
 
+    @property
+    def runtime_failures(self) -> int:
+        from src.notification_policy import external_failure
+        return sum(not external_failure(self.failure_details.get(key, {})) for key in self._failure_keys)
+
     def finish(self, summary: dict[str, Any]) -> dict[str, Any]:
         self._handle.close()
         if self.token is not None:

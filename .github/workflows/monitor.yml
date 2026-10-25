@@ -48,8 +48,10 @@ jobs:
     timeout-minutes: 45
     outputs:
       pages-ready: ${{ steps.pages_artifact.outcome }}
-      notification-outcome: ${{ steps.notify.outcome }}
-      infrastructure-failed: ${{ steps.persist_alert.outcome == 'failure' || steps.monitor_artifacts.outcome == 'failure' || steps.pages_setup.outcome == 'failure' || steps.pages_artifact.outcome == 'failure' }}
+      collection-outcome: ${{ steps.collection.outcome }}
+      export-outcome: ${{ steps.export.outcome }}
+      persist-outcome: ${{ steps.persist_collection.outcome }}
+      infrastructure-failed: ${{ steps.monitor_artifacts.outcome == 'failure' || steps.pages_setup.outcome == 'failure' || steps.pages_artifact.outcome == 'failure' }}
 
     steps:
       - name: Checkout repository
@@ -144,40 +146,6 @@ jobs:
           git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
 
-      - name: Notify collection health
-        id: notify
-        if: ${{ always() && github.event_name != 'push' }}
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ALERT_GITHUB_USER: li-yang23
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          SMTP_FROM: ${{ secrets.SMTP_FROM }}
-          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
-          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
-          WORKFLOW_HEALTH: ${{ job.status != 'success' && 'failure' || steps.collection.outcome != 'success' && 'failure' || steps.export.outcome == 'failure' && 'failure' || steps.persist_collection.outcome == 'failure' && 'failure' || 'success' }}
-        run: |
-          ARGS=(--summary logs/runs/latest-summary.json --state data/alert-state.json --workflow-status "$WORKFLOW_HEALTH")
-          if [ "$MONITOR_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
-          python scripts/notify_monitor.py "${ARGS[@]}"
-
-      - name: Persist delivered notification state
-        id: persist_alert
-        if: ${{ always() && github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
-        continue-on-error: true
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          if [ ! -f data/alert-state.json ]; then exit 0; fi
-          git add -- data/alert-state.json
-          if git diff --staged --quiet; then exit 0; fi
-          git commit -m "chore: persist monitor notification state"
-          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
-
       - name: Upload monitor artifacts
         id: monitor_artifacts
         if: ${{ always() && github.event_name != 'push' }}
@@ -214,8 +182,6 @@ jobs:
           COLLECTION_OUTCOME: ${{ steps.collection.outcome }}
           EXPORT_OUTCOME: ${{ steps.export.outcome }}
           PERSIST_COLLECTION_OUTCOME: ${{ steps.persist_collection.outcome }}
-          NOTIFY_OUTCOME: ${{ steps.notify.outcome }}
-          PERSIST_ALERT_OUTCOME: ${{ steps.persist_alert.outcome }}
           MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
           python - <<'PY'
@@ -223,9 +189,9 @@ jobs:
           import os
           from pathlib import Path
 
-          required = ["COLLECTION_OUTCOME", "NOTIFY_OUTCOME"]
+          required = ["COLLECTION_OUTCOME"]
           if os.environ["MONITOR_DRY_RUN"] != "true":
-              required += ["EXPORT_OUTCOME", "PERSIST_COLLECTION_OUTCOME", "PERSIST_ALERT_OUTCOME"]
+              required += ["EXPORT_OUTCOME", "PERSIST_COLLECTION_OUTCOME"]
           failures = [name for name in required if os.environ[name] != "success"]
           try:
               summary = json.loads(Path("logs/runs/latest-summary.json").read_text())
@@ -252,57 +218,71 @@ jobs:
         uses: actions/deploy-pages@v4
 
   notify-on-failure:
+    name: Notify after collection and deployment
     needs: [monitor, deploy-pages]
-    if: ${{ always() && github.event.inputs.dry_run != 'true' }}
+    if: ${{ always() && github.event_name != 'push' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Notify infrastructure or notification failure
-        uses: actions/github-script@v7
-        env:
-          INFRA_FAILED: ${{ needs.deploy-pages.result == 'failure' || needs.monitor.outputs.infrastructure-failed == 'true' || (needs.monitor.result == 'failure' || needs.monitor.result == 'cancelled') && needs.monitor.outputs.notification-outcome != 'success' }}
+      - uses: actions/checkout@v4
         with:
-          script: |
-            const title = '[monitor] Workflow infrastructure requires attention';
-            const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const body = `@li-yang23\n\n采集工作流或告警投递未成功完成，请检查运行记录：${runUrl}。未假定本次新闻已处理或邮件已发送。`;
-            // Retry only this read. Retrying a comment/create after an unknown
-            // server response could send duplicate notifications.
-            let issues;
-            for (let attempt = 0; attempt < 3; attempt++) {
-              try {
-                issues = await github.rest.issues.listForRepo({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  state: 'open',
-                  per_page: 100
-                });
-                break;
-              } catch (error) {
-                if (attempt === 2 || error.status < 500 || error.status >= 600) throw error;
-                await new Promise(resolve => setTimeout(resolve, 1000 * (attempt + 1)));
-              }
-            }
-            const existing = issues.data.find(issue => issue.title === title && !issue.pull_request);
-            if (process.env.INFRA_FAILED !== 'true') {
-              if (existing) {
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner, repo: context.repo.repo,
-                  issue_number: existing.number,
-                  body: `工作流保存、通知及部署步骤已恢复。采集内容是否仍待处理请查看独立的采集健康告警。运行：${runUrl}`
-                });
-                await github.rest.issues.update({
-                  owner: context.repo.owner, repo: context.repo.repo,
-                  issue_number: existing.number, state: 'closed'
-                });
-              }
-              return;
-            }
-            // An unresolved infrastructure incident already notified the user.
-            // Keep details in the run log instead of posting periodic reminders.
-            if (!existing) {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title, body
-              });
-            }
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests PyYAML python-dotenv
+      - name: Download collection diagnostics
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: monitor-output-${{ github.run_id }}-${{ github.run_attempt }}
+          path: logs/notification-input/
+
+      - name: Notify actionable problems and weekly unresolved summary
+        id: notify
+        if: ${{ always() && github.event_name != 'push' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALERT_GITHUB_USER: li-yang23
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          EXPORT_OUTCOME: ${{ needs.monitor.outputs.export-outcome }}
+          PERSIST_COLLECTION_OUTCOME: ${{ needs.monitor.outputs.persist-outcome }}
+          DEPLOY_OUTCOME: ${{ needs.deploy-pages.result }}
+          INFRA_OUTCOME: ${{ needs.monitor.outputs.infrastructure-failed == 'true' && 'failure' || 'success' }}
+          WORKFLOW_HEALTH: ${{ needs.monitor.result == 'success' && needs.deploy-pages.result != 'failure' && 'success' || 'failure' }}
+        run: |
+          ARGS=(--summary logs/notification-input/logs/runs/latest-summary.json --queue logs/notification-input/data/article-queue.json --state data/alert-state.json --workflow-status "$WORKFLOW_HEALTH")
+          if [ "$MONITOR_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          python scripts/notify_monitor.py "${ARGS[@]}"
+
+      - name: Persist delivered notification state
+        id: persist_alert
+        if: ${{ always() && github.event_name != 'push' && github.event.inputs.dry_run != 'true' }}
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if [ ! -f data/alert-state.json ]; then exit 0; fi
+          git add -- data/alert-state.json
+          if git diff --staged --quiet; then exit 0; fi
+          git commit -m "chore: persist monitor notification state"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Require successful notification and state persistence
+        if: ${{ always() }}
+        env:
+          NOTIFY_OUTCOME: ${{ steps.notify.outcome }}
+          PERSIST_OUTCOME: ${{ steps.persist_alert.outcome }}
+          MONITOR_DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          if [ "$NOTIFY_OUTCOME" != "success" ]; then exit 1; fi
+          if [ "$MONITOR_DRY_RUN" != "true" ] && [ "$PERSIST_OUTCOME" != "success" ]; then exit 1; fi

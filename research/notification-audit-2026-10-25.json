@@ -1,0 +1,51 @@
+{
+  "reviewed_at": "2026-10-25T16:54:00+08:00",
+  "window_start": "2026-10-18T16:54:00+08:00",
+  "evidence_scope": "Git notification-state history confirms SMTP acceptance; repository Issue bodies and Actions audit artifacts reconstruct the messages. Inbox delivery was not independently accessed.",
+  "scheduled_runs": 27,
+  "failed_runs": 14,
+  "successful_runs": 13,
+  "smtp_accepted_notifications": 8,
+  "findings": [
+    {
+      "source": "The Common Sense",
+      "finding": "HTTP 200 public page explicitly requires subscription. ValueError was misclassified as runtime failure. Ten attempts retained in queue.",
+      "resolution": "Typed subscription limitation and preserve as unresolved; no original full text read, no completion claim."
+    },
+    {
+      "source": "SubTel Forum",
+      "finding": "Pages 5 and 26 previously returned 502. Both returned 200 in this audit.",
+      "resolution": "External retries continue; failures recorded without immediate mail."
+    },
+    {
+      "source": "BusinessWorld",
+      "finding": "Previously returned 502/timeout; returned 200 in this audit.",
+      "resolution": "Normal automatic public-source recovery can resume."
+    },
+    {
+      "source": "Submarine Networks",
+      "finding": "R J C N directory still returns HTTP 403.",
+      "resolution": "External access restriction; bounded retry and weekly unresolved summary."
+    },
+    {
+      "source": "Google News",
+      "finding": "Run 40038356568 had widespread HTTP 503, decoder/search failures. Next run 40063666670 processed 9 articles and inserted 3 events.",
+      "resolution": "Temporary source outage recovered; preserve request diagnostics."
+    },
+    {
+      "source": "Notification policy",
+      "finding": "Absence from one run removed observed conditions and rearmed repeat emails. SMTP and GitHub channels could both notify.",
+      "resolution": "Durable incident ledger, positive-evidence recovery, only actionable immediate email, unresolved weekly digest, one delivery channel."
+    }
+  ],
+  "validation": {
+    "python_tests": 248,
+    "actionlint": "passed",
+    "production_status": "pending release validation"
+  },
+  "runs": [
+    "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40163547900",
+    "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40038356568",
+    "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40063666670"
+  ]
+}

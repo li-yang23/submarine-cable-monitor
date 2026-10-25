@@ -329,7 +329,7 @@ class MonitorPipeline:
                         summary.queue_changes["closed_unresolved" if row["status"] == "unresolved" else "resolved"].append(item)
                 summary.review_status = "needs_review" if summary.queue.get("review") else "unresolved_archived" if summary.queue.get("unresolved") else "clear"
             summary.runtime_status = ("failed" if summary.status == "failed" or summary.errors and not summary.articles
-                                      else "degraded" if summary.errors or audit.failures or summary.model_health.get("available") is False
+                                      else "degraded" if summary.errors or audit.runtime_failures or summary.model_health.get("available") is False
                                       else "success")
             summary.status = summary.runtime_status
             audit.emit("run", "completed", status=summary.status, errors=summary.errors, warnings=summary.warnings)

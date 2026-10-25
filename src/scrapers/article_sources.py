@@ -23,6 +23,10 @@ class PublisherAccessError(requests.HTTPError):
     """A public page returned an access restriction or verification challenge."""
 
 
+class SubscriptionRequiredError(ValueError):
+    """The publisher requires a subscription; do not retry it as a code failure."""
+
+
 class ArticleScraper:
     source_name = "article"
 
@@ -82,11 +86,14 @@ class ArticleScraper:
     @staticmethod
     def _publisher_failure(details):
         status = details.get("http_status")
-        return ("publisher_missing" if status in {404, 410} else
+        return ("subscription_required" if details.get("error_type") == "SubscriptionRequiredError" else
+                "publisher_missing" if status in {404, 410} else
                 "publisher_access_blocked" if status in {202, 401, 403, 406, 451} or details.get("error_type") == "PublisherAccessError" else "article_fetch_error")
 
     def _retain_fetch_failure(self, item, failure):
-        if failure["reason"] in {"publisher_missing", "publisher_access_blocked"}:
+        if failure["reason"] == "subscription_required":
+            self.article_queue.mark_review(item, "subscription_required")
+        elif failure["reason"] in {"publisher_missing", "publisher_access_blocked"}:
             self.article_queue.mark_publisher_unavailable(item, **failure)
         else:
             self.article_queue.mark_retry(item, **failure)
@@ -280,7 +287,7 @@ class ArticleScraper:
                 if body is None or len(body.get_text(" ", strip=True)) < 300:
                     raise ValueError("dynamic_article_body_missing")
         if soup.select_one("#barrier-page") or re.search(r"subscribe to unlock this article", soup.get_text(" "), re.I):
-            raise ValueError("article_requires_subscription")
+            raise SubscriptionRequiredError("article_requires_subscription")
         title = clean_text((soup.select_one("h1") or soup.select_one("title") or soup).get_text(" "))
         published = extract_date_from_soup(soup)
         return {
@@ -347,7 +354,7 @@ class GoogleNewsArticleScraper(ArticleScraper):
                 self.logger.warning("Google News RSS failed for %s: %s", keyword, type(exc).__name__)
                 continue
             successful_feeds += 1
-            emit("rss", "completed", source=self.source_name, query=keyword, entry_count=len(entries), since=query_since)
+            emit("rss", "completed", source=self.source_name, query=keyword, url=url, entry_count=len(entries), since=query_since)
             truncated = len(entries) >= 100
             if truncated:
                 emit("rss", "failed", source=self.source_name, query=keyword, entry_count=len(entries), reason="possible_feed_truncation")
@@ -650,6 +657,7 @@ class SubTelForumScraper(ArticleScraper):
                     self._enqueue({"url": href, "title": title})
                     urls.append(href)
 
+            emit("discover", "completed", source=self.source_name, url=next_url, reason="category_read")
             next_link = soup.select_one("a.pagination-next, .pagination-next a, a[rel='next']")
             if not next_link or not next_link.get("href"):
                 self.article_queue.set_cursor(self.source_name, None)
