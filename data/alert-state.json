@@ -12,5 +12,1472 @@
     ],
     "fingerprint": "d8c16fbbbf44d634a5414ca880eaf831b37396a525b4bb42d3e578dc9c2f5517",
     "last_sent": 1792904295.7992847
+  },
+  "policy": {
+    "deliveries": {},
+    "issues": {
+      "0129d0fc269cf6e68f8524c5": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "528dc879fc503821fd7f2a3eaa350e54",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.manilatimes.net/2026/10/05/news/globe-restores-internet-services-after-cable-mess/2438610"
+      },
+      "0ac2c2c36bdbf4ee17dd0783": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "cddecc0b0ec4c66efd8c10705deff568",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.iranintl.com/en/202610216166"
+      },
+      "0ea56fbc4247ef7ba1c326bc": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "c3c757f26d642301e9f13d3df97263fd",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://astig.ph/philippines-taiwan-undersea-cable-cooperation-bashi-channel-2026/"
+      },
+      "14a2b24d35bc119175ac5334": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "http_status": 202,
+          "reason": "directory_access_cooldown",
+          "stage": "discover"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/systems/intra-asia/icx"
+      },
+      "17c9b41f265c154ffa49060c": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "5c396a0733d8fa2fbe741097c880a738",
+          "reason": "cross_source_insufficient_sources",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://timesofmalta.com/article/two-new-submarine-power-cables-planned-malta-gozo.1135069"
+      },
+      "188ba8681737f8e5660d466d": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "afae7ab991608624a85468de7ddbec30",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/nv/insights/finland-charges-russian-linked-ship-officers-over-baltic-sea-cable-sabotage"
+      },
+      "19a15465e98a88c3bb911a35": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "ef8f5a75f10b880d18b0a3bd4e095707",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://timesofindia.indiatimes.com/videos/international/trump-snubbed-mark-rutte-praises-canada-as-nato-allies-take-on-more-defence-burden/amp_videoshow/134950079.cms"
+      },
+      "1e756f63f9455b583bd073d7": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 10,
+          "queue_id": "0bbeb34b839af0c21de150ff79fac431",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://iranintl.com/en/202610216505"
+      },
+      "2068f998f27c41b60fb0139e": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "8a5e88759eff836b23d30f0db29f60a0",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.britainsworld.org.uk/p/the-memorandum-53-2026"
+      },
+      "2076ee9250f1d0e67f35db4b": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "23ac292f8080963bbdaddb90f2b47b44",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://minutemirror.com.pk/iranian-threats-put-gulf-internet-and-global-data-at-risk-644113/"
+      },
+      "2132c1a8d8e70c68faa3e19c": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "6d0048c0ccf40c60d6a5947f2dfe7b53",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.shetlandtimes.co.uk/news/new-laws-could-see-those-who-damage-subsea-cables-around-she-448286/"
+      },
+      "2226540e01cc7a03ec401adb": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "98159f167fb5fdbc4fd1f60f11316c3b",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://telecomlead.com/news/telecom-news-converge-ict-solutions-sarawak-digital-telstra-128037"
+      },
+      "26158af2f6fc290a7e0b7c70": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 3,
+          "queue_id": "fa0cf789a1bee2eb83bc79e1042c527c",
+          "reason": "publisher_access_blocked",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62457366/iran-tehran-undersea-cables-digital-infrastructure-war"
+      },
+      "274e5b4b0d77726e175ff4a1": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 3,
+          "queue_id": "488bdc120cdf40292fd9bda1f1360472",
+          "reason": "publisher_access_blocked",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.urdupoint.com/en/pakistan/iran-warning-internet-cables-strait-of-hormuz-2272960.html"
+      },
+      "3010d046aa8525e4f3bc6265": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "http_status": 202,
+          "reason": "directory_access_cooldown",
+          "stage": "discover"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/systems/intra-asia/tis"
+      },
+      "331802a2b7077a7f876ba275": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "7628e34051229762aaafc95232991576",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/nv/insights/taiwan-amends-seven-submarine-cable-laws"
+      },
+      "36d81b34eae025dc807a05ff": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "839a4d5cdf57767d968fb9e99fa9eca7",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.bbc.com/news/articles/c3rvx470yg8o"
+      },
+      "3c5381e05660af603b9045c5": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "c018e08792e26b8e14e3ee43de603df2",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://tribune.net.ph/2026/10/05/converge-limits-impact-of-singapore-cable-outage"
+      },
+      "40f77b26478408d71e15b7ae": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "2d27a9dbbfc7ddb92164171a347f9781",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://streamlinefeed.co.ke/news/irans-undersea-cable-threats-expose-iraqs-digital-vulnerabilities-in-gulf-tensions"
+      },
+      "454afe79a26e0bc8270aaa81": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "b376861eb974fe0817e26b4327244b03",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://news.err.ee/1610172076/new-communications-cable-to-be-laid-between-estonia-sweden-and-finland"
+      },
+      "493444b833671d33e87fe9cf": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "91a992eab24f026b31ee64bb4b3dec9a",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://t.co/cArfLAJ0iE"
+      },
+      "536b1396534bf6505f1fc873": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "a508898c70aabd1c97b4593df83fad70",
+          "reason": "candidate_evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.lawfaremedia.org/article/gaps-in-the-deep--how-the-law-of-the-sea-fails-the-undersea-kingdom"
+      },
+      "56893d4b108fecbac20af1b7": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "045ab71af8d10c5a3f50fe0adffa4cff",
+          "reason": "candidate_evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://shafaq.com/en/Report/Iran-s-undersea-cable-threat-raises-risks-for-Iraq"
+      },
+      "5ea6079946ba8214ff6d62f7": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 3,
+          "queue_id": "4b38a1c657c285343fe3e1fcbcd2d233",
+          "reason": "publisher_access_blocked",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://tradersunion.com/news/financial-news/show/3663735-converge-cable-investments-service-disruption/"
+      },
+      "5f2a2ff2de81024f39105fb6": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "c6a8042990e05afbb39aa85595d605bb",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.gmanetwork.com/news/topstories/nation/1006795/philippines-exploring-deeper-cooperation-with-taiwan-to-protect-undersea-cables/story/"
+      },
+      "5f6b01792561871c7a247c50": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "73b9db038ea8a1a628e463ffc99078d6",
+          "reason": "cross_source_insufficient_sources",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://newsinfo.inquirer.net/2316378/ph-singapore-internet-link-restored-after-cable-problem"
+      },
+      "618e1b150a805f00c6e180a1": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 10,
+          "queue_id": "5e12901900d54c9afeb9ff4558cd90a3",
+          "reason": "subscription_required",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u9700\u8981\u8ba2\u9605\uff0c\u516c\u5f00\u5168\u6587\u4e0d\u53ef\u7528\uff1b\u4fdd\u7559\u7f3a\u53e3\uff0c\u4e0d\u81ea\u52a8\u8d2d\u4e70\u6216\u7ed5\u8fc7\u9650\u5236",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.thecommonsense.co.za/economics_and_policy/ai-data-centres-could-help-break-south-africa-s-low-growth"
+      },
+      "62d9638ab4c51c2d23e1e6bc": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 6,
+          "queue_id": "ea7252685ce791967d62f5939a16b0dd",
+          "reason": "short_content",
+          "status": "retry"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u672a\u53d6\u5f97\u53ef\u7528\u6b63\u6587\u6216\u94fe\u63a5\uff1b\u4fdd\u7559\u91cd\u8bd5\u548c\u66ff\u4ee3\u6765\u6e90\u6838\u67e5\u8bb0\u5f55\uff1ashort_content",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.haaretz.com/middle-east-news/iran/2026-10-24/ty-article/iran-has-plans-to-hit-gulf-undersea-cables-if-war-resumes-officials-say/000001a1-6a66-d29a-a1a5-eae7e53d0000"
+      },
+      "62dcd2bdc6bec62fe916b680": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "2269b38069e82f4f397692c703d89d47",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://windward.ai/blog/undersea-cable-security-in-the-indo-pacific-starts-with-vessel-behavior/"
+      },
+      "6844278099b38e91d73dd654": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "99a74000e01a80ad6638a2b23dc2d1a7",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/nv/insights/re-evaluating-vietnam-internet-resilience"
+      },
+      "6fc03321838f8f87d47dd17d": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "d373e95c502aae5896e798d3ad0c1999",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.tovima.com/wsj/inside-the-race-to-protect-submarine-cables-from-sabotage/"
+      },
+      "71880e8c463aa7349cb279d6": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "4b4bbf046e3fa534608c24b5b6d94f96",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.gizguide.com/2026/10/globe-fully-restores-service.html"
+      },
+      "798bdf63ca0ac14b1b93e5c3": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "1250d2259322c5e14ce6d1f4cbe707ca",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://moderndiplomacy.eu/2026/10/22/undersea-cable-security-in-the-baltic-and-red-sea/"
+      },
+      "7a2150f32eaa833912f3f688": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "2c83963aaa07721127304baab39bb96b",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.express.co.uk/news/world/2258640/iran-cut-worlds-internet-strait-of-hormuz"
+      },
+      "7c0d30c2eae82076f97feb23": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "14ef0297c20b7015ccf9e66d0dac69d1",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.globalbankingandfinance.com/italy-host-nato-nuclear-exercise-steadfast-noon-next-week/"
+      },
+      "7d003cde11cf31550a076a84": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "c6e25215a1b220316930bb84dd9903b3",
+          "reason": "short_content",
+          "status": "retry"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u672a\u53d6\u5f97\u53ef\u7528\u6b63\u6587\u6216\u94fe\u63a5\uff1b\u4fdd\u7559\u91cd\u8bd5\u548c\u66ff\u4ee3\u6765\u6e90\u6838\u67e5\u8bb0\u5f55\uff1ashort_content",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.datacentre.solutions/news/24481-de-cix-adds-third-westbound-route-linking-middle-east-to-frankfurt"
+      },
+      "7db2684300e5da7f10fe791b": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "302b990958a564716dac3e6d210472d0",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.the-sun.com/news/17161994/undersea-drones-russia-putin-war"
+      },
+      "7ddf2b0ce09cde6502e13c8b": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "4cde7ddc026ae9fc80d06495ed63cd8d",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://telanganatoday.com/opinion-indias-undersea-cable-security-gap-what-china-got-right"
+      },
+      "84978f927900d6636af18031": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "fbcc106b28075aac8cfe0c5b84d53636",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.abs-cbn.com/news/business/2026/10/3/globe-reroutes-data-traffic-after-subsea-cable-break-disrupts-internet-services-1148"
+      },
+      "89423bc79a8c3f6de82760e7": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "573e12e0861f8152f393c316c05e2c25",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://inews.co.uk/news/seaside-towns-risk-russia-sabotage-4844843"
+      },
+      "8c310b780838b56813f7073c": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "a22dd4db54dd067441d40b4ff9037b38",
+          "reason": "candidate_evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.abc.net.au/news/2025-02-25/taiwan-detains-china-linked-ship-after-undersea-cable-incident/104981932"
+      },
+      "8cfd5c40694bf39aa2d0b55e": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 3,
+          "queue_id": "4887a3e2ab79328e8e5151a83261a327",
+          "reason": "publisher_access_blocked",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.caymancompass.com/2026/10/14/new-subsea-cable-may-undermine-caymans-telecom-market/"
+      },
+      "926193eb328903d9d4bbe380": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "1b416237cdd3ab09dd349d1ab64ea768",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://windward.ai/knowledge-base/q2-2026-tso-submarine-cables-risk-report/"
+      },
+      "94426d421b8f5e2ed9c7540a": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "76951e928f6ead9193309f4785554c4a",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.hindustantimes.com/ht-explainers/iran-us-war-tehran-threat-to-cut-gulf-undersea-cables-network-of-international-internet-traffic-red-sea-houthi-front-too-101792821634617.html"
+      },
+      "97ba75b7e394cbcf0d2e9550": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "c953f17b62aab19e4df2c14df76848fc",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://kelo.com/2026/10/21/philippines-exploring-deeper-cooperation-with-taiwan-to-protect-cables/"
+      },
+      "9a03ddee51f811e245aec382": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "b6eb0a23a6a93402cc186d7ed8ef22bb",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.globalbankingandfinance.com/exclusive-refresco-plots-potential-ipo-10-billion-plus/"
+      },
+      "9b174d9a6f7c5934e1403107": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "5827622e11d8a8f46b73c3353fad66b7",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://tribune.net.ph/2026/10/03/globe-taps-backup-links-after-cable-break"
+      },
+      "9ba411fabdd23eb0f9b23252": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "0144d117a68c46ce4b5fd97f6c4c633c",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://dominotheory.com/taiwan-open-to-cooperating-with-philippines-on-undersea-cable-protection/"
+      },
+      "a1155ab2acb3968b6e07b40d": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "http_status": 202,
+          "reason": "directory_access_cooldown",
+          "stage": "discover"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/systems/intra-asia/dmcs"
+      },
+      "a31739c217027ee4e45b248f": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 8,
+          "queue_id": "39d582ed52337867b974676bd2cd905c",
+          "reason": "cross_source_no_confirmed_incident",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_no_confirmed_incident",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.the-sun.com/news/17161994/undersea-drones-russia-putin-war/"
+      },
+      "a5c8a5c9e568499e18704769": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 10,
+          "queue_id": "7c523692825f06a7e8dbb3c4efd5fda5",
+          "reason": "cross_source_no_confirmed_incident",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_no_confirmed_incident",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.thesun.co.uk/news/40673823/undersea-drones-russia-putin-war/"
+      },
+      "b215e2a78ec005a5e0e23c21": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "5026c7086feb380e82dcfc52a6d14d96",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://windward.ai/knowledge-base/q2-2026-undersea-cables-risk-report/"
+      },
+      "b45e2e11c9f32d158faecd3e": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "71c12832ab3eae96a414e4192de083d1",
+          "reason": "short_content",
+          "status": "retry"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u672a\u53d6\u5f97\u53ef\u7528\u6b63\u6587\u6216\u94fe\u63a5\uff1b\u4fdd\u7559\u91cd\u8bd5\u548c\u66ff\u4ee3\u6765\u6e90\u6838\u67e5\u8bb0\u5f55\uff1ashort_content",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://t.co/X2x8tyIwSo"
+      },
+      "b8db442fafd11b468edbbfda": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "b256014b06aedbc21676939518911b42",
+          "reason": "candidate_evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.bbc.com/news/articles/cwy3zy9jvd4o"
+      },
+      "bcf863c4e77e4f21de7cab08": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "afb56961baa69ac0a0f929904de31c7d",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.telegraph.co.uk/news/2026/10/22/britain-has-only-one-ship-to-repair-cables-threatened-by-ru/"
+      },
+      "be2be922307438c18bc80b56": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "d0b41e924916fd707b20a8d2b2bc9b38",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://foreignpolicy.com/2026/10/16/undersea-war-book-review-cables-ocean-gray-zone-tactics/"
+      },
+      "bf911260b547de4a6a012aa1": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "e4792989cb9d6a50941aa98bd645aa3b",
+          "reason": "candidate_evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://telconews.com.au/story/retn-adds-sixth-subsea-route-to-boost-taiwan-resilience"
+      },
+      "c6593fc38979591168c1cdfe": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 3,
+          "queue_id": "428312bbd9fd3f1593da3109aab092a7",
+          "reason": "publisher_access_blocked",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://kalkine.com.au/news/technology/telstra-group-limited-asxtls-how-subsea-cable-networks-connect-australia-to-global-data-routes"
+      },
+      "c66f3559c6f3912aff8e8b28": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 2,
+          "queue_id": "02011af52dd99d0f89547cb1d6c69034",
+          "reason": "cross_source_area_not_supported",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://malaya.com.ph/business/corporate/pldt-seeks-faster-subsea-cable-repairs-through-stronger-government-coordination/"
+      },
+      "c79cf7fb68ca495c2d467d9a": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "error_type": "HTTPError",
+          "http_status": 401,
+          "reason": "alternative_unavailable",
+          "stage": "cross_source_fetch"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.reuters.com/world/middle-east/us-issues-fresh-iran-related-sanctions-treasury-website-shows-2026-10-15/"
+      },
+      "ca3c0c1c54ece63e148a7419": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "9c45c0bdef125a24c7bc93bad2026758",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://blog.cloudflare.com/east-african-internet-connectivity-again-impacted-by-submarine-cable-cuts/"
+      },
+      "ce516df720d60b16708bb379": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 2,
+          "queue_id": "6eac7d66cc7ecf8f21a2847f32b35798",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.ft.com/content/fba5c097-5df7-43aa-b78a-2068266eb2be"
+      },
+      "cf16aa674c0a4dc57a251b02": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "8d83b0dc08fe25278295d7ed0df9bafd",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.bbc.com/future/article/20241014-the-deep-sea-emergency-service-that-keeps-the-internet-running"
+      },
+      "cf84b49d87dbe732218fc284": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 2,
+          "queue_id": "989bae5436274d2a07edd4ec7716e496",
+          "reason": "cross_source_insufficient_sources",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://businessmirror.com.ph/2026/10/05/globe-restores-services-as-subsea-cable-repair-finished/"
+      },
+      "d5a8507dc552c023e81e0d4e": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "3c3a55a941ef315a5c66de599d6452f6",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.sentinelassam.com/more-news/editorial/the-war-beneath-the-waves"
+      },
+      "d7c8abbc9697102c8ebd8b5c": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 8,
+          "queue_id": "2297d4ac5d8ef2810b006ce3bc0470aa",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.globalbankingandfinance.com/fishermen-britains-climate-driven-octopus-boom-opportunity/"
+      },
+      "dbfdd7fe80f234708120292b": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "f9d540e46de59049cc6be473e3752d32",
+          "reason": "evidence_unavailable",
+          "status": "unresolved"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1aevidence_unavailable",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.theguardian.com/lifeandstyle/2026/oct/01/inside-the-undersea-kingdom-the-secret-sinister-battle-to-control-what-lies-beneath-the-waves"
+      },
+      "deaf756fbd50db6f387d9d17": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "68a2342a2011cd0fc5c47f2502343c20",
+          "reason": "short_content",
+          "status": "retry"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u672a\u53d6\u5f97\u53ef\u7528\u6b63\u6587\u6216\u94fe\u63a5\uff1b\u4fdd\u7559\u91cd\u8bd5\u548c\u66ff\u4ee3\u6765\u6e90\u6838\u67e5\u8bb0\u5f55\uff1ashort_content",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://oenergetice.cz/en/international-energy/britains-energy-sector-is-vulnerable-to-sabotage-subsea-infrastructure-is-a-weak-point"
+      },
+      "e22b533f918ad1604868d93f": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "92609153054b8ed175343ee0fff6ccf7",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://news.lavx.hu/article/broken-submarine-cables-slow-internet-across-philippines"
+      },
+      "e4e488d4eb4152878aec5d6c": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "9c57912c60236f4dc7602c76bcb95322",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.aol.co.uk/articles/iran-issues-chilling-threat-cut-193300000.html"
+      },
+      "ea0a33cf90699b25bf9f257e": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "b6ebed24c465d608180159baf0d360c0",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.theguardian.com/world/2025/jan/07/taiwan-investigating-chinese-vessel-over-damage-to-undersea-cable"
+      },
+      "eccd526ba3c96409b7c155c1": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "e3c1e8f0b840c5e23d0737b3ff1874bc",
+          "reason": "candidate_evidence_incomplete",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidate_evidence_incomplete",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.datacenterdynamics.com/en/news/httpslnkdinpesar37ja/"
+      },
+      "edb6c64b99f699dd780c1d73": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "6e2c9762344f80f3e22debe2ed9cd82b",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.submarinenetworks.com/en/nv/insights/eu-arctic-strategy"
+      },
+      "f4354a15d95cd18999b30124": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "d5e62ab6a071ef73fa1f362b57347952",
+          "reason": "candidates_rejected",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1acandidates_rejected",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://xenospectrum.com/en/russian-trawlers-subsea-cables-ais-analysis/"
+      },
+      "f47ce57847019b0bb11c5a63": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 9,
+          "queue_id": "0c80b25a19f44e2af466c0f5af1f4501",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u539f\u6587\u6216\u66ff\u4ee3\u6765\u6e90\u8bc1\u636e\u4e0d\u8db3\uff0c\u65e0\u6cd5\u786e\u8ba4\uff1b\u4fdd\u7559\u5177\u4f53\u539f\u56e0\uff1across_source_insufficient_sources",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.globalbankingandfinance.com/kingspan-hit-40-million-eu-fine-misleading-data-slovenian/"
+      },
+      "f4e6837e2819998f157e52c6": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 1,
+          "queue_id": "0959c3e2160cecae0c3a0abaaebf9500",
+          "reason": "cross_source_insufficient_sources",
+          "status": "review"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u6765\u6e90\u7f51\u7ad9\u9650\u5236\u8bbf\u95ee\uff1b\u516c\u5f00\u8bf7\u6c42\u548c\u66ff\u4ee3\u6765\u6e90\u4e0d\u80fd\u4fdd\u8bc1\u53d6\u5f97\u539f\u6587",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://manilastandard.net/tech/314800852/globe-reroutes-data-traffic-following-international-subsea-fiber-break-causing-disruption-in-internet-services.html"
+      },
+      "fd4e0f34387dea023f04be38": {
+        "action": "",
+        "episode": 1,
+        "evidence": {
+          "attempts": 4,
+          "queue_id": "0f3495621b775326b10e6a4f80473a97",
+          "reason": "short_content",
+          "status": "retry"
+        },
+        "first_seen": 1792918883.3381433,
+        "kind": "external",
+        "label": "\u672a\u53d6\u5f97\u53ef\u7528\u6b63\u6587\u6216\u94fe\u63a5\uff1b\u4fdd\u7559\u91cd\u8bd5\u548c\u66ff\u4ee3\u6765\u6e90\u6838\u67e5\u8bb0\u5f55\uff1ashort_content",
+        "last_run": "20261025T085747Z-dd6e5608",
+        "last_seen": 1792918883.3381433,
+        "observations": 1,
+        "run_url": "https://github.com/li-yang23/submarine-cable-monitor/actions/runs/40178614973",
+        "status": "open",
+        "url": "https://www.outlookindia.com/international/the-internet-beneath-the-strait-why-irans-cable-threat-matters-beyond-the-gulf"
+      }
+    },
+    "started_at": 1792918883.3381433,
+    "version": 2
   }
 }
