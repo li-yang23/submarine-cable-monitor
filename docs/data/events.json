@@ -1,6 +1,58 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "between Italy and France",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan, especially for European-hosted websites and services",
+    "cable_name": "AAE-1",
+    "created_at": "2026-10-28T21:13:07+00:00",
+    "discovered_url": "https://subtelforum.com/ptcl-warns-of-aae-1-repair-related-slowdown/",
+    "event_uid": "evt_d33d1e194cc252da7021",
+    "evidence_urls": [
+      "https://subtelforum.com/ptcl-warns-of-aae-1-repair-related-slowdown/"
+    ],
+    "normalized_cable_id": "AAE-1",
+    "occurrence_date": null,
+    "original_text": "Pakistan Telecommunication Company Limited has warned that internet users in Pakistan may experience slower speeds during peak hours while emergency repairs are carried out on the AAE-1 international submarine cable.",
+    "original_text_zh": "巴基斯坦电信有限公司警告称，在对AAE-1国际海底电缆进行紧急维修期间，巴基斯坦的互联网用户可能会在高峰时段体验到网速变慢。",
+    "published_date": "2026-10-28",
+    "raw_data": {
+      "article": {
+        "content": "1.8 min read PTCL Warns of AAE-1 Repair-Related Slowdown Mian Nadeem, Pakistan Point News October 28, 2026 Pakistan Telecommunication Company Limited has warned that internet users in Pakistan may experience slower speeds during peak hours while emergency repairs are carried out on the AAE-1 international submarine cable. In its October 28, 2026, announcement, PTCL said work had begun on the section between Italy and France and described the potential service decline as minor, particularly during busy periods. The company’s advisory extends through November 2, 2026, and asks users for patience and cooperation while the repair work is underway. AAE-1, or Asia-Africa-Europe 1, is a 25,000-kilometer consortium cable connecting Southeast Asia to Europe via Egypt. Its route includes Pakistan, Italy, and France, with the Pakistani landing at Karachi. The system also connects major carrier-neutral points of presence, including Marseille. The official AAE-1 system page lists an original minimum design capacity of 40 Tbps. That figure describes the system’s original design specification, not the capacity currently available during the repair window or the amount of traffic affected by the work. The announcement is significant for Pakistan because AAE-1 is one of the country’s most important routes for international internet traffic. Its European connections include landing points in Greece, Italy, and France, placing the repair location on the European portion of a system serving Pakistan. According to the source report, customers could notice effects most clearly during the evening traffic peak, especially for European-hosted websites and services. The advisory therefore connects a repair on the cable’s European section with a potential change in the experience of users in Pakistan, without quantifying that change. The confirmed operational status is that repair work has begun, with PTCL warning of possible peak-hour slowdowns through the stated window. November 2 is the expected end of that repair window, not a confirmed completion date. The announcement does not establish that repairs will be finished or normal service conditions restored on that day. For now, PTCL’s guidance remains a notice of possible temporary service degradation during the work, rather than a report that the cable repair has been completed. View source Published On: October 28, 2026 Tags: AAE-1 , cable repair , Pakistan , PTCL",
+        "discovered_url": "https://subtelforum.com/ptcl-warns-of-aae-1-repair-related-slowdown/",
+        "published_date": "2026-10-28",
+        "queue_id": "c8e739a5dfc3b8453382735306eb6242",
+        "source": "SubTel Forum",
+        "title": "PTCL Warns of AAE-1 Repair-Related Slowdown",
+        "url": "https://subtelforum.com/ptcl-warns-of-aae-1-repair-related-slowdown/"
+      },
+      "extracted": {
+        "accident_location": "between Italy and France",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan, especially for European-hosted websites and services",
+        "cable_name": "AAE-1",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Pakistan Telecommunication Company Limited has warned that internet users in Pakistan may experience slower speeds during peak hours while emergency repairs are carried out on the AAE-1 international submarine cable.",
+        "original_text_zh": "巴基斯坦电信有限公司警告称，在对AAE-1国际海底电缆进行紧急维修期间，巴基斯坦的互联网用户可能会在高峰时段体验到网速变慢。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "SubTel Forum",
+    "sources": [
+      "SubTel Forum"
+    ],
+    "submarine_name": "AAE-1",
+    "title": "PTCL Warns of AAE-1 Repair-Related Slowdown",
+    "updated_at": "2026-10-28T21:13:07+00:00",
+    "url": "https://subtelforum.com/ptcl-warns-of-aae-1-repair-related-slowdown/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "around Shetland",
     "accident_type": "Cut",
     "affected_area": "Shetland islands",
