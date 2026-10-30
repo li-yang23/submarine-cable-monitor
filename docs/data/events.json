@@ -3128,7 +3128,8 @@
     "affected_area": "Vietnam's international Internet connectivity",
     "cable_name": "Intra Asia (IA)",
     "created_at": "2026-08-31T08:02:18+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYnd2QUlhMDlCWmdTaFYwZjBYeU4yVWF0RENBV0dTSzR3M1VXWnB3eW5wWUNYUkQwRzFOQ1hxd1BibHpzRGhXQ2FFM08yRk4tamtRX1VtNzJhVHdTV2psX1gzT3l3YXEwZF9KenctZXhWSElKT19wYUlhRGJKdjY5RUd0R244RHJwZ3p3YlpyeDN1TWxBaENHYVR2YW0tRlRqTnBSaHB4LUpHMENuZ2FoVEh1V2xJeURTNUtJRXB1S0xGYXg5U3c?oc=5",
+    "discovered_url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
+    "duplicate_count": 1,
     "event_uid": "evt_3a5da669025517298fe0",
     "evidence_urls": [
       "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html"
@@ -3168,7 +3169,7 @@
     ],
     "submarine_name": "Intra Asia (IA)",
     "title": "4th undersea cable failure disrupts Vietnam Internet services",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-30T20:56:46+00:00",
     "url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
     "verification_status": "verified"
   },
@@ -3561,6 +3562,59 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "https://news.tuoitre.vn/vietnams-international-internet-connection-affected-by-faults-on-three-undersea-cables-103260827144107718.htm",
     "verification_status": "verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Southeast Asia with the U.S.",
+    "cable_name": "Asia-America Gateway (AAG)",
+    "created_at": "2026-10-30T20:56:46+00:00",
+    "discovered_url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
+    "event_uid": "evt_88e2dab580e4cbae0f0e",
+    "evidence_urls": [
+      "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html"
+    ],
+    "normalized_cable_id": "AAG",
+    "occurrence_date": null,
+    "original_text": "The Asia-America Gateway (AAG), which connects Southeast Asia with the U.S., and the Intra Asia (IA) cable are also experiencing problems, with repairs expected to begin in early September.",
+    "original_text_zh": "连接东南亚和美国的亚洲-美洲门户（AAG）电缆和亚洲内部（IA）电缆也出现了问题，预计将在九月初开始维修。",
+    "published_date": "2026-08-27",
+    "raw_data": {
+      "article": {
+        "content": "The most read Vietnamese newspaper Follow us on Edition: International | Vietnamese Home News Politics Education Environment Traffic Crime Brainteaser Business DataSpeaks Property Billionaires Markets Companies Economy Money Quiz Tech Tech news Enterprises Personalities Vietnam innovation Challenge hub Travel Places Food Guide Visa Puzzle Life Trend Arts Celebrities Vogue Love Wellness Sports Football Boxing Marathon Tennis Other sports Trivia World Perspectives Readers' Views Premium Contact Us © Copyright 1997 VnExpress.net. All rights reserved. Go Tech Tech news Enterprises Personalities Vietnam innovation Challenge hub Copy link Most Read 1. Hong Kong airport becomes first to earn international digital identity certification 2. Asia’s second-richest person among world’s biggest wealth losers following record IPO 3. Asia's most favorite island welcomes 2.1 million foreign tourists in 10 months, exceeding 2026 target 4. NUS scientists develop world's first washable touchscreen woven into clothing 5. 13 airlines affected by check-in disruption at Asia's second best airport 6. Singapore tailor becomes first non-Italian to win Italian bespoke tailoring trophy 7. Singaporean man charged tax at Malaysian border for speaker bought two years ago 8. Singapore’s largest lender denies merging unit with bank of Indonesia’s richest man 9. Joint venture linked to Singapore billionaire Kwek Leng Beng's Hong Leong bids $142M for prime housing site 10. 5 flights delayed after runway subsidence at Bangkok airport 4th undersea cable failure disrupts Vietnam Internet services By Trong Dat &nbspAugust 27, 2026 | 07:22 pm PT Get VnExpress first in Google Search See more of the news you trust. Make VnExpress a preferred source to prioritise our updates in your Google search results A fourth undersea fiber-optic cable serving Vietnam has developed a fault, further disrupting international Internet connectivity with three other cables remaining out of service. The SJC2 cable, which connects Vietnam with other parts of Asia, developed a fault in its S4 segment near Chung Hom Kok, Hong Kong, on Tuesday, according to an international undersea cable operator. The simultaneous problem with four undersea cables has badly affected Vietnam's international Internet traffic, the operator said. The AAE-1 cable has been experiencing problems in its S1.H2 segment since February and has yet to be repaired. The Asia-America Gateway (AAG), which connects Southeast Asia with the U.S., and the Intra Asia (IA) cable are also experiencing problems, with repairs expected to begin in early September. Undersea fiber-optic cables carry the bulk of Vietnam's international Internet traffic, and so its international bandwidth has been substantially reduced. Internet service providers have been balancing loads, rerouting traffic and adding capacity through other connections to minimize the impact on users. Ethernet cables connected to the LAN ports of a Wi-Fi modem/router. Photo by VnExpress/Luu Quy Network provider VNPT said it rerouted traffic through available connections immediately after the problems emerged to make the best use of its remaining capacity. But Internet access would \"be affected to some extent\" during peak hours, it said. Users might experience slower connections when browsing websites, streaming videos, or playing games hosted on overseas servers, though Internet services generally remain stable because of backup infrastructure, it said. The company described the incident as a force majeure event that affects all Internet service providers in Vietnam. A Viettel spokesperson told VnExpress that the company has been affected by the problems with the IA and AAE-1 cables. Its AAE-1 connection has been completely disrupted, sharply reducing the company's international capacity though its backup systems have not recorded any overload. To compensate for the lost capacity, Viettel added 800 Gbps of international connectivity via the IA cable Wednesday. It is also adding 300 Gbps through the Asia Pacific Gateway, with the additional capacity expected to be available by Aug. 31. It has also rerouted some international traffic through a terrestrial cable running via Laos to Singapore and plans to add another 1.5 Tbps of capacity on that route by the end of the month. It said it could increase capacity on its Asia Direct Cable (ADC) to 50 Tbps if needed to \"handle all international Internet traffic.\" The ADC, which was installed in 2025, links Vietnam with three major Asian connectivity hubs Hong Kong, Singapore, and Japan. Vietnam is linked by six undersea fiber-optic cable systems, AAG, IA, AAE-1, APG, ADC and SJC2, the last two being the newest. The systems have suffered some 10 incidents a year since 2022. Repairs to undersea cables typically take several months to half a year and can sometimes take as long as a year. To reduce its dependence on undersea cables, Vietnam launched its first VSTN terrestrial fiber-optic cable in 2025 and has also approved trials of satellite Internet services. Earlier this month, Elon Musk's Starlink became the first company to be licensed to provide such services. Get VnExpress first in Google Search See more of the news you trust. Make VnExpress a preferred source to prioritise our updates in your Google search results Comments ( 0 ) Latest first | Highest rated Latest first Highest rated View more 20 /1000 Tắt chia sẻ Log out 0 /1000",
+        "discovered_url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
+        "keyword": "cross_source",
+        "published_date": "2026-08-27",
+        "queue_id": "688a929cb8043ee456483fdfcb55a29c",
+        "source": "Google News",
+        "title": "4th undersea cable failure disrupts Vietnam Internet services",
+        "url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Southeast Asia with the U.S.",
+        "cable_name": "Asia-America Gateway (AAG)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "The Asia-America Gateway (AAG), which connects Southeast Asia with the U.S., and the Intra Asia (IA) cable are also experiencing problems, with repairs expected to begin in early September.",
+        "original_text_zh": "连接东南亚和美国的亚洲-美洲门户（AAG）电缆和亚洲内部（IA）电缆也出现了问题，预计将在九月初开始维修。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Asia-America Gateway (AAG)",
+    "title": "4th undersea cable failure disrupts Vietnam Internet services",
+    "updated_at": "2026-10-30T20:56:46+00:00",
+    "url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "verified",
@@ -11714,7 +11768,8 @@
     "affected_area": "Vietnam and international connections",
     "cable_name": "AAE-1",
     "created_at": "2026-08-28T13:42:57+00:00",
-    "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYnd2QUlhMDlCWmdTaFYwZjBYeU4yVWF0RENBV0dTSzR3M1VXWnB3eW5wWUNYUkQwRzFOQ1hxd1BibHpzRGhXQ2FFM08yRk4tamtRX1VtNzJhVHdTV2psX1gzT3l3YXEwZF9KenctZXhWSElKT19wYUlhRGJKdjY5RUd0R244RHJwZ3p3YlpyeDN1TWxBaENHYVR2YW0tRlRqTnBSaHB4LUpHMENuZ2FoVEh1V2xJeURTNUtJRXB1S0xGYXg5U3c?oc=5",
+    "discovered_url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
+    "duplicate_count": 1,
     "event_uid": "evt_96c22afa5fa1dc55a8cc",
     "evidence_urls": [
       "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html"
@@ -11754,7 +11809,7 @@
     ],
     "submarine_name": "AAE-1",
     "title": "4th undersea cable failure disrupts Vietnam Internet services",
-    "updated_at": "2026-10-13T08:57:51+00:00",
+    "updated_at": "2026-10-30T20:56:46+00:00",
     "url": "https://e.vnexpress.net/news/tech/vietnam-innovation/4th-undersea-cable-failure-disrupts-vietnam-internet-services-5114439.html",
     "verification_status": "verified"
   },
