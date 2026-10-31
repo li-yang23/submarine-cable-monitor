@@ -14005,6 +14005,59 @@
     "verification_status": "imported"
   },
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "between Orkney and Banff",
+    "accident_type": "Limit",
+    "affected_area": "Orkney and Shetland",
+    "cable_name": "Shefa-2",
+    "created_at": "2026-10-31T14:39:40+00:00",
+    "discovered_url": "https://www.bbc.co.uk/news/articles/c0j9p4d7njxo",
+    "event_uid": "evt_745815ab98ac7165ef13",
+    "evidence_urls": [
+      "https://www.bbc.co.uk/news/articles/c0j9p4d7njxo"
+    ],
+    "normalized_cable_id": "SHEFA-2",
+    "occurrence_date": null,
+    "original_text": "Hundreds of people in Orkney and Shetland have experienced disruption to their internet and phone services because of damage to a subsea cable. Shetland Telecom said the Shefa-2 cable between Orkney and Banff sustained damage at about 03:00.",
+    "original_text_zh": "由于海底电缆损坏，奥克尼和设得兰群岛的数百人经历了互联网和电话服务的中断。设得兰电信表示，连接奥克尼和班夫的Shefa-2电缆在凌晨3点左右受到了损坏。",
+    "published_date": "2025-07-26",
+    "raw_data": {
+      "article": {
+        "content": "Image source, Getty Images Image caption, The subsea cable links Orkney, pictured, to mainland Scotland Published 26 July 2025 Updated 27 July 2025 Hundreds of people in Orkney and Shetland have experienced disruption to their internet and phone services because of damage to a subsea cable. Shetland Telecom said the Shefa-2 cable between Orkney and Banff sustained damage at about 03:00. It was initially thought that thousands of customers would be affected. The switchboard at Balfour Hospital in Kirkwall was down throughout Saturday and overnight into Sunday before the service was restored. Internet provider OpenReach said: \"We'll continue to assess, but customer broadband impact is more limited than initially thought, with hundreds of customers disrupted.\" It added: Landline calls were never impacted, and we'll continue to work hard to resolve and repair.\" The cable, which links Orkney, Shetland and the Faroe Islands to mainland Scotland, was last damaged three years ago in an incident thought to have been because of a fishing vessel. The BBC understands emergency calls have not been impacted. A timescale for repairs will depend on a number of conditions including wind strength and direction. More stories from North East Scotland, Orkney and Shetland Listen to news from North East Scotland on BBC Sounds Openreach, which supplies broadband in Orkney, apologised to those who had been affected. A spokesperson said: \"Customers can still make landline calls, and whilst we're constantly assessing customer impact, we believe up to 10,000 customers in Faroe, Shetland and Orkney islands could have disruption to their broadband services. \"We're working on repairs as soon as we can and will update further once we can confirm our specific work and timeline. Anyone experiencing any issues should report it to their service provider for further investigation as usual.\" Communications in Shetland were severely disrupted in October 2022 when the south subsea cable between the islands and the mainland was cut. Police declared a major incident with landlines and mobiles unusable. At the time, BBC News heard reports that many shops were unable to take card payments. The scale of the current incident is still being investigated. Related topics Orkney Shetland Telecommunication Internet More on this story Damaged cable cuts Shetland off from mainland Published 20 October 2022 Shetland communication restored after cable damage Published 21 October 2022",
+        "discovered_url": "https://www.bbc.co.uk/news/articles/c0j9p4d7njxo",
+        "keyword": "cross_source",
+        "published_date": "2025-07-26",
+        "queue_id": "a5fbc146d1e7012d47a95fc73384191b",
+        "source": "Google News",
+        "title": "Cable damage disrupts internet services in Orkney and Shetland",
+        "url": "https://www.bbc.co.uk/news/articles/c0j9p4d7njxo"
+      },
+      "extracted": {
+        "accident_location": "between Orkney and Banff",
+        "accident_type": "Cut",
+        "affected_area": "Orkney and Shetland",
+        "cable_name": "Shefa-2",
+        "occurrence_date": "2025-07-26",
+        "occurrence_date_evidence": "damage to a subsea cable at about 03:00",
+        "original_text": "Hundreds of people in Orkney and Shetland have experienced disruption to their internet and phone services because of damage to a subsea cable. Shetland Telecom said the Shefa-2 cable between Orkney and Banff sustained damage at about 03:00.",
+        "original_text_zh": "由于海底电缆损坏，奥克尼和设得兰群岛的数百人经历了互联网和电话服务的中断。设得兰电信表示，连接奥克尼和班夫的Shefa-2电缆在凌晨3点左右受到了损坏。",
+        "reason": "unknown",
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Shefa-2",
+    "title": "Cable damage disrupts internet services in Orkney and Shetland",
+    "updated_at": "2026-10-31T14:39:40+00:00",
+    "url": "https://www.bbc.co.uk/news/articles/c0j9p4d7njxo",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "imported",
     "accident_location": "Branching Unit in Namibia",
     "accident_type": "Maintenance",
