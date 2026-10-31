@@ -742,6 +742,165 @@
   },
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Vietnam",
+    "cable_name": "AAE-1",
+    "created_at": "2026-10-31T05:58:52+00:00",
+    "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "event_uid": "evt_26d860793bf27db3e678",
+    "evidence_urls": [
+      "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+    ],
+    "normalized_cable_id": "AAE-1",
+    "occurrence_date": null,
+    "original_text": "the AAE-1 cable, which has seen issues since February",
+    "original_text_zh": "自二月份以来AAE-1电缆就出现了问题",
+    "published_date": "2026-10-15",
+    "raw_data": {
+      "article": {
+        "content": "Vietnam has once again been plagued by multiple subsea cable outages. As reported by VN Express , four of the six subsea cables that connect the country have suffered disruptions due to multiple simultaneous faults within these cables, though the specifics of these faults have not been revealed. 26 Aug 2021 What is a submarine cable? Subsea fiber explained Our wireless world depends on a few hundred fiber cables laid on the ocean floor Vietnam is connected by six undersea fiber-optic cable systems: AAG, IA, AAE-1, APG, ADC, and SJC2, with the last two being the newest cables. The cables impacted include parts of the SJC2 cable, which connects the country to other parts of Asia; the AAE-1 cable, which has seen issues since February; the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues. Repairs on the AAG and IA cables are expected to start this month. The SJC2 cable is the latest to suffer disruption, notes VN Express, which reports that the cable developed a fault in its S4 segment near Chung Hom Kok, Hong Kong, last week. These faults have led to mobile network operators in the country reporting network disruption, including VNPT and Viettel, while around 30 percent of Vietnam's international Internet traffic. In order to navigate these challenges, Viettel has added 800Gbps of international connectivity via the IA cable on Wednesday, and is also adding 300Gbps through the Asia Pacific Gateway. It's not the first time the country's subsea cables have suffered severe disruption. In 2024, three cables connecting Vietnam (IA, APG, and AAE-1) were all hit by outages, while a year earlier, all five cables that connected the nation at the time were down simultaneously. More in Subsea Infrastructure Sovereign enterprise: securing global business from space 22 Jul 2026 Google lands Nuvem subsea cable in Portugal 01 Sep 2026 AWS cable landing station in West Cork, Ireland, approved despite local opposition More in Outages 08 May 2026 AWS experiences power issues at Northern Virginia cloud region, causing limited outage 21 Jul 2026 Police respond to cell tower fire in St John's, Newfoundland, one of six arson attacks in city over weekend 13 Aug 2026 PJM considering changes to interconnection reliability requirements for data centers following mass outage",
+        "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+        "keyword": "cross_source",
+        "published_date": "2026-10-15",
+        "queue_id": "24e226dd9e769e19cdba2978be53cc08",
+        "source": "Google News",
+        "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Vietnam",
+        "cable_name": "AAE-1",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "since February",
+        "original_text": "the AAE-1 cable, which has seen issues since February",
+        "original_text_zh": "自二月份以来AAE-1电缆就出现了问题",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "AAE-1",
+    "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+    "updated_at": "2026-10-31T05:58:52+00:00",
+    "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Vietnam",
+    "cable_name": "AAG",
+    "created_at": "2026-10-31T05:58:52+00:00",
+    "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "event_uid": "evt_4dcbb98db98d261c5149",
+    "evidence_urls": [
+      "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+    ],
+    "normalized_cable_id": "AAG",
+    "occurrence_date": null,
+    "original_text": "the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues",
+    "original_text_zh": "连接东南亚与美国的亚洲-美洲网关（AAG）以及亚洲内部（IA）电缆也出现了问题",
+    "published_date": "2026-10-15",
+    "raw_data": {
+      "article": {
+        "content": "Vietnam has once again been plagued by multiple subsea cable outages. As reported by VN Express , four of the six subsea cables that connect the country have suffered disruptions due to multiple simultaneous faults within these cables, though the specifics of these faults have not been revealed. 26 Aug 2021 What is a submarine cable? Subsea fiber explained Our wireless world depends on a few hundred fiber cables laid on the ocean floor Vietnam is connected by six undersea fiber-optic cable systems: AAG, IA, AAE-1, APG, ADC, and SJC2, with the last two being the newest cables. The cables impacted include parts of the SJC2 cable, which connects the country to other parts of Asia; the AAE-1 cable, which has seen issues since February; the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues. Repairs on the AAG and IA cables are expected to start this month. The SJC2 cable is the latest to suffer disruption, notes VN Express, which reports that the cable developed a fault in its S4 segment near Chung Hom Kok, Hong Kong, last week. These faults have led to mobile network operators in the country reporting network disruption, including VNPT and Viettel, while around 30 percent of Vietnam's international Internet traffic. In order to navigate these challenges, Viettel has added 800Gbps of international connectivity via the IA cable on Wednesday, and is also adding 300Gbps through the Asia Pacific Gateway. It's not the first time the country's subsea cables have suffered severe disruption. In 2024, three cables connecting Vietnam (IA, APG, and AAE-1) were all hit by outages, while a year earlier, all five cables that connected the nation at the time were down simultaneously. More in Subsea Infrastructure Sovereign enterprise: securing global business from space 22 Jul 2026 Google lands Nuvem subsea cable in Portugal 01 Sep 2026 AWS cable landing station in West Cork, Ireland, approved despite local opposition More in Outages 08 May 2026 AWS experiences power issues at Northern Virginia cloud region, causing limited outage 21 Jul 2026 Police respond to cell tower fire in St John's, Newfoundland, one of six arson attacks in city over weekend 13 Aug 2026 PJM considering changes to interconnection reliability requirements for data centers following mass outage",
+        "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+        "keyword": "cross_source",
+        "published_date": "2026-10-15",
+        "queue_id": "24e226dd9e769e19cdba2978be53cc08",
+        "source": "Google News",
+        "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Vietnam",
+        "cable_name": "AAG",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues",
+        "original_text_zh": "连接东南亚与美国的亚洲-美洲网关（AAG）以及亚洲内部（IA）电缆也出现了问题",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "AAG",
+    "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+    "updated_at": "2026-10-31T05:58:52+00:00",
+    "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Vietnam",
+    "cable_name": "IA",
+    "created_at": "2026-10-31T05:58:52+00:00",
+    "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "event_uid": "evt_bab6e649979e8bde8d7a",
+    "evidence_urls": [
+      "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+    ],
+    "normalized_cable_id": "IA",
+    "occurrence_date": null,
+    "original_text": "the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues",
+    "original_text_zh": "连接东南亚与美国的亚洲-美洲网关（AAG）以及亚洲内部（IA）电缆也出现了问题",
+    "published_date": "2026-10-15",
+    "raw_data": {
+      "article": {
+        "content": "Vietnam has once again been plagued by multiple subsea cable outages. As reported by VN Express , four of the six subsea cables that connect the country have suffered disruptions due to multiple simultaneous faults within these cables, though the specifics of these faults have not been revealed. 26 Aug 2021 What is a submarine cable? Subsea fiber explained Our wireless world depends on a few hundred fiber cables laid on the ocean floor Vietnam is connected by six undersea fiber-optic cable systems: AAG, IA, AAE-1, APG, ADC, and SJC2, with the last two being the newest cables. The cables impacted include parts of the SJC2 cable, which connects the country to other parts of Asia; the AAE-1 cable, which has seen issues since February; the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues. Repairs on the AAG and IA cables are expected to start this month. The SJC2 cable is the latest to suffer disruption, notes VN Express, which reports that the cable developed a fault in its S4 segment near Chung Hom Kok, Hong Kong, last week. These faults have led to mobile network operators in the country reporting network disruption, including VNPT and Viettel, while around 30 percent of Vietnam's international Internet traffic. In order to navigate these challenges, Viettel has added 800Gbps of international connectivity via the IA cable on Wednesday, and is also adding 300Gbps through the Asia Pacific Gateway. It's not the first time the country's subsea cables have suffered severe disruption. In 2024, three cables connecting Vietnam (IA, APG, and AAE-1) were all hit by outages, while a year earlier, all five cables that connected the nation at the time were down simultaneously. More in Subsea Infrastructure Sovereign enterprise: securing global business from space 22 Jul 2026 Google lands Nuvem subsea cable in Portugal 01 Sep 2026 AWS cable landing station in West Cork, Ireland, approved despite local opposition More in Outages 08 May 2026 AWS experiences power issues at Northern Virginia cloud region, causing limited outage 21 Jul 2026 Police respond to cell tower fire in St John's, Newfoundland, one of six arson attacks in city over weekend 13 Aug 2026 PJM considering changes to interconnection reliability requirements for data centers following mass outage",
+        "discovered_url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+        "keyword": "cross_source",
+        "published_date": "2026-10-15",
+        "queue_id": "24e226dd9e769e19cdba2978be53cc08",
+        "source": "Google News",
+        "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Vietnam",
+        "cable_name": "IA",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "the Asia-America Gateway (AAG), which connects Southeast Asia with the US; and the Intra Asia (IA) cable have also seen issues",
+        "original_text_zh": "连接东南亚与美国的亚洲-美洲网关（AAG）以及亚洲内部（IA）电缆也出现了问题",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "IA",
+    "title": "Four of Vietnam's subsea cables suffer faults, leading to fresh connectivity outages for country - Data Center Dynamics",
+    "updated_at": "2026-10-31T05:58:52+00:00",
+    "url": "https://www.datacenterdynamics.com/en/news/four-of-vietnams-subsea-cables-suffer-faults-leading-to-fresh-connectivity-outages-for-country/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "Red Sea",
     "accident_type": "Cut",
     "affected_area": "Red Sea",
