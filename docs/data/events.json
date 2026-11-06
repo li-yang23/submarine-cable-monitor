@@ -1,6 +1,58 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "about 150 kilometers from Taiwan's eastern coast",
+    "accident_type": "Limit",
+    "affected_area": "section C",
+    "cable_name": "East Asia Crossing 1 (EAC1)",
+    "created_at": "2026-11-06T21:48:45+00:00",
+    "discovered_url": "https://subtelforum.com/taiwan-schedules-eac1-submarine-cable-repairs/",
+    "event_uid": "evt_830e44f2f332a5d8e635",
+    "evidence_urls": [
+      "https://subtelforum.com/taiwan-schedules-eac1-submarine-cable-repairs/"
+    ],
+    "normalized_cable_id": "EAST ASIA CROSSING 1 (EAC1)",
+    "occurrence_date": null,
+    "original_text": "The August 26 fault was about 150 kilometers from Taiwan's eastern coast and disrupted communications.",
+    "original_text_zh": "8月26日的故障位于台湾东部海岸约150公里处，并导致通信中断。",
+    "published_date": "2026-11-06",
+    "raw_data": {
+      "article": {
+        "content": "1.9 min read Taiwan Schedules EAC1 Submarine Cable Repairs East Taiwan Maritime Affairs Center, Taiwan Maritime Port Bureau November 4, 2026 Taiwan has scheduled repair operations for faults affecting East Asia Crossing 1 (EAC1), section C, in waters off eastern Taiwan, according to a Taiwan Maritime Port Bureau Notice to Mariners released and last verified on November 4, 2026. The planned work window runs from November 10 through December 20, 2026. According to the attachment, the August 26 fault was about 150 kilometers from Taiwan's eastern coast and disrupted communications. The announcement establishes a repair schedule, but does not confirm that service has been restored. The principal operational requirement is a prohibition on all vessels entering the operation area during the work. The Bureau bases the announcement on letter No. 053, issued October 30, 2026, by Global Optical Network Telecommunications Co., Ltd. It does not identify a repair vessel or describe how the cable will be repaired. The approximate distance of the fault from eastern Taiwan provides location context, but the supplied information does not establish exact coordinates. The confirmed operational details are therefore the scheduled dates, the affected cable section, and the vessel-entry restriction. Historical context places EAC1 within a North Asian submarine network development described by NEC in an archived announcement dated June 28, 2005. That announcement concerned a landing extension contract for Qingdao. NEC said the project would add that landing to EAC1 and create a ring across North Asia using dense wavelength division multiplexing, or DWDM, submarine optical networking technology. This background provides context for the system identified in the repair notice, but it does not establish the current fault's technical cause, capacity impact, or consequences for other parts of the network. The next confirmed milestone is the scheduled start of repair operations on November 10, with the announced work window ending December 20. Those dates describe an operational plan rather than a separate return-to-service commitment. As of the notice's November 4 release and verification, the official information confirms the earlier fault, the resulting communications disruption, and the forthcoming repair schedule. It does not report current traffic conditions or provide a restoration date. The scheduled window should therefore not be read as evidence that repairs have already been completed or that communications service has returned. View source Published On: November 6, 2026 Tags: cable repair , submarine cable , Taiwan",
+        "discovered_url": "https://subtelforum.com/taiwan-schedules-eac1-submarine-cable-repairs/",
+        "published_date": "2026-11-06",
+        "queue_id": "b7ad0ec02ddaf349ce2c9e7c30b2a184",
+        "source": "SubTel Forum",
+        "title": "Taiwan Schedules EAC1 Submarine Cable Repairs",
+        "url": "https://subtelforum.com/taiwan-schedules-eac1-submarine-cable-repairs/"
+      },
+      "extracted": {
+        "accident_location": "about 150 kilometers from Taiwan's eastern coast",
+        "accident_type": "Limit",
+        "affected_area": "section C",
+        "cable_name": "East Asia Crossing 1 (EAC1)",
+        "occurrence_date": "2026-08-26",
+        "occurrence_date_evidence": "The August 26 fault was about 150 kilometers from Taiwan's eastern coast and disrupted communications.",
+        "original_text": "The August 26 fault was about 150 kilometers from Taiwan's eastern coast and disrupted communications.",
+        "original_text_zh": "8月26日的故障位于台湾东部海岸约150公里处，并导致通信中断。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "SubTel Forum",
+    "sources": [
+      "SubTel Forum"
+    ],
+    "submarine_name": "East Asia Crossing 1 (EAC1)",
+    "title": "Taiwan Schedules EAC1 Submarine Cable Repairs",
+    "updated_at": "2026-11-06T21:48:45+00:00",
+    "url": "https://subtelforum.com/taiwan-schedules-eac1-submarine-cable-repairs/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "Taiwan region",
     "accident_type": "Limit",
     "affected_area": "International data traffic in Taiwan",
