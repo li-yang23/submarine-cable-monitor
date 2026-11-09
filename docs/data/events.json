@@ -106,6 +106,59 @@
   },
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "cable segment linking the Democratic Republic of Congo (DRC) and the Republic of Congo",
+    "accident_type": "Limit",
+    "affected_area": "Congo Telecom's redundancy mechanisms",
+    "cable_name": "West Africa Cable System (WACS)",
+    "created_at": "2026-11-09T19:00:01+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZ1k1RGl3czhyMmZQRDhwNlJPbFg0aFpQR3prRzc1VVpkTkdOS0VKa3hSNHNuQzBlaHRDeWh0ajNoakN6blhZVGpUUXFjQ3dWS2JJZVRHWXlZLURfTTNJOERPemFXYzNSUmVuR1BrMFdLLTNrODUwT2wxT0xxQnN1Q1dZQ3dwMjNPM3k0SG1n?oc=5",
+    "event_uid": "evt_8a74a9460477f1eb1176",
+    "evidence_urls": [
+      "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa"
+    ],
+    "normalized_cable_id": "WACS",
+    "occurrence_date": "2026-10-29",
+    "original_text": "The deployment follows a 29 October circuit disruption that affected Congo Telecom’s redundancy mechanisms.",
+    "original_text_zh": "此次部署是由于10月29日的电路中断影响了刚果电信的冗余机制。",
+    "published_date": "2026-11-09",
+    "raw_data": {
+      "article": {
+        "content": "By Staff Writer , ITWeb Johannesburg, 09 Nov 2026 An indicative map showing the maritime route of the deployment to resolve the regional WACS circuit disruption (Image source: Congo Telecom). Repair operations on the West Africa Cable System (WACS) submarine fibre-optic network have entered a critical phase, with the designated repair vessel sailing towards the fault location. The deployment follows a 29 October circuit disruption that affected Congo Telecom’s redundancy mechanisms. Technical teams isolated the suspected fault to the cable segment linking the Democratic Republic of Congo (DRC) and the Republic of Congo. Although the exact coordinates of the damage have not been publicly disclosed, an official update from Congo Telecom confirmed that the repair vessel is scheduled to reach the affected area on Wednesday, 11 November, to begin physical restoration of the undersea link. The Gulf of Guinea and Central African coastal waters are known locations for submarine cable faults. Disruptions along this Atlantic seabed corridor can result from deep-sea seismic activity, maritime incidents such as anchor dragging, or underwater landslides in geographical features such as the Congo Canyon. The latest disruption follows previous WACS outages, including underwater landslides that affected the network in 2020 and August 2023, as well as a separate outage in January this year that disrupted internet traffic across the region. Despite the loss of the primary circuits, Congo Telecom reported no service disruption for its customers. The operator said its automated failover and redundancy mechanisms were activated when the fault occurred, switching traffic to alternative backup links and maintaining internet capacity across its subscriber base. “Congo Telecom is closely monitoring the evolution of the situation and remains attentive to the progress of operations,” the operator said. “We will continue to keep customers informed of further developments as new information becomes available.” Spanning 14,500 kilometres, the WACS network connects South Africa with Portugal and the UK. With landing stations in 14 countries, including the Republic of Congo, Gabon, Cameroon, Nigeria, Ghana and Côte d’Ivoire, the infrastructure serves as an international backbone for regional data transit and internet connectivity across Central and West Africa. Share Infrastructure West Africa Cable System WACS Fibre Connectivity Subsea cables Internet outages Democratic Republic of Congo Republic of Congo South Africa Gabon Cameroon Nigeria Ghana Côte d'Ivoire Portugal UK Read more",
+        "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZ1k1RGl3czhyMmZQRDhwNlJPbFg0aFpQR3prRzc1VVpkTkdOS0VKa3hSNHNuQzBlaHRDeWh0ajNoakN6blhZVGpUUXFjQ3dWS2JJZVRHWXlZLURfTTNJOERPemFXYzNSUmVuR1BrMFdLLTNrODUwT2wxT0xxQnN1Q1dZQ3dwMjNPM3k0SG1n?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-09",
+        "queue_id": "a393476387946902a396b168ecc00d2c",
+        "source": "Google News",
+        "title": "WACS cable repairs enter critical phase",
+        "url": "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa"
+      },
+      "extracted": {
+        "accident_location": "cable segment linking the Democratic Republic of Congo (DRC) and the Republic of Congo",
+        "accident_type": "Cut",
+        "affected_area": "Congo Telecom's redundancy mechanisms",
+        "cable_name": "West Africa Cable System (WACS)",
+        "occurrence_date": "2026-10-29",
+        "occurrence_date_evidence": "a 29 October circuit disruption",
+        "original_text": "The deployment follows a 29 October circuit disruption that affected Congo Telecom’s redundancy mechanisms.",
+        "original_text_zh": "此次部署是由于10月29日的电路中断影响了刚果电信的冗余机制。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "West Africa Cable System (WACS)",
+    "title": "WACS cable repairs enter critical phase",
+    "updated_at": "2026-11-09T19:00:01+00:00",
+    "url": "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "near Jeddah",
     "accident_type": "Fluctuate",
     "affected_area": "South Asia, West Asia and parts of Europe",
