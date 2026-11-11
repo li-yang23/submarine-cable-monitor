@@ -112,9 +112,11 @@
     "cable_name": "West Africa Cable System (WACS)",
     "created_at": "2026-11-09T19:00:01+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZ1k1RGl3czhyMmZQRDhwNlJPbFg0aFpQR3prRzc1VVpkTkdOS0VKa3hSNHNuQzBlaHRDeWh0ajNoakN6blhZVGpUUXFjQ3dWS2JJZVRHWXlZLURfTTNJOERPemFXYzNSUmVuR1BrMFdLLTNrODUwT2wxT0xxQnN1Q1dZQ3dwMjNPM3k0SG1n?oc=5",
+    "duplicate_count": 1,
     "event_uid": "evt_8a74a9460477f1eb1176",
     "evidence_urls": [
-      "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa"
+      "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa",
+      "https://tribuneonlineng.com/wacs-submarine-cable-repairs-enter-critical-phase/"
     ],
     "normalized_cable_id": "WACS",
     "occurrence_date": "2026-10-29",
@@ -153,7 +155,7 @@
     ],
     "submarine_name": "West Africa Cable System (WACS)",
     "title": "WACS cable repairs enter critical phase",
-    "updated_at": "2026-11-09T19:00:01+00:00",
+    "updated_at": "2026-11-11T06:46:28+00:00",
     "url": "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa",
     "verification_status": "rule_verified"
   },
