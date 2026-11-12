@@ -112,16 +112,16 @@
     "cable_name": "West Africa Cable System (WACS)",
     "created_at": "2026-11-09T19:00:01+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZ1k1RGl3czhyMmZQRDhwNlJPbFg0aFpQR3prRzc1VVpkTkdOS0VKa3hSNHNuQzBlaHRDeWh0ajNoakN6blhZVGpUUXFjQ3dWS2JJZVRHWXlZLURfTTNJOERPemFXYzNSUmVuR1BrMFdLLTNrODUwT2wxT0xxQnN1Q1dZQ3dwMjNPM3k0SG1n?oc=5",
-    "duplicate_count": 1,
+    "duplicate_count": 2,
     "event_uid": "evt_8a74a9460477f1eb1176",
     "evidence_urls": [
       "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa",
-      "https://tribuneonlineng.com/wacs-submarine-cable-repairs-enter-critical-phase/"
+      "https://tribuneonlineng.com/wacs-submarine-cable-repairs-enter-critical-phase/amp/?fbclid"
     ],
     "normalized_cable_id": "WACS",
     "occurrence_date": "2026-10-29",
-    "original_text": "The deployment follows a 29 October circuit disruption that affected Congo Telecom’s redundancy mechanisms.",
-    "original_text_zh": "此次部署是由于10月29日的电路中断影响了刚果电信的冗余机制。",
+    "original_text": "REPAIR operations on the West Africa Cable System (WACS) submarine fibre-optic network have entered a critical phase, with the designated repair vessel sailing towards the fault location. The deployment follows a 29 October circuit disruption that affected Congo Telecom’s redundancy mechanisms. Technical teams isolated the suspected fault to the cable segment linking the Democratic Republic of Congo (DRC) and the Republic of Congo.",
+    "original_text_zh": "西非电缆系统（WACS）海底光缆网络的修复工作已进入关键阶段，指定的维修船正驶向故障位置。此次部署是因为10月29日的电路中断影响了刚果电信的冗余机制。技术团队已将可疑故障隔离到连接刚果民主共和国（DRC）和刚果共和国的电缆段。",
     "published_date": "2026-11-09",
     "raw_data": {
       "article": {
@@ -155,7 +155,7 @@
     ],
     "submarine_name": "West Africa Cable System (WACS)",
     "title": "WACS cable repairs enter critical phase",
-    "updated_at": "2026-11-11T06:46:28+00:00",
+    "updated_at": "2026-11-12T12:58:08+00:00",
     "url": "https://itweb.africa/article/wacs-cable-repairs-enter-critical-phase/lLn14MmQ9DnMJ6Aa",
     "verification_status": "rule_verified"
   },
