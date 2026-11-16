@@ -16604,6 +16604,112 @@
     "verification_status": "False"
   },
   {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "near Abidjan in Côte d’Ivoire",
+    "accident_type": "Limit",
+    "affected_area": "West and Central Africa",
+    "cable_name": "SAT-3/West Africa Cable System (WACS)",
+    "created_at": "2026-11-16T06:50:43+00:00",
+    "discovered_url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+    "event_uid": "evt_0bf83fc9226a518beec9",
+    "evidence_urls": [
+      "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/"
+    ],
+    "normalized_cable_id": "SAT-3",
+    "occurrence_date": "2024-03-14",
+    "original_text": "The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024.",
+    "original_text_zh": "SAT-3/西非电缆系统(WACS)、非洲海岸至欧洲(ACE)以及其他电缆受到影响。中断始于2024年3月14日星期四12:30左右。",
+    "published_date": "2026-11-12",
+    "raw_data": {
+      "article": {
+        "content": "Outages are being reported along the western coast of Africa after multiple cables were damaged. “Live network data show a major disruption to Internet connectivity in and around West and Central Africa,” Internet monitoring firm NetBlocks said today. “The incident affects networks supplying telecoms via subsea cables to multiple countries and operators.” MyBroadband reports the downtime is being caused by multiple outages on undersea cables near Abidjan in Côte d’Ivoire. The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024. “Multiple undersea cable failures between South Africa and Europe are currently impacting South Africa’s network providers, including Vodacom,” a Vodacom spokesperson told TechCentral . Seacom has also reportedly confirmed to TC that the WACS cable has been affected. Doug Madory, director of Internet analysis at Kentik, indicated there were also issues with the MainOne subsea cable. Microsoft is reporting network latency issues in its South Africa North and South Africa West locations. “Starting at 10:30 UTC on 14 Mar 2024, customers using Azure Services in South Africa North and South Africa West may experience increased network latency or packet drops when accessing their resources,” the company said. \"We have determined that multiple fiber cables on the West Coast of Africa — WACS, MainOne, SAT3, ACE — have been impacted which reduced total capacity supporting our Regions in South Africa,\" Microsoft said in an update. \"In addition to these cable impacts, the on-going cable cuts in the Red Sea — EIG, Seacom, AAE-1 — are also impacting capacity on the East Coast of Africa. This combination of incidents has impacted all Africa capacity – including other Cloud providers and public Internet as well.\" Other impacted customers include Mweb, Openserve, Seacom, Telkom, Vodacom, Vumatel, and Vox. Microsoft customer payment provider Yoco is also facing issues, as is service provider ISSC Group . \"Certain customers are currently experiencing intermittent connectivity issues due to multiple undersea cable failures affecting SA's network providers, including us,\" Vodacom said. \"We apologize for any inconvenience caused.\" DCD will update this story as more information becomes available More in Outages 20 Oct 2026 Google experiences \"service disruption\" in UK cloud region 08 Sep 2026 Police arrest man for vandalizing cell tower in Hawkins County, Tennessee 13 Aug 2026 PJM considering changes to interconnection reliability requirements for data centers following mass outage More in Africa 12 Oct 2026 FiveNines Group and Nexus Core Systems partner on 20MW data center in Morocco 19 Aug 2026 Nigeria's Danfodiyo University data center damaged in storm 07 Oct 2026 Ghana awards 5G licenses to Telecel, MTN after slow rollout woes",
+        "discovered_url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+        "keyword": "cross_source",
+        "published_date": "2026-11-12",
+        "queue_id": "9ff4308834ffb72f18c801315a6c08c7",
+        "source": "Google News",
+        "title": "Outages spike in West Africa: Subsea cable damage off Ivory coast - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/"
+      },
+      "extracted": {
+        "accident_location": "near Abidjan in Côte d’Ivoire",
+        "accident_type": "Limit",
+        "affected_area": "West and Central Africa",
+        "cable_name": "SAT-3/West Africa Cable System (WACS)",
+        "occurrence_date": "2024-03-14",
+        "occurrence_date_evidence": "The outage started around 12:30 on Thursday, 14 March 2024.",
+        "original_text": "The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024.",
+        "original_text_zh": "SAT-3/西非电缆系统(WACS)、非洲海岸至欧洲(ACE)以及其他电缆受到影响。中断始于2024年3月14日星期四12:30左右。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SAT-3/West Africa Cable System (WACS)",
+    "title": "Outages spike in West Africa: Subsea cable damage off Ivory coast - Data Center Dynamics",
+    "updated_at": "2026-11-16T06:50:43+00:00",
+    "url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "near Abidjan in Côte d’Ivoire",
+    "accident_type": "Limit",
+    "affected_area": "West and Central Africa",
+    "cable_name": "Africa Coast to Europe (ACE)",
+    "created_at": "2026-11-16T06:50:43+00:00",
+    "discovered_url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+    "event_uid": "evt_e0a3709a55467283af58",
+    "evidence_urls": [
+      "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/"
+    ],
+    "normalized_cable_id": "ACE",
+    "occurrence_date": "2024-03-14",
+    "original_text": "The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024.",
+    "original_text_zh": "SAT-3/西非电缆系统(WACS)、非洲海岸至欧洲(ACE)以及其他电缆受到影响。中断始于2024年3月14日星期四12:30左右。",
+    "published_date": "2026-11-12",
+    "raw_data": {
+      "article": {
+        "content": "Outages are being reported along the western coast of Africa after multiple cables were damaged. “Live network data show a major disruption to Internet connectivity in and around West and Central Africa,” Internet monitoring firm NetBlocks said today. “The incident affects networks supplying telecoms via subsea cables to multiple countries and operators.” MyBroadband reports the downtime is being caused by multiple outages on undersea cables near Abidjan in Côte d’Ivoire. The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024. “Multiple undersea cable failures between South Africa and Europe are currently impacting South Africa’s network providers, including Vodacom,” a Vodacom spokesperson told TechCentral . Seacom has also reportedly confirmed to TC that the WACS cable has been affected. Doug Madory, director of Internet analysis at Kentik, indicated there were also issues with the MainOne subsea cable. Microsoft is reporting network latency issues in its South Africa North and South Africa West locations. “Starting at 10:30 UTC on 14 Mar 2024, customers using Azure Services in South Africa North and South Africa West may experience increased network latency or packet drops when accessing their resources,” the company said. \"We have determined that multiple fiber cables on the West Coast of Africa — WACS, MainOne, SAT3, ACE — have been impacted which reduced total capacity supporting our Regions in South Africa,\" Microsoft said in an update. \"In addition to these cable impacts, the on-going cable cuts in the Red Sea — EIG, Seacom, AAE-1 — are also impacting capacity on the East Coast of Africa. This combination of incidents has impacted all Africa capacity – including other Cloud providers and public Internet as well.\" Other impacted customers include Mweb, Openserve, Seacom, Telkom, Vodacom, Vumatel, and Vox. Microsoft customer payment provider Yoco is also facing issues, as is service provider ISSC Group . \"Certain customers are currently experiencing intermittent connectivity issues due to multiple undersea cable failures affecting SA's network providers, including us,\" Vodacom said. \"We apologize for any inconvenience caused.\" DCD will update this story as more information becomes available More in Outages 20 Oct 2026 Google experiences \"service disruption\" in UK cloud region 08 Sep 2026 Police arrest man for vandalizing cell tower in Hawkins County, Tennessee 13 Aug 2026 PJM considering changes to interconnection reliability requirements for data centers following mass outage More in Africa 12 Oct 2026 FiveNines Group and Nexus Core Systems partner on 20MW data center in Morocco 19 Aug 2026 Nigeria's Danfodiyo University data center damaged in storm 07 Oct 2026 Ghana awards 5G licenses to Telecel, MTN after slow rollout woes",
+        "discovered_url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+        "keyword": "cross_source",
+        "published_date": "2026-11-12",
+        "queue_id": "9ff4308834ffb72f18c801315a6c08c7",
+        "source": "Google News",
+        "title": "Outages spike in West Africa: Subsea cable damage off Ivory coast - Data Center Dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/"
+      },
+      "extracted": {
+        "accident_location": "near Abidjan in Côte d’Ivoire",
+        "accident_type": "Limit",
+        "affected_area": "West and Central Africa",
+        "cable_name": "Africa Coast to Europe (ACE)",
+        "occurrence_date": "2024-03-14",
+        "occurrence_date_evidence": "The outage started around 12:30 on Thursday, 14 March 2024.",
+        "original_text": "The SAT-3/West Africa Cable System (WACS), the Africa Coast to Europe (ACE), and other cables are affected. The outage started around 12:30 on Thursday, 14 March 2024.",
+        "original_text_zh": "SAT-3/西非电缆系统(WACS)、非洲海岸至欧洲(ACE)以及其他电缆受到影响。中断始于2024年3月14日星期四12:30左右。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Africa Coast to Europe (ACE)",
+    "title": "Outages spike in West Africa: Subsea cable damage off Ivory coast - Data Center Dynamics",
+    "updated_at": "2026-11-16T06:50:43+00:00",
+    "url": "https://www.datacenterdynamics.com/en/news/outages-spike-in-west-africa-possible-cable-damage-off-ivory-coast/",
+    "verification_status": "rule_verified"
+  },
+  {
     "TrustWorthy": "False",
     "accident_location": "West Coast of Africa",
     "accident_type": "Cut",
@@ -16714,6 +16820,59 @@
     "updated_at": "2026-10-13T08:57:51+00:00",
     "url": "South Africa Internet Hit by Multiple Subsea Cable Breaks.txt",
     "verification_status": "False"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "Red Sea",
+    "accident_type": "Cut",
+    "affected_area": "Africa",
+    "cable_name": "Seacom",
+    "created_at": "2026-11-16T06:51:13+00:00",
+    "discovered_url": "https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024/",
+    "event_uid": "evt_3a7ad6565ad0e3e6d9cf",
+    "evidence_urls": [
+      "https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024/"
+    ],
+    "normalized_cable_id": "SEACOM",
+    "occurrence_date": null,
+    "original_text": "On March 8, the company stated that it is waiting for permits to start repairing its broken submarine cable in the Red Sea.",
+    "original_text_zh": "3月8日，该公司表示正在等待许可，以开始修复其在红海断裂的海底电缆。",
+    "published_date": "2024-03-14",
+    "raw_data": {
+      "article": {
+        "content": "Internet connectivity in several African countries was disrupted today, March 14, 2024. Beginning at approximately 05:00 UTC, west and central African countries were most impacted, as was South Africa. Based on published reports and social media posts from impacted network providers, the disruption is believed to be due to multiple undersea cable failures in the region. From The Gambia to CÃ´te d'Ivoire, including a major network in South Africa (Vodacom), a total of 13 African countries were impacted, based on our observations. Cloudflare Radar data shows a pattern of disruptions from the north to the south of West Africa over time. It began south of Senegal, with The Gambia, Guinea, and Liberia experiencing disruptions around 05:00 UTC. In The Gambia and Guinea, the disruptions lasted about 30 minutes, while in Liberia, the disruption has lasted more than 12 hours. Moving south, around 07:30 UTC, disruptions were observed in CÃ´te d'Ivoire and Ghana. Niger, a landlocked nation in Central Africa, experienced a disruption at 09:15, lasting just over two hours. This was followed by disruptions starting around 10:30 UTC in Nigeria, Benin, Cameroon, and Togo. Namibia and Burkina Faso were also impacted. These disruptions were ongoing at the time of writing. At approximately the same time, a significant disruption was observed on Vodacomâs South African network ( AS29975 ). Traffic began to recover after 13:30 UTC, and appears to have reached close to normal levels by 16:00 UTC. The importance of submarine cables This series of disruptions serves as a reminder of how dependent the Internet is on submarine cables , which are estimated to carry over 90% of intercontinental data traffic . Only a small percentage of general use is done via satellite networks. There are 529 active submarine cables and 1,444 landings that are currently active or under construction, running to an estimated 1.3 million km around the globe. We have written about submarine cable-related outages before, from Tonga to the AAE-1 & SMW5 cable cuts of June 2022 . Reports from several local networks, including South Africaâs Vodacom , MTN in Nigeria, and Celtiis in BÃ©nin, reference multiple submarine cable failures. Microsoft was more detailed, stating on their Azure status page that âmultiple fiber cables on the West Coast of Africa â WACS, MainOne, SAT3, ACE â have been impacted which reduced total capacity supporting our Regions in South Africaâ. The company also explains that the recent cable cuts in the Red Sea in combination with todayâs cable issues, âhas impacted all Africa capacityâ. In addition to the impacts to the Microsoft Azure cloud platform, the website of MainOne , owners of the MainOne submarine cable , was offline for several hours. DNS for mainone.net is handled by name servers located in MainOneâs address space. It appears that a portion of the IPv4 address space for AS37282 (MAINONE) stopped being announced between 07:30 and 15:00 UTC, and once this address space was being routed again, both the nameservers and website became reachable. This map from TeleGeography highlights the impacted submarine cables: WACS (West Africa Cable System), MainOne, SAT-3/WASC, and ACE. The disruptions are now being reported by news media outlets , including in South Africa , where the emphasis is not only on the latest outage but also on the problem with the submarine cable operator Seacom . This operator experienced a service-impacting outage on its cable system in the Red Sea. On March 8, the company stated that it is waiting for permits to start repairing its broken submarine cable in the Red Sea. We will keep monitoring the situation. Follow the Cloudflare Radar Outage Center for the latest updates, and follow us on social media at @CloudflareRadar (X), https://noc.social/@cloudflareradar (Mastodon), and radar.cloudflare.com (Bluesky).",
+        "discovered_url": "https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024/",
+        "keyword": "cross_source",
+        "published_date": "2024-03-14",
+        "queue_id": "d1b90fc1a8119450b3a609549673cbe0",
+        "source": "Google News",
+        "title": "Undersea cable failures cause Internet disruptions for multiple African countries",
+        "url": "https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024/"
+      },
+      "extracted": {
+        "accident_location": "Red Sea",
+        "accident_type": "Cut",
+        "affected_area": "Africa",
+        "cable_name": "Seacom",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "On March 8, the company stated that it is waiting for permits to start repairing its broken submarine cable in the Red Sea.",
+        "original_text_zh": "3月8日，该公司表示正在等待许可，以开始修复其在红海断裂的海底电缆。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "Seacom",
+    "title": "Undersea cable failures cause Internet disruptions for multiple African countries",
+    "updated_at": "2026-11-16T06:51:13+00:00",
+    "url": "https://blog.cloudflare.com/undersea-cable-failures-cause-internet-disruptions-across-africa-march-14-2024/",
+    "verification_status": "rule_verified"
   },
   {
     "TrustWorthy": "False",
