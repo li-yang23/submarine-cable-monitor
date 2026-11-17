@@ -1,6 +1,59 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Fluctuate",
+    "affected_area": "",
+    "cable_name": "AAE-1",
+    "created_at": "2026-11-17T23:38:53+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5hRmtIZDhTaDRXTnMzcmNtaG1JQUZVbkUwbnlIbENLcWZRVnpzb19jSmIzOXJxSXlaRGJqUQ?oc=5",
+    "event_uid": "evt_1c2935862c6788acedc1",
+    "evidence_urls": [
+      "https://subtelforum.com/"
+    ],
+    "normalized_cable_id": "AAE-1",
+    "occurrence_date": null,
+    "original_text": "PTCL Warns of AAE-1 Repair-Related Slowdown",
+    "original_text_zh": "PTCL警告AAE-1维修相关减速",
+    "published_date": "2026-11-16",
+    "raw_data": {
+      "article": {
+        "content": "Breaking News Nov 17: Nigeria Proposes West African Cable Protocol Nov 17: FPT Telecom Backs Vietnam-Singapore Cable Nov 17: TM Tech Receives SALAM Cable Project Approval Nov 17: Windward Reports Vessel Activity Near Asia Cable Routes Nov 17: Arctic Cable Plans Face Icebreaker and Mapping Gaps   State of the Industry Nigeria Proposes West African Cable Protocol Published On: November 17, 2026 | Future Systems FPT Telecom Backs Vietnam-Singapore Cable Published On: November 17, 2026 Future Systems TM Tech Receives SALAM Cable Project Approval Published On: November 17, 2026 Windward Reports Vessel Activity Near Asia Cable Routes Categories: State of the Industry Published On: November 17, 2026 Arctic Cable Plans Face Icebreaker and Mapping Gaps Categories: State of the Industry Published On: November 17, 2026 SubTel Forum Issue 151 – Data Centers & New Technology OUT NOW! Categories: Editor's Pick , Magazine , SubTel Forum Published On: November 16, 2026 Ghana Proposes Global Network Resilience Plan Categories: State of the Industry Published On: November 13, 2026 Stavian and Midas Sign Digital Infrastructure MOU Categories: State of the Industry Published On: November 13, 2026 VodafoneThree Plans Scotland-Norway Cable Study Categories: Future Systems Published On: November 12, 2026 what’s trending Editor's Pick,Magazine,SubTel Forum SubTel Forum Issue 151 – Data Centers & New Technology OUT NOW! SubTel Forum Issue 151 explores data centers, subsea connectivity, AI infrastructure and new technology, with a PTC’27 preview and 25th anniversary features. November 16, 2026 Categories: Editor's Pick , Magazine , SubTel Forum Arctic Cable Plans Face Icebreaker and Mapping Gaps Categories: State of the Industry | Published On: November 17, 2026 | PTCL Warns of AAE-1 Repair-Related Slowdown Categories: Cable Faults & Maintenance | Published On: October 28, 2026 | Medusa Cable Arrival Announced in Benghazi Categories: Future Systems | Published On: October 19, 2026 | Chile Navy, Operators Sign Cable Protection Agreement Categories: Current Systems | Published On: November 9, 2026 | Windward Reports Vessel Activity Near Asia Cable Routes Categories: State of the Industry | Published On: November 17, 2026 | VodafoneThree Plans Scotland-Norway Cable Study Categories: Future Systems | Published On: November 12, 2026 | editor’s pick SubTel Forum Issue 151 – Data Centers & New Technology OUT NOW! Tags: AI infrastructure , Data Centers , Issue 151 , PTC , submarine cables , SubTel Forum Published On: November 16, 2026 latest videos Issue 151 – Wayne Nielsen Exordium Issue 151 – Kieran Clark Cable Map Updates Issue 151 – Anjali Sugadev Permitting Pathways popular this month Cable Faults & Maintenance PTCL Warns of AAE-1 Repair-Related Slowdown PTCL Warns of AAE-1 Repair-Related Slowdown Mian Nadeem, Pakistan Point [...] read more Published On: October 28, 2026 Future Systems Auður Confirms Iceland and Scotland Landing Sites Auður Confirms Iceland and Scotland Landing Sites Elías Thorsson, Arctic [...] read more Published On: October 22, 2026 Future Systems Medusa Cable Arrival Announced in Benghazi Medusa Cable Arrival Announced in Benghazi Souma Harb, Libyan News [...] read more Published On: October 19, 2026 State of the Industry UK Parliament Welcomes Undersea Cable White Paper UK Parliament Welcomes Undersea Cable White Paper Publication Staff, UK [...] read more Published On: October 23, 2026 State of the Industry FCC Clears GCI’s Quintillion Acquisition FCC Clears GCI’s Quintillion Acquisition Office of International Affairs, Federal [...] read more Published On: October 27, 2026",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5hRmtIZDhTaDRXTnMzcmNtaG1JQUZVbkUwbnlIbENLcWZRVnpzb19jSmIzOXJxSXlaRGJqUQ?oc=5",
+        "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
+        "published_date": "2026-11-16",
+        "queue_id": "d505ccac4c0c6695b41bd31e614049d7",
+        "source": "Google News",
+        "title": "SubTel Forum",
+        "url": "https://subtelforum.com/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": null,
+        "cable_name": "AAE-1",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "PTCL Warns of AAE-1 Repair-Related Slowdown",
+        "original_text_zh": "PTCL警告AAE-1维修相关减速",
+        "reason": "repair-related slowdown",
+        "repair_date": null
+      }
+    },
+    "reason": "repair-related slowdown",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "AAE-1",
+    "title": "SubTel Forum",
+    "updated_at": "2026-11-17T23:38:53+00:00",
+    "url": "https://subtelforum.com/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "about 150 kilometers from Taiwan's eastern coast",
     "accident_type": "Limit",
     "affected_area": "section C",
