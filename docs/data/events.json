@@ -588,6 +588,112 @@
   },
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "around 11 kilometres off Pakistan's coast",
+    "accident_type": "Limit",
+    "affected_area": "parts of Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-19T23:10:01+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU0lYOGRKcExDaWdGbmg2NGpfcE1MVUtzSWd2SGVpVjRxSW1rd0xxWGNQTTlzUzV6NWUyc2F1RXM0N3lDNVpuYThkTHVqbFNZXzc1M2puVDBPV2owWWxITE5VQzNEOWs2NDZnZ3kyZGJFNjVidXNHS1JKQ1o4SkZMQ2RpM0JjemY3NFhtUk1IdFdwZGhOblBBSHBXeDJESHRBbV92a1pSako0enRaSXlsbF9B0gGyAUFVX3lxTE9TSVg4ZEpwTENpZ0ZuaDY0al9wTUxVS3NJZ3ZIZWlWNHFJbWt3THFYY1BNOXNTNXo1ZTJzYXVFczQ3eUM1Wm5hOGRMdWpsU1lfNzUzam5UME9XajBZbEhMTlVDM0Q5azY0NmdneTJkYkU2NWJ1c0dLUkpDWjhKRkxDZGkzQmN6Zjc0WG1STUh0V3BkaE5uUEFIcFd4MkRIdEFtX3ZrWlJqSjR6dFpJeWxsX0E?oc=5",
+    "event_uid": "evt_4aad59f2708162ca712d",
+    "evidence_urls": [
+      "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/amp/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Internet services across parts of Pakistan were disrupted after a fault was reported in the SMW5 international submarine cable system, around 11 kilometres off Pakistan's coast.",
+    "original_text_zh": "巴基斯坦部分地区互联网服务中断，据报道是由于离巴基斯坦海岸约11公里处的SMW5国际海底电缆系统出现故障。",
+    "published_date": "2026-11-19",
+    "raw_data": {
+      "article": {
+        "content": "Trending Trump-Xi-Putin meeting Anthropic IPO GTA 6 launch International Men\\\\\\\\\\\\\\'s Day US midterms Home Live TV First AI Events US Midterm Elections Brics Summit 2026 Sections World Explainers Opinion Flaunt India Business Tech Lifestyle Health Auto Shows Vantage Firstpost America Firstpost Africa First Sports Spotlight The Spend Planet Pulse Live TV Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage Vantage 20 November 2026, 4:41:25 AM IST Firstpost Videos Desk Did Iran cut Pakistan's internet cables? Internet services across parts of Pakistan were disrupted after a fault was reported in the SMW5 international submarine cable system, around 11 kilometres off Pakistan's coast. Pakistan's Telecommunications Authority (PTA) says the cause of the fault remains unknown, and there is no evidence linking Iran to the incident. However, the outage comes amid growing concerns over Iran's threats to target undersea internet cables in the Persian Gulf if the United States and Israel launch fresh military strikes against Tehran. In October 2026, Iranian officials warned that critical submarine communications cables beneath the Strait of Hormuz could become targets. So, could undersea internet infrastructure become the next front in the Iran conflict? And if Iran were to target Pakistan, would it have a reason? Pakistan and Iran may describe each other as brotherly neighbours, but their relationship has been marked by border tensions, cross-border militancy and the January 2024 exchange of missile strikes. Hem Kaur Saroya tells you more on Vantage on Firstpost. Advertisement HOME / VANTAGE / Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage Shorts See All How AI Has Upended South Korea's Do-or-Die Suneung College Exam | Vantage 'The Star Wars of Gaming': GTA 6's Record $1.6 Billion Launch Triggers Global Meltdown | Vantage On Cam: Putin's Nuclear Button Seen in China, Trump's 'Missing' | Vantage 'Stay Away From Ukraine, Taiwan': Putin, Xi Shock Trump With Blunt Message | Vantage What's Causing the Raft Of Global Outages? | Vantage on Firstpost Philippines Wants India's Weapons That Demolished Pakistan in Op Sindoor | Vantage on Firstpost Indian Rupee Surges Against US Dollar: Oil Prices Fall, Foreign Investors Return | Vantage New US Intel: Iran to Target Trump Admin Officials with Dirty Bombs & Chemical Weapons | Vantage Advertisement Related Videos 08:00 'Pay Up or Turn Back': Why is Malaysia Scrapping Visa-Free Entry for Indians From 2027? | Vantage Uploaded on 20 Nov 2026 08:00 MBS Losing it All? Trump No Help as Houthis Hit Riyadh's Tallest Tower & Saudi GDP Crashes | Vantage Uploaded on 20 Nov 2026 05:24 Internet Roasts Trump, Xi, Putin Meet with GTA 6, Map Memes | Vantage on Firstpost Uploaded on 20 Nov 2026 08:06 Islam to Become World's Largest Religion by 2035: Pew Report | Vantage Uploaded on 20 Nov 2026 Home Videos First AI Quick Reads Live TV",
+        "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU0lYOGRKcExDaWdGbmg2NGpfcE1MVUtzSWd2SGVpVjRxSW1rd0xxWGNQTTlzUzV6NWUyc2F1RXM0N3lDNVpuYThkTHVqbFNZXzc1M2puVDBPV2owWWxITE5VQzNEOWs2NDZnZ3kyZGJFNjVidXNHS1JKQ1o4SkZMQ2RpM0JjemY3NFhtUk1IdFdwZGhOblBBSHBXeDJESHRBbV92a1pSako0enRaSXlsbF9B0gGyAUFVX3lxTE9TSVg4ZEpwTENpZ0ZuaDY0al9wTUxVS3NJZ3ZIZWlWNHFJbWt3THFYY1BNOXNTNXo1ZTJzYXVFczQ3eUM1Wm5hOGRMdWpsU1lfNzUzam5UME9XajBZbEhMTlVDM0Q5azY0NmdneTJkYkU2NWJ1c0dLUkpDWjhKRkxDZGkzQmN6Zjc0WG1STUh0V3BkaE5uUEFIcFd4MkRIdEFtX3ZrWlJqSjR6dFpJeWxsX0E?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-11-19",
+        "queue_id": "d4a218103851959a380e5b325151dc6f",
+        "source": "Google News",
+        "title": "Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage",
+        "url": "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/amp/"
+      },
+      "extracted": {
+        "accident_location": "around 11 kilometres off Pakistan's coast",
+        "accident_type": "Limit",
+        "affected_area": "parts of Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Internet services across parts of Pakistan were disrupted after a fault was reported in the SMW5 international submarine cable system, around 11 kilometres off Pakistan's coast.",
+        "original_text_zh": "巴基斯坦部分地区互联网服务中断，据报道是由于离巴基斯坦海岸约11公里处的SMW5国际海底电缆系统出现故障。",
+        "reason": "unknown",
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage",
+    "updated_at": "2026-11-19T23:10:01+00:00",
+    "url": "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/amp/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "11 kilometers off the shore",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-19T23:10:30+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeEljTV9vN0xSSEc5Ukh6R2poYkl0RjNNb0VLTFF5OWg0STdTSW0xbkFyM0RHVE9NMzZMZmNJNmpKQVFiN250OHNzb01vSFZmeVdNeEY3c2VTNEZkd1Y4Wnk5ZEN6YjRyekVpUzBIVmlfNmpVRlg3Z0gyaUdyYTh0c0NZSVo?oc=5",
+    "event_uid": "evt_d2d21cb194867fd69b65",
+    "evidence_urls": [
+      "https://newztodays.com/major-tech-outages-expose-fragility-of-global-networks/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The next evening, Pakistan’s internet infrastructure faltered due to a fault in the SEA-ME-WE 5 submarine cable located 11 kilometers off the shore, resulting in widespread slowdowns affecting roughly 70% of Pakistani users.",
+    "original_text_zh": "第二天晚上，巴基斯坦的互联网基础设施由于距离海岸11公里的SEA-ME-WE 5海底电缆故障而出现故障，导致约70%的巴基斯坦用户出现广泛的网络减速。",
+    "published_date": "2026-11-19",
+    "raw_data": {
+      "article": {
+        "content": "Over the span of just six days, a series of significant technological disruptions shook major institutions and infrastructure worldwide, underlining the vulnerability of critical digital systems. From November 12 to 18, outages affected Microsoft, the US Federal Aviation Administration, leading American banks, Apple, the NSA, and even Pakistan’s submarine internet cable network. Unprecedented Interruptions Across Key Services The initial disruption began with Microsoft on November 12, when a network upgrade caused nearly half a day of downtime for Outlook, Teams, and Copilot across 74 countries. The following day, the FAA encountered a router failure during routine maintenance, halting all departures across the United States for over four hours. This period was also marked by significant internet strain as the preload of the highly anticipated video game GTA VI triggered massive simultaneous downloads, stretching already taxed internet bandwidth. Further compounding connectivity woes, on November 17, a software glitch at JPMorgan Chase cascaded and locked thousands out of accounts not only at Chase but also Wells Fargo and Bank of America. Apple also experienced a breakdown of key services like iCloud and Apple Pay following a problematic internal update, while the NSA’s classified network underwent partial offline status during scheduled maintenance. The next evening, Pakistan’s internet infrastructure faltered due to a fault in the SEA-ME-WE 5 submarine cable located 11 kilometers off the shore, resulting in widespread slowdowns affecting roughly 70% of Pakistani users. The Broader Cybersecurity Environment This wave of outages coincides with alarming cyber threats globally. In late October, North Korean hackers executed a $6.3 billion heist on Binance, the largest recorded financial cyberattack, according to US authorities. Meanwhile, Iran’s Revolutionary Guard targeted refrigeration systems in European supermarkets, triggering fires and extensive damage. Additionally, a twelve-year-old critical Java vulnerability was recently uncovered using artificial intelligence, raising fresh concerns over legacy software risks. Implications for Pakistani Internet Users Pakistan’s internet users are facing compounded challenges amid ongoing VPN restrictions, social media access limitations, and now this submarine cable failure. With reduced bandwidth capacity, users should exercise caution to avoid phishing risks linked to repeated login attempts and malicious “speed booster” applications. The Pakistan Telecommunication Authority (PTA) has rerouted traffic through backup lines but warns that slower speeds may persist. Cybersecurity professionals advise several precautions amid this volatile digital landscape: enable automatic device updates to quickly patch vulnerabilities, use unique passwords combined with multi-factor authentication, remain skeptical of urgent security notifications to avoid phishing scams, and adopt passkeys where possible for added security. As cybersecurity expert Cynthia Kaiser notes, such operational disruptions create exploitable openings for malicious actors, making proactive measures ever more critical. The recurring nature of these breakdowns demands that individuals and organizations bolster their defenses now rather than wait for the next inevitable outage. Related Stories Elon Musk Regrets $500M US Election Spending Meta Introduces Direct, a Messaging App for Teens NCM issues heavy rain red alert for Makkah region Ukraine Disables Key Crimean Road Bridge in Strategic Strike Proton Introduces Lumo Desktop Privacy-First AI Assistant",
+        "discovered_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeEljTV9vN0xSSEc5Ukh6R2poYkl0RjNNb0VLTFF5OWg0STdTSW0xbkFyM0RHVE9NMzZMZmNJNmpKQVFiN250OHNzb01vSFZmeVdNeEY3c2VTNEZkd1Y4Wnk5ZEN6YjRyekVpUzBIVmlfNmpVRlg3Z0gyaUdyYTh0c0NZSVo?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-11-19",
+        "queue_id": "9e4931cc3c8e152c5521223bf32b56d2",
+        "source": "Google News",
+        "title": "Major Tech Outages Expose Fragility of Global Networks",
+        "url": "https://newztodays.com/major-tech-outages-expose-fragility-of-global-networks/"
+      },
+      "extracted": {
+        "accident_location": "11 kilometers off the shore",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": "2026-11-18",
+        "occurrence_date_evidence": "The next evening, Pakistan’s internet infrastructure faltered due to a fault in the SEA-ME-WE 5 submarine cable",
+        "original_text": "The next evening, Pakistan’s internet infrastructure faltered due to a fault in the SEA-ME-WE 5 submarine cable located 11 kilometers off the shore, resulting in widespread slowdowns affecting roughly 70% of Pakistani users.",
+        "original_text_zh": "第二天晚上，巴基斯坦的互联网基础设施由于距离海岸11公里的SEA-ME-WE 5海底电缆故障而出现故障，导致约70%的巴基斯坦用户出现广泛的网络减速。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Major Tech Outages Expose Fragility of Global Networks",
+    "updated_at": "2026-11-19T23:10:30+00:00",
+    "url": "https://newztodays.com/major-tech-outages-expose-fragility-of-global-networks/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "approximately 11 kilometres off Pakistan’s coast",
     "accident_type": "Fluctuate",
     "affected_area": "Pakistan",
@@ -1239,9 +1345,10 @@
     "cable_name": "SEA-ME-WE 5",
     "created_at": "2026-11-19T02:01:04+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE41Z18ybFN5Sl9ucTd2LTEzM0U3RDlzZWgzSzhHWUx1R1dRaXA0OGNNZ1dJT0s4V1ZFUTJfd3d5bkNHZW90VGxUVGtLb3EyajZX0gFWQVVfeXFMTmhsWkxwYkMtUzhZa25FekhDQm5vQ1dNVzFHTjlwS2hqN2xSaG9qNVpnQlQxRU50d3Qyd1ZvY1hTX3FHQjUzVElqUFllUC11MGVxQllzdmc?oc=5",
+    "duplicate_count": 1,
     "event_uid": "evt_4bc31321cda6a4245301",
     "evidence_urls": [
-      "https://www.brecorder.com/news/40449572"
+      "https://www.brecorder.com/news/40449572/internet-users-may-face-connectivity-issues-as-submarine-cable-develops-fault-pta"
     ],
     "normalized_cable_id": "SEA-ME-WE 5",
     "occurrence_date": null,
@@ -1280,7 +1387,7 @@
     ],
     "submarine_name": "SEA-ME-WE 5",
     "title": "Internet users may face connectivity issues as submarine cable develops fault: PTA",
-    "updated_at": "2026-11-19T02:01:04+00:00",
+    "updated_at": "2026-11-19T23:11:12+00:00",
     "url": "https://www.brecorder.com/news/40449572",
     "verification_status": "rule_verified"
   },
