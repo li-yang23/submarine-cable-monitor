@@ -1,6 +1,59 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometres from Pakistan’s coastline",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-11-20T07:33:13+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb09wYzVEakNXbVU3OE4zNWRPMEgwNl9tdUEyNElhcGR5bkNiODdqME5aMFozX2lBQnNHRkNlVzlPN21TLWU5NHQyc1hnam1jWWJzZEV6NlBUQV9BbExoZjJPUWk4V1NiTWxrRmNkbGE2d3RGWmk2d3BNSTdKVnZDay1EbEpZR2U2OVlaNjB5RVQ?oc=5",
+    "event_uid": "evt_5c4bc887da69ff0e8b1d",
+    "evidence_urls": [
+      "https://digitalpakistan.pk/smw5-cable-fault-threatened-pakistans-internet-connectivity/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Pakistan faced the possibility of intermittent internet disruptions after a fault was detected in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from the country’s coastline. The Pakistan Telecommunication Authority (PTA) warned that the issue could affect connection stability and reduce service quality for some users.",
+    "original_text_zh": "巴基斯坦在距离海岸线约11公里处的SEA-ME-WE 5 (SMW5)国际海底电缆系统中检测到故障后，面临间歇性互联网中断的可能性。巴基斯坦电信管理局(PTA)警告称，这一问题可能影响连接的稳定性，并降低部分用户的服务质量。",
+    "published_date": "2026-11-20",
+    "raw_data": {
+      "article": {
+        "content": "Yango Pakistan Launches Direct Bank Card Payments November 18, 2026 SMW5 Cable Fault Threatened Pakistan’s Internet Connectivity Published by Laibah Masood on November 20, 2026 Categories Industry Tags A submarine cable fault near Pakistan’s coastline threatened internet stability, prompting authorities to reroute traffic and coordinate restoration efforts. Pakistan faced the possibility of intermittent internet disruptions after a fault was detected in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from the country’s coastline. The Pakistan Telecommunication Authority (PTA) warned that the issue could affect connection stability and reduce service quality for some users. According to the PTA, Transworld Associates (TWA) began coordinating with the SMW5 Consortium to investigate the technical problem, identify its underlying cause and establish an Estimated Time for Restoration (ETTR). The restoration timeline remained dependent on the outcome of the ongoing assessment. To limit the disruption, internet traffic was redirected through alternative international cable routes. This temporary arrangement was intended to maintain connectivity and minimise the impact on internet services while efforts to resolve the fault continued. The PTA also maintained communication with relevant stakeholders to oversee the situation and support restoration efforts. The authority continued monitoring developments, with the objective of restoring normal internet services across Pakistan as quickly as possible. The incident highlighted the importance of international submarine cable infrastructure in maintaining Pakistan’s internet connectivity, as faults in these networks can affect service quality and place additional pressure on alternative communication routes. Share 0 Laibah Masood A Clinical Dietitian that runs on Coffee 24/7 & her social battery runs out as soon as she steps outside the house. An introvert who somehow enjoys making friends.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb09wYzVEakNXbVU3OE4zNWRPMEgwNl9tdUEyNElhcGR5bkNiODdqME5aMFozX2lBQnNHRkNlVzlPN21TLWU5NHQyc1hnam1jWWJzZEV6NlBUQV9BbExoZjJPUWk4V1NiTWxrRmNkbGE2d3RGWmk2d3BNSTdKVnZDay1EbEpZR2U2OVlaNjB5RVQ?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-20",
+        "queue_id": "368f712aa9c7ce7ace602d9f962f84bd",
+        "source": "Google News",
+        "title": "SMW5 Cable Fault Threatened Pakistan’s Internet Connectivity",
+        "url": "https://digitalpakistan.pk/smw5-cable-fault-threatened-pakistans-internet-connectivity/"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometres from Pakistan’s coastline",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Pakistan faced the possibility of intermittent internet disruptions after a fault was detected in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from the country’s coastline. The Pakistan Telecommunication Authority (PTA) warned that the issue could affect connection stability and reduce service quality for some users.",
+        "original_text_zh": "巴基斯坦在距离海岸线约11公里处的SEA-ME-WE 5 (SMW5)国际海底电缆系统中检测到故障后，面临间歇性互联网中断的可能性。巴基斯坦电信管理局(PTA)警告称，这一问题可能影响连接的稳定性，并降低部分用户的服务质量。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "SMW5 Cable Fault Threatened Pakistan’s Internet Connectivity",
+    "updated_at": "2026-11-20T07:33:13+00:00",
+    "url": "https://digitalpakistan.pk/smw5-cable-fault-threatened-pakistans-internet-connectivity/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "approximately 11 kilometres off Pakistan's coast",
     "accident_type": "Fluctuate",
     "affected_area": "Pakistan",
@@ -864,6 +917,7 @@
     "cable_name": "SEA-ME-WE 5 (SMW5)",
     "created_at": "2026-11-18T17:26:36+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRklFc3V1dE5JVGhZYUZLVjk4dTFNNUY4cUdPbEQ2LXByMzdob3ptMkhLOXo2bHNkc3FxWmtTVXdGT1pRVlB3emJvMmQ2WHdoTnBud0JPV0J6QTI4VFdvVkRHTWd6OWw2NXdHWFF1dVJzbWZ5WWlwTGwxWWtCYi1WYmpKSkRzNExaZjRzWGVKZlNzb2x5dFZIb2J2VU9UVXZDWDlfbEVsNlZPaXZpbVFfcU96ZDh5Z9IBU0FVX3lxTFA2T1p6Zm9oZC1oQ2hRWkYzQTZMajducDR0aHJ6cUxVNUQ3eHhTX18tLUhfNlYtc1ZiOUJFTGU1NDJtZ2xETnF1UnN4MmYtTnBQVGlF?oc=5",
+    "duplicate_count": 1,
     "event_uid": "evt_40db339cf075b6e6afdb",
     "evidence_urls": [
       "https://english.aaj.tv/news/330481213/international-submarine-cable-fault-may-disrupt-internet-services-in-pakistan"
@@ -905,7 +959,7 @@
     ],
     "submarine_name": "SEA-ME-WE 5 (SMW5)",
     "title": "Aaj News",
-    "updated_at": "2026-11-18T17:26:36+00:00",
+    "updated_at": "2026-11-20T07:37:23+00:00",
     "url": "https://english.aaj.tv/news/330481213/international-submarine-cable-fault-may-disrupt-internet-services-in-pakistan",
     "verification_status": "rule_verified"
   },
