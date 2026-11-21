@@ -1,6 +1,589 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometres from Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-11-21T12:51:31+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Xa3lVbUtyLWUwR3J6REtnLWxibFNEdmplMDBZWVU1aWRIWnRsc1dRUzFBcENJcHJVUEcxRkJjOFlvdkdmUzB5Sg?oc=5",
+    "event_uid": "evt_4342eaccf3cc139c7496",
+    "evidence_urls": [
+      "https://www.dawn.com/news/2046093"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from Pakistan’s coast. The regulator warned that the fault could cause intermittent connectivity issues and a decline in service quality for some internet users.",
+    "original_text_zh": "据报告，距离巴基斯坦海岸约11公里的SEA-ME-WE 5（SMW5）国际海底电缆系统出现故障。监管机构警告称，该故障可能导致某些互联网用户的间歇性连接问题和服务质量下降。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet provider expects submarine cable repairs to be completed by Dec 6 News Desk Published November 21, 2026 Updated November 21, 2026 01:07pm Email Story Your Name * Recipient Email * Send Email Cancel 1 Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Internet service provider Transworld Associates has said repair work on an affected international submarine cable is expected to be completed by December 6, with users likely to experience slower internet speeds during peak hours until the work is finished. In an email to customers, the company said repair operations were actively underway and that the tentative timeline for completion was Dec 6. “Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway,” the company said. Transworld said it had also scheduled a maintenance window during which its technical teams would address the existing cable issue. It added that alternative routing arrangements had been made to maintain connectivity during the maintenance activity. The development follows an earlier announcement by the Pakistan Telecommunication Authority (PTA) that a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from Pakistan’s coast. The regulator warned that the fault could cause intermittent connectivity issues and a decline in service quality for some internet users. The PTA had said Transworld Associates was coordinating with the SMW5 consortium to identify the fault and determine the estimated time for restoration. Meanwhile, internet traffic was being rerouted through alternative international links to minimise disruption and maintain service continuity, the regulator had added. Internet monitoring organisation NetBlocks had also reported a decline in connectivity in Pakistan, saying the incident was consistent with a fault in the SMW5 international subsea cable system. Submarine cables are a critical part of international telecommunications infrastructure, carrying data between countries and continents. Faults in these systems can affect internet speeds and connectivity, particularly when traffic has to be redirected through alternative routes. Currently, seven submarine cables provide internet connectivity to Pakistan: Asia-Africa-Europe 1 ( AAE-1 ), South East Asia-Middle East-West Europe 4 (SMW4) and India-Middle East-Western Europe (IMEWE), operated by PTCL; and South-East Asia-Middle East-Western Europe 6 (SEA-ME-WE 6), South East Asia-Middle East-West Europe 5 (SMW5) and Transworld Associates 1 (TWA-1), operated by Transworld Associates. Cyber Internet Services operates the seventh cable named Pak­istan and East Africa Connecting Europe (PEACE). In July this year, a fault in the same SMW5 cable system had caused widespread connectivity issues in Pakistan. The PTA subsequently announced that the fault had been repaired on July 3, following its detection on July 1.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Xa3lVbUtyLWUwR3J6REtnLWxibFNEdmplMDBZWVU1aWRIWnRsc1dRUzFBcENJcHJVUEcxRkJjOFlvdkdmUzB5Sg?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "1d09d8962accca8a56bb18ea3eacf8fc",
+        "source": "Google News",
+        "title": "Internet provider expects submarine cable repairs to be completed by Dec 6 - Pakistan - DAWN.COM",
+        "url": "https://www.dawn.com/news/2046093"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometres from Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from Pakistan’s coast. The regulator warned that the fault could cause intermittent connectivity issues and a decline in service quality for some internet users.",
+        "original_text_zh": "据报告，距离巴基斯坦海岸约11公里的SEA-ME-WE 5（SMW5）国际海底电缆系统出现故障。监管机构警告称，该故障可能导致某些互联网用户的间歇性连接问题和服务质量下降。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "Internet provider expects submarine cable repairs to be completed by Dec 6 - Pakistan - DAWN.COM",
+    "updated_at": "2026-11-21T12:51:31+00:00",
+    "url": "https://www.dawn.com/news/2046093",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-11-21T12:51:31+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Xa3lVbUtyLWUwR3J6REtnLWxibFNEdmplMDBZWVU1aWRIWnRsc1dRUzFBcENJcHJVUEcxRkJjOFlvdkdmUzB5Sg?oc=5",
+    "event_uid": "evt_8c0e09082036ac2aceaa",
+    "evidence_urls": [
+      "https://www.dawn.com/news/2046093"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "In July this year, a fault in the same SMW5 cable system had caused widespread connectivity issues in Pakistan. The PTA subsequently announced that the fault had been repaired on July 3, following its detection on July 1.",
+    "original_text_zh": "今年7月，同一SMW5电缆系统的故障导致巴基斯坦普遍出现连接问题。巴基斯坦电信管理局随后宣布，该故障在7月1日检测后于7月3日修复。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet provider expects submarine cable repairs to be completed by Dec 6 News Desk Published November 21, 2026 Updated November 21, 2026 01:07pm Email Story Your Name * Recipient Email * Send Email Cancel 1 Listen to article 1x 1.2x 1.5x comments Join our Whatsapp Channel Internet service provider Transworld Associates has said repair work on an affected international submarine cable is expected to be completed by December 6, with users likely to experience slower internet speeds during peak hours until the work is finished. In an email to customers, the company said repair operations were actively underway and that the tentative timeline for completion was Dec 6. “Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway,” the company said. Transworld said it had also scheduled a maintenance window during which its technical teams would address the existing cable issue. It added that alternative routing arrangements had been made to maintain connectivity during the maintenance activity. The development follows an earlier announcement by the Pakistan Telecommunication Authority (PTA) that a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, approximately 11 kilometres from Pakistan’s coast. The regulator warned that the fault could cause intermittent connectivity issues and a decline in service quality for some internet users. The PTA had said Transworld Associates was coordinating with the SMW5 consortium to identify the fault and determine the estimated time for restoration. Meanwhile, internet traffic was being rerouted through alternative international links to minimise disruption and maintain service continuity, the regulator had added. Internet monitoring organisation NetBlocks had also reported a decline in connectivity in Pakistan, saying the incident was consistent with a fault in the SMW5 international subsea cable system. Submarine cables are a critical part of international telecommunications infrastructure, carrying data between countries and continents. Faults in these systems can affect internet speeds and connectivity, particularly when traffic has to be redirected through alternative routes. Currently, seven submarine cables provide internet connectivity to Pakistan: Asia-Africa-Europe 1 ( AAE-1 ), South East Asia-Middle East-West Europe 4 (SMW4) and India-Middle East-Western Europe (IMEWE), operated by PTCL; and South-East Asia-Middle East-Western Europe 6 (SEA-ME-WE 6), South East Asia-Middle East-West Europe 5 (SMW5) and Transworld Associates 1 (TWA-1), operated by Transworld Associates. Cyber Internet Services operates the seventh cable named Pak­istan and East Africa Connecting Europe (PEACE). In July this year, a fault in the same SMW5 cable system had caused widespread connectivity issues in Pakistan. The PTA subsequently announced that the fault had been repaired on July 3, following its detection on July 1.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1Xa3lVbUtyLWUwR3J6REtnLWxibFNEdmplMDBZWVU1aWRIWnRsc1dRUzFBcENJcHJVUEcxRkJjOFlvdkdmUzB5Sg?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "1d09d8962accca8a56bb18ea3eacf8fc",
+        "source": "Google News",
+        "title": "Internet provider expects submarine cable repairs to be completed by Dec 6 - Pakistan - DAWN.COM",
+        "url": "https://www.dawn.com/news/2046093"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "following its detection on July 1",
+        "original_text": "In July this year, a fault in the same SMW5 cable system had caused widespread connectivity issues in Pakistan. The PTA subsequently announced that the fault had been repaired on July 3, following its detection on July 1.",
+        "original_text_zh": "今年7月，同一SMW5电缆系统的故障导致巴基斯坦普遍出现连接问题。巴基斯坦电信管理局随后宣布，该故障在7月1日检测后于7月3日修复。",
+        "reason": null,
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "Internet provider expects submarine cable repairs to be completed by Dec 6 - Pakistan - DAWN.COM",
+    "updated_at": "2026-11-21T12:51:31+00:00",
+    "url": "https://www.dawn.com/news/2046093",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "Segment linking the Democratic Republic of Congo and the Republic of Congo",
+    "accident_type": "Limit",
+    "affected_area": "Democratic Republic of Congo and Republic of Congo",
+    "cable_name": "West Africa Cable System (WACS)",
+    "created_at": "2026-11-21T12:51:39+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNXhEZkkzS3ZxbzEzS0lwcFU3cksyblZfNEtZblBMR1ctT0pPcXFtakpkS1lVYWhVV2VsbHZ3YkQ0QkxGd3BfX3lidS12NHhlVUdNeHJJLTFGU0NfcllNRTRidVFndko1NXE2aVFPU3RUUm12eHZxMlhPanRMamRaMHNUUQ?oc=5",
+    "event_uid": "evt_e9c1e97f903f43838a2c",
+    "evidence_urls": [
+      "https://shattered.io/congo-telecom-wacs-cable-restored-two-days-early-nov-16/"
+    ],
+    "normalized_cable_id": "WACS",
+    "occurrence_date": null,
+    "original_text": "The fix ends a repair effort that began with a disruption on 29 October 2026.",
+    "original_text_zh": "修复工作始于2026年10月29日的WACS系统中断，最终完成了修复。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Congo Telecom has confirmed that service on the West Africa Cable System (WACS) is back, and the recommissioning date was 16 November 2026. TechAfrica News reported that the operator finished the work two days ahead of its 18 November target. The fix ends a repair effort that began with a disruption on 29 October 2026. The story matters beyond one operator. Submarine fibre carries most international traffic for coastal African countries, and a single damaged segment can ripple through banks, mobile networks and cloud services. Outages of this kind also tend to trigger the same question each time: was it a fault or an attack? Our sort of 5 confirmed hacks and 11 outages shows why that distinction needs evidence before anyone assigns blame. This analysis walks through what Congo Telecom and the outlets covering it have confirmed, what they have left unsaid, and what the repair says about network resilience in Central Africa. It also flags the details that remain unconfirmed, because the available reports are short on numbers. Where we offer judgment, we label it as analysis. · Google · Preferred Sources Don't miss new tech stories on Google Add Shattered once in the Google app and our stories show up in your news suggestions. Add now What Congo Telecom Confirmed About the WACS Restoration The core facts are few and consistent across the coverage. Congo Telecom confirmed restoration of service on the West Africa Cable System, the submarine fibre-optic network that links the operator to international capacity. The system was recommissioned on 16 November 2026. That date landed two days before the 18 November target the operator had set for itself. ITWeb Africa ran its own report under a headline saying the WACS subsea cable had returned online, and Wisevoter published a matching item on 19 November. Three separate outlets agreeing on the recommissioning date gives the date solid footing. None of them, however, offered a customer count, a cost figure or a named engineer. That gap shapes how we treat the story. A restoration confirmation is good news, but it is a status update rather than a post-mortem. The operator has told the public that the cable works again. It has not told the public what broke it, how long any customer felt the effects, or what the repair cost. The reports also carry no on-record quote from a named Congo Telecom executive or engineer. The statements we can cite come from the company as an institution, and we use them below with that limit stated. For readers tracking the WACS restoration, the practical takeaway is simple: the cable is carrying traffic again, and the finer details are still pending. Timeline of the Fault: 29 October to 16 November The sequence is short enough to lay out in a table. We list only dates that appear in the fact sheet or in the verified reporting, and we mark the one date that comes from a single outlet’s coverage. Date Event Source basis 29 October 2026 Disruption occurs on the WACS system TechAfrica News, ITWeb Africa coverage Following days Technical teams isolate the suspected fault to the DRC and Republic of Congo segment Reports on the disruption 11 November 2026 Repair vessel reported at the Congo fault area Daily Byte item dated 11 November 16 November 2026 WACS recommissioned TechAfrica News, ITWeb Africa, Wisevoter 18 November 2026 Original restoration target Operator target cited in reports 20 November 2026 Restoration confirmation published by TechAfrica News TechAfrica News Simple arithmetic puts 18 calendar days between the 29 October disruption and the 16 November recommissioning. That number is not an outage duration. Congo Telecom kept customers connected through alternative paths during the fault, so the span measures how long the primary cable was impaired, not how long users were offline. The five days between the vessel’s reported arrival and the recommissioning date also deserve a caution. Repair work at sea includes locating the break, lifting the cable, splicing and testing. The reports do not break those steps out, so we can’t say how the five days were spent. Where the Fault Sat: The Segment Between Two Congos According to the reports, technical teams isolated the suspected fault to the WACS cable segment linking the Democratic Republic of Congo and the Republic of Congo. The word “suspected” carries weight here. Fault location on a subsea cable relies on optical measurements taken from shore, and engineers confirm the exact break only when the vessel reaches it. The segment sits between two neighbouring countries on the Atlantic coast, which explains why the repair involved landing stations at both ends of the affected stretch. The reports name Matombi and Muanda as the two stations that supported the work. We cover their role in the next section. The exact coordinates of the damage were not publicly disclosed. That omission is common in cable repairs, and operators often keep precise positions private until the work is complete or they have a reason to share them. For readers, the missing coordinates mean any claim about the cause, such as anchors, fishing gear or seabed movement, remains speculation. We found no report that names a cause, and we will not offer one. This is a point where responsible coverage matters. Cable faults invite quick theories. A repair ship’s presence points to a physical break, but physical breaks have many origins, and none has been confirmed here. How the Repair Worked: Vessel, Matombi and Muanda The reporting describes a two-part effort. Technicians aboard a cable repair vessel handled the physical work at sea, while teams at the Matombi and Muanda cable landing stations supported the operation from shore. That split mirrors how subsea repairs generally run, though the reports give no step-by-step account of this particular job. The work at sea A repair vessel carries spare cable, jointing equipment and specialist gear for recovering a damaged section from the seabed. Daily Byte published an item on 11 November, headlined as saying the WACS repair vessel reached the Congo fault area that day. We treat that as a single-outlet detail and not as a fact-sheet confirmation. The work on shore Landing stations are where the cable comes ashore and connects to terrestrial networks. Teams there run tests, watch optical signal levels and coordinate with the vessel. The reports confirm that Matombi and Muanda teams took part, but they do not say who did what. Our hardware coverage follows the optical and switching gear that sits inside facilities like these. The recommissioning on 16 November marks the point where the repaired segment returned to service. The reports describe no staged return or partial capacity, and we would not infer one. Why Congo Telecom’s Redundancy Kept Customers Online The most useful detail for operators is that Congo Telecom’s redundancy mechanisms kept services running during the disruption. The operator switched traffic to alternative connectivity while the primary WACS path was impaired. Customers, per the reports, stayed connected. This is how resilient networks are supposed to behave, but the claim needs separating from the unknowns. The reports do not say what the alternative connectivity was. It could be another cable, a terrestrial route or satellite capacity, and nobody has confirmed which. They also do not say whether performance matched the pre-fault level. Failover keeps a link alive, yet it often carries less capacity or adds latency. In our analysis, the redundancy story is the real lesson. A network that survives an 18-day impairment of its primary cable without a headline-grabbing outage has done its job. A network that depends on one cable and no fallback would have failed publicly. The satellite option sits at the edge of that discussion, and our piece on BTC Satellite and Starlink mobile service in Botswana shows how African operators are weighing it as a complement to fibre. The caveat: the reports confirm the redundancy worked at a service level. They give no throughput data, and no independent measurement firm has published figures for this case in the sources we reviewed. What the Reports Do Not Confirm Because the coverage is thin, the unconfirmed list is nearly as long as the confirmed one. The table below separates the two so readers can see where the evidence stops. Detail Status What reports say Recommissioning date Confirmed 16 November 2026 Lead over target Confirmed Two days ahead of 18 November Disruption date Confirmed 29 October 2026 Fault segment Confirmed as suspected DRC to Republic of Congo link Landing stations involved Confirmed Matombi and Muanda Damage coordinates Not disclosed No public figure Repair cost Unconfirmed No figure in reports Customers affected Unconfirmed No count published Outage duration Unconfirmed Redundancy kept services running Named technicians or officials Unconfirmed None named Every row marked unconfirmed is a number or name that a careless article might invent. We decline to. If Congo Telecom publishes a post-incident report, the cost, cause and customer impact will probably appear there first. What Congo Telecom Said During the Repairs The operator spoke as an institution while the work ran. In a statement carried by Tribune Online , Congo Telecom said it was “closely monitoring the evolution of the situation and remains attentive to the progress of operations.” The statement came during the period when a fault was affecting the segment between the two Congos. The same coverage records a customer-update pledge. Congo Telecom said it “will continue to keep customers informed of further developments as new information becomes available.” That wording appeared while the repair vessel was travelling to the fault location. Both lines are measured corporate language, and neither names an individual speaker. They do show a communication pattern: the operator issued status updates rather than technical detail. For a business customer, that pattern means the most reliable way to learn about impact is to ask the account team directly. Congo Telecom has also not publicly explained how it measured the 18 November target or why it beat it. Beating a repair target by two days is a good outcome, but the reasons might be as simple as favourable sea conditions. We note the absence of an explanation and nothing more. Why Subsea Cables Fail and Why Repairs Take Weeks This section is general background and does not describe the Congo fault, whose cause has not been disclosed. Submarine cables can fail for physical reasons such as damage from shipping or fishing activity, seabed movement, or equipment faults in the optical path. Operators detect a break from the shore end by measuring light returned along the fibre, which lets them estimate where the break sits. Repair is slow because the work is physical. A vessel must be mobilised, sail to the location, find the cable, recover it, splice in new cable and test the result before lowering it again. Weather and sea conditions affect each step. Vessel availability also matters, because only a limited number of specialist ships serve a given region. That is why a two-day lead over a stated target stands out. Repair schedules carry uncertainty, and operators usually publish targets with some buffer. Congo Telecom’s early finish suggests either a conservative target or smooth execution, and the reports do not tell us which. For readers who follow network failures more broadly, the Congo repair offers a counterpoint to cyber-driven outages. Our report on the NSA network outage and the six sources who saw no cyberattack evidence covers the opposite problem, where the cause stayed murky even after services returned. Resilience Options Compared: Failover, Second Cable, Satellite, Terrestrial Congo Telecom’s experience invites a comparison of ways to protect connectivity. The table below is qualitative on purpose. We have no official figures for the Congo case, so we compare general strengths and trade-offs rather than invent capacity or price numbers. Approach Main strength Main weakness Fit for a cable fault Automated failover to backup links Keeps services running with little human action Backup capacity may be lower Used by Congo Telecom per reports A second submarine cable Large capacity and low latency High build cost and long lead time Strong, if routes differ Satellite capacity Independent of seabed routes Higher latency and capacity limits Good emergency layer Terrestrial fibre via neighbours Avoids the sea entirely Depends on cross-border agreements Useful where routes exist No single option wins. The best-protected operators combine several, so a fault on one path shifts traffic to another. Congo Telecom’s reports confirm that the failover layer worked and leave the rest of the stack unnamed. The satellite angle is gaining attention across the continent. Our look at Ambani’s plan for a 1,600-satellite network to challenge Starlink shows how large players treat orbit as a competitor to fibre. For a fault like this one, satellite works best as insurance, not a replacement. Market Impact for Operators, Businesses and Data Centers The market effect of this restoration is modest in the data we have. No outlet reported a service credit, a customer exodus or a regulator action, so we will not suggest one. What the event does is reinforce a buying criterion for enterprise customers in the region: path diversity. Businesses that rely on international links for payments, cloud access or remote support should ask their carrier which routes sit behind their service. A contract that names WACS as the only path carries risk. A contract that describes alternative connectivity, as Congo Telecom’s redundancy mechanisms did, carries less. Data center operators face the same logic. Facilities depend on carriers for transit, and a prolonged cable impairment can raise latency or limit capacity for hosted customers. The reports do not describe any such effect in the Congo case, and we found no sourced claim of one. Still, operators planning new capacity in the region will read this episode as a reminder to check upstream diversity. Mobile operators carry a parallel exposure. Our coverage of Vodacom’s live 5G carrier aggregation is a reminder that African operators are pushing radio capacity upward, and that backhaul has to keep pace. Faster radios help little when the international link behind them is impaired. The Hardware Angle: Landing Stations, Optical Gear and Switching A cable fault is a hardware story as much as a network story. At a landing station, line terminating equipment converts the optical signal on the cable into traffic that terrestrial routers can handle. When a segment fails, that equipment reports the loss, and engineers use its readings to estimate where the break lies. Behind the terminating gear sit switches and routers that decide where traffic flows. Failover depends on that layer. If the primary path drops, the switching equipment must move traffic to the alternative fast enough that users do not notice. How fast Congo Telecom’s gear did so has not been published. Switching speed is an active area of hardware work. Our report on Voyant’s OCS engine and its under-5-microsecond switching target covers optical circuit switching in data centers, a different setting from a landing station but part of the same push toward faster path changes. We draw no direct link between that product and the Congo operator. The takeaway for hardware readers: resilience lives in unglamorous equipment, spare parts and tested procedures. The teams at Matombi and Muanda worked with that equipment, and the early recommissioning suggests the procedures held up. Historical Context: Cable Faults on Africa’s West Coast Cable faults along Africa’s west coast have happened before, and each has taught operators the same lesson. When a major route fails, countries with one path suffer visibly and countries with several paths barely flinch. We do not cite specific past incidents here because they sit outside our verified source set, and we would rather stay general than risk a wrong date or figure. The trend is clear enough without them. Operators across the region have spent recent years adding routes, signing capacity swaps and building terrestrial links to neighbours. The Congo Telecom redundancy result fits that trend. It shows investment in alternatives paying off during a real fault. There is a contrast with how outages are often reported. Public attention usually arrives when connectivity fails and fades when it returns. A story about services that stayed up, then quietly came back on a schedule two days early, rarely gets headlines. That helps explain why the coverage here comes mostly from specialist African and telecom outlets. The Congo case also shows the value of clear communication. The operator published a target date, hit it early and confirmed the result. Those steps cost little and build trust, even when detailed numbers stay private. Predictions: What to Watch After the WACS Restoration These are our analysis, not reported facts. We frame each as a judgment so readers can weigh it. A post-incident account may follow. Operators often publish a cause and impact summary after a major repair. If Congo Telecom does, expect it to address the fault cause and the alternative connectivity it used. Enterprise customers will ask about route diversity. Buyers in the region now have a recent, concrete example of a primary cable impairment. Contract talks will likely include more questions about backup paths. Coordinates may stay private. Given the pattern in the reports, we expect the exact damage location to remain undisclosed unless a regulator or consortium asks for it. Satellite backup will gain more attention. The failover story strengthens the case for a non-seabed layer. Operators that lack one will weigh it. Repair targets will stay conservative. Beating a target by two days rewards cautious scheduling, so operators have little reason to promise tighter dates. We will update this analysis if Congo Telecom or a WACS partner releases figures on cost, customers or cause. How Businesses in Central Africa Can Check Their Own Exposure Companies that depend on international connectivity can test their own path assumptions without waiting for the next fault. The commands below are generic examples. Replace the hostname with a service your business actually depends on, and run them from your own network. # Trace the route and note the hops that leave your country mtr --report --report-cycles 20 example.com # Record round-trip times so you have a baseline to compare during a fault ping -c 50 example.com Save the output on a normal day. If connectivity degrades later, a fresh trace shows whether traffic has shifted to a different path and how latency changed. That evidence helps when you open a ticket with your carrier. Also ask your provider three plain questions. Which submarine and terrestrial routes sit behind my service? What happens to my traffic if one fails? How will you notify me? Congo Telecom’s public pledge to keep customers informed is a reasonable standard to hold any carrier to. Finally, review where critical workloads run. If a payment system or customer portal depends on a single international link, the 29 October disruption is a prompt to add a fallback before the next one. Frequently Asked Questions When did Congo Telecom restore the WACS cable? The WACS system was recommissioned on 16 November 2026. That was two days ahead of the operator’s 18 November target, according to TechAfrica News and ITWeb Africa. What caused the WACS disruption? No cause has been disclosed in the reports we reviewed. Technical teams isolated the suspected fault to the segment linking the Democratic Republic of Congo and the Republic of Congo, but the reason for the damage has not been stated. Were customers offline during the fault? Reports say Congo Telecom’s redundancy mechanisms kept services running by switching traffic to alternative connectivity. No outage duration or customer count has been confirmed, so we cannot say how many users noticed a slowdown. Which stations supported the repair? Teams at the Matombi and Muanda cable landing stations supported the work, alongside technicians aboard a cable repair vessel. Where exactly was the cable damaged? The exact coordinates were not publicly disclosed. Reports place the suspected fault on the segment between the two Congos and say nothing more precise. How much did the repair cost? No repair cost has been published. Any figure you see attached to this story should be treated as unverified unless Congo Telecom or a consortium partner confirms it. Did a named Congo Telecom executive comment? The available reports contain no on-record quote from a named Congo Telecom speaker. The statements we cite come from the company as an institution. Does this restoration mean the risk is over? Not necessarily. Recommissioning ends this fault, but any single cable can fail again. Operators and businesses that want protection should rely on route diversity and tested failover, not on one repaired path.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNXhEZkkzS3ZxbzEzS0lwcFU3cksyblZfNEtZblBMR1ctT0pPcXFtakpkS1lVYWhVV2VsbHZ3YkQ0QkxGd3BfX3lidS12NHhlVUdNeHJJLTFGU0NfcllNRTRidVFndko1NXE2aVFPU3RUUm12eHZxMlhPanRMamRaMHNUUQ?oc=5",
+        "keyword": "submarine cable break",
+        "published_date": "2026-11-21",
+        "queue_id": "755114cfabd396d5561443aced12aba6",
+        "source": "Google News",
+        "title": "Congo Telecom Restores WACS Two Days Early, Nov. 16",
+        "url": "https://shattered.io/congo-telecom-wacs-cable-restored-two-days-early-nov-16/"
+      },
+      "extracted": {
+        "accident_location": "Segment linking the Democratic Republic of Congo and the Republic of Congo",
+        "accident_type": "Limit",
+        "affected_area": "Democratic Republic of Congo and Republic of Congo",
+        "cable_name": "West Africa Cable System (WACS)",
+        "occurrence_date": "2026-10-29",
+        "occurrence_date_evidence": "Disruption occurs on the WACS system",
+        "original_text": "The fix ends a repair effort that began with a disruption on 29 October 2026.",
+        "original_text_zh": "修复工作始于2026年10月29日的WACS系统中断，最终完成了修复。",
+        "reason": null,
+        "repair_date": "2026-11-16"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-11-16",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "West Africa Cable System (WACS)",
+    "title": "Congo Telecom Restores WACS Two Days Early, Nov. 16",
+    "updated_at": "2026-11-21T12:51:39+00:00",
+    "url": "https://shattered.io/congo-telecom-wacs-cable-restored-two-days-early-nov-16/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "around 11 kilometres from Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:51:58+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeTNvZEJRa09YUFFvS2F1QTBXc3FQV3lRMEFDSnE5aDduMFlqbDBCd1lGcU96SnJnTHZYT0lfSTRKRGRicnZKcHZ0REtmWW5rMDBCWjF2TGt0c2lVODh0V3RMVW83aEFvLTZ1eGNCM1VXMk9tUDlUc19uTEpvaUJZdnpWUFhJYWxz?oc=5",
+    "event_uid": "evt_c65fcdcbaeec59db47e5",
+    "evidence_urls": [
+      "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the South East Asia-Middle East-West Europe 5 (SMW5) submarine cable system, around 11 kilometres from Pakistan’s coast. The regulator had warned that the fault could lead to intermittent internet connectivity and reduced service quality for some users.",
+    "original_text_zh": "此前，巴基斯坦电信管理局（PTA）报告了距巴基斯坦海岸约11公里处的东南亚-中东-西欧5号（SMW5）海底电缆系统出现故障。监管机构警告称，这一故障可能导致部分用户出现间歇性互联网连接和服务质量下降。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates has said that repairs to an affected international submarine cable are expected to be completed by December 6, warning that users may face slower internet speeds during peak hours until the work is finished. In an email to customers, the company said that repair work on the damaged cable system was underway and that December 6 was the tentative date for its completion. “Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway,” the company stated. Transworld added that it had scheduled a maintenance window to allow its technical teams to work on the cable fault. It said that alternative routes had also been arranged to maintain internet connectivity during the maintenance period. The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the South East Asia-Middle East-West Europe 5 (SMW5) submarine cable system, around 11 kilometres from Pakistan’s coast. The regulator had warned that the fault could lead to intermittent internet connectivity and reduced service quality for some users. The PTA said that Transworld Associates was working with the SMW5 consortium to locate the fault and estimate the time needed to restore the cable. It added that internet traffic was being redirected through alternative international links to reduce disruption and maintain services. Internet monitoring organisation NetBlocks also reported a decline in connectivity in Pakistan, linking the disruption to a fault in the SMW5 subsea cable system. ⚠️ Confirmed: Network data show a decline in internet connectivity in #Pakistan resulting in slow service. The incident is consistent with a fault on the SMW5 international subsea cable system with operators now attempting to establish alternative routes. pic.twitter.com/XvdnzLD1Ac — NetBlocks (@netblocks) November 18, 2026 Submarine cables carry data between countries and continents and form a major part of international telecommunications infrastructure. Damage to these cables can affect internet speeds and connectivity, particularly when providers redirect traffic through alternative routes. Pakistan currently relies on seven submarine cables for international internet connectivity. PTCL operates Asia-Africa-Europe 1 (AAE-1), South East Asia-Middle East-West Europe 4 (SMW4) and India-Middle East-Western Europe (IMEWE). Transworld Associates operates SEA-ME-WE 6, SMW5 and Transworld Associates 1 (TWA-1), while Cyber Internet Services operates the Pakistan and East Africa Connecting Europe (PEACE) cable. In July this year, a fault in the same SMW5 cable system disrupted internet connectivity across Pakistan. The PTA later confirmed that repairs were completed on July 3, after detecting the fault on July 1.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeTNvZEJRa09YUFFvS2F1QTBXc3FQV3lRMEFDSnE5aDduMFlqbDBCd1lGcU96SnJnTHZYT0lfSTRKRGRicnZKcHZ0REtmWW5rMDBCWjF2TGt0c2lVODh0V3RMVW83aEFvLTZ1eGNCM1VXMk9tUDlUc19uTEpvaUJZdnpWUFhJYWxz?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "656b99c8b11e179b35a15541639213a1",
+        "source": "Google News",
+        "title": "Internet slowdown to continue as cable repairs take longer",
+        "url": "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/"
+      },
+      "extracted": {
+        "accident_location": "around 11 kilometres from Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": "2026-11-18",
+        "occurrence_date_evidence": "Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway",
+        "original_text": "The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the South East Asia-Middle East-West Europe 5 (SMW5) submarine cable system, around 11 kilometres from Pakistan’s coast. The regulator had warned that the fault could lead to intermittent internet connectivity and reduced service quality for some users.",
+        "original_text_zh": "此前，巴基斯坦电信管理局（PTA）报告了距巴基斯坦海岸约11公里处的东南亚-中东-西欧5号（SMW5）海底电缆系统出现故障。监管机构警告称，这一故障可能导致部分用户出现间歇性互联网连接和服务质量下降。",
+        "reason": "fault",
+        "repair_date": null
+      }
+    },
+    "reason": "fault",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Internet slowdown to continue as cable repairs take longer",
+    "updated_at": "2026-11-21T12:51:58+00:00",
+    "url": "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:51:58+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeTNvZEJRa09YUFFvS2F1QTBXc3FQV3lRMEFDSnE5aDduMFlqbDBCd1lGcU96SnJnTHZYT0lfSTRKRGRicnZKcHZ0REtmWW5rMDBCWjF2TGt0c2lVODh0V3RMVW83aEFvLTZ1eGNCM1VXMk9tUDlUc19uTEpvaUJZdnpWUFhJYWxz?oc=5",
+    "event_uid": "evt_124f196f5f56eecaa34f",
+    "evidence_urls": [
+      "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "In July this year, a fault in the same SMW5 cable system disrupted internet connectivity across Pakistan. The PTA later confirmed that repairs were completed on July 3, after detecting the fault on July 1.",
+    "original_text_zh": "今年7月，同一SMW5电缆系统的故障导致巴基斯坦全国范围内的互联网连接中断。PTA后来确认，在7月1日检测到故障后，修复工作于7月3日完成。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates has said that repairs to an affected international submarine cable are expected to be completed by December 6, warning that users may face slower internet speeds during peak hours until the work is finished. In an email to customers, the company said that repair work on the damaged cable system was underway and that December 6 was the tentative date for its completion. “Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway,” the company stated. Transworld added that it had scheduled a maintenance window to allow its technical teams to work on the cable fault. It said that alternative routes had also been arranged to maintain internet connectivity during the maintenance period. The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the South East Asia-Middle East-West Europe 5 (SMW5) submarine cable system, around 11 kilometres from Pakistan’s coast. The regulator had warned that the fault could lead to intermittent internet connectivity and reduced service quality for some users. The PTA said that Transworld Associates was working with the SMW5 consortium to locate the fault and estimate the time needed to restore the cable. It added that internet traffic was being redirected through alternative international links to reduce disruption and maintain services. Internet monitoring organisation NetBlocks also reported a decline in connectivity in Pakistan, linking the disruption to a fault in the SMW5 subsea cable system. ⚠️ Confirmed: Network data show a decline in internet connectivity in #Pakistan resulting in slow service. The incident is consistent with a fault on the SMW5 international subsea cable system with operators now attempting to establish alternative routes. pic.twitter.com/XvdnzLD1Ac — NetBlocks (@netblocks) November 18, 2026 Submarine cables carry data between countries and continents and form a major part of international telecommunications infrastructure. Damage to these cables can affect internet speeds and connectivity, particularly when providers redirect traffic through alternative routes. Pakistan currently relies on seven submarine cables for international internet connectivity. PTCL operates Asia-Africa-Europe 1 (AAE-1), South East Asia-Middle East-West Europe 4 (SMW4) and India-Middle East-Western Europe (IMEWE). Transworld Associates operates SEA-ME-WE 6, SMW5 and Transworld Associates 1 (TWA-1), while Cyber Internet Services operates the Pakistan and East Africa Connecting Europe (PEACE) cable. In July this year, a fault in the same SMW5 cable system disrupted internet connectivity across Pakistan. The PTA later confirmed that repairs were completed on July 3, after detecting the fault on July 1.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeTNvZEJRa09YUFFvS2F1QTBXc3FQV3lRMEFDSnE5aDduMFlqbDBCd1lGcU96SnJnTHZYT0lfSTRKRGRicnZKcHZ0REtmWW5rMDBCWjF2TGt0c2lVODh0V3RMVW83aEFvLTZ1eGNCM1VXMk9tUDlUc19uTEpvaUJZdnpWUFhJYWxz?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "656b99c8b11e179b35a15541639213a1",
+        "source": "Google News",
+        "title": "Internet slowdown to continue as cable repairs take longer",
+        "url": "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "In July this year, a fault in the same SMW5 cable system disrupted internet connectivity across Pakistan. The PTA later confirmed that repairs were completed on July 3, after detecting the fault on July 1.",
+        "original_text": "In July this year, a fault in the same SMW5 cable system disrupted internet connectivity across Pakistan. The PTA later confirmed that repairs were completed on July 3, after detecting the fault on July 1.",
+        "original_text_zh": "今年7月，同一SMW5电缆系统的故障导致巴基斯坦全国范围内的互联网连接中断。PTA后来确认，在7月1日检测到故障后，修复工作于7月3日完成。",
+        "reason": null,
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Internet slowdown to continue as cable repairs take longer",
+    "updated_at": "2026-11-21T12:51:58+00:00",
+    "url": "https://thecurrent.pk/internet-slowdown-to-continue-as-cable-repairs-take-longer/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "roughly 11 kilometres from Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:52:14+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRlZrQV9DMlVmSFZmUkJtR0oxcDZYaXV0am5QUmFid2hLWVhjMV9zU0VUdjJnSnBvS1EwX1FreUNkVTJaU3kyQnVncVhHUm52QllYa2U2emFrMXFQdGFQclZVYTRvZjVXU3NYWGNyTlg3SVJfcTVMNTNOTFlDUGo2Nm9EbGxfbmlEUU5oRmtvWVA?oc=5",
+    "event_uid": "evt_441905e62a780c16ce1b",
+    "evidence_urls": [
+      "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Specifically, the regulator reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system roughly 11 kilometres from Pakistan’s coast. As a result, the PTA warned that the fault could cause intermittent connectivity issues and reduce service quality for some internet users.",
+    "original_text_zh": "具体而言，监管机构报告了距离巴基斯坦海岸约11公里的SEA-ME-WE 5 (SMW5)国际海底电缆系统的故障。因此，PTA警告称，该故障可能导致部分互联网用户的间歇性连接问题和服务质量下降。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates expects SMW5 submarine cable repairs to finish by December 6, 2026. Consequently, users in Pakistan will likely experience slower internet speeds during peak hours until technical teams complete the work. In an email to customers, Transworld confirmed that crews are actively carrying out repair operations. Furthermore, the company set December 6 as its tentative completion timeline. Transworld stated: Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway. Transworld Maintenance Window & PTA Submarine Cable Repairs Warning Additionally, Transworld scheduled a maintenance window for its technical teams to address the existing cable issue. Meanwhile, the company set up alternative routing arrangements to maintain connectivity during this maintenance activity. This update follows an earlier announcement by the Pakistan Telecommunication Authority (PTA). Specifically, the regulator reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system roughly 11 kilometres from Pakistan’s coast. As a result, the PTA warned that the fault could cause intermittent connectivity issues and reduce service quality for some internet users. Moreover, the regulator noted that Transworld Associates coordinated with the SMW5 consortium to identify the fault and determine an estimated restoration time. At the same time, operators rerouted internet traffic through alternative international links to minimise disruption and maintain service continuity. Similarly, internet monitoring organisation NetBlocks reported a decline in connectivity across Pakistan. According to the monitor, the incident matched a fault in the SMW5 international subsea cable system. Ultimately, submarine cables form a critical part of international telecommunications infrastructure because they carry data between countries and continents. Therefore, faults in these systems can hurt internet speeds and connectivity, especially when operators redirect traffic through alternative routes. Pakistan’s Submarine Cables & Earlier SMW5 Fault Currently, seven submarine cables provide international internet connectivity to Pakistan across three operators: PTCL operates Asia-Africa-Europe 1 (AAE-1), South East Asia-Middle East-West Europe 4 (SMW4), and India-Middle East-Western Europe (IMEWE). Transworld Associates operates South-East Asia-Middle East-Western Europe 6 (SEA-ME-WE 6), South East Asia-Middle East-West Europe 5 (SMW5), and Transworld Associates 1 (TWA-1). Cyber Internet Services operates the seventh cable, Pakistan and East Africa Connecting Europe (PEACE). Notably, this incident marks the second disruption on the same system in 2026. Earlier in July, a fault in the SMW5 cable system caused widespread connectivity issues across Pakistan. Operators detected that fault on July 1, and the PTA subsequently announced its repair on July 3.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRlZrQV9DMlVmSFZmUkJtR0oxcDZYaXV0am5QUmFid2hLWVhjMV9zU0VUdjJnSnBvS1EwX1FreUNkVTJaU3kyQnVncVhHUm52QllYa2U2emFrMXFQdGFQclZVYTRvZjVXU3NYWGNyTlg3SVJfcTVMNTNOTFlDUGo2Nm9EbGxfbmlEUU5oRmtvWVA?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "3b95b1ee5348d3b6df581a7b0c2db717",
+        "source": "Google News",
+        "title": "Transworld Expects Submarine Cable Repairs to Finish by Dec 6",
+        "url": "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/"
+      },
+      "extracted": {
+        "accident_location": "roughly 11 kilometres from Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Specifically, the regulator reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system roughly 11 kilometres from Pakistan’s coast. As a result, the PTA warned that the fault could cause intermittent connectivity issues and reduce service quality for some internet users.",
+        "original_text_zh": "具体而言，监管机构报告了距离巴基斯坦海岸约11公里的SEA-ME-WE 5 (SMW5)国际海底电缆系统的故障。因此，PTA警告称，该故障可能导致部分互联网用户的间歇性连接问题和服务质量下降。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Transworld Expects Submarine Cable Repairs to Finish by Dec 6",
+    "updated_at": "2026-11-21T12:52:14+00:00",
+    "url": "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:52:14+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRlZrQV9DMlVmSFZmUkJtR0oxcDZYaXV0am5QUmFid2hLWVhjMV9zU0VUdjJnSnBvS1EwX1FreUNkVTJaU3kyQnVncVhHUm52QllYa2U2emFrMXFQdGFQclZVYTRvZjVXU3NYWGNyTlg3SVJfcTVMNTNOTFlDUGo2Nm9EbGxfbmlEUU5oRmtvWVA?oc=5",
+    "event_uid": "evt_bbcbbedffa7ad6a18344",
+    "evidence_urls": [
+      "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Operators detected that fault on July 1, and the PTA subsequently announced its repair on July 3.",
+    "original_text_zh": "运营商于7月1日检测到该故障，随后PTA于7月3日宣布修复。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates expects SMW5 submarine cable repairs to finish by December 6, 2026. Consequently, users in Pakistan will likely experience slower internet speeds during peak hours until technical teams complete the work. In an email to customers, Transworld confirmed that crews are actively carrying out repair operations. Furthermore, the company set December 6 as its tentative completion timeline. Transworld stated: Further to our earlier notice on November 18, 2026, repair operations for the affected international submarine cable system are actively underway. Transworld Maintenance Window & PTA Submarine Cable Repairs Warning Additionally, Transworld scheduled a maintenance window for its technical teams to address the existing cable issue. Meanwhile, the company set up alternative routing arrangements to maintain connectivity during this maintenance activity. This update follows an earlier announcement by the Pakistan Telecommunication Authority (PTA). Specifically, the regulator reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system roughly 11 kilometres from Pakistan’s coast. As a result, the PTA warned that the fault could cause intermittent connectivity issues and reduce service quality for some internet users. Moreover, the regulator noted that Transworld Associates coordinated with the SMW5 consortium to identify the fault and determine an estimated restoration time. At the same time, operators rerouted internet traffic through alternative international links to minimise disruption and maintain service continuity. Similarly, internet monitoring organisation NetBlocks reported a decline in connectivity across Pakistan. According to the monitor, the incident matched a fault in the SMW5 international subsea cable system. Ultimately, submarine cables form a critical part of international telecommunications infrastructure because they carry data between countries and continents. Therefore, faults in these systems can hurt internet speeds and connectivity, especially when operators redirect traffic through alternative routes. Pakistan’s Submarine Cables & Earlier SMW5 Fault Currently, seven submarine cables provide international internet connectivity to Pakistan across three operators: PTCL operates Asia-Africa-Europe 1 (AAE-1), South East Asia-Middle East-West Europe 4 (SMW4), and India-Middle East-Western Europe (IMEWE). Transworld Associates operates South-East Asia-Middle East-Western Europe 6 (SEA-ME-WE 6), South East Asia-Middle East-West Europe 5 (SMW5), and Transworld Associates 1 (TWA-1). Cyber Internet Services operates the seventh cable, Pakistan and East Africa Connecting Europe (PEACE). Notably, this incident marks the second disruption on the same system in 2026. Earlier in July, a fault in the SMW5 cable system caused widespread connectivity issues across Pakistan. Operators detected that fault on July 1, and the PTA subsequently announced its repair on July 3.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRlZrQV9DMlVmSFZmUkJtR0oxcDZYaXV0am5QUmFid2hLWVhjMV9zU0VUdjJnSnBvS1EwX1FreUNkVTJaU3kyQnVncVhHUm52QllYa2U2emFrMXFQdGFQclZVYTRvZjVXU3NYWGNyTlg3SVJfcTVMNTNOTFlDUGo2Nm9EbGxfbmlEUU5oRmtvWVA?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "3b95b1ee5348d3b6df581a7b0c2db717",
+        "source": "Google News",
+        "title": "Transworld Expects Submarine Cable Repairs to Finish by Dec 6",
+        "url": "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "Operators detected that fault on July 1",
+        "original_text": "Operators detected that fault on July 1, and the PTA subsequently announced its repair on July 3.",
+        "original_text_zh": "运营商于7月1日检测到该故障，随后PTA于7月3日宣布修复。",
+        "reason": null,
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Transworld Expects Submarine Cable Repairs to Finish by Dec 6",
+    "updated_at": "2026-11-21T12:52:14+00:00",
+    "url": "https://www.techjuice.pk/transworld-expects-submarine-cable-repairs-to-finish-by-dec-6/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "around 11 kilometres off Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:52:34+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMkdibmhqRjkyOE9mVTRJV3pqLS1ITVNNc2tnTGE5LVhGVWNVV1IyYlJYUW1MeDZ3VjBUekFpR05FNzBvbVdBcS1JOVY5YUhzSDRnOTJ2aDFadXQ2SXRtODBEeDg3Y09nZ1VGbkRhbnhIZnpmdkpjZHgxMDREeWZ0bHFRd244di1PNUE?oc=5",
+    "event_uid": "evt_068a7203a4c733632a4b",
+    "evidence_urls": [
+      "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The development follows a warning from the Pakistan Telecommunication Authority (PTA) about a fault in the SEA-ME-WE 5 (SMW5) submarine cable, detected around 11 kilometres off Pakistan’s coast. The regulator said the damage could lead to intermittent connectivity problems and reduced internet service quality for some users.",
+    "original_text_zh": "此前，巴基斯坦电信管理局（PTA）发出警告，称在距离巴基斯坦海岸约11公里处检测到SEA-ME-WE 5（SMW5）海底电缆故障。监管机构表示，损坏可能导致一些用户的间歇性连接问题和互联网服务质量下降。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Summary Internet users in Pakistan may continue to experience slower speeds during peak hours as repair work on a damaged international submarine cable is expected to be completed by December 6. Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, describing the situation as consistent with a fault in the SMW5 submarine cable system. Pakistan currently relies on seven submarine cable systems for international internet connectivity. AI Generated Summary Internet users in Pakistan may continue to experience slower speeds during peak hours as repair work on a damaged international submarine cable is expected to be completed by December 6. Internet service provider Transworld Associates has informed customers that repair operations are underway on the affected cable system. The company said the completion date was tentative and that service quality could remain affected until the work was finished. In an email to customers, Transworld said its technical teams had also scheduled a maintenance window to address the fault. It added that alternative routing arrangements were in place to maintain internet connectivity during the maintenance activity. The development follows a warning from the Pakistan Telecommunication Authority (PTA) about a fault in the SEA-ME-WE 5 (SMW5) submarine cable, detected around 11 kilometres off Pakistan’s coast. The regulator said the damage could lead to intermittent connectivity problems and reduced internet service quality for some users. Transworld Associates was coordinating with the international cable consortium to locate the fault and estimate the restoration time. The PTA said internet traffic was being redirected through alternative international cable links to limit disruption and keep services running. Hafiz Naeem urges government to prioritise public relief FBI offers $1 million reward for arrest of Indian fugitive goldy Brar Dar calls for global cooperation, rejects bloc politics Government reduces prices of jet fuel, kerosene oil and light diesel The government has reduced the prices of jet fuel, kerosene oil and light diesel oil, providing relief to consumers and sectors that rely Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, describing the situation as consistent with a fault in the SMW5 submarine cable system. Submarine cables carry a significant share of global internet traffic and connect countries across continents. Any damage can affect connection speeds and reliability, particularly when data traffic has to be diverted through other routes. Pakistan currently relies on seven submarine cable systems for international internet connectivity. PTCL operates AAE-1, SMW4 and IMEWE, while Transworld Associates manages SMW5, SMW6 and TWA-1. Cyber Internet Services operates the PEACE cable. The same SMW5 system experienced a fault in July this year, causing widespread internet connectivity problems in Pakistan. The PTA later confirmed that the issue had been repaired on July 3, after being detected two days earlier. Until the latest repair work is completed, users may continue to face slower browsing and connectivity fluctuations, particularly during periods of high internet traffic. We welcome your contributions! Submit your blogs, opinion pieces, press releases, news story pitches, and news features to opinion@minutemirror.com.pk and minutemirrormail@gmail.com",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMkdibmhqRjkyOE9mVTRJV3pqLS1ITVNNc2tnTGE5LVhGVWNVV1IyYlJYUW1MeDZ3VjBUekFpR05FNzBvbVdBcS1JOVY5YUhzSDRnOTJ2aDFadXQ2SXRtODBEeDg3Y09nZ1VGbkRhbnhIZnpmdkpjZHgxMDREeWZ0bHFRd244di1PNUE?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "e45de4ebf539e514c33a10e9470469f9",
+        "source": "Google News",
+        "title": "Submarine cable repairs expected by December 6",
+        "url": "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/"
+      },
+      "extracted": {
+        "accident_location": "around 11 kilometres off Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": null,
+        "original_text": "The development follows a warning from the Pakistan Telecommunication Authority (PTA) about a fault in the SEA-ME-WE 5 (SMW5) submarine cable, detected around 11 kilometres off Pakistan’s coast. The regulator said the damage could lead to intermittent connectivity problems and reduced internet service quality for some users.",
+        "original_text_zh": "此前，巴基斯坦电信管理局（PTA）发出警告，称在距离巴基斯坦海岸约11公里处检测到SEA-ME-WE 5（SMW5）海底电缆故障。监管机构表示，损坏可能导致一些用户的间歇性连接问题和互联网服务质量下降。",
+        "reason": null,
+        "repair_date": "2026-12-06"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-12-06",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Submarine cable repairs expected by December 6",
+    "updated_at": "2026-11-21T12:52:34+00:00",
+    "url": "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SMW5",
+    "created_at": "2026-11-21T12:52:34+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMkdibmhqRjkyOE9mVTRJV3pqLS1ITVNNc2tnTGE5LVhGVWNVV1IyYlJYUW1MeDZ3VjBUekFpR05FNzBvbVdBcS1JOVY5YUhzSDRnOTJ2aDFadXQ2SXRtODBEeDg3Y09nZ1VGbkRhbnhIZnpmdkpjZHgxMDREeWZ0bHFRd244di1PNUE?oc=5",
+    "event_uid": "evt_c52275072275608eab5f",
+    "evidence_urls": [
+      "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The same SMW5 system experienced a fault in July this year, causing widespread internet connectivity problems in Pakistan. The PTA later confirmed that the issue had been repaired on July 3, after being detected two days earlier.",
+    "original_text_zh": "今年7月，SMW5系统曾出现故障，导致巴基斯坦出现大范围的互联网连接问题。PTA后来证实，问题在两天前被发现后已于7月3日修复。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Summary Internet users in Pakistan may continue to experience slower speeds during peak hours as repair work on a damaged international submarine cable is expected to be completed by December 6. Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, describing the situation as consistent with a fault in the SMW5 submarine cable system. Pakistan currently relies on seven submarine cable systems for international internet connectivity. AI Generated Summary Internet users in Pakistan may continue to experience slower speeds during peak hours as repair work on a damaged international submarine cable is expected to be completed by December 6. Internet service provider Transworld Associates has informed customers that repair operations are underway on the affected cable system. The company said the completion date was tentative and that service quality could remain affected until the work was finished. In an email to customers, Transworld said its technical teams had also scheduled a maintenance window to address the fault. It added that alternative routing arrangements were in place to maintain internet connectivity during the maintenance activity. The development follows a warning from the Pakistan Telecommunication Authority (PTA) about a fault in the SEA-ME-WE 5 (SMW5) submarine cable, detected around 11 kilometres off Pakistan’s coast. The regulator said the damage could lead to intermittent connectivity problems and reduced internet service quality for some users. Transworld Associates was coordinating with the international cable consortium to locate the fault and estimate the restoration time. The PTA said internet traffic was being redirected through alternative international cable links to limit disruption and keep services running. Hafiz Naeem urges government to prioritise public relief FBI offers $1 million reward for arrest of Indian fugitive goldy Brar Dar calls for global cooperation, rejects bloc politics Government reduces prices of jet fuel, kerosene oil and light diesel The government has reduced the prices of jet fuel, kerosene oil and light diesel oil, providing relief to consumers and sectors that rely Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, describing the situation as consistent with a fault in the SMW5 submarine cable system. Submarine cables carry a significant share of global internet traffic and connect countries across continents. Any damage can affect connection speeds and reliability, particularly when data traffic has to be diverted through other routes. Pakistan currently relies on seven submarine cable systems for international internet connectivity. PTCL operates AAE-1, SMW4 and IMEWE, while Transworld Associates manages SMW5, SMW6 and TWA-1. Cyber Internet Services operates the PEACE cable. The same SMW5 system experienced a fault in July this year, causing widespread internet connectivity problems in Pakistan. The PTA later confirmed that the issue had been repaired on July 3, after being detected two days earlier. Until the latest repair work is completed, users may continue to face slower browsing and connectivity fluctuations, particularly during periods of high internet traffic. We welcome your contributions! Submit your blogs, opinion pieces, press releases, news story pitches, and news features to opinion@minutemirror.com.pk and minutemirrormail@gmail.com",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMkdibmhqRjkyOE9mVTRJV3pqLS1ITVNNc2tnTGE5LVhGVWNVV1IyYlJYUW1MeDZ3VjBUekFpR05FNzBvbVdBcS1JOVY5YUhzSDRnOTJ2aDFadXQ2SXRtODBEeDg3Y09nZ1VGbkRhbnhIZnpmdkpjZHgxMDREeWZ0bHFRd244di1PNUE?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "e45de4ebf539e514c33a10e9470469f9",
+        "source": "Google News",
+        "title": "Submarine cable repairs expected by December 6",
+        "url": "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SMW5",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "The same SMW5 system experienced a fault in July this year, causing widespread internet connectivity problems in Pakistan. The PTA later confirmed that the issue had been repaired on July 3, after being detected two days earlier.",
+        "original_text": "The same SMW5 system experienced a fault in July this year, causing widespread internet connectivity problems in Pakistan. The PTA later confirmed that the issue had been repaired on July 3, after being detected two days earlier.",
+        "original_text_zh": "今年7月，SMW5系统曾出现故障，导致巴基斯坦出现大范围的互联网连接问题。PTA后来证实，问题在两天前被发现后已于7月3日修复。",
+        "reason": null,
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SMW5",
+    "title": "Submarine cable repairs expected by December 6",
+    "updated_at": "2026-11-21T12:52:34+00:00",
+    "url": "https://minutemirror.com.pk/submarine-cable-repairs-expected-by-december-6-663599/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometers off Pakistan’s coastline",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-21T12:52:48+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQV0dpQjdDcFllUXp2R1VjYTcwMk1oOTlNemk5X1FZZzE2NDU0MmhvQkoyWG9zcHV0SjV1VjJNR04xWWJqWGRsXzRyUXpLUmw1VHlwREdQMnJrYWsyMVl0ZVlNazFpazBpRkd5OVN4LVFRMXhfeWJFZXowcklKWVBEbXE1MFNHcEV1OHhrUi1XLW16MDMtYW5veENYOUgzcWFUcEZVTzA5RURyZzVr?oc=5",
+    "event_uid": "evt_d989193678044bc3e91a",
+    "evidence_urls": [
+      "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Earlier, the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) subsea cable system. Specifically, the undersea damage occurred approximately 11 kilometers off Pakistan’s coastline, threatening national internet service quality.",
+    "original_text_zh": "早些时候，巴基斯坦电信管理局（PTA）报告了SEA-ME-WE 5（SMW5）海底电缆系统的故障。具体来说，海底损坏发生在距离巴基斯坦海岸约11公里处，威胁到国家互联网服务质量。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates announced that repairs on a damaged international submarine cable should finish by December 6. Consequently, internet users across Pakistan may experience slower browsing speeds during peak evening hours until restoration finishes. In an email update to customers, the company confirmed that technical teams are actively executing repair operations. Furthermore, Transworld scheduled a dedicated maintenance window to fix the fault while utilizing alternative routing to maintain connectivity. Read More: PTCL posts 12% revenue growth in 2025 Earlier, the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) subsea cable system. Specifically, the undersea damage occurred approximately 11 kilometers off Pakistan’s coastline, threatening national internet service quality. According to telecom sources, fixing the submerged line requires dispatching a specialized international submarine cable maintenance ship. Meanwhile, global internet monitor NetBlocks also confirmed degraded connectivity across Pakistan consistent with the SMW5 cable disruption. To minimize service interruptions, telecom operators swiftly rerouted international data traffic through alternative undersea links. Currently, seven international submarine cables connect Pakistan to the global internet backbone, including PTCL’s AAE-1, SMW4, and IMEWE. Additionally, Transworld operates TWA-1 and SEA-ME-WE 6, while Cyber Internet Services manages the PEACE cable system. Notably, a similar fault struck the same SMW5 cable earlier in July before engineers restored services within days. Read More: Pakistan’s internet set for 40% speed Boost Ultimately, recurring subsea cable disruptions highlight the vulnerability of Pakistan’s digital infrastructure and growing bandwidth demands. While rerouted links keep essential services running, full high-speed capacity depends on completing the offshore vessel repairs safely. Moving forward, subscribers should expect minor peak-hour slowdowns until engineers fully restore the SMW5 system next month.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQV0dpQjdDcFllUXp2R1VjYTcwMk1oOTlNemk5X1FZZzE2NDU0MmhvQkoyWG9zcHV0SjV1VjJNR04xWWJqWGRsXzRyUXpLUmw1VHlwREdQMnJrYWsyMVl0ZVlNazFpazBpRkd5OVN4LVFRMXhfeWJFZXowcklKWVBEbXE1MFNHcEV1OHhrUi1XLW16MDMtYW5veENYOUgzcWFUcEZVTzA5RURyZzVr?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "a5aaf0319144d741f79decda8a0c95e4",
+        "source": "Google News",
+        "title": "Internet provider expects submarine cable repairs to finish by December 6 Published on: November 21, 2026 1:15 PM",
+        "url": "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometers off Pakistan’s coastline",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Earlier, the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) subsea cable system. Specifically, the undersea damage occurred approximately 11 kilometers off Pakistan’s coastline, threatening national internet service quality.",
+        "original_text_zh": "早些时候，巴基斯坦电信管理局（PTA）报告了SEA-ME-WE 5（SMW5）海底电缆系统的故障。具体来说，海底损坏发生在距离巴基斯坦海岸约11公里处，威胁到国家互联网服务质量。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Internet provider expects submarine cable repairs to finish by December 6 Published on: November 21, 2026 1:15 PM",
+    "updated_at": "2026-11-21T12:52:48+00:00",
+    "url": "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-21T12:52:48+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQV0dpQjdDcFllUXp2R1VjYTcwMk1oOTlNemk5X1FZZzE2NDU0MmhvQkoyWG9zcHV0SjV1VjJNR04xWWJqWGRsXzRyUXpLUmw1VHlwREdQMnJrYWsyMVl0ZVlNazFpazBpRkd5OVN4LVFRMXhfeWJFZXowcklKWVBEbXE1MFNHcEV1OHhrUi1XLW16MDMtYW5veENYOUgzcWFUcEZVTzA5RURyZzVr?oc=5",
+    "event_uid": "evt_e2e5e4edf7ba16c5e3cb",
+    "evidence_urls": [
+      "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Notably, a similar fault struck the same SMW5 cable earlier in July before engineers restored services within days.",
+    "original_text_zh": "值得注意的是，类似的故障在今年7月早些时候也曾发生在相同的SMW5电缆上，工程师在几天内恢复了服务。",
+    "published_date": "2026-11-21",
+    "raw_data": {
+      "article": {
+        "content": "Internet service provider Transworld Associates announced that repairs on a damaged international submarine cable should finish by December 6. Consequently, internet users across Pakistan may experience slower browsing speeds during peak evening hours until restoration finishes. In an email update to customers, the company confirmed that technical teams are actively executing repair operations. Furthermore, Transworld scheduled a dedicated maintenance window to fix the fault while utilizing alternative routing to maintain connectivity. Read More: PTCL posts 12% revenue growth in 2025 Earlier, the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) subsea cable system. Specifically, the undersea damage occurred approximately 11 kilometers off Pakistan’s coastline, threatening national internet service quality. According to telecom sources, fixing the submerged line requires dispatching a specialized international submarine cable maintenance ship. Meanwhile, global internet monitor NetBlocks also confirmed degraded connectivity across Pakistan consistent with the SMW5 cable disruption. To minimize service interruptions, telecom operators swiftly rerouted international data traffic through alternative undersea links. Currently, seven international submarine cables connect Pakistan to the global internet backbone, including PTCL’s AAE-1, SMW4, and IMEWE. Additionally, Transworld operates TWA-1 and SEA-ME-WE 6, while Cyber Internet Services manages the PEACE cable system. Notably, a similar fault struck the same SMW5 cable earlier in July before engineers restored services within days. Read More: Pakistan’s internet set for 40% speed Boost Ultimately, recurring subsea cable disruptions highlight the vulnerability of Pakistan’s digital infrastructure and growing bandwidth demands. While rerouted links keep essential services running, full high-speed capacity depends on completing the offshore vessel repairs safely. Moving forward, subscribers should expect minor peak-hour slowdowns until engineers fully restore the SMW5 system next month.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQV0dpQjdDcFllUXp2R1VjYTcwMk1oOTlNemk5X1FZZzE2NDU0MmhvQkoyWG9zcHV0SjV1VjJNR04xWWJqWGRsXzRyUXpLUmw1VHlwREdQMnJrYWsyMVl0ZVlNazFpazBpRkd5OVN4LVFRMXhfeWJFZXowcklKWVBEbXE1MFNHcEV1OHhrUi1XLW16MDMtYW5veENYOUgzcWFUcEZVTzA5RURyZzVr?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-21",
+        "queue_id": "a5aaf0319144d741f79decda8a0c95e4",
+        "source": "Google News",
+        "title": "Internet provider expects submarine cable repairs to finish by December 6 Published on: November 21, 2026 1:15 PM",
+        "url": "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "a similar fault struck the same SMW5 cable earlier in July before engineers restored services within days",
+        "original_text": "Notably, a similar fault struck the same SMW5 cable earlier in July before engineers restored services within days.",
+        "original_text_zh": "值得注意的是，类似的故障在今年7月早些时候也曾发生在相同的SMW5电缆上，工程师在几天内恢复了服务。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Internet provider expects submarine cable repairs to finish by December 6 Published on: November 21, 2026 1:15 PM",
+    "updated_at": "2026-11-21T12:52:48+00:00",
+    "url": "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "approximately 11 kilometres from Pakistan’s coastline",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
@@ -1980,6 +2563,165 @@
     "title": "Submarine cable fault likely to disrupt internet services across Pakistan",
     "updated_at": "2026-11-19T13:35:52+00:00",
     "url": "https://www.samaa.tv/2087360564-submarine-cable-fault-likely-to-disrupt-internet-services-across-pakistan-pakistan-news",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometres off the country's coast",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-11-21T12:52:57+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE55aUdmTy1oSW1ybGlaOEtJX1VGVzhJMDZ4Q2VpVGpEZ1cwZnl0MU5QRl9uaXlQZDhYdGZua0wxcUxGcWs5T1BVV2VmOHBwa2plZ3BBbGZR0gFWQVVfeXFMTnlpR2ZPLWhJbXJsaVo4S0lfVUZXOEkwNnhDZWlUakRnVzBmeXQxTlBGX25peVBkOFh0Zm5rTDFxTEZxazlPUFVXZWY4cHBramVncEFsZlE?oc=5",
+    "event_uid": "evt_0367d30dc1c7fb0f8041",
+    "evidence_urls": [
+      "https://dunyanews.tv/amp/english/983657.php"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Internet users in Pakistan may experience slow browsing speeds and connectivity issues following a fault in the SMW5 international submarine cable located approximately 11 kilometres off the country's coast, the Pakistan Telecommunication Authority (PTA) said on Wednesday.",
+    "original_text_zh": "巴基斯坦电信管理局（PTA）周三表示，由于距离该国海岸约11公里的SMW5国际海底电缆出现故障，巴基斯坦的互联网用户可能会遇到浏览速度慢和连接问题。",
+    "published_date": "2026-11-18",
+    "raw_data": {
+      "article": {
+        "content": "ISLAMABAD (Dunya News) – Internet users in Pakistan may experience slow browsing speeds and connectivity issues following a fault in the SMW5 international submarine cable located approximately 11 kilometres off the country's coast, the Pakistan Telecommunication Authority (PTA) said on Wednesday. According to the PTA, the fault in the undersea cable could affect internet services for some users, prompting authorities to coordinate with the SMW5 consortium through Transworld Associates to identify the fault and determine the estimated restoration time. The authority said internet traffic was being rerouted through alternative international submarine cables to minimise disruption and maintain connectivity across the country. One of the international submarine cable systems, the SEA-ME-WE 5 (SMW5), have reported a fault at about 11 KM from Pakistan shore which may cause some internet users to experience intermittent connectivity issues and a decline in service quality. Transworld Associates (TWA) is coordinating with the SMW5 Consortium to identify the root cause of the fault and determine the Estimated Time for Restoration (ETTR). In the meantime, internet traffic is being rerouted through alternative international links to minimise the impact and ensure service continuity to the greatest extent possible. #SMW5 #SubmarineCableFault #InternetDisruption #InternetUpdate #PakistanInternet #ConnectivityUpdate #InternetServices #DigitalPakistan #PTA #TransworldAssociates #TelecomUpdate #NetworkRestoration #StayConnected #InternetConnectivity — PTA (@PTAofficialpk) November 18, 2026 Relevant organisations are working to resolve the fault, while the PTA is continuously monitoring the situation to ensure the continuity of internet services through alternative international links. The regulator said efforts were underway to restore normal internet services across the country. However, the expected time for the repair and restoration of the affected submarine cable had not yet been determined.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE55aUdmTy1oSW1ybGlaOEtJX1VGVzhJMDZ4Q2VpVGpEZ1cwZnl0MU5QRl9uaXlQZDhYdGZua0wxcUxGcWs5T1BVV2VmOHBwa2plZ3BBbGZR0gFWQVVfeXFMTnlpR2ZPLWhJbXJsaVo4S0lfVUZXOEkwNnhDZWlUakRnVzBmeXQxTlBGX25peVBkOFh0Zm5rTDFxTEZxazlPUFVXZWY4cHBramVncEFsZlE?oc=5",
+        "keyword": "submarine cable outage",
+        "published_date": "2026-11-18",
+        "queue_id": "da9e80a492c1fd8b5a6b413f87f26a64",
+        "source": "Google News",
+        "title": "Submarine cable fault disrupts internet connectivity in Pakistan: PTA",
+        "url": "https://dunyanews.tv/amp/english/983657.php"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometres off the country's coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Internet users in Pakistan may experience slow browsing speeds and connectivity issues following a fault in the SMW5 international submarine cable located approximately 11 kilometres off the country's coast, the Pakistan Telecommunication Authority (PTA) said on Wednesday.",
+        "original_text_zh": "巴基斯坦电信管理局（PTA）周三表示，由于距离该国海岸约11公里的SMW5国际海底电缆出现故障，巴基斯坦的互联网用户可能会遇到浏览速度慢和连接问题。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "Submarine cable fault disrupts internet connectivity in Pakistan: PTA",
+    "updated_at": "2026-11-21T12:52:57+00:00",
+    "url": "https://dunyanews.tv/amp/english/983657.php",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometres from Pakistan’s coastline",
+    "accident_type": "Fluctuate",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-21T12:57:34+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTXJ4eUdwNHJjOTRXYmYwZXg3SDB4OWdjV0UtR3ZlbUVURzZJWUdkSDRDc3VDcHJaUk5XaFhkX0RYWkJGWlJ2cGFUOWFvd1VoSWRlQ1VmYVd6SE5KYzVZaHJYcWZDamRoSnJ5QzEzazBBajMtWnBmaFdEMjJseVBJRWN4bV9FMVVoaURPX3RR?oc=5",
+    "event_uid": "evt_51e3faec6e3c64a09bd4",
+    "evidence_urls": [
+      "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday.",
+    "original_text_zh": "巴基斯坦电信管理局（PTA）周三表示，国际海底电缆系统出现故障后，巴基斯坦各地的互联网用户可能会遇到浏览速度慢和间歇性连接问题。",
+    "published_date": "2026-11-18",
+    "raw_data": {
+      "article": {
+        "content": "Summary Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday. Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, linking the disruption to the submarine cable fault. The latest incident has once again highlighted the importance of international submarine cable networks in maintaining Pakistan’s internet connectivity. AI Generated Summary Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday. According to the regulator, the fault was reported in the SEA-ME-WE 5 (SMW5) submarine cable, approximately 11 kilometres from Pakistan’s coastline. The disruption could affect internet service quality for some users, resulting in slower connections and occasional interruptions. The PTA said Transworld Associates was working with the SMW5 consortium to identify the cause of the fault and establish an estimated timeframe for repairs. Meanwhile, internet traffic is being redirected through alternative international cable links to reduce the impact of the disruption and maintain services as much as possible. The authority said it was coordinating with relevant stakeholders and monitoring the situation to ensure normal internet services were restored at the earliest. PIMS medical team visits Adiala Jail for Imran Khan’s health examination Pakistan Tehreek-e-Insaf (PTI) founder Imran Khan underwent a medical examination at Adiala Jail after a medical team from the Pakistan Institute of Medical Sciences (PIMS) visited the prison Overseas jobs remain a lifeline for Pakistanis Overseas jobs remain a lifeline for Pakistanis CDWP clears Rs19.3bn projects, refers Rs172.4bn to ECNEC CDWP clears Rs19.3bn projects, refers Rs172.4bn to ECNEC Police submit challan in Hina Javed murder case Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, linking the disruption to the submarine cable fault. It said network operators were attempting to arrange alternative routes to maintain internet connectivity while the affected system remained under repair. This is not the first time the SMW5 cable has caused connectivity problems in Pakistan. A similar fault on July 1 resulted in widespread internet disruptions across the country. Services returned to normal after the issue was resolved on July 3. The latest incident has once again highlighted the importance of international submarine cable networks in maintaining Pakistan’s internet connectivity. We welcome your contributions! Submit your blogs, opinion pieces, press releases, news story pitches, and news features to opinion@minutemirror.com.pk and minutemirrormail@gmail.com",
+        "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTXJ4eUdwNHJjOTRXYmYwZXg3SDB4OWdjV0UtR3ZlbUVURzZJWUdkSDRDc3VDcHJaUk5XaFhkX0RYWkJGWlJ2cGFUOWFvd1VoSWRlQ1VmYVd6SE5KYzVZaHJYcWZDamRoSnJ5QzEzazBBajMtWnBmaFdEMjJseVBJRWN4bV9FMVVoaURPX3RR?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-18",
+        "queue_id": "ddb6d0db0f14a375f3bbb7f70d2adb7d",
+        "source": "Google News",
+        "title": "Submarine cable fault disrupts Pakistan’s internet",
+        "url": "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometres from Pakistan’s coastline",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday.",
+        "original_text_zh": "巴基斯坦电信管理局（PTA）周三表示，国际海底电缆系统出现故障后，巴基斯坦各地的互联网用户可能会遇到浏览速度慢和间歇性连接问题。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Submarine cable fault disrupts Pakistan’s internet",
+    "updated_at": "2026-11-21T12:57:34+00:00",
+    "url": "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
+    "accident_location": "",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-21T12:57:34+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTXJ4eUdwNHJjOTRXYmYwZXg3SDB4OWdjV0UtR3ZlbUVURzZJWUdkSDRDc3VDcHJaUk5XaFhkX0RYWkJGWlJ2cGFUOWFvd1VoSWRlQ1VmYVd6SE5KYzVZaHJYcWZDamRoSnJ5QzEzazBBajMtWnBmaFdEMjJseVBJRWN4bV9FMVVoaURPX3RR?oc=5",
+    "event_uid": "evt_89302ff6aa866c38863e",
+    "evidence_urls": [
+      "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "A similar fault on July 1 resulted in widespread internet disruptions across the country. Services returned to normal after the issue was resolved on July 3.",
+    "original_text_zh": "7月1日的类似故障导致全国范围内的大范围网络中断。该问题于7月3日解决后，服务恢复正常。",
+    "published_date": "2026-11-18",
+    "raw_data": {
+      "article": {
+        "content": "Summary Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday. Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, linking the disruption to the submarine cable fault. The latest incident has once again highlighted the importance of international submarine cable networks in maintaining Pakistan’s internet connectivity. AI Generated Summary Internet users across Pakistan may experience slow browsing speeds and intermittent connectivity following a fault in an international submarine cable system, the Pakistan Telecommunication Authority (PTA) said on Wednesday. According to the regulator, the fault was reported in the SEA-ME-WE 5 (SMW5) submarine cable, approximately 11 kilometres from Pakistan’s coastline. The disruption could affect internet service quality for some users, resulting in slower connections and occasional interruptions. The PTA said Transworld Associates was working with the SMW5 consortium to identify the cause of the fault and establish an estimated timeframe for repairs. Meanwhile, internet traffic is being redirected through alternative international cable links to reduce the impact of the disruption and maintain services as much as possible. The authority said it was coordinating with relevant stakeholders and monitoring the situation to ensure normal internet services were restored at the earliest. PIMS medical team visits Adiala Jail for Imran Khan’s health examination Pakistan Tehreek-e-Insaf (PTI) founder Imran Khan underwent a medical examination at Adiala Jail after a medical team from the Pakistan Institute of Medical Sciences (PIMS) visited the prison Overseas jobs remain a lifeline for Pakistanis Overseas jobs remain a lifeline for Pakistanis CDWP clears Rs19.3bn projects, refers Rs172.4bn to ECNEC CDWP clears Rs19.3bn projects, refers Rs172.4bn to ECNEC Police submit challan in Hina Javed murder case Internet monitoring organisation NetBlocks also reported a decline in connectivity across Pakistan, linking the disruption to the submarine cable fault. It said network operators were attempting to arrange alternative routes to maintain internet connectivity while the affected system remained under repair. This is not the first time the SMW5 cable has caused connectivity problems in Pakistan. A similar fault on July 1 resulted in widespread internet disruptions across the country. Services returned to normal after the issue was resolved on July 3. The latest incident has once again highlighted the importance of international submarine cable networks in maintaining Pakistan’s internet connectivity. We welcome your contributions! Submit your blogs, opinion pieces, press releases, news story pitches, and news features to opinion@minutemirror.com.pk and minutemirrormail@gmail.com",
+        "discovered_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTXJ4eUdwNHJjOTRXYmYwZXg3SDB4OWdjV0UtR3ZlbUVURzZJWUdkSDRDc3VDcHJaUk5XaFhkX0RYWkJGWlJ2cGFUOWFvd1VoSWRlQ1VmYVd6SE5KYzVZaHJYcWZDamRoSnJ5QzEzazBBajMtWnBmaFdEMjJseVBJRWN4bV9FMVVoaURPX3RR?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-18",
+        "queue_id": "ddb6d0db0f14a375f3bbb7f70d2adb7d",
+        "source": "Google News",
+        "title": "Submarine cable fault disrupts Pakistan’s internet",
+        "url": "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/"
+      },
+      "extracted": {
+        "accident_location": null,
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": "2026-07-01",
+        "occurrence_date_evidence": "A similar fault on July 1 resulted in widespread internet disruptions across the country.",
+        "original_text": "A similar fault on July 1 resulted in widespread internet disruptions across the country. Services returned to normal after the issue was resolved on July 3.",
+        "original_text_zh": "7月1日的类似故障导致全国范围内的大范围网络中断。该问题于7月3日解决后，服务恢复正常。",
+        "reason": null,
+        "repair_date": "2026-07-03"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-07-03",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Submarine cable fault disrupts Pakistan’s internet",
+    "updated_at": "2026-11-21T12:57:34+00:00",
+    "url": "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/",
     "verification_status": "rule_verified"
   },
   {
