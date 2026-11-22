@@ -54,6 +54,59 @@
   },
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "approximately 11 kilometres off Pakistan's coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-22T16:27:44+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaXFaZ3hBQUlXZFQ0QTNQa21PMlA5V0F0TmMybEJuOU5SU2tESGN3akUxdkJDUkYxMC12VjVhUHpWblZJRmk4VE8wUlU5NVpFU1RBUDVsV3lHbUxmSVZqcWxBMXNXLU9BWFFoRU9kY21kM1hxYzliVTlCdGFnTi1DenZwa1p5aC02aW9ZdHFDQjE2TzdubW5BWkhjTVR3cXptUVVqZGZkMEhXMFJtdWZpNDN30gFWQVVfeXFMTl9DWVJKMGZmM0FtdWRZQURLNFRKUkpjY1ZmSDZsa0JlamxvQUlWOTEwMTU0MTV4UHlyNVhTSDR2Z3pWcEQ0eGRqV3JseUp1RC1mRFFzOWc?oc=5",
+    "event_uid": "evt_b40a9119a4691ad235a5",
+    "evidence_urls": [
+      "https://dunyanews.tv/en/Technology/984157-pakistan-may-face-slower-internet-speed-until-december-6-as-cable-repa"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, located approximately 11 kilometres off Pakistan's coast. According to the regulator, the fault could affect internet service quality and cause intermittent connectivity problems.",
+    "original_text_zh": "这一进展是在巴基斯坦电信管理局（PTA）报告位于巴基斯坦海岸约11公里处的SEA-ME-WE 5（SMW5）国际海底电缆系统出现故障之后发生的。据监管机构称，该故障可能会影响互联网服务质量并导致间歇性连接问题。",
+    "published_date": "2026-11-22",
+    "raw_data": {
+      "article": {
+        "content": "Updated on 22 Nov 26, 13:20:17 UTC Summary Transworld Associates has informed its customers that repair operations on the damaged cable system are underway, with December 6 set as the tentative date for completion KARACHI (Web Desk) - Internet users across Pakistan may continue to experience slower browsing speeds and intermittent connectivity, particularly during peak hours, as repair work on an affected international submarine cable is expected to be completed by December 6. Internet service provider Transworld Associates has informed its customers that repair operations on the damaged cable system are underway, with December 6 set as the tentative date for completion. In an email to customers, the company said the maintenance work was being carried out following its earlier notification issued on November 18, 2026. “Repair operations for the affected international submarine cable system are actively underway,” Transworld said, adding that a maintenance window had also been scheduled to allow technical teams to address the fault. The company said alternative routing arrangements had been put in place to maintain internet connectivity during the maintenance period. However, users may experience reduced speeds when internet traffic increases during peak hours. ️ Confirmed: Network data show a decline in internet connectivity in #Pakistan resulting in slow service. The incident is consistent with a fault on the SMW5 international subsea cable system with operators now attempting to establish alternative routes. https://t.co/XvdnzLD1Ac — NetBlocks (@netblocks) November 18, 2026 The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, located approximately 11 kilometres off Pakistan's coast. According to the regulator, the fault could affect internet service quality and cause intermittent connectivity problems. Transworld Associates was coordinating with the SMW5 consortium to locate the fault and determine the restoration timeline. Internet monitoring organisation NetBlocks also reported a decline in Pakistan's internet connectivity, linking the disruption to the SMW5 cable fault. Pakistan relies on seven international submarine cable systems for global internet connectivity. These undersea cables carry data between countries and continents, making them essential to the country's telecommunications infrastructure.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaXFaZ3hBQUlXZFQ0QTNQa21PMlA5V0F0TmMybEJuOU5SU2tESGN3akUxdkJDUkYxMC12VjVhUHpWblZJRmk4VE8wUlU5NVpFU1RBUDVsV3lHbUxmSVZqcWxBMXNXLU9BWFFoRU9kY21kM1hxYzliVTlCdGFnTi1DenZwa1p5aC02aW9ZdHFDQjE2TzdubW5BWkhjTVR3cXptUVVqZGZkMEhXMFJtdWZpNDN30gFWQVVfeXFMTl9DWVJKMGZmM0FtdWRZQURLNFRKUkpjY1ZmSDZsa0JlamxvQUlWOTEwMTU0MTV4UHlyNVhTSDR2Z3pWcEQ0eGRqV3JseUp1RC1mRFFzOWc?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-22",
+        "queue_id": "6e88032231c1e83a3d736935ef3690ff",
+        "source": "Google News",
+        "title": "Pakistan may face slower internet speed until December 6 as cable repair continues",
+        "url": "https://dunyanews.tv/en/Technology/984157-pakistan-may-face-slower-internet-speed-until-december-6-as-cable-repa"
+      },
+      "extracted": {
+        "accident_location": "approximately 11 kilometres off Pakistan's coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "The development comes after the Pakistan Telecommunication Authority (PTA) reported a fault in the SEA-ME-WE 5 (SMW5) international submarine cable system, located approximately 11 kilometres off Pakistan's coast. According to the regulator, the fault could affect internet service quality and cause intermittent connectivity problems.",
+        "original_text_zh": "这一进展是在巴基斯坦电信管理局（PTA）报告位于巴基斯坦海岸约11公里处的SEA-ME-WE 5（SMW5）国际海底电缆系统出现故障之后发生的。据监管机构称，该故障可能会影响互联网服务质量并导致间歇性连接问题。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Pakistan may face slower internet speed until December 6 as cable repair continues",
+    "updated_at": "2026-11-22T16:27:44+00:00",
+    "url": "https://dunyanews.tv/en/Technology/984157-pakistan-may-face-slower-internet-speed-until-december-6-as-cable-repa",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "approximately 11 kilometres from Pakistan’s coast",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
