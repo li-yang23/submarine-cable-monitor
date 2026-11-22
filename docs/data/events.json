@@ -1,6 +1,59 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "roughly 11 kilometers off Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5 (SMW5)",
+    "created_at": "2026-11-22T07:07:57+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPellBaVd0bDNiU3N3WlFXNF92SjhWZFpodXo5S2xFNk45R01RWFJoNzUtdVpOM3hEaDJWSUlnOVd0Rm11TjZ0cUx6dHVpaHFzSmQtc3lGVlJ3cUloZ3hJUGZMYjhOUTZPU29QQXZQYV9kMGY4WVlid3p2VW1mb0p6WkhGRkRxZw?oc=5",
+    "event_uid": "evt_75566bf5775f3f91560b",
+    "evidence_urls": [
+      "https://digitalpakistan.pk/submarine-cable-repairs-set-for-december-completion/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The service disruption stems from a subsea fault detected earlier this week along the SEA-ME-WE 5 (SMW5) submarine cable system roughly 11 kilometers off Pakistan’s coast.",
+    "original_text_zh": "服务中断源于本周早些时候在巴基斯坦海岸约11公里处发现的SEA-ME-WE 5 (SMW5)海底电缆系统的海底故障。",
+    "published_date": "2026-11-22",
+    "raw_data": {
+      "article": {
+        "content": "Pakistan and Russia to Discuss Bilateral Payment Mechanism in Moscow November 21, 2026 Submarine Cable Repairs Set for December Completion Published by Aman Jamal on November 22, 2026 Categories Industry Tags A Pakistani internet provider expects repairs on the damaged SMW5 submarine cable to conclude by December 6, prolonging peak-hour slowdowns. Internet users across Pakistan are poised to endure continued bandwidth throttling and intermittent connectivity disruptions until at least December 6, following formal customer advisories from a major domestic broadband provider regarding prolonged repair operations on a damaged international undersea fiber-optic cable. The service disruption stems from a subsea fault detected earlier this week along the SEA-ME-WE 5 (SMW5) submarine cable system roughly 11 kilometers off Pakistan’s coast. According to operational updates issued to subscribers, specialized marine maintenance teams are coordinating with international consortium partners to isolate and splice the damaged segment, with December 6 designated as the tentative restoration deadline. Following the fault, independent network telemetry from Cloudflare Radar registered an acute 36 percent decline in domestic HTTP data traffic, while internet monitoring observatory NetBlocks confirmed widespread national connectivity degradation. To mitigate complete blackouts, telecommunications operator Transworld Associates and the Pakistan Telecommunication Authority (PTA) have rerouted international data streams through alternative undersea corridors, though congestion remains acute during evening peak hours. The extended timeline poses significant operational challenges for Pakistan’s rapidly expanding digital economy, particularly remote software engineers, independent freelancers, business process outsourcing hubs, and e-commerce merchants reliant on stable low-latency international links. Industry observers noted that recurring subsea outages highlight the fragility of Pakistan’s external bandwidth infrastructure, which relies on seven undersea cable systems to handle surging domestic data consumption. While interim traffic balancing maintains baseline web access, telecom engineers caution that full throughput will remain constrained until marine repair vessels complete physical splicing in early December, underscoring the urgent need for redundant terrestrial routes and diversified subsea landings to insulate Pakistan’s IT sector from future maritime cable disruptions. Share 0 Aman Jamal A business major, a foodie, a footy, and sometimes a cook. Life has me cooked so hard that you'd find me near the stove more than the medical store. Oh also, I tend to roast myself before anyone else can.",
+        "discovered_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPellBaVd0bDNiU3N3WlFXNF92SjhWZFpodXo5S2xFNk45R01RWFJoNzUtdVpOM3hEaDJWSUlnOVd0Rm11TjZ0cUx6dHVpaHFzSmQtc3lGVlJ3cUloZ3hJUGZMYjhOUTZPU29QQXZQYV9kMGY4WVlid3p2VW1mb0p6WkhGRkRxZw?oc=5",
+        "keyword": "subsea cable disruption",
+        "published_date": "2026-11-22",
+        "queue_id": "1c0fe7f9072aa94d2ec3b3697d989302",
+        "source": "Google News",
+        "title": "Submarine Cable Repairs Set for December Completion",
+        "url": "https://digitalpakistan.pk/submarine-cable-repairs-set-for-december-completion/"
+      },
+      "extracted": {
+        "accident_location": "roughly 11 kilometers off Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5 (SMW5)",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "The service disruption stems from a subsea fault detected earlier this week along the SEA-ME-WE 5 (SMW5) submarine cable system roughly 11 kilometers off Pakistan’s coast.",
+        "original_text_zh": "服务中断源于本周早些时候在巴基斯坦海岸约11公里处发现的SEA-ME-WE 5 (SMW5)海底电缆系统的海底故障。",
+        "reason": null,
+        "repair_date": "2026-12-06"
+      }
+    },
+    "reason": "",
+    "repair_date": "2026-12-06",
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5 (SMW5)",
+    "title": "Submarine Cable Repairs Set for December Completion",
+    "updated_at": "2026-11-22T07:07:57+00:00",
+    "url": "https://digitalpakistan.pk/submarine-cable-repairs-set-for-december-completion/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "approximately 11 kilometres from Pakistan’s coast",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
