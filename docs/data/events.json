@@ -1,6 +1,59 @@
 [
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "about 11 kilometres from Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-23T14:58:28+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaXNFUklvVWIzamlaWDlsdWR2OU1BdXNqc0U5OU1FQ19pWmFJamtlTkNZcjhieDV6enoweWp5X3IyZGNwZUhCMjRyeDZnN3U4WjJ0dlhaZ1c1YzZjNzNqUnplRjFBaTA3bDd3UGRGazZWWklRejQ2aGpiSFhYdmtwOWp2cWxGMS1fcHhRdUZ3a093Sllza2x0VkhnZw?oc=5",
+    "event_uid": "evt_67195cb23e216a07bb8b",
+    "evidence_urls": [
+      "https://www.24newshd.tv/23-Nov-2026/internet-disruption-likely-submarine-cable-repair-continues"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "The Pakistan Telecommunication Authority (PTA) that a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, about 11 kilometres from Pakistan’s coast.",
+    "original_text_zh": "巴基斯坦电信管理局（PTA）报告称，在距离巴基斯坦海岸约11公里处的SEA-ME-WE 5（SMW5）国际海底电缆系统中发现故障。",
+    "published_date": "2026-11-23",
+    "raw_data": {
+      "article": {
+        "content": "C24-UR C41 C42 UK44 Rohi SUBMIT BLOG/ VLOG latest Jensen Huang's returns as CEO, President of Nvidia Dangerous WhatsApp security vulnerabilities prompt national cyber alert Opposition demanding fundamental rights guaranteed to prisoners: Yousafzai Israel defence minister says police, not army, should handle settler violence Mohsin Naqvi briefs PM Shehbaz on law and order situation Internet disruption likely as submarine cable repair continues Published: 09:47 AM, 23 Nov, 2026 Latest , Topics , Science & Tech Caption: Representational image. News Desk Internet service provider Transworld Associates has said repair work on an affected international submarine cable is expected to be completed by December 6, 2026, reported 24NewsHD TV channel on Monday. The company said repair operations were actively underway and that the tentative timeline for completion was December 6, 2026. “Further to our earlier notice on Nov 18, 2026, repair operations for the affected international submarine cable system are actively underway,” the company said. Transworld said it had also scheduled a maintenance window during which its technical teams would address the existing cable issue. It added that alternative routing arrangements had been made to maintain connectivity during the maintenance activity. The development follows an earlier announcement by the Pakistan Telecommunication Authority (PTA) that a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, about 11 kilometres from Pakistan’s coast. The regulator warned that the fault could cause intermittent connectivity issues and a decline in service quality for some internet users. The PTA had said Transworld Associates was coordinating with the SMW5 consortium to identify the fault and determine the estimated time for restoration. Meanwhile, internet traffic was being rerouted through alternative international links to minimise disruption and maintain service continuity, the regulator had added. Internet monitoring organisation NetBlocks had also reported a decline in connectivity in Pakistan, saying the incident was consistent with a fault in the SMW5 international subsea cable system. Categories : Latest , Topics , Science & Tech Tags : News Desk",
+        "discovered_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaXNFUklvVWIzamlaWDlsdWR2OU1BdXNqc0U5OU1FQ19pWmFJamtlTkNZcjhieDV6enoweWp5X3IyZGNwZUhCMjRyeDZnN3U4WjJ0dlhaZ1c1YzZjNzNqUnplRjFBaTA3bDd3UGRGazZWWklRejQ2aGpiSFhYdmtwOWp2cWxGMS1fcHhRdUZ3a093Sllza2x0VkhnZw?oc=5",
+        "keyword": "subsea cable disruption",
+        "published_date": "2026-11-23",
+        "queue_id": "2f1635a0c110144df25a6e75922118f0",
+        "source": "Google News",
+        "title": "Internet disruption likely as submarine cable repair continues",
+        "url": "https://www.24newshd.tv/23-Nov-2026/internet-disruption-likely-submarine-cable-repair-continues"
+      },
+      "extracted": {
+        "accident_location": "about 11 kilometres from Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "The Pakistan Telecommunication Authority (PTA) that a fault had been reported in the SEA-ME-WE 5 (SMW5) international submarine cable system, about 11 kilometres from Pakistan’s coast.",
+        "original_text_zh": "巴基斯坦电信管理局（PTA）报告称，在距离巴基斯坦海岸约11公里处的SEA-ME-WE 5（SMW5）国际海底电缆系统中发现故障。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Internet disruption likely as submarine cable repair continues",
+    "updated_at": "2026-11-23T14:58:28+00:00",
+    "url": "https://www.24newshd.tv/23-Nov-2026/internet-disruption-likely-submarine-cable-repair-continues",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "roughly 11 kilometers off Pakistan’s coast",
     "accident_type": "Limit",
     "affected_area": "Pakistan",
@@ -1015,9 +1068,10 @@
     "cable_name": "SMW5",
     "created_at": "2026-11-19T13:33:25+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5jSkFlQmt3SjYyYllGSm1HZVFsdVVURENRYVZoc1lXOHljaVlBT3RycTZweWhOczl1cWxWdkFhR1NnTEppQ1dZRXR6Um_SAUxBVV95cUxOY0pBZUJrd0o2MmJZRkptR2VRbHVVVERDUWFWaHNZVzh5Y2lZQU90cnE2cHloTnM5dXFsVnZBYUdTZ0xKaUNXWUV0elJv?oc=5",
-    "duplicate_count": 2,
+    "duplicate_count": 3,
     "event_uid": "evt_e94ab134413ff2a003d3",
     "evidence_urls": [
+      "https://english.aaj.tv/news/330481218/pakistan-internet-smw5-submarine-cable-fault-pta-update-aaj-news",
       "https://english.aaj.tv/news/330481251/pakistan-internet-smw5-submarine-cable-fault-pta-update-internet-issues-aaj-news",
       "https://www.aaj.tv/news/amp/30526161",
       "https://www.aaj.tv/news/amp/30526200"
@@ -1059,7 +1113,7 @@
     ],
     "submarine_name": "SMW5",
     "title": "Aaj News",
-    "updated_at": "2026-11-19T13:35:35+00:00",
+    "updated_at": "2026-11-23T15:02:27+00:00",
     "url": "https://www.aaj.tv/news/amp/30526200",
     "verification_status": "rule_verified"
   },
