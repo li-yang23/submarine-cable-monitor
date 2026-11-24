@@ -1500,6 +1500,7 @@
     "cable_name": "SMW5",
     "created_at": "2026-11-19T23:10:01+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU0lYOGRKcExDaWdGbmg2NGpfcE1MVUtzSWd2SGVpVjRxSW1rd0xxWGNQTTlzUzV6NWUyc2F1RXM0N3lDNVpuYThkTHVqbFNZXzc1M2puVDBPV2owWWxITE5VQzNEOWs2NDZnZ3kyZGJFNjVidXNHS1JKQ1o4SkZMQ2RpM0JjemY3NFhtUk1IdFdwZGhOblBBSHBXeDJESHRBbV92a1pSako0enRaSXlsbF9B0gGyAUFVX3lxTE9TSVg4ZEpwTENpZ0ZuaDY0al9wTUxVS3NJZ3ZIZWlWNHFJbWt3THFYY1BNOXNTNXo1ZTJzYXVFczQ3eUM1Wm5hOGRMdWpsU1lfNzUzam5UME9XajBZbEhMTlVDM0Q5azY0NmdneTJkYkU2NWJ1c0dLUkpDWjhKRkxDZGkzQmN6Zjc0WG1STUh0V3BkaE5uUEFIcFd4MkRIdEFtX3ZrWlJqSjR6dFpJeWxsX0E?oc=5",
+    "duplicate_count": 1,
     "event_uid": "evt_4aad59f2708162ca712d",
     "evidence_urls": [
       "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/amp/"
@@ -1541,7 +1542,7 @@
     ],
     "submarine_name": "SMW5",
     "title": "Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage",
-    "updated_at": "2026-11-19T23:10:01+00:00",
+    "updated_at": "2026-11-24T15:03:34+00:00",
     "url": "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/amp/",
     "verification_status": "rule_verified"
   },
@@ -1659,9 +1660,10 @@
     "cable_name": "SEA-ME-WE 5",
     "created_at": "2026-11-19T13:35:18+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdFAtcTZSaG95Y3dYMFNfdnNHNHNwRXBJel9RczlXYnFMTTcwQUZGLU1JRFdDbC1PNzIzeUlxaGhoRUVwWC1sLUZMSGRyRkJQclEwb3RPZjlHek54OVNldFo3OThWZ2JhZlpiX1JGaTdfLTY5UzlSdTRFdk53Zml4U0c3NDNTY3BFQ2d0YWxsN2g4eEk?oc=5",
-    "duplicate_count": 3,
+    "duplicate_count": 4,
     "event_uid": "evt_6944432b8d7601d044fe",
     "evidence_urls": [
+      "https://deeparrival.com/news/pakistan-embassy-london-nadra-suspension-november-2026/",
       "https://enews.hamariweb.com/science-and-technology-news/undersea-cable-fault-disrupts-internet-connectivity-across-pakistan/",
       "https://www.neoteo.com/en/pakistan-submarine-cable-fault-what-the-pta-reported",
       "https://www.phoneworld.com.pk/pta-internet-disruption-submarine-cable-restoration-update/",
@@ -1704,7 +1706,7 @@
     ],
     "submarine_name": "SEA-ME-WE 5",
     "title": "PTA Shares Fresh Update on Internet Disruption and Submarine Cable Restoration",
-    "updated_at": "2026-11-21T21:46:50+00:00",
+    "updated_at": "2026-11-24T15:04:09+00:00",
     "url": "https://www.phoneworld.com.pk/pta-internet-disruption-submarine-cable-restoration-update/",
     "verification_status": "rule_verified"
   },
