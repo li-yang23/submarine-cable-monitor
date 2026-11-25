@@ -2310,10 +2310,11 @@
     "cable_name": "SEA-ME-WE 5",
     "created_at": "2026-11-19T02:01:04+00:00",
     "discovered_url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE41Z18ybFN5Sl9ucTd2LTEzM0U3RDlzZWgzSzhHWUx1R1dRaXA0OGNNZ1dJT0s4V1ZFUTJfd3d5bkNHZW90VGxUVGtLb3EyajZX0gFWQVVfeXFMTmhsWkxwYkMtUzhZa25FekhDQm5vQ1dNVzFHTjlwS2hqN2xSaG9qNVpnQlQxRU50d3Qyd1ZvY1hTX3FHQjUzVElqUFllUC11MGVxQllzdmc?oc=5",
-    "duplicate_count": 1,
+    "duplicate_count": 2,
     "event_uid": "evt_4bc31321cda6a4245301",
     "evidence_urls": [
-      "https://www.brecorder.com/news/40449572/internet-users-may-face-connectivity-issues-as-submarine-cable-develops-fault-pta"
+      "https://www.brecorder.com/news/40449572/internet-users-may-face-connectivity-issues-as-submarine-cable-develops-fault-pta",
+      "https://www.brecorder.com/news/amp/40449572"
     ],
     "normalized_cable_id": "SEA-ME-WE 5",
     "occurrence_date": null,
@@ -2352,7 +2353,7 @@
     ],
     "submarine_name": "SEA-ME-WE 5",
     "title": "Internet users may face connectivity issues as submarine cable develops fault: PTA",
-    "updated_at": "2026-11-19T23:11:12+00:00",
+    "updated_at": "2026-11-25T14:39:12+00:00",
     "url": "https://www.brecorder.com/news/40449572",
     "verification_status": "rule_verified"
   },
