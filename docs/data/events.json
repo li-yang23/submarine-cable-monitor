@@ -3102,6 +3102,59 @@
   },
   {
     "TrustWorthy": "rule_verified",
+    "accident_location": "about 11 kilometres off Pakistan’s coast",
+    "accident_type": "Limit",
+    "affected_area": "internet connectivity with Pakistan",
+    "cable_name": "SEA-ME-WE 5",
+    "created_at": "2026-11-26T00:39:17+00:00",
+    "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY1NhSTBOSmJCZTJKRzJxczJLMXhuQU80SlZnLVJnZE9vMzYzZ3RNdFZGOVlVSTJDTGxubkdFTUJfT3BJZnVRMFhaYUU5WG9ZT0dJOXM0QnZ6aEdJa0wzMkhTZjBpRXZvcHpuODA0eERnZDZmV1V4eVhhMW1nRml6dEpoWnJCdFVZck5ZZGkzcDRqbjQxZnFVSlEtYm5Jd9IBowFBVV95cUxNQmNlaEZBX21uVVRCd1VKa0Y1VzZqX0hWaXZRalJHTEdfcF9sdHNmYWJ6ckF4M2tWME9xb0hMVE9uRFVDRDZEQjRZb1dPWHdYMXh5UWhmNTUzRFNpakNaUFB5Rko0SzRyWnlvdC0wTVpkLXBTaElUeDdTYmt5UWY5MkowSG1ocldINjVSWTJRQkJWX2kzSVZfb2ZHbDhpRkZ4a1Zj?oc=5",
+    "event_uid": "evt_57ac8b293f4835505b79",
+    "evidence_urls": [
+      "https://propakistani.pk/2026/11/19/pakistan-embassy-london-suspends-nadra-passport-visa-services/"
+    ],
+    "normalized_cable_id": "SEA-ME-WE 5",
+    "occurrence_date": null,
+    "original_text": "a fault in the SEA-ME-WE 5 submarine cable system, reported about 11 kilometres off Pakistan’s coast. The mission said internet connectivity and related services may experience disruption due to the fault.",
+    "original_text_zh": "SEA-ME-WE 5海底电缆系统出现故障，据报道位于巴基斯坦海岸约11公里处。该代表团表示，互联网连接和相关服务可能会因该故障而中断。",
+    "published_date": "2026-11-18",
+    "raw_data": {
+      "article": {
+        "content": "The Pakistan Embassy in London has suspended NADRA, passport and visa services until further notice after a fault in an international submarine cable affected internet connectivity with Pakistan. In a notice posted on its official X account on Wednesday, the Pakistan High Commission in London said the services would remain temporarily suspended because of a fault in the SEA-ME-WE 5 submarine cable system, reported about 11 kilometres off Pakistan’s coast. The mission said internet connectivity and related services may experience disruption due to the fault. “In view of the prevailing situation, NADRA, Passport and Visa services at the Pakistan High Commission, London, will remain temporarily suspended until further notice,” the High Commission said. Attestation services will continue as usual and remain available to applicants, it added. The High Commission said it regretted any inconvenience caused and asked applicants for their patience and understanding. Further updates will be shared as soon as normal connectivity and services are restored, the notice said. The suspension follows a Pakistan Telecommunication Authority warning that the same cable fault may cause intermittent connectivity and slower internet speeds for some users in Pakistan. Stay Connected with ProPakistani Get the latest international news and global stories wherever you prefer. Follow on Google Discover Add as a preferred Source on Google Follow on Google News Join WhatsApp See more ProPakistani stories in Google Search and Top Stories. ProPK Staff 0 Shares",
+        "discovered_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY1NhSTBOSmJCZTJKRzJxczJLMXhuQU80SlZnLVJnZE9vMzYzZ3RNdFZGOVlVSTJDTGxubkdFTUJfT3BJZnVRMFhaYUU5WG9ZT0dJOXM0QnZ6aEdJa0wzMkhTZjBpRXZvcHpuODA0eERnZDZmV1V4eVhhMW1nRml6dEpoWnJCdFVZck5ZZGkzcDRqbjQxZnFVSlEtYm5Jd9IBowFBVV95cUxNQmNlaEZBX21uVVRCd1VKa0Y1VzZqX0hWaXZRalJHTEdfcF9sdHNmYWJ6ckF4M2tWME9xb0hMVE9uRFVDRDZEQjRZb1dPWHdYMXh5UWhmNTUzRFNpakNaUFB5Rko0SzRyWnlvdC0wTVpkLXBTaElUeDdTYmt5UWY5MkowSG1ocldINjVSWTJRQkJWX2kzSVZfb2ZHbDhpRkZ4a1Zj?oc=5",
+        "keyword": "submarine cable fault",
+        "published_date": "2026-11-18",
+        "queue_id": "a7de59b6de4bb81f098fc22c7be1ad62",
+        "source": "Google News",
+        "title": "Pakistan Embassy in London Suspends NADRA, Passport and Visa Services Indefinitely",
+        "url": "https://propakistani.pk/2026/11/19/pakistan-embassy-london-suspends-nadra-passport-visa-services/"
+      },
+      "extracted": {
+        "accident_location": "about 11 kilometres off Pakistan’s coast",
+        "accident_type": "Limit",
+        "affected_area": "internet connectivity with Pakistan",
+        "cable_name": "SEA-ME-WE 5",
+        "occurrence_date": null,
+        "occurrence_date_evidence": "",
+        "original_text": "a fault in the SEA-ME-WE 5 submarine cable system, reported about 11 kilometres off Pakistan’s coast. The mission said internet connectivity and related services may experience disruption due to the fault.",
+        "original_text_zh": "SEA-ME-WE 5海底电缆系统出现故障，据报道位于巴基斯坦海岸约11公里处。该代表团表示，互联网连接和相关服务可能会因该故障而中断。",
+        "reason": null,
+        "repair_date": null
+      }
+    },
+    "reason": "",
+    "repair_date": null,
+    "source": "Google News",
+    "sources": [
+      "Google News"
+    ],
+    "submarine_name": "SEA-ME-WE 5",
+    "title": "Pakistan Embassy in London Suspends NADRA, Passport and Visa Services Indefinitely",
+    "updated_at": "2026-11-26T00:39:17+00:00",
+    "url": "https://propakistani.pk/2026/11/19/pakistan-embassy-london-suspends-nadra-passport-visa-services/",
+    "verification_status": "rule_verified"
+  },
+  {
+    "TrustWorthy": "rule_verified",
     "accident_location": "",
     "accident_type": "Fluctuate",
     "affected_area": "",
