@@ -9703,7 +9703,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "AAG",
       "url": "https://www.submarinenetworks.com/en/systems/trans-pacific/aag/aag-cable-down-offshore-vietnam-on-april-3",
-      "last_seen_at": "2026-11-25T00:53:47.945134+00:00",
+      "last_seen_at": "2026-11-26T14:01:07.409090+00:00",
       "last_attempt_at": "2026-10-14T17:24:13.048336+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:13.532186+00:00",
@@ -9719,7 +9719,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "AAG",
       "url": "https://www.submarinenetworks.com/en/systems/trans-pacific/aag/aag-cable-cut-offshore-vietnam-on-jan-5",
-      "last_seen_at": "2026-11-25T00:53:47.968101+00:00",
+      "last_seen_at": "2026-11-26T14:01:07.436172+00:00",
       "last_attempt_at": "2026-10-14T17:24:13.541893+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:14.714511+00:00",
@@ -9735,7 +9735,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "AAG",
       "url": "https://www.submarinenetworks.com/en/systems/trans-pacific/aag/aag-cable-cut-again-while-repairing",
-      "last_seen_at": "2026-11-25T00:53:47.991069+00:00",
+      "last_seen_at": "2026-11-26T14:01:07.463062+00:00",
       "last_attempt_at": "2026-10-14T17:24:14.722422+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:15.513612+00:00",
@@ -9751,7 +9751,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "AAG",
       "url": "https://www.submarinenetworks.com/en/systems/trans-pacific/aag/aag-cable-cuts-incur-blames-on-its-poor-design-in-vietnam",
-      "last_seen_at": "2026-11-25T00:53:48.013998+00:00",
+      "last_seen_at": "2026-11-26T14:01:07.490161+00:00",
       "last_attempt_at": "2026-10-14T17:24:15.521408+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:16.709062+00:00",
@@ -9767,7 +9767,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "AAG",
       "url": "https://www.submarinenetworks.com/en/systems/trans-pacific/aag/aag-cable-cut-rockets-submarinenetworks-in-vietnam",
-      "last_seen_at": "2026-11-25T00:53:48.037095+00:00",
+      "last_seen_at": "2026-11-26T14:01:07.517018+00:00",
       "last_attempt_at": "2026-10-14T17:24:16.729355+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:17.830212+00:00",
@@ -9783,7 +9783,7 @@
       "initial_since": "2026-09-30",
       "cable_name": "APG",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/apg/aae-1-and-apg-submarine-cables-disrupted,-impacting-vietnam’s-internet",
-      "last_seen_at": "2026-11-25T14:36:33.169295+00:00",
+      "last_seen_at": "2026-11-26T14:02:15.457292+00:00",
       "last_attempt_at": "2026-10-14T17:24:17.838307+00:00",
       "reason": "outside_initial_window",
       "completed_at": "2026-10-14T17:24:18.716810+00:00",
@@ -16651,42 +16651,40 @@
       "http_status": null,
       "next_attempt_at": null,
       "cross_source": {
-        "last_attempt_at": "2026-11-06T07:02:34.078668+00:00",
-        "next_search_at": "2026-11-07T07:02:34.078668+00:00",
-        "attempts": 2,
+        "last_attempt_at": "2026-11-26T14:05:01.739636+00:00",
+        "next_search_at": "2026-11-27T14:05:01.739636+00:00",
+        "attempts": 3,
         "original_failure_reason": "short_content",
         "original_full_text_read": false,
         "sources": [
           {
-            "url": "https://www.submarinenetworks.com/en/nv/insights/uk-publishes-landmark-white-paper-overhauling-undersea-cable-and-pipeline-security-laws",
-            "title": "Insights",
-            "published_date": "2026-10-24",
-            "publisher_group": "submarine-networks",
-            "content_length": 7038,
-            "content_sha256": "bad3f4542269c2428bfaf9cb616528abd301cdd046e186f755bd29fd34e19733"
+            "url": "https://www.bbc.com/news/articles/cmn4en883jk0o",
+            "title": "Electricity link could be restored next month ahead of winter peak",
+            "published_date": "2026-11-02",
+            "publisher_group": "bbc",
+            "content_length": 1943,
+            "content_sha256": "c4b4f06a6d3b5ca358cb25eebaa2477b991ade6d4f3b1c8f95db37150b4878c9"
+          },
+          {
+            "url": "https://www.bbc.co.uk/news/articles/cm0ld2rryd2yo",
+            "title": "Fault on key electricity link ahead of winter peak",
+            "published_date": "2026-10-31",
+            "publisher_group": "bbc",
+            "content_length": 2442,
+            "content_sha256": "6739f582dc979c93c0d7126b3ad037363774315eaf8f6101682cac046eb8a13e"
           }
         ],
         "reason": "insufficient_sources",
-        "unavailable_sources": [
-          {
-            "url": "https://www.reuters.com/world/middle-east/iran-has-detailed-plans-hit-gulf-undersea-cables-if-war-resumes-officials-say-2026-10-23/",
-            "discovered_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOc28yS2Z0aVExaE1CeEZtYURTUG5NMDBhZnVidVctdjJZak1tMk5oQy1aU0dlQzBJbEV2SWlUdUdxNC1YMngyZEhLM0l3ZmI5dEliUjRPNVdsSnV2QWV2TS1TNVhaN2RTYlpSaEFCMjFHRGs5Z29Cek10c1BfUEZROHpjd2NIRHFfNEhLUGdhbDBXQ2hfXzUtc0daeHZPRlpoTXo5TjlvTVZuWXgwVmtEbG5jemZUWDRvRDJvWVQxb3VKdzZucnBlUEhPZw?oc=5",
-            "title": "Iran has detailed plans to hit Gulf undersea cables if war resumes, officials say - Reuters",
-            "parent_queue_id": "68a2342a2011cd0fc5c47f2502343c20",
-            "reason": "alternative_unavailable",
-            "error_type": "HTTPError",
-            "http_status": 401
-          }
-        ],
+        "unavailable_sources": [],
         "fetch_failures": [],
         "queries": [
           "Britain s energy sector is vulnerable to sabotage Subsea infrastructure a weak point after:2026-10-08 before:2026-11-06",
           "Britain (submarine OR subsea OR undersea) (outage OR disruption OR fault) after:2026-10-08 before:2026-11-06"
         ],
-        "evidence_fingerprint": "c1aec5afa18a027e7c5c4ea2b3504c671cbd7ba96cadec28ec7e65fa13030c38",
+        "evidence_fingerprint": "a4b78887ee7b5f10d5d4585be7c3f9db0825ee8ef0239cf13f7061d76863c203",
         "unchanged_evidence_attempts": 1
       },
-      "review_at": "2026-11-06T07:02:38.294423+00:00",
+      "review_at": "2026-11-26T14:05:04.748763+00:00",
       "force_retry": false
     },
     "87f3ac55902cf53ba3a3e855f40212cd": {
@@ -21628,7 +21626,8 @@
         "96f40a9f4ddfe58b857c35080439ab55",
         "4160a28280da7c25783b4c4dc9e67851",
         "e7cc19b481ec02744e92b73089beaa3a",
-        "6d02ca6c9f35bbd4711ab7765cf27238"
+        "6d02ca6c9f35bbd4711ab7765cf27238",
+        "e3881f95eb8324d49288438faac90b50"
       ],
       "last_attempt_at": "2026-10-30T06:02:05.869178+00:00",
       "candidate_reviews": [
@@ -25922,15 +25921,70 @@
           "evidence_excerpt": "According to the court’s findings, the ship dragged its anchor chain along the seabed for about 130 kilometers (81 miles) over several hours on the morning of New Year’s Eve, damaging two subsea telecommunications cables. The incident also posed a risk to seven other telecommunications and power cables and a gas pipeline, the court found.",
           "date_evidence_excerpt": "on the morning of New Year’s Eve",
           "outcome": "rejected",
-          "reason": "unnamed_missing_date"
+          "reason": "unnamed_missing_date",
+          "cross_source": {
+            "last_attempt_at": "2026-11-26T14:04:42.356290+00:00",
+            "next_search_at": "2026-11-27T14:04:42.356290+00:00",
+            "attempts": 1,
+            "original_failure_reason": "candidates_rejected",
+            "original_full_text_read": false,
+            "sources": [
+              {
+                "url": "https://www.bbc.com/news/articles/c62040np372o",
+                "title": "Finnish police seize ship suspected of sabotaging undersea cable",
+                "published_date": "2025-12-31",
+                "publisher_group": "bbc",
+                "content_length": 4280,
+                "content_sha256": "2e5ad959f9ff8efac227c096a04b4d33a76aa69d1346587242c370f2608b2323"
+              },
+              {
+                "url": "https://www.theguardian.com/world/2025/dec/31/finnish-police-seize-vessel-suspected-damaging-underwater-cable",
+                "title": "Finnish police seize vessel suspected of damaging underwater cable",
+                "published_date": "2025-12-31",
+                "publisher_group": "guardian",
+                "content_length": 4869,
+                "content_sha256": "bcdfcce0b734b8506beae1d0037224eaca6421f2775acbee9ea8a312f69b6daa"
+              }
+            ],
+            "reason": "cable_identity_not_supported",
+            "unavailable_sources": [
+              {
+                "url": "https://www.reuters.com/world/finland-suspects-ship-causing-undersea-cable-damage-president-says-2025-12-31/",
+                "discovered_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZGRHRHlON0U2dHMxd3VTSGIxR3lwa2dvM1dHdTU3UWJGUVZOMjJOM09BbEFBaUt4YXdselB1N3RKZkRCSzVYZXhPOTZvRXhpejZqdHVKOVd0YmsxRGVxalliRmdja1QzOXplcnRQOEZyOFZwTFdEcTlrQ1FyUWpVbjhleXowa1B2Sl9hY3R6N1hnVGZJTVlCUVNraWNIUVc1Rlc4UjRVUlM0R0Zn?oc=5",
+                "title": "Finland seizes ship sailing from Russia after suspected cable sabotage in Baltic Sea - Reuters",
+                "parent_queue_id": "e3881f95eb8324d49288438faac90b50",
+                "reason": "alternative_unavailable",
+                "error_type": "HTTPError",
+                "http_status": 401
+              }
+            ],
+            "fetch_failures": [],
+            "queries": [
+              "Gulf of Finland According to the court s findings ship dragged its anchor chain after:2025-11-16 before:2026-02-15",
+              "Gulf Finland According (submarine OR subsea OR undersea) (outage OR disruption OR fault) "
+            ],
+            "evidence_fingerprint": "086eccfc52dbc9614f68f0e845f70dc998952001ccf664c90e305074fa778bdd",
+            "last_review_fingerprint": "086eccfc52dbc9614f68f0e845f70dc998952001ccf664c90e305074fa778bdd",
+            "unchanged_evidence_attempts": 1
+          },
+          "recovery": {
+            "status": "review",
+            "reason": "cable_identity_not_supported",
+            "last_attempt_at": "2026-11-26T14:04:42.356290+00:00"
+          }
         }
       ],
       "candidate_review_count": 1,
       "candidate_reviews_truncated": false,
-      "reason": "candidates_rejected",
-      "review_at": "2026-11-06T07:02:30.669769+00:00",
+      "reason": "candidate_evidence_incomplete",
+      "review_at": "2026-11-26T14:05:01.684587+00:00",
       "next_attempt_at": null,
-      "force_retry": false
+      "force_retry": false,
+      "cross_source": {
+        "last_attempt_at": "2026-11-26T14:04:42.356163+00:00",
+        "next_search_at": "2026-11-27T14:04:42.356163+00:00",
+        "reason": "candidate_evidence_incomplete"
+      }
     },
     "ffc8e29275040d69efcbd6cae9744c3f": {
       "queue_id": "ffc8e29275040d69efcbd6cae9744c3f",
@@ -26646,7 +26700,7 @@
       ],
       "title": "Chile Navy, Operators Sign Cable Protection Agreement - SubTel Forum",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.595248+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.144085+00:00",
       "last_attempt_at": "2026-11-10T02:50:27.808855+00:00",
       "url": "https://subtelforum.com/chile-navy-operators-sign-cable-protection-agreement/",
       "availability_attempts": 2,
@@ -27888,7 +27942,7 @@
       "queries": [
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:24.406663+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.980553+00:00",
       "last_attempt_at": "2026-11-12T22:21:13.628441+00:00",
       "url": "https://subtelforum.com/uk-announces-90-million-atlantic-net-framework/",
       "candidate_reviews": [],
@@ -27913,7 +27967,7 @@
       "queries": [
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:24.520375+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.062870+00:00",
       "last_attempt_at": "2026-11-12T22:21:26.443423+00:00",
       "url": "https://subtelforum.com/zayo-activates-monet-route-between-u-s-and-brazil/",
       "candidate_reviews": [],
@@ -27938,7 +27992,7 @@
       "queries": [
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-25T14:34:24.905305+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.089793+00:00",
       "last_attempt_at": "2026-11-12T22:21:48.716654+00:00",
       "url": "https://subtelforum.com/vodafonethree-plans-scotland-norway-cable-study/",
       "candidate_reviews": [
@@ -28137,7 +28191,7 @@
       "source": "Google News",
       "title": "Subsea Cable Connectivity and Regional Cooperation in the Gulf - ORF Middle East",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-26T00:31:21.769392+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.634067+00:00",
       "last_attempt_at": "2026-11-13T16:36:21.008951+00:00",
       "url": "https://orfme.org/expert-speak/subsea-cable-connectivity-and-regional-cooperation-in-the-gulf/",
       "candidate_reviews": [
@@ -28185,7 +28239,7 @@
       "source": "Google News",
       "title": "Inside Europe’s Risky Plan for an Arctic Internet Lifeline - IEEE Spectrum",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-25T00:52:13.281591+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.736958+00:00",
       "last_attempt_at": "2026-11-13T16:37:06.390244+00:00",
       "url": "https://spectrum.ieee.org/undersea-cables-arctic-european-commission",
       "candidate_reviews": [],
@@ -28477,7 +28531,7 @@
       ],
       "keyword": "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)",
       "title": "EXA Infrastructure Selects IT International Telecom for Marine Installation of EXA Meridian - Submarine Networks",
-      "last_seen_at": "2026-11-26T00:31:23.611972+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.290715+00:00",
       "last_attempt_at": "2026-11-14T11:40:12.155518+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/trans-atlantic/meridian/exa-infrastructure-selects-it-international-telecom-for-marine-installation-of-exa-meridian",
       "candidate_reviews": [],
@@ -28502,7 +28556,7 @@
       ],
       "keyword": "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)",
       "title": "European Commission Mobilized up to €623 million for Digital Connectivity with Central Asia - Submarine Networks",
-      "last_seen_at": "2026-11-26T00:31:23.724535+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.372661+00:00",
       "last_attempt_at": "2026-11-15T15:46:22.517963+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/european-commission-mobilized-up-to-%E2%82%AC623-million-for-digital-connectivity-with-central-asia",
       "availability_attempts": 1,
@@ -28530,7 +28584,7 @@
       ],
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "title": "Stavian and Midas Sign Digital Infrastructure MOU - SubTel Forum",
-      "last_seen_at": "2026-11-26T00:31:24.669768+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.198562+00:00",
       "last_attempt_at": "2026-11-14T11:40:50.938754+00:00",
       "url": "https://subtelforum.com/stavian-and-midas-sign-digital-infrastructure-mou/",
       "candidate_reviews": [],
@@ -28580,7 +28634,7 @@
       "initial_since": "2026-10-31",
       "source": "Google News",
       "keyword": "submarine cable outage",
-      "last_seen_at": "2026-11-26T00:31:19.400289+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.601108+00:00",
       "last_attempt_at": "2026-11-14T18:19:56.035304+00:00",
       "url": "https://entarabi.com/en/2026/11/severed-internet-cables-how-do-they-threaten-the-digital-economy-and-the/",
       "candidate_reviews": [
@@ -28888,7 +28942,7 @@
       "initial_since": "2026-11-01",
       "source": "Google News",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-25T00:52:13.388161+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.195469+00:00",
       "last_attempt_at": "2026-11-15T06:50:28.224060+00:00",
       "url": "https://uknip.co.uk/news/uk/uk-news/iran-threatens-to-sever-undersea-internet-cables-in-strait-of-hormuz-as-fears-grow-over-global-communications/",
       "candidate_reviews": [],
@@ -29355,7 +29409,7 @@
         "subsea cable disruption"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:21.882945+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.716254+00:00",
       "last_attempt_at": "2026-11-16T06:52:03.193113+00:00",
       "url": "https://www.moneycontrol.com/news/telecom/india-plans-new-subsea-cable-landing-sites-on-east-coast-to-reduce-west-asia-risks-14080808.html",
       "candidate_reviews": [],
@@ -29380,7 +29434,7 @@
         "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.482549+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.035523+00:00",
       "last_attempt_at": "2026-11-16T06:52:07.498609+00:00",
       "url": "https://subtelforum.com/subtel-forum-issue-151-data-centers-new-technology-out-now/",
       "candidate_reviews": [],
@@ -29569,7 +29623,7 @@
       "queries": [
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:23.498359+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.207802+00:00",
       "last_attempt_at": "2026-11-16T18:43:33.286083+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/exfo-uso-1618-c-otdr",
       "reason": "already_processed",
@@ -29772,7 +29826,7 @@
       "source": "Google News",
       "title": "Nigeria pushes West African pact to protect submarine cables, prevent internet outages - ThePointNG",
       "initial_since": "2026-11-03",
-      "last_seen_at": "2026-11-26T00:31:22.036918+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.798239+00:00",
       "last_attempt_at": "2026-11-17T03:03:08.060896+00:00",
       "url": "https://www.thepointng.com/nigeria-pushes-west-african-pact-to-protect-submarine-cables-prevent-internet-outages/",
       "candidate_reviews": [],
@@ -29823,10 +29877,10 @@
       ],
       "initial_since": "2026-11-03",
       "published_date": "2026-11-16",
-      "keyword": "submarine cable break",
+      "keyword": "undersea cable outage",
       "title": "Gulf AI projects keep building while the region’s new subsea cables sit stalled - Infrastructure - EnterpriseAM",
       "discovered_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSTZUY1BHLWhzM1pLR01MdW9SWEdiLTVSd1R0WFlRd3l3UGNIT1NDVDkxb3N3SlNQV0twVFNjUFA3cURoM3RGbzhPUnEyMVN2SEc0dUstQ3B1ZkxvNHNHQ2N4Z2tTR0VnSjFTWU1ERXhjV0QzcVlrWVhzd2JKRFV3RDY3OVcteklNMjNpemRDaU5XNFY4a2o1N3ZJLWpRRGxlZ3dTbjJ6R0pSS1h1a0pZVC1lYXpWbEI4SGJzelU0bVhTQ3VPZDdsejJB?oc=5",
-      "last_seen_at": "2026-11-25T14:34:22.767408+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.261202+00:00",
       "last_attempt_at": "2026-11-17T13:40:22.148019+00:00",
       "url": "https://enterpriseam.com/infrastructure/2026/11/17/gulf-ai-projects-keep-building-while-the-regions-new-subsea-cables-sit-stalled/",
       "candidate_reviews": [
@@ -29936,7 +29990,7 @@
       "keyword": "undersea cable damage",
       "title": "Expert urges lawmakers craft law against subsea cable sabotage - Inquirer.net",
       "discovered_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMXJDaW5FUkpCOF9UdU1EWVV1MElzT1dfUi0tWERqTTF1RmRnX05pRFlXSWFHbjVCaEFRM05oWVVYVXpCZHlDTFliZjBTQ2hfOWtwZ0RTSUR0OFdGMFFYY0dxSEVXazFMRndyOTlRMUVDbUVyaWo3T1FvNTZ0OF9aX2hhYjBickg5amlIYnNXQ2RSbG8za3NlamxkZzFtUXhXUHd2a2p30gGrAUFVX3lxTFA5b1JTR2hLallfX09CMkYzZ2lMNS1YcThtdmhZSWJyVTJ4cmtydlJKN0w1UVFBanhYVmVRbzVYbUZDQk1UTWU3SlJqZmNmUllBSFRzaEVkdXNrUFNnZGZXUTE0c2RBdzZHdE5EN3dNRkdzb05CU2lOQmw0UGE0RzJUUTIzN1dXcTl2b09WS3R5NW5yekZrNTY5ZWY5c204MDdPUTRpbGNLNVh4WQ?oc=5",
-      "last_seen_at": "2026-11-26T00:31:21.073955+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.819139+00:00",
       "last_attempt_at": "2026-11-19T23:10:01.676076+00:00",
       "url": "https://globalnation.inquirer.net/348463/expert-urges-lawmakers-craft-law-against-subsea-cable-sabotage",
       "availability_attempts": 3,
@@ -29994,7 +30048,7 @@
       "keyword": "undersea cable damage",
       "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOS2FNZjQ2NVdHQ25HanR0Ym5WVUhwUk5rbUpVb0JJd1R1d3pjTjgzZnlyeVNMSFNrdU9OYjRnazREaDk3VVZ1Mkc3YmZ5M3h5VnV6aTBVWTlpSU5weU1YMlRHSC1BZktBNnY5Skx3YVRabWgwWS1LN21lYUdQREszTFFjaGZqbFR1TXFZOGdvR0NHYmJkWC0xSkNwd1VGeTVHNS1qUXppZVN1YkJlZGdfaEkxWXEtQmVxWUFfWlg2OHBvR1hlV2c?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:21.223010+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.927395+00:00",
       "last_attempt_at": "2026-11-17T23:38:38.265284+00:00",
       "url": "https://www.freemalaysiatoday.com/category/nation/2026/11/17/mcmc-appoints-service-provider-for-rm2-7bil-undersea-cable-project",
       "candidate_reviews": [],
@@ -30019,7 +30073,7 @@
       "keyword": "undersea cable damage",
       "discovered_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDBUNDdEZ3VzbGNCOEppNk43NDJMRTc0UUU5endjMUlFOENfbkhJbnB4SkltYi0xOGEyYkYtQnNNdnNlNnc5b19SN0RweHhyOTVhSGIySUVROEVmZ01pbzEydC1JN1YzUEVCbWt4emY5cGRJOVBzZnJCNXUtcGNDTFFZdk1Fa0tYTzEwV2F3Qktrc0Mtc3BsVEV6YTBtTFVhM2R2TlhCV3hwZw?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:21.260789+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.954264+00:00",
       "last_attempt_at": "2026-11-25T14:38:57.338188+00:00",
       "url": "https://thewhistler.ng/internet-blackouts-nigeria-seeks-joint-regional-submarine-cable-protection-repairs/",
       "reason": "short_content",
@@ -30042,7 +30096,7 @@
       "keyword": "undersea cable outage",
       "discovered_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tTzFYblozVWlGclZvTGtRZU1YOXliY1VGekM3OG9ZYkNtZXJyemNvYzE4X0tLcWNPOVppUWNaaTJoQlBtdm8tVFBuTnhhcGZRMG43bldn?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:22.417894+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.151605+00:00",
       "last_attempt_at": "2026-11-17T23:38:23.941381+00:00",
       "url": "https://qz.com/can-internet-go-down-outages",
       "candidate_reviews": [
@@ -30129,7 +30183,7 @@
       "keyword": "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)",
       "discovered_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNT1dKSUNQZnVteTJaMlA3d0tVVE5EOHFzTG5iUnFJTjdVa1Z5NVpPVTYtcUNvd2c2clBhVEtzMUxpUExZM0pYSWlaem1zVGkzMzlXMHJkVnQzbmVOakFOTUlXSFRMVDRYV0phc3dzMmh4ekRXWHA2QXRNUzFyVG02V0w3aFZJcERfQ1BPdFdlSTFULVcyYXc0QXUyREFEOGJjZjhlQVphekQxRlVUelByMmNUcUdVaFRSMGRWZm9Qejh1US1xblNRUUhUOA?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:23.950250+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.561758+00:00",
       "last_attempt_at": "2026-11-17T23:38:57.017257+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/uk-announces-%C2%A390-million-investment-for-royal-navy-to-protect-undersea-cables",
       "candidate_reviews": [],
@@ -30154,7 +30208,7 @@
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "discovered_url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5hRmtIZDhTaDRXTnMzcmNtaG1JQUZVbkUwbnlIbENLcWZRVnpzb19jSmIzOXJxSXlaRGJqUQ?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-25T14:34:24.715842+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.925013+00:00",
       "last_attempt_at": "2026-11-17T23:38:47.481227+00:00",
       "url": "https://subtelforum.com/",
       "candidate_reviews": [
@@ -30191,7 +30245,7 @@
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "discovered_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQnVQUXBpc25rRF8wMUxqRGRzSm5DTmtpaTluZFltQW9KSUpQWTFOMjNJYVpWVXhZV2w4d0xzRlVWWi1pYXJoZXJFUk00WUhnR1dlNXd5SExTajM0d1ZVWGdjQXNpbmpfYWEzX3hCMTJlclJheFhHZVFKcWZsN2xBNWNB?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.368183+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.952465+00:00",
       "last_attempt_at": "2026-11-17T23:38:35.619003+00:00",
       "url": "https://subtelforum.com/arctic-cable-plans-face-icebreaker-and-mapping-gaps/",
       "candidate_reviews": [],
@@ -30216,7 +30270,7 @@
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "discovered_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5wdnZMUXA1LUw4NVZvMXFZYU9FSHdOeW9SRTRTcWNmSTNkTkVpVmhNMHVRZG5qYjRpbmllN3A4SkRJYVhiNk1kajhLQXJNNUUzMFVMd01QN2kwNEJKTjJ5a2tDZnI2cnBrRjliM2FEVnQxdlN0Vm91UQ?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.444866+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.008000+00:00",
       "last_attempt_at": "2026-11-17T23:38:54.419360+00:00",
       "url": "https://subtelforum.com/nigeria-proposes-west-african-cable-protocol/",
       "candidate_reviews": [],
@@ -30241,7 +30295,7 @@
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "discovered_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FT3ZlR21LZFJBOWxzYkx1WTdvM2MxRzRINkdhLTBrSzZVLWZjMXBhal9QYnNScWtPOHRVeEZJZ1FEMXVVbS0zNjRzOGMwUG1fSHZuckNNajJaUXhSMktlQkw3NkZSOVJyNWw3VDZmamZ6SHRFTHpqczR3?oc=5",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.558010+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.117094+00:00",
       "last_attempt_at": "2026-11-17T23:38:41.389252+00:00",
       "url": "https://subtelforum.com/tm-tech-receives-salam-cable-project-approval/",
       "candidate_reviews": [],
@@ -30304,7 +30358,7 @@
       "initial_since": "2026-11-04",
       "title": "SubTel Forum Magazine - SubTel Forum",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.632484+00:00",
+      "last_seen_at": "2026-11-26T14:00:48.171453+00:00",
       "last_attempt_at": "2026-11-18T17:27:54.978665+00:00",
       "url": "https://subtelforum.com/subtel-forum-magazine/",
       "reason": "no_candidates",
@@ -30379,7 +30433,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.280320+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.495253+00:00",
       "last_attempt_at": "2026-11-18T17:26:09.954804+00:00",
       "url": "https://www.geo.tv/latest/691688-submarine-cable-fault-disrupts-internet-across-country-pta",
       "candidate_reviews": [
@@ -30417,7 +30471,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.575793+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.321391+00:00",
       "last_attempt_at": "2026-11-18T17:26:27.095840+00:00",
       "url": "https://english.aaj.tv/news/330481213/international-submarine-cable-fault-may-disrupt-internet-services-in-pakistan",
       "candidate_reviews": [
@@ -30523,7 +30577,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.284567+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.028432+00:00",
       "last_attempt_at": "2026-11-18T17:27:08.253668+00:00",
       "url": "https://www.24newshd.tv/18-Nov-2026/submarine-cable-fault-near-pakistan-coast-may-disrupt-internet-services-pta",
       "candidate_reviews": [
@@ -30561,7 +30615,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:19.593557+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.709970+00:00",
       "last_attempt_at": "2026-11-18T17:27:19.962934+00:00",
       "url": "https://www.phoneworld.com.pk/internet-disruption-pakistan-submarine-cable-fault-smw5/",
       "candidate_reviews": [
@@ -30609,7 +30663,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.248099+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.001903+00:00",
       "last_attempt_at": "2026-11-18T17:27:33.535062+00:00",
       "url": "https://pakobserver.net/internet-disruption-hits-pakistan-after-submarine-cable-fault/",
       "candidate_reviews": [
@@ -30646,7 +30700,7 @@
       "keyword": "submarine cable fault",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.545664+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.161899+00:00",
       "last_attempt_at": "2026-11-18T17:27:44.930456+00:00",
       "url": "https://www.urdupoint.com/en/pakistan/international-submarine-cable-develops-fault-2293069.html",
       "candidate_reviews": [
@@ -30722,7 +30776,7 @@
       "keyword": "submarine cable break",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.350715+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.343051+00:00",
       "last_attempt_at": "2026-11-18T17:25:49.605796+00:00",
       "url": "https://www.newsofbahrain.com/en/article/when-the-digital-world-goes-dark",
       "candidate_reviews": [],
@@ -30797,7 +30851,7 @@
       "keyword": "site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)",
       "published_date": "2026-11-18",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:24.330033+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.897226+00:00",
       "last_attempt_at": "2026-11-18T17:26:09.677128+00:00",
       "url": "https://subtelforum.com/eu-funds-baltic-subsea-cable-repair-capacity/",
       "reason": "already_processed",
@@ -30900,7 +30954,7 @@
       "title": "Pakistan internet problems related to subsea cable faults, telecoms authority says - The National",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:21.731237+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.606227+00:00",
       "last_attempt_at": "2026-11-19T01:58:50.662080+00:00",
       "url": "https://www.thenationalnews.com/future/technology/2026/11/18/pakistan-internet-problems-subsea-cables/",
       "candidate_reviews": [
@@ -30938,7 +30992,7 @@
       "title": "PTA says submarine cable fault may cause internet connectivity issues - Dawn",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:19.437890+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.628625+00:00",
       "last_attempt_at": "2026-11-19T01:59:02.682247+00:00",
       "url": "https://www.dawn.com/news/2045448",
       "candidate_reviews": [
@@ -30986,7 +31040,7 @@
       "title": "Pakistan says fault reported in international submarine cable system - The Peninsula Qatar",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.130706+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.442083+00:00",
       "last_attempt_at": "2026-11-19T01:59:25.937592+00:00",
       "url": "https://thepeninsulaqatar.com/article/19/11/2026/pakistan-says-fault-reported-in-international-submarine-cable-system",
       "candidate_reviews": [
@@ -31023,7 +31077,7 @@
       "title": "Submarine cable fault may disrupt internet - The Express Tribune",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.317230+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.521987+00:00",
       "last_attempt_at": "2026-11-19T01:58:27.073319+00:00",
       "url": "https://tribune.com.pk/story/2641080/submarine-cable-fault-may-disrupt-internet",
       "candidate_reviews": [
@@ -31060,7 +31114,7 @@
       "title": "Submarine cable fault disrupts internet connectivity in Pakistan: PTA - Dunya News",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.429620+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.574845+00:00",
       "last_attempt_at": "2026-11-19T01:59:39.028183+00:00",
       "url": "https://dunyanews.tv/en/Technology/983657-submarine-cable-fault-disrupts-internet-connectivity-in-pakistan-pta",
       "candidate_reviews": [
@@ -31194,7 +31248,7 @@
       "title": "Country suffers internet slowdown due to submarine cable fault - The Nation (Pakistan )",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.729063+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.735214+00:00",
       "last_attempt_at": "2026-11-19T02:00:10.558869+00:00",
       "url": "https://www.nation.com.pk/19-Nov-2026/country-suffers-internet-slowdown-due-submarine-cable-fault",
       "candidate_reviews": [
@@ -31231,7 +31285,7 @@
       "title": "Pakistan reports internet disruptions after submarine cable fault - Insider Paper",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:17.840014+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.788548+00:00",
       "last_attempt_at": "2026-11-19T02:00:20.277442+00:00",
       "url": "https://insiderpaper.com/internet-slow-or-down-in-pakistan-submarine-cable-fault/",
       "candidate_reviews": [
@@ -31268,7 +31322,7 @@
       "title": "Submarine cable fault threatens internet disruptions across Pakistan - Profit by Pakistan Today",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.058772+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.895315+00:00",
       "last_attempt_at": "2026-11-19T02:00:27.811035+00:00",
       "url": "https://profit.pakistantoday.com.pk/2026/11/18/submarine-cable-fault-threatens-internet-disruptions-across-pakistan",
       "candidate_reviews": [
@@ -31305,7 +31359,7 @@
       "title": "Submarine cable fault disrupts Pakistan’s internet - Minute Mirror",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.133414+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.948467+00:00",
       "last_attempt_at": "2026-11-21T12:57:17.665120+00:00",
       "url": "https://minutemirror.com.pk/submarine-cable-fault-disrupts-pakistans-internet-662471/",
       "availability_attempts": 2,
@@ -31430,10 +31484,10 @@
       ],
       "initial_since": "2026-11-05",
       "discovered_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcHlPM1Q3al9HdFUzX1pIaTFxRXpPTnpSSE80dUcwb2NhT2NRNjlpTl82Vm5QWFNBOFBBNm83M1lVSGpFd2hTMlVKZDNGRnVFZnFNT2poNTVnMlFISnNNcFMyZTZXMTY1cEZPYTdxeFlsM244dTlnYUxqOWVNVUJzZXczQWRTZw?oc=5",
-      "title": "Submarine Cable Fault May Affect Internet in Pakistan - TechJuice",
+      "title": "Submarine Cable Fault Affects Internet in Pakistan, Leaving 70% Users Without A Connection - TechJuice",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.538443+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.374489+00:00",
       "last_attempt_at": "2026-11-19T02:01:05.149569+00:00",
       "url": "https://www.techjuice.pk/submarine-cable-fault-may-affect-internet-in-pakistan/",
       "candidate_reviews": [
@@ -31514,7 +31568,7 @@
       "title": "Submarine Cable Fault Causes Internet Access Difficulties - UrduPoint",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.359852+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.081813+00:00",
       "last_attempt_at": "2026-11-19T02:01:31.293642+00:00",
       "url": "https://www.urdupoint.com/en/pakistan/smw5-submarine-cable-fault-internet-connectivity-2293177.html",
       "candidate_reviews": [
@@ -31551,7 +31605,7 @@
       "title": "Submarine cable fault likely to disrupt internet services across Pakistan - samaa tv",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.509224+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.188671+00:00",
       "last_attempt_at": "2026-11-19T13:35:41.958182+00:00",
       "reason": "processed",
       "error_type": "",
@@ -31591,7 +31645,7 @@
       "title": "Pakistan faces internet connectivity issues after submarine cable fault - Pakistan Connect",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.657459+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.215548+00:00",
       "last_attempt_at": "2026-11-19T02:01:40.628287+00:00",
       "url": "https://thepakistanconnect.com/pakistan-faces-internet-connectivity/",
       "candidate_reviews": [
@@ -31656,7 +31710,7 @@
       "queue_id": "2c289206113c37770c9458b3ace4706f",
       "status": "retry",
       "first_seen_at": "2026-11-19T01:55:31.772677+00:00",
-      "attempts": 11,
+      "attempts": 12,
       "published_date": "2026-11-18",
       "queries": [
         "submarine cable fault"
@@ -31666,13 +31720,13 @@
       "title": "Pakistanis Face Slow Internet After Major Undersea Cable Fault - Bloom Pakistan",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.768442+00:00",
-      "last_attempt_at": "2026-11-25T00:54:37.592535+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.268813+00:00",
+      "last_attempt_at": "2026-11-26T14:04:41.898185+00:00",
       "url": "https://bloompakistan.com/pakistan-internet-disruption-submarine-cable-fault/",
       "reason": "short_content",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-11-26T00:54:38.104293+00:00"
+      "next_attempt_at": "2026-11-27T14:04:42.305776+00:00"
     },
     "cc91688b1b0e5e25700d6588078da6d0": {
       "queue_id": "cc91688b1b0e5e25700d6588078da6d0",
@@ -31688,7 +31742,7 @@
       "title": "Internet services may slow across Pakistan after submarine cable fault near coast - Times of Karachi",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.396271+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.108488+00:00",
       "last_attempt_at": "2026-11-19T02:02:13.627334+00:00",
       "url": "https://timesofkarachi.pk/100569-pakistan-internet-disruption-submarine-cable-fault/",
       "candidate_reviews": [
@@ -31725,7 +31779,7 @@
       "title": "Pakistan internet disruption: Submarine cable fault causes slow speeds - Pkrevenue.com",
       "keyword": "submarine cable fault",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:18.842757+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.295497+00:00",
       "last_attempt_at": "2026-11-19T02:02:01.440684+00:00",
       "url": "https://pkrevenue.com/pakistan-internet-disruption-submarine-cable-fault/",
       "candidate_reviews": [
@@ -31787,9 +31841,9 @@
       "initial_since": "2026-11-05",
       "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRVhnVDBWY1dUb0pqUlczdnZzLVJWSWNkYTU2YnVCVnhaM3d1UlNuakxXNng0N3JxemRNckxhQ1d6dmIxdjNtQVRVc1FyUGRQTVNEU0hTWWg3dXM1VUFBbEFfR2t4VUFKMTF0Y1dNMF9uRENrdUxnVFVUZVVUbkhDVWpLVXpnUGxwS2J6bk45NUhELVRGTDJxMk5mOEo?oc=5",
       "title": "Sierra Leone backs $45m submarine cable to connect four countries - Innovation Village",
-      "keyword": "submarine cable fault",
+      "keyword": "submarine cable break",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.426076+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.241142+00:00",
       "last_attempt_at": "2026-11-19T01:58:36.281081+00:00",
       "url": "https://innovation-village.com/sierra-leone-backs-45m-submarine-cable-to-connect-four-countries/",
       "candidate_reviews": [
@@ -31887,7 +31941,7 @@
       "title": "Microsoft Outage Exposes Risks To Overdependence On Single Technology Provider - BusinessToday Malaysia",
       "keyword": "undersea cable outage",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:22.455855+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.179426+00:00",
       "last_attempt_at": "2026-11-19T01:59:22.598302+00:00",
       "url": "https://www.businesstoday.com.my/2026/11/14/microsoft-outage-exposes-risks-to-overdependence-on-single-technology-provider/",
       "candidate_reviews": [],
@@ -31993,11 +32047,11 @@
         "undersea cable outage"
       ],
       "initial_since": "2026-11-05",
-      "title": "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
+      "title": "Pakistan undersea cable fault causes internet failure near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
       "discovered_url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPT2ZPLU1ocmJ2TXgyb1JzWE0wLVBKX0R5S1o2NmozQVdhaVRMWmdTdGJRNkVKcjhCRXhUMm9wSkZkRnU0MHJwTFJhdHVqVlZGVDFKa1lSRkJIeHR2Yng5SzZwLUpQTzhfN3lmS1g3RVh0c1NwZnkzTk1DM0pqUjU1WW9OU1FWU2hLS2w2c2NIbGk0ZUZZNTZCck0wYUw5RXJQZS1udWx1Nm5vdG9Nbnh6MUxrUmVIM2l6aUJsMWI4bldTaFUycUtsQmh2MlR2eWNfeEdHSzZzWS1DSFF0MXFYMXdQWkJKM0g1eFhPTndRc1M5cHNpdnZsbklxTnZCTE1ZZ0RHeFhWVGd0QUt3NG9qaXhsb3U0TlM1WlFwWllYbWM3dw?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:22.379881+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.124070+00:00",
       "last_attempt_at": "2026-11-19T13:32:48.895813+00:00",
       "url": "https://www.tomshardware.com/networking/pakistan-undersea-cable-fault-causes-internet-failure-near-strait-of-hormuz-fault-detected-offshore-weeks-after-iran-threatened-infrastructure-in-the-region",
       "candidate_reviews": [
@@ -32093,7 +32147,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNemdyQi1BUk5fYVBhYnI4N3RuNVV2eTdhcjZuWkpIUXRJRnluY3FwYWFBQ0J4TWFvNHYyNVNlTm0zN1RTTlhIQUtfRjd4RVkzTTNZNFhoeHQ4czZDYzZpaVhzY0dIa25CYUdRUzdxVnB4VkQ1TmtRaGZZcjU1czN6aE1GNDBlci1tcm02eUNQVHhyZ3BSejAzZ05jc3VmTTkwaDZ0MTlwMWc?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:17.167885+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.468817+00:00",
       "last_attempt_at": "2026-11-19T13:33:43.773573+00:00",
       "url": "https://www.investify.pk/news/100000162030/smw5-cable-fault-may-disrupt-internet-services-across-pakistan",
       "candidate_reviews": [
@@ -32170,7 +32224,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY1JJeTVod041SHV1OTJfQTdDQWlORi1WTTlkdVo5LUhuQWlXcXJQMTNvb3E1UmdQM19UTkxiNzNaLVRubi10RTBmY09LN20ycTFJQXYxWXlHVnJKTVA5Y3ZMSThfeWNjMWVMaWxNV05VMU9oSENpbTVEX2Fhd2NvSjU2MTRWemhhXzFnb1JCSmNRbWJwMDVWWjAtLUhFTmg4dElOLU1SeXZDMDAzVWNKU9IBtgFBVV95cUxNR1ZrWGlCdWpOSTFueWlkNGo0dXB0Tm1VLWxERElabnpvQWJYMnlVYXFkV2h5a1dXQ0JLdl9EcWxoQzQ5VFBVQjVxWndTOXNKRi15MnhSRzU0cWdiTnVGdG1rMHF2aUowVC1ERFdBQTI4TnFjR3RLb2tEdjFORy1sY21XZ2ZBbEtDNTQyaUlTWGlwbllTYmxIdzZ6Qzk2eHVtaVZHR2FoSEQ2VGZKbTItY283dENLdw?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:21.297758+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.088563+00:00",
       "last_attempt_at": "2026-11-19T13:33:51.235652+00:00",
       "url": "https://english.mathrubhumi.com/news/world/pakistan-cable-fault-iran-gulf-internet-infrastructure-risk-mptpc2mh",
       "candidate_reviews": [
@@ -32219,7 +32273,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMTExaVlKNm9tVXJBdEtaclEtVnZjMjhpbEJBMFBqYU1MSzY5ZWt1aVY0czVDNkRHZmFLX2FkX2VnM1MzTWhOYVhVOGl0ZWk2WVJYekNvOC15bUFmTHdCaVlMNjFWY2RqSUh1TmxxT2twLVl6UFotbUI3N0NqWmZnUkJRbDRyazlPeWxsazJVOWl2dkJySkp2NGZEZlBCZ0Z3OWlvRUh3UUVLRE1fcUVab9IBtgFBVV95cUxQV0M2bUMxeTkyNDgtYkdvdUZ6bll5QVAtSEktM2ZCQ2ZxenhtejFuNVRiQldGdW8wbzRVa19aUHB0VlJ1NnFLaUNtLTAxaUMybUlteUdZYUZMRXNqOGFVcXhOTDZrcU16TWFzRGd5andxYXpVSUNOYjhZT05HSlRXQTIxaXBoOEpxdFc1czhqc2NZbS1jTUl6QTQyMHFjVWtyMkdlMVhNa2Q1c21PX05PNW4yMnlEQQ?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:19.704210+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.708741+00:00",
       "last_attempt_at": "2026-11-19T13:34:03.139882+00:00",
       "url": "https://www.freepressjournal.in/tech/pakistan-faces-internet-disruptions-after-submarine-cable-fault-near-coast",
       "candidate_reviews": [
@@ -32256,7 +32310,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNay12SHFGejIwanhHMUN0cGVJeWFqNUh2N0g3VDBxbGVlaDdqLXNNNnJhbU94a3RwVk9jQ01QNzJHSnhjeWJLTGpSN0NVcFpsZTVWandvY0NYME1lVmFQYm9WWExsekxrMkVoZnZwRWt5SE1QSllRSHdnbGFHTUNUVmVfbHVES1hNb25HdXptMHRlRjhjdE04SVlrSlV4WEtxSkJDci1IT3A0ZDNYVWJOcE4tSGx0aThLdE1PN080NXpVLU9ZdmxRNFRMVllrQdIB0wFBVV95cUxOSHV0YVFxVXd6WTE5U0xYM05HQjVHM0ZmR2FVOEF2MUg4ZUVWaEphaDdqcENfUXJIVUJOUXFKZzB6c1ZOeHppcDU0WWthc3Z4MUFyS19vYXBqbkZFZG9KYzdxZG1QZWdaOW1HSXdzMDNDX29KTFdhLWl6UHZtdGtibUUzVWtYc0NXcTNZT3V2RFY3bnZpbHAzOVZNZzd1QU1NVzdpdndKMFBJdmZYcGxYRjg3OERDTzdGTGJfeDhObEx1XzZ2SF9lX0RockxTNjBnd1pV?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:17.542372+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.655536+00:00",
       "last_attempt_at": "2026-11-19T13:35:35.096231+00:00",
       "url": "https://www.timesnownews.com/world/asia/pakistan-internet-services-hit-after-fault-detected-in-major-undersea-cable-article-156533696",
       "reason": "already_processed",
@@ -32280,7 +32334,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE13aEJpLU5xVkZEd1B0d2UzaFFDM2Y0eUxzUkM0elo4QlpWYjJXOVRnVnhFZmh4ZnpvWGVEbzJXbzAySkNWU0lPVGM0ZmhiN0sxaW8yTkJRN2FpTE9HUEZYcUNnZVhkc2xVRzVZWnRn?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:17.766342+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.762096+00:00",
       "last_attempt_at": "2026-11-19T13:34:11.837632+00:00",
       "url": "https://www.brandsynario.com/news/pakistan-internet-problems/",
       "candidate_reviews": [
@@ -32366,7 +32420,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxORlBTdW14RFhWM2d0b3ktcHZEYUllN0JWSXV0aTVmRzdUVU1xRUVxNnkxb3NXRnd1NFc0cGVFeXotYUlyQ1hLQkI1bjdlc01qME5PT3BNdG1GTk1PcmlNY2FSaC1OMVNETFAxbEo5YV9uT21EYmtRbHFjemo1ZjU4d1JyTEI1Vl9QSGJzdnRQSjQ1alFKMk5yTTVXWHV4Qm02WVRVa2JSS3UtV1FWbmFhTDlKTVJNUGZuTUNQMV9yUFlfbC1NQlRCb0RSQkpyZUMzd1NSbEJCSW9kNGg1XzdzTUV3?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:21.960959+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.743829+00:00",
       "last_attempt_at": "2026-11-19T13:34:41.549572+00:00",
       "url": "https://www.arabtimesonline.com/news/pakistan-internet-disruption-linked-to-subsea-cable-fault-nadra-passport-and-visa-services-suspended-in-london/",
       "candidate_reviews": [
@@ -32442,7 +32496,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOU1zTWFVMVRzZ2N3aWhOejJoU2U0elkxUjZpMTJTMjRRQnBYUG4wOGtqMmRKWFRxNmhZUmRIZUZJMG1JTm42ajg3UDk3ZkZ5aUR3V0NuNU5pLXBWYmlXUWJWZ3N1Q1RDaXpqREg0LVlVU0tDWWQ3SlZkSDB2eFJlTTFzdXpsQ0RwLWlCeEJNVmxkbEYxSVZKcVB3NnlLWVJPSDk5ZzZTa3pFeThLOFc5UXRVUkNRQnoxek4tOE1xSEhBUQ?oc=5",
       "source": "Google News",
       "keyword": "submarine cable fault",
-      "last_seen_at": "2026-11-26T00:31:22.684393+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.397987+00:00",
       "last_attempt_at": "2026-11-19T13:35:18.184151+00:00",
       "url": "https://enews.hamariweb.com/science-and-technology-news/undersea-cable-fault-disrupts-internet-connectivity-across-pakistan/",
       "candidate_reviews": [
@@ -32567,7 +32621,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9tZDE3U1BnUkVoSktEb2c0TWRNcWxlSFIwS3oxdV9aMGxTdTBWZC05OVhQa3lsdktnNEhOcWxVU0lBa2FDTnRyT1RPYmwzQUVHVy1vRVZ2d3RWSDlDMmpPOFp5U1A2d0l3SVpxX1RDaG4wWWo0VnFaMUp0emFhdw?oc=5",
       "source": "Google News",
       "keyword": "submarine cable outage",
-      "last_seen_at": "2026-11-26T00:31:20.463470+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.267960+00:00",
       "last_attempt_at": "2026-11-19T13:32:13.239046+00:00",
       "url": "https://www.techjuice.pk/the-week-that-broke-the-internet-what-to-do-now/",
       "candidate_reviews": [
@@ -32641,7 +32695,7 @@
       "discovered_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMXFLb2hFeFFoNU9UUDlKb2pCSTlMSG5Wd0tmTXUxWE03eFNZckpQNnNMOTNlWkdzY1RqUHJIeHBCQlNLMUhaNnhtM29fWnZ5OXR5dUU1WWlNWjBTeG9KaWdreU1QUlVUaDVBeVdYenRBRXk0ZDFlUHZOZGlzWmUtY3pBQmM?oc=5",
       "source": "Google News",
       "keyword": "subsea cable disruption",
-      "last_seen_at": "2026-11-26T00:31:21.807464+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.661494+00:00",
       "last_attempt_at": "2026-11-19T13:32:23.811183+00:00",
       "url": "https://itweb.africa/article/wacs-subsea-cable-returns-online/lLn147mQ96Z7J6Aa",
       "candidate_reviews": [
@@ -32739,7 +32793,7 @@
       "source": "Google News",
       "keyword": "submarine cable fault",
       "discovered_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdlc5VTBLYXVuOFRYTE5YZWxWcW9ZeGlyOTM5VHotWTRBc0xoZW5WMkkzYTBCVTU2QV8ycVlFSXM0M3ZkcXR1Ym5HenI4SlpXTTY1VkpuRXJVMjdFR3hIUFRFZjVRMGRQdUZBQlJqbU5ad21YeDhmQllwNjYtcEo1bzVXMU1EQzV2dG1lRUNlcjMzTlZvMURvTlBqYVB5cmRZNG9VdGFxYVJSOXIzalR2SU94cEw?oc=5",
-      "last_seen_at": "2026-11-26T00:31:21.147928+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.873599+00:00",
       "last_attempt_at": "2026-11-19T23:10:30.580183+00:00",
       "url": "https://en.ilsole24ore.com/art/damage-to-an-undersea-cable-in-oman-cuts-off-pakistans-internet-connection-AJ5nY4LC",
       "candidate_reviews": [
@@ -32936,7 +32990,7 @@
       "queries": [
         "submarine cable fault"
       ],
-      "last_seen_at": "2026-11-26T00:31:16.982899+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.335884+00:00",
       "last_attempt_at": "2026-11-26T00:35:16.241000+00:00",
       "url": "https://www.avapress.com/en/news/371062/internet-disruption-in-pakistan-following-technical-fault-submarine-cable",
       "reason": "article_fetch_error",
@@ -32958,7 +33012,7 @@
       "queries": [
         "submarine cable fault"
       ],
-      "last_seen_at": "2026-11-26T00:31:17.056248+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.389012+00:00",
       "last_attempt_at": "2026-11-22T16:28:11.032074+00:00",
       "url": "https://www.tapmad.com/watch/international-submarine-cable-fault-disrupts-internet-services-across-pakistan/13425700",
       "availability_attempts": 3,
@@ -32990,7 +33044,7 @@
       "queries": [
         "submarine cable fault"
       ],
-      "last_seen_at": "2026-11-26T00:31:17.093621+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.415777+00:00",
       "last_attempt_at": "2026-11-20T07:32:57.916270+00:00",
       "url": "https://digitalpakistan.pk/smw5-cable-fault-threatened-pakistans-internet-connectivity/",
       "candidate_reviews": [
@@ -33137,7 +33191,7 @@
         "submarine cable fault",
         "submarine cable outage"
       ],
-      "last_seen_at": "2026-11-26T00:31:19.481808+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.282585+00:00",
       "last_attempt_at": "2026-11-20T17:09:29.417818+00:00",
       "url": "https://www.neoteo.com/en/pakistan-submarine-cable-fault-what-the-pta-reported",
       "candidate_reviews": [
@@ -33174,7 +33228,7 @@
       "queries": [
         "submarine cable break"
       ],
-      "last_seen_at": "2026-11-26T00:31:20.613521+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.347939+00:00",
       "last_attempt_at": "2026-11-20T17:04:57.934477+00:00",
       "url": "https://www.freepressjournal.in/business/bank-of-maharashtra-plans-fresh-175-million-overseas-borrowing-ceo-reveals-what-could-make-or-break-the-deal",
       "candidate_reviews": [],
@@ -33199,7 +33253,7 @@
       "queries": [
         "undersea cable damage"
       ],
-      "last_seen_at": "2026-11-26T00:31:21.335042+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.115124+00:00",
       "last_attempt_at": "2026-11-20T17:05:33.213803+00:00",
       "url": "https://wisevoter.com/world/2026/11/17/eu-funds-baltic-submarine-cable-repair",
       "candidate_reviews": [],
@@ -33297,7 +33351,7 @@
       "queries": [
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:23.762332+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.399691+00:00",
       "last_attempt_at": "2026-11-20T17:05:22.141574+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/brazil-us/tam-1/tafs-completes-usd-205-million-refinancing",
       "candidate_reviews": [],
@@ -33322,7 +33376,7 @@
       "queries": [
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:23.799813+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.426775+00:00",
       "last_attempt_at": "2026-11-20T17:05:25.259172+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-africa/reunion/orange-seeks-strategic-partners-to-extend-reunion-subsea-cable-to-singapore",
       "candidate_reviews": [],
@@ -33347,7 +33401,7 @@
       "queries": [
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
-      "last_seen_at": "2026-11-26T00:31:23.837592+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.453772+00:00",
       "last_attempt_at": "2026-11-20T17:05:28.889798+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/trans-arctic/polar-connect/polar-connect%E2%80%99s-east-asian-expansion-updates",
       "candidate_reviews": [],
@@ -33366,8 +33420,8 @@
       "source": "Submarine Networks",
       "url": "https://www.submarinenetworks.com/en/nv/insights/eu-awards-€9-55-million-to-build-rapid-baltic-subsea-cable-repair-capacity",
       "initial_since": "2026-09-30",
-      "cable_name": "Deep Blue One",
-      "last_seen_at": "2026-11-26T00:34:34.297475+00:00",
+      "cable_name": "SKR1M",
+      "last_seen_at": "2026-11-26T14:02:49.117554+00:00",
       "last_attempt_at": "2026-11-20T17:04:37.905707+00:00",
       "title": "Insights",
       "published_date": "2026-11-20",
@@ -33393,7 +33447,7 @@
       "source": "Google News",
       "published_date": "2026-11-18",
       "title": "Pakistan Faces Internet Disruptions After Undersea Cable Fault - WE News English",
-      "last_seen_at": "2026-11-26T00:31:17.505117+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.628696+00:00",
       "last_attempt_at": "2026-11-21T01:44:02.873376+00:00",
       "url": "https://wenewsenglish.com/pakistan-faces-internet-disruptions-after-undersea-cable-fault/",
       "candidate_reviews": [
@@ -33507,7 +33561,7 @@
       "source": "Google News",
       "published_date": "2026-11-19",
       "title": "Pakistan High Commission London temporarily suspends NADRA, passport, and visa services - Daily Times",
-      "last_seen_at": "2026-11-24T14:59:01.042266+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.275939+00:00",
       "last_attempt_at": "2026-11-21T01:39:32.562042+00:00",
       "url": "https://dailytimes.com.pk/1583746/pakistan-high-commission-london-temporarily-suspends-nadra-passport-and-visa-services/",
       "candidate_reviews": [
@@ -33545,7 +33599,7 @@
       "source": "Google News",
       "published_date": "2026-11-16",
       "title": "Companies that run the internet, plus 2 nonprofits to know - qz.com",
-      "last_seen_at": "2026-11-26T00:31:22.493944+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.315588+00:00",
       "last_attempt_at": "2026-11-21T01:39:43.625156+00:00",
       "url": "https://qz.com/companies-quietly-run-internet",
       "candidate_reviews": [],
@@ -33597,7 +33651,8 @@
         "0d25f91c532523dc0dc8da21d227f364",
         "bc2a131fcd51d780b2543ad6d2dfe5d1",
         "324fc20cc5480271aa2b39851abd4e57",
-        "51a393a3ce561bb4a4a239948d195d95"
+        "51a393a3ce561bb4a4a239948d195d95",
+        "e3881f95eb8324d49288438faac90b50"
       ],
       "last_attempt_at": "2026-11-21T12:50:53.469496+00:00",
       "candidate_reviews": [
@@ -33646,7 +33701,7 @@
         "submarine cable fault",
         "subsea cable disruption"
       ],
-      "last_seen_at": "2026-11-26T00:31:16.763578+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.255361+00:00",
       "last_attempt_at": "2026-11-21T12:51:14.090267+00:00",
       "url": "https://www.dawn.com/news/2046093",
       "candidate_reviews": [
@@ -33835,13 +33890,13 @@
       "initial_since": "2026-11-07",
       "published_date": "2026-11-21",
       "source": "Google News",
-      "keyword": "submarine cable fault",
+      "keyword": "undersea cable damage",
       "queries": [
         "submarine cable fault",
         "undersea cable damage",
         "subsea cable disruption"
       ],
-      "last_seen_at": "2026-11-26T00:31:21.999069+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.771194+00:00",
       "last_attempt_at": "2026-11-21T12:52:34.958385+00:00",
       "url": "https://dailytimes.com.pk/1584623/internet-provider-expects-submarine-cable-repairs-to-finish-by-december-6/",
       "candidate_reviews": [
@@ -33879,24 +33934,24 @@
       "queue_id": "592a88d83c28780358f8c00ddc0bdd84",
       "status": "retry",
       "first_seen_at": "2026-11-21T12:47:27.521671+00:00",
-      "attempts": 9,
+      "attempts": 10,
       "discovered_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRTdldXdTRzYwSDgyLWI3WXhJcEk5a3puaVZSTFlQUTliMlN1X0RmQ2VLYmI0cFlhVkw2MDJyeGhncHVtYU1iS1E0QmJyM2lzRnJTck5mSUpQRDRKRUhVVkcxM1dzZFd3OU8yaDhidjZlLW1pVWVLLTNQTlQwcDI0dW84UVZaeXdhSWdPRkFBaDVIZw?oc=5",
       "title": "Pakistan Internet Users May Face Slow Speeds Until December 6 - Bloom Pakistan",
       "initial_since": "2026-11-07",
       "published_date": "2026-11-21",
       "source": "Google News",
-      "keyword": "submarine cable fault",
+      "keyword": "undersea cable damage",
       "queries": [
         "submarine cable fault",
         "undersea cable damage"
       ],
-      "last_seen_at": "2026-11-26T00:31:18.731597+00:00",
-      "last_attempt_at": "2026-11-25T14:38:13.734734+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.249021+00:00",
+      "last_attempt_at": "2026-11-26T14:04:24.566893+00:00",
       "url": "https://bloompakistan.com/pakistan-internet-users-may-face-slow-speeds-until-december-6/",
       "reason": "short_content",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-11-26T11:58:14.575392+00:00"
+      "next_attempt_at": "2026-11-27T14:04:25.017387+00:00"
     },
     "0e93b541df8e9b9a77a9a00368785d4b": {
       "queue_id": "0e93b541df8e9b9a77a9a00368785d4b",
@@ -34074,7 +34129,7 @@
       "queries": [
         "undersea cable damage"
       ],
-      "last_seen_at": "2026-11-21T21:43:07.870650+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.008003+00:00",
       "last_attempt_at": "2026-11-21T12:53:01.747405+00:00",
       "url": "https://au.news.yahoo.com/why-uk-wants-jail-undersea-101908564.html",
       "candidate_reviews": [
@@ -34136,7 +34191,7 @@
       "queries": [
         "undersea cable outage"
       ],
-      "last_seen_at": "2026-11-24T14:59:02.627736+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.206705+00:00",
       "last_attempt_at": "2026-11-21T12:52:57.714407+00:00",
       "url": "https://www.aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why",
       "candidate_reviews": [],
@@ -34198,7 +34253,7 @@
       "title": "SERVICE DISRUPTION Pakistan hit by widespread internet disruption after undersea cable fault - UKNIP",
       "published_date": "2026-11-18",
       "discovered_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRm5EUWxUblljNS1oSjVNMnlxd2EyWF94eWY0MFBJNHNHVVBvUnVmRVdzdDJUcVFTVTVEd0s1M3Q4enU1d3dyNm5WWS1hU29sbGZkNEpSMHN4VFd4WDhpTFNsMWVSdlVyWTdBOWNKNUpJQVZrZ2pZZ1JwRDJMam16Zi1QTkZ4Vnc4MEhNRWNUbUNnNUI5UGFlVHprMlZlOFJyLS00cHRJb3Rkcm5YN2t6eFF3QQ?oc=5",
-      "last_seen_at": "2026-11-26T00:31:17.949315+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.868507+00:00",
       "last_attempt_at": "2026-11-21T21:50:55.162048+00:00",
       "url": "https://uknip.co.uk/news/uk/uk-news/pakistan-internet-disruption-sea-me-we-5-submarine-cable-fault-november-2026/",
       "candidate_reviews": [
@@ -34283,7 +34338,7 @@
       "title": "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
       "published_date": "2026-11-20",
       "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONFFiZFpwN2NQUERnT2ZHc2pDMnFYd0NPRnhIencyVXFkUTJJRzJPZUoxTGxJLXY2TGRoUWRHVTROMkdLZFVHd1lGSXJ0VUZZOWRnWU9ESVk1cnlYR3lQVS1QbnV5QTNzZlpJOUZIZURjZ2xObGNLNlliemR2dVN4V21IQy1ob0lMRG5TNVhvZkpjTm9EUHFJRWM2V192bWxqM0RBdmpiSUpPWWpxVzBuLV9maXpKWUllZ2ZCSlVXdU9tc0ZZRlE?oc=5",
-      "last_seen_at": "2026-11-26T00:31:23.537186+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.235674+00:00",
       "last_attempt_at": "2026-11-21T21:46:20.639280+00:00",
       "url": "https://submarinenetworks.com/en/nv/insights/eu-awards-%E2%82%AC9-55-million-to-build-rapid-baltic-subsea-cable-repair-capacity",
       "candidate_reviews": [],
@@ -34308,7 +34363,7 @@
         "submarine cable break"
       ],
       "published_date": "2026-11-20",
-      "last_seen_at": "2026-11-26T00:31:20.273029+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.187313+00:00",
       "last_attempt_at": "2026-11-22T07:08:07.627769+00:00",
       "url": "https://blogs.worldbank.org/en/opendata/what-s-missing-from-the-map-of-global-internet-infrastructure-",
       "candidate_reviews": [
@@ -34384,7 +34439,7 @@
       "first_seen_at": "2026-11-22T07:04:18.276478+00:00",
       "attempts": 1,
       "initial_since": "2026-11-08",
-      "keyword": "submarine cable fault",
+      "keyword": "subsea cable disruption",
       "discovered_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPellBaVd0bDNiU3N3WlFXNF92SjhWZFpodXo5S2xFNk45R01RWFJoNzUtdVpOM3hEaDJWSUlnOVd0Rm11TjZ0cUx6dHVpaHFzSmQtc3lGVlJ3cUloZ3hJUGZMYjhOUTZPU29QQXZQYV9kMGY4WVlid3p2VW1mb0p6WkhGRkRxZw?oc=5",
       "source": "Google News",
       "title": "Submarine Cable Repairs Set for December Completion - Digital Pakistan",
@@ -34393,7 +34448,7 @@
         "submarine cable fault"
       ],
       "published_date": "2026-11-22",
-      "last_seen_at": "2026-11-26T00:31:21.845210+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.689042+00:00",
       "last_attempt_at": "2026-11-22T07:07:43.492053+00:00",
       "url": "https://digitalpakistan.pk/submarine-cable-repairs-set-for-december-completion/",
       "candidate_reviews": [
@@ -34420,7 +34475,7 @@
       "queue_id": "c0919975d2362e47a9deadb143e071d9",
       "status": "retry",
       "first_seen_at": "2026-11-22T07:04:18.514444+00:00",
-      "attempts": 8,
+      "attempts": 9,
       "initial_since": "2026-11-08",
       "keyword": "subsea cable disruption",
       "discovered_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQ1dSdTA5UzQ2Q3g4QkZrZTRwSGRTRDZtS2h4WG9CV1BRMS00LW05Z0VsUnZOcVFLSWR3dDJlWktTQzJqeHk4aWhzLTA4Y1MxdnZZVVBXRVZiV2R0bXA3bGFOd1Z6Nll6ZnFfcURDdE5hN0laRE42VGtzSlFVTUNqTEgtak1IMHJzQlNJdWt3UjU3dw?oc=5",
@@ -34431,12 +34486,12 @@
       ],
       "published_date": "2026-11-16",
       "last_seen_at": "2026-11-25T14:34:22.657696+00:00",
-      "last_attempt_at": "2026-11-25T14:38:59.062300+00:00",
+      "last_attempt_at": "2026-11-26T14:02:49.200633+00:00",
       "url": "https://w.media/vodafonethree-plans-a-subsea-cable-linking-scotland-shetland-and-norway/",
       "reason": "short_content",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-11-26T01:19:00.791420+00:00"
+      "next_attempt_at": "2026-11-27T11:23:22.491912+00:00"
     },
     "ebeff0b939275d893f4623cb06a89660": {
       "queue_id": "ebeff0b939275d893f4623cb06a89660",
@@ -34974,7 +35029,7 @@
       "queue_id": "2e3f84828da715edf2c0f5d05f0463cf",
       "status": "retry",
       "first_seen_at": "2026-11-22T16:23:46.079950+00:00",
-      "attempts": 6,
+      "attempts": 7,
       "keyword": "submarine cable fault",
       "published_date": "2026-11-22",
       "initial_since": "2026-11-08",
@@ -34985,13 +35040,13 @@
       ],
       "title": "No immediate relief from slow internet as cable repairs continue - Aaj English TV",
       "last_seen_at": "2026-11-22T16:23:46.079950+00:00",
-      "last_attempt_at": "2026-11-26T00:34:37.672501+00:00",
+      "last_attempt_at": "2026-11-26T14:03:22.520531+00:00",
       "url": "https://english.aaj.tv/news/amp/330481679",
-      "reason": "short_content",
-      "error_type": "",
-      "http_status": null,
-      "next_attempt_at": "2026-11-26T03:14:38.559056+00:00",
-      "availability_attempts": 1
+      "reason": "publisher_access_blocked",
+      "error_type": "PublisherAccessError",
+      "http_status": 403,
+      "next_attempt_at": "2026-11-27T14:03:42.349712+00:00",
+      "availability_attempts": 2
     },
     "f5e3174ca3b361ddfae0ea9590792547": {
       "queue_id": "f5e3174ca3b361ddfae0ea9590792547",
@@ -35182,7 +35237,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "title": "Securing the Depths: HCSS Strategies for Critical Undersea Infrastructure in the Indo-Pacific - Submarine Networks",
-      "last_seen_at": "2026-11-26T00:31:23.574854+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.263366+00:00",
       "last_attempt_at": "2026-11-22T16:27:55.115737+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/hcss-strategies-for-critical-undersea-infrastructure-in-the-indo-pacific",
       "candidate_reviews": [],
@@ -35197,7 +35252,7 @@
       "queue_id": "b2cbb354abe27aca17e33cfe9364ab48",
       "status": "retry",
       "first_seen_at": "2026-11-23T14:53:46.294300+00:00",
-      "attempts": 4,
+      "attempts": 5,
       "source": "Google News",
       "initial_since": "2026-11-09",
       "discovered_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4wcjhqQnBJaWlLWmRUWmJ5dGdtTnA1bGZqSzUxRVZPSlFXa0R3eWREWVV2TWszeGtrbHdsZGR0N2NlZXFtTnNBN19ieG5kV04tb1RFdXo3bjlIdkZDVzQzNA?oc=5",
@@ -35207,14 +35262,14 @@
         "submarine cable fault"
       ],
       "title": "Trends - submarine cable fault - Aaj English TV",
-      "last_seen_at": "2026-11-26T00:31:17.467270+00:00",
-      "last_attempt_at": "2026-11-26T00:35:15.715257+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.601523+00:00",
+      "last_attempt_at": "2026-11-26T14:03:52.515442+00:00",
       "url": "https://english.aaj.tv/trends/submarine-cable-fault",
-      "reason": "short_content",
-      "error_type": "",
-      "http_status": null,
-      "next_attempt_at": "2026-11-26T01:15:16.202014+00:00",
-      "availability_attempts": 1
+      "reason": "publisher_access_blocked",
+      "error_type": "PublisherAccessError",
+      "http_status": 403,
+      "next_attempt_at": "2026-11-27T14:04:09.325668+00:00",
+      "availability_attempts": 2
     },
     "303c55f63561d3c071f14d9cc45c5d6c": {
       "queue_id": "303c55f63561d3c071f14d9cc45c5d6c",
@@ -35230,7 +35285,7 @@
         "submarine cable fault"
       ],
       "title": "Pakistan Internet | SMW5 Submarine Cable Fault | PTA Update - Aaj News - Aaj English TV",
-      "last_seen_at": "2026-11-26T00:31:17.876913+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.815182+00:00",
       "last_attempt_at": "2026-11-23T15:02:19.496845+00:00",
       "url": "https://english.aaj.tv/news/330481218/pakistan-internet-smw5-submarine-cable-fault-pta-update-aaj-news",
       "candidate_reviews": [
@@ -35394,7 +35449,7 @@
       "published_date": "2026-11-23",
       "initial_since": "2026-11-10",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-24T14:59:00.830189+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.035213+00:00",
       "last_attempt_at": "2026-11-24T03:00:40.903249+00:00",
       "url": "https://telecom.economictimes.indiatimes.com/news/policy/pani-project-to-connect-andamans-eight-islands-through-undersea-cable-network/136087380",
       "candidate_reviews": [],
@@ -35419,7 +35474,7 @@
       "published_date": "2026-11-17",
       "initial_since": "2026-11-10",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-24T14:59:00.883468+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.061710+00:00",
       "last_attempt_at": "2026-11-25T14:38:14.602601+00:00",
       "url": "https://www.scoop.my/news/303259/mcmc-appoints-tm-to-lead-rm2-7bil-salam-undersea-cable-project/",
       "availability_attempts": 2,
@@ -35496,7 +35551,7 @@
       "published_date": "2026-11-23",
       "initial_since": "2026-11-10",
       "keyword": "undersea cable damage",
-      "last_seen_at": "2026-11-24T02:57:08.349313+00:00",
+      "last_seen_at": "2026-11-26T14:00:45.168807+00:00",
       "last_attempt_at": "2026-11-24T03:00:45.297625+00:00",
       "url": "https://dunyanews.tv/en/Technology/984380-undersea-internet-cable-repairs-expected-to-complete-by-december-6",
       "candidate_reviews": [
@@ -35560,7 +35615,7 @@
         "undersea cable outage"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:22.637966+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.370544+00:00",
       "last_attempt_at": "2026-11-24T15:03:24.356361+00:00",
       "url": "https://www.firstpost.com/vantage/pakistan-internet-outage-did-iran-target-subsea-cables-vantage--vd2318709/",
       "candidate_reviews": [
@@ -35588,7 +35643,7 @@
       "status": "review",
       "first_seen_at": "2026-11-24T14:58:59.431881+00:00",
       "attempts": 1,
-      "keyword": "submarine cable fault",
+      "keyword": "submarine cable break",
       "initial_since": "2026-11-10",
       "title": "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal",
       "discovered_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVFNNeUtLZkR6S1FHdEFNQmtmc2l6QTRFY2pUcFJaNG1Uci1OVUR0Yk9rREQ1WTh4V1hMdlVBM2VjRi1Xb3FrdFl6TVY3ekxFNzJrak1NNUhHWVFmTFBHajZEcWZxbGZnTTVfT2d3bElMaGtxRkJMejNTWWhoRWJjY2luTXBTVUpyTFpDV1YxdWV6eUsxalpB?oc=5",
@@ -35599,7 +35654,7 @@
         "submarine cable fault"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.999042+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.708052+00:00",
       "last_attempt_at": "2026-11-24T15:03:34.110080+00:00",
       "url": "https://smallwarsjournal.com/2026/11/24/closing-legal-loopholes-subsea-cable-infrastructure/",
       "candidate_reviews": [
@@ -35637,7 +35692,7 @@
       "queue_id": "fb5b12a6a2c45cdd2f00bc0a668d0866",
       "status": "retry",
       "first_seen_at": "2026-11-24T14:58:59.458790+00:00",
-      "attempts": 4,
+      "attempts": 5,
       "keyword": "submarine cable break",
       "initial_since": "2026-11-10",
       "title": "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
@@ -35648,13 +35703,13 @@
         "subsea cable disruption"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:20.235194+00:00",
-      "last_attempt_at": "2026-11-26T00:35:14.297070+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.132610+00:00",
+      "last_attempt_at": "2026-11-26T14:04:15.610710+00:00",
       "url": "https://www.facebook.com/deutschewellenews/videos/us-tech-giants-like-meta-and-google-are-increasingly-investing-in-and-in-some-ca/1475753184506343/",
       "reason": "short_content",
       "error_type": "",
       "http_status": null,
-      "next_attempt_at": "2026-11-26T01:15:15.674959+00:00"
+      "next_attempt_at": "2026-11-26T15:24:16.956003+00:00"
     },
     "ca418765475b75ab4d074d87b53f313c": {
       "queue_id": "ca418765475b75ab4d074d87b53f313c",
@@ -35755,7 +35810,7 @@
         "undersea cable outage"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-24T14:59:02.654394+00:00",
+      "last_seen_at": "2026-11-26T14:00:46.234061+00:00",
       "last_attempt_at": "2026-11-24T15:03:55.280339+00:00",
       "url": "https://www.scmp.com/week-asia/economics/article/3375514/philippines-touts-power-cable-malaysias-sabah-yet-sabah-no-rush",
       "candidate_reviews": [],
@@ -35780,7 +35835,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:23.875128+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.480704+00:00",
       "last_attempt_at": "2026-11-24T15:04:30.252248+00:00",
       "url": "https://www.submarinenetworks.com/en/nv/insights/fcc-overhauls-international-section-214-authorization",
       "candidate_reviews": [],
@@ -35805,7 +35860,7 @@
       "published_date": "2026-11-18",
       "keyword": "undersea cable damage",
       "source": "Google News",
-      "last_seen_at": "2026-11-26T00:31:21.185514+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.900596+00:00",
       "last_attempt_at": "2026-11-25T00:54:31.835231+00:00",
       "url": "https://www.telecompaper.com/news/baltic-submarine-cable-repair-project-merikarhu-receives-eur-10-mln-in-eu-funding--1589239",
       "candidate_reviews": [],
@@ -35830,7 +35885,7 @@
         "submarine cable fault"
       ],
       "initial_since": "2026-11-11",
-      "last_seen_at": "2026-11-25T14:34:19.389939+00:00",
+      "last_seen_at": "2026-11-26T14:00:42.921878+00:00",
       "last_attempt_at": "2026-11-25T14:39:00.819460+00:00",
       "url": "https://www.brecorder.com/news/amp/40449572",
       "candidate_reviews": [
@@ -35954,7 +36009,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "initial_since": "2026-11-11",
-      "last_seen_at": "2026-11-26T00:31:23.650243+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.318491+00:00",
       "last_attempt_at": "2026-11-25T14:38:36.939142+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/silangan",
       "candidate_reviews": [],
@@ -35979,7 +36034,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "initial_since": "2026-11-11",
-      "last_seen_at": "2026-11-26T00:31:23.687386+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.345618+00:00",
       "last_attempt_at": "2026-11-25T14:38:45.051974+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/salam",
       "candidate_reviews": [],
@@ -36004,7 +36059,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "initial_since": "2026-11-11",
-      "last_seen_at": "2026-11-26T00:31:23.913056+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.507695+00:00",
       "last_attempt_at": "2026-11-25T14:38:47.642212+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/silangan/ustda-funds-feasibility-study-for-infinivan-silangan-cable",
       "candidate_reviews": [],
@@ -36029,7 +36084,7 @@
         "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
       ],
       "initial_since": "2026-11-11",
-      "last_seen_at": "2026-11-26T00:31:23.987481+00:00",
+      "last_seen_at": "2026-11-26T14:00:47.615844+00:00",
       "last_attempt_at": "2026-11-25T14:38:50.415439+00:00",
       "url": "https://www.submarinenetworks.com/en/systems/intra-asia/salam/malaysian-mcmc-awards-tm-rm2-7-billion-salam-subsea-cable-project",
       "candidate_reviews": [],
@@ -36055,7 +36110,7 @@
         "submarine cable fault",
         "submarine cable break"
       ],
-      "last_seen_at": "2026-11-26T00:31:20.197980+00:00",
+      "last_seen_at": "2026-11-26T14:00:44.159743+00:00",
       "last_attempt_at": "2026-11-26T00:34:57.026145+00:00",
       "url": "https://www.aspi.org.au/report/when-cable-faults-raise-security-concerns/",
       "availability_attempts": 1,
@@ -36068,7 +36123,7 @@
       "queue_id": "fcb2c1ca6b1b816dd809a30ae305f1c4",
       "status": "retry",
       "first_seen_at": "2026-11-26T00:31:18.209122+00:00",
-      "attempts": 1,
+      "attempts": 2,
       "title": "Pakistan Internet | SMW5 Submarine Cable Fault | PTA Update | Internet Issues - Aaj News - Aaj English TV",
       "discovered_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1zSWw5X0VnU3FURzlmR2JZV000MXNwT0lQYzBkMXI5QjQ1bTdYZXliMk9GUng5WHR1Qk5qc3JoZHBjQkttODJtMDlLYWdJV0FsNFc40gFTQVVfeXFMTXNJbDlfRWdTcVRHOWZHYllXTTQxc3BPSVBjMGQxcjlCNDVtN1hleWIyT0ZSeDlYdHVCTmpzcmhkcGNCS204Mm0wOUthZ0lXQWw0Vzg?oc=5",
       "source": "Google News",
@@ -36078,13 +36133,14 @@
       "queries": [
         "submarine cable fault"
       ],
-      "last_seen_at": "2026-11-26T00:31:18.209122+00:00",
-      "last_attempt_at": "2026-11-26T00:39:07.391142+00:00",
+      "last_seen_at": "2026-11-26T14:00:43.055241+00:00",
+      "last_attempt_at": "2026-11-26T14:04:25.045033+00:00",
       "url": "https://english.aaj.tv/news/amp/330481251",
-      "reason": "short_content",
-      "error_type": "",
-      "http_status": null,
-      "next_attempt_at": "2026-11-26T00:44:07.768190+00:00"
+      "reason": "publisher_access_blocked",
+      "error_type": "PublisherAccessError",
+      "http_status": 403,
+      "next_attempt_at": "2026-11-27T14:04:41.870671+00:00",
+      "availability_attempts": 1
     },
     "a7de59b6de4bb81f098fc22c7be1ad62": {
       "queue_id": "a7de59b6de4bb81f098fc22c7be1ad62",
@@ -36122,6 +36178,222 @@
       "completed_at": "2026-11-26T00:39:17.110255+00:00",
       "next_attempt_at": null,
       "force_retry": false
+    },
+    "558ce55095b0e06b2b878b8ac49c841c": {
+      "queue_id": "558ce55095b0e06b2b878b8ac49c841c",
+      "status": "done",
+      "first_seen_at": "2026-11-26T14:00:44.104953+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "submarine cable break"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOckdKQnNadmpvd1VvZURsUW4yOUU3WURGV0N3Z2EyWWxFT3F1UHUyUy1NLWhzZnNDUkFFWkl4TGd2ckd5UlNESEhURzE0WGNTb01VVHM3amhKV25yajA1WWdTaV95bnBNZ1d0eVd2NjYxUEREeGpzSjNETWhkNTNoT2E2ckRILUlDR2lDUkZCSFJic3lwVEFIblpwV0RRSjBQV1UyS2tkajNzY1Q0LVFEYzFZMWprY3AwdWVfbWpOT1E?oc=5",
+      "published_date": "2026-11-26",
+      "title": "Vietnam's Viettel, Singapore's Singtel break ground on 600 Tbps international subsea cable - TNGlobal",
+      "source": "Google News",
+      "keyword": "submarine cable break",
+      "last_seen_at": "2026-11-26T14:00:44.104953+00:00",
+      "last_attempt_at": "2026-11-26T14:03:42.377158+00:00",
+      "url": "https://technode.global/2026/11/26/vietnams-viettel-singapores-singtel-break-ground-on-600-tbps-international-subsea-cable/",
+      "candidate_reviews": [],
+      "candidate_review_count": 0,
+      "candidate_reviews_truncated": false,
+      "reason": "no_candidates",
+      "completed_at": "2026-11-26T14:03:45.948604+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "baae57fa02b7e96f97b67a5796686ef8": {
+      "queue_id": "baae57fa02b7e96f97b67a5796686ef8",
+      "status": "done",
+      "first_seen_at": "2026-11-26T14:00:44.764694+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "undersea cable damage"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZVBSSjdITGNsdkRMNURuMGpKbk14OWJvSGlYZ2JlQ3hVOWR1d1VEZHE1NFdhZUVrTzNOWE1CZjNxZFJzNEpJUHZyaENiZzZxU25vTlc5UmRFN3Z0R1BkaUxSaEx0TEEzaUIxY3BQdmltQ3oxQVViX0RCTHZ5bWdyeTRMVG5vZkV0U0FNTURwbU1mSE5fdWRydjdlNTFyaDA3U3lfUE95d01zUVd0ZUNvY3I3MHZhUkg1UjQ1QTFpRWpQQjhoX0E?oc=5",
+      "published_date": "2026-11-26",
+      "title": "Work begins on first Vietnam-initiated international submarine fiber-optic cable - Tuoi Tre News | The News Gateway to Vietnam",
+      "source": "Google News",
+      "keyword": "undersea cable damage",
+      "last_seen_at": "2026-11-26T14:00:44.764694+00:00",
+      "last_attempt_at": "2026-11-26T14:03:45.978384+00:00",
+      "url": "https://news.tuoitre.vn/work-begins-on-first-vietnam-initiated-international-submarine-fiber-optic-cable-103261126155530826.htm",
+      "candidate_reviews": [],
+      "candidate_review_count": 0,
+      "candidate_reviews_truncated": false,
+      "reason": "no_candidates",
+      "completed_at": "2026-11-26T14:03:49.198555+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "4ea0a36a85531a90e028fe8c4e2c1a08": {
+      "queue_id": "4ea0a36a85531a90e028fe8c4e2c1a08",
+      "status": "done",
+      "first_seen_at": "2026-11-26T14:00:44.980903+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "undersea cable damage"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTFVxeFYxRXRtbmpsTmxRbFR1ZkJhcnVmNlRoeGowZmxWcUNCeXkxYXVVeWNwYnJ1Skw3aU91MFBiVVpXWWxMOENLay01WXl6QUhlNl9pdUJleUxncUUxemFNZEZRNExhYkNXelVRckJfWm1mNlpINFNfUVEweWRaQXpUN3dzRTNfa1hrejRDMUtvSDRMZWtxU1JtQjZ4bVJsWHZsSnQ0X1VxMWV5Q0V5d1l30gG0AUFVX3lxTE9RS3N5bnh3cWE3Yll2Mk1tOTBJNzN5UWs5M3pRcVR3aW53RVhXcktWUUVwcmRQczR4VVhGdHZBU1ZUdGVvX3pOY0lMQWtHTjdqNWUxNFljNjByVVpNY0VvTUprdU9QRHo3SHM0bGFPT1k0UEhpTUpMNGh3V3ByLXFKb3NkN1kwVFh1bGltelk2ci03QXVyZ3NtcGU5VUxHcHBfRnQ4MHJQdHZJRUlKSGZmMDYtdg?oc=5",
+      "published_date": "2026-11-24",
+      "title": "Fishing or espionage? What Russian trawlers are doing near undersea cables - VOA - Voice of America English News",
+      "source": "Google News",
+      "keyword": "undersea cable damage",
+      "last_seen_at": "2026-11-26T14:00:44.980903+00:00",
+      "last_attempt_at": "2026-11-26T14:04:09.353916+00:00",
+      "url": "https://www.voanews.com/a/fishing-or-espionage-what-russian-trawlers-are-doing-near-undersea-cables/8227348.html",
+      "candidate_reviews": [],
+      "candidate_review_count": 0,
+      "candidate_reviews_truncated": false,
+      "reason": "no_candidates",
+      "completed_at": "2026-11-26T14:04:12.297095+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "dfb0e0ed2584358c8112857102b58b67": {
+      "queue_id": "dfb0e0ed2584358c8112857102b58b67",
+      "status": "retry",
+      "first_seen_at": "2026-11-26T14:00:45.222137+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "undersea cable damage"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdVRvQ1I2RGJmeEVSQXBoNEQzUVlQUDZoSWxONmFwbzZfU2ZLempnMy1XRkJuelppSUh1X0hZYnRtMGdaQmpLYk5vdEd1MnU2ak03bm55czlSWEJsdmRibmhpZ3JXSnhTZ0dHQlp1TU9tQll3UmJxMUtiNXdBQ1NmYkgyMFo1UGFyM0VhT0Fod0JfeWMzR2owYXZMTW9QMHRmN0FkbW9Ya2J6QTJFaDBPbw?oc=5",
+      "published_date": "2026-11-22",
+      "title": "PANI project to connect Andaman's eight islands through undersea cable network - thesamaja.com",
+      "source": "Google News",
+      "keyword": "undersea cable damage",
+      "last_seen_at": "2026-11-26T14:00:45.222137+00:00",
+      "last_attempt_at": "2026-11-26T14:04:23.838831+00:00",
+      "url": "https://www.thesamaja.com/en/news/pani-project-to-connect-andamans-eight-islands-through-undersea-cable-network",
+      "reason": "short_content",
+      "error_type": "",
+      "http_status": null,
+      "next_attempt_at": "2026-11-26T14:09:24.539499+00:00"
+    },
+    "dbe7942db2d2500986a14c791f675f4f": {
+      "queue_id": "dbe7942db2d2500986a14c791f675f4f",
+      "status": "review",
+      "first_seen_at": "2026-11-26T14:00:46.288291+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "undersea cable outage"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQNkFhSjRBMmE2aG5WMmJsNUpfbHBzTlFvUGNkVkxVY1ZwUXRVRlRFMlZoTktNeV9IWG4wNXlmQ213UXEtYkJJS2NTQUVUczRyZVhfZkFhd0x3QnZ6Z1F3U192SU9Qd2lubUc5VTNLcDFEcXVqV3pMdGoxQmltaHhGZHUxc0RuWmNlZ0twT0l3aklOZVBlSzl3WG5fRGYzWGVYUUhLUVFBeV9nOEZTblV1cXR6Q0hxRFdTN0xLRW1ienliOWlQZ2tjRkIxbTVzeUlndGxkNlVxVzc3cm1uMmoxUjFMR1pDNUFpT2JwTjBISWltYWlu?oc=5",
+      "published_date": "2026-11-17",
+      "title": "Check Point warns of outage risks from shared digital dependencies - varindia",
+      "source": "Google News",
+      "keyword": "undersea cable outage",
+      "last_seen_at": "2026-11-26T14:00:46.288291+00:00",
+      "last_attempt_at": "2026-11-26T14:04:16.983764+00:00",
+      "url": "https://www.varindia.com/news/check-point-warns-of-outage-risks-from-shared-digital-dependenciescheck-point-warns-of-outage-risks-from-shared-digital-dependencies",
+      "candidate_reviews": [
+        {
+          "candidate_index": 0,
+          "cable_name": "",
+          "accident_location": "",
+          "occurrence_date": null,
+          "claimed_occurrence_date": "",
+          "evidence_excerpt": "This year alone, undersea cable cuts, PHP2Shell and a major AWS outage have shown how exposed that leaves us.",
+          "date_evidence_excerpt": "",
+          "outcome": "rejected",
+          "reason": "unnamed_missing_date"
+        }
+      ],
+      "candidate_review_count": 1,
+      "candidate_reviews_truncated": false,
+      "reason": "candidates_rejected",
+      "review_at": "2026-11-26T14:04:23.811198+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "d7978e9b835a12cc80ec897765ded9bf": {
+      "queue_id": "d7978e9b835a12cc80ec897765ded9bf",
+      "status": "done",
+      "first_seen_at": "2026-11-26T14:00:47.534939+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVUNrNjR6LWJ3bUZZODhmelBuV2xIYmh1Q1Vad2lyM0YyMjczd3M1ekh5OGRkazVyOHRITTEtakZXaWw2ZXIyWThsX2tTS0xQSGpQaVkxNi1vYTladDlvMUtndmduZHZUMU1YWm45WXJOcXJvYVNpcWd3SEdYellqd0JJZ1dRa1NOMDhwWVNJaFItdDlkT2lsOWtrN0w?oc=5",
+      "published_date": "2026-11-26",
+      "title": "APCN-2 to Retire in December 2026 - Submarine Networks",
+      "source": "Google News",
+      "keyword": "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)",
+      "last_seen_at": "2026-11-26T14:00:47.534939+00:00",
+      "last_attempt_at": "2026-11-26T14:03:49.228063+00:00",
+      "url": "https://www.submarinenetworks.com/en/systems/intra-asia/apcn-2/apcn-2-to-retire-in-december-2026",
+      "candidate_reviews": [],
+      "candidate_review_count": 0,
+      "candidate_reviews_truncated": false,
+      "reason": "no_candidates",
+      "completed_at": "2026-11-26T14:03:52.485668+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "95e6a820d1d49354194957ff431caa47": {
+      "queue_id": "95e6a820d1d49354194957ff431caa47",
+      "status": "done",
+      "first_seen_at": "2026-11-26T14:00:47.588557+00:00",
+      "attempts": 1,
+      "initial_since": "2026-11-12",
+      "queries": [
+        "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)"
+      ],
+      "discovered_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaXlURnBNYU5VOVV2aHRQQkNNNG5kOEQ2emlTSlJMNGFVZ1pacmxYcm1ab2x0OUdZVEtraC1CNXhVcVQtd3g3VEdSeTRzbWdQaXVBVFpmTkRTLWxaU09jQU94c0Foc3J4ZFAyTGc2QmRyVXZ5WVJuOVhnMjVJSllyam85SURmR3ZjLXpybmJqa0VpWVZ2SmczUnlRcWdjeVFNcGcyRGJTM1h1S0JNUjE0b1FIZTFlZDFIUVRzQlFpSQ?oc=5",
+      "published_date": "2026-11-26",
+      "title": "Exclusive: How IPS, Inc. Engineered a Zero-Net-CapEx Subsea Trunk Play - Submarine Networks",
+      "source": "Google News",
+      "keyword": "site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)",
+      "last_seen_at": "2026-11-26T14:00:47.588557+00:00",
+      "last_attempt_at": "2026-11-26T14:04:12.326402+00:00",
+      "url": "https://www.submarinenetworks.com/en/systems/intra-asia/candle/ips-engineeres-a-zero-net-capex-subsea-trunk-play-on-candle",
+      "candidate_reviews": [],
+      "candidate_review_count": 0,
+      "candidate_reviews_truncated": false,
+      "reason": "no_candidates",
+      "completed_at": "2026-11-26T14:04:15.581401+00:00",
+      "next_attempt_at": null,
+      "force_retry": false
+    },
+    "1ee4e50bae344ed66343bdd80badf658": {
+      "queue_id": "1ee4e50bae344ed66343bdd80badf658",
+      "status": "pending",
+      "first_seen_at": "2026-11-26T14:05:02.914024+00:00",
+      "attempts": 0,
+      "discovered_url": "https://www.bbc.com/news/articles/cmn4en883jk0o",
+      "url": "https://www.bbc.com/news/articles/cmn4en883jk0o",
+      "published_date": "2026-11-02",
+      "title": "Electricity link could be restored next month ahead of winter peak",
+      "source": "Google News",
+      "keyword": "cross_source",
+      "last_seen_at": "2026-11-26T14:05:02.914024+00:00",
+      "cross_source_parents": [
+        "68a2342a2011cd0fc5c47f2502343c20"
+      ]
+    },
+    "419c845c1108af36ccf68b826280ab95": {
+      "queue_id": "419c845c1108af36ccf68b826280ab95",
+      "status": "pending",
+      "first_seen_at": "2026-11-26T14:05:04.130666+00:00",
+      "attempts": 0,
+      "discovered_url": "https://www.bbc.co.uk/news/articles/cm0ld2rryd2yo",
+      "url": "https://www.bbc.co.uk/news/articles/cm0ld2rryd2yo",
+      "published_date": "2026-10-31",
+      "title": "Fault on key electricity link ahead of winter peak",
+      "source": "Google News",
+      "keyword": "cross_source",
+      "last_seen_at": "2026-11-26T14:05:04.130666+00:00",
+      "cross_source_parents": [
+        "68a2342a2011cd0fc5c47f2502343c20"
+      ]
     }
   },
   "cursors": {
@@ -36136,7 +36408,7 @@
     "coverage_since:SubTel Forum": "2026-09-30",
     "SubTel Forum": null,
     "coverage_since:Submarine Networks": "2026-09-30",
-    "Submarine Networks": 283,
+    "Submarine Networks": 103,
     "google_query:site:submarinenetworks.com (fault OR outage OR cut OR repair OR disruption)": "2026-11-26",
     "google_query:site:subtelforum.com (fault OR outage OR cut OR repair OR disruption)": "2026-11-26",
     "directory_retry:https://www.submarinenetworks.com/en/systems/intra-europe/north-sea-connect": {},
